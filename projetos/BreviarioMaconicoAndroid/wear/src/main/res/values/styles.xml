@@ -1,0 +1,3 @@
+<resources>
+    <style name="WearAppTheme" parent="android:style/Theme.DeviceDefault" />
+</resources>

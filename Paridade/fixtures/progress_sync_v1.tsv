@@ -1,0 +1,10 @@
+id	currentTime	currentId	currentRead	incomingTime	incomingId	incomingRead	accept
+newer	100	a	true	101	b	false	true
+stale	101	b	false	100	a	true	false
+duplicate	101	b	false	101	b	false	false
+tie_winner	100	a	true	100	b	false	true
+tie_loser	100	b	false	100	a	true	false
+legacy_cannot_override	101	b	false	0	legacy	true	false
+legacy_upgraded	0	legacy	true	1	a	false	true
+negative_version	0	legacy	true	-1	b	false	false
+overflow_version	100	a	true	9223372036854775807	b	false	false

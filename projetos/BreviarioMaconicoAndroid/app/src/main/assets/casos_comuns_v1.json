@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "metadataFilters": [
+    {"id":"blank", "author":"", "subject":"", "workAuthor":null, "topics":[], "matches":true},
+    {"id":"author_accent", "author":"JOSE", "subject":"", "workAuthor":"José da Silva", "topics":[], "matches":true},
+    {"id":"author_word", "author":"sil", "subject":"", "workAuthor":"José da Silva", "topics":[], "matches":false},
+    {"id":"author_missing", "author":"Kennyo", "subject":"", "workAuthor":null, "topics":["Kennyo"], "matches":false},
+    {"id":"subject_accent", "author":"", "subject":"ética", "workAuthor":null, "topics":["História", "ÉTICA"], "matches":true},
+    {"id":"subject_not_author", "author":"", "subject":"Silva", "workAuthor":"José da Silva", "topics":["História"], "matches":false},
+    {"id":"both", "author":"Silva José", "subject":"\"história documental\"", "workAuthor":"José da Silva", "topics":["História documental"], "matches":true},
+    {"id":"both_required", "author":"José", "subject":"filosofia", "workAuthor":"José da Silva", "topics":["História"], "matches":false},
+    {"id":"phrase_order", "author":"\"Silva José\"", "subject":"", "workAuthor":"José da Silva", "topics":[], "matches":false},
+    {"id":"punctuation", "author":"!!!", "subject":"", "workAuthor":"José da Silva", "topics":[], "matches":false}
+  ],
+  "dossier": {
+    "topic": "ética",
+    "sourceCount": 30,
+    "review": [
+      "Hoje: ler as principais referências de ética e destacar trechos centrais.",
+      "Em 1 dia: reler os destaques e escrever uma síntese de cinco linhas.",
+      "Em 3 dias: responder às perguntas de fixação sem consultar o texto.",
+      "Em 7 dias: comparar o tema com outro termo relacionado do índice.",
+      "Em 21 dias: revisar a síntese e transformar em estudo, prancha ou anotação final."
+    ]
+  },
+  "search": [
+    {"id":"accent", "query":"maçonaria", "text":"Estudo da MACONARIA.", "matches":true},
+    {"id":"and_order", "query":"grande loja", "text":"A loja é grande.", "matches":true},
+    {"id":"phrase_order", "query":"\"grande loja\"", "text":"A loja é grande.", "matches":false},
+    {"id":"phrase_accent", "query":"\"grande loja\" história", "text":"História da Grande Loja.", "matches":true},
+    {"id":"token_boundary", "query":"luz", "text":"Reluzente", "matches":false},
+    {"id":"hyphen", "query":"grão-mestre", "text":"O grão mestre", "matches":true},
+    {"id":"empty", "query":"!!!", "text":"Texto", "matches":false},
+    {"id":"and_missing", "query":"ética justiça", "text":"Estudo da ética", "matches":false}
+  ],
+  "study": [
+    {"id":"accent_case", "text":"Reflexão sobre ÉTICA e virtudes", "keywords":["etica"], "matches":true},
+    {"id":"any_topic", "text":"O esquadro e o compasso", "keywords":["historia", "esquadro"], "matches":true},
+    {"id":"no_topic", "text":"História documental", "keywords":["virtude"], "matches":false},
+    {"id":"empty_topic", "text":"Texto", "keywords":["", " "], "matches":false}
+  ],
+  "studySelection": {
+    "keywords": ["etica", "compasso"],
+    "limit": 3,
+    "expected": ["a_P2", "b_P1", "c_01/06"],
+    "items": [
+      {"work":"d", "date":"01/06", "page":9, "title":"Documento", "body":"Neutro", "notes":"", "index":"Ética"},
+      {"work":"b", "date":"P1", "page":1, "title":"Documento", "body":"Estudo do COMPASSO.", "notes":"", "index":""},
+      {"work":"a", "date":"P2", "page":2, "title":"Documento", "body":"Neutro", "notes":"578 Estudo da ÉTICA.", "index":""},
+      {"work":"a", "date":"P1", "page":1, "title":"Documento", "body":"Neutro", "notes":"", "index":""},
+      {"work":"c", "date":"01/06", "page":9, "title":"Ética", "body":"Neutro", "notes":"", "index":""}
+    ]
+  },
+  "citations": [
+    {"id":"valid", "text":"Síntese documental [F1]. Comparação [F2].", "sources":2, "valid":true},
+    {"id":"unknown", "text":"Uma afirmação [F3].", "sources":2, "valid":false},
+    {"id":"missing", "text":"Afirmação sem referência.", "sources":2, "valid":false},
+    {"id":"empty_evidence", "text":"Afirmação [F1].", "sources":0, "valid":false},
+    {"id":"zero", "text":"Afirmação [F0].", "sources":2, "valid":false}
+  ],
+  "superscript": [
+    {"id":"references_only", "text":"Em 01/06/2026, texto 578 e outro579. Total 1234; 12/578 não é chamada.", "notes":"578 Primeira nota.\n579 Segunda nota.", "ids":["578","579"], "expected":"Em 01/06/2026, texto ⁵⁷⁸ e outro⁵⁷⁹. Total 1234; 12/578 não é chamada."},
+    {"id":"unknown_number", "text":"Ano 2026 e página 185.", "notes":"578 Nota.", "ids":["578"], "expected":"Ano 2026 e página 185."},
+    {"id":"no_notes", "text":"Texto 123.", "notes":"", "ids":[], "expected":"Texto 123."}
+  ]
+}

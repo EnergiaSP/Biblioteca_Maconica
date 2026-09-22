@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Biblioteca Maçônica</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>WatchIcon-48</string>
+		<string>WatchIcon-55</string>
+		<string>WatchIcon-58</string>
+		<string>WatchIcon-80</string>
+		<string>WatchIcon-87</string>
+		<string>WatchIcon-88</string>
+		<string>WatchIcon-92</string>
+		<string>WatchIcon-100</string>
+		<string>WatchIcon-102</string>
+		<string>WatchIcon-108</string>
+		<string>WatchIcon-172</string>
+		<string>WatchIcon-196</string>
+		<string>WatchIcon-216</string>
+		<string>WatchIcon-1024</string>
+	</array>
+	<key>CFBundleIconName</key>
+	<string>WatchAppIcon</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>WatchIcon-48</string>
+				<string>WatchIcon-55</string>
+				<string>WatchIcon-58</string>
+				<string>WatchIcon-80</string>
+				<string>WatchIcon-87</string>
+				<string>WatchIcon-88</string>
+				<string>WatchIcon-92</string>
+				<string>WatchIcon-100</string>
+				<string>WatchIcon-102</string>
+				<string>WatchIcon-108</string>
+				<string>WatchIcon-172</string>
+				<string>WatchIcon-196</string>
+				<string>WatchIcon-216</string>
+				<string>WatchIcon-1024</string>
+			</array>
+			<key>CFBundleIconName</key>
+			<string>WatchAppIcon</string>
+		</dict>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Biblioteca Maçônica</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>WKApplication</key>
+	<true/>
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado</string>
+</dict>
+</plist>

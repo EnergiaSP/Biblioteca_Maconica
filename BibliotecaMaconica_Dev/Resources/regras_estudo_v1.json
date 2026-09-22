@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "matching": "case-diacritic-insensitive-substring-any-keyword",
+  "collectionLimit": 24,
+  "pathLimit": 18,
+  "colecoes": [
+    {
+      "id": "virtudes",
+      "titulo": "Virtudes",
+      "subtitulo": "Aperfeiçoamento moral e conduta",
+      "detalhe": "Leituras voltadas à formação interior, domínio de si, constância, honra e prática cotidiana da fraternidade.",
+      "icone": "heart.text.square",
+      "palavrasChave": [
+        "virtude",
+        "virtudes",
+        "honra",
+        "prudência",
+        "prudencia",
+        "temperança",
+        "temperanca",
+        "coragem",
+        "fortaleza",
+        "fraternidade",
+        "humildade",
+        "tolerância",
+        "tolerancia",
+        "caridade",
+        "lealdade"
+      ],
+      "topicos": [
+        "Honra",
+        "Prudência",
+        "Temperança",
+        "Fraternidade",
+        "Humildade"
+      ]
+    },
+    {
+      "id": "simbolos",
+      "titulo": "Símbolos",
+      "subtitulo": "Compasso, esquadro, acácia e templo",
+      "detalhe": "Percurso dedicado à linguagem simbólica, aos instrumentos, à luz, à acácia e ao sentido moral da construção.",
+      "icone": "sparkles",
+      "palavrasChave": [
+        "símbolo",
+        "simbolo",
+        "símbolos",
+        "simbolos",
+        "compasso",
+        "esquadro",
+        "acácia",
+        "acacia",
+        "templo",
+        "luz",
+        "coluna",
+        "pedra",
+        "malhete",
+        "cinzel",
+        "prumo",
+        "nível",
+        "nivel"
+      ],
+      "topicos": [
+        "Compasso",
+        "Esquadro",
+        "Acácia",
+        "Templo",
+        "Luz"
+      ]
+    },
+    {
+      "id": "ritualistica",
+      "titulo": "Ritualística",
+      "subtitulo": "Ritos, loja e práticas iniciáticas",
+      "detalhe": "Agrupa textos sobre método ritual, loja, iniciação, trabalho maçônico e transmissão tradicional.",
+      "icone": "scroll",
+      "palavrasChave": [
+        "rito",
+        "ritos",
+        "ritual",
+        "ritualística",
+        "ritualistica",
+        "loja",
+        "iniciação",
+        "iniciacao",
+        "trabalho",
+        "sessão",
+        "sessao",
+        "oficial",
+        "venerável",
+        "veneravel"
+      ],
+      "topicos": [
+        "Ritos",
+        "Loja",
+        "Iniciação",
+        "Trabalho",
+        "Tradição"
+      ]
+    },
+    {
+      "id": "etica",
+      "titulo": "Ética",
+      "subtitulo": "Dever, justiça e responsabilidade",
+      "detalhe": "Estudo das escolhas morais, deveres, justiça, responsabilidade, consciência e coerência entre palavra e ação.",
+      "icone": "scale.3d",
+      "palavrasChave": [
+        "ética",
+        "etica",
+        "dever",
+        "deveres",
+        "justiça",
+        "justica",
+        "moral",
+        "responsabilidade",
+        "consciência",
+        "consciencia",
+        "liberdade",
+        "igualdade",
+        "verdade",
+        "conduta"
+      ],
+      "topicos": [
+        "Dever",
+        "Justiça",
+        "Moral",
+        "Consciência",
+        "Responsabilidade"
+      ]
+    },
+    {
+      "id": "historia",
+      "titulo": "História",
+      "subtitulo": "Origens, personagens e tradição",
+      "detalhe": "Leituras para acompanhar origens, documentos, personagens, potências, obediências e desenvolvimento histórico da Ordem.",
+      "icone": "building.columns",
+      "palavrasChave": [
+        "história",
+        "historia",
+        "origem",
+        "origens",
+        "tradição",
+        "tradicao",
+        "antigo",
+        "antiga",
+        "constituições",
+        "constituições",
+        "anderson",
+        "preston",
+        "dermott",
+        "mackey",
+        "grande loja",
+        "grande oriente"
+      ],
+      "topicos": [
+        "Origens",
+        "Documentos",
+        "Personagens",
+        "Obediências",
+        "Tradição"
+      ]
+    },
+    {
+      "id": "filosofia",
+      "titulo": "Filosofia",
+      "subtitulo": "Reflexão, razão e sentido",
+      "detalhe": "Textos de aprofundamento sobre razão, sabedoria, verdade, consciência, conhecimento e sentido da iniciação.",
+      "icone": "brain.head.profile",
+      "palavrasChave": [
+        "filosofia",
+        "filosófico",
+        "filosofico",
+        "razão",
+        "razao",
+        "sabedoria",
+        "verdade",
+        "conhecimento",
+        "consciência",
+        "consciencia",
+        "reflexão",
+        "reflexao",
+        "sentido",
+        "alma"
+      ],
+      "topicos": [
+        "Razão",
+        "Sabedoria",
+        "Verdade",
+        "Conhecimento",
+        "Consciência"
+      ]
+    },
+    {
+      "id": "educacao",
+      "titulo": "Educação maçônica",
+      "subtitulo": "Aprendizado, instrução e método",
+      "detalhe": "Organiza leituras sobre ensino moral, aprendizagem, instruções, estudos e formação do maçom.",
+      "icone": "book.closed",
+      "palavrasChave": [
+        "educação",
+        "educacao",
+        "ensino",
+        "aprendizado",
+        "instrução",
+        "instrucao",
+        "estudo",
+        "conhecimento",
+        "método",
+        "metodo",
+        "formação",
+        "formacao"
+      ],
+      "topicos": [
+        "Aprendizagem",
+        "Instrução",
+        "Método",
+        "Formação",
+        "Conhecimento"
+      ]
+    },
+    {
+      "id": "governanca",
+      "titulo": "Governança e ordem",
+      "subtitulo": "Potências, leis e organização",
+      "detalhe": "Reúne textos sobre constituições, regularidade, jurisdição, administração, potências e organização institucional.",
+      "icone": "checklist.checked",
+      "palavrasChave": [
+        "constituição",
+        "constituicao",
+        "constituições",
+        "regularidade",
+        "jurisdição",
+        "jurisdicao",
+        "potência",
+        "potencia",
+        "obediência",
+        "obediencia",
+        "lei",
+        "landmark",
+        "administração",
+        "administracao"
+      ],
+      "topicos": [
+        "Regularidade",
+        "Leis",
+        "Potências",
+        "Jurisdição",
+        "Administração"
+      ]
+    },
+    {
+      "id": "geografia",
+      "titulo": "Maçonaria no mundo",
+      "subtitulo": "Países, lojas e universalidade",
+      "detalhe": "Trilha panorâmica sobre presença maçônica em países, continentes, lojas, grandes lojas e experiências internacionais.",
+      "icone": "globe.americas",
+      "palavrasChave": [
+        "país",
+        "pais",
+        "africa",
+        "américa",
+        "america",
+        "europa",
+        "ásia",
+        "asia",
+        "loja",
+        "grande loja",
+        "senegal",
+        "gana",
+        "japão",
+        "japao",
+        "méxico",
+        "mexico",
+        "austrália",
+        "australia"
+      ],
+      "topicos": [
+        "Países",
+        "Lojas",
+        "Continentes",
+        "Universalidade",
+        "Reconhecimento"
+      ]
+    }
+  ],
+  "trilhas": [
+    {
+      "titulo": "Fundamentos simbólicos",
+      "subtitulo": "Símbolos, acácia e construção moral",
+      "objetivo": "Entender como os símbolos organizam a leitura moral e iniciática da obra.",
+      "icone": "sparkles",
+      "instrucao": "Base simbólica",
+      "duracaoSugerida": "10 dias",
+      "etapas": [
+        "Identificar símbolos recorrentes",
+        "Anotar sentido moral",
+        "Relacionar símbolo e prática"
+      ],
+      "id": "trilha-1",
+      "palavrasChave": [
+        "símbolo",
+        "simbolo",
+        "acácia",
+        "acacia",
+        "templo",
+        "esquadro",
+        "compasso"
+      ]
+    },
+    {
+      "titulo": "Virtude e ética",
+      "subtitulo": "Conduta, dever, justiça e aperfeiçoamento",
+      "objetivo": "Relacionar virtudes pessoais com responsabilidade, dever e vida prática.",
+      "icone": "scale.3d",
+      "instrucao": "Ética aplicada",
+      "duracaoSugerida": "14 dias",
+      "etapas": [
+        "Ler com foco em dever",
+        "Registrar aplicação prática",
+        "Revisar condutas recorrentes"
+      ],
+      "id": "trilha-2",
+      "palavrasChave": [
+        "virtude",
+        "ética",
+        "etica",
+        "dever",
+        "justiça",
+        "justica",
+        "moral"
+      ]
+    },
+    {
+      "titulo": "História e rito",
+      "subtitulo": "Origens, tradição, ritualística e prática",
+      "objetivo": "Percorrer a formação histórica da Ordem e sua expressão nos ritos e lojas.",
+      "icone": "building.columns",
+      "instrucao": "Contexto histórico",
+      "duracaoSugerida": "14 dias",
+      "etapas": [
+        "Separar fatos de interpretações",
+        "Localizar personagens e documentos",
+        "Conectar história e rito"
+      ],
+      "id": "trilha-3",
+      "palavrasChave": [
+        "história",
+        "historia",
+        "rito",
+        "ritual",
+        "tradição",
+        "tradicao",
+        "loja"
+      ]
+    },
+    {
+      "titulo": "Formação do maçom",
+      "subtitulo": "Aprendizagem, instrução e método",
+      "objetivo": "Acompanhar a evolução do aprendizado maçônico e sua pedagogia moral.",
+      "icone": "graduationcap",
+      "instrucao": "Formação gradual",
+      "duracaoSugerida": "21 dias",
+      "etapas": [
+        "Ler em ordem temática",
+        "Comparar instruções e conceitos",
+        "Registrar dúvidas para estudo posterior"
+      ],
+      "id": "trilha-4",
+      "palavrasChave": [
+        "instrução",
+        "instrucao",
+        "educação",
+        "educacao",
+        "estudo",
+        "formação",
+        "formacao",
+        "aprendizado"
+      ]
+    },
+    {
+      "titulo": "Ordem, leis e regularidade",
+      "subtitulo": "Constituições, potências e organização",
+      "objetivo": "Compreender a dimensão institucional: leis, obediências, regularidade e jurisdição.",
+      "icone": "checklist.checked",
+      "instrucao": "Organização institucional",
+      "duracaoSugerida": "14 dias",
+      "etapas": [
+        "Mapear termos jurídicos",
+        "Distinguir norma, costume e interpretação",
+        "Relacionar regularidade e governança"
+      ],
+      "id": "trilha-5",
+      "palavrasChave": [
+        "constituição",
+        "constituicao",
+        "constituições",
+        "regularidade",
+        "potência",
+        "potencia",
+        "obediência",
+        "obediencia",
+        "jurisdição",
+        "jurisdicao",
+        "landmark"
+      ]
+    },
+    {
+      "titulo": "Universalidade maçônica",
+      "subtitulo": "Países, continentes e experiências internacionais",
+      "objetivo": "Observar como a Maçonaria se manifesta em diferentes lugares e contextos históricos.",
+      "icone": "globe.americas",
+      "instrucao": "Estudo comparado",
+      "duracaoSugerida": "10 dias",
+      "etapas": [
+        "Identificar países e potências",
+        "Comparar contextos",
+        "Separar regularidade de presença histórica"
+      ],
+      "id": "trilha-6",
+      "palavrasChave": [
+        "país",
+        "pais",
+        "áfrica",
+        "africa",
+        "américa",
+        "america",
+        "europa",
+        "ásia",
+        "asia",
+        "grande loja",
+        "senegal",
+        "gana",
+        "japão",
+        "japao",
+        "austrália",
+        "australia"
+      ]
+    },
+    {
+      "titulo": "Pesquisa e trabalho maçônico",
+      "subtitulo": "Método, fontes, citação e síntese",
+      "objetivo": "Guiar a criação de trabalhos, resumos e estudos com base nas obras do app, evitando fontes duvidosas.",
+      "icone": "doc.text.magnifyingglass",
+      "instrucao": "Metodologia de estudo",
+      "duracaoSugerida": "7 dias",
+      "etapas": [
+        "Definir tema",
+        "Buscar nas obras",
+        "Separar trechos centrais",
+        "Escrever síntese com referências internas"
+      ],
+      "id": "trilha-7",
+      "palavrasChave": [
+        "pesquisa",
+        "estudo",
+        "fonte",
+        "obra",
+        "resumo",
+        "síntese",
+        "sintese",
+        "trabalho",
+        "referência",
+        "referencia"
+      ]
+    }
+  ]
+}

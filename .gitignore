@@ -1,0 +1,78 @@
+# Track only the current cross-platform projects and their shared audit sources.
+/*
+!/.gitignore
+!/.gitattributes
+!/.github/
+!/BibliotecaMaconica_Dev/
+!/projetos/
+/projetos/*
+!/projetos/BreviarioMaconicoAndroid/
+!/Paridade/
+!/Tools/
+!/PARIDADE_IOS_ANDROID.md
+
+# Local tooling, caches and generated builds
+.DS_Store
+.tools/
+.wrangler/
+.gradle/
+.kotlin/
+.build/
+DerivedData*/
+DerivedTargetBuild/
+build/
+Dist/
+Archives/
+node_modules/
+__pycache__/
+*.pyc
+*.xcarchive/
+*.xcresult/
+*.dSYM/
+*.ipa
+*.apk
+*.aab
+
+# Signing material and local credentials
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!.env.template
+!*.env.example
+!*.env.template
+keystore/
+keystore.properties
+local.properties
+*.jks
+*.keystore
+*.p8
+*.p12
+*.pfx
+*.mobileprovision
+*.provisionprofile
+*.key
+*.pem
+*.keychain
+*.keychain-db
+
+# Per-user IDE state
+xcuserdata/
+*.xcuserstate
+.idea/
+
+# Original corpus and generated audit/media output stay local
+ImportacaoLivrosPDF*/
+Breviario maconico OCR.pdf
+/Paridade/evidencias/
+/output/
+/tmp/
+
+# Submission notes may contain reviewer access credentials
+AppStoreConnect_Resposta_Apple.md
+GOOGLE_PLAY_PUBLICACAO.md
+
+# Invalid preview drafts and editor temporary media
+rascunho_videos_invalidos/
+*.mov.sb-*

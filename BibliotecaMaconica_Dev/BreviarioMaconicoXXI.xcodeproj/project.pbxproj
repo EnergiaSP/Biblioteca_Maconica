@@ -1,0 +1,1303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F72BA004B6B84748A020B301 /* progress_sync_v1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = F72BA004B6B84748A020B300; };
+		F72BA004B6B84748A020B201 /* UserBackupSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA004B6B84748A020B200; };
+		F72BA004B6B84748A020B101 /* ReadingProgressSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA004B6B84748A020B100; };
+		F72BA004B6B84748A020B102 /* ReadingProgressSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BA004B6B84748A020B100; };
+		010000000000000000000101 /* BreviarioMaconicoXXIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000001 /* BreviarioMaconicoXXIApp.swift */; };
+		010000000000000000000102 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000002 /* HomeView.swift */; };
+		010000000000000000000103 /* BreviarioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000003 /* BreviarioItem.swift */; };
+		010000000000000000000104 /* CommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000004 /* CommentsService.swift */; };
+		010000000000000000000105 /* PDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000005 /* PDFService.swift */; };
+		010000000000000000000106 /* PDFOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000006 /* PDFOCRService.swift */; };
+		010000000000000000000107 /* BreviarioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000007 /* BreviarioStore.swift */; };
+		010000000000000000000108 /* breviario.json in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000008 /* breviario.json */; };
+		010000000000000000000109 /* BreviarioImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000A /* BreviarioImportService.swift */; };
+		01000000000000000000010A /* IndiceRemissivoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000B /* IndiceRemissivoEntry.swift */; };
+		01000000000000000000010B /* BreviarioSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000C /* BreviarioSnapshot.swift */; };
+		01000000000000000000010C /* TextEditsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000D /* TextEditsService.swift */; };
+		01000000000000000000010D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000E /* NotificationService.swift */; };
+		01000000000000000000010E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000F /* Assets.xcassets */; };
+		01000000000000000000010F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000010 /* AppDelegate.swift */; };
+		010000000000000000000110 /* HomeViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000011 /* HomeViewSupport.swift */; };
+		010000000000000000000111 /* LeituraVozService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000012 /* LeituraVozService.swift */; };
+		010000000000000000000112 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000013 /* PrivacyInfo.xcprivacy */; };
+		010000000000000000000113 /* ActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000014 /* ActivationView.swift */; };
+		010000000000000000000114 /* UserDataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000015 /* UserDataPersistenceService.swift */; };
+		010000000000000000000115 /* BibliotecaObra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000016 /* BibliotecaObra.swift */; };
+		010000000000000000000116 /* BibliotecaRAGModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000017 /* BibliotecaRAGModels.swift */; };
+		010000000000000000000117 /* BibliotecaSQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000018 /* BibliotecaSQLiteService.swift */; };
+		D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000002 /* BibliotecaNotasSearch.swift */; };
+		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
+		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
+		01000000000000000000011A /* rag_catalogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001B /* rag_catalogo.json */; };
+		EE0000000000000000000001 /* regras_estudo_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000002 /* regras_estudo_v1.json */; };
+		EE0000000000000000000003 /* casos_comuns_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000004 /* casos_comuns_v1.json */; };
+		01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001C /* BibliotecaRAGCatalogService.swift */; };
+		01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001D /* BibliotecaOfflinePackageService.swift */; };
+		020000000000000000000101 /* BreviarioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000001 /* BreviarioWidget.swift */; };
+		020000000000000000000102 /* BreviarioSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000C /* BreviarioSnapshot.swift */; };
+		020000000000000000000103 /* breviario.json in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000008 /* breviario.json */; };
+		020000000000000000000104 /* BreviarioWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 020000000000000000000003 /* BreviarioWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		030000000000000000000101 /* BreviarioWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000001 /* BreviarioWatchApp.swift */; };
+		030000000000000000000102 /* BreviarioSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000C /* BreviarioSnapshot.swift */; };
+		030000000000000000000103 /* breviario.json in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000008 /* breviario.json */; };
+		030000000000000000000104 /* WatchNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000003 /* WatchNotificationService.swift */; };
+		030000000000000000000105 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000013 /* PrivacyInfo.xcprivacy */; };
+		030000000000000000000106 /* BreviarioWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 030000000000000000000002 /* BreviarioWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		030000000000000000000107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000F /* Assets.xcassets */; };
+		030000000000000000000108 /* WatchIcon-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000004 /* WatchIcon-48.png */; };
+		030000000000000000000109 /* WatchIcon-55.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000005 /* WatchIcon-55.png */; };
+		03000000000000000000010A /* WatchIcon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000006 /* WatchIcon-58.png */; };
+		03000000000000000000010B /* WatchIcon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000007 /* WatchIcon-80.png */; };
+		03000000000000000000010C /* WatchIcon-87.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000008 /* WatchIcon-87.png */; };
+		03000000000000000000010D /* WatchIcon-88.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000009 /* WatchIcon-88.png */; };
+		03000000000000000000010E /* WatchIcon-92.png in Resources */ = {isa = PBXBuildFile; fileRef = 03000000000000000000000A /* WatchIcon-92.png */; };
+		03000000000000000000010F /* WatchIcon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03000000000000000000000B /* WatchIcon-100.png */; };
+		030000000000000000000110 /* WatchIcon-102.png in Resources */ = {isa = PBXBuildFile; fileRef = 03000000000000000000000C /* WatchIcon-102.png */; };
+		030000000000000000000111 /* WatchIcon-108.png in Resources */ = {isa = PBXBuildFile; fileRef = 03000000000000000000000D /* WatchIcon-108.png */; };
+		030000000000000000000112 /* WatchIcon-172.png in Resources */ = {isa = PBXBuildFile; fileRef = 03000000000000000000000E /* WatchIcon-172.png */; };
+		030000000000000000000113 /* WatchIcon-196.png in Resources */ = {isa = PBXBuildFile; fileRef = 03000000000000000000000F /* WatchIcon-196.png */; };
+		030000000000000000000114 /* WatchIcon-216.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000011 /* WatchIcon-216.png */; };
+		030000000000000000000115 /* WatchIcon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000012 /* WatchIcon-1024.png */; };
+		0421D557D40C056AFE702606 /* HomeViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE78AB0DCC197A9F6DFA21 /* HomeViewComponents.swift */; };
+		06A7C916FFB79678A4BA33B2 /* PDFTextRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2497B05FD480B388826368BD /* PDFTextRenderer.swift */; };
+		0FBD67D97955A9C6440EB51E /* BreviarioStorePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FECE4541AFE46DE708297B /* BreviarioStorePersistence.swift */; };
+		0FC1E0D9F83FD05E131E8361 /* LibraryRequestActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB59DDF434B717920217997 /* LibraryRequestActions.swift */; };
+		1E9C7A4370982BBBDCE5BAE8 /* SettingsScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE15265C64DA7D287F7B8DA3 /* SettingsScreens.swift */; };
+		1F6286247E304A15B4CC11B0 /* LibrarySearchActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C80CA952D3144FFBA75F894 /* LibrarySearchActions.swift */; };
+		3518E48BF314C9FF26C15630 /* ReadingNavigationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8025A787361DD0485CCA3 /* ReadingNavigationActions.swift */; };
+		3D159078B21A249226F5A846 /* HomePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F58884A788334FFE19142EC /* HomePresentation.swift */; };
+		573674D27327C6FC6B3330D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F817B2D71D28C43DA9F2A6D /* Foundation.framework */; };
+		5C9E4445CDD2D7CEE3A78873 /* BreviarioStoreCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F6CC7629A2F335AA3D1919 /* BreviarioStoreCatalog.swift */; };
+		5E3DF92AA4C36DD5F50CED7D /* AppLifecycleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3B7ACDA0C247A2F5F22B1 /* AppLifecycleActions.swift */; };
+		68751E195EA23E4B8D26FC81 /* JustifiedTextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA029EF8C05AC3AEC84D4695 /* JustifiedTextComponents.swift */; };
+		695E83489FB508CBE1074915 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C613D5FCD3144ECB98613F /* AppNavigationController.swift */; };
+		6A021E0877838D31AC16D4AA /* LibraryScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694E346DF50F68E012E94A1 /* LibraryScreens.swift */; };
+		6C679DFBBAB2A27F69F403B7 /* PDFLayoutRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C253C767E523034E6974DEBB /* PDFLayoutRenderer.swift */; };
+		8C3BF777FB77C2C7927DBAB4 /* PreferencesActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC6736C68674A3145C8C32B /* PreferencesActions.swift */; };
+		A4AF8D0076248498C74518FA /* ReadingMetricsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82E96EDFD16854BBB700FB1 /* ReadingMetricsController.swift */; };
+		A975A59E10735E631F91355E /* ReadingComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */; };
+		AC0D5E25F7E0C5A8ACB8489C /* BreviarioMaconicoXXITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3309D04BE06C1616CCEB41 /* BreviarioMaconicoXXITests.swift */; };
+		B0303A7B80DD08E7077B6B8F /* ReadingEditorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608FEAA46268C9D1992650A /* ReadingEditorComponents.swift */; };
+		B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F17202B641F3D9B3893A34 /* LibraryComponents.swift */; };
+		BCB5F1A239606A5BAFF070CA /* BreviarioStoreSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */; };
+		C54BE34F031BFF29F5598C84 /* LibraryStudyScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23035FB36A7EDD30813A7AB /* LibraryStudyScreens.swift */; };
+		CB8516DD582F9514D56FB3A1 /* OfflineCatalogScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D8050C7052A7D203C2F54 /* OfflineCatalogScreens.swift */; };
+		CB9FA7EF04C19050922426AE /* BreviarioIndexImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE0A378220841A825A855CA /* BreviarioIndexImportService.swift */; };
+		D419AD0C6BEB3D7D853725D0 /* ExportComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B82797280D4C8172EE6BE /* ExportComponents.swift */; };
+		DCDA05086C06712165557F9C /* BreviarioTitleIndexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7AC4F2F979B1EF6FA6DFBB /* BreviarioTitleIndexBuilder.swift */; };
+		E46A00099EB48FB30B6AA3C1 /* BreviarioOCRTextNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7759608BE7368856B976F23 /* BreviarioOCRTextNormalizer.swift */; };
+		E8A3612B92C0A870BF81E58F /* ReadingDetailScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC2C36A60D8DA4B5CA3D8E5 /* ReadingDetailScreens.swift */; };
+		EC53EE2A33921E0620234793 /* ReadingProgressPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045875F66AF5A5C1FF97C857 /* ReadingProgressPresentation.swift */; };
+		ED17CC8955A25D1BADD841C3 /* BibliotecaMaconicaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA4974BA8ABF6F63E71619 /* BibliotecaMaconicaUITests.swift */; };
+		EE788FAE5CC649ACE23A0413 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F817B2D71D28C43DA9F2A6D /* Foundation.framework */; };
+		F721E6620EA621AD71CB1B6D /* HomeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078274ECA7040F7E4657892 /* HomeActions.swift */; };
+		FB9C73F0DC5C1E36CDC5FCE2 /* PremiumContentActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F7E20A0FAEB5A15960ED5 /* PremiumContentActions.swift */; };
+		FD70DB3EC1A94F8C7FA769E7 /* RecentReadingPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04469E2875E375D3853C456 /* RecentReadingPresentation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		020000000000000000000030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010000000000000000000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 020000000000000000000040;
+			remoteInfo = BreviarioWidgetExtension;
+		};
+		030000000000000000000030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010000000000000000000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 030000000000000000000040;
+			remoteInfo = BreviarioWatch;
+		};
+		2FFC4E71EEEEC980F01076C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010000000000000000000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010000000000000000000040;
+			remoteInfo = BreviarioMaconicoXXI;
+		};
+		D1F9B49FD339F1AD8130D7FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010000000000000000000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010000000000000000000040;
+			remoteInfo = BreviarioMaconicoXXI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		020000000000000000000020 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				020000000000000000000104 /* BreviarioWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030000000000000000000020 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Watch;
+			dstSubfolderSpec = 1;
+			files = (
+				030000000000000000000106 /* BreviarioWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F72BA004B6B84748A020B300 /* progress_sync_v1.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = ../Paridade/fixtures/progress_sync_v1.tsv; sourceTree = SOURCE_ROOT; };
+		F72BA004B6B84748A020B200 /* UserBackupSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBackupSnapshot.swift; sourceTree = "<group>"; };
+		F72BA004B6B84748A020B100 /* ReadingProgressSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingProgressSync.swift; sourceTree = "<group>"; };
+		010000000000000000000001 /* BreviarioMaconicoXXIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioMaconicoXXIApp.swift; sourceTree = "<group>"; };
+		010000000000000000000002 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		010000000000000000000003 /* BreviarioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioItem.swift; sourceTree = "<group>"; };
+		010000000000000000000004 /* CommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsService.swift; sourceTree = "<group>"; };
+		010000000000000000000005 /* PDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFService.swift; sourceTree = "<group>"; };
+		010000000000000000000006 /* PDFOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOCRService.swift; sourceTree = "<group>"; };
+		010000000000000000000007 /* BreviarioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioStore.swift; sourceTree = "<group>"; };
+		010000000000000000000008 /* breviario.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = breviario.json; sourceTree = "<group>"; };
+		010000000000000000000009 /* BreviarioMaconicoXXI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreviarioMaconicoXXI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01000000000000000000000A /* BreviarioImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioImportService.swift; sourceTree = "<group>"; };
+		01000000000000000000000B /* IndiceRemissivoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndiceRemissivoEntry.swift; sourceTree = "<group>"; };
+		01000000000000000000000C /* BreviarioSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioSnapshot.swift; sourceTree = "<group>"; };
+		01000000000000000000000D /* TextEditsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditsService.swift; sourceTree = "<group>"; };
+		01000000000000000000000E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		01000000000000000000000F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		010000000000000000000010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		010000000000000000000011 /* HomeViewSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSupport.swift; sourceTree = "<group>"; };
+		010000000000000000000012 /* LeituraVozService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeituraVozService.swift; sourceTree = "<group>"; };
+		010000000000000000000013 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		010000000000000000000014 /* ActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationView.swift; sourceTree = "<group>"; };
+		010000000000000000000015 /* UserDataPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataPersistenceService.swift; sourceTree = "<group>"; };
+		010000000000000000000016 /* BibliotecaObra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaObra.swift; sourceTree = "<group>"; };
+		010000000000000000000017 /* BibliotecaRAGModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaRAGModels.swift; sourceTree = "<group>"; };
+		010000000000000000000018 /* BibliotecaSQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaSQLiteService.swift; sourceTree = "<group>"; };
+		D92100000000000000000002 /* BibliotecaNotasSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaNotasSearch.swift; sourceTree = "<group>"; };
+		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
+		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		01000000000000000000001B /* rag_catalogo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rag_catalogo.json; sourceTree = "<group>"; };
+		EE0000000000000000000002 /* regras_estudo_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regras_estudo_v1.json; sourceTree = "<group>"; };
+		EE0000000000000000000004 /* casos_comuns_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_comuns_v1.json; sourceTree = "<group>"; };
+		01000000000000000000001C /* BibliotecaRAGCatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaRAGCatalogService.swift; sourceTree = "<group>"; };
+		01000000000000000000001D /* BibliotecaOfflinePackageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaOfflinePackageService.swift; sourceTree = "<group>"; };
+		020000000000000000000001 /* BreviarioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioWidget.swift; sourceTree = "<group>"; };
+		020000000000000000000002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		020000000000000000000003 /* BreviarioWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BreviarioWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		030000000000000000000001 /* BreviarioWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioWatchApp.swift; sourceTree = "<group>"; };
+		030000000000000000000002 /* BreviarioWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreviarioWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		030000000000000000000003 /* WatchNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNotificationService.swift; sourceTree = "<group>"; };
+		030000000000000000000004 /* WatchIcon-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-48.png"; sourceTree = "<group>"; };
+		030000000000000000000005 /* WatchIcon-55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-55.png"; sourceTree = "<group>"; };
+		030000000000000000000006 /* WatchIcon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-58.png"; sourceTree = "<group>"; };
+		030000000000000000000007 /* WatchIcon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-80.png"; sourceTree = "<group>"; };
+		030000000000000000000008 /* WatchIcon-87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-87.png"; sourceTree = "<group>"; };
+		030000000000000000000009 /* WatchIcon-88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-88.png"; sourceTree = "<group>"; };
+		03000000000000000000000A /* WatchIcon-92.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-92.png"; sourceTree = "<group>"; };
+		03000000000000000000000B /* WatchIcon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-100.png"; sourceTree = "<group>"; };
+		03000000000000000000000C /* WatchIcon-102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-102.png"; sourceTree = "<group>"; };
+		03000000000000000000000D /* WatchIcon-108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-108.png"; sourceTree = "<group>"; };
+		03000000000000000000000E /* WatchIcon-172.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-172.png"; sourceTree = "<group>"; };
+		03000000000000000000000F /* WatchIcon-196.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-196.png"; sourceTree = "<group>"; };
+		030000000000000000000011 /* WatchIcon-216.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-216.png"; sourceTree = "<group>"; };
+		030000000000000000000012 /* WatchIcon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-1024.png"; sourceTree = "<group>"; };
+		030000000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045875F66AF5A5C1FF97C857 /* ReadingProgressPresentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadingProgressPresentation.swift; sourceTree = "<group>"; };
+		1078274ECA7040F7E4657892 /* HomeActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeActions.swift; sourceTree = "<group>"; };
+		2497B05FD480B388826368BD /* PDFTextRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PDFTextRenderer.swift; sourceTree = "<group>"; };
+		2694E346DF50F68E012E94A1 /* LibraryScreens.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryScreens.swift; sourceTree = "<group>"; };
+		2AC2C36A60D8DA4B5CA3D8E5 /* ReadingDetailScreens.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadingDetailScreens.swift; sourceTree = "<group>"; };
+		2C80CA952D3144FFBA75F894 /* LibrarySearchActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibrarySearchActions.swift; sourceTree = "<group>"; };
+		3608FEAA46268C9D1992650A /* ReadingEditorComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadingEditorComponents.swift; sourceTree = "<group>"; };
+		36F6CC7629A2F335AA3D1919 /* BreviarioStoreCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioStoreCatalog.swift; sourceTree = "<group>"; };
+		37CE78AB0DCC197A9F6DFA21 /* HomeViewComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeViewComponents.swift; sourceTree = "<group>"; };
+		3E6B82797280D4C8172EE6BE /* ExportComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExportComponents.swift; sourceTree = "<group>"; };
+		4A7AC4F2F979B1EF6FA6DFBB /* BreviarioTitleIndexBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioTitleIndexBuilder.swift; sourceTree = "<group>"; };
+		58F17202B641F3D9B3893A34 /* LibraryComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryComponents.swift; sourceTree = "<group>"; };
+		597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreviarioMaconicoXXITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioStoreSearch.swift; sourceTree = "<group>"; };
+		66C613D5FCD3144ECB98613F /* AppNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		6DC8025A787361DD0485CCA3 /* ReadingNavigationActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadingNavigationActions.swift; sourceTree = "<group>"; };
+		7F58884A788334FFE19142EC /* HomePresentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomePresentation.swift; sourceTree = "<group>"; };
+		7F817B2D71D28C43DA9F2A6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9A7D8050C7052A7D203C2F54 /* OfflineCatalogScreens.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OfflineCatalogScreens.swift; sourceTree = "<group>"; };
+		9BB59DDF434B717920217997 /* LibraryRequestActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryRequestActions.swift; sourceTree = "<group>"; };
+		9EAA4974BA8ABF6F63E71619 /* BibliotecaMaconicaUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BibliotecaMaconicaUITests.swift; sourceTree = "<group>"; };
+		AE15265C64DA7D287F7B8DA3 /* SettingsScreens.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsScreens.swift; sourceTree = "<group>"; };
+		B42F7E20A0FAEB5A15960ED5 /* PremiumContentActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PremiumContentActions.swift; sourceTree = "<group>"; };
+		B7759608BE7368856B976F23 /* BreviarioOCRTextNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioOCRTextNormalizer.swift; sourceTree = "<group>"; };
+		B82E96EDFD16854BBB700FB1 /* ReadingMetricsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadingMetricsController.swift; sourceTree = "<group>"; };
+		BC3309D04BE06C1616CCEB41 /* BreviarioMaconicoXXITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioMaconicoXXITests.swift; sourceTree = "<group>"; };
+		C253C767E523034E6974DEBB /* PDFLayoutRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PDFLayoutRenderer.swift; sourceTree = "<group>"; };
+		CA029EF8C05AC3AEC84D4695 /* JustifiedTextComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JustifiedTextComponents.swift; sourceTree = "<group>"; };
+		CCE0A378220841A825A855CA /* BreviarioIndexImportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioIndexImportService.swift; sourceTree = "<group>"; };
+		D2B3B7ACDA0C247A2F5F22B1 /* AppLifecycleActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLifecycleActions.swift; sourceTree = "<group>"; };
+		DEC6736C68674A3145C8C32B /* PreferencesActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PreferencesActions.swift; sourceTree = "<group>"; };
+		E42286B1901628045F28EFE4 /* BibliotecaMaconicaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BibliotecaMaconicaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadingComponents.swift; sourceTree = "<group>"; };
+		F04469E2875E375D3853C456 /* RecentReadingPresentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RecentReadingPresentation.swift; sourceTree = "<group>"; };
+		F0FECE4541AFE46DE708297B /* BreviarioStorePersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioStorePersistence.swift; sourceTree = "<group>"; };
+		F23035FB36A7EDD30813A7AB /* LibraryStudyScreens.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryStudyScreens.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		010000000000000000000020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010000000000000000000119 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		020000000000000000000021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030000000000000000000021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		145BE8F22E55726D1757B8BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE788FAE5CC649ACE23A0413 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BC8F67B8DCD37603060FDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				573674D27327C6FC6B3330D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		010000000000000000000030 = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000031 /* App */,
+				010000000000000000000032 /* Views */,
+				010000000000000000000033 /* Models */,
+				010000000000000000000034 /* Services */,
+				010000000000000000000035 /* PDF */,
+				010000000000000000000036 /* OCR */,
+				010000000000000000000039 /* Shared */,
+				020000000000000000000010 /* Widgets */,
+				030000000000000000000010 /* Watch */,
+				010000000000000000000037 /* Resources */,
+				01000000000000000000000F /* Assets.xcassets */,
+				010000000000000000000038 /* Products */,
+				A4B05B7CAAE756E26C000F47 /* Frameworks */,
+				30D483A6F903169FECF01FE1 /* Tests */,
+				CA6CB1F34F6F53B119BDE131 /* UITests */,
+			);
+			sourceTree = "<group>";
+		};
+		010000000000000000000031 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000001 /* BreviarioMaconicoXXIApp.swift */,
+				010000000000000000000010 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		010000000000000000000032 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000014 /* ActivationView.swift */,
+				010000000000000000000002 /* HomeView.swift */,
+				010000000000000000000011 /* HomeViewSupport.swift */,
+				37CE78AB0DCC197A9F6DFA21 /* HomeViewComponents.swift */,
+				58F17202B641F3D9B3893A34 /* LibraryComponents.swift */,
+				EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */,
+				3E6B82797280D4C8172EE6BE /* ExportComponents.swift */,
+				7F58884A788334FFE19142EC /* HomePresentation.swift */,
+				2694E346DF50F68E012E94A1 /* LibraryScreens.swift */,
+				AE15265C64DA7D287F7B8DA3 /* SettingsScreens.swift */,
+				1078274ECA7040F7E4657892 /* HomeActions.swift */,
+				D2B3B7ACDA0C247A2F5F22B1 /* AppLifecycleActions.swift */,
+				CA029EF8C05AC3AEC84D4695 /* JustifiedTextComponents.swift */,
+				9BB59DDF434B717920217997 /* LibraryRequestActions.swift */,
+				2C80CA952D3144FFBA75F894 /* LibrarySearchActions.swift */,
+				F23035FB36A7EDD30813A7AB /* LibraryStudyScreens.swift */,
+				9A7D8050C7052A7D203C2F54 /* OfflineCatalogScreens.swift */,
+				DEC6736C68674A3145C8C32B /* PreferencesActions.swift */,
+				B42F7E20A0FAEB5A15960ED5 /* PremiumContentActions.swift */,
+				2AC2C36A60D8DA4B5CA3D8E5 /* ReadingDetailScreens.swift */,
+				3608FEAA46268C9D1992650A /* ReadingEditorComponents.swift */,
+				6DC8025A787361DD0485CCA3 /* ReadingNavigationActions.swift */,
+				045875F66AF5A5C1FF97C857 /* ReadingProgressPresentation.swift */,
+				F04469E2875E375D3853C456 /* RecentReadingPresentation.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		010000000000000000000033 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000003 /* BreviarioItem.swift */,
+				010000000000000000000016 /* BibliotecaObra.swift */,
+				010000000000000000000017 /* BibliotecaRAGModels.swift */,
+				01000000000000000000000B /* IndiceRemissivoEntry.swift */,
+				66C613D5FCD3144ECB98613F /* AppNavigationController.swift */,
+				B82E96EDFD16854BBB700FB1 /* ReadingMetricsController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		010000000000000000000034 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000004 /* CommentsService.swift */,
+				010000000000000000000007 /* BreviarioStore.swift */,
+				01000000000000000000000A /* BreviarioImportService.swift */,
+				01000000000000000000000D /* TextEditsService.swift */,
+				01000000000000000000000E /* NotificationService.swift */,
+				010000000000000000000012 /* LeituraVozService.swift */,
+				010000000000000000000015 /* UserDataPersistenceService.swift */,
+				F72BA004B6B84748A020B200 /* UserBackupSnapshot.swift */,
+				010000000000000000000018 /* BibliotecaSQLiteService.swift */,
+				D92100000000000000000002 /* BibliotecaNotasSearch.swift */,
+				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
+				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
+				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
+				CCE0A378220841A825A855CA /* BreviarioIndexImportService.swift */,
+				B7759608BE7368856B976F23 /* BreviarioOCRTextNormalizer.swift */,
+				36F6CC7629A2F335AA3D1919 /* BreviarioStoreCatalog.swift */,
+				F0FECE4541AFE46DE708297B /* BreviarioStorePersistence.swift */,
+				6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */,
+				4A7AC4F2F979B1EF6FA6DFBB /* BreviarioTitleIndexBuilder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		010000000000000000000035 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000005 /* PDFService.swift */,
+				C253C767E523034E6974DEBB /* PDFLayoutRenderer.swift */,
+				2497B05FD480B388826368BD /* PDFTextRenderer.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		010000000000000000000036 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000006 /* PDFOCRService.swift */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		010000000000000000000037 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000008 /* breviario.json */,
+				01000000000000000000001B /* rag_catalogo.json */,
+				EE0000000000000000000002 /* regras_estudo_v1.json */,
+				EE0000000000000000000004 /* casos_comuns_v1.json */,
+				F72BA004B6B84748A020B300 /* progress_sync_v1.tsv */,
+				010000000000000000000013 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		010000000000000000000038 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				010000000000000000000009 /* BreviarioMaconicoXXI.app */,
+				020000000000000000000003 /* BreviarioWidgetExtension.appex */,
+				030000000000000000000002 /* BreviarioWatch.app */,
+				597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */,
+				E42286B1901628045F28EFE4 /* BibliotecaMaconicaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		010000000000000000000039 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				01000000000000000000000C /* BreviarioSnapshot.swift */,
+				F72BA004B6B84748A020B100 /* ReadingProgressSync.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		020000000000000000000010 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000001 /* BreviarioWidget.swift */,
+				020000000000000000000002 /* Info.plist */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		030000000000000000000010 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				030000000000000000000001 /* BreviarioWatchApp.swift */,
+				030000000000000000000003 /* WatchNotificationService.swift */,
+				030000000000000000000013 /* Info.plist */,
+				030000000000000000000004 /* WatchIcon-48.png */,
+				030000000000000000000005 /* WatchIcon-55.png */,
+				030000000000000000000006 /* WatchIcon-58.png */,
+				030000000000000000000007 /* WatchIcon-80.png */,
+				030000000000000000000008 /* WatchIcon-87.png */,
+				030000000000000000000009 /* WatchIcon-88.png */,
+				03000000000000000000000A /* WatchIcon-92.png */,
+				03000000000000000000000B /* WatchIcon-100.png */,
+				03000000000000000000000C /* WatchIcon-102.png */,
+				03000000000000000000000D /* WatchIcon-108.png */,
+				03000000000000000000000E /* WatchIcon-172.png */,
+				03000000000000000000000F /* WatchIcon-196.png */,
+				030000000000000000000011 /* WatchIcon-216.png */,
+				030000000000000000000012 /* WatchIcon-1024.png */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		30D483A6F903169FECF01FE1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BC3309D04BE06C1616CCEB41 /* BreviarioMaconicoXXITests.swift */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A4B05B7CAAE756E26C000F47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAA74F2838A977FC4AEAD719 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA6CB1F34F6F53B119BDE131 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				9EAA4974BA8ABF6F63E71619 /* BibliotecaMaconicaUITests.swift */,
+			);
+			name = UITests;
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		FAA74F2838A977FC4AEAD719 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7F817B2D71D28C43DA9F2A6D /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		010000000000000000000040 /* BreviarioMaconicoXXI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 010000000000000000000050 /* Build configuration list for PBXNativeTarget "BreviarioMaconicoXXI" */;
+			buildPhases = (
+				010000000000000000000021 /* Sources */,
+				010000000000000000000020 /* Frameworks */,
+				010000000000000000000022 /* Resources */,
+				020000000000000000000020 /* Embed App Extensions */,
+				030000000000000000000020 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				020000000000000000000031 /* PBXTargetDependency */,
+				030000000000000000000031 /* PBXTargetDependency */,
+			);
+			name = BreviarioMaconicoXXI;
+			productName = BreviarioMaconicoXXI;
+			productReference = 010000000000000000000009 /* BreviarioMaconicoXXI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		020000000000000000000040 /* BreviarioWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 020000000000000000000050 /* Build configuration list for PBXNativeTarget "BreviarioWidgetExtension" */;
+			buildPhases = (
+				020000000000000000000022 /* Sources */,
+				020000000000000000000021 /* Frameworks */,
+				020000000000000000000023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BreviarioWidgetExtension;
+			productName = BreviarioWidgetExtension;
+			productReference = 020000000000000000000003 /* BreviarioWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		030000000000000000000040 /* BreviarioWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 030000000000000000000050 /* Build configuration list for PBXNativeTarget "BreviarioWatch" */;
+			buildPhases = (
+				030000000000000000000022 /* Sources */,
+				030000000000000000000021 /* Frameworks */,
+				030000000000000000000023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BreviarioWatch;
+			productName = BreviarioWatch;
+			productReference = 030000000000000000000002 /* BreviarioWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6EA9C37FFDA6E22AB1D1C56E /* BreviarioMaconicoXXITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D44F1F15ECC67A0C303C3AA /* Build configuration list for PBXNativeTarget "BreviarioMaconicoXXITests" */;
+			buildPhases = (
+				C02D7AD14648FBA373ECD450 /* Sources */,
+				F0BC8F67B8DCD37603060FDD /* Frameworks */,
+				7546609EF34B0016D3FA172F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E9BEC76BED6F37DA1E77289 /* PBXTargetDependency */,
+			);
+			name = BreviarioMaconicoXXITests;
+			productName = BreviarioMaconicoXXITests;
+			productReference = 597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7ADCF511B044234E7C62FF5B /* BibliotecaMaconicaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 533956A5C01B9B6D9712960B /* Build configuration list for PBXNativeTarget "BibliotecaMaconicaUITests" */;
+			buildPhases = (
+				076E1E0EA873E8BD62E55395 /* Sources */,
+				145BE8F22E55726D1757B8BA /* Frameworks */,
+				5BCC4C9E3C785BC441449A8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C04BADC64A13001DA2F66F6F /* PBXTargetDependency */,
+			);
+			name = BibliotecaMaconicaUITests;
+			productName = BibliotecaMaconicaUITests;
+			productReference = E42286B1901628045F28EFE4 /* BibliotecaMaconicaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		010000000000000000000060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					010000000000000000000040 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					020000000000000000000040 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					030000000000000000000040 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = 010000000000000000000070 /* Build configuration list for PBXProject "BreviarioMaconicoXXI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 010000000000000000000030;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 010000000000000000000038 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				010000000000000000000040 /* BreviarioMaconicoXXI */,
+				020000000000000000000040 /* BreviarioWidgetExtension */,
+				030000000000000000000040 /* BreviarioWatch */,
+				6EA9C37FFDA6E22AB1D1C56E /* BreviarioMaconicoXXITests */,
+				7ADCF511B044234E7C62FF5B /* BibliotecaMaconicaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		010000000000000000000022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010000000000000000000108 /* breviario.json in Resources */,
+				01000000000000000000011A /* rag_catalogo.json in Resources */,
+				EE0000000000000000000001 /* regras_estudo_v1.json in Resources */,
+				EE0000000000000000000003 /* casos_comuns_v1.json in Resources */,
+				F72BA004B6B84748A020B301 /* progress_sync_v1.tsv in Resources */,
+				010000000000000000000112 /* PrivacyInfo.xcprivacy in Resources */,
+				01000000000000000000010E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		020000000000000000000023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				020000000000000000000103 /* breviario.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030000000000000000000023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				030000000000000000000103 /* breviario.json in Resources */,
+				030000000000000000000105 /* PrivacyInfo.xcprivacy in Resources */,
+				030000000000000000000107 /* Assets.xcassets in Resources */,
+				030000000000000000000108 /* WatchIcon-48.png in Resources */,
+				030000000000000000000109 /* WatchIcon-55.png in Resources */,
+				03000000000000000000010A /* WatchIcon-58.png in Resources */,
+				03000000000000000000010B /* WatchIcon-80.png in Resources */,
+				03000000000000000000010C /* WatchIcon-87.png in Resources */,
+				03000000000000000000010D /* WatchIcon-88.png in Resources */,
+				03000000000000000000010E /* WatchIcon-92.png in Resources */,
+				03000000000000000000010F /* WatchIcon-100.png in Resources */,
+				030000000000000000000110 /* WatchIcon-102.png in Resources */,
+				030000000000000000000111 /* WatchIcon-108.png in Resources */,
+				030000000000000000000112 /* WatchIcon-172.png in Resources */,
+				030000000000000000000113 /* WatchIcon-196.png in Resources */,
+				030000000000000000000114 /* WatchIcon-216.png in Resources */,
+				030000000000000000000115 /* WatchIcon-1024.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCC4C9E3C785BC441449A8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7546609EF34B0016D3FA172F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		010000000000000000000021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010000000000000000000101 /* BreviarioMaconicoXXIApp.swift in Sources */,
+				010000000000000000000102 /* HomeView.swift in Sources */,
+				010000000000000000000103 /* BreviarioItem.swift in Sources */,
+				010000000000000000000104 /* CommentsService.swift in Sources */,
+				010000000000000000000105 /* PDFService.swift in Sources */,
+				010000000000000000000106 /* PDFOCRService.swift in Sources */,
+				010000000000000000000107 /* BreviarioStore.swift in Sources */,
+				010000000000000000000109 /* BreviarioImportService.swift in Sources */,
+				01000000000000000000010A /* IndiceRemissivoEntry.swift in Sources */,
+				01000000000000000000010B /* BreviarioSnapshot.swift in Sources */,
+				F72BA004B6B84748A020B101 /* ReadingProgressSync.swift in Sources */,
+				01000000000000000000010C /* TextEditsService.swift in Sources */,
+				01000000000000000000010D /* NotificationService.swift in Sources */,
+				01000000000000000000010F /* AppDelegate.swift in Sources */,
+				010000000000000000000110 /* HomeViewSupport.swift in Sources */,
+				010000000000000000000111 /* LeituraVozService.swift in Sources */,
+				010000000000000000000113 /* ActivationView.swift in Sources */,
+				010000000000000000000114 /* UserDataPersistenceService.swift in Sources */,
+				F72BA004B6B84748A020B201 /* UserBackupSnapshot.swift in Sources */,
+				010000000000000000000115 /* BibliotecaObra.swift in Sources */,
+				010000000000000000000116 /* BibliotecaRAGModels.swift in Sources */,
+				010000000000000000000117 /* BibliotecaSQLiteService.swift in Sources */,
+				D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */,
+				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
+				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
+				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,
+				0421D557D40C056AFE702606 /* HomeViewComponents.swift in Sources */,
+				B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */,
+				A975A59E10735E631F91355E /* ReadingComponents.swift in Sources */,
+				D419AD0C6BEB3D7D853725D0 /* ExportComponents.swift in Sources */,
+				3D159078B21A249226F5A846 /* HomePresentation.swift in Sources */,
+				6A021E0877838D31AC16D4AA /* LibraryScreens.swift in Sources */,
+				1E9C7A4370982BBBDCE5BAE8 /* SettingsScreens.swift in Sources */,
+				F721E6620EA621AD71CB1B6D /* HomeActions.swift in Sources */,
+				695E83489FB508CBE1074915 /* AppNavigationController.swift in Sources */,
+				A4AF8D0076248498C74518FA /* ReadingMetricsController.swift in Sources */,
+				5E3DF92AA4C36DD5F50CED7D /* AppLifecycleActions.swift in Sources */,
+				68751E195EA23E4B8D26FC81 /* JustifiedTextComponents.swift in Sources */,
+				0FC1E0D9F83FD05E131E8361 /* LibraryRequestActions.swift in Sources */,
+				1F6286247E304A15B4CC11B0 /* LibrarySearchActions.swift in Sources */,
+				C54BE34F031BFF29F5598C84 /* LibraryStudyScreens.swift in Sources */,
+				CB8516DD582F9514D56FB3A1 /* OfflineCatalogScreens.swift in Sources */,
+				8C3BF777FB77C2C7927DBAB4 /* PreferencesActions.swift in Sources */,
+				FB9C73F0DC5C1E36CDC5FCE2 /* PremiumContentActions.swift in Sources */,
+				E8A3612B92C0A870BF81E58F /* ReadingDetailScreens.swift in Sources */,
+				B0303A7B80DD08E7077B6B8F /* ReadingEditorComponents.swift in Sources */,
+				3518E48BF314C9FF26C15630 /* ReadingNavigationActions.swift in Sources */,
+				EC53EE2A33921E0620234793 /* ReadingProgressPresentation.swift in Sources */,
+				FD70DB3EC1A94F8C7FA769E7 /* RecentReadingPresentation.swift in Sources */,
+				6C679DFBBAB2A27F69F403B7 /* PDFLayoutRenderer.swift in Sources */,
+				06A7C916FFB79678A4BA33B2 /* PDFTextRenderer.swift in Sources */,
+				CB9FA7EF04C19050922426AE /* BreviarioIndexImportService.swift in Sources */,
+				E46A00099EB48FB30B6AA3C1 /* BreviarioOCRTextNormalizer.swift in Sources */,
+				5C9E4445CDD2D7CEE3A78873 /* BreviarioStoreCatalog.swift in Sources */,
+				0FBD67D97955A9C6440EB51E /* BreviarioStorePersistence.swift in Sources */,
+				BCB5F1A239606A5BAFF070CA /* BreviarioStoreSearch.swift in Sources */,
+				DCDA05086C06712165557F9C /* BreviarioTitleIndexBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		020000000000000000000022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				020000000000000000000101 /* BreviarioWidget.swift in Sources */,
+				020000000000000000000102 /* BreviarioSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		030000000000000000000022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				030000000000000000000101 /* BreviarioWatchApp.swift in Sources */,
+				030000000000000000000102 /* BreviarioSnapshot.swift in Sources */,
+				F72BA004B6B84748A020B102 /* ReadingProgressSync.swift in Sources */,
+				030000000000000000000104 /* WatchNotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076E1E0EA873E8BD62E55395 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED17CC8955A25D1BADD841C3 /* BibliotecaMaconicaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C02D7AD14648FBA373ECD450 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC0D5E25F7E0C5A8ACB8489C /* BreviarioMaconicoXXITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		020000000000000000000031 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 020000000000000000000040 /* BreviarioWidgetExtension */;
+			targetProxy = 020000000000000000000030 /* PBXContainerItemProxy */;
+		};
+		030000000000000000000031 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 030000000000000000000040 /* BreviarioWatch */;
+			targetProxy = 030000000000000000000030 /* PBXContainerItemProxy */;
+		};
+		9E9BEC76BED6F37DA1E77289 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BreviarioMaconicoXXI;
+			target = 010000000000000000000040 /* BreviarioMaconicoXXI */;
+			targetProxy = D1F9B49FD339F1AD8130D7FA /* PBXContainerItemProxy */;
+		};
+		C04BADC64A13001DA2F66F6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BreviarioMaconicoXXI;
+			target = 010000000000000000000040 /* BreviarioMaconicoXXI */;
+			targetProxy = 2FFC4E71EEEEC980F01076C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		010000000000000000000051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/BreviarioMaconicoXXI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_CFBundleName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_CFBundleURLTypes = "{\n    CFBundleURLName = \"com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado\";\n    CFBundleURLSchemes =     (\n        breviario\n    );\n}";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_DESTINATIONS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		010000000000000000000052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/BreviarioMaconicoXXI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_CFBundleName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_CFBundleURLTypes = "{\n    CFBundleURLName = \"com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado\";\n    CFBundleURLSchemes =     (\n        breviario\n    );\n}";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_DESTINATIONS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+		010000000000000000000071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		010000000000000000000072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		020000000000000000000051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Widgets/BreviarioWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado.BreviarioWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_DESTINATIONS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		020000000000000000000052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Widgets/BreviarioWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado.BreviarioWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_DESTINATIONS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		030000000000000000000051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_STANDALONE_ICON_BEHAVIOR = all;
+				CODE_SIGN_ENTITLEMENTS = Watch/BreviarioWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Watch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_CFBundleIconName = WatchAppIcon;
+				INFOPLIST_KEY_CFBundleName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado.watchkitapp;
+				PRODUCT_NAME = BreviarioWatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_DESTINATIONS = "watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		030000000000000000000052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_STANDALONE_ICON_BEHAVIOR = all;
+				CODE_SIGN_ENTITLEMENTS = Watch/BreviarioWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 229B3RYN6R;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Watch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_CFBundleIconName = WatchAppIcon;
+				INFOPLIST_KEY_CFBundleName = "Biblioteca Maçônica";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado.watchkitapp;
+				PRODUCT_NAME = BreviarioWatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_DESTINATIONS = "watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		8C61B73A1D8C82992EF6CEE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado.tests;
+				PRODUCT_NAME = BreviarioMaconicoXXITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreviarioMaconicoXXI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BreviarioMaconicoXXI";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A1F9685E32B19C9A7F2C21D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado.tests;
+				PRODUCT_NAME = BreviarioMaconicoXXITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreviarioMaconicoXXI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BreviarioMaconicoXXI";
+			};
+			name = Debug;
+		};
+		A5EF9BC9E2B39EDF2EAA57B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BibliotecaMaconicaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BreviarioMaconicoXXI;
+			};
+			name = Debug;
+		};
+		ED38ADCD96F1C7F5F12929DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renatocamargo.BibliotecaMaconicaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BreviarioMaconicoXXI;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		010000000000000000000050 /* Build configuration list for PBXNativeTarget "BreviarioMaconicoXXI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010000000000000000000051 /* Debug */,
+				010000000000000000000052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		010000000000000000000070 /* Build configuration list for PBXProject "BreviarioMaconicoXXI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010000000000000000000071 /* Debug */,
+				010000000000000000000072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		020000000000000000000050 /* Build configuration list for PBXNativeTarget "BreviarioWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				020000000000000000000051 /* Debug */,
+				020000000000000000000052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		030000000000000000000050 /* Build configuration list for PBXNativeTarget "BreviarioWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				030000000000000000000051 /* Debug */,
+				030000000000000000000052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		533956A5C01B9B6D9712960B /* Build configuration list for PBXNativeTarget "BibliotecaMaconicaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED38ADCD96F1C7F5F12929DA /* Release */,
+				A5EF9BC9E2B39EDF2EAA57B6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D44F1F15ECC67A0C303C3AA /* Build configuration list for PBXNativeTarget "BreviarioMaconicoXXITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C61B73A1D8C82992EF6CEE0 /* Release */,
+				9A1F9685E32B19C9A7F2C21D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 010000000000000000000060 /* Project object */;
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "product": "Biblioteca Maçônica",
+  "policy": "Uma alteração comum somente é considerada concluída após implementação e validação em iOS e Android.",
+  "functionalAudit": {
+    "date": "2026-09-22",
+    "status": "pending",
+    "report": "Paridade/RELATORIO_FILTROS_ACESSIBILIDADE_2026-09-22.md",
+    "openGaps": [
+      "full_screen_reading_and_highlights",
+      "search_scopes_and_index_coverage",
+      "study_paths_and_thematic_collection_rules",
+      "export_formatting_and_selection",
+      "local_pdf_fidelity_and_original_preservation",
+      "automatic_restore_on_real_devices",
+      "watch_widget_notifications_end_to_end",
+      "grounded_ai_citations_and_retrieval_evaluation",
+      "performance_full_catalog_real_devices",
+      "accessibility_and_responsive_device_matrix"
+    ]
+  },
+  "sharedSources": {
+    "breviario": {
+      "ios": "BibliotecaMaconica_Dev/Resources/breviario.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/breviario.json",
+      "mustBeIdentical": true
+    },
+    "ragCatalog": {
+      "ios": "BibliotecaMaconica_Dev/Resources/rag_catalogo.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/rag_catalogo.json",
+      "mustBeIdentical": true
+    },
+    "studyRules": {
+      "canonical": "Paridade/regras_estudo_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/regras_estudo_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/regras_estudo_v1.json",
+      "mustBeIdentical": true
+    },
+    "commonTestCases": {
+      "canonical": "Paridade/casos_comuns_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_comuns_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_comuns_v1.json",
+      "mustBeIdentical": true
+    },
+    "progressSyncTestCases": {
+      "canonical": "Paridade/fixtures/progress_sync_v1.tsv",
+      "ios": "Paridade/fixtures/progress_sync_v1.tsv",
+      "android": "Paridade/fixtures/progress_sync_v1.tsv",
+      "mustBeIdentical": true
+    }
+  },
+  "commonCapabilities": [
+    "home_library_areas",
+    "daily_reading",
+    "continuous_library_reader",
+    "structured_fts_search",
+    "footnote_full_text_search",
+    "global_index",
+    "offline_single_download",
+    "offline_bulk_download",
+    "favorites_read_comments_statistics",
+    "text_edit_and_restore",
+    "highlights",
+    "personal_reflection_history",
+    "thematic_collections",
+    "structured_study_paths",
+    "advanced_study_dossier",
+    "optional_grounded_ai",
+    "official_sources",
+    "text_to_speech",
+    "themes_and_reading_preferences",
+    "multi_work_daily_notifications",
+    "premium_pdf_export",
+    "automatic_user_data_backup",
+    "secure_api_key_storage",
+    "widget_deep_link",
+    "work_request_sharing",
+    "local_pdf_ocr_import"
+  ],
+  "nativeEquivalents": [
+    {
+      "capability": "watch_companion",
+      "ios": "watchOS",
+      "android": "Wear OS",
+      "requiredForFullParity": true
+    },
+    {
+      "capability": "cloud_restore",
+      "ios": "iCloud",
+      "android": "Android Auto Backup"
+    }
+  ],
+  "platformSpecific": [
+    {
+      "capability": "local_pdf_ocr_import",
+      "ios": "native",
+      "android": "native_mlkit",
+      "reason": "Cada plataforma utiliza seu motor OCR nativo, preservando páginas, imagens, parágrafos, notas detectadas e indexação local."
+    }
+  ],
+  "releaseGates": [
+    "shared_files_match",
+    "versions_match",
+    "debug_builds_pass",
+    "release_builds_pass",
+    "parity_contract_passes",
+    "critical_navigation_smoke_passes",
+    "user_data_migration_verified"
+  ]
+}
