@@ -49,4 +49,4 @@ Rodada dirigida aos cinco problemas criticos de usabilidade encontrados na anali
 
 - Compilar e rodar os testes Android antes de considerar a paridade desta rodada concluida.
 - No Android, rascunhos ainda nao sao gravados se o sistema encerrar o app em segundo plano sem sair da leitura.
-- O gate `Tools/verificar_paridade.sh` ja falhava antes desta rodada: a auditoria ainda proibe o Breviario de Rizzardo, adicionado no commit `dfe9cca`.
+- Gate `Tools/verificar_paridade.sh` corrigido: a auditoria proibia o Breviario de Rizzardo, integrado no commit `dfe9cca`. As regras agora exigem a obra integrada nas duas plataformas e a exclusao da sua copia no catalogo RAG. `LibraryStudySession` foi para arquivo proprio para respeitar o limite modular de 600 linhas. O gate volta a passar (verificacao estrutural apenas).

@@ -155,22 +155,6 @@ import java.time.LocalDate
 import java.util.Calendar
 import java.util.Locale
 
-internal const val MENSAGEM_INICIAL_BUSCA = "Digite um termo para buscar nas obras baixadas."
-internal const val MENSAGEM_INICIAL_DOSSIE = "Informe um tema para montar um dossiê com fontes do acervo baixado."
-
-/** Keeps search and dossier inputs and results while the user opens a result and comes back. */
-internal class LibraryStudySession(statusInicial: String, termoInicial: String = "") {
-    var termo by mutableStateOf(termoInicial)
-    var metadataFilter by mutableStateOf(LibraryMetadataFilter())
-    var area by mutableStateOf<BibliotecaArea?>(null)
-    var obraId by mutableStateOf<String?>(null)
-    var resultados by mutableStateOf(emptyList<BibliotecaBuscaResultado>())
-    var status by mutableStateOf(statusInicial)
-    var temMais by mutableStateOf(false)
-    var analiseIa by mutableStateOf("")
-    var ultimaConsulta: List<Any?>? = null
-}
-
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun StructuredSearchScreen(
