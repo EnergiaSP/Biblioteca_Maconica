@@ -17,38 +17,47 @@ class BreviarioRepository private constructor(context: Context) {
     private val pesquisaNormalizada: Map<String, String>
 
     init {
-        val json = context.assets.open("breviario.json")
-            .bufferedReader(Charsets.UTF_8)
-            .use { it.readText() }
-        val root = JSONObject(json)
+        val roots = listOf(
+            "breviario.json" to ObraId.BREVIARIO_SECULO_XXI,
+            "breviario_rizzardo.json" to ObraId.BREVIARIO_RIZZARDO
+        ).map { (asset, defaultWorkId) ->
+            defaultWorkId to JSONObject(context.assets.open(asset).bufferedReader(Charsets.UTF_8).use { it.readText() })
+        }
 
-        itens = root.getJSONArray("itens").toList { obj ->
-            BreviarioItem(
-                id = obj.optInt("id"),
-                data = obj.optString("data"),
-                titulo = obj.optString("titulo"),
-                autor = obj.optString("autor"),
-                texto = TextoFormatter.textoComParagrafos(obj.optString("texto")),
-                rodape = TextoFormatter.rodapeEmLinhas(obj.optString("rodape")),
-                pagina = obj.optInt("pagina"),
-                obraId = obj.optString("obraID").ifBlank { ObraId.BREVIARIO_SECULO_XXI }
-            )
-        }.sortedWith(compareBy({ it.data.substringAfter("/").toIntOrNull() ?: 0 }, { it.data.substringBefore("/").toIntOrNull() ?: 0 }))
+        itens = roots.flatMap { (defaultWorkId, root) ->
+            root.getJSONArray("itens").toList { obj ->
+                BreviarioItem(
+                    id = obj.optInt("id"),
+                    data = obj.optString("data"),
+                    titulo = obj.optString("titulo"),
+                    autor = obj.optString("autor"),
+                    texto = TextoFormatter.textoComParagrafos(obj.optString("texto")),
+                    rodape = TextoFormatter.rodapeEmLinhas(obj.optString("rodape")),
+                    pagina = obj.optInt("pagina"),
+                    obraId = obj.optString("obraID").ifBlank { defaultWorkId }
+                )
+            }
+        }.sortedWith(compareBy({ it.obraId }, { it.data.substringAfter("/").toIntOrNull() ?: 0 }, { it.data.substringBefore("/").toIntOrNull() ?: 0 }))
 
-        indice = root.getJSONArray("indiceRemissivo").toList { obj ->
-            IndiceRemissivoEntry(
-                id = obj.optInt("id"),
-                termo = obj.optString("termo"),
-                datas = obj.optJSONArray("datas").strings(),
-                paginas = obj.optJSONArray("paginas").ints()
-            )
-        }.sortedBy { normalized(it.termo) }
+        indice = roots.flatMap { (defaultWorkId, root) ->
+            root.getJSONArray("indiceRemissivo").toList { obj ->
+                IndiceRemissivoEntry(
+                    id = obj.optInt("id"),
+                    termo = obj.optString("termo"),
+                    datas = obj.optJSONArray("datas").strings(),
+                    paginas = obj.optJSONArray("paginas").ints(),
+                    obraId = obj.optString("obraID").ifBlank { defaultWorkId }
+                )
+            }
+        }.sortedWith(compareBy({ it.obraId }, { normalized(it.termo) }))
 
-        itensPorData = itens.associateBy { it.data }
+        itensPorData = buildMap { itens.forEach { item -> if (item.data !in this) put(item.data, item) } }
         itensPorObraEData = itens.associateBy { "${it.obraId}|${it.data}" }
-        val indicePorData = indice.flatMap { entry -> entry.datas.map { it to entry.termo } }.groupBy({ it.first }, { it.second })
+        val indicePorData = indice.flatMap { entry -> entry.datas.map { "${entry.obraId}|$it" to entry.termo } }
+            .groupBy({ it.first }, { it.second })
         pesquisaNormalizada = itens.associate { item -> item.chavePersistencia to normalized(
-            listOf(item.titulo, item.texto, item.rodape, item.data, item.autor, indicePorData[item.data].orEmpty().joinToString(" ")).joinToString(" ")) }
+            listOf(item.titulo, item.texto, item.rodape, item.data, item.autor,
+                indicePorData["${item.obraId}|${item.data}"].orEmpty().joinToString(" ")).joinToString(" ")) }
     }
 
     fun hoje(): BreviarioItem = porData(LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM")))

@@ -152,6 +152,18 @@ struct BibliotecaObra: Codable, Identifiable, Equatable {
         ativa: true
     )
 
+    static let breviarioRizzardo = BibliotecaObra(
+        id: ObraID.breviarioRizzardo,
+        titulo: "Breviário Maçônico - Rizzardo da Camino",
+        autor: "Rizzardo da Camino",
+        area: .breviarios,
+        tipo: .breviarioDiario,
+        recursoJSON: "breviario_rizzardo",
+        descricao: "365 leituras diárias permanentes, organizadas por data, tema e índice remissivo.",
+        assuntos: ["Leitura diária", "Simbolismo", "Filosofia", "Ritualística", "Espiritualidade"],
+        ativa: true
+    )
+
     static let dicionarioMaconicoI = BibliotecaObra(
         id: ObraID.dicionarioMaconicoI,
         titulo: "Dicionário Maçônico I",
@@ -202,6 +214,7 @@ struct BibliotecaObra: Codable, Identifiable, Equatable {
 
     static let padroes: [BibliotecaObra] = [
         .breviarioSeculoXXI,
+        .breviarioRizzardo,
         .dicionarioMaconicoI,
         .dicionarioMaconicoII,
         .judiciarioBase,
@@ -211,6 +224,7 @@ struct BibliotecaObra: Codable, Identifiable, Equatable {
 
 enum ObraID {
     static let breviarioSeculoXXI = "breviario_seculo_xxi"
+    static let breviarioRizzardo = "breviario_rizzardo_da_camino"
     static let dicionarioMaconicoI = "dicionario_maconico_i"
     static let dicionarioMaconicoII = "dicionario_maconico_ii"
     static let judiciarioBase = "judiciario_maconico"

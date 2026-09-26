@@ -146,7 +146,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                 obras = obras
             )
         }
-            .filterNot { pacote -> pacote.obras.any { it.id == "breviario_maconico_rizzardo_da_camino" } }
+            .filterNot { pacote -> pacote.obras.any { it.id in setOf(ObraId.BREVIARIO_RIZZARDO, "breviario_maconico_rizzardo_da_camino") } }
             .sortedWith(compareBy<BibliotecaPacoteCatalogo> { it.area.ordinal }.thenBy { normalized(it.tituloPrincipal) })
     }
 
@@ -320,7 +320,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             if (cancelled()) throw kotlinx.coroutines.CancellationException()
             val permitidas = candidatos.filter { localFile(it) == localFile(pacote) }
                 .flatMap { it.obras }.filter(filtro::matches).map { it.id }.toSet()
-            val excluidas = mutableSetOf(ObraId.BREVIARIO_SECULO_XXI)
+            val excluidas = obrasBreviariosIntegrados.mapTo(mutableSetOf()) { it.id }
             abrirSomenteLeitura(localFile(pacote)).use { db ->
                 // A file may contain works absent from this catalog entry.
                 db.rawQuery("SELECT id FROM rag_obras", emptyArray()).use { cursor ->
@@ -377,10 +377,13 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                 area, obraId, quantidade, excluidas, cancelled))
         }
 
-        if ((area == null || area == BibliotecaArea.Breviarios) && filtro.matches(obraBreviarioIntegrado)) {
+        if (area == null || area == BibliotecaArea.Breviarios) {
             val embedded = BreviarioRepository.get(appContext)
-            embedded.buscarLeituras(query).filter { obraId == null || it.obraId == obraId }.forEach {
-                resultados.add(BibliotecaBuscaResultado(it.obraId, "Breviário Maçônico - Kennyo Ismail", BibliotecaArea.Breviarios,
+            val allowedWorks = obrasBreviariosIntegrados.filter(filtro::matches).associateBy { it.id }
+            embedded.buscarLeituras(query).filter { item ->
+                item.obraId in allowedWorks && (obraId == null || item.obraId == obraId)
+            }.forEach {
+                resultados.add(BibliotecaBuscaResultado(it.obraId, allowedWorks.getValue(it.obraId).titulo, BibliotecaArea.Breviarios,
                     it.pagina, it.texto, data = it.data, rodape = it.rodape))
             }
         }
@@ -407,29 +410,37 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
 
     fun obrasDisponiveis(area: BibliotecaArea? = null): List<BibliotecaObraCatalogo> =
         (obrasInstaladas(area) + if (area == null || area == BibliotecaArea.Breviarios)
-            listOf(obraBreviarioIntegrado)
+            obrasBreviariosIntegrados
         else emptyList()).distinctBy { it.id }.sortedBy { normalized(it.titulo) }
 
-    private val obraBreviarioIntegrado get() = BibliotecaObraCatalogo(
-        ObraId.BREVIARIO_SECULO_XXI, "Breviário Maçônico - Kennyo Ismail", "Kennyo Ismail", 365,
-        listOf("Leitura diária", "Reflexão", "Ética", "Filosofia", "Ritualística")
+    private val obrasBreviariosIntegrados get() = listOf(
+        BibliotecaObraCatalogo(
+            ObraId.BREVIARIO_SECULO_XXI, "Breviário Maçônico - Kennyo Ismail", "Kennyo Ismail", 365,
+            listOf("Leitura diária", "Reflexão", "Ética", "Filosofia", "Ritualística")
+        ),
+        BibliotecaObraCatalogo(
+            ObraId.BREVIARIO_RIZZARDO, "Breviário Maçônico - Rizzardo da Camino", "Rizzardo da Camino", 365,
+            listOf("Leitura diária", "Simbolismo", "Filosofia", "Ritualística", "Espiritualidade")
+        )
     )
 
     fun indiceRemissivoGlobal(area: BibliotecaArea? = null, obraId: String? = null): List<BibliotecaIndiceReferencia> {
         if (area != null && area != BibliotecaArea.Breviarios) return emptyList()
-        if (obraId != null && obraId != ObraId.BREVIARIO_SECULO_XXI) return emptyList()
-        return BreviarioRepository.get(appContext).indice.map {
-            BibliotecaIndiceReferencia(ObraId.BREVIARIO_SECULO_XXI, "Breviário Maçônico - Kennyo Ismail", it)
+        val works = obrasBreviariosIntegrados.associateBy { it.id }
+        if (obraId != null && obraId !in works) return emptyList()
+        return BreviarioRepository.get(appContext).indice.filter { obraId == null || it.obraId == obraId }.map {
+            BibliotecaIndiceReferencia(it.obraId, works.getValue(it.obraId).titulo, it)
         }.sortedWith(compareBy<BibliotecaIndiceReferencia> { normalized(it.entrada.termo) }.thenBy { it.id })
     }
 
     fun indicePaginas(obraId: String, limite: Int = 50, filtro: String = ""): List<BibliotecaBuscaResultado> {
-        if (obraId == ObraId.BREVIARIO_SECULO_XXI) {
+        if (obraId in obrasBreviariosIntegrados.map { it.id }) {
             val consulta = normalized(filtro)
+            val tituloObra = obrasBreviariosIntegrados.first { it.id == obraId }.titulo
             return BreviarioRepository.get(appContext).itens.asSequence()
                 .filter { it.obraId == obraId && normalized("${it.data} ${TextoFormatter.dataPorExtenso(it.data)} ${it.titulo}").contains(consulta) }
                 .sortedBy { it.pagina }.take(limite.coerceAtLeast(1)).map {
-                    BibliotecaBuscaResultado(it.obraId, "Breviário Maçônico - Kennyo Ismail", BibliotecaArea.Breviarios,
+                    BibliotecaBuscaResultado(it.obraId, tituloObra, BibliotecaArea.Breviarios,
                         it.pagina, it.titulo, data = it.data, rodape = it.rodape)
                 }.toList()
         }

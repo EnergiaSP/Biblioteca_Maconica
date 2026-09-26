@@ -503,6 +503,14 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertNil(BreviarioSnapshotProvider.leitura(data: "99/99", obraID: "breviario_seculo_xxi"))
     }
 
+    func testWidgetLoadsBothPermanentBreviariesForTheDay() throws {
+        let date = try XCTUnwrap(Calendar(identifier: .gregorian).date(from: DateComponents(year: 2026, month: 9, day: 26)))
+        let readings = BreviarioSnapshotProvider.leiturasDoDia(data: date)
+        XCTAssertEqual(readings.count, 2)
+        XCTAssertEqual(Set(readings.map(\.obraID)), Set(["breviario_seculo_xxi", "breviario_rizzardo_da_camino"]))
+        XCTAssertTrue(readings.allSatisfy { $0.data == "26/09" && !$0.titulo.isEmpty && !$0.texto.isEmpty })
+    }
+
     func testLiveGeminiGroundingAndMissingEvidence() async throws {
         guard ProcessInfo.processInfo.environment["RUN_LIVE_GEMINI_TESTS"] == "1" else {
             throw XCTSkip("Live Gemini requires an explicitly configured test credential and opt-in.")

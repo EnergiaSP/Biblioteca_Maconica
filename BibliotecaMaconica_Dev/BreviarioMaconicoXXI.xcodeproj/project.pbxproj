@@ -19,6 +19,8 @@
 		010000000000000000000106 /* PDFOCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000006 /* PDFOCRService.swift */; };
 		010000000000000000000107 /* BreviarioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000007 /* BreviarioStore.swift */; };
 		010000000000000000000108 /* breviario.json in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000008 /* breviario.json */; };
+		A10000000000000000000101 /* breviario_rizzardo.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000100 /* breviario_rizzardo.json */; };
+		A10000000000000000000102 /* breviario_rizzardo.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000100 /* breviario_rizzardo.json */; };
 		010000000000000000000109 /* BreviarioImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000A /* BreviarioImportService.swift */; };
 		01000000000000000000010A /* IndiceRemissivoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000B /* IndiceRemissivoEntry.swift */; };
 		01000000000000000000010B /* BreviarioSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000C /* BreviarioSnapshot.swift */; };
@@ -172,6 +174,7 @@
 		010000000000000000000006 /* PDFOCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOCRService.swift; sourceTree = "<group>"; };
 		010000000000000000000007 /* BreviarioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioStore.swift; sourceTree = "<group>"; };
 		010000000000000000000008 /* breviario.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = breviario.json; sourceTree = "<group>"; };
+		A10000000000000000000100 /* breviario_rizzardo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = breviario_rizzardo.json; sourceTree = "<group>"; };
 		010000000000000000000009 /* BreviarioMaconicoXXI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreviarioMaconicoXXI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01000000000000000000000A /* BreviarioImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioImportService.swift; sourceTree = "<group>"; };
 		01000000000000000000000B /* IndiceRemissivoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndiceRemissivoEntry.swift; sourceTree = "<group>"; };
@@ -419,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				010000000000000000000008 /* breviario.json */,
+				A10000000000000000000100 /* breviario_rizzardo.json */,
 				01000000000000000000001B /* rag_catalogo.json */,
 				EE0000000000000000000002 /* regras_estudo_v1.json */,
 				EE0000000000000000000004 /* casos_comuns_v1.json */,
@@ -660,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010000000000000000000108 /* breviario.json in Resources */,
+				A10000000000000000000101 /* breviario_rizzardo.json in Resources */,
 				01000000000000000000011A /* rag_catalogo.json in Resources */,
 				EE0000000000000000000001 /* regras_estudo_v1.json in Resources */,
 				EE0000000000000000000003 /* casos_comuns_v1.json in Resources */,
@@ -674,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				020000000000000000000103 /* breviario.json in Resources */,
+				A10000000000000000000102 /* breviario_rizzardo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

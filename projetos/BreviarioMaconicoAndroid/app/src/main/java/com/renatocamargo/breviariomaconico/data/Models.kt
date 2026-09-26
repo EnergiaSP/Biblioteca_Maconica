@@ -16,13 +16,15 @@ data class BreviarioItem(
 
 object ObraId {
     const val BREVIARIO_SECULO_XXI = "breviario_seculo_xxi"
+    const val BREVIARIO_RIZZARDO = "breviario_rizzardo_da_camino"
 }
 
 data class IndiceRemissivoEntry(
     val id: Int,
     val termo: String,
     val datas: List<String>,
-    val paginas: List<Int>
+    val paginas: List<Int>,
+    val obraId: String = ObraId.BREVIARIO_SECULO_XXI
 )
 
 enum class AppThemeMode(val label: String) {

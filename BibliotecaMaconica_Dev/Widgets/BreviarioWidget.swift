@@ -3,24 +3,26 @@ import WidgetKit
 
 struct BreviarioWidgetEntry: TimelineEntry {
     let date: Date
-    let leitura: BreviarioSnapshot
+    let leituras: [BreviarioSnapshot]
+
+    var leituraPrincipal: BreviarioSnapshot { leituras.first ?? .vazio }
 }
 
 struct BreviarioWidgetProvider: TimelineProvider {
 
     func placeholder(in context: Context) -> BreviarioWidgetEntry {
-        BreviarioWidgetEntry(date: Date(), leitura: .vazio)
+        BreviarioWidgetEntry(date: Date(), leituras: [.vazio])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (BreviarioWidgetEntry) -> Void) {
-        completion(BreviarioWidgetEntry(date: Date(), leitura: BreviarioSnapshotProvider.leituraDoDia()))
+        completion(BreviarioWidgetEntry(date: Date(), leituras: BreviarioSnapshotProvider.leiturasDoDia()))
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<BreviarioWidgetEntry>) -> Void) {
         let agora = Date()
         let entrada = BreviarioWidgetEntry(
             date: agora,
-            leitura: BreviarioSnapshotProvider.leituraDoDia(data: agora)
+            leituras: BreviarioSnapshotProvider.leiturasDoDia(data: agora)
         )
         let proximaAtualizacao = Calendar.current.date(byAdding: .hour, value: 6, to: agora) ?? agora
 
@@ -45,7 +47,7 @@ struct BreviarioWidgetView: View {
             case .accessoryRectangular:
                 acessorioRetangular
             case .accessoryInline:
-                Text("\(entry.leitura.dataPorExtenso) - \(entry.leitura.titulo)")
+                Text(entry.leituras.prefix(2).map { "\($0.autor): \($0.titulo)" }.joined(separator: " • "))
             case .accessoryCircular:
                 acessorioCircular
             default:
@@ -53,7 +55,7 @@ struct BreviarioWidgetView: View {
             }
         }
         .containerBackground(fundoWidget, for: .widget)
-        .widgetURL(entry.leitura.deepLink)
+        .widgetURL(entry.leituraPrincipal.deepLink)
     }
 
     private var widgetPequeno: some View {
@@ -62,15 +64,13 @@ struct BreviarioWidgetView: View {
 
             Spacer(minLength: 2)
 
-            Text(entry.leitura.dataPorExtenso)
+            Text(entry.leituraPrincipal.dataPorExtenso)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
 
-            Text(entry.leitura.titulo)
-                .font(.headline)
-                .fontWeight(.semibold)
-                .lineLimit(4)
-                .minimumScaleFactor(0.78)
+            ForEach(Array(entry.leituras.prefix(2)), id: \.obraID) { leitura in
+                leituraCompacta(leitura, linhas: 2)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
@@ -79,20 +79,15 @@ struct BreviarioWidgetView: View {
         HStack(alignment: .top, spacing: 14) {
             simboloGrande
 
-            VStack(alignment: .leading, spacing: 7) {
-                Text(entry.leitura.dataPorExtenso)
+            VStack(alignment: .leading, spacing: 6) {
+                Text(entry.leituraPrincipal.dataPorExtenso)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
 
-                Text(entry.leitura.titulo)
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .lineLimit(2)
-
-                Text(entry.leitura.resumo)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(4)
+                ForEach(Array(entry.leituras.prefix(2)), id: \.obraID) { leitura in
+                    leituraCompacta(leitura, linhas: 1)
+                    if leitura.obraID != entry.leituras.prefix(2).last?.obraID { Divider() }
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -102,14 +97,12 @@ struct BreviarioWidgetView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(entry.leitura.dataPorExtenso)
+                    Text(entry.leituraPrincipal.dataPorExtenso)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
 
-                    Text(entry.leitura.titulo)
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .lineLimit(2)
+                    Text("Leituras dos dois Breviários")
+                        .font(.title3).fontWeight(.semibold)
                 }
 
                 Spacer()
@@ -118,30 +111,28 @@ struct BreviarioWidgetView: View {
 
             Divider()
 
-            Text(entry.leitura.trecho)
-                .font(.callout)
-                .foregroundStyle(.primary.opacity(0.82))
-                .lineLimit(9)
+            ForEach(Array(entry.leituras.prefix(2)), id: \.obraID) { leitura in
+                VStack(alignment: .leading, spacing: 4) {
+                    leituraCompacta(leitura, linhas: 1)
+                    Text(leitura.resumo).font(.caption).foregroundStyle(.secondary).lineLimit(3)
+                }
+                if leitura.obraID != entry.leituras.prefix(2).last?.obraID { Divider() }
+            }
 
             Spacer(minLength: 0)
 
-            Text(entry.leitura.autor)
-                .font(.caption2)
-                .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
 
     private var acessorioRetangular: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(entry.leitura.dataPorExtenso)
+            Text(entry.leituraPrincipal.dataPorExtenso)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
 
-            Text(entry.leitura.titulo)
-                .font(.headline)
-                .lineLimit(2)
-                .minimumScaleFactor(0.72)
+            Text(entry.leituras.prefix(2).map { $0.titulo }.joined(separator: " • "))
+                .font(.caption).lineLimit(2).minimumScaleFactor(0.65)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
@@ -151,10 +142,30 @@ struct BreviarioWidgetView: View {
             Image(systemName: "book.closed")
                 .font(.caption)
 
-            Text(entry.leitura.data.prefix(2))
+            Text(entry.leituraPrincipal.data.prefix(2))
                 .font(.headline)
                 .fontWeight(.bold)
                 .minimumScaleFactor(0.8)
+        }
+    }
+
+    @ViewBuilder
+    private func leituraCompacta(_ leitura: BreviarioSnapshot, linhas: Int) -> some View {
+        let conteudo = VStack(alignment: .leading, spacing: 1) {
+            Text(leitura.autor)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+            Text(leitura.titulo)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .lineLimit(linhas)
+                .minimumScaleFactor(0.72)
+        }
+        if let destino = leitura.deepLink {
+            Link(destination: destino) { conteudo }
+        } else {
+            conteudo
         }
     }
 
@@ -201,7 +212,7 @@ struct BreviarioWidget: Widget {
                 .padding()
         }
         .configurationDisplayName("Biblioteca Maçônica")
-        .description("Mostra a leitura do dia e abre diretamente o texto correspondente.")
+        .description("Mostra as leituras diárias dos dois Breviários e abre diretamente cada texto.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .accessoryCircular, .accessoryInline, .accessoryRectangular])
     }
 }

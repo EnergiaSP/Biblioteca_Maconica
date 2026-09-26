@@ -103,7 +103,14 @@ struct BreviarioItem: Codable, Identifiable {
     }
 
     var cabecalhoDocumental: String {
-        obraID == ObraID.breviarioSeculoXXI ? BreviarioImportService.cabecalho : "Biblioteca Maçônica"
+        switch obraID {
+        case ObraID.breviarioSeculoXXI:
+            BreviarioImportService.cabecalho
+        case ObraID.breviarioRizzardo:
+            "Breviário Maçônico - Rizzardo da Camino"
+        default:
+            "Biblioteca Maçônica"
+        }
     }
 
     var dataExportacao: String {

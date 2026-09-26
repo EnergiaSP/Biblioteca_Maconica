@@ -1,4 +1,7 @@
 import Foundation
+#if canImport(WidgetKit)
+import WidgetKit
+#endif
 
 struct BreviarioSnapshot: Codable, Identifiable {
     let id: Int
@@ -82,6 +85,9 @@ enum BreviarioSnapshotProvider {
         }
 
         UserDefaults(suiteName: appGroupID)?.set(dados, forKey: chaveSnapshotAtual)
+#if canImport(WidgetKit)
+        WidgetCenter.shared.reloadTimelines(ofKind: "BreviarioWidget")
+#endif
     }
 
     static func snapshotCompartilhadoAtual() -> BreviarioSnapshot? {
@@ -93,35 +99,34 @@ enum BreviarioSnapshotProvider {
     }
 
     static func leituraDoDia(bundle: Bundle = .main, data: Date = Date()) -> BreviarioSnapshot {
-        if let compartilhado = snapshotCompartilhadoAtual(),
-           compartilhado.data == formatter.string(from: data) {
-            return compartilhado
-        }
+        leiturasDoDia(bundle: bundle, data: data).first ?? .vazio
+    }
 
-        guard let url = bundle.url(forResource: "breviario", withExtension: "json"),
-              let dados = try? Data(contentsOf: url),
-              let breviario = decodificar(dados: dados) else {
-            return .vazio
-        }
-
+    static func leiturasDoDia(bundle: Bundle = .main, data: Date = Date()) -> [BreviarioSnapshot] {
         let dataHoje = formatter.string(from: data)
-        let item = breviario.itens.first { $0.data == dataHoje }
-            ?? breviario.itens.first
-
-        guard let item else {
-            return .vazio
+        let compartilhado = snapshotCompartilhadoAtual().flatMap {
+            $0.data == dataHoje ? $0 : nil
         }
 
-        return BreviarioSnapshot(
-            id: item.id,
-            data: item.data,
-            titulo: item.titulo,
-            frase: fraseExibicao(frase: item.frase, texto: item.texto) ?? "",
-            texto: item.texto,
-            autor: item.autor ?? autorPadrao,
-            obraID: item.obraID ?? "breviario_seculo_xxi",
-            rodape: item.rodape
-        )
+        let leituras = recursosEmbutidos.compactMap { recurso -> BreviarioSnapshot? in
+            guard let url = bundle.url(forResource: recurso.nome, withExtension: "json"),
+                  let dados = try? Data(contentsOf: url),
+                  let breviario = decodificar(dados: dados),
+                  let item = breviario.itens.first(where: { $0.data == dataHoje }) ?? breviario.itens.first else {
+                return nil
+            }
+
+            let obraID = item.obraID ?? recurso.obraID
+            if let compartilhado, compartilhado.obraID == obraID {
+                return compartilhado
+            }
+            return snapshot(item: item, obraID: obraID, autorPadrao: recurso.autor)
+        }
+
+        if leituras.isEmpty, let compartilhado {
+            return [compartilhado]
+        }
+        return leituras
     }
 
     // A notification may be opened on another day. Never substitute today's reading.
@@ -129,13 +134,19 @@ enum BreviarioSnapshotProvider {
         if let atual = snapshotCompartilhadoAtual(), atual.data == data, atual.obraID == obraID {
             return atual
         }
-        guard let url = bundle.url(forResource: "breviario", withExtension: "json"),
+        let recurso = recursosEmbutidos.first(where: { $0.obraID == obraID })
+        guard let recurso,
+              let url = bundle.url(forResource: recurso.nome, withExtension: "json"),
               let dados = try? Data(contentsOf: url),
               let acervo = decodificar(dados: dados),
               let item = acervo.itens.first(where: {
                   $0.data == data && ($0.obraID ?? "breviario_seculo_xxi") == obraID
               }) else { return nil }
-        return BreviarioSnapshot(
+        return snapshot(item: item, obraID: obraID, autorPadrao: recurso.autor)
+    }
+
+    private static func snapshot(item: SnapshotItem, obraID: String, autorPadrao: String) -> BreviarioSnapshot {
+        BreviarioSnapshot(
             id: item.id, data: item.data, titulo: item.titulo,
             frase: fraseExibicao(frase: item.frase, texto: item.texto) ?? "",
             texto: item.texto, autor: item.autor ?? autorPadrao, obraID: obraID, rodape: item.rodape
@@ -199,7 +210,10 @@ enum BreviarioSnapshotProvider {
             .joined(separator: " ")
     }
 
-    private static let autorPadrao = "Kennyo Ismail"
+    private static let recursosEmbutidos = [
+        (nome: "breviario", obraID: "breviario_seculo_xxi", autor: "Kennyo Ismail"),
+        (nome: "breviario_rizzardo", obraID: "breviario_rizzardo_da_camino", autor: "Rizzardo da Camino")
+    ]
 
     private static let formatter: DateFormatter = {
         let formatter = DateFormatter()
