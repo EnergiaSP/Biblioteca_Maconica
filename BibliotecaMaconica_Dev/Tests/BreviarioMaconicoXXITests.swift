@@ -573,9 +573,11 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         guard FileManager.default.fileExists(atPath: catalogURL.path) else { throw XCTSkip("Audit corpus not installed") }
         let catalog = try BibliotecaRAGCatalogService(catalogoURL: catalogURL)
         let rules = RegrasEstudo.compartilhadas
-        let words = (rules.colecoes.map(\.palavrasChave) + rules.trilhas.map(\.palavrasChave)).map { $0.map(RegrasEstudo.normalizar) }
+        let words = (rules.colecoes.map(\.palavrasChave) + rules.trilhas.map(\.palavrasChave))
+            .map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
+        let allWords = words.reduce(into: Set<String>()) { $0.formUnion($1) }
         let limits = Array(repeating: rules.collectionLimit, count: rules.colecoes.count) + Array(repeating: rules.pathLimit, count: rules.trilhas.count)
-        var selected = Array(repeating: [BreviarioItem](), count: words.count)
+        var selected = Array(repeating: [RegrasEstudo.ItemPontuado](), count: words.count)
         var total = 0
         var maxBatch = 0
         let start = ProcessInfo.processInfo.systemUptime
@@ -583,9 +585,11 @@ final class BreviarioMaconicoXXITests: XCTestCase {
             try catalog.percorrerItens(obraID: work.id) { batch in
                 total += batch.count
                 maxBatch = max(maxBatch, batch.count)
-                let texts = Dictionary(uniqueKeysWithValues: batch.map { ($0.chavePersistencia, RegrasEstudo.normalizar([$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " "))) })
+                let counts = Dictionary(uniqueKeysWithValues: batch.map {
+                    ($0.chavePersistencia, RegrasEstudo.contarPalavras(RegrasEstudo.normalizar([$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " ")), palavras: allWords))
+                })
                 for i in words.indices {
-                    selected[i] = RegrasEstudo.incorporarNormalizados(selected[i], lote: batch, palavras: words[i], textos: texts, limite: limits[i])
+                    selected[i] = RegrasEstudo.incorporarContagens(selected[i], lote: batch, palavras: words[i], contagens: counts, limite: limits[i])
                 }
                 return true
             }
@@ -595,12 +599,12 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         for i in selected.indices {
             XCTAssertFalse(selected[i].isEmpty)
             XCTAssertLessThanOrEqual(selected[i].count, limits[i])
-            XCTAssertTrue(selected[i].allSatisfy { ($0.pagina ?? 0) > 0 })
+            XCTAssertTrue(selected[i].allSatisfy { ($0.item.pagina ?? 0) > 0 })
         }
         let report: [String: Any] = ["pages": total, "maxBatch": maxBatch, "milliseconds": (ProcessInfo.processInfo.systemUptime - start) * 1000,
             "resultsPerRule": selected.map(\.count),
             "ruleIDs": rules.colecoes.map(\.id) + rules.trilhas.map(\.id),
-            "selectedPages": selected.map { $0.map { "\($0.obraID):\($0.pagina ?? 0)" } },
+            "selectedPages": selected.map { $0.map { "\($0.item.obraID):\($0.item.pagina ?? 0)" } },
             "environment": "simulator, not physical certification"]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: documents.appendingPathComponent("medicao-estudos-ios.json"), options: .atomic)
     }
@@ -693,6 +697,30 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertThrowsError(try service.buscar(termo: "simbolismo", escopo: .appTodo, area: nil, obraID: nil))
     }
 
+    /// Phase 1 scores study themes straight from the FTS index; the platform SQLite must provide fts5vocab.
+    func testSystemSQLiteSupportsIndexOnlyTermCounts() throws {
+        var db: OpaquePointer?
+        XCTAssertEqual(sqlite3_open(":memory:", &db), SQLITE_OK)
+        defer { sqlite3_close(db) }
+        let setup = """
+        CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2');
+        INSERT INTO rag_fts VALUES ('a', 'A Escada de Jacó e a escada do templo.');
+        INSERT INTO rag_fts VALUES ('b', 'Leitura sem o termo.');
+        CREATE VIRTUAL TABLE temp.vocab USING fts5vocab(main, rag_fts, 'instance');
+        """
+        XCTAssertEqual(sqlite3_exec(db, setup, nil, nil, nil), SQLITE_OK, String(cString: sqlite3_errmsg(db)))
+        var statement: OpaquePointer?
+        let query = "SELECT doc, count(DISTINCT term), count(*) FROM temp.vocab WHERE term IN ('escada', 'jaco', 'lei') GROUP BY doc"
+        XCTAssertEqual(sqlite3_prepare_v2(db, query, -1, &statement, nil), SQLITE_OK)
+        defer { sqlite3_finalize(statement) }
+        var rows: [[Int]] = []
+        while sqlite3_step(statement) == SQLITE_ROW {
+            rows.append((0..<3).map { Int(sqlite3_column_int64(statement, Int32($0))) })
+        }
+        // Whole words, accents folded: "lei" does not count inside "Leitura".
+        XCTAssertEqual(rows, [[1, 2, 3]])
+    }
+
     func testSharedStudySelectionIsIndependentOfBatchSizeAndOrder() throws {
         struct Fixture: Decodable {
             struct Item: Decodable { let work, date, title, body, notes, index: String; let page: Int }
@@ -712,7 +740,7 @@ final class BreviarioMaconicoXXITests: XCTestCase {
                     XCTAssertLessThanOrEqual(selecionados.count, fixture.limit)
                 }
                 XCTAssertEqual(selecionados.map(\.chavePersistencia), fixture.expected)
-                XCTAssertEqual(selecionados.first?.rodape, "578 Estudo da ÉTICA.")
+                XCTAssertEqual(selecionados.first { $0.chavePersistencia == "a_P2" }?.rodape, "578 Estudo da ÉTICA.")
             }
         }
         XCTAssertTrue(RegrasEstudo.selecionar(itens, palavras: fixture.keywords, textos: textos, limite: 0).isEmpty)

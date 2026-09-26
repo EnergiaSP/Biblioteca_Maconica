@@ -22,22 +22,26 @@ func atualizarConteudoPremiumCache() {
             var obrasComFalha: [String] = []
             let catalogo = try? BibliotecaRAGCatalogService()
             let regras = RegrasEstudo.compartilhadas
-            let palavras = (regras.colecoes.map(\.palavrasChave) + regras.trilhas.map(\.palavrasChave)).map { $0.map(RegrasEstudo.normalizar) }
+            let palavras = (regras.colecoes.map(\.palavrasChave) + regras.trilhas.map(\.palavrasChave))
+                .map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
+            let todasPalavras = palavras.reduce(into: Set<String>()) { $0.formUnion($1) }
             let limites = Array(repeating: regras.collectionLimit, count: regras.colecoes.count) +
                 Array(repeating: regras.pathLimit, count: regras.trilhas.count)
-            var selecionados = Array(repeating: [BreviarioItem](), count: palavras.count)
+            var selecionados = Array(repeating: [RegrasEstudo.ItemPontuado](), count: palavras.count)
             for obra in obras {
                 if Task.isCancelled { return }
                 if obra.recursoJSON == nil && BreviarioStore.urlImportadoExistente(obraID: obra.id) == nil {
                     do {
                         try catalogo?.percorrerItens(obraID: obra.id) { lote in
                             if Task.isCancelled { return false }
-                            let textos = Dictionary(uniqueKeysWithValues: lote.map {
-                                ($0.chavePersistencia, RegrasEstudo.normalizar([$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " ")))
+                            let contagens = Dictionary(uniqueKeysWithValues: lote.map {
+                                ($0.chavePersistencia, RegrasEstudo.contarPalavras(
+                                    RegrasEstudo.normalizar([$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " ")),
+                                    palavras: todasPalavras))
                             })
                             for i in palavras.indices {
-                                selecionados[i] = RegrasEstudo.incorporarNormalizados(selecionados[i], lote: lote,
-                                    palavras: palavras[i], textos: textos, limite: limites[i])
+                                selecionados[i] = RegrasEstudo.incorporarContagens(selecionados[i], lote: lote,
+                                    palavras: palavras[i], contagens: contagens, limite: limites[i])
                             }
                             return true
                         }
@@ -53,7 +57,7 @@ func atualizarConteudoPremiumCache() {
                 }
             }
             var chaves = Set(todosItens.map(\.chavePersistencia))
-            todosItens += selecionados.flatMap { $0 }.filter { chaves.insert($0.chavePersistencia).inserted }
+            todosItens += selecionados.flatMap { $0 }.map(\.item).filter { chaves.insert($0.chavePersistencia).inserted }
             let historico = todosItens + itens.filter { chaves.insert($0.chavePersistencia).inserted }
             let resultado = Self.montarConteudoPremiumCache(itens: todosItens, indice: [], termosPorChave: termosPorChave, itensHistorico: historico)
             let avisoFalhas = obrasComFalha.isEmpty ? nil : "Não foi possível consultar algumas obras nas coleções: " + obrasComFalha.joined(separator: ", ")
@@ -99,19 +103,25 @@ func atualizarConteudoPremiumCache() {
             ].joined(separator: " "))
         }
 
-        let colecoes = ColecaoTematica.padroes.map { colecao in
-            let itensColecao = RegrasEstudo.incorporarNormalizados([], lote: itens, palavras: colecao.palavrasChave.map(RegrasEstudo.normalizar),
-                textos: textosBusca, limite: RegrasEstudo.compartilhadas.collectionLimit)
+        let regras = RegrasEstudo.compartilhadas
+        let palavrasPorRegra = (regras.colecoes.map(\.palavrasChave) + regras.trilhas.map(\.palavrasChave))
+            .map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
+        let todasPalavras = palavrasPorRegra.reduce(into: Set<String>()) { $0.formUnion($1) }
+        let contagens = textosBusca.mapValues { RegrasEstudo.contarPalavras($0, palavras: todasPalavras) }
+
+        let colecoes = ColecaoTematica.padroes.enumerated().map { indice, colecao in
+            let itensColecao = RegrasEstudo.incorporarContagens([], lote: itens, palavras: palavrasPorRegra[indice],
+                contagens: contagens, limite: regras.collectionLimit).map(\.item)
 
             return colecao.comItens(itensColecao)
         }
 
-        let trilhas = RegrasEstudo.compartilhadas.trilhas.map { regra in
+        let trilhas = regras.trilhas.enumerated().map { indice, regra in
             TrilhaEstudo(id: regra.id, titulo: regra.titulo, subtitulo: regra.subtitulo, objetivo: regra.objetivo,
                          icone: regra.icone, instrucao: regra.instrucao, duracaoSugerida: regra.duracaoSugerida,
-                         etapas: regra.etapas, itens: RegrasEstudo.incorporarNormalizados([], lote: itens,
-                            palavras: regra.palavrasChave.map(RegrasEstudo.normalizar), textos: textosBusca,
-                            limite: RegrasEstudo.compartilhadas.pathLimit))
+                         etapas: regra.etapas, itens: RegrasEstudo.incorporarContagens([], lote: itens,
+                            palavras: palavrasPorRegra[regras.colecoes.count + indice], contagens: contagens,
+                            limite: regras.pathLimit).map(\.item))
         }
 
         let historico = (itensHistorico ?? itens).compactMap { item in

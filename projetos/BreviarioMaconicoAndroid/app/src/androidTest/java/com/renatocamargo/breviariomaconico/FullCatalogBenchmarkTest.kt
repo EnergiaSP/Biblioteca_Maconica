@@ -22,9 +22,9 @@ class FullCatalogBenchmarkTest {
         assertEquals(314, packages.size)
         assertTrue(packages.all { catalog.localFile(it).isFile })
         val rules = StudyRules.load(context)
-        val words = (rules.collections.map { it.keywords } + rules.paths.map { it.keywords }).map { it.map(::normalized) }
+        val words = (rules.collections.map { it.keywords } + rules.paths.map { it.keywords }).map { it.map(StudyRules::studyNormalized) }
         val limits = List(rules.collections.size) { rules.collectionLimit } + List(rules.paths.size) { rules.pathLimit }
-        val selected = MutableList(words.size) { emptyList<BreviarioItem>() }
+        val selected = MutableList(words.size) { emptyList<ScoredItem>() }
         val works = packages.flatMap { it.obras }
         var pages = 0
         var maxBatch = 0
@@ -33,7 +33,7 @@ class FullCatalogBenchmarkTest {
             catalog.percorrerItensEstudo(work.id) { batch ->
                 pages += batch.size
                 maxBatch = maxOf(maxBatch, batch.size)
-                val texts = batch.associate { it.chavePersistencia to normalized(listOf(it.titulo, it.texto, it.rodape).joinToString(" ")) }
+                val texts = batch.associate { it.chavePersistencia to StudyRules.studyNormalized(listOf(it.titulo, it.texto, it.rodape).joinToString(" ")) }
                 words.indices.forEach { i ->
                     selected[i] = StudyRules.incorporateNormalized(selected[i], batch, words[i], texts, limits[i])
                 }
@@ -51,7 +51,7 @@ class FullCatalogBenchmarkTest {
             .put("milliseconds", SystemClock.elapsedRealtime() - start)
             .put("resultsPerRule", JSONArray(selected.map { it.size }))
             .put("ruleIDs", JSONArray(rules.collections.map { it.id } + rules.paths.map { it.id }))
-            .put("selectedPages", JSONArray(selected.map { row -> JSONArray(row.map { "${it.obraId}:${it.pagina}" }) }))
+            .put("selectedPages", JSONArray(selected.map { row -> JSONArray(row.map { "${it.item.obraId}:${it.item.pagina}" }) }))
             .put("environment", "emulator, not physical certification").toString(2))
     }
 

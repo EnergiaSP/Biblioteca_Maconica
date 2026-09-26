@@ -137,7 +137,6 @@ import com.renatocamargo.breviariomaconico.data.PreferencesStore
 import com.renatocamargo.breviariomaconico.data.ReaderSettings
 import com.renatocamargo.breviariomaconico.data.StudyPath
 import com.renatocamargo.breviariomaconico.data.StudyRules
-import com.renatocamargo.breviariomaconico.data.normalized
 import com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo
 import com.renatocamargo.breviariomaconico.data.PersonalReflection
 import com.renatocamargo.breviariomaconico.data.ObraId
@@ -265,12 +264,12 @@ internal fun CollectionsScreen(
                 val readings = repo.itens.map { prefs.applyTextEdit(it) }
                 val texts = readings.associate { item ->
                     val indexTerms = if (item.obraId == ObraId.BREVIARIO_SECULO_XXI) termsByDate[item.data].orEmpty() else emptyList()
-                    item.chavePersistencia to normalized(listOf(item.titulo, item.texto, item.rodape, indexTerms.joinToString(" ")).joinToString(" "))
+                    item.chavePersistencia to StudyRules.studyNormalized(listOf(item.titulo, item.texto, item.rodape, indexTerms.joinToString(" ")).joinToString(" "))
                 }
                 val catalog = BibliotecaCatalogRepository.get(context)
                 val works = catalog.obrasInstaladas()
-                val collectionWords = rules.collections.associate { it.id to it.keywords.map(::normalized) }
-                val pathWords = rules.paths.associate { it.id to it.keywords.map(::normalized) }
+                val collectionWords = rules.collections.associate { it.id to it.keywords.map(StudyRules::studyNormalized) }
+                val pathWords = rules.paths.associate { it.id to it.keywords.map(StudyRules::studyNormalized) }
                 val collections = rules.collections.associate { it.id to StudyRules.incorporateNormalized(emptyList(), readings, collectionWords.getValue(it.id), texts, rules.collectionLimit) }.toMutableMap()
                 val paths = rules.paths.associate { it.id to StudyRules.incorporateNormalized(emptyList(), readings, pathWords.getValue(it.id), texts, rules.pathLimit) }.toMutableMap()
                 val dailyWorkIds = readings.map { it.obraId }.toSet()
@@ -279,7 +278,8 @@ internal fun CollectionsScreen(
                 val pendingWorks = works.filterNot { it.id in dailyWorkIds }
                 val reflections = prefs.reflectionHistory(readings, works.associate { it.id to it.titulo })
                 suspend fun publish(completed: Int) {
-                    val partial = StudyScreenContent(rules, works, collections.toMap(), paths.toMap(),
+                    val partial = StudyScreenContent(rules, works, collections.mapValues { entry -> entry.value.map { it.item } },
+                        paths.mapValues { entry -> entry.value.map { it.item } },
                         reflections, failedWorks.toList(), completed, pendingWorks.size)
                     withContext(Dispatchers.Main) { snapshot = partial }
                 }
@@ -287,7 +287,7 @@ internal fun CollectionsScreen(
                 for ((index, work) in pendingWorks.withIndex()) {
                     try {
                         catalog.percorrerItensEstudo(work.id, cancelled = { !jobContext.isActive }) { batch ->
-                            val batchTexts = batch.associate { it.chavePersistencia to normalized(listOf(it.titulo, it.texto, it.rodape).joinToString(" ")) }
+                            val batchTexts = batch.associate { it.chavePersistencia to StudyRules.studyNormalized(listOf(it.titulo, it.texto, it.rodape).joinToString(" ")) }
                             rules.collections.forEach { rule -> collections[rule.id] = StudyRules.incorporateNormalized(collections[rule.id].orEmpty(), batch, collectionWords.getValue(rule.id), batchTexts, rules.collectionLimit) }
                             rules.paths.forEach { rule -> paths[rule.id] = StudyRules.incorporateNormalized(paths[rule.id].orEmpty(), batch, pathWords.getValue(rule.id), batchTexts, rules.pathLimit) }
                             jobContext.isActive
@@ -296,7 +296,8 @@ internal fun CollectionsScreen(
                     catch (_: Exception) { failedWorks.add(work.titulo) }
                     publish(index + 1)
                 }
-                StudyScreenContent(rules, works, collections, paths,
+                StudyScreenContent(rules, works, collections.mapValues { entry -> entry.value.map { it.item } },
+                    paths.mapValues { entry -> entry.value.map { it.item } },
                     reflections, failedWorks, pendingWorks.size, pendingWorks.size)
             }
         } catch (error: CancellationException) { throw error }

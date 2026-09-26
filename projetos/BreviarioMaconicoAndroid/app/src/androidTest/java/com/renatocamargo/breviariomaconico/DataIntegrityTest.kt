@@ -22,6 +22,29 @@ import org.json.JSONObject
 
 @RunWith(AndroidJUnit4::class)
 class DataIntegrityTest {
+    /** Phase 1 scores study themes straight from the FTS index; the bundled SQLite must provide fts5vocab. */
+    @Test
+    fun bundledSQLiteSupportsIndexOnlyTermCounts() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val file = File(context.cacheDir, "fts5vocab-${System.nanoTime()}.sqlite")
+        try {
+            RagSQLite.open(file.path).use { db ->
+                db.execSQL("CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')")
+                db.execSQL("INSERT INTO rag_fts VALUES ('a', 'A Escada de Jacó e a escada do templo.')")
+                db.execSQL("INSERT INTO rag_fts VALUES ('b', 'Leitura sem o termo.')")
+                db.execSQL("CREATE VIRTUAL TABLE temp.vocab USING fts5vocab(main, rag_fts, 'instance')")
+                val rows = mutableListOf<List<Int>>()
+                db.rawQuery("SELECT doc, count(DISTINCT term), count(*) FROM temp.vocab WHERE term IN ('escada', 'jaco', 'lei') GROUP BY doc", emptyArray()).use {
+                    while (it.moveToNext()) rows.add(listOf(it.getInt(0), it.getInt(1), it.getInt(2)))
+                }
+                // Whole words, accents folded: "lei" does not count inside "Leitura".
+                assertEquals(listOf(listOf(1, 2, 3)), rows)
+            }
+        } finally {
+            file.delete()
+        }
+    }
+
     @Test
     fun metadataFiltersFollowSharedCasesAndPrecedePagination() {
         val fixture = JSONObject(context.assets.open("casos_comuns_v1.json").bufferedReader().use { it.readText() })
@@ -290,9 +313,9 @@ class DataIntegrityTest {
             }
             assertEquals(expected, selected.map { it.chavePersistencia })
             assertEquals(selected, StudyRules.incorporateNormalized(emptyList(), items,
-                words.map { com.renatocamargo.breviariomaconico.data.normalized(it) },
-                texts.mapValues { com.renatocamargo.breviariomaconico.data.normalized(it.value) }, limit))
-            assertEquals("578 Estudo da ÉTICA.", selected.first().rodape)
+                words.map { StudyRules.studyNormalized(it) },
+                texts.mapValues { StudyRules.studyNormalized(it.value) }, limit).map { it.item })
+            assertEquals("578 Estudo da ÉTICA.", selected.first { it.chavePersistencia == "a_P2" }.rodape)
         }
         assertTrue(StudyRules.select(items, words, texts, 0).isEmpty())
     }

@@ -37,18 +37,23 @@
     {"id":"accent_case", "text":"Reflexão sobre ÉTICA e virtudes", "keywords":["etica"], "matches":true},
     {"id":"any_topic", "text":"O esquadro e o compasso", "keywords":["historia", "esquadro"], "matches":true},
     {"id":"no_topic", "text":"História documental", "keywords":["virtude"], "matches":false},
-    {"id":"empty_topic", "text":"Texto", "keywords":["", " "], "matches":false}
+    {"id":"empty_topic", "text":"Texto", "keywords":["", " "], "matches":false},
+    {"id":"word_boundary", "text":"Leitura do espírito e da produção", "keywords":["lei", "rito", "luz"], "matches":false},
+    {"id":"phrase_keyword", "text":"A Grande Loja da Inglaterra", "keywords":["grande loja"], "matches":true},
+    {"id":"plural_is_distinct", "text":"As virtudes cardeais", "keywords":["virtude"], "matches":false},
+    {"id":"punctuation_boundary", "text":"Sobre a lei: justiça.", "keywords":["lei"], "matches":true}
   ],
   "studySelection": {
     "keywords": ["etica", "compasso"],
     "limit": 3,
-    "expected": ["a_P2", "b_P1", "c_01/06"],
+    "expected": ["e_P50", "a_P2", "b_P1"],
     "items": [
       {"work":"d", "date":"01/06", "page":9, "title":"Documento", "body":"Neutro", "notes":"", "index":"Ética"},
       {"work":"b", "date":"P1", "page":1, "title":"Documento", "body":"Estudo do COMPASSO.", "notes":"", "index":""},
       {"work":"a", "date":"P2", "page":2, "title":"Documento", "body":"Neutro", "notes":"578 Estudo da ÉTICA.", "index":""},
       {"work":"a", "date":"P1", "page":1, "title":"Documento", "body":"Neutro", "notes":"", "index":""},
-      {"work":"c", "date":"01/06", "page":9, "title":"Ética", "body":"Neutro", "notes":"", "index":""}
+      {"work":"c", "date":"01/06", "page":9, "title":"Ética", "body":"Neutro", "notes":"", "index":""},
+      {"work":"e", "date":"P50", "page":50, "title":"Documento", "body":"Ética e compasso: a ética do compasso.", "notes":"", "index":""}
     ]
   },
   "citations": [
