@@ -339,9 +339,13 @@ struct JustifiedEditableTextView: UIViewRepresentable {
     let color: UIColor
     let lineSpacing: CGFloat
     let backgroundColor: UIColor
+    var rotuloAcessibilidade: String? = nil
+    var identificadorAcessibilidade: String? = nil
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
+        textView.accessibilityLabel = rotuloAcessibilidade
+        textView.accessibilityIdentifier = identificadorAcessibilidade
         textView.isEditable = true
         textView.isSelectable = true
         textView.isScrollEnabled = true

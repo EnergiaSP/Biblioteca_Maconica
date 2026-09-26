@@ -175,12 +175,20 @@ internal fun ReaderScreen(
     onAddHighlight: (String) -> Unit,
     onRemoveHighlight: (String) -> Unit,
     onExportHighlights: () -> Unit,
-    onOpenSettings: () -> Unit
+    onOpenSettings: () -> Unit,
+    onPersistDrafts: (item: BreviarioItem, comment: String, reflection: String) -> Unit = { _, _, _ -> }
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var currentComment by remember(item.chavePersistencia, comment) { mutableStateOf(comment) }
     var currentReflection by remember(item.chavePersistencia, reflection) { mutableStateOf(reflection) }
+    // Leaving this reading (next, previous, Back or another screen) keeps what was typed but not saved.
+    // Keyed like the text states above so the closure always reads the states of this reading.
+    DisposableEffect(item.chavePersistencia, comment, reflection) {
+        val leitura = item
+        val persistir = onPersistDrafts
+        onDispose { persistir(leitura, currentComment, currentReflection) }
+    }
     var shareOpen by remember { mutableStateOf(false) }
     var gerandoIa by remember { mutableStateOf(false) }
     var editOpen by remember { mutableStateOf(false) }
@@ -191,7 +199,7 @@ internal fun ReaderScreen(
     LazyColumn(Modifier.fillMaxSize().padding(horizontal = if (fullscreen) 8.dp else 18.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         item {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = onHome) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Voltar ao início", tint = colors.text) }
+                IconButton(onClick = onHome) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Voltar", tint = colors.text) }
                 Row(Modifier.weight(1f).testTag("reader.tools").horizontalScroll(rememberScrollState())) {
                     IconButton(onClick = onPrevious) { Icon(Icons.AutoMirrored.Filled.NavigateBefore, "Leitura anterior", tint = colors.text) }
                     IconButton(onClick = onNext) { Icon(Icons.AutoMirrored.Filled.NavigateNext, "Próxima leitura", tint = colors.text) }

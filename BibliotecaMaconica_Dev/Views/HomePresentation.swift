@@ -195,17 +195,13 @@ func avisoGlobal(_ mensagem: String) -> some View {
         }
 
         leitorVoz.parar()
+        sincronizarEstadoLeitura(com: nil)
         itemSelecionadoID = nil
         caminhoLeitura.removeAll()
         busca = ""
         buscaIndice = ""
         filtroLeitura = .todos
-        comentario = ""
-        analiseIA = nil
         mensagemIA = nil
-        destaques = []
-        novoDestaque = ""
-        trechoSelecionadoTexto = ""
         pdfURL = nil
         mensagemErro = nil
         obraImportacaoID = obra.id

@@ -155,23 +155,52 @@ import java.time.LocalDate
 import java.util.Calendar
 import java.util.Locale
 
+internal const val MENSAGEM_INICIAL_BUSCA = "Digite um termo para buscar nas obras baixadas."
+internal const val MENSAGEM_INICIAL_DOSSIE = "Informe um tema para montar um dossiê com fontes do acervo baixado."
+
+/** Keeps search and dossier inputs and results while the user opens a result and comes back. */
+internal class LibraryStudySession(statusInicial: String, termoInicial: String = "") {
+    var termo by mutableStateOf(termoInicial)
+    var metadataFilter by mutableStateOf(LibraryMetadataFilter())
+    var area by mutableStateOf<BibliotecaArea?>(null)
+    var obraId by mutableStateOf<String?>(null)
+    var resultados by mutableStateOf(emptyList<BibliotecaBuscaResultado>())
+    var status by mutableStateOf(statusInicial)
+    var temMais by mutableStateOf(false)
+    var analiseIa by mutableStateOf("")
+    var ultimaConsulta: List<Any?>? = null
+}
+
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun StructuredSearchScreen(colors: Palette, termoInicial: String = "", abrirResultado: (BibliotecaBuscaResultado) -> Unit) {
+internal fun StructuredSearchScreen(
+    colors: Palette,
+    termoInicial: String = "",
+    session: LibraryStudySession = remember { LibraryStudySession(MENSAGEM_INICIAL_BUSCA, termoInicial) },
+    abrirResultado: (BibliotecaBuscaResultado) -> Unit
+) {
     val context = LocalContext.current
     val catalogo = remember { BibliotecaCatalogRepository.get(context) }
     val scope = rememberCoroutineScope()
-    var termo by remember { mutableStateOf(termoInicial) }
-    var metadataFilter by remember { mutableStateOf(LibraryMetadataFilter()) }
-    var area by remember { mutableStateOf<BibliotecaArea?>(null) }
-    var obraId by remember { mutableStateOf<String?>(null) }
+    var termo by session::termo
+    var metadataFilter by session::metadataFilter
+    var area by session::area
+    var obraId by session::obraId
     var obras by remember { mutableStateOf(emptyList<com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo>()) }
     var escolherObra by remember { mutableStateOf(false) }
-    var resultados by remember { mutableStateOf(emptyList<BibliotecaBuscaResultado>()) }
-    var mensagem by remember { mutableStateOf("Digite um termo para buscar nas obras baixadas.") }
+    var resultados by session::resultados
+    var mensagem by session::status
     var buscando by remember { mutableStateOf(false) }
-    var temMais by remember { mutableStateOf(false) }
+    var temMais by session::temMais
     var consultaJob by remember { mutableStateOf<Job?>(null) }
+    DisposableEffect(Unit) {
+        onDispose {
+            if (buscando) {
+                mensagem = "Busca interrompida. Toque em buscar novamente."
+                session.ultimaConsulta = null
+            }
+        }
+    }
 
     fun pesquisar(mais: Boolean = false) {
         if (mais && (buscando || !temMais)) return
@@ -202,6 +231,10 @@ internal fun StructuredSearchScreen(colors: Palette, termoInicial: String = "", 
     }
 
     LaunchedEffect(termo, area, obraId, metadataFilter) {
+        // Returning from an opened result must keep the results already loaded for the same query.
+        val consulta = listOf(termo, area, obraId, metadataFilter)
+        if (consulta == session.ultimaConsulta) return@LaunchedEffect
+        session.ultimaConsulta = consulta
         consultaJob?.cancel()
         resultados = emptyList()
         temMais = false
@@ -210,8 +243,12 @@ internal fun StructuredSearchScreen(colors: Palette, termoInicial: String = "", 
         pesquisar()
     }
     DisposableEffect(Unit) { onDispose { consultaJob?.cancel() } }
+    var areaDasObras by remember { mutableStateOf(area) }
     LaunchedEffect(area) {
-        obraId = null
+        if (area != areaDasObras) {
+            obraId = null
+            areaDasObras = area
+        }
         libraryQuery { catalogo.obrasDisponiveis(area) }.onSuccess { obras = it }
     }
 
@@ -307,20 +344,24 @@ internal fun SearchResultCard(colors: Palette, resultado: BibliotecaBuscaResulta
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResultado) -> Unit) {
+internal fun DossierScreen(
+    colors: Palette,
+    session: LibraryStudySession = remember { LibraryStudySession(MENSAGEM_INICIAL_DOSSIE) },
+    abrirResultado: (BibliotecaBuscaResultado) -> Unit
+) {
     val context = LocalContext.current
     val catalogo = remember { BibliotecaCatalogRepository.get(context) }
     val prefs = remember { PreferencesStore(context) }
     val scope = rememberCoroutineScope()
-    var tema by remember { mutableStateOf("") }
-    var metadataFilter by remember { mutableStateOf(LibraryMetadataFilter()) }
-    var resultados by remember { mutableStateOf(emptyList<BibliotecaBuscaResultado>()) }
-    var status by remember { mutableStateOf("Informe um tema para montar um dossiê com fontes do acervo baixado.") }
-    var analiseIa by remember { mutableStateOf("") }
+    var tema by session::termo
+    var metadataFilter by session::metadataFilter
+    var resultados by session::resultados
+    var status by session::status
+    var analiseIa by session::analiseIa
     var gerandoIa by remember { mutableStateOf(false) }
     var montando by remember { mutableStateOf(false) }
-    var area by remember { mutableStateOf<BibliotecaArea?>(null) }
-    var obraId by remember { mutableStateOf<String?>(null) }
+    var area by session::area
+    var obraId by session::obraId
     var obras by remember { mutableStateOf(emptyList<com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo>()) }
     var escolherObra by remember { mutableStateOf(false) }
     var consultaJob by remember { mutableStateOf<Job?>(null) }
@@ -341,6 +382,9 @@ internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResu
     LaunchedEffect(area) {
         obras = emptyList()
         libraryQuery { catalogo.obrasDisponiveis(area) }.onSuccess { obras = it }
+    }
+    DisposableEffect(Unit) {
+        onDispose { if (montando) status = "Montagem interrompida. Toque em gerar dossiê novamente." }
     }
 
     LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("dossier.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {

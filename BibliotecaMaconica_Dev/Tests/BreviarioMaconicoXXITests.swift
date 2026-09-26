@@ -1068,6 +1068,43 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     @MainActor
+    func testClosingReadingReturnsToTheTabThatOpenedIt() {
+        let navigation = AppNavigationController()
+        navigation.selectedTab = AppNavigationController.Tab.dossie.rawValue
+        navigation.showReading(itemID: 7)
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.acervo.rawValue)
+        XCTAssertEqual(navigation.readingReturnTab, AppNavigationController.Tab.dossie.rawValue)
+
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.dossie.rawValue)
+        XCTAssertTrue(navigation.readingPath.isEmpty)
+        XCTAssertNil(navigation.readingReturnTab)
+
+        navigation.showMore(.buscaBiblioteca)
+        navigation.showReading(itemID: 8)
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.mais.rawValue)
+        XCTAssertEqual(navigation.moreScreen, .buscaBiblioteca)
+    }
+
+    @MainActor
+    func testClosingReadingOpenedInsideAcervoStaysInAcervo() {
+        let navigation = AppNavigationController()
+        navigation.showLibrary()
+        navigation.showReading(itemID: 3)
+        XCTAssertNil(navigation.readingReturnTab)
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.acervo.rawValue)
+        XCTAssertTrue(navigation.readingPath.isEmpty)
+
+        navigation.selectedTab = AppNavigationController.Tab.colecoes.rawValue
+        navigation.showReading(itemID: 4)
+        navigation.forgetReadingOrigin()
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.acervo.rawValue)
+    }
+
+    @MainActor
     func testNavigationControllerOpensMoreDestination() {
         let navigation = AppNavigationController()
         navigation.showMore(.fontesOficiais)

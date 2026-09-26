@@ -19,6 +19,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -270,6 +271,8 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
     var savedNotice by remember { mutableStateOf<String?>(null) }
     var dataRevision by remember { mutableIntStateOf(0) }
     var leituraTelaCheia by remember { mutableStateOf(settings.distractionFreeMode) }
+    val buscaSession = remember { LibraryStudySession(MENSAGEM_INICIAL_BUSCA) }
+    val dossieSession = remember { LibraryStudySession(MENSAGEM_INICIAL_DOSSIE) }
     LaunchedEffect(settings.distractionFreeMode) { leituraTelaCheia = settings.distractionFreeMode }
     val appScope = rememberCoroutineScope()
     val colors = palette(settings.theme)
@@ -362,6 +365,11 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
         else abrirObraBiblioteca(resultado.obraId, resultado.pagina)
     }
 
+    // Without this the system Back gesture closes the app from any screen.
+    BackHandler(enabled = activated && !showSplash && navigation.canGoBack) {
+        navigation.back()
+    }
+
     if (!activated) {
         ActivationScreen(colors) {
             prefs.activated = true
@@ -395,7 +403,8 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
                 hideChrome = (screen == Screen.Reader || screen == Screen.LibraryReader) && leituraTelaCheia,
                 onHome = navigation::showHome,
                 onNavigate = navigation::show,
-                onSettings = { navigation.show(Screen.Settings) }
+                onSettings = { navigation.show(Screen.Settings) },
+                onBack = { navigation.back() }
             ) { padding ->
                 Box(Modifier.padding(padding)) {
                     when (screen) {
@@ -415,7 +424,7 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
                             highlights = prefs.highlights(selected),
                             onPrevious = { navigation.updateSelected(repo.anterior(selected)) },
                             onNext = { navigation.updateSelected(repo.proximo(selected)) },
-                            onHome = navigation::showHome,
+                            onHome = { navigation.back() },
                             onToggleFavorite = {
                                 prefs.toggleFavorite(selected)
                                 favorites = prefs.favorites()
@@ -460,7 +469,11 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
                             onExportHighlights = {
                                 shareHighlightsPdf(context, prefs.applyTextEdit(selected), prefs.highlights(selected))
                             },
-                            onOpenSettings = { navigation.show(Screen.Settings) }
+                            onOpenSettings = { navigation.show(Screen.Settings) },
+                            onPersistDrafts = { item, comment, reflection ->
+                                if (comment != prefs.comment(item)) prefs.saveComment(item, comment)
+                                if (reflection != prefs.reflection(item)) prefs.saveReflection(item, reflection)
+                            }
                         )
                         Screen.LibraryReader -> LibraryReaderScreen(
                             colors = colors,
@@ -472,12 +485,12 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
                             paginaAtual = livroPaginaAtual,
                             settings = settings,
                             onPageChange = { livroPaginaAtual = it },
-                            onHome = navigation::showHome,
+                            onHome = { navigation.back() },
                             onSearch = { navigation.show(Screen.StructuredSearch) }
                         )
                         Screen.Breviario -> BreviarioScreen(colors, repo, ::goReader)
                         Screen.Acervo -> AcervoScreen(colors, abrirObra = ::abrirObraBiblioteca)
-                        Screen.StructuredSearch -> StructuredSearchScreen(colors, abrirResultado = ::abrirResultado)
+                        Screen.StructuredSearch -> StructuredSearchScreen(colors, session = buscaSession, abrirResultado = ::abrirResultado)
                         Screen.GlobalIndex -> GlobalIndexScreen(colors, abrirResultado = ::abrirResultado)
                         Screen.Index -> IndexScreen(colors, repo, ::goReader)
                         Screen.Favorites -> ItemListScreen("Favorito", colors, prefs.favoriteItems(repo.itens), ::goReader)
@@ -485,7 +498,7 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
                         Screen.Comments -> ItemListScreen("Comentário", colors, prefs.commentedItems(repo.itens), ::goReader)
                         Screen.Stats -> StatsScreen(colors, repo, prefs)
                         Screen.Collections -> CollectionsScreen(colors, repo, ::goReader, abrirObra = ::abrirObraBiblioteca)
-                        Screen.Dossier -> DossierScreen(colors, abrirResultado = ::abrirResultado)
+                        Screen.Dossier -> DossierScreen(colors, session = dossieSession, abrirResultado = ::abrirResultado)
                         Screen.OfficialSources -> OfficialSourcesScreen(colors, prefs, onSaved = {
                             notifySaved(it)
                         })

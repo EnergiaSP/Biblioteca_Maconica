@@ -311,8 +311,8 @@ class NavigationFlowTest {
     @Test
     fun dailyReadingOpensAndReturnsHome() {
         compose.onAllNodesWithText("Leitura")[0].performClick()
-        compose.onAllNodesWithContentDescription("Voltar ao início")[0].assertIsDisplayed()
-        compose.onAllNodesWithContentDescription("Voltar ao início")[0].performClick()
+        compose.onAllNodesWithContentDescription("Voltar")[0].assertIsDisplayed()
+        compose.onAllNodesWithContentDescription("Voltar")[0].performClick()
         compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
     }
 
@@ -338,7 +338,7 @@ class NavigationFlowTest {
                 prefs.recentDailyItems(repo.itens).filter { it.obraId == today.obraId }
                     .map { it.chavePersistencia } == expected
             }
-            compose.onAllNodesWithContentDescription("Voltar ao início")[0].performClick()
+            compose.onAllNodesWithContentDescription("Voltar")[0].performClick()
             compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
         } finally {
             raw.edit().apply {
@@ -354,7 +354,7 @@ class NavigationFlowTest {
         compose.onAllNodesWithContentDescription("Configurações").fetchSemanticsNodes()
         compose.onAllNodesWithContentDescription("Editar leitura")[0].assertIsDisplayed().performClick()
         compose.onAllNodesWithText("Cancelar")[0].performClick()
-        compose.onAllNodesWithContentDescription("Voltar ao início")[0].performClick()
+        compose.onAllNodesWithContentDescription("Voltar")[0].performClick()
         compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
     }
 

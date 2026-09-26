@@ -407,3 +407,31 @@ enum TemaLeitura: String, CaseIterable, Identifiable {
         }
     }
 }
+
+/// Keeps the iOS edge swipe-back working on reading screens that hide the system back button.
+struct GestoVoltarPelaBorda: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> Controlador {
+        Controlador()
+    }
+
+    func updateUIViewController(_ controlador: Controlador, context: Context) {}
+
+    final class Controlador: UIViewController {
+        override func didMove(toParent parent: UIViewController?) {
+            super.didMove(toParent: parent)
+            navigationController?.interactivePopGestureRecognizer?.delegate = DelegadoGestoVoltar.compartilhado
+        }
+    }
+}
+
+private final class DelegadoGestoVoltar: NSObject, UIGestureRecognizerDelegate {
+    static let compartilhado = DelegadoGestoVoltar()
+
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        // Starting the pop on the root screen would leave the navigation stack stuck.
+        guard let navegacao = gestureRecognizer.view?.next as? UINavigationController else {
+            return false
+        }
+        return navegacao.viewControllers.count > 1
+    }
+}

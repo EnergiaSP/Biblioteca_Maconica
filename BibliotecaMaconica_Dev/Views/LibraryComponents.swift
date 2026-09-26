@@ -291,6 +291,7 @@ struct DossieEstudoCard: View {
                             ResultadoBuscaBibliotecaRow(resultado: resultado, tema: tema)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityIdentifier("dossier.source")
                     }
                 }
             }

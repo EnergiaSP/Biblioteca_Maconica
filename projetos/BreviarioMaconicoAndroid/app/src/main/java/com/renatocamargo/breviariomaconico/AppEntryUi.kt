@@ -274,6 +274,7 @@ internal fun MainScaffold(
     onHome: () -> Unit,
     onNavigate: (Screen) -> Unit,
     onSettings: () -> Unit,
+    onBack: () -> Unit = onHome,
     hideChrome: Boolean = false,
     content: @Composable (androidx.compose.foundation.layout.PaddingValues) -> Unit
 ) {
@@ -284,11 +285,14 @@ internal fun MainScaffold(
             TopAppBar(
                 title = { Text(screen.title, color = colors.text, maxLines = 1, overflow = TextOverflow.Ellipsis) },
                 navigationIcon = {
-                    IconButton(onClick = onHome) {
-                        Icon(Icons.Default.Home, contentDescription = "Home", tint = colors.text)
+                    IconButton(onClick = onBack) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Voltar", tint = colors.text)
                     }
                 },
                 actions = {
+                    IconButton(onClick = onHome) {
+                        Icon(Icons.Default.Home, contentDescription = "Home", tint = colors.text)
+                    }
                     IconButton(onClick = onSettings) {
                         Icon(Icons.Default.Settings, contentDescription = "Configurações", tint = colors.text)
                     }

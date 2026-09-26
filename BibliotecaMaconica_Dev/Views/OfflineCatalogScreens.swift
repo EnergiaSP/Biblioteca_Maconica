@@ -435,6 +435,7 @@ var acervoOfflineView: some View {
                                 gerarPDFDossieEstudo(dossieEstudo)
                             }
                         )
+                        .accessibilityElement(children: .contain)
                         .accessibilityIdentifier("dossier.results")
 
                         dossieIAView(dossieEstudo)

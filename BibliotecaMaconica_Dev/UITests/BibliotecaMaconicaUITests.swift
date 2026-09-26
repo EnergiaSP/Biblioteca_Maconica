@@ -88,6 +88,26 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(result.waitForNonExistence(timeout: 5))
     }
 
+    func testReadingOpenedFromDossierReturnsToTheDossier() {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        topic.tap()
+        topic.typeText("virtude")
+        app.buttons["Montar dossiê"].tap()
+        let source = app.buttons["dossier.source"].firstMatch
+        XCTAssertTrue(source.waitForExistence(timeout: 20))
+        for _ in 0..<10 where !source.isHittable { app.swipeUp(velocity: .slow) }
+        source.tap()
+
+        let back = app.buttons["Voltar"].firstMatch
+        XCTAssertTrue(back.waitForExistence(timeout: 10))
+        back.tap()
+        XCTAssertTrue(app.navigationBars["Dossiê"].waitForExistence(timeout: 5),
+                      "Back must return to the dossier that opened the reading")
+        XCTAssertTrue(app.buttons["dossier.source"].firstMatch.exists, "The dossier must keep its sources")
+    }
+
     func testSettingsAndHomeRoundTrip() {
         app.buttons["Configurações"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Configurações"].waitForExistence(timeout: 5))
@@ -137,9 +157,9 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Tela cheia"].firstMatch.waitForExistence(timeout: 8))
         app.buttons["Voltar"].firstMatch.tap()
         for attempt in 0..<3 {
-            XCTAssertTrue(app.buttons["Buscar na biblioteca"].waitForExistence(timeout: 5))
-            app.buttons["Buscar na biblioteca"].tap()
             if attempt == 0 {
+                XCTAssertTrue(app.buttons["Buscar na biblioteca"].waitForExistence(timeout: 5))
+                app.buttons["Buscar na biblioteca"].tap()
                 let query = app.textFields["Buscar"].firstMatch
                 XCTAssertTrue(query.waitForExistence(timeout: 5))
                 query.tap()
@@ -152,6 +172,8 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             XCTAssertTrue(app.buttons["Tela cheia"].firstMatch.waitForExistence(timeout: 8))
             XCTAssertTrue(app.staticTexts["Leitura: 02 de fevereiro"].exists)
             app.buttons["Voltar"].firstMatch.tap()
+            XCTAssertTrue(app.navigationBars["Busca"].waitForExistence(timeout: 5),
+                          "Back must return to the search that opened the reading, keeping its results")
         }
     }
 
@@ -297,6 +319,31 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         title.tap()
         XCTAssertTrue(app.staticTexts["Leitura: 03 de janeiro"].waitForExistence(timeout: 8))
         XCTAssertTrue(app.buttons["Voltar"].firstMatch.exists)
+        app.buttons["Voltar"].firstMatch.tap()
+        XCTAssertTrue(app.navigationBars["Coleções"].waitForExistence(timeout: 5),
+                      "Back must return to the collection that opened the reading")
+    }
+
+    func testUnsavedCommentIsKeptWhenChangingReading() {
+        let marker = "Rascunho automático \(Int(Date().timeIntervalSince1970))"
+        app.buttons["Abrir leitura diária de Breviário Maçônico - Kennyo Ismail"].tap()
+        XCTAssertTrue(app.buttons["Próximo dia"].firstMatch.waitForExistence(timeout: 8))
+        let comment = app.textViews["reading.comment"]
+        for _ in 0..<12 where !comment.isHittable { app.swipeUp(velocity: .slow) }
+        comment.tap()
+        comment.typeText(marker)
+
+        app.buttons["Próximo dia"].firstMatch.tap()
+        app.buttons["Dia anterior"].firstMatch.tap()
+        let reopened = app.textViews["reading.comment"]
+        for _ in 0..<12 where !reopened.isHittable { app.swipeUp(velocity: .slow) }
+        let value = reopened.value as? String ?? ""
+        XCTAssertTrue(value.contains(marker), "Unsaved comment was discarded when changing reading")
+
+        // Leave the reading as it was before the test.
+        reopened.tap()
+        reopened.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: marker.count))
+        app.buttons["Voltar"].firstMatch.tap()
     }
 
     @MainActor
