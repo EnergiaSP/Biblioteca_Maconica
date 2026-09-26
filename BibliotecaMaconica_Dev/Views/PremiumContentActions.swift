@@ -8,7 +8,13 @@ extension HomeView {
         abrirResultadoBuscaBiblioteca(BibliotecaResultadoBusca(obra: obra, item: item, contexto: ""))
     }
 
-func atualizarConteudoPremiumCache() {
+/// Recomputes collections, study paths and reflection history. With `apenasSeMudou`, reopening the
+    /// tab keeps the previous result while works, downloads and loaded readings are unchanged.
+    func atualizarConteudoPremiumCache(apenasSeMudou: Bool = false) {
+        let chave = chaveConteudoPremium()
+        if apenasSeMudou, chave == chaveConteudoPremiumCalculada, !colecoesTematicasCache.isEmpty {
+            return
+        }
         conteudoPremiumTask?.cancel()
         carregandoColecoes = true
         let itens = store.itens
@@ -89,10 +95,24 @@ func atualizarConteudoPremiumCache() {
                 trilhasDeEstudoCache = resultado.trilhas
                 historicoReflexoesCache = resultado.historico
                 if let avisoFalhas { mensagemErro = avisoFalhas }
+                chaveConteudoPremiumCalculada = avisoFalhas == nil ? chave : nil
                 carregandoColecoes = false
                 conteudoPremiumTask = nil
             }
         }
+    }
+
+    /// Fingerprint of what the collections depend on: active works, downloaded package files and the
+    /// text of the loaded readings (so edited readings are picked up).
+    func chaveConteudoPremium() -> String {
+        let obras = store.obras.filter(\.ativa).map(\.id).sorted().joined(separator: ",")
+        let raiz = BibliotecaRAGCatalogService.raizPacotesLocal()
+        let arquivos = (FileManager.default.enumerator(at: raiz, includingPropertiesForKeys: [.fileSizeKey])?.allObjects as? [URL] ?? [])
+            .filter { $0.pathExtension == "sqlite" }
+            .map { "\($0.lastPathComponent):\((try? $0.resourceValues(forKeys: [.fileSizeKey]).fileSize) ?? 0)" }
+            .sorted().joined(separator: ",")
+        let leituras = store.itens.reduce(0) { $0 &+ $1.texto.count &+ $1.titulo.count }
+        return "\(obras)|\(arquivos)|\(store.obraSelecionada.id)|\(store.itens.count)|\(leituras)"
     }
 
     nonisolated static func montarConteudoPremiumCache(

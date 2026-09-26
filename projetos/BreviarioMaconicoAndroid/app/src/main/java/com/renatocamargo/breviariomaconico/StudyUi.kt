@@ -141,6 +141,7 @@ import com.renatocamargo.breviariomaconico.data.ScoredItem
 import com.renatocamargo.breviariomaconico.data.StudyIndex
 import com.renatocamargo.breviariomaconico.data.scoreStudy
 import com.renatocamargo.breviariomaconico.data.studyItems
+import com.renatocamargo.breviariomaconico.data.localStudySelection
 import com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo
 import com.renatocamargo.breviariomaconico.data.PersonalReflection
 import com.renatocamargo.breviariomaconico.data.ObraId
@@ -254,7 +255,8 @@ internal fun CollectionsScreen(
     colors: Palette,
     repo: BreviarioRepository,
     onRead: (BreviarioItem) -> Unit,
-    abrirObra: (String, Int?) -> Unit
+    abrirObra: (String, Int?) -> Unit,
+    cache: StudyContentCache = remember { StudyContentCache() }
 ) {
     val context = LocalContext.current
     var snapshot by remember(repo) { mutableStateOf<StudyScreenContent?>(null) }
@@ -263,25 +265,26 @@ internal fun CollectionsScreen(
         try {
             snapshot = withContext(Dispatchers.IO) {
                 val rules = StudyRules.load(context)
-                val termsByDate = repo.indice.flatMap { entry -> entry.datas.map { it to entry.termo } }
-                    .groupBy({ it.first }, { it.second })
                 val prefs = PreferencesStore(context)
                 val readings = repo.itens.map { prefs.applyTextEdit(it) }
-                val texts = readings.associate { item ->
-                    val indexTerms = if (item.obraId == ObraId.BREVIARIO_SECULO_XXI) termsByDate[item.data].orEmpty() else emptyList()
-                    item.chavePersistencia to StudyRules.studyNormalized(listOf(item.titulo, item.texto, item.rodape, indexTerms.joinToString(" ")).joinToString(" "))
-                }
                 val catalog = BibliotecaCatalogRepository.get(context)
                 val works = catalog.obrasInstaladas()
+                val reflectionsNow = prefs.reflectionHistory(readings, works.associate { it.id to it.titulo })
+                // Reopening the tab reuses the collections while works, downloads and readings are unchanged.
+                val key = listOf(works.joinToString(",") { it.id },
+                    catalog.pacotes.map { catalog.localFile(it) }.filter { it.exists() }.distinct().sortedBy { it.path }.joinToString(",") { "${it.name}:${it.length()}" },
+                    readings.sumOf { it.texto.length + it.titulo.length }.toString()).joinToString("|")
+                cache.reusable(key)?.let { cached -> return@withContext cached.copy(reflections = reflectionsNow) }
                 val collectionWords = rules.collections.associate { it.id to it.keywords.map(StudyRules::studyNormalized) }
                 val pathWords = rules.paths.associate { it.id to it.keywords.map(StudyRules::studyNormalized) }
-                val collections = rules.collections.associate { it.id to StudyRules.incorporateNormalized(emptyList(), readings, collectionWords.getValue(it.id), texts, rules.collectionLimit) }.toMutableMap()
-                val paths = rules.paths.associate { it.id to StudyRules.incorporateNormalized(emptyList(), readings, pathWords.getValue(it.id), texts, rules.pathLimit) }.toMutableMap()
+                val local = localStudySelection(readings, repo.indice, rules)
+                val collections = rules.collections.associate { it.id to local.getValue(it.id) }.toMutableMap()
+                val paths = rules.paths.associate { it.id to local.getValue(it.id) }.toMutableMap()
                 val dailyWorkIds = readings.map { it.obraId }.toSet()
                 val jobContext = currentCoroutineContext()
                 val failedWorks = mutableListOf<String>()
                 val pendingWorks = works.filterNot { it.id in dailyWorkIds }
-                val reflections = prefs.reflectionHistory(readings, works.associate { it.id to it.titulo })
+                val reflections = reflectionsNow
                 suspend fun publish(completed: Int) {
                     val partial = StudyScreenContent(rules, works, collections.mapValues { entry -> entry.value.map { it.item } },
                         paths.mapValues { entry -> entry.value.map { it.item } },
@@ -309,6 +312,7 @@ internal fun CollectionsScreen(
                 StudyScreenContent(rules, works, collections.mapValues { entry -> entry.value.map { it.item } },
                     paths.mapValues { entry -> entry.value.map { it.item } },
                     reflections, failedWorks, pendingWorks.size, pendingWorks.size)
+                    .also { if (failedWorks.isEmpty()) cache.store(key, it) }
             }
         } catch (error: CancellationException) { throw error }
         catch (_: Exception) { loadingError = "Não foi possível carregar as coleções." }
@@ -392,7 +396,22 @@ internal fun CollectionsScreen(
     }
 }
 
-private data class StudyScreenContent(
+/** Keeps the last computed collections for the app session, keyed by what they depend on. */
+internal class StudyContentCache {
+    private var key: String? = null
+    private var content: StudyScreenContent? = null
+
+    @Synchronized
+    fun reusable(currentKey: String): StudyScreenContent? = content.takeIf { key == currentKey }
+
+    @Synchronized
+    fun store(currentKey: String, value: StudyScreenContent) {
+        key = currentKey
+        content = value
+    }
+}
+
+internal data class StudyScreenContent(
     val rules: StudyRules,
     val works: List<BibliotecaObraCatalogo>,
     val collections: Map<String, List<BreviarioItem>>,

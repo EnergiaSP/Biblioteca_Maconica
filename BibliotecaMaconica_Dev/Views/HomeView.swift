@@ -124,6 +124,8 @@ struct HomeView: View {
     @State var comentariosTask: Task<Void, Never>?
     @State var telaAberturaTask: Task<Void, Never>?
     @State var carregandoColecoes = false
+    /// Inputs of the last collection computation; reopening the tab reuses it while they are unchanged.
+    @State var chaveConteudoPremiumCalculada: String?
     @State var appInicializado = false
     @State var processandoVoltarLeitura = false
     @State var urlBreviarioPendente: URL?

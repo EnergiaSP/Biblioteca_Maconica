@@ -100,7 +100,7 @@ func prepararCachesIniciais() {
         }
 
         if novaAba == 1 || (novaAba == 4 && telaMais == .colecoes) {
-            atualizarConteudoPremiumCache()
+            atualizarConteudoPremiumCache(apenasSeMudou: true)
         }
     }
 

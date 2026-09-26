@@ -16,6 +16,8 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextReplacement
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performScrollToKey
+import androidx.compose.ui.test.performScrollToNode
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.printToString
 import androidx.compose.ui.test.performTouchInput
@@ -164,7 +166,7 @@ class NavigationFlowTest {
 
     @Test
     fun structuredSearchOpensFromHome() {
-        compose.onNodeWithText("Buscar na biblioteca").performClick()
+        openStructuredSearchFromHome()
         compose.onAllNodesWithText("Busca estruturada")[0].assertIsDisplayed()
     }
 
@@ -285,7 +287,7 @@ class NavigationFlowTest {
                 scenario.close()
                 preferences.edit().putString("theme", theme.name).commit()
                 launch()
-                compose.onNodeWithText("Buscar na biblioteca").performClick()
+                openStructuredSearchFromHome()
                 compose.onAllNodesWithText("Busca estruturada")[0].assertIsDisplayed()
                 compose.onNodeWithText("Todo acervo").assertIsSelected()
                 compose.onNodeWithText("Breviários").performClick().assertIsSelected()
@@ -391,5 +393,11 @@ class NavigationFlowTest {
             compose.onAllNodesWithContentDescription("Home")[0].performClick()
             compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
         }
+    }
+
+    /** The home list only composes visible cards; with two breviaries the search card starts below the fold. */
+    private fun openStructuredSearchFromHome() {
+        compose.onNodeWithTag("home.list").performScrollToNode(hasText("Buscar na biblioteca"))
+        compose.onNodeWithText("Buscar na biblioteca").performClick()
     }
 }

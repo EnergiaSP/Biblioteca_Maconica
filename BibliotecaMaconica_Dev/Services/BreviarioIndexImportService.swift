@@ -59,7 +59,14 @@ static func criarEntradasIndice(_ linha: String) -> [(termo: String, paginas: [I
             }
         }
 
+        let datasExistentes = Set(itens.map(\.data))
         return indice.map { entrada in
+            // Dates recorded with the entry are the source of truth; printed pages only link entries
+            // without dates (PDF imports). Relinking recorded dates shifted every Rizzardo entry by
+            // six days and dropped 14 Kennyo entries, unlike Android, which uses the recorded dates.
+            if !entrada.datas.isEmpty, entrada.datas.allSatisfy(datasExistentes.contains) {
+                return entrada
+            }
             let datas = entrada.paginas.reduce(into: Set<String>()) { parcial, pagina in
                 guard let datasPagina = datasPorPagina[pagina] else {
                     return

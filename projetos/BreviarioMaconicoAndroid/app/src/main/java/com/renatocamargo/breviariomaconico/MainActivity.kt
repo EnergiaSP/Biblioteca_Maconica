@@ -273,6 +273,7 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
     var leituraTelaCheia by remember { mutableStateOf(settings.distractionFreeMode) }
     val buscaSession = remember { LibraryStudySession(MENSAGEM_INICIAL_BUSCA) }
     val dossieSession = remember { LibraryStudySession(MENSAGEM_INICIAL_DOSSIE) }
+    val studyCache = remember { StudyContentCache() }
     LaunchedEffect(settings.distractionFreeMode) { leituraTelaCheia = settings.distractionFreeMode }
     val appScope = rememberCoroutineScope()
     val colors = palette(settings.theme)
@@ -497,7 +498,7 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
                         Screen.Unread -> ItemListScreen("Não Lido", colors, prefs.unreadItems(repo.itens), ::goReader)
                         Screen.Comments -> ItemListScreen("Comentário", colors, prefs.commentedItems(repo.itens), ::goReader)
                         Screen.Stats -> StatsScreen(colors, repo, prefs)
-                        Screen.Collections -> CollectionsScreen(colors, repo, ::goReader, abrirObra = ::abrirObraBiblioteca)
+                        Screen.Collections -> CollectionsScreen(colors, repo, ::goReader, abrirObra = ::abrirObraBiblioteca, cache = studyCache)
                         Screen.Dossier -> DossierScreen(colors, session = dossieSession, abrirResultado = ::abrirResultado)
                         Screen.OfficialSources -> OfficialSourcesScreen(colors, prefs, onSaved = {
                             notifySaved(it)

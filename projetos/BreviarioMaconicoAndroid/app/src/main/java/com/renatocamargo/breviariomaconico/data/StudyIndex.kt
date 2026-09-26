@@ -243,3 +243,20 @@ internal fun BibliotecaCatalogRepository.carregarTrechos(results: List<Bibliotec
         else result.copy(trecho = texts[result.obraId to result.blocoId].orEmpty())
     }
 }
+
+/**
+ * Scores the integrated breviary readings for every collection and study path, by rule id.
+ * The searched text is title, body, notes and the reading's remissive index terms, as on iOS.
+ */
+internal fun localStudySelection(readings: List<BreviarioItem>, index: List<IndiceRemissivoEntry>, rules: StudyRules): Map<String, List<ScoredItem>> {
+    val termsByKey = index.flatMap { entry -> entry.datas.map { "${entry.obraId}_$it" to entry.termo } }
+        .groupBy({ it.first }, { it.second })
+    val texts = readings.associate { item ->
+        item.chavePersistencia to StudyRules.studyNormalized(listOf(item.titulo, item.texto, item.rodape,
+            termsByKey[item.chavePersistencia].orEmpty().joinToString(" ")).joinToString(" "))
+    }
+    return (rules.collections.map { it.id to (it.keywords to rules.collectionLimit) } + rules.paths.map { it.id to (it.keywords to rules.pathLimit) })
+        .associate { (id, rule) ->
+            id to StudyRules.incorporateNormalized(emptyList(), readings, rule.first.map(StudyRules::studyNormalized), texts, rule.second)
+        }
+}

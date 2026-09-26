@@ -48,6 +48,20 @@ class DataIntegrityTest {
         assertEquals(setOf("b"), rankLocalTexts("lei", texts).keys)
     }
 
+    /** Collections built from the two integrated breviaries, compared with iOS by rule id. */
+    @Test
+    fun localBreviaryCollectionsAreRecordedForParity() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val repo = BreviarioRepository.get(context)
+        val rules = StudyRules.load(context)
+        val selection = localStudySelection(repo.itens, repo.indice, rules)
+        assertEquals(rules.collections.size + rules.paths.size, selection.size)
+        assertTrue(selection.values.all { it.isNotEmpty() })
+        val json = JSONObject()
+        selection.forEach { (id, items) -> json.put(id, org.json.JSONArray(items.map { it.item.chavePersistencia })) }
+        File(context.filesDir, "estudos-locais-android.json").writeText(json.toString(2))
+    }
+
     /** The index engine must rank pages exactly like the shared in-memory rule, in both index layouts. */
     @Test
     fun indexStudyScoringMatchesSharedRule() {

@@ -716,6 +716,49 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertTrue(try BibliotecaSQLiteService.pontuarTextosLocais(termo: "lei", textos: textos).keys.elementsEqual(["b"]))
     }
 
+    /// The remissive index keeps the reading dates recorded in each breviary, as Android does.
+    func testIntegratedBreviaryIndexKeepsRecordedDates() throws {
+        for obra in BibliotecaObra.padroes where obra.recursoJSON != nil {
+            let url = try XCTUnwrap(Bundle.main.url(forResource: obra.recursoJSON, withExtension: "json"))
+            let gravado = try JSONDecoder().decode(BreviarioData.self, from: Data(contentsOf: url))
+            let carregado = try BreviarioStore.carregarDadosDaObra(obra)
+            let porID = Dictionary(uniqueKeysWithValues: carregado.indiceRemissivo.map { ($0.id, $0.datas) })
+            for entrada in gravado.indiceRemissivo {
+                XCTAssertEqual(porID[entrada.id], entrada.datas, "\(obra.id): \(entrada.termo)")
+            }
+        }
+        let rizzardo = try BreviarioStore.carregarDadosDaObra(.breviarioRizzardo)
+        XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
+    }
+
+    func testIndexWithoutRecordedDatesIsLinkedByPrintedPage() {
+        let item = BreviarioItem(id: 1, data: "10/02", titulo: "T", frase: "", texto: "", rodape: "170 Nota da página", pagina: 41)
+        let vinculado = BreviarioImportService.vincularIndice([IndiceRemissivoEntry(id: 1, termo: "Termo", paginas: [170], datas: [])], aos: [item])
+        XCTAssertEqual(vinculado.first?.datas, ["10/02"])
+    }
+
+    /// Collections built from the two integrated breviaries, compared with Android by rule id.
+    func testLocalBreviaryCollectionsAreRecordedForParity() throws {
+        var itens: [BreviarioItem] = []
+        var termosPorChave: [String: String] = [:]
+        for obra in BibliotecaObra.padroes where obra.recursoJSON != nil {
+            let dados = try BreviarioStore.carregarDadosDaObra(obra)
+            itens += dados.itens
+            for entrada in dados.indiceRemissivo {
+                for data in entrada.datas { termosPorChave["\(obra.id)_\(data)", default: ""] += " " + entrada.termo }
+            }
+        }
+        let resultado = HomeView.montarConteudoPremiumCache(itens: itens, indice: [], termosPorChave: termosPorChave)
+        var selecao: [String: [String]] = [:]
+        for colecao in resultado.colecoes { selecao[colecao.id] = colecao.itens.map(\.chavePersistencia) }
+        for trilha in resultado.trilhas { selecao[trilha.id] = trilha.itens.map(\.chavePersistencia) }
+        XCTAssertEqual(selecao.count, RegrasEstudo.compartilhadas.colecoes.count + RegrasEstudo.compartilhadas.trilhas.count)
+        XCTAssertTrue(selecao.values.allSatisfy { !$0.isEmpty })
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        try JSONSerialization.data(withJSONObject: selecao, options: [.prettyPrinted, .sortedKeys])
+            .write(to: documents.appendingPathComponent("estudos-locais-ios.json"), options: .atomic)
+    }
+
     /// The index engine must rank pages exactly like the shared in-memory rule, notes and phrases included.
     func testIndexStudyScoringMatchesSharedRule() throws {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)

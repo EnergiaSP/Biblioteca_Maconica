@@ -81,3 +81,34 @@ Nova ferramenta `Tools/comparar_busca_acervo.py`: os dois testes do acervo grava
 - Cache das colecoes por versao do acervo, sem recalcular a cada abertura da aba (item 13).
 - Reexecutar os testes de interface iOS de colecoes e busca apos a ordenacao unica.
 - Investigar os dois testes Android de busca que ja falhavam.
+
+# Fase 1 (parte 3): cache das colecoes e paridade dos breviarios
+
+## Cache (item 13)
+
+- iOS: reabrir a aba Colecoes reaproveita o ultimo resultado enquanto obras ativas, arquivos baixados (nome e tamanho), obra aberta e texto das leituras carregadas nao mudam (`chaveConteudoPremium`). Salvar ou autosalvar uma reflexao continua recalculando.
+- Android: `StudyContentCache` mantido pelo app, com a mesma impressao digital; o historico de reflexoes e sempre recalculado (e barato).
+
+## Paridade das colecoes com os breviarios
+
+Novo teste nas duas plataformas grava as leituras escolhidas por regra considerando so os dois breviarios (`estudos-locais-*.json`), comparadas por `comparar_estudos_acervo.py`. A primeira comparacao encontrou 6 regras diferentes. Causas:
+
+1. Android usava os termos do indice remissivo apenas do breviario do Kennyo; passou a usar os de ambos, como o iOS (`localStudySelection`, agora uma funcao testavel usada pela tela).
+2. **Defeito do iOS, anterior a esta rodada:** ao carregar um breviario, `vincularIndice` recalculava as datas de cada termo pela pagina impressa. No Rizzardo, as 365 entradas ficavam deslocadas em seis dias ("TOLERANCIA", leitura 07/07, ia para 03/07); no Kennyo, 14 entradas perdiam a data. Tocar num termo do indice remissivo abria a leitura errada ou nenhuma. Agora as datas gravadas no JSON prevalecem quando correspondem a leituras existentes; a pagina so e usada para entradas sem data (importacao de PDF). Testes: `testIntegratedBreviaryIndexKeepsRecordedDates`, `testIndexWithoutRecordedDatesIsLinkedByPrintedPage`.
+
+Depois das correcoes: 0 diferencas.
+
+## Testes Android que ja falhavam
+
+`searchAndHomeRemainAvailableInEveryTheme` e `structuredSearchOpensFromHome` falhavam desde a inclusao do segundo breviario: o cartao "Buscar na biblioteca" ficou abaixo da area visivel e a lista so compoe o que esta visivel. A lista da Home ganhou a marca `home.list` e os testes rolam ate o cartao.
+
+## Estado dos testes
+
+| Execucao | Resultado |
+| --- | --- |
+| iOS unitarios | 73 executados, 1 ignorado, 0 falhas |
+| Android unitarios | 34, 0 falhas |
+| Android `DataIntegrityTest` + `NavigationFlowTest` (emulador) | 51 executados; depois da correcao dos dois testes de busca, `NavigationFlowTest` 17 de 17 |
+| Paridade: colecoes no acervo, colecoes dos breviarios e busca | 0 diferencas |
+| Gate | aprovado |
+
