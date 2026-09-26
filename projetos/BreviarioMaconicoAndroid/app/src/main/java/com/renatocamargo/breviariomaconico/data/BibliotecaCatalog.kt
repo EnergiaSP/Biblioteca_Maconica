@@ -314,10 +314,12 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             .filter { localFile(it).exists() }
             .filter { pacote -> pacote.obras.any { filtro.matches(it) } }
 
-        val quantidade = limite.coerceIn(1, 500) + offset.coerceAtLeast(0)
+        val terms = StudyIndex.searchTerms(query)
         val resultados = mutableListOf<BibliotecaBuscaResultado>()
-        for (pacote in candidatos.distinctBy { localFile(it).absolutePath }) {
+        // Packages are independent files: each is searched on its own read-only connection in parallel.
+        val porPacote = candidatos.distinctBy { localFile(it).absolutePath }.parallelStream().map { pacote ->
             if (cancelled()) throw kotlinx.coroutines.CancellationException()
+            val resultados = mutableListOf<BibliotecaBuscaResultado>()
             val permitidas = candidatos.filter { localFile(it) == localFile(pacote) }
                 .flatMap { it.obras }.filter(filtro::matches).map { it.id }.toSet()
             val excluidas = obrasBreviariosIntegrados.mapTo(mutableSetOf()) { it.id }
@@ -332,7 +334,8 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                     found
                 }
                 val workJoin = if (scopedIndex) " AND p.obra_id = rag_fts.obra_id" else ""
-                val argumentos = mutableListOf(consultaFTS)
+                // Only the page text is searched; the work title in the index would match every page of the work.
+                val argumentos = mutableListOf("texto : ($consultaFTS)")
                 val filtros = mutableListOf<String>()
                 excluidas.sorted().forEach { id ->
                     filtros.add("p.obra_id != ?")
@@ -347,49 +350,57 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                     argumentos.add(obraId)
                 }
                 val whereExtra = if (filtros.isEmpty()) "" else " AND ${filtros.joinToString(" AND ")}"
-                argumentos.add(quantidade.toString())
+                // Every match is listed without its text; relevance comes from the index and only the
+                // requested results load their text below.
                 val sql = """
-                    SELECT p.obra_id, o.titulo, o.area, p.pagina, p.texto, bm25(rag_fts) AS ranking, p.id
+                    SELECT rag_fts.rowid, p.obra_id, o.titulo, o.area, p.pagina, p.id
                     FROM rag_fts
                     JOIN rag_paragrafos p ON p.id = rag_fts.bloco_id$workJoin
                     JOIN rag_obras o ON o.id = p.obra_id
                     WHERE rag_fts MATCH ?$whereExtra
-                    ORDER BY ranking, p.obra_id, p.pagina, CAST(p.id AS TEXT)
-                    LIMIT ?
                 """.trimIndent()
-                db.rawQuery(sql, argumentos.toTypedArray()).use { cursor ->
-                    while (cursor.moveToNext()) {
-                        resultados.add(
-                            BibliotecaBuscaResultado(
-                                obraId = cursor.getString(0),
-                                tituloObra = cursor.getString(1),
-                                area = BibliotecaArea.from(cursor.getString(2)),
-                                pagina = cursor.getInt(3),
-                                trecho = TextoFormatter.textoComParagrafos(cursor.getString(4).orEmpty()),
-                                ranking = cursor.getDouble(5),
-                                blocoId = cursor.getString(6)
-                            )
-                        )
+                val found = db.rawQuery(sql, argumentos.toTypedArray()).use { cursor ->
+                    buildList {
+                        while (cursor.moveToNext()) {
+                            add(cursor.getLong(0) to BibliotecaBuscaResultado(
+                                obraId = cursor.getString(1),
+                                tituloObra = cursor.getString(2),
+                                area = BibliotecaArea.from(cursor.getString(3)),
+                                pagina = cursor.getInt(4),
+                                trecho = "",
+                                blocoId = cursor.getString(5)
+                            ))
+                        }
                     }
+                }
+                val counts = if (found.isEmpty()) emptyMap() else StudyIndex.occurrencesByBlock(db, terms, cancelled)
+                found.forEach { (doc, result) ->
+                    resultados.add(result.copy(ranking = -terms.sumOf { counts[doc]?.get(it) ?: 0 }.toDouble()))
                 }
             }
             resultados.addAll(NotesSearchIndex.search(localFile(pacote), appContext.cacheDir, consultaFTS,
-                area, obraId, quantidade, excluidas, cancelled))
-        }
+                area, obraId, 100_000, excluidas, cancelled).map { it.copy(ranking = -StudyIndex.searchOccurrences(terms, it.trecho).toDouble()) })
+            resultados
+        }.collect(java.util.stream.Collectors.toList())
+        porPacote.forEach(resultados::addAll)
 
         if (area == null || area == BibliotecaArea.Breviarios) {
             val embedded = BreviarioRepository.get(appContext)
             val allowedWorks = obrasBreviariosIntegrados.filter(filtro::matches).associateBy { it.id }
-            embedded.buscarLeituras(query).filter { item ->
-                item.obraId in allowedWorks && (obraId == null || item.obraId == obraId)
-            }.forEach {
+            val readings = embedded.itens.filter { item -> item.obraId in allowedWorks && (obraId == null || item.obraId == obraId) }
+            val ranking = rankLocalTexts(query, readings.associate { it.chavePersistencia to embedded.textosPesquisa[it.chavePersistencia].orEmpty() })
+            readings.forEach {
+                val score = ranking[it.chavePersistencia] ?: return@forEach
                 resultados.add(BibliotecaBuscaResultado(it.obraId, allowedWorks.getValue(it.obraId).titulo, BibliotecaArea.Breviarios,
-                    it.pagina, it.texto, data = it.data, rodape = it.rodape))
+                    it.pagina, it.texto, ranking = score, data = it.data, rodape = it.rodape))
             }
         }
-        val selecionados = resultados.distinctBy { it.id }
+        // Shared search order: most occurrences of the searched terms first (ranking is their negative
+        // count), then work, page and block, so every source and platform lists results the same way.
+        val ordenados = resultados.distinctBy { it.id }
             .sortedWith(compareBy<BibliotecaBuscaResultado> { it.ranking }.thenBy { it.obraId }.thenBy { it.pagina }.thenBy { it.blocoId ?: it.data.orEmpty() })
             .drop(offset.coerceAtLeast(0)).take(limite.coerceIn(1, 500))
+        val selecionados = carregarTrechos(ordenados, candidatos)
         val notas = mutableMapOf<Pair<String, Int>, String>()
         for ((id, trechos) in selecionados.filter { it.data == null }.groupBy { it.obraId }) {
             if (cancelled()) throw kotlinx.coroutines.CancellationException()

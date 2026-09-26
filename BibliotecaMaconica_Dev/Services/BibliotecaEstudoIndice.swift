@@ -38,42 +38,9 @@ enum BibliotecaEstudoIndice {
         }
         defer { sqlite3_close(db) }
 
-        // Instance rows (term, doc, column, offset) let SQLite count words and phrases per page.
-        try executar(db, "CREATE VIRTUAL TABLE temp.vocab USING fts5vocab(main, rag_fts, 'instance')")
-
         let todas = regras.reduce(into: Set<String>()) { $0.formUnion($1) }
-
         // Counts are gathered per index block first; blocks are mapped to pages once at the end.
-        var porBloco: [Int64: [String: Int]] = [:]
-        let simples = todas.filter { !$0.contains(" ") }.sorted()
-        if !simples.isEmpty {
-            let sql = """
-            SELECT doc, term, count(*) FROM temp.vocab
-            WHERE col = 'texto' AND term IN (\(marcadores(simples.count)))
-            GROUP BY doc, term
-            """
-            try consultar(db, sql, simples) { statement in
-                porBloco[sqlite3_column_int64(statement, 0), default: [:]][texto(statement, 1), default: 0] += Int(sqlite3_column_int(statement, 2))
-            }
-        }
-
-        for expressao in todas.filter({ $0.contains(" ") }).sorted() {
-            // Consecutive token positions in the same block form the phrase, as in `RegrasEstudo.contarPalavras`.
-            let palavras = expressao.split(separator: " ").map(String.init)
-            var posicoes: [Set<Posicao>] = []
-            for palavra in palavras {
-                var conjunto = Set<Posicao>()
-                try consultar(db, "SELECT doc, offset FROM temp.vocab WHERE col = 'texto' AND term = ?", [palavra]) { statement in
-                    conjunto.insert(Posicao(doc: sqlite3_column_int64(statement, 0), deslocamento: Int(sqlite3_column_int(statement, 1))))
-                }
-                posicoes.append(conjunto)
-            }
-            for inicio in posicoes[0] where (1..<palavras.count).allSatisfy({
-                posicoes[$0].contains(Posicao(doc: inicio.doc, deslocamento: inicio.deslocamento + $0))
-            }) {
-                porBloco[inicio.doc, default: [:]][expressao, default: 0] += 1
-            }
-        }
+        let porBloco = try ocorrenciasPorBloco(db, palavras: todas)
 
         var contagens: [Referencia: [String: Int]] = [:]
         if !porBloco.isEmpty {
@@ -132,6 +99,51 @@ enum BibliotecaEstudoIndice {
         let posicao = lista.firstIndex { precede(pontuacao, $0) } ?? lista.endIndex
         lista.insert(pontuacao, at: posicao)
         if lista.count > limite { lista.removeLast() }
+    }
+
+    /// Counts each normalized keyword or phrase per FTS block of the open package, from the index only.
+    /// Phrases are consecutive token positions in the same block, as in `RegrasEstudo.ContadorPalavras`.
+    static func ocorrenciasPorBloco(_ db: OpaquePointer?, palavras: Set<String>) throws -> [Int64: [String: Int]] {
+        try prepararVocabulario(db)
+        var porBloco: [Int64: [String: Int]] = [:]
+        let simples = palavras.filter { !$0.contains(" ") }.sorted()
+        if !simples.isEmpty {
+            let sql = """
+            SELECT doc, term, count(*) FROM temp.vocab
+            WHERE col = 'texto' AND term IN (\(marcadores(simples.count)))
+            GROUP BY doc, term
+            """
+            try consultar(db, sql, simples) { statement in
+                porBloco[sqlite3_column_int64(statement, 0), default: [:]][texto(statement, 1), default: 0] += Int(sqlite3_column_int(statement, 2))
+            }
+        }
+
+        for expressao in palavras.filter({ $0.contains(" ") }).sorted() {
+            let termos = expressao.split(separator: " ").map(String.init)
+            var posicoes: [Set<Posicao>] = []
+            for termo in termos {
+                var conjunto = Set<Posicao>()
+                try consultar(db, "SELECT doc, offset FROM temp.vocab WHERE col = 'texto' AND term = ?", [termo]) { statement in
+                    conjunto.insert(Posicao(doc: sqlite3_column_int64(statement, 0), deslocamento: Int(sqlite3_column_int(statement, 1))))
+                }
+                posicoes.append(conjunto)
+            }
+            for inicio in posicoes[0] where (1..<termos.count).allSatisfy({
+                posicoes[$0].contains(Posicao(doc: inicio.doc, deslocamento: inicio.deslocamento + $0))
+            }) {
+                porBloco[inicio.doc, default: [:]][expressao, default: 0] += 1
+            }
+        }
+        return porBloco
+    }
+
+    /// Instance rows (term, doc, column, offset) let SQLite count words and phrases per block.
+    /// The table lives in the temporary schema; the package itself is never written.
+    static func prepararVocabulario(_ db: OpaquePointer?) throws {
+        var existe = false
+        try consultar(db, "SELECT 1 FROM temp.sqlite_master WHERE name = 'vocab'", []) { _ in existe = true }
+        guard !existe else { return }
+        try executar(db, "CREATE VIRTUAL TABLE temp.vocab USING fts5vocab(main, rag_fts, 'instance')")
     }
 
     /// Keeps the best pages of each rule across packages; same order as `RegrasEstudo`.

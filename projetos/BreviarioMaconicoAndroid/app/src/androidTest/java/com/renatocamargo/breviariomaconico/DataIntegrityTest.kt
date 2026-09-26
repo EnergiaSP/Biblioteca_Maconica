@@ -22,6 +22,32 @@ import org.json.JSONObject
 
 @RunWith(AndroidJUnit4::class)
 class DataIntegrityTest {
+    /**
+     * Searching matches the reading itself, not the work's title, author or subjects, and local
+     * readings carry the same bm25 relevance as downloaded packages.
+     */
+    @Test
+    fun librarySearchMatchesReadingTextNotWorkMetadata() {
+        val catalog = BibliotecaCatalogRepository.get(ApplicationProvider.getApplicationContext())
+        for ((term, expected) in listOf("filosofia" to 20, "ética" to 4)) {
+            val results = catalog.buscarConteudo(term, obraId = ObraId.BREVIARIO_SECULO_XXI, limite = 500)
+            assertEquals(term, expected, results.size)
+            assertTrue(term, results.all { it.ranking < 0 })
+            assertEquals(term, results.map { it.ranking }.sorted(), results.map { it.ranking })
+        }
+    }
+
+    @Test
+    fun localTextsUseTheSameFtsQueryAsPackages() {
+        val texts = mapOf("a" to "A Escada de Jacó e a escada.", "b" to "Leitura e lei.", "c" to "Escada simples")
+        assertEquals(setOf("a"), rankLocalTexts("\"escada de jaco\"", texts).keys)
+        assertEquals(setOf("a", "c"), rankLocalTexts("escada", texts).keys)
+        // bm25 also weighs text length, so frequency is compared on texts of equal length.
+        val frequency = rankLocalTexts("escada", mapOf("two" to "escada escada neutro", "one" to "escada neutro neutro"))
+        assertTrue("More occurrences rank first", frequency.getValue("two") < frequency.getValue("one"))
+        assertEquals(setOf("b"), rankLocalTexts("lei", texts).keys)
+    }
+
     /** The index engine must rank pages exactly like the shared in-memory rule, in both index layouts. */
     @Test
     fun indexStudyScoringMatchesSharedRule() {

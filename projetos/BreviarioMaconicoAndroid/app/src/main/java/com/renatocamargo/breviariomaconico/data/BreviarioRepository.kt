@@ -16,6 +16,12 @@ class BreviarioRepository private constructor(context: Context) {
     private val itensPorObraEData: Map<String, BreviarioItem>
     private val pesquisaNormalizada: Map<String, String>
 
+    /**
+     * Text searched by the library search and dossier, keyed by [BreviarioItem.chavePersistencia]:
+     * only the reading itself. The work's author, title and subjects belong to the metadata filter.
+     */
+    val textosPesquisa: Map<String, String>
+
     init {
         val roots = listOf(
             "breviario.json" to ObraId.BREVIARIO_SECULO_XXI,
@@ -55,6 +61,13 @@ class BreviarioRepository private constructor(context: Context) {
         itensPorObraEData = itens.associateBy { "${it.obraId}|${it.data}" }
         val indicePorData = indice.flatMap { entry -> entry.datas.map { "${entry.obraId}|$it" to entry.termo } }
             .groupBy({ it.first }, { it.second })
+        val frases = roots.flatMap { (defaultWorkId, root) ->
+            root.getJSONArray("itens").toList { obj ->
+                "${obj.optString("obraID").ifBlank { defaultWorkId }}_${obj.optString("data")}" to obj.optString("frase")
+            }
+        }.toMap()
+        textosPesquisa = itens.associate { item -> item.chavePersistencia to listOf(item.titulo, frases[item.chavePersistencia].orEmpty(),
+            item.texto, item.rodape, item.data, indicePorData["${item.obraId}|${item.data}"].orEmpty().joinToString(" ")).joinToString(" ") }
         pesquisaNormalizada = itens.associate { item -> item.chavePersistencia to normalized(
             listOf(item.titulo, item.texto, item.rodape, item.data, item.autor,
                 indicePorData["${item.obraId}|${item.data}"].orEmpty().joinToString(" ")).joinToString(" ")) }

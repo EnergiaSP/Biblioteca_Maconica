@@ -553,13 +553,19 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         for area in BibliotecaArea.allCases {
             XCTAssertTrue(try service.buscar(termo: "maçonaria", escopo: .area, area: area, obraID: nil).allSatisfy { $0.obra.area == area })
         }
+        // Same books-only scope on both platforms; compared result by result across iOS and Android.
+        var topResults: [String: [String]] = [:]
+        for query in ["maçonaria", "\"grande loja\"", "ética virtude", "\"escada de jacó\""] {
+            let hits = try service.buscar(termo: query, escopo: .area, area: .bibliotecaMaconica, obraID: nil, limite: 120)
+            topResults[query] = hits.map { "\($0.obra.id):\($0.item.pagina ?? 0):\($0.blocoID ?? $0.item.data)" }
+        }
         let largest = try XCTUnwrap(service.pacotes.flatMap(\.obras).max { $0.paginas < $1.paginas })
         let start = ProcessInfo.processInfo.systemUptime
         let pages = try service.carregarIndicePaginas(obraID: largest.id)
         XCTAssertEqual(pages.count, largest.paginas)
         let report: [String: Any] = [
             "environment": "iPhone simulator; not a physical-device certification",
-            "packages": service.pacotes.count, "queries": timings,
+            "packages": service.pacotes.count, "queries": timings, "topResults": topResults,
             "largestWorkPages": pages.count,
             "pageIndexMilliseconds": (ProcessInfo.processInfo.systemUptime - start) * 1000
         ]
@@ -682,6 +688,32 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(sqlite3_exec(raw, "DROP TABLE rag_fts", nil, nil, nil), SQLITE_OK)
         sqlite3_close(raw)
         XCTAssertThrowsError(try service.buscar(termo: "simbolismo", escopo: .appTodo, area: nil, obraID: nil))
+    }
+
+    /// Searching matches the reading itself, not the work's title, author or subjects, and local
+    /// readings carry the same bm25 relevance as downloaded packages.
+    @MainActor
+    func testLibrarySearchMatchesReadingTextNotWorkMetadata() async throws {
+        let store = BreviarioStore()
+        for (termo, esperado) in [("filosofia", 20), ("ética", 4)] {
+            let resultados = try await store.buscarBiblioteca(termo: termo, escopo: .obraAtual, area: nil,
+                                                                limite: 500, obraID: ObraID.breviarioSeculoXXI)
+            XCTAssertEqual(resultados.count, esperado, termo)
+            XCTAssertTrue(resultados.allSatisfy { $0.ranking < 0 }, termo)
+            XCTAssertEqual(resultados.map(\.ranking), resultados.map(\.ranking).sorted(), termo)
+        }
+    }
+
+    func testLocalTextsUseTheSameFTSQueryAsPackages() throws {
+        let textos = [(chave: "a", texto: "A Escada de Jacó e a escada."), (chave: "b", texto: "Leitura e lei."), (chave: "c", texto: "Escada simples")]
+        let frase = try BibliotecaSQLiteService.pontuarTextosLocais(termo: "\"escada de jaco\"", textos: textos)
+        XCTAssertEqual(Set(frase.keys), ["a"])
+        XCTAssertEqual(Set(try BibliotecaSQLiteService.pontuarTextosLocais(termo: "escada", textos: textos).keys), ["a", "c"])
+        // bm25 also weighs text length, so frequency is compared on texts of equal length.
+        let mesmoTamanho = [(chave: "duas", texto: "escada escada neutro"), (chave: "uma", texto: "escada neutro neutro")]
+        let frequencia = try BibliotecaSQLiteService.pontuarTextosLocais(termo: "escada", textos: mesmoTamanho)
+        XCTAssertLessThan(try XCTUnwrap(frequencia["duas"]), try XCTUnwrap(frequencia["uma"]), "More occurrences rank first")
+        XCTAssertTrue(try BibliotecaSQLiteService.pontuarTextosLocais(termo: "lei", textos: textos).keys.elementsEqual(["b"]))
     }
 
     /// The index engine must rank pages exactly like the shared in-memory rule, notes and phrases included.

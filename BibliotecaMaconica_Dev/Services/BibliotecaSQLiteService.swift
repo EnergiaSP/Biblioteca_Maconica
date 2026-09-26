@@ -121,7 +121,8 @@ final class BibliotecaSQLiteService {
 
         let consultaFTS = Self.consultaFTSSegura(busca)
         var filtros: [String] = []
-        var parametros: [SQLValor] = [SQLValor.text(consultaFTS)]
+        // Only the page text is searched; the work title in the index would match every page of the work.
+        var parametros: [SQLValor] = [SQLValor.text("texto : (\(consultaFTS))")]
 
         if let area {
             filtros.append("o.area = ?")
@@ -138,48 +139,80 @@ final class BibliotecaSQLiteService {
             parametros.append(.text(id))
         }
 
-        parametros.append(.int(max(0, limite)))
-
         let whereExtra = filtros.isEmpty ? "" : " AND " + filtros.joined(separator: " AND ")
+        // Every match is listed without its text; relevance comes from the index and only the
+        // requested results load their text below.
         let sql = """
-        SELECT p.id, p.obra_id, o.titulo, o.area, p.pagina, p.texto, bm25(rag_fts) AS ranking
+        SELECT rag_fts.rowid, p.id, p.obra_id, o.titulo, o.area, p.pagina
         FROM rag_fts
         JOIN rag_paragrafos p ON p.id = rag_fts.bloco_id AND p.obra_id = rag_fts.obra_id
         JOIN rag_obras o ON o.id = p.obra_id
         WHERE rag_fts MATCH ?\(whereExtra)
-        ORDER BY ranking, p.obra_id, p.pagina, CAST(p.id AS TEXT)
-        LIMIT ?
         """
-
-        let paragrafos = try consultar(sql, parametros) { statement in
-            let blocoID = colunaTexto(statement, 0)
-            let obraID = colunaTexto(statement, 1)
-            let titulo = colunaTexto(statement, 2)
-            let areaRaw = colunaTexto(statement, 3)
-            let area = BibliotecaArea(rawValue: areaRaw) ?? .bibliotecaMaconica
-            let pagina = Int(sqlite3_column_int(statement, 4))
-            let trecho = colunaTexto(statement, 5)
-            let ranking = sqlite3_column_double(statement, 6)
-
-            return BibliotecaRAGResultadoBusca(
-                id: "\(obraID)-\(blocoID)",
-                obraID: obraID,
-                tituloObra: titulo,
-                area: area,
-                pagina: pagina,
-                blocoID: blocoID,
-                trecho: trecho,
-                ranking: ranking
+        let candidatos = try consultar(sql, parametros) { statement in
+            (
+                doc: sqlite3_column_int64(statement, 0),
+                blocoID: colunaTexto(statement, 1),
+                obraID: colunaTexto(statement, 2),
+                titulo: colunaTexto(statement, 3),
+                area: BibliotecaArea(rawValue: colunaTexto(statement, 4)) ?? .bibliotecaMaconica,
+                pagina: Int(sqlite3_column_int(statement, 5))
+            )
+        }
+        let termos = Self.termosContagem(busca)
+        if !candidatos.isEmpty && somenteLeitura {
+            // query_only also blocks the temporary counting table; the file stays opened read-only.
+            try executar("PRAGMA query_only = OFF")
+            defer { try? executar("PRAGMA query_only = ON") }
+            try BibliotecaEstudoIndice.prepararVocabulario(db)
+        }
+        let ocorrencias = candidatos.isEmpty ? [:] : try BibliotecaEstudoIndice.ocorrenciasPorBloco(db, palavras: termos)
+        let pontuados = candidatos.map { candidato in
+            BibliotecaRAGResultadoBusca(
+                id: "\(candidato.obraID)-\(candidato.blocoID)",
+                obraID: candidato.obraID,
+                tituloObra: candidato.titulo,
+                area: candidato.area,
+                pagina: candidato.pagina,
+                blocoID: candidato.blocoID,
+                trecho: "",
+                ranking: -Double(termos.reduce(0) { $0 + (ocorrencias[candidato.doc]?[$1] ?? 0) })
             )
         }
         let notas = try BibliotecaNotasSearch.buscar(source: url, consulta: consultaFTS, area: area,
-            obraID: obraID, limite: limite, excluidas: obrasExcluidas)
-        return Array((paragrafos + notas).sorted {
-            if $0.ranking != $1.ranking { return $0.ranking < $1.ranking }
-            if $0.obraID != $1.obraID { return $0.obraID < $1.obraID }
-            if $0.pagina != $1.pagina { return $0.pagina < $1.pagina }
-            return $0.blocoID < $1.blocoID
-        }.prefix(max(0, limite)))
+            obraID: obraID, limite: 100_000, excluidas: obrasExcluidas).map { nota in
+            nota.comRanking(-Double(Self.ocorrenciasBusca(termos: termos, texto: nota.trecho)))
+        }
+        let selecionados = Array((pontuados + notas).sorted(by: Self.precedeBusca).prefix(max(0, limite)))
+
+        let blocos = selecionados.filter { $0.trecho.isEmpty }.map(\.blocoID)
+        var textos: [String: String] = [:]
+        for lote in stride(from: 0, to: blocos.count, by: 500).map({ Array(blocos[$0..<min($0 + 500, blocos.count)]) }) {
+            let valores = lote.map(SQLValor.text)
+            let linhas = try consultar("SELECT id, texto FROM rag_paragrafos WHERE id IN (\(Array(repeating: "?", count: lote.count).joined(separator: ",")))",
+                                       valores) { (colunaTexto($0, 0), colunaTexto($0, 1)) }
+            for (id, texto) in linhas { textos[id] = texto }
+        }
+        return selecionados.map { $0.trecho.isEmpty ? $0.comTrecho(textos[$0.blocoID] ?? "") : $0 }
+    }
+
+    /// Shared search order: most occurrences of the searched terms first (`ranking` is their negative
+    /// count), then work, page and block, so every source and platform lists results the same way.
+    static func precedeBusca(_ lhs: BibliotecaRAGResultadoBusca, _ rhs: BibliotecaRAGResultadoBusca) -> Bool {
+        if lhs.ranking != rhs.ranking { return lhs.ranking < rhs.ranking }
+        if lhs.obraID != rhs.obraID { return lhs.obraID < rhs.obraID }
+        if lhs.pagina != rhs.pagina { return lhs.pagina < rhs.pagina }
+        return lhs.blocoID < rhs.blocoID
+    }
+
+    /// Words and quoted phrases of a search, normalized like the FTS index for counting.
+    static func termosContagem(_ termo: String) -> Set<String> {
+        Set(termosBusca(termo).map { RegrasEstudo.normalizar($0).trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty })
+    }
+
+    /// Occurrences of the searched words and phrases in a text outside the index (notes, breviaries).
+    static func ocorrenciasBusca(termos: Set<String>, texto: String) -> Int {
+        RegrasEstudo.ContadorPalavras(palavras: termos).contar(RegrasEstudo.normalizar(texto)).values.reduce(0, +)
     }
 
     func buscarResultadosBiblioteca(
@@ -699,6 +732,57 @@ final class BibliotecaSQLiteService {
         }
 
         return string
+    }
+
+    /// Matches texts outside the downloaded packages (integrated breviaries, JSON imports) with the same
+    /// FTS5 tokenizer and query used for the packages, and scores them by the shared occurrence count.
+    /// Returns the negative count of each matching key; lower is more relevant, as in the package search.
+    static func pontuarTextosLocais(termo: String, textos: [(chave: String, texto: String)]) throws -> [String: Double] {
+        let busca = termo.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard busca.isEmpty == false, textos.isEmpty == false else { return [:] }
+        var db: OpaquePointer?
+        guard sqlite3_open(":memory:", &db) == SQLITE_OK else {
+            sqlite3_close(db)
+            throw Erro.naoAbriuBanco("Índice temporário indisponível.")
+        }
+        defer { sqlite3_close(db) }
+        let criar = "CREATE VIRTUAL TABLE local_fts USING fts5(chave UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')"
+        guard sqlite3_exec(db, criar, nil, nil, nil) == SQLITE_OK,
+              sqlite3_exec(db, "BEGIN", nil, nil, nil) == SQLITE_OK else {
+            throw Erro.falhaSQL(String(cString: sqlite3_errmsg(db)))
+        }
+        var inserir: OpaquePointer?
+        guard sqlite3_prepare_v2(db, "INSERT INTO local_fts VALUES (?, ?)", -1, &inserir, nil) == SQLITE_OK else {
+            throw Erro.falhaPreparar(String(cString: sqlite3_errmsg(db)))
+        }
+        for documento in textos {
+            sqlite3_bind_text(inserir, 1, documento.chave, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_text(inserir, 2, documento.texto, -1, SQLITE_TRANSIENT)
+            guard sqlite3_step(inserir) == SQLITE_DONE else {
+                sqlite3_finalize(inserir)
+                throw Erro.falhaSQL(String(cString: sqlite3_errmsg(db)))
+            }
+            sqlite3_reset(inserir)
+        }
+        sqlite3_finalize(inserir)
+        sqlite3_exec(db, "COMMIT", nil, nil, nil)
+
+        var consulta: OpaquePointer?
+        guard sqlite3_prepare_v2(db, "SELECT chave FROM local_fts WHERE local_fts MATCH ?", -1, &consulta, nil) == SQLITE_OK else {
+            throw Erro.falhaPreparar(String(cString: sqlite3_errmsg(db)))
+        }
+        defer { sqlite3_finalize(consulta) }
+        sqlite3_bind_text(consulta, 1, "texto : (\(consultaFTSSegura(busca)))", -1, SQLITE_TRANSIENT)
+        var encontrados = Set<String>()
+        while sqlite3_step(consulta) == SQLITE_ROW {
+            encontrados.insert(colunaTexto(consulta, 0))
+        }
+        // Per-index bm25 is not comparable across indexes, so relevance is the shared occurrence count.
+        let termos = termosContagem(busca)
+        let porChave = Dictionary(textos.map { ($0.chave, $0.texto) }, uniquingKeysWith: { primeiro, _ in primeiro })
+        return Dictionary(uniqueKeysWithValues: encontrados.map { chave in
+            (chave, -Double(ocorrenciasBusca(termos: termos, texto: porChave[chave] ?? "")))
+        })
     }
 
     private static func consultaFTSSegura(_ termo: String) -> String {

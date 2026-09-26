@@ -45,9 +45,39 @@ Medicoes em simulador/emulador; aparelhos fisicos ainda nao medidos (Fase 6).
 | Android `FullCatalogBenchmarkTest` (acervo copiado para o emulador) | Aprovado, 5,9 s. |
 | Gate `verificar_paridade.sh` | Aprovado. |
 
+# Fase 1 (parte 2): busca e dossie
+
+## Problemas encontrados
+
+- A busca nos pacotes usava `rag_fts MATCH ?` sem limitar a coluna; o indice tambem guarda o titulo da obra, entao "maconaria" trazia todas as paginas dos livros com a palavra no titulo. Nos breviarios do iOS, titulo, autor, area e assuntos da obra entravam no texto de cada leitura ("filosofia" trazia as 365 leituras de cada breviario). O autor de cada leitura dos breviarios e o autor da obra (365 de 365).
+- A ordem misturava bm25 de indices diferentes: cada pacote e um indice separado, e bm25 depende das estatisticas de cada indice (termos presentes em mais da metade dos textos recebem peso quase nulo). Os breviarios recebiam 0 e ficavam sempre depois do acervo.
+
+## Regra comum de busca
+
+- Correspondencia: as mesmas palavras/frases de antes (`consultaFTSSegura`), apenas na coluna `texto`. Breviarios: titulo, frase, texto, notas, data e termos do indice remissivo; sem os dados da obra (ficam no filtro de metadados). O Android passou a considerar a "frase" (19 leituras do Kennyo).
+- Relevancia: total de ocorrencias das palavras/frases buscadas no trecho (pacotes: contado no indice com `fts5vocab`; notas e breviarios: `ContadorPalavras`/`KeywordCounter`). `ranking` guarda o negativo da contagem; desempate por obra, pagina e bloco/data.
+- Todas as correspondencias sao pontuadas antes da paginacao; o texto e carregado apenas para os resultados exibidos. Pacotes pesquisados em paralelo nas duas plataformas.
+
+## Desempenho da busca (acervo completo, desenvolvimento)
+
+| Busca | iOS antes | iOS agora | Android agora |
+| --- | --- | --- | --- |
+| maconaria | 4,79 s | 1,66 s | 5,67 s (inclui criar o cache de notas) |
+| "grande loja" | 2,05 s | 0,56 s | 0,52 s |
+| etica virtude | 0,77 s | 0,51 s | 0,38 s |
+
+## Paridade da busca
+
+Nova ferramenta `Tools/comparar_busca_acervo.py`: os dois testes do acervo gravam os 120 primeiros resultados de quatro buscas na area Biblioteca. Resultado: **0 erros**; mesmos resultados, na mesma ordem (120, 120, 75 e 71 resultados). Colecoes reavaliadas com o codigo final: 0 erros (iOS 0,78 s; Android 2,17 s).
+
+## Testes adicionais
+
+- iOS: `testLibrarySearchMatchesReadingTextNotWorkMetadata` ("filosofia" = 20 leituras e "etica" = 4 no breviario do Kennyo, antes 365) e `testLocalTextsUseTheSameFTSQueryAsPackages`. Suite unitaria: 70 testes, 0 falhas.
+- Android: `librarySearchMatchesReadingTextNotWorkMetadata` e `localTextsUseTheSameFtsQueryAsPackages`. `DataIntegrityTest` + `FullCatalogBenchmarkTest` com o acervo no emulador: 35 testes, 0 falhas.
+- Correcao durante a rodada: conexoes somente leitura do iOS usam `PRAGMA query_only`, que tambem bloqueava a tabela temporaria de contagem; a protecao e suspensa apenas para cria-la (o arquivo continua aberto com `SQLITE_OPEN_READONLY`).
+
 ## Pendente na Fase 1
 
-- Busca e dossie: remover os metadados da obra do texto comparado (item 8) e ordenacao unica entre acervo e breviarios (item 9).
 - Cache das colecoes por versao do acervo, sem recalcular a cada abertura da aba (item 13).
 - Reexecutar os testes de interface iOS de colecoes e busca apos a ordenacao unica.
 - Investigar os dois testes Android de busca que ja falhavam.

@@ -27,37 +27,9 @@ internal object StudyIndex {
 
     /** Returns, for each rule, its `limits[i]` best pages among [works]; keywords come from [StudyRules.studyKeywords]. */
     fun score(db: RagSQLite, works: Set<String>, rules: List<Set<String>>, limits: List<Int>, cancelled: () -> Boolean = { false }): List<List<PageScore>> {
-        // Instance rows (term, doc, column, offset) let SQLite count words and phrases per page.
-        db.execSQL("CREATE VIRTUAL TABLE IF NOT EXISTS temp.vocab USING fts5vocab(main, rag_fts, 'instance')")
         val all = rules.flatten().toSet()
-
         // Counts are gathered per index block first; blocks are mapped to pages once at the end.
-        val byBlock = HashMap<Long, MutableMap<String, Int>>()
-        val single = all.filterNot { ' ' in it }.sorted()
-        if (single.isNotEmpty()) {
-            db.rawQuery("SELECT doc, term, count(*) FROM temp.vocab WHERE col = 'texto' AND term IN (${single.joinToString { "?" }}) GROUP BY doc, term",
-                single.toTypedArray()).use { rows ->
-                while (rows.moveToNext()) {
-                    if (cancelled()) throw kotlinx.coroutines.CancellationException()
-                    byBlock.getOrPut(rows.getLong(0)) { HashMap() }.merge(rows.getString(1), rows.getInt(2), Int::plus)
-                }
-            }
-        }
-
-        for (phrase in all.filter { ' ' in it }.sorted()) {
-            // Consecutive token positions in the same block form the phrase, as in StudyRules.KeywordCounter.
-            val words = phrase.split(' ')
-            val positions = words.map { word ->
-                db.rawQuery("SELECT doc, offset FROM temp.vocab WHERE col = 'texto' AND term = ?", arrayOf(word)).use { rows ->
-                    buildSet { while (rows.moveToNext()) add(Position(rows.getLong(0), rows.getInt(1))) }
-                }
-            }
-            for (start in positions[0]) {
-                if ((1 until words.size).all { Position(start.doc, start.offset + it) in positions[it] }) {
-                    byBlock.getOrPut(start.doc) { HashMap() }.merge(phrase, 1, Int::plus)
-                }
-            }
-        }
+        val byBlock = occurrencesByBlock(db, all, cancelled)
 
         val counts = HashMap<PageRef, MutableMap<String, Int>>()
         if (byBlock.isNotEmpty()) {
@@ -110,6 +82,48 @@ internal object StudyIndex {
         }
         return best
     }
+
+    /**
+     * Counts each normalized keyword or phrase per FTS block of the open package, from the index only.
+     * Phrases are consecutive token positions in the same block, as in [StudyRules.KeywordCounter].
+     */
+    fun occurrencesByBlock(db: RagSQLite, words: Set<String>, cancelled: () -> Boolean = { false }): Map<Long, Map<String, Int>> {
+        // Instance rows (term, doc, column, offset) let SQLite count words and phrases per block.
+        db.execSQL("CREATE VIRTUAL TABLE IF NOT EXISTS temp.vocab USING fts5vocab(main, rag_fts, 'instance')")
+        val byBlock = HashMap<Long, MutableMap<String, Int>>()
+        val single = words.filterNot { ' ' in it }.sorted()
+        if (single.isNotEmpty()) {
+            db.rawQuery("SELECT doc, term, count(*) FROM temp.vocab WHERE col = 'texto' AND term IN (${single.joinToString { "?" }}) GROUP BY doc, term",
+                single.toTypedArray()).use { rows ->
+                while (rows.moveToNext()) {
+                    if (cancelled()) throw kotlinx.coroutines.CancellationException()
+                    byBlock.getOrPut(rows.getLong(0)) { HashMap() }.merge(rows.getString(1), rows.getInt(2), Int::plus)
+                }
+            }
+        }
+        for (phrase in words.filter { ' ' in it }.sorted()) {
+            val terms = phrase.split(' ')
+            val positions = terms.map { term ->
+                db.rawQuery("SELECT doc, offset FROM temp.vocab WHERE col = 'texto' AND term = ?", arrayOf(term)).use { rows ->
+                    buildSet { while (rows.moveToNext()) add(Position(rows.getLong(0), rows.getInt(1))) }
+                }
+            }
+            for (start in positions[0]) {
+                if ((1 until terms.size).all { Position(start.doc, start.offset + it) in positions[it] }) {
+                    byBlock.getOrPut(start.doc) { HashMap() }.merge(phrase, 1, Int::plus)
+                }
+            }
+        }
+        return byBlock
+    }
+
+    /** Words and quoted phrases of a search, normalized like the FTS index for counting. */
+    fun searchTerms(query: String): Set<String> =
+        TextoFormatter.termosBusca(query).map { StudyRules.studyNormalized(it).trim() }.filter { it.isNotEmpty() }.toSet()
+
+    /** Occurrences of the searched words and phrases in a text outside the index (notes, breviaries). */
+    fun searchOccurrences(terms: Set<String>, text: String): Int =
+        StudyRules.KeywordCounter(terms).count(StudyRules.studyNormalized(text)).values.sum()
 
     /** Keeps the best pages of each rule across packages; same order as [StudyRules]. */
     fun combine(current: List<List<PageScore>>, next: List<List<PageScore>>, limits: List<Int>): List<List<PageScore>> =
@@ -206,5 +220,26 @@ internal fun BibliotecaCatalogRepository.studyItems(obraId: String, paginas: Lis
             }
             items.map { it.copy(rodape = notes[it.pagina].orEmpty().joinToString("\n")) }
         }
+    }
+}
+
+/** Loads the text of the listed package results that were ranked without it. */
+internal fun BibliotecaCatalogRepository.carregarTrechos(results: List<BibliotecaBuscaResultado>,
+    packages: List<BibliotecaPacoteCatalogo>): List<BibliotecaBuscaResultado> {
+    val texts = HashMap<Pair<String, String>, String>()
+    for ((workId, pending) in results.filter { it.trecho.isEmpty() && it.blocoId != null }.groupBy { it.obraId }) {
+        val pacote = packages.firstOrNull { p -> p.obras.any { it.id == workId } } ?: continue
+        RagSQLite.open(localFile(pacote).absolutePath, readOnly = true).use { db ->
+            pending.mapNotNull { it.blocoId }.distinct().chunked(500).forEach { chunk ->
+                db.rawQuery("SELECT id, texto FROM rag_paragrafos WHERE obra_id = ? AND id IN (${chunk.joinToString { "?" }})",
+                    (listOf(workId) + chunk).toTypedArray()).use { rows ->
+                    while (rows.moveToNext()) texts[workId to rows.getString(0)] = TextoFormatter.textoComParagrafos(rows.getString(1))
+                }
+            }
+        }
+    }
+    return results.map { result ->
+        if (result.trecho.isNotEmpty() || result.blocoId == null) result
+        else result.copy(trecho = texts[result.obraId to result.blocoId].orEmpty())
     }
 }

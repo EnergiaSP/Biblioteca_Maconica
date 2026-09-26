@@ -64,20 +64,18 @@ final class BibliotecaRAGCatalogService {
             return []
         }
 
-        var resultados: [BibliotecaResultadoBusca] = []
         let inicio = max(0, offset)
         let tamanho = max(1, limite)
         let limitePorPacote = tamanho + inicio
 
-        for pacote in pacotes where !pacote.obraIDs.allSatisfy(obrasExcluidas.contains) {
-            try Task.checkCancellation()
-            guard let url = urlPacote(pacote) else {
-                continue
-            }
-
-            try autoreleasepool {
-                let banco = try BibliotecaSQLiteService(url: url, somenteLeitura: true)
-                let encontrados = try banco.buscarResultadosBiblioteca(
+        // Packages are independent files: each is searched on its own read-only connection in parallel.
+        let alvos = pacotes.filter { !$0.obraIDs.allSatisfy(obrasExcluidas.contains) }.compactMap { urlPacote($0) }
+        let coletor = ColetorBusca(quantidade: alvos.count)
+        DispatchQueue.concurrentPerform(iterations: alvos.count) { indice in
+            guard !Task.isCancelled else { return }
+            coletor.guardar(indice, Result {
+                try autoreleasepool {
+                    try BibliotecaSQLiteService(url: alvos[indice], somenteLeitura: true).buscarResultadosBiblioteca(
                         termo: termoLimpo,
                         escopo: escopo,
                         area: area,
@@ -86,10 +84,14 @@ final class BibliotecaRAGCatalogService {
                         obrasExcluidas: obrasExcluidas,
                         incluirNotas: false,
                         filtro: filtro
-                      )
-
-                resultados.append(contentsOf: encontrados)
-            }
+                    )
+                }
+            })
+        }
+        try Task.checkCancellation()
+        var resultados: [BibliotecaResultadoBusca] = []
+        for saida in coletor.todos() {
+            if let saida { resultados += try saida.get() }
         }
 
         let selecionados = Array(resultados.sorted {
@@ -338,5 +340,26 @@ private extension BibliotecaRAGPacote {
             return "RAGPackages"
         }
         return "RAGPackages/\(diretorio)"
+    }
+}
+
+private final class ColetorBusca: @unchecked Sendable {
+    private let trava = NSLock()
+    private var itens: [Result<[BibliotecaResultadoBusca], Error>?]
+
+    init(quantidade: Int) {
+        itens = Array(repeating: nil, count: quantidade)
+    }
+
+    func guardar(_ indice: Int, _ resultado: Result<[BibliotecaResultadoBusca], Error>) {
+        trava.lock()
+        itens[indice] = resultado
+        trava.unlock()
+    }
+
+    func todos() -> [Result<[BibliotecaResultadoBusca], Error>?] {
+        trava.lock()
+        defer { trava.unlock() }
+        return itens
     }
 }

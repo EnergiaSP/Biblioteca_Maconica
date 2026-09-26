@@ -57,32 +57,30 @@ func buscarBiblioteca(
                         pares.map(\.termo).joined(separator: " ")
                     }
 
-                for item in dados.itens {
-                    let conteudo = [
-                        obra.titulo,
-                        obra.autor ?? "",
-                        obra.area.titulo,
-                        obra.assuntos.joined(separator: " "),
-                        item.data,
+                // Only the reading itself is searched: the work's title, author, area and subjects belong
+                // to the metadata filter, and would otherwise match every page of the work.
+                let textos = dados.itens.map { item in
+                    (chave: item.chavePersistencia, texto: [
                         item.titulo,
                         item.frase,
                         item.texto,
                         item.rodape ?? "",
+                        item.data,
                         termosPorData[item.data] ?? ""
-                    ].joined(separator: " ")
-
-                    guard BibliotecaSQLiteService.corresponde(termo: termoLimpo, texto: conteudo) else {
-                        continue
-                    }
-
+                    ].joined(separator: " "))
+                }
+                let conteudos = Dictionary(uniqueKeysWithValues: textos.map { ($0.chave, $0.texto) })
+                let pontuacoes = try BibliotecaSQLiteService.pontuarTextosLocais(termo: termoLimpo, textos: textos)
+                for item in dados.itens {
+                    guard let ranking = pontuacoes[item.chavePersistencia] else { continue }
                     resultados.append(
                         BibliotecaResultadoBusca(
                             obra: obra,
                             item: item,
-                            contexto: Self.contextoBusca(termo: termoLimpo, em: conteudo)
+                            contexto: Self.contextoBusca(termo: termoLimpo, em: conteudos[item.chavePersistencia] ?? item.texto),
+                            ranking: ranking
                         )
                     )
-
                 }
             }
 

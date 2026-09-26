@@ -71,6 +71,12 @@ class FullCatalogBenchmarkTest {
         assertTrue(catalog.buscarConteudo("maçonaria", obraId = sample.obraId).all { it.obraId == sample.obraId })
         val all = catalog.buscarConteudo("maçonaria", limite = 80)
         assertEquals(all.drop(40), catalog.buscarConteudo("maçonaria", limite = 40, offset = 40))
+        // Same books-only scope on both platforms; compared result by result across iOS and Android.
+        val topResults = JSONObject()
+        for (query in listOf("maçonaria", "\"grande loja\"", "ética virtude", "\"escada de jacó\"")) {
+            topResults.put(query, JSONArray(catalog.buscarConteudo(query, area = BibliotecaArea.Biblioteca, limite = 120)
+                .map { "${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}" }))
+        }
         val largest = packages.flatMap { it.obras }.maxBy { it.paginas }
         val start = SystemClock.elapsedRealtime()
         val pages = catalog.indicePaginas(largest.id, limite = largest.paginas + 1)
@@ -79,7 +85,7 @@ class FullCatalogBenchmarkTest {
         assertTrue(catalog.indicePaginas(largest.id, filtro = last.pagina.toString()).any { it.pagina == last.pagina })
         File(context.filesDir, "medicao-acervo-android.json").writeText(JSONObject()
             .put("environment", "Android emulator API 36; not a physical-device certification")
-            .put("packages", packages.size).put("queries", timings)
+            .put("packages", packages.size).put("queries", timings).put("topResults", topResults)
             .put("largestWorkPages", pages.size).put("pageIndexMilliseconds", SystemClock.elapsedRealtime() - start).toString(2))
     }
 }
