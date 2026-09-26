@@ -221,6 +221,13 @@ class NavigationFlowTest {
                     val paint = android.graphics.Paint().apply { textSize = 22f; color = android.graphics.Color.BLACK }
                     page.canvas.drawText(if (number == 1) "Apresentacao documental neutra" else "Estudo documental sobre virtude", 36f, 60f, paint)
                     page.canvas.drawText("Conteudo integral da pagina $number.", 36f, 105f, paint)
+                    if (number == 2) {
+                        // Collections rank by distinct keywords, so this page must really be about the theme.
+                        listOf("honra prudencia temperanca coragem", "fortaleza fraternidade humildade",
+                            "tolerancia caridade lealdade").forEachIndexed { line, text ->
+                            page.canvas.drawText(text, 36f, 150f + line * 45f, paint)
+                        }
+                    }
                     pdf.finishPage(page)
                 }
                 source.outputStream().use { pdf.writeTo(it) }
@@ -230,10 +237,6 @@ class NavigationFlowTest {
                     com.renatocamargo.breviariomaconico.data.BibliotecaArea.Biblioteca) { }
             }
             imported = work
-            // The global collection is bounded and ordered by work ID, not insertion date.
-            val catalog = com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository.get(context)
-            org.junit.Assert.assertTrue("Fixture must precede the installed corpus to test the preview link",
-                catalog.obrasInstaladas().filter { it.id != work.id }.all { it.id > work.id })
             val batchItems = mutableListOf<com.renatocamargo.breviariomaconico.data.BreviarioItem>()
             com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository.get(context).percorrerItensEstudo(work.id) { batchItems.addAll(it); true }
             org.junit.Assert.assertEquals(listOf(1, 2), batchItems.map { it.pagina })

@@ -137,6 +137,10 @@ import com.renatocamargo.breviariomaconico.data.PreferencesStore
 import com.renatocamargo.breviariomaconico.data.ReaderSettings
 import com.renatocamargo.breviariomaconico.data.StudyPath
 import com.renatocamargo.breviariomaconico.data.StudyRules
+import com.renatocamargo.breviariomaconico.data.ScoredItem
+import com.renatocamargo.breviariomaconico.data.StudyIndex
+import com.renatocamargo.breviariomaconico.data.scoreStudy
+import com.renatocamargo.breviariomaconico.data.studyItems
 import com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo
 import com.renatocamargo.breviariomaconico.data.PersonalReflection
 import com.renatocamargo.breviariomaconico.data.ObraId
@@ -148,6 +152,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.isActive
+import kotlinx.coroutines.ensureActive
 import java.io.File
 import java.time.LocalDate
 import java.util.Calendar
@@ -284,17 +289,22 @@ internal fun CollectionsScreen(
                     withContext(Dispatchers.Main) { snapshot = partial }
                 }
                 publish(0)
-                for ((index, work) in pendingWorks.withIndex()) {
-                    try {
-                        catalog.percorrerItensEstudo(work.id, cancelled = { !jobContext.isActive }) { batch ->
-                            val batchTexts = batch.associate { it.chavePersistencia to StudyRules.studyNormalized(listOf(it.titulo, it.texto, it.rodape).joinToString(" ")) }
-                            rules.collections.forEach { rule -> collections[rule.id] = StudyRules.incorporateNormalized(collections[rule.id].orEmpty(), batch, collectionWords.getValue(rule.id), batchTexts, rules.collectionLimit) }
-                            rules.paths.forEach { rule -> paths[rule.id] = StudyRules.incorporateNormalized(paths[rule.id].orEmpty(), batch, pathWords.getValue(rule.id), batchTexts, rules.pathLimit) }
-                            jobContext.isActive
-                        }
-                    } catch (error: CancellationException) { throw error }
-                    catch (_: Exception) { failedWorks.add(work.titulo) }
-                    publish(index + 1)
+                // Downloaded works are scored on their FTS index: every page counts, and only the best are loaded.
+                val ruleWords = (rules.collections.map { collectionWords.getValue(it.id) } + rules.paths.map { pathWords.getValue(it.id) })
+                    .map(StudyRules::studyKeywords)
+                val limits = List(rules.collections.size) { rules.collectionLimit } + List(rules.paths.size) { rules.pathLimit }
+                val (scores, failures) = catalog.scoreStudy(pendingWorks.map { it.id }.toSet(), ruleWords, limits)
+                failedWorks.addAll(failures)
+                val loaded = scores.flatten().groupBy({ it.ref.obraId }, { it.ref.pagina }).flatMap { (workId, pages) ->
+                    jobContext.ensureActive()
+                    catalog.studyItems(workId, pages)
+                }.associateBy { StudyIndex.PageRef(it.obraId, it.pagina) }
+                val ruleIds = rules.collections.map { it.id } + rules.paths.map { it.id }
+                ruleIds.forEachIndexed { index, id ->
+                    // Index scores are kept as they are, so both platforms rank catalog pages identically.
+                    val fromCatalog = scores[index].mapNotNull { score -> loaded[score.ref]?.let { ScoredItem(it, score.topics, score.occurrences) } }
+                    val target = if (index < rules.collections.size) collections else paths
+                    target[id] = StudyRules.incorporateCounts(target[id].orEmpty() + fromCatalog, emptyList(), ruleWords[index], emptyMap(), limits[index])
                 }
                 StudyScreenContent(rules, works, collections.mapValues { entry -> entry.value.map { it.item } },
                     paths.mapValues { entry -> entry.value.map { it.item } },

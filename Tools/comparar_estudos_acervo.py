@@ -25,8 +25,13 @@ def compare(folder: Path) -> dict:
                 errors.append(f"{platform}: invalid page reference at rule {index}")
         if report.get("resultsPerRule") != list(map(len, rows)):
             errors.append(f"{platform}: counts differ from actual selections")
-        if report.get("pages") != 69711 or not 0 < report.get("maxBatch", 0) <= 100:
-            errors.append(f"{platform}: incomplete audit corpus or unbounded batch")
+        if report.get("pages") != 69711:
+            errors.append(f"{platform}: incomplete audit corpus")
+        # The index engine reads no page batches; the batch bound only applies to the text scan.
+        if report.get("engine") != "fts5vocab" and not 0 < report.get("maxBatch", 0) <= 100:
+            errors.append(f"{platform}: unbounded batch")
+    if reports["ios"].get("engine") != reports["android"].get("engine"):
+        errors.append("Different study engines between iOS and Android")
     if reports["ios"].get("selectedPages") != reports["android"].get("selectedPages"):
         errors.append("Different selected pages or ordering between iOS and Android")
     return {"rules": len(expected), "pages": reports["ios"].get("pages"), "errors": errors,

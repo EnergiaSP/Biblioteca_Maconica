@@ -575,37 +575,24 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         let rules = RegrasEstudo.compartilhadas
         let words = (rules.colecoes.map(\.palavrasChave) + rules.trilhas.map(\.palavrasChave))
             .map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
-        let allWords = words.reduce(into: Set<String>()) { $0.formUnion($1) }
         let limits = Array(repeating: rules.collectionLimit, count: rules.colecoes.count) + Array(repeating: rules.pathLimit, count: rules.trilhas.count)
-        var selected = Array(repeating: [RegrasEstudo.ItemPontuado](), count: words.count)
-        var total = 0
-        var maxBatch = 0
         let start = ProcessInfo.processInfo.systemUptime
-        for work in catalog.obras() {
-            try catalog.percorrerItens(obraID: work.id) { batch in
-                total += batch.count
-                maxBatch = max(maxBatch, batch.count)
-                let counts = Dictionary(uniqueKeysWithValues: batch.map {
-                    ($0.chavePersistencia, RegrasEstudo.contarPalavras(RegrasEstudo.normalizar([$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " ")), palavras: allWords))
-                })
-                for i in words.indices {
-                    selected[i] = RegrasEstudo.incorporarContagens(selected[i], lote: batch, palavras: words[i], contagens: counts, limite: limits[i])
-                }
-                return true
-            }
-        }
-        XCTAssertEqual(total, catalog.totaisPorObra().values.reduce(0, +))
-        XCTAssertLessThanOrEqual(maxBatch, 100)
+        let works = Set(catalog.obras().map(\.id))
+        let scored = try catalog.pontuarEstudo(obraIDs: works, regras: words, limites: limits)
+        XCTAssertTrue(scored.falhas.isEmpty, "Packages failed: \(scored.falhas)")
+        let selected = scored.pontuacoes
+        let total = catalog.totaisPorObra().filter { works.contains($0.key) }.values.reduce(0, +)
+        let maxBatch = 0
         for i in selected.indices {
             XCTAssertFalse(selected[i].isEmpty)
             XCTAssertLessThanOrEqual(selected[i].count, limits[i])
-            XCTAssertTrue(selected[i].allSatisfy { ($0.item.pagina ?? 0) > 0 })
+            XCTAssertTrue(selected[i].allSatisfy { $0.referencia.pagina > 0 })
         }
         let report: [String: Any] = ["pages": total, "maxBatch": maxBatch, "milliseconds": (ProcessInfo.processInfo.systemUptime - start) * 1000,
             "resultsPerRule": selected.map(\.count),
             "ruleIDs": rules.colecoes.map(\.id) + rules.trilhas.map(\.id),
-            "selectedPages": selected.map { $0.map { "\($0.item.obraID):\($0.item.pagina ?? 0)" } },
-            "environment": "simulator, not physical certification"]
+            "selectedPages": selected.map { $0.map { "\($0.referencia.obraID):\($0.referencia.pagina)" } },
+            "engine": "fts5vocab", "environment": "simulator, not physical certification"]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: documents.appendingPathComponent("medicao-estudos-ios.json"), options: .atomic)
     }
 
@@ -695,6 +682,48 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(sqlite3_exec(raw, "DROP TABLE rag_fts", nil, nil, nil), SQLITE_OK)
         sqlite3_close(raw)
         XCTAssertThrowsError(try service.buscar(termo: "simbolismo", escopo: .appTodo, area: nil, obraID: nil))
+    }
+
+    /// The index engine must rank pages exactly like the shared in-memory rule, notes and phrases included.
+    func testIndexStudyScoringMatchesSharedRule() throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let url = root.appendingPathComponent("RAGPackages/estudo.sqlite")
+        let db = try BibliotecaSQLiteService(url: url)
+        let obra = BibliotecaRAGObra(id: "estudo", area: .bibliotecaMaconica, tipo: .livro, titulo: "Estudo", autor: nil, origem: nil, edicao: nil, assuntos: [], dataImportacao: Date())
+        let blocos: [(Int, String)] = [
+            (1, "A Escada de Jacó tem degraus: a escada de Jacó e a Grande Loja."),
+            (2, "Leitura do espírito; nenhuma palavra inteira aqui."),
+            (3, "Uma ética da virtude."),
+            (3, "Segundo bloco da mesma página com virtude e ética."),
+            (4, "Texto neutro."),
+            (5, "Grande   loja, grande loja e lei.")
+        ]
+        let paragrafos = blocos.enumerated().map { indice, bloco in
+            BibliotecaRAGParagrafo(obraID: "estudo", pagina: bloco.0, ordem: indice, texto: bloco.1, capitulo: nil, secao: nil, temas: [], palavrasChave: [])
+        }
+        let paginas = (1...5).map { numero in
+            BibliotecaRAGPagina(obraID: "estudo", numeroOriginal: numero, titulo: nil,
+                                textoIntegral: blocos.filter { $0.0 == numero }.map(\.1).joined(separator: "\n"), largura: 595, altura: 842)
+        }
+        let notas = [BibliotecaRAGNotaRodape(obraID: "estudo", pagina: 4, numero: "578", texto: "Nota sobre a Escada de Jacó e a lei.")]
+        try db.substituirObra(obra: obra, paginas: paginas, paragrafos: paragrafos, notas: notas, imagens: [])
+
+        let regrasTexto = [["escada de jaco", "degraus", "grande loja"], ["etica", "virtude"], ["lei", "rito", "grande loja"]]
+        let regras = regrasTexto.map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
+        let limites = [3, 3, 3]
+        let indice = try BibliotecaEstudoIndice.pontuar(url: url, obras: ["estudo"], regras: regras, limites: limites)
+
+        let itens = try db.carregarItensBiblioteca(obraID: "estudo")
+        let textos = Dictionary(uniqueKeysWithValues: itens.map { ($0.chavePersistencia, [$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " ")) })
+        for (numero, palavras) in regrasTexto.enumerated() {
+            let memoria = RegrasEstudo.selecionar(itens, palavras: palavras, textos: textos, limite: limites[numero])
+            XCTAssertEqual(indice[numero].map(\.referencia.pagina), memoria.compactMap(\.pagina), "regra \(numero)")
+        }
+        XCTAssertEqual(indice[0].map(\.referencia.pagina), [1, 5, 4])
+        XCTAssertEqual(indice[0].first?.temas, 3)
+        XCTAssertEqual(indice[0].first?.ocorrencias, 4)
+        XCTAssertEqual(indice[2].map(\.referencia.pagina), [5, 1, 4], "\"lei\" and \"rito\" must not match inside other words")
     }
 
     /// Phase 1 scores study themes straight from the FTS index; the platform SQLite must provide fts5vocab.

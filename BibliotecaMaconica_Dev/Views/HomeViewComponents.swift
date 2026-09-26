@@ -266,7 +266,8 @@ struct RegrasEstudo: Decodable {
 
     static func incorporarNormalizados(_ selecionados: [ItemPontuado], lote: [BreviarioItem], palavras: [String], textos: [String: String], limite: Int) -> [ItemPontuado] {
         let chaves = palavrasChave(palavras)
-        let contagens = textos.mapValues { contarPalavras($0, palavras: chaves) }
+        let contador = ContadorPalavras(palavras: chaves)
+        let contagens = textos.mapValues(contador.contar)
         return incorporarContagens(selecionados, lote: lote, palavras: chaves, contagens: contagens, limite: limite)
     }
 
@@ -290,23 +291,37 @@ struct RegrasEstudo: Decodable {
 
     /// Counts, in a single pass over a normalized page, the occurrences of each keyword, including phrases.
     static func contarPalavras(_ texto: String, palavras: Set<String>) -> [String: Int] {
-        let simples = Set(palavras.filter { !$0.contains(" ") }.map { Substring($0) })
-        let expressoes = palavras.filter { $0.contains(" ") }.map { $0.split(separator: " ") }
-        let iniciosExpressoes = Set(expressoes.compactMap(\.first))
-        let tokens = texto.split(separator: " ")
-        var contagens: [String: Int] = [:]
-        for (indice, token) in tokens.enumerated() {
-            if simples.contains(token) {
-                contagens[String(token), default: 0] += 1
-            }
-            guard iniciosExpressoes.contains(token) else { continue }
-            for expressao in expressoes where expressao.first == token && indice + expressao.count <= tokens.count {
-                if tokens[indice..<(indice + expressao.count)].elementsEqual(expressao) {
-                    contagens[expressao.joined(separator: " "), default: 0] += 1
+        ContadorPalavras(palavras: palavras).contar(texto)
+    }
+
+    /// Keyword lookup built once and reused across many texts.
+    struct ContadorPalavras {
+        private let simples: Set<Substring>
+        private let expressoes: [[Substring]]
+        private let iniciosExpressoes: Set<Substring>
+
+        init(palavras: Set<String>) {
+            simples = Set(palavras.filter { !$0.contains(" ") }.map { Substring($0) })
+            expressoes = palavras.filter { $0.contains(" ") }.map { $0.split(separator: " ") }
+            iniciosExpressoes = Set(expressoes.compactMap(\.first))
+        }
+
+        func contar(_ texto: String) -> [String: Int] {
+            let tokens = texto.split(separator: " ")
+            var contagens: [String: Int] = [:]
+            for (indice, token) in tokens.enumerated() {
+                if simples.contains(token) {
+                    contagens[String(token), default: 0] += 1
+                }
+                guard iniciosExpressoes.contains(token) else { continue }
+                for expressao in expressoes where expressao.first == token && indice + expressao.count <= tokens.count {
+                    if tokens[indice..<(indice + expressao.count)].elementsEqual(expressao) {
+                        contagens[expressao.joined(separator: " "), default: 0] += 1
+                    }
                 }
             }
+            return contagens
         }
-        return contagens
     }
 
     private static func pontuar(_ item: BreviarioItem, palavras: Set<String>, contagens: [String: Int]) -> ItemPontuado? {

@@ -22,6 +22,57 @@ import org.json.JSONObject
 
 @RunWith(AndroidJUnit4::class)
 class DataIntegrityTest {
+    /** The index engine must rank pages exactly like the shared in-memory rule, in both index layouts. */
+    @Test
+    fun indexStudyScoringMatchesSharedRule() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val blocks = listOf(
+            1 to "A Escada de Jacó tem degraus: a escada de Jacó e a Grande Loja.",
+            2 to "Leitura do espírito; nenhuma palavra inteira aqui.",
+            3 to "Uma ética da virtude.",
+            3 to "Segundo bloco da mesma página com virtude e ética.",
+            4 to "Texto neutro.",
+            5 to "Grande   loja, grande loja e lei."
+        )
+        val note = "Nota sobre a Escada de Jacó e a lei."
+        val ruleTexts = listOf(listOf("escada de jaco", "degraus", "grande loja"), listOf("etica", "virtude"), listOf("lei", "rito", "grande loja"))
+        val rules = ruleTexts.map { words -> StudyRules.studyKeywords(words.map(StudyRules::studyNormalized)) }
+        val limits = listOf(3, 3, 3)
+        val items = (1..5).map { page ->
+            BreviarioItem("estudo-pagina-$page".hashCode(), "P$page", "Página $page", "",
+                blocks.filter { it.first == page }.joinToString("\n") { it.second }, if (page == 4) "578 $note" else "", page, "estudo")
+        }
+        val texts = items.associate { it.chavePersistencia to listOf(it.titulo, it.texto, it.rodape).joinToString(" ") }
+        for (catalogLayout in listOf(true, false)) {
+            val file = File(context.cacheDir, "estudo-${System.nanoTime()}.sqlite")
+            try {
+                val scores = RagSQLite.open(file.path).use { db ->
+                    db.execSQL("CREATE TABLE rag_paragrafos(id TEXT PRIMARY KEY, obra_id TEXT, pagina INTEGER, texto TEXT)")
+                    db.execSQL("CREATE TABLE rag_notas(obra_id TEXT, pagina INTEGER, numero TEXT, texto TEXT)")
+                    db.execSQL(if (catalogLayout) "CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, obra_id UNINDEXED, titulo_obra, area UNINDEXED, pagina UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')"
+                        else "CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')")
+                    blocks.forEachIndexed { index, (page, text) ->
+                        db.execSQL("INSERT INTO rag_paragrafos VALUES (?, 'estudo', ?, ?)", arrayOf("b$index", page, text))
+                        if (catalogLayout) db.execSQL("INSERT INTO rag_fts VALUES (?, 'estudo', 'Estudo', 'bibliotecaMaconica', ?, ?)", arrayOf("b$index", page, text))
+                        else db.execSQL("INSERT INTO rag_fts VALUES (?, ?)", arrayOf("b$index", text))
+                    }
+                    db.execSQL("INSERT INTO rag_notas VALUES ('estudo', 4, '578', ?)", arrayOf(note))
+                    StudyIndex.score(db, setOf("estudo"), rules, limits)
+                }
+                ruleTexts.forEachIndexed { index, words ->
+                    val memory = StudyRules.select(items, words, texts, limits[index])
+                    assertEquals("layout $catalogLayout, rule $index", memory.map { it.pagina }, scores[index].map { it.ref.pagina })
+                }
+                assertEquals(listOf(1, 5, 4), scores[0].map { it.ref.pagina })
+                assertEquals(3, scores[0].first().topics)
+                assertEquals(4, scores[0].first().occurrences)
+                assertEquals(listOf(5, 1, 4), scores[2].map { it.ref.pagina })
+            } finally {
+                file.delete()
+            }
+        }
+    }
+
     /** Phase 1 scores study themes straight from the FTS index; the bundled SQLite must provide fts5vocab. */
     @Test
     fun bundledSQLiteSupportsIndexOnlyTermCounts() {
@@ -156,12 +207,19 @@ class DataIntegrityTest {
         val catalog = BibliotecaCatalogRepository(context)
         val expected = BreviarioRepository.get(context).indice
         val all = catalog.indiceRemissivoGlobal()
-        assertEquals(expected.map { it.id }.toSet(), all.map { it.entrada.id }.toSet())
+        // Entry ids restart in each integrated breviary, so entries are identified by work and id.
+        assertEquals(expected.map { it.obraId to it.id }.toSet(), all.map { it.entrada.obraId to it.entrada.id }.toSet())
         assertEquals(all, catalog.indiceRemissivoGlobal(BibliotecaArea.Breviarios))
-        assertEquals(all, catalog.indiceRemissivoGlobal(obraId = ObraId.BREVIARIO_SECULO_XXI))
+        for (work in listOf(ObraId.BREVIARIO_SECULO_XXI, ObraId.BREVIARIO_RIZZARDO)) {
+            val byWork = catalog.indiceRemissivoGlobal(obraId = work)
+            assertTrue(work, byWork.isNotEmpty())
+            assertEquals(all.filter { it.entrada.obraId == work }, byWork)
+        }
         assertTrue(catalog.indiceRemissivoGlobal(BibliotecaArea.Dicionarios).isEmpty())
         assertTrue(catalog.indiceRemissivoGlobal(obraId = "missing").isEmpty())
-        assertTrue(all.all { reference -> expected.first { it.id == reference.entrada.id } == reference.entrada })
+        assertTrue(all.all { reference ->
+            expected.first { it.obraId == reference.entrada.obraId && it.id == reference.entrada.id } == reference.entrada
+        })
     }
 
     @Test

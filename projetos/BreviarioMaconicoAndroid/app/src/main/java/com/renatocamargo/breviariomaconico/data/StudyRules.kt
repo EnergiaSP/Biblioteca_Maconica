@@ -13,12 +13,34 @@ data class ScoredItem(val item: BreviarioItem, val topics: Int, val occurrences:
 
 data class StudyRules(val version: Int, val collectionLimit: Int, val pathLimit: Int,
     val collections: List<StudyCollection>, val paths: List<StudyPath>) {
+    /** Counts, in a single pass over a normalized page, the occurrences of each keyword, including phrases. */
+    class KeywordCounter(keywords: Set<String>) {
+        private val single = keywords.filterNot { ' ' in it }.toSet()
+        private val phrases = keywords.filter { ' ' in it }.map { it.split(' ') }
+        private val phraseStarts = phrases.map { it.first() }.toSet()
+
+        fun count(text: String): Map<String, Int> {
+            val tokens = text.split(' ').filter { it.isNotEmpty() }
+            val counts = HashMap<String, Int>()
+            tokens.forEachIndexed { index, token ->
+                if (token in single) counts.merge(token, 1, Int::plus)
+                if (token in phraseStarts) {
+                    for (phrase in phrases) {
+                        if (phrase.first() == token && index + phrase.size <= tokens.size &&
+                            tokens.subList(index, index + phrase.size) == phrase) {
+                            counts.merge(phrase.joinToString(" "), 1, Int::plus)
+                        }
+                    }
+                }
+            }
+            return counts
+        }
+    }
+
     companion object {
         /** A page belongs to a theme when a keyword appears as whole words: "lei" does not match "leitura". */
-        fun matches(text: String, keywords: List<String>): Boolean {
-            val normalizedText = studyNormalized(text)
-            return validKeywords(keywords.map(::studyNormalized)).any { normalizedText.contains(it) }
-        }
+        fun matches(text: String, keywords: List<String>): Boolean =
+            KeywordCounter(studyKeywords(keywords.map(::studyNormalized))).count(studyNormalized(text)).isNotEmpty()
 
         /** Folds case and accents and keeps only words, padded with spaces so keywords match whole words. */
         fun studyNormalized(text: String): String =
@@ -30,49 +52,45 @@ data class StudyRules(val version: Int, val collectionLimit: Int, val pathLimit:
         fun incorporate(selected: List<BreviarioItem>, batch: List<BreviarioItem>, keywords: List<String>, texts: Map<String, String>, limit: Int): List<BreviarioItem> {
             val normalizedKeywords = keywords.map(::studyNormalized)
             val normalizedTexts = texts.mapValues { studyNormalized(it.value) }
-            val previous = selected.mapNotNull { score(it, validKeywords(normalizedKeywords), normalizedTexts[it.chavePersistencia].orEmpty()) }
+            val previous = incorporateNormalized(emptyList(), selected, normalizedKeywords, normalizedTexts, Int.MAX_VALUE)
             return incorporateNormalized(previous, batch, normalizedKeywords, normalizedTexts, limit).map { it.item }
+        }
+
+        fun incorporateNormalized(selected: List<ScoredItem>, batch: List<BreviarioItem>, keywords: List<String>, texts: Map<String, String>, limit: Int): List<ScoredItem> {
+            val words = studyKeywords(keywords)
+            val counter = KeywordCounter(words)
+            return incorporateCounts(selected, batch, words, texts.mapValues { counter.count(it.value) }, limit)
         }
 
         /**
          * Keeps the `limit` most relevant pages. The result does not depend on batch size or order,
          * so the catalog can be streamed in batches without holding every page in memory.
+         * [counts] comes from [KeywordCounter] over all rules' keywords, so each page is read once.
          */
-        fun incorporateNormalized(selected: List<ScoredItem>, batch: List<BreviarioItem>, keywords: List<String>, texts: Map<String, String>, limit: Int): List<ScoredItem> {
+        fun incorporateCounts(selected: List<ScoredItem>, batch: List<BreviarioItem>, keywords: Set<String>, counts: Map<String, Map<String, Int>>, limit: Int): List<ScoredItem> {
             if (limit <= 0) return emptyList()
-            val valid = validKeywords(keywords)
-            return (selected + batch.mapNotNull { score(it, valid, texts[it.chavePersistencia].orEmpty()) })
+            return (selected + batch.mapNotNull { score(it, keywords, counts[it.chavePersistencia].orEmpty()) })
                 .sortedWith(order)
                 .distinctBy { it.item.chavePersistencia }
                 .take(limit)
         }
 
+        /** Normalized keywords without padding, ignoring blanks and repetitions. */
+        fun studyKeywords(keywords: List<String>): Set<String> = keywords.map { it.trim() }.filter { it.isNotEmpty() }.toSet()
+
         private val nonWord = Regex("[^\\p{L}\\p{N}]+")
 
-        private fun validKeywords(keywords: List<String>): List<String> = keywords.filter { it.isNotBlank() }.distinct()
-
-        private fun score(item: BreviarioItem, keywords: List<String>, text: String): ScoredItem? {
+        private fun score(item: BreviarioItem, keywords: Set<String>, counts: Map<String, Int>): ScoredItem? {
             var topics = 0
             var occurrences = 0
             for (keyword in keywords) {
-                val count = countOccurrences(keyword, text)
+                val count = counts[keyword] ?: 0
                 if (count > 0) {
                     topics++
                     occurrences += count
                 }
             }
             return if (topics == 0) null else ScoredItem(item, topics, occurrences)
-        }
-
-        /** Counts padded keyword matches; consecutive matches share the separating space. */
-        private fun countOccurrences(keyword: String, text: String): Int {
-            var total = 0
-            var start = text.indexOf(keyword)
-            while (start >= 0) {
-                total++
-                start = text.indexOf(keyword, start + keyword.length - 1)
-            }
-            return total
         }
 
         private val order = compareByDescending<ScoredItem> { it.topics }

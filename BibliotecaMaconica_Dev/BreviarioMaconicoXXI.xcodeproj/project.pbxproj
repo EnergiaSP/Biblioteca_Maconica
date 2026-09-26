@@ -37,6 +37,7 @@
 		010000000000000000000116 /* BibliotecaRAGModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000017 /* BibliotecaRAGModels.swift */; };
 		010000000000000000000117 /* BibliotecaSQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000018 /* BibliotecaSQLiteService.swift */; };
 		D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000002 /* BibliotecaNotasSearch.swift */; };
+		D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000102 /* BibliotecaEstudoIndice.swift */; };
 		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
 		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
 		01000000000000000000011A /* rag_catalogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001B /* rag_catalogo.json */; };
@@ -192,6 +193,7 @@
 		010000000000000000000017 /* BibliotecaRAGModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaRAGModels.swift; sourceTree = "<group>"; };
 		010000000000000000000018 /* BibliotecaSQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaSQLiteService.swift; sourceTree = "<group>"; };
 		D92100000000000000000002 /* BibliotecaNotasSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaNotasSearch.swift; sourceTree = "<group>"; };
+		D92100000000000000000102 /* BibliotecaEstudoIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaEstudoIndice.swift; sourceTree = "<group>"; };
 		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
 		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		01000000000000000000001B /* rag_catalogo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rag_catalogo.json; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				F72BA004B6B84748A020B200 /* UserBackupSnapshot.swift */,
 				010000000000000000000018 /* BibliotecaSQLiteService.swift */,
 				D92100000000000000000002 /* BibliotecaNotasSearch.swift */,
+				D92100000000000000000102 /* BibliotecaEstudoIndice.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
 				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
@@ -751,6 +754,7 @@
 				010000000000000000000116 /* BibliotecaRAGModels.swift in Sources */,
 				010000000000000000000117 /* BibliotecaSQLiteService.swift in Sources */,
 				D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */,
+				D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
 				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,

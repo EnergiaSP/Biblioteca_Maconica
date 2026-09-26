@@ -211,7 +211,7 @@ final class BibliotecaRAGCatalogService {
         }
     }
 
-    private func urlPacote(_ pacote: BibliotecaRAGPacote) -> URL? {
+    func urlPacote(_ pacote: BibliotecaRAGPacote) -> URL? {
         if let localURL = Self.urlPacoteLocal(arquivo: pacote.arquivo, fileManager: fileManager) {
             return localURL
         }
