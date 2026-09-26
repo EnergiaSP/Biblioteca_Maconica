@@ -166,8 +166,11 @@ final class BibliotecaMaconicaUITests: XCTestCase {
                 query.typeText("virtude")
                 app.buttons["Buscar"].firstMatch.tap()
             }
+            XCTAssertTrue(app.staticTexts["Breviários"].firstMatch.waitForExistence(timeout: 20))
+            // Results are a lazy list ordered by relevance; the reading can start below the visible area.
             let result = app.staticTexts["O número Dois"].firstMatch
-            XCTAssertTrue(result.waitForExistence(timeout: 20))
+            for _ in 0..<20 where !(result.exists && result.isHittable) { app.swipeUp(velocity: .slow) }
+            XCTAssertTrue(result.waitForExistence(timeout: 5))
             result.tap()
             XCTAssertTrue(app.buttons["Tela cheia"].firstMatch.waitForExistence(timeout: 8))
             XCTAssertTrue(app.staticTexts["Leitura: 02 de fevereiro"].exists)
@@ -306,7 +309,8 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Biblioteca Maçônica"].waitForExistence(timeout: 12))
         navigationTab("Coleções").tap()
         XCTAssertTrue(app.navigationBars["Coleções"].waitForExistence(timeout: 20))
-        let title = app.staticTexts["Adonhiram"].firstMatch
+        // Top reading of the Virtudes collection under the shared rule (most distinct keywords, then occurrences).
+        let title = app.staticTexts["DEGRAU"].firstMatch
         for _ in 0..<10 where !title.isHittable { app.swipeUp(velocity: .slow) }
         XCTAssertTrue(title.isHittable)
         XCTAssertGreaterThan(title.frame.height, 30, "The largest font must actually grow, not just set a launch argument")
@@ -317,7 +321,7 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         screenshot.lifetime = .keepAlways
         add(screenshot)
         title.tap()
-        XCTAssertTrue(app.staticTexts["Leitura: 03 de janeiro"].waitForExistence(timeout: 8))
+        XCTAssertTrue(app.staticTexts["Leitura: 11 de abril"].waitForExistence(timeout: 8))
         XCTAssertTrue(app.buttons["Voltar"].firstMatch.exists)
         app.buttons["Voltar"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Coleções"].waitForExistence(timeout: 5),

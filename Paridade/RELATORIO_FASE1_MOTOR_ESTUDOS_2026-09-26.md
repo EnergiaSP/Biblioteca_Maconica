@@ -112,3 +112,18 @@ Depois das correcoes: 0 diferencas.
 | Paridade: colecoes no acervo, colecoes dos breviarios e busca | 0 diferencas |
 | Gate | aprovado |
 
+## Testes de interface iOS (suite completa, final da Fase 1)
+
+29 executados: 24 aprovados, 5 reprovados. Os 5 sao auditorias de contraste de acessibilidade (`testContrastIndependentOfOtherAudits`, `testFullAccessibilityCollections`, `testFullAccessibilityHome`, `testFullAccessibilityHomeAfterScrolling`, `testFullAccessibilitySearch`), pendencia antiga prevista para a Fase 5. Todos os testes funcionais aprovados, inclusive notificacao, busca, colecoes com fonte maxima, dossie e rascunhos.
+
+Ajustes de testes que dependiam da ordem antiga, sem afrouxar a verificacao:
+- `testSearchReadingAfterDailyReadingAndRepeatedHomeReturns`: a lista de resultados e preguicosa e ordenada por relevancia; o teste rola ate "O numero Dois" (nos testes de interface o app nao tem o acervo baixado, so os breviarios). Continua exigindo que Voltar retorne a Busca tres vezes.
+- `testCollectionsAtLargestDynamicTypeOpenTheCorrectReading`: usa a primeira leitura da colecao Virtudes pela regra comum ("DEGRAU", 11 de abril) no lugar de "Adonhiram", que so entrava pela ordem antiga; continua exigindo a leitura correta e o retorno as Colecoes.
+- `testReadingOpenedFromDossierReturnsToTheDossier` falhou uma vez numa execucao em grupo e passou nas tres seguintes (isolado, em grupo e na suite completa); acompanhar.
+
+## Pendente, levado para as proximas fases
+
+- Variantes de termos (Jaco/Jacob) em lista curada comum: passa para a Fase 3, junto do dossie, onde o termo pesquisado e expandido.
+- Android: gravar rascunhos se o sistema encerrar o app em segundo plano com a leitura aberta.
+- Medicoes em aparelhos fisicos (Fase 6).
+
