@@ -442,7 +442,8 @@ require_markers(
 )
 require_markers(
     ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/data/NotesSearchIndex.kt",
-    ["notes_fts", "readOnly = true", "cache_meta", "checkCancellation", "obra_id != ?"],
+    # Excluded works are filtered in code: the bundled SQLite refuses MATCH next to many "!=" constraints.
+    ["notes_fts", "readOnly = true", "cache_meta", "checkCancellation", "in excluded) continue"],
     "Busca em notas Android",
 )
 
