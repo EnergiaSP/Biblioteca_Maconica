@@ -214,6 +214,10 @@ struct DossieEstudoCard: View {
                 }
             }
 
+            if let exibicao = dossie.exibicao {
+                DossieAnaliseSecoes(exibicao: exibicao, tema: tema)
+            }
+
             grupo("Obras envolvidas", icone: "books.vertical") {
                 if dossie.obrasEnvolvidas.isEmpty {
                     textoVazio("Nenhuma obra encontrada para este tema.")

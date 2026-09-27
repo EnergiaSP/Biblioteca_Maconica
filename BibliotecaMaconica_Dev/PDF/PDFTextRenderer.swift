@@ -345,6 +345,18 @@ static func desenharTextoPaginado(
             "Escopo\n\(dossie.resumoEscopo)"
         ]
 
+        if let exibicao = dossie.exibicao {
+            // AI-free analysis extracted from the sources, each line with its citation.
+            let secoes: [(String, [String])] = [
+                ("Definição", exibicao.definicoes), ("Resumo com fontes", exibicao.resumo),
+                ("Pontos a comparar", exibicao.divergencias), ("Métricas", exibicao.metricas),
+                ("Obras centrais", exibicao.obrasCentrais), ("Capítulos dedicados ao tema", exibicao.capitulosDedicados)
+            ]
+            for (titulo, linhas) in secoes where !linhas.isEmpty {
+                partes.append(titulo + "\n" + linhas.map { "• \($0)" }.joined(separator: "\n"))
+            }
+        }
+
         if dossie.obrasEnvolvidas.isEmpty == false {
             partes.append(
                 "Obras envolvidas\n" + dossie.obrasEnvolvidas

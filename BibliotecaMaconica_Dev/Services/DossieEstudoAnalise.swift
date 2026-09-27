@@ -8,6 +8,7 @@ enum DossieEstudoAnalise {
             let fontesAnalisadas, fontesExibidas, definicoes, resumo, termosAssociados, janelaAssociacao: Int
             let perguntas, divergencias, obrasCentrais, capitulosDedicados: Int
             let tamanhoMinimoFrase, tamanhoMaximoFrase, inicioCapitulo, tamanhoMinimoTermoAssociado: Int
+            let tokensChaveDuplicata, tokensMinimosDuplicata: Int
         }
         struct Revisao: Decodable {
             let dias: Int
@@ -51,10 +52,11 @@ enum DossieEstudoAnalise {
         let fontes: Int
         let obras: Int
         let ocorrencias: Int
+        let duplicadas: Int
         let porArea: [(area: String, fontes: Int)]
 
         static func == (lhs: Metricas, rhs: Metricas) -> Bool {
-            lhs.fontes == rhs.fontes && lhs.obras == rhs.obras && lhs.ocorrencias == rhs.ocorrencias
+            lhs.fontes == rhs.fontes && lhs.obras == rhs.obras && lhs.ocorrencias == rhs.ocorrencias && lhs.duplicadas == rhs.duplicadas
                 && lhs.porArea.elementsEqual(rhs.porArea) { $0.area == $1.area && $0.fontes == $1.fontes }
         }
     }
@@ -68,6 +70,8 @@ enum DossieEstudoAnalise {
 
     struct TermoAssociado: Codable, Equatable {
         let termo: String
+        /// Most frequent written form, shown to the reader ("maçom", not "macom").
+        let forma: String
         let ocorrencias: Int
         let obras: Int
     }
@@ -107,11 +111,11 @@ enum DossieEstudoAnalise {
                 "definicoes": trechos(definicoes),
                 "resumo": trechos(resumo),
                 "divergencias": trechos(divergencias),
-                "metricas": ["fontes": metricas.fontes, "obras": metricas.obras, "ocorrencias": metricas.ocorrencias,
+                "metricas": ["fontes": metricas.fontes, "obras": metricas.obras, "ocorrencias": metricas.ocorrencias, "duplicadas": metricas.duplicadas,
                              "porArea": metricas.porArea.map { [$0.area, $0.fontes] as [Any] }],
                 "obrasCentrais": obrasCentrais.map { ["obraId": $0.obraId, "titulo": $0.titulo, "ocorrencias": $0.ocorrencias, "fontes": $0.fontes] },
                 "capitulosDedicados": capitulosDedicados,
-                "termosAssociados": termosAssociados.map { ["termo": $0.termo, "ocorrencias": $0.ocorrencias, "obras": $0.obras] },
+                "termosAssociados": termosAssociados.map { ["termo": $0.termo, "forma": $0.forma, "ocorrencias": $0.ocorrencias, "obras": $0.obras] },
                 "perguntas": perguntas.map { ["pergunta": $0.pergunta, "resposta": $0.resposta, "fonte": $0.fonte] },
                 "roteiro": roteiro.map { ["etapa": $0.etapa, "texto": $0.texto] },
                 "revisao": revisao.map { ["data": $0.data, "tarefa": $0.tarefa] }
@@ -154,10 +158,11 @@ enum DossieEstudoAnalise {
             resumo: trechos(resultado.resumo),
             divergencias: trechos(resultado.divergencias),
             metricas: ["\(metricas.fontes) fonte(s) em \(metricas.obras) obra(s); \(metricas.ocorrencias) ocorrência(s) do tema."]
-                + (areas.isEmpty ? [] : ["Áreas: \(areas)."]),
+                + (areas.isEmpty ? [] : ["Áreas: \(areas)."])
+                + (metricas.duplicadas == 0 ? [] : ["\(metricas.duplicadas) fonte(s) com texto repetido de outra obra desconsiderada(s)."]),
             obrasCentrais: resultado.obrasCentrais.map { "\($0.titulo): \($0.ocorrencias) ocorrência(s) em \($0.fontes) fonte(s)" },
             capitulosDedicados: resultado.capitulosDedicados.map(citar),
-            mapa: resultado.termosAssociados.map { "\(tema) → \($0.termo) (\($0.ocorrencias) ocorrência(s), \($0.obras) obra(s))" },
+            mapa: resultado.termosAssociados.map { "\(tema) → \($0.forma) (\($0.ocorrencias) ocorrência(s), \($0.obras) obra(s))" },
             perguntas: resultado.perguntas.map { "\($0.pergunta) (Resposta: \($0.resposta) — \(citar($0.fonte)))" },
             roteiro: resultado.roteiro.map { "\($0.etapa): \($0.texto)" },
             revisao: resultado.revisao.map { item in
@@ -220,13 +225,13 @@ enum DossieEstudoAnalise {
         return (originais, originais.map { $0.lowercased() }, originais.map(dobrar))
     }
 
-    /// Collapses whitespace and removes OCR repetition: a run of 6 to 20 words repeated at once.
+    /// Collapses whitespace and removes OCR repetition: a run of 1 to 20 words repeated at once.
     static func limpar(_ bruto: String) -> String {
         let itens = nfc(bruto).unicodeScalars.split { $0.properties.isWhitespace }.map { texto(ArraySlice($0)) }
         var saida: [String] = []
         var indice = 0
         repeticao: while indice < itens.count {
-            for tamanho in stride(from: 20, through: 6, by: -1) where indice + 2 * tamanho <= itens.count {
+            for tamanho in stride(from: 20, through: 1, by: -1) where indice + 2 * tamanho <= itens.count {
                 if itens[indice..<(indice + tamanho)].elementsEqual(itens[(indice + tamanho)..<(indice + 2 * tamanho)]) {
                     saida.append(contentsOf: itens[indice..<(indice + tamanho)])
                     indice += 2 * tamanho
@@ -252,7 +257,30 @@ enum DossieEstudoAnalise {
         if inicio < escalares.count {
             resultado.append(texto(escalares[inicio...]).trimmingCharacters(in: .whitespaces))
         }
-        return resultado.filter { !$0.isEmpty }
+        return resultado.map(aparar).filter { !$0.isEmpty }
+    }
+
+    /// Drops OCR noise before the first real word: a word starting with a letter that has two or more
+    /// letters, or a single letter followed by a space and another word ("A virtude", "A Fé").
+    static func aparar(_ frase: String) -> String {
+        let escalares = Array(frase.unicodeScalars)
+        let encontrados = intervalos(escalares)
+        func ehLetra(_ escalar: Unicode.Scalar) -> Bool {
+            switch escalar.properties.generalCategory {
+            case .uppercaseLetter, .lowercaseLetter, .titlecaseLetter, .modifierLetter, .otherLetter: true
+            default: false
+            }
+        }
+        for (indice, intervalo) in encontrados.enumerated() where ehLetra(escalares[intervalo.lowerBound]) {
+            let letras = escalares[intervalo].filter(ehLetra).count
+            let seguinte = indice + 1 < encontrados.count ? encontrados[indice + 1].lowerBound : nil
+            let letraIsolada = letras == 1 && intervalo.upperBound < escalares.count && escalares[intervalo.upperBound] == " "
+                && seguinte == intervalo.upperBound + 1 && seguinte.map { ehLetra(escalares[$0]) } == true
+            if letras >= 2 || letraIsolada {
+                return texto(escalares[intervalo.lowerBound...]).trimmingCharacters(in: .whitespaces)
+            }
+        }
+        return ""
     }
 
     private static func ocorrencias(_ tokens: [String], _ termo: [Set<String>]) -> [Int] {
@@ -284,6 +312,18 @@ enum DossieEstudoAnalise {
     static func analisar(termo: String, fontes: [Fonte], configuracao: Configuracao, hoje: Date,
                          calendario: Calendar = Calendar(identifier: .gregorian)) -> Resultado {
         let limites = configuracao.limites
+        // Sources whose text repeats an earlier one (the same book imported twice) are ignored.
+        var chavesVistas = Set<String>()
+        var duplicadas = 0
+        let fontes = fontes.filter { fonte in
+            let tokens = palavras(limpar(fonte.texto)).normalizadas
+            guard tokens.count >= limites.tokensMinimosDuplicata else { return true }
+            guard chavesVistas.insert(tokens.prefix(limites.tokensChaveDuplicata).joined(separator: " ")).inserted else {
+                duplicadas += 1
+                return false
+            }
+            return true
+        }
         let termoAlternativas = palavras(nfc(termo)).normalizadas.map { Set([$0] + (configuracao.variantes[$0] ?? [])) }
         let palavrasDoTermo = termoAlternativas.reduce(into: Set<String>()) { $0.formUnion($1) }
         // Defining verbs describe the term instead of being associated with it.
@@ -296,21 +336,24 @@ enum DossieEstudoAnalise {
         var comecaComTermo: [Bool] = []
         var associados: [String: Int] = [:]
         var obrasPorAssociado: [String: Set<String>] = [:]
+        var formasPorAssociado: [String: [String: Int]] = [:]
         for (posicao, fonte) in fontes.enumerated() {
             let limpo = limpar(fonte.texto)
-            let tokens = palavras(limpo).normalizadas
+            let (_, minusculasTexto, tokens) = palavras(limpo)
             let encontrados = ocorrencias(tokens, termoAlternativas)
             ocorrenciasPorFonte.append(encontrados.count + ocorrencias(palavras(limpar(fonte.rodape)).normalizadas, termoAlternativas).count)
             comecaComTermo.append(encontrados.contains { $0 < limites.inicioCapitulo })
             for indice in encontrados {
-                let antes = tokens[max(0, indice - limites.janelaAssociacao)..<indice]
                 let depoisInicio = min(tokens.count, indice + termoAlternativas.count)
-                let depois = tokens[depoisInicio..<min(tokens.count, depoisInicio + limites.janelaAssociacao)]
-                for palavra in Array(antes) + Array(depois) {
+                let posicoes = Array(max(0, indice - limites.janelaAssociacao)..<indice)
+                    + Array(depoisInicio..<min(tokens.count, depoisInicio + limites.janelaAssociacao))
+                for posicaoPalavra in posicoes {
+                    let palavra = tokens[posicaoPalavra]
                     guard palavra.unicodeScalars.count >= limites.tamanhoMinimoTermoAssociado, !vazias.contains(palavra),
                           !palavrasDoTermo.contains(palavra), !ehNumero(palavra) else { continue }
                     associados[palavra, default: 0] += 1
                     obrasPorAssociado[palavra, default: []].insert(fonte.obraId)
+                    formasPorAssociado[palavra, default: [:]][minusculasTexto[posicaoPalavra], default: 0] += 1
                 }
             }
             for (ordem, frase) in frases(limpo).enumerated() {
@@ -370,7 +413,11 @@ enum DossieEstudoAnalise {
         }
         let termosAssociados = associados.sorted { $0.value != $1.value ? $0.value > $1.value : $0.key < $1.key }
             .prefix(limites.termosAssociados)
-            .map { TermoAssociado(termo: $0.key, ocorrencias: $0.value, obras: obrasPorAssociado[$0.key]?.count ?? 0) }
+            .map { item in
+                // Shown in its most frequent written form; ties keep the smallest form.
+                let forma = (formasPorAssociado[item.key] ?? [:]).min { $0.value != $1.value ? $0.value > $1.value : $0.key < $1.key }?.key ?? item.key
+                return TermoAssociado(termo: item.key, forma: forma, ocorrencias: item.value, obras: obrasPorAssociado[item.key]?.count ?? 0)
+            }
 
         var perguntas: [Pergunta] = []
         for candidata in resumo where perguntas.count < limites.perguntas {
@@ -427,7 +474,7 @@ enum DossieEstudoAnalise {
             definicoes: definicoes.map(trecho),
             resumo: resumo.map(trecho),
             divergencias: divergencias.map(trecho),
-            metricas: Metricas(fontes: fontes.count, obras: obras.count, ocorrencias: ocorrenciasPorFonte.reduce(0, +),
+            metricas: Metricas(fontes: fontes.count, obras: obras.count, ocorrencias: ocorrenciasPorFonte.reduce(0, +), duplicadas: duplicadas,
                                porArea: porArea.map { (area: $0.key, fontes: $0.value) }
                                 .sorted { $0.fontes != $1.fontes ? $0.fontes > $1.fontes : $0.area < $1.area }),
             obrasCentrais: centrais.map { ObraCentral(obraId: $0.id, titulo: $0.dados.titulo, ocorrencias: $0.dados.ocorrencias, fontes: $0.dados.fontes) },

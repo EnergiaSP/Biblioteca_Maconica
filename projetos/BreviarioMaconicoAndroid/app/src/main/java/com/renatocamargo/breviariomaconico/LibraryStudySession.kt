@@ -20,5 +20,6 @@ internal class LibraryStudySession(statusInicial: String, termoInicial: String =
     var status by mutableStateOf(statusInicial)
     var temMais by mutableStateOf(false)
     var analiseIa by mutableStateOf("")
+    var dossierStudy by mutableStateOf<DossierStudy?>(null)
     var ultimaConsulta: List<Any?>? = null
 }

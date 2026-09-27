@@ -573,6 +573,37 @@ final class BreviarioMaconicoXXITests: XCTestCase {
             .write(to: documents.appendingPathComponent("medicao-acervo-ios.json"), options: .atomic)
     }
 
+    /// Real-corpus dossier for "Escada de Jacó" in the books area, compared with Android item by item.
+    func testCorpusDossierIsRecordedForParity() throws {
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let catalogURL = documents.appendingPathComponent("rag_catalogo.json")
+        guard FileManager.default.fileExists(atPath: catalogURL.path) else { throw XCTSkip("Audit corpus not installed") }
+        let service = try BibliotecaRAGCatalogService(catalogoURL: catalogURL)
+        let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let termo = "Escada de Jacó"
+        let resultados = try service.buscar(termo: "\"\(termo)\"", escopo: .area, area: .bibliotecaMaconica, obraID: nil,
+                                            limite: configuracao.limites.fontesAnalisadas, variantes: configuracao.variantes)
+        XCTAssertFalse(resultados.isEmpty)
+        let fontes = resultados.map { resultado in
+            DossieEstudoAnalise.Fonte(id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
+                obraId: resultado.obra.id, tituloObra: resultado.obra.titulo, area: resultado.obra.area.rawValue,
+                pagina: resultado.item.pagina ?? 0, data: resultado.item.data, texto: resultado.item.texto, rodape: resultado.item.rodape ?? "")
+        }
+        var calendario = Calendar(identifier: .gregorian)
+        calendario.timeZone = TimeZone(identifier: "UTC")!
+        let hoje = try XCTUnwrap(calendario.date(from: DateComponents(year: 2026, month: 9, day: 27)))
+        let inicio = ProcessInfo.processInfo.systemUptime
+        let analise = DossieEstudoAnalise.analisar(termo: termo, fontes: fontes, configuracao: configuracao, hoje: hoje, calendario: calendario)
+        let milissegundos = (ProcessInfo.processInfo.systemUptime - inicio) * 1000
+        XCTAssertFalse(analise.resumo.isEmpty)
+        var relatorio = analise.json
+        relatorio["exibicao"] = DossieEstudoAnalise.exibicao(termo: termo, resultado: analise, fontes: fontes, configuracao: configuracao).json
+        relatorio["fontesIds"] = fontes.map(\.id)
+        relatorio["milissegundosAnalise"] = milissegundos
+        try JSONSerialization.data(withJSONObject: relatorio, options: [.prettyPrinted, .sortedKeys])
+            .write(to: documents.appendingPathComponent("dossie-acervo-ios.json"), options: .atomic)
+    }
+
     func testFullCatalogStudyBatchesWhenAuditCorpusIsInstalled() throws {
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let catalogURL = documents.appendingPathComponent("rag_catalogo.json")

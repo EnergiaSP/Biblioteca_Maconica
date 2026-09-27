@@ -118,8 +118,8 @@ internal object StudyIndex {
     }
 
     /** Words and quoted phrases of a search, normalized like the FTS index for counting. */
-    fun searchTerms(query: String): Set<String> =
-        TextoFormatter.termosBusca(query).map { StudyRules.studyNormalized(it).trim() }.filter { it.isNotEmpty() }.toSet()
+    fun searchTerms(query: String, variants: Map<String, List<String>> = emptyMap()): Set<String> =
+        TextoFormatter.termosBusca(query).flatMap { TextoFormatter.alternativas(it, variants) }.toSet()
 
     /** Occurrences of the searched words and phrases in a text outside the index (notes, breviaries). */
     fun searchOccurrences(terms: Set<String>, text: String): Int =

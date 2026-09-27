@@ -94,6 +94,7 @@
 		AC0D5E25F7E0C5A8ACB8489C /* BreviarioMaconicoXXITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3309D04BE06C1616CCEB41 /* BreviarioMaconicoXXITests.swift */; };
 		B0303A7B80DD08E7077B6B8F /* ReadingEditorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608FEAA46268C9D1992650A /* ReadingEditorComponents.swift */; };
 		B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F17202B641F3D9B3893A34 /* LibraryComponents.swift */; };
+		D92100000000000000000301 /* DossieAnaliseSecoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000302 /* DossieAnaliseSecoes.swift */; };
 		BCB5F1A239606A5BAFF070CA /* BreviarioStoreSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */; };
 		C54BE34F031BFF29F5598C84 /* LibraryStudyScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23035FB36A7EDD30813A7AB /* LibraryStudyScreens.swift */; };
 		CB8516DD582F9514D56FB3A1 /* OfflineCatalogScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D8050C7052A7D203C2F54 /* OfflineCatalogScreens.swift */; };
@@ -240,6 +241,7 @@
 		3E6B82797280D4C8172EE6BE /* ExportComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExportComponents.swift; sourceTree = "<group>"; };
 		4A7AC4F2F979B1EF6FA6DFBB /* BreviarioTitleIndexBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioTitleIndexBuilder.swift; sourceTree = "<group>"; };
 		58F17202B641F3D9B3893A34 /* LibraryComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryComponents.swift; sourceTree = "<group>"; };
+		D92100000000000000000302 /* DossieAnaliseSecoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieAnaliseSecoes.swift; sourceTree = "<group>"; };
 		597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreviarioMaconicoXXITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioStoreSearch.swift; sourceTree = "<group>"; };
 		66C613D5FCD3144ECB98613F /* AppNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				010000000000000000000011 /* HomeViewSupport.swift */,
 				37CE78AB0DCC197A9F6DFA21 /* HomeViewComponents.swift */,
 				58F17202B641F3D9B3893A34 /* LibraryComponents.swift */,
+				D92100000000000000000302 /* DossieAnaliseSecoes.swift */,
 				EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */,
 				3E6B82797280D4C8172EE6BE /* ExportComponents.swift */,
 				7F58884A788334FFE19142EC /* HomePresentation.swift */,
@@ -772,6 +775,7 @@
 				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,
 				0421D557D40C056AFE702606 /* HomeViewComponents.swift in Sources */,
 				B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */,
+				D92100000000000000000301 /* DossieAnaliseSecoes.swift in Sources */,
 				A975A59E10735E631F91355E /* ReadingComponents.swift in Sources */,
 				D419AD0C6BEB3D7D853725D0 /* ExportComponents.swift in Sources */,
 				3D159078B21A249226F5A846 /* HomePresentation.swift in Sources */,

@@ -15,8 +15,14 @@ internal data class DossierStudyPlan(
 
 internal fun buildDossierStudyPlan(
     topic: String,
-    results: List<BibliotecaBuscaResultado>
+    results: List<BibliotecaBuscaResultado>,
+    study: DossierStudy? = null
 ): DossierStudyPlan {
+    // With the AI-free analysis, roadmap, questions, map and review come from the sources themselves.
+    if (study != null) return buildDossierStudyPlan(topic, results).copy(
+        roadmap = study.display.roadmap, questions = study.display.questions, conceptMap = study.display.map,
+        spacedReview = study.display.review, relatedTerms = study.relatedTerms
+    )
     val cleanTopic = topic.trim().ifBlank { "tema pesquisado" }
     val works = results.map { it.tituloObra }.distinct().sorted()
     val areas = results.map { it.area.titulo }.distinct().sorted()

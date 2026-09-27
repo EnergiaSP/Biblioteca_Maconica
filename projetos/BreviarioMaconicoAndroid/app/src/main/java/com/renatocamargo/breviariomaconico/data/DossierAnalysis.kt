@@ -14,7 +14,8 @@ internal object DossierAnalysis {
     data class Limits(
         val analyzedSources: Int, val shownSources: Int, val definitions: Int, val summary: Int, val relatedTerms: Int,
         val associationWindow: Int, val questions: Int, val divergences: Int, val centralWorks: Int, val dedicatedChapters: Int,
-        val minSentence: Int, val maxSentence: Int, val chapterStart: Int, val minRelatedTerm: Int
+        val minSentence: Int, val maxSentence: Int, val chapterStart: Int, val minRelatedTerm: Int,
+        val duplicateKeyTokens: Int, val duplicateMinTokens: Int
     )
     data class ReviewStep(val days: Int, val task: String)
     data class Config(
@@ -28,9 +29,10 @@ internal object DossierAnalysis {
         val data: String? = null, val texto: String = "", val rodape: String = ""
     )
     data class Excerpt(val texto: String, val fonte: String)
-    data class Metrics(val sources: Int, val works: Int, val occurrences: Int, val byArea: List<Pair<String, Int>>)
+    data class Metrics(val sources: Int, val works: Int, val occurrences: Int, val duplicates: Int, val byArea: List<Pair<String, Int>>)
     data class CentralWork(val obraId: String, val titulo: String, val occurrences: Int, val sources: Int)
-    data class RelatedTerm(val term: String, val occurrences: Int, val works: Int)
+    /** [form] is the most frequent written form, shown to the reader ("maçom", not "macom"). */
+    data class RelatedTerm(val term: String, val form: String, val occurrences: Int, val works: Int)
     data class Question(val question: String, val answer: String, val source: String)
     data class Step(val step: String, val text: String)
     data class Review(val date: String, val task: String)
@@ -47,14 +49,14 @@ internal object DossierAnalysis {
                 .put("resumo", excerpts(summary))
                 .put("divergencias", excerpts(divergences))
                 .put("metricas", JSONObject().put("fontes", metrics.sources).put("obras", metrics.works)
-                    .put("ocorrencias", metrics.occurrences)
+                    .put("ocorrencias", metrics.occurrences).put("duplicadas", metrics.duplicates)
                     .put("porArea", JSONArray(metrics.byArea.map { JSONArray().put(it.first).put(it.second) })))
                 .put("obrasCentrais", JSONArray(centralWorks.map {
                     JSONObject().put("obraId", it.obraId).put("titulo", it.titulo).put("ocorrencias", it.occurrences).put("fontes", it.sources)
                 }))
                 .put("capitulosDedicados", JSONArray(dedicatedChapters))
                 .put("termosAssociados", JSONArray(relatedTerms.map {
-                    JSONObject().put("termo", it.term).put("ocorrencias", it.occurrences).put("obras", it.works)
+                    JSONObject().put("termo", it.term).put("forma", it.form).put("ocorrencias", it.occurrences).put("obras", it.works)
                 }))
                 .put("perguntas", JSONArray(questions.map {
                     JSONObject().put("pergunta", it.question).put("resposta", it.answer).put("fonte", it.source)
@@ -75,7 +77,8 @@ internal object DossierAnalysis {
                 limits.getInt("resumo"), limits.getInt("termosAssociados"), limits.getInt("janelaAssociacao"),
                 limits.getInt("perguntas"), limits.getInt("divergencias"), limits.getInt("obrasCentrais"),
                 limits.getInt("capitulosDedicados"), limits.getInt("tamanhoMinimoFrase"), limits.getInt("tamanhoMaximoFrase"),
-                limits.getInt("inicioCapitulo"), limits.getInt("tamanhoMinimoTermoAssociado")),
+                limits.getInt("inicioCapitulo"), limits.getInt("tamanhoMinimoTermoAssociado"),
+                limits.getInt("tokensChaveDuplicata"), limits.getInt("tokensMinimosDuplicata")),
             variants.keys().asSequence().associateWith { variants.getJSONArray(it).strings() },
             json.getJSONArray("verbosDefinicao").strings(),
             json.getJSONArray("marcadoresDivergencia").strings(),
@@ -111,10 +114,11 @@ internal object DossierAnalysis {
         return Display(
             excerpts(result.definitions), excerpts(result.summary), excerpts(result.divergences),
             listOf("${metrics.sources} fonte(s) em ${metrics.works} obra(s); ${metrics.occurrences} ocorrência(s) do tema.") +
-                if (areas.isEmpty()) emptyList() else listOf("Áreas: $areas."),
+                (if (areas.isEmpty()) emptyList() else listOf("Áreas: $areas.")) +
+                (if (metrics.duplicates == 0) emptyList() else listOf("${metrics.duplicates} fonte(s) com texto repetido de outra obra desconsiderada(s).")),
             result.centralWorks.map { "${it.titulo}: ${it.occurrences} ocorrência(s) em ${it.sources} fonte(s)" },
             result.dedicatedChapters.map(::cite),
-            result.relatedTerms.map { "$topic → ${it.term} (${it.occurrences} ocorrência(s), ${it.works} obra(s))" },
+            result.relatedTerms.map { "$topic → ${it.form} (${it.occurrences} ocorrência(s), ${it.works} obra(s))" },
             result.questions.map { "${it.question} (Resposta: ${it.answer} — ${cite(it.source)})" },
             result.roadmap.map { "${it.step}: ${it.text}" },
             result.review.map { "${LocalDate.parse(it.date).format(written)}: ${it.task}" }
@@ -169,7 +173,7 @@ internal object DossierAnalysis {
         return Words(original, original.map { it.lowercase() }, original.map(::fold))
     }
 
-    /** Collapses whitespace and removes OCR repetition: a run of 6 to 20 words repeated at once. */
+    /** Collapses whitespace and removes OCR repetition: a run of 1 to 20 words repeated at once. */
     fun clean(raw: String): String {
         val items = mutableListOf<String>()
         val current = StringBuilder()
@@ -182,7 +186,7 @@ internal object DossierAnalysis {
         val output = mutableListOf<String>()
         var index = 0
         while (index < items.size) {
-            val size = (20 downTo 6).firstOrNull { size ->
+            val size = (20 downTo 1).firstOrNull { size ->
                 index + 2 * size <= items.size && items.subList(index, index + size) == items.subList(index + size, index + 2 * size)
             }
             if (size != null) {
@@ -208,7 +212,31 @@ internal object DossierAnalysis {
             }
         }
         if (start < points.size) result.add(string(points, start, points.size).trim())
-        return result.filter { it.isNotEmpty() }
+        return result.map(::trimNoise).filter { it.isNotEmpty() }
+    }
+
+    private fun isLetter(point: Int): Boolean = when (Character.getType(point).toByte()) {
+        Character.UPPERCASE_LETTER, Character.LOWERCASE_LETTER, Character.TITLECASE_LETTER, Character.MODIFIER_LETTER,
+        Character.OTHER_LETTER -> true
+        else -> false
+    }
+
+    /**
+     * Drops OCR noise before the first real word: a word starting with a letter that has two or more
+     * letters, or a single letter followed by a space and another word ("A virtude", "A Fé").
+     */
+    fun trimNoise(sentence: String): String {
+        val points = codePoints(sentence)
+        val found = spans(points)
+        found.forEachIndexed { index, span ->
+            if (!isLetter(points[span.first])) return@forEachIndexed
+            val letters = (span.first..span.last).count { isLetter(points[it]) }
+            val end = span.last + 1
+            val following = found.getOrNull(index + 1)?.first
+            val singleOk = letters == 1 && end < points.size && points[end] == ' '.code && following == end + 1 && isLetter(points[following])
+            if (letters >= 2 || singleOk) return string(points, span.first, points.size).trim()
+        }
+        return ""
     }
 
     private fun occurrences(tokens: List<String>, term: List<Set<String>>): List<Int> {
@@ -226,6 +254,14 @@ internal object DossierAnalysis {
 
     fun analyze(term: String, sources: List<Source>, config: Config, today: LocalDate): Result {
         val limits = config.limits
+        // Sources whose text repeats an earlier one (the same book imported twice) are ignored.
+        val seenKeys = HashSet<String>()
+        var duplicates = 0
+        val sources = sources.filter { source ->
+            val tokens = words(clean(source.texto)).normalized
+            if (tokens.size < limits.duplicateMinTokens) return@filter true
+            if (seenKeys.add(tokens.take(limits.duplicateKeyTokens).joinToString(" "))) true else { duplicates++; false }
+        }
         val termAlts = words(nfc(term)).normalized.map { setOf(it) + config.variants[it].orEmpty() }
         val termWords = termAlts.flatten().toSet()
         // Defining verbs describe the term instead of being associated with it.
@@ -238,20 +274,24 @@ internal object DossierAnalysis {
         val startsWithTerm = mutableListOf<Boolean>()
         val associated = LinkedHashMap<String, Int>()
         val associatedWorks = HashMap<String, MutableSet<String>>()
+        val associatedForms = HashMap<String, MutableMap<String, Int>>()
         sources.forEachIndexed { position, source ->
             val cleaned = clean(source.texto)
-            val tokens = words(cleaned).normalized
+            val sourceWords = words(cleaned)
+            val tokens = sourceWords.normalized
             val found = occurrences(tokens, termAlts)
             occurrencesBySource.add(found.size + occurrences(words(clean(source.rodape)).normalized, termAlts).size)
             startsWithTerm.add(found.any { it < limits.chapterStart })
             for (index in found) {
-                val before = tokens.subList(maxOf(0, index - limits.associationWindow), index)
                 val afterStart = minOf(tokens.size, index + termAlts.size)
-                val after = tokens.subList(afterStart, minOf(tokens.size, afterStart + limits.associationWindow))
-                for (word in before + after) {
+                val positions = (maxOf(0, index - limits.associationWindow) until index) +
+                    (afterStart until minOf(tokens.size, afterStart + limits.associationWindow))
+                for (at in positions) {
+                    val word = tokens[at]
                     if (word.codePointCount(0, word.length) < limits.minRelatedTerm || word in stop || word in termWords || isNumber(word)) continue
                     associated[word] = (associated[word] ?: 0) + 1
                     associatedWorks.getOrPut(word) { mutableSetOf() }.add(source.obraId)
+                    associatedForms.getOrPut(word) { HashMap() }.merge(sourceWords.lower[at], 1, Int::plus)
                 }
             }
             sentences(cleaned).forEachIndexed { order, sentence ->
@@ -305,7 +345,12 @@ internal object DossierAnalysis {
             if (startsWithTerm[position] && dedicated.size < limits.dedicatedChapters && dedicatedWorks.add(source.obraId)) dedicated.add(source.id)
         }
         val relatedTerms = associated.entries.sortedWith(compareByDescending<Map.Entry<String, Int>> { it.value }.thenBy { it.key })
-            .take(limits.relatedTerms).map { RelatedTerm(it.key, it.value, associatedWorks[it.key]?.size ?: 0) }
+            .take(limits.relatedTerms).map { entry ->
+                // Shown in its most frequent written form; ties keep the smallest form.
+                val form = associatedForms[entry.key].orEmpty().entries
+                    .sortedWith(compareByDescending<Map.Entry<String, Int>> { it.value }.thenBy { it.key }).firstOrNull()?.key ?: entry.key
+                RelatedTerm(entry.key, form, entry.value, associatedWorks[entry.key]?.size ?: 0)
+            }
 
         val questions = mutableListOf<Question>()
         for (candidate in summary) {
@@ -335,7 +380,7 @@ internal object DossierAnalysis {
 
         return Result(
             definitions.map(::excerpt), summary.map(::excerpt), divergences.map(::excerpt),
-            Metrics(sources.size, works.size, occurrencesBySource.sum(),
+            Metrics(sources.size, works.size, occurrencesBySource.sum(), duplicates,
                 byArea.entries.sortedWith(compareByDescending<Map.Entry<String, Int>> { it.value }.thenBy { it.key }).map { it.key to it.value }),
             central.map { CentralWork(it.key, it.value.titulo, it.value.occurrences, it.value.count) },
             dedicated, relatedTerms, questions, roadmap,

@@ -302,11 +302,12 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
         paginasDaObra(obraId, limite = 1).firstOrNull()
 
     fun buscarConteudo(termo: String, area: BibliotecaArea? = null, obraId: String? = null, limite: Int = 80, offset: Int = 0,
-        cancelled: () -> Boolean = { false }, filtro: LibraryMetadataFilter = LibraryMetadataFilter()): List<BibliotecaBuscaResultado> {
+        cancelled: () -> Boolean = { false }, filtro: LibraryMetadataFilter = LibraryMetadataFilter(),
+        variants: Map<String, List<String>> = emptyMap()): List<BibliotecaBuscaResultado> {
         val query = termo.trim()
         if (query.isBlank()) return emptyList()
 
-        val consultaFTS = TextoFormatter.consultaFTSSegura(query)
+        val consultaFTS = TextoFormatter.consultaFTSSegura(query, variants)
 
         val candidatos = pacotes
             .filter { pacote -> area == null || pacote.area == area }
@@ -314,7 +315,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             .filter { localFile(it).exists() }
             .filter { pacote -> pacote.obras.any { filtro.matches(it) } }
 
-        val terms = StudyIndex.searchTerms(query)
+        val terms = StudyIndex.searchTerms(query, variants)
         val resultados = mutableListOf<BibliotecaBuscaResultado>()
         // Packages are independent files: each is searched on its own read-only connection in parallel.
         val porPacote = candidatos.distinctBy { localFile(it).absolutePath }.parallelStream().map { pacote ->
@@ -388,7 +389,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             val embedded = BreviarioRepository.get(appContext)
             val allowedWorks = obrasBreviariosIntegrados.filter(filtro::matches).associateBy { it.id }
             val readings = embedded.itens.filter { item -> item.obraId in allowedWorks && (obraId == null || item.obraId == obraId) }
-            val ranking = rankLocalTexts(query, readings.associate { it.chavePersistencia to embedded.textosPesquisa[it.chavePersistencia].orEmpty() })
+            val ranking = rankLocalTexts(query, readings.associate { it.chavePersistencia to embedded.textosPesquisa[it.chavePersistencia].orEmpty() }, variants)
             readings.forEach {
                 val score = ranking[it.chavePersistencia] ?: return@forEach
                 resultados.add(BibliotecaBuscaResultado(it.obraId, allowedWorks.getValue(it.obraId).titulo, BibliotecaArea.Breviarios,

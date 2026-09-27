@@ -45,6 +45,31 @@ class FullCatalogBenchmarkTest {
             .put("environment", "emulator, not physical certification").toString(2))
     }
 
+    /** Real-corpus dossier for "Escada de Jacó" in the books area, compared with iOS item by item. */
+    @Test
+    fun installedCorpusDossierIsRecordedForParity() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val catalog = BibliotecaCatalogRepository.get(context)
+        assertTrue(catalog.pacotes.filter { it.url.isNotBlank() }.all { catalog.localFile(it).isFile })
+        val config = DossierAnalysis.loadConfig(context)
+        val term = "Escada de Jacó"
+        val results = catalog.buscarConteudo("\"$term\"", area = BibliotecaArea.Biblioteca, limite = config.limits.analyzedSources,
+            variants = config.variants)
+        assertTrue(results.isNotEmpty())
+        val sources = results.map {
+            DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
+                it.pagina, it.data, it.trecho, it.rodape)
+        }
+        val start = SystemClock.elapsedRealtime()
+        val analysis = DossierAnalysis.analyze(term, sources, config, java.time.LocalDate.parse("2026-09-27"))
+        val elapsed = SystemClock.elapsedRealtime() - start
+        assertTrue(analysis.summary.isNotEmpty())
+        File(context.filesDir, "dossie-acervo-android.json").writeText(analysis.toJson()
+            .put("exibicao", DossierAnalysis.display(term, analysis, sources, config).toJson())
+            .put("fontesIds", JSONArray(sources.map { it.id }))
+            .put("milissegundosAnalise", elapsed).toString(2))
+    }
+
     @Test
     fun installedCorpusSupportsGlobalAreaWorkAndPageQueries() {
         val context = ApplicationProvider.getApplicationContext<Context>()

@@ -149,10 +149,28 @@ object TextoFormatter {
         return resultado.toString()
     }
 
-    fun consultaFTSSegura(termo: String): String {
+    fun consultaFTSSegura(termo: String, variants: Map<String, List<String>> = emptyMap()): String {
         val tokens = termosBusca(termo)
         fun literal(text: String) = "\"${text.replace("\"", "\"\"")}\""
-        return if (tokens.isEmpty()) literal(termo) else tokens.joinToString(" AND ", transform = ::literal)
+        if (tokens.isEmpty()) return literal(termo)
+        return tokens.joinToString(" AND ") { token ->
+            val alternatives = alternativas(token, variants)
+            // Without variants the query stays exactly as typed; with them each spelling is accepted.
+            if (alternatives.size > 1) alternatives.joinToString(" OR ", "(", ")", transform = ::literal) else literal(token)
+        }
+    }
+
+    /** Normalized forms of a search word or phrase, with every combination of its words' spelling variants. */
+    fun alternativas(termo: String, variants: Map<String, List<String>>): List<String> {
+        val words = StudyRules.studyNormalized(termo).trim().split(' ').filter { it.isNotEmpty() }
+        if (words.isEmpty()) return emptyList()
+        var combinations = listOf(emptyList<String>())
+        for (word in words) {
+            val options = listOf(word) + variants[word].orEmpty()
+            combinations = combinations.flatMap { prefix -> options.map { prefix + it } }
+        }
+        // Bounded so a topic full of variant words cannot explode the query.
+        return combinations.take(8).map { it.joinToString(" ") }
     }
 
     fun termosBusca(termo: String): List<String> = Regex("\"([^\"]+)\"|([\\p{L}\\p{N}]+)").findAll(termo.lowercase(Locale.ROOT)).mapNotNull {

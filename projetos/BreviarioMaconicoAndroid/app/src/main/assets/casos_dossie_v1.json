@@ -50,7 +50,25 @@
           "tituloObra": "Instruções de Teste",
           "area": "bibliotecaMaconica",
           "pagina": 47,
-          "texto": "ESCADA DE JACÓ Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade.",
+          "texto": "ESCADA DE JACÓ Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade, sempre com o maçom em busca da luz e do aperfeiçoamento moral.",
+          "rodape": ""
+        },
+        {
+          "id": "copia:47:copia-p47-b1",
+          "obraId": "copia",
+          "tituloObra": "Cópia das Instruções",
+          "area": "bibliotecaMaconica",
+          "pagina": 47,
+          "texto": "ESCADA DE JACÓ Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade, sempre com o maçom em busca da luz e do aperfeiçoamento moral.",
+          "rodape": ""
+        },
+        {
+          "id": "ruido:9:ruido-p9-b1",
+          "obraId": "ruido",
+          "tituloObra": "Livro com Ruído",
+          "area": "bibliotecaMaconica",
+          "pagina": 9,
+          "texto": "3\"-)&N&+( &   Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador. 49 49 VM VM A virtude sobe pela escada de Jacó rumo ao Oriente eterno da Loja.",
           "rodape": ""
         }
       ],
@@ -73,6 +91,10 @@
           {
             "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó;",
             "fonte": "livro2:12:livro2-p12-b1"
+          },
+          {
+            "texto": "Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador.",
+            "fonte": "ruido:9:ruido-p9-b1"
           }
         ],
         "divergencias": [
@@ -82,13 +104,14 @@
           }
         ],
         "metricas": {
-          "fontes": 5,
-          "obras": 4,
-          "ocorrencias": 8,
+          "fontes": 6,
+          "obras": 5,
+          "ocorrencias": 10,
+          "duplicadas": 1,
           "porArea": [
             [
               "bibliotecaMaconica",
-              3
+              4
             ],
             [
               "breviarios",
@@ -120,6 +143,12 @@
             "fontes": 1
           },
           {
+            "obraId": "ruido",
+            "titulo": "Livro com Ruído",
+            "ocorrencias": 2,
+            "fontes": 1
+          },
+          {
             "obraId": "breviario_x",
             "titulo": "Breviário de Teste",
             "ocorrencias": 1,
@@ -134,76 +163,91 @@
         "termosAssociados": [
           {
             "termo": "caridade",
+            "forma": "caridade",
             "ocorrencias": 7,
             "obras": 4
           },
           {
             "termo": "degraus",
+            "forma": "degraus",
             "ocorrencias": 5,
             "obras": 3
           },
           {
             "termo": "esperanca",
+            "forma": "esperança",
             "ocorrencias": 5,
             "obras": 3
           },
           {
             "termo": "degrau",
+            "forma": "degrau",
             "ocorrencias": 4,
             "obras": 3
           },
           {
+            "termo": "macom",
+            "forma": "maçom",
+            "ocorrencias": 4,
+            "obras": 2
+          },
+          {
+            "termo": "mundo",
+            "forma": "mundo",
+            "ocorrencias": 4,
+            "obras": 1
+          },
+          {
+            "termo": "virtude",
+            "forma": "virtude",
+            "ocorrencias": 4,
+            "obras": 2
+          },
+          {
+            "termo": "aperfeicoamento",
+            "forma": "aperfeiçoamento",
+            "ocorrencias": 3,
+            "obras": 1
+          },
+          {
             "termo": "espiritual",
+            "forma": "espiritual",
             "ocorrencias": 3,
             "obras": 2
           },
           {
             "termo": "painel",
+            "forma": "painel",
             "ocorrencias": 3,
             "obras": 2
           },
           {
             "termo": "aprendiz",
+            "forma": "aprendiz",
             "ocorrencias": 2,
             "obras": 1
           },
           {
             "termo": "ascensao",
+            "forma": "ascensão",
             "ocorrencias": 2,
             "obras": 1
           },
           {
             "termo": "associam",
+            "forma": "associam",
             "ocorrencias": 2,
             "obras": 1
           },
           {
             "termo": "autores",
+            "forma": "autores",
             "ocorrencias": 2,
             "obras": 1
           },
           {
-            "termo": "definido",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "macom",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "plana",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "simbolo",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "superficie",
+            "termo": "busca",
+            "forma": "busca",
             "ocorrencias": 2,
             "obras": 1
           }
@@ -223,6 +267,11 @@
             "pergunta": "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó;",
             "resposta": "degrau",
             "fonte": "livro2:12:livro2-p12-b1"
+          },
+          {
+            "pergunta": "Pois então, a Escada de Jacó é uma escada que liga o _____ terrestre ao mundo do Criador.",
+            "resposta": "mundo",
+            "fonte": "ruido:9:ruido-p9-b1"
           }
         ],
         "roteiro": [
@@ -240,7 +289,7 @@
           },
           {
             "etapa": "Aprofundamento",
-            "texto": "Aprofunde em: Dicionário de Teste; Livro Divergente; Breviário de Teste."
+            "texto": "Aprofunde em: Dicionário de Teste; Livro Divergente; Livro com Ruído."
           },
           {
             "etapa": "Comparação",
@@ -280,19 +329,22 @@
           "resumo": [
             "A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. — Breviário de Teste, 03/07",
             "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade. — Instruções de Teste, p. 84",
-            "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; — Livro Divergente, p. 12"
+            "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; — Livro Divergente, p. 12",
+            "Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador. — Livro com Ruído, p. 9"
           ],
           "divergencias": [
             "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; — Livro Divergente, p. 12"
           ],
           "metricas": [
-            "5 fonte(s) em 4 obra(s); 8 ocorrência(s) do tema.",
-            "Áreas: Biblioteca Maçônica (3), Breviários (1), Dicionários Maçônicos (1)."
+            "6 fonte(s) em 5 obra(s); 10 ocorrência(s) do tema.",
+            "Áreas: Biblioteca Maçônica (4), Breviários (1), Dicionários Maçônicos (1).",
+            "1 fonte(s) com texto repetido de outra obra desconsiderada(s)."
           ],
           "obrasCentrais": [
             "Instruções de Teste: 3 ocorrência(s) em 2 fonte(s)",
             "Dicionário de Teste: 2 ocorrência(s) em 1 fonte(s)",
             "Livro Divergente: 2 ocorrência(s) em 1 fonte(s)",
+            "Livro com Ruído: 2 ocorrência(s) em 1 fonte(s)",
             "Breviário de Teste: 1 ocorrência(s) em 1 fonte(s)"
           ],
           "capitulosDedicados": [
@@ -303,30 +355,31 @@
           "mapa": [
             "Escada de Jacó → caridade (7 ocorrência(s), 4 obra(s))",
             "Escada de Jacó → degraus (5 ocorrência(s), 3 obra(s))",
-            "Escada de Jacó → esperanca (5 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → esperança (5 ocorrência(s), 3 obra(s))",
             "Escada de Jacó → degrau (4 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → maçom (4 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → mundo (4 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → virtude (4 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → aperfeiçoamento (3 ocorrência(s), 1 obra(s))",
             "Escada de Jacó → espiritual (3 ocorrência(s), 2 obra(s))",
             "Escada de Jacó → painel (3 ocorrência(s), 2 obra(s))",
             "Escada de Jacó → aprendiz (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → ascensao (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → ascensão (2 ocorrência(s), 1 obra(s))",
             "Escada de Jacó → associam (2 ocorrência(s), 1 obra(s))",
             "Escada de Jacó → autores (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → definido (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → macom (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → plana (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → simbolo (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → superficie (2 ocorrência(s), 1 obra(s))"
+            "Escada de Jacó → busca (2 ocorrência(s), 1 obra(s))"
           ],
           "perguntas": [
             "A Fé representa o primeiro _____ da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. (Resposta: degrau — Breviário de Teste, 03/07)",
             "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a _____. (Resposta: caridade — Instruções de Teste, p. 84)",
-            "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó; (Resposta: degrau — Livro Divergente, p. 12)"
+            "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó; (Resposta: degrau — Livro Divergente, p. 12)",
+            "Pois então, a Escada de Jacó é uma escada que liga o _____ terrestre ao mundo do Criador. (Resposta: mundo — Livro com Ruído, p. 9)"
           ],
           "roteiro": [
             "Definição: Comece pela definição em Dicionário de Teste, p. 106.",
             "Fonte central: Leia Instruções de Teste (3 ocorrências), a partir de p. 47.",
             "Breviários: Leia nos breviários: Breviário de Teste, 03/07.",
-            "Aprofundamento: Aprofunde em: Dicionário de Teste; Livro Divergente; Breviário de Teste.",
+            "Aprofundamento: Aprofunde em: Dicionário de Teste; Livro Divergente; Livro com Ruído.",
             "Comparação: Compare como Instruções de Teste e Dicionário de Teste tratam o tema.",
             "Síntese: Escreva uma síntese citando a obra e a página de cada trecho usado."
           ],
@@ -353,6 +406,7 @@
           "fontes": 0,
           "obras": 0,
           "ocorrencias": 0,
+          "duplicadas": 0,
           "porArea": []
         },
         "obrasCentrais": [],

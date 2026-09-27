@@ -15,7 +15,9 @@
     "tamanhoMinimoFrase": 60,
     "tamanhoMaximoFrase": 420,
     "inicioCapitulo": 12,
-    "tamanhoMinimoTermoAssociado": 4
+    "tamanhoMinimoTermoAssociado": 4,
+    "tokensChaveDuplicata": 60,
+    "tokensMinimosDuplicata": 20
   },
   "variantes": {
     "jaco": [
@@ -60,7 +62,6 @@
   "marcadoresDivergencia": [
     "erroneamente",
     "equivocadamente",
-    "não",
     "porém",
     "contudo",
     "entretanto",

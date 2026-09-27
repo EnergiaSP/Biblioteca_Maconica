@@ -136,6 +136,7 @@ import com.renatocamargo.breviariomaconico.data.GeminiService
 import com.renatocamargo.breviariomaconico.data.IndiceRemissivoEntry
 import com.renatocamargo.breviariomaconico.data.LibraryRecent
 import com.renatocamargo.breviariomaconico.data.LibraryMetadataFilter
+import com.renatocamargo.breviariomaconico.data.DossierAnalysis
 import com.renatocamargo.breviariomaconico.data.LocalPdfOcrImporter
 import com.renatocamargo.breviariomaconico.data.OfficialSource
 import com.renatocamargo.breviariomaconico.data.PreferencesStore
@@ -342,6 +343,8 @@ internal fun DossierScreen(
     var resultados by session::resultados
     var status by session::status
     var analiseIa by session::analiseIa
+    var study by session::dossierStudy
+    val dossierConfig = remember { DossierAnalysis.loadConfig(context) }
     var gerandoIa by remember { mutableStateOf(false) }
     var montando by remember { mutableStateOf(false) }
     var area by session::area
@@ -350,7 +353,7 @@ internal fun DossierScreen(
     var escolherObra by remember { mutableStateOf(false) }
     var consultaJob by remember { mutableStateOf<Job?>(null) }
     var analiseJob by remember { mutableStateOf<Job?>(null) }
-    val studyPlan = remember(tema, resultados) { buildDossierStudyPlan(tema, resultados) }
+    val studyPlan = remember(tema, resultados, study) { buildDossierStudyPlan(tema, resultados, study) }
     val resumoEscopo = listOf(obras.firstOrNull { it.id == obraId }?.titulo ?: area?.titulo ?: "Toda a biblioteca",
         metadataFilter.descricao).filter { it.isNotEmpty() }.joinToString(" • ")
 
@@ -362,6 +365,7 @@ internal fun DossierScreen(
         montando = false
         gerandoIa = false
         status = "Gere o dossiê para consultar a seleção atual."
+        study = null
     }
     LaunchedEffect(area) {
         obras = emptyList()
@@ -423,13 +427,19 @@ internal fun DossierScreen(
                         val requestContext = currentCoroutineContext()
                         try {
                             analiseIa = ""
-                            libraryQuery { catalogo.buscarConteudo(consulta, areaSelecionada, obraSelecionada,
-                                limite = 30, cancelled = { !requestContext.isActive }, filtro = filtroSelecionado) }
-                                .onSuccess {
-                                    resultados = it
-                                    status = if (it.isEmpty()) "Não encontrei base documental suficiente nas obras baixadas." else "Dossiê criado com ${it.size} fonte(s) documentais."
+                            libraryQuery {
+                                val todos = catalogo.buscarConteudo(dossierQuery(consulta), areaSelecionada, obraSelecionada,
+                                    limite = dossierConfig.limits.analyzedSources, cancelled = { !requestContext.isActive },
+                                    filtro = filtroSelecionado, variants = dossierConfig.variants)
+                                todos to analyzeDossier(consulta, todos, dossierConfig)
+                            }
+                                .onSuccess { (todos, analise) ->
+                                    resultados = todos.take(dossierConfig.limits.shownSources)
+                                    study = analise
+                                    status = if (todos.isEmpty()) "Não encontrei base documental suficiente nas obras baixadas." else "Dossiê criado com ${todos.size} fonte(s) documentais."
                                 }.onFailure {
                                     resultados = emptyList()
+                                    study = null
                                     status = "Não foi possível montar o dossiê. Verifique os downloads no Acervo e tente novamente."
                                 }
                         } finally {
@@ -441,14 +451,14 @@ internal fun DossierScreen(
                 }
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
-                        shareText(context, textoDossie(tema, resultados, analiseIa, resumoEscopo))
+                        shareText(context, textoDossie(tema, resultados, analiseIa, resumoEscopo, study))
                     }) {
                         Icon(Icons.Default.IosShare, null)
                         Spacer(Modifier.width(6.dp))
                         Text("Compartilhar")
                     }
                     Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
-                        shareDossierPdf(context, tema, resultados, analiseIa, resumoEscopo, prefs.settings.premiumPdfName)
+                        shareDossierPdf(context, tema, resultados, analiseIa, resumoEscopo, prefs.settings.premiumPdfName, study)
                     }) {
                         Icon(Icons.Default.PictureAsPdf, null)
                         Spacer(Modifier.width(6.dp))
@@ -513,6 +523,9 @@ internal fun DossierScreen(
                     }
                 }
             }
+        }
+        study?.takeIf { resultados.isNotEmpty() }?.let { current ->
+            item(key = "dossier.analysis") { DossierAnalysisSections(colors, current.display) }
         }
         if (resultados.isNotEmpty()) {
             item(key = "dossier.plan") {

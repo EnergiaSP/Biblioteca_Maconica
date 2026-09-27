@@ -87,6 +87,9 @@ class NavigationFlowTest {
         compose.waitUntil(20_000) {
             compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
         }
+        // The AI-free analysis is shown with the dossier, before the roadmap.
+        compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.analysis")
+        compose.onNodeWithText("Resumo com fontes").assertIsDisplayed()
         compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.plan")
         compose.onNodeWithTag("dossier.results").assertIsDisplayed()
     }

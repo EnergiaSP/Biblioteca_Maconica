@@ -88,6 +88,21 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(result.waitForNonExistence(timeout: 5))
     }
 
+    func testDossierShowsTheAnalysisExtractedFromSources() {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        topic.tap()
+        topic.typeText("virtude")
+        app.buttons["Montar dossiê"].tap()
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        // Every line of the analysis is extracted from the sources and ends with its citation.
+        let resumo = app.staticTexts["Resumo com fontes"].firstMatch
+        for _ in 0..<10 where !resumo.isHittable { app.swipeUp(velocity: .slow) }
+        XCTAssertTrue(resumo.isHittable)
+        XCTAssertTrue(app.staticTexts["Métricas"].firstMatch.exists)
+    }
+
     func testReadingOpenedFromDossierReturnsToTheDossier() {
         navigationTab("Dossiê").tap()
         let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch

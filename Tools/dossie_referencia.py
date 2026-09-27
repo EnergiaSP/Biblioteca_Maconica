@@ -64,10 +64,10 @@ def collapse(text: str) -> list:
 
 
 def clean(text: str) -> str:
-    """Collapses whitespace and removes OCR repetition: a run of 6 to 20 words repeated at once."""
+    """Collapses whitespace and removes OCR repetition: a run of 1 to 20 words repeated at once."""
     items, output, index = collapse(nfc(text)), [], 0
     while index < len(items):
-        for size in range(20, 5, -1):
+        for size in range(20, 0, -1):
             if index + 2 * size <= len(items) and items[index:index + size] == items[index + size:index + 2 * size]:
                 output.extend(items[index:index + size])
                 index += 2 * size
@@ -86,7 +86,24 @@ def sentences(text: str) -> list:
             result.append(text[start:index + 1].strip())
             start = index + 2
     result.append(text[start:].strip())
-    return [sentence for sentence in result if sentence]
+    return [trimmed for trimmed in (trim_noise(sentence) for sentence in result) if trimmed]
+
+
+def trim_noise(sentence: str) -> str:
+    """Drops OCR noise before the first real word: a word starting with a letter that has two or more
+    letters, or a single letter followed by a space and another word ("A virtude", "A Fé")."""
+    found = spans(sentence)
+    for index, (start, end) in enumerate(found):
+        word = sentence[start:end]
+        if unicodedata.category(word[0])[0] != "L":
+            continue
+        letters = sum(1 for char in word if unicodedata.category(char)[0] == "L")
+        following = found[index + 1][0] if index + 1 < len(found) else None
+        single_ok = (letters == 1 and end < len(sentence) and sentence[end] == " " and following == end + 1
+                     and unicodedata.category(sentence[following])[0] == "L")
+        if letters >= 2 or single_ok:
+            return sentence[start:].strip()
+    return ""
 
 
 def term_tokens(term: str, variants: dict) -> list:
@@ -114,25 +131,41 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
     defining = set(config["verbosDefinicao"])
     divergence = set(config["marcadoresDivergencia"])
 
+    # Sources whose text repeats an earlier one (the same book imported twice) are ignored.
+    distinct, keys, duplicates = [], set(), 0
+    for source in sources:
+        tokens = words(clean(source.get("texto", "")))[2]
+        key = " ".join(tokens[:limits["tokensChaveDuplicata"]]) if len(tokens) >= limits["tokensMinimosDuplicata"] else None
+        if key is not None and key in keys:
+            duplicates += 1
+            continue
+        if key is not None:
+            keys.add(key)
+        distinct.append(source)
+    sources = distinct
+
     candidates = []
     occurrence_by_source = []
     starts_with_term = []
-    associated, associated_works = {}, {}
+    associated, associated_works, associated_forms = {}, {}, {}
     for position, source in enumerate(sources):
         text = clean(source.get("texto", ""))
         notes = clean(source.get("rodape", ""))
-        tokens = words(text)[2]
+        _, lower_tokens, tokens = words(text)
         found = occurrences(tokens, term_alts)
         occurrence_by_source.append(len(found) + len(occurrences(words(notes)[2], term_alts)))
         starts_with_term.append(any(index < limits["inicioCapitulo"] for index in found))
         for index in found:
-            window = tokens[max(0, index - limits["janelaAssociacao"]):index] + \
-                tokens[index + len(term_alts):index + len(term_alts) + limits["janelaAssociacao"]]
-            for word in window:
+            positions = list(range(max(0, index - limits["janelaAssociacao"]), index)) + \
+                list(range(index + len(term_alts), min(len(tokens), index + len(term_alts) + limits["janelaAssociacao"])))
+            for at in positions:
+                word = tokens[at]
                 if len(word) < limits["tamanhoMinimoTermoAssociado"] or word in stop or word in term_words or is_number(word):
                     continue
                 associated[word] = associated.get(word, 0) + 1
                 associated_works.setdefault(word, set()).add(source["obraId"])
+                forms = associated_forms.setdefault(word, {})
+                forms[lower_tokens[at]] = forms.get(lower_tokens[at], 0) + 1
         for order, sentence in enumerate(sentences(text)):
             _, lower, normalized = words(sentence)
             if not occurrences(normalized, term_alts):
@@ -188,7 +221,9 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
             dedicated.append(source["id"])
             dedicated_works.add(source["obraId"])
     related = sorted(associated.items(), key=lambda item: (-item[1], item[0]))[:limits["termosAssociados"]]
-    related_terms = [{"termo": word, "ocorrencias": count, "obras": len(associated_works[word])} for word, count in related]
+    # Shown in its most frequent written form ("maçom", not "macom"); ties keep the smallest form.
+    related_terms = [{"termo": word, "forma": sorted(associated_forms[word].items(), key=lambda f: (-f[1], f[0]))[0][0],
+                      "ocorrencias": count, "obras": len(associated_works[word])} for word, count in related]
 
     questions = []
     for candidate in summary:
@@ -235,7 +270,7 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
         "definicoes": [excerpt(c) for c in definitions],
         "resumo": [excerpt(c) for c in summary],
         "divergencias": [excerpt(c) for c in divergences],
-        "metricas": {"fontes": len(sources), "obras": len(works), "ocorrencias": sum(occurrence_by_source),
+        "metricas": {"fontes": len(sources), "obras": len(works), "ocorrencias": sum(occurrence_by_source), "duplicadas": duplicates,
                      "porArea": [[area, count] for area, count in sorted(by_area.items(), key=lambda i: (-i[1], i[0]))]},
         "obrasCentrais": [{k: w[k] for k in ("obraId", "titulo", "ocorrencias", "fontes")} for w in central],
         "capitulosDedicados": dedicated,
@@ -265,10 +300,11 @@ def display(term: str, result: dict, sources: list, config: dict) -> dict:
         "resumo": excerpts(result["resumo"]),
         "divergencias": excerpts(result["divergencias"]),
         "metricas": [f"{metrics['fontes']} fonte(s) em {metrics['obras']} obra(s); {metrics['ocorrencias']} ocorrência(s) do tema."]
-                    + ([f"Áreas: {areas}."] if areas else []),
+                    + ([f"Áreas: {areas}."] if areas else [])
+                    + ([f"{metrics['duplicadas']} fonte(s) com texto repetido de outra obra desconsiderada(s)."] if metrics["duplicadas"] else []),
         "obrasCentrais": [f"{work['titulo']}: {work['ocorrencias']} ocorrência(s) em {work['fontes']} fonte(s)" for work in result["obrasCentrais"]],
         "capitulosDedicados": [cite(source_id) for source_id in result["capitulosDedicados"]],
-        "mapa": [f"{topic} → {item['termo']} ({item['ocorrencias']} ocorrência(s), {item['obras']} obra(s))" for item in result["termosAssociados"]],
+        "mapa": [f"{topic} → {item['forma']} ({item['ocorrencias']} ocorrência(s), {item['obras']} obra(s))" for item in result["termosAssociados"]],
         "perguntas": [f"{item['pergunta']} (Resposta: {item['resposta']} — {cite(item['fonte'])})" for item in result["perguntas"]],
         "roteiro": [f"{step['etapa']}: {step['texto']}" for step in result["roteiro"]],
         "revisao": [f"{datetime.date.fromisoformat(item['data']).strftime('%d/%m/%Y')}: {item['tarefa']}" for item in result["revisao"]],
