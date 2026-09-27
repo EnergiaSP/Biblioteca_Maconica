@@ -334,6 +334,16 @@ class DataIntegrityTest {
         createDossierPdf(File(context.filesDir, "paridade-dossie-android.pdf"), topic, sources, "ANALISEINTEGRALFIM [F30]", scope = filteredScope)
     }
 
+    /** Words split by the import/OCR (Tools/corrigir_palavras_quebradas.py) stay joined, as on iOS. */
+    @Test
+    fun breviaryReadingsHaveNoWordsSplitByOcr() {
+        val broken = listOf("difi cilmente", "signifi cando", "constran gimentos", "coraça- o", "na- o", "Maço naria", "exis tência", "tornando- se", "Grão- Mestre")
+        val repository = BreviarioRepository.get(context)
+        val texts = repository.itens.map { listOf(it.titulo, it.texto, it.rodape).joinToString("\n") }
+        broken.forEach { piece -> assertFalse(piece, texts.any { it.contains(piece) }) }
+        assertTrue(repository.porObraEData(ObraId.BREVIARIO_RIZZARDO, "25/02")!!.texto.contains("pois dificilmente se pode"))
+    }
+
     @Test
     fun dailyWorkHasCompletePageIndexAndAccentInsensitiveFilter() {
         val catalog = BibliotecaCatalogRepository.get(context)

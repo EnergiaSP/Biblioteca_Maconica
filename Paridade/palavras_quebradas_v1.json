@@ -1,0 +1,1304 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Palavras partidas na importação/OCR. A forma corrigida sempre existe inteira em outro ponto do acervo.",
+  "breviarios": {
+    "correcoes": [
+      {
+        "tipo": "hifen-composto",
+        "original": "Primeiro- Ministro",
+        "corrigido": "Primeiro-Ministro",
+        "arquivo": "breviario.json",
+        "data": "05/01",
+        "id": 5,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "That- Prescott",
+        "corrigido": "That-Prescott",
+        "arquivo": "breviario.json",
+        "data": "17/01",
+        "id": 17,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "universities- scheme",
+        "corrigido": "universities-scheme",
+        "arquivo": "breviario.json",
+        "data": "18/01",
+        "id": 18,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "19/01",
+        "id": 19,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "a- mason",
+        "corrigido": "a-mason",
+        "arquivo": "breviario.json",
+        "data": "19/01",
+        "id": 19,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "submeter- se",
+        "corrigido": "submeter-se",
+        "arquivo": "breviario.json",
+        "data": "30/01",
+        "id": 30,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "11/02",
+        "id": 42,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Cônsul- Geral",
+        "corrigido": "Cônsul-Geral",
+        "arquivo": "breviario.json",
+        "data": "11/02",
+        "id": 42,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "latino- americanos",
+        "corrigido": "latino-americanos",
+        "arquivo": "breviario.json",
+        "data": "13/02",
+        "id": 44,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tornando- se",
+        "corrigido": "tornando-se",
+        "arquivo": "breviario.json",
+        "data": "21/02",
+        "id": 52,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Ora- Na",
+        "corrigido": "Ora-Na",
+        "arquivo": "breviario.json",
+        "data": "21/02",
+        "id": 52,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "branche- pobynesienne",
+        "corrigido": "branche-pobynesienne",
+        "arquivo": "breviario.json",
+        "data": "21/02",
+        "id": 52,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestres",
+        "corrigido": "Grão-Mestres",
+        "arquivo": "breviario.json",
+        "data": "22/02",
+        "id": 53,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "judaico- maçônico",
+        "corrigido": "judaico-maçônico",
+        "arquivo": "breviario.json",
+        "data": "26/02",
+        "id": 57,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "norte- americano",
+        "corrigido": "norte-americano",
+        "arquivo": "breviario.json",
+        "data": "01/03",
+        "id": 60,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "destacou- se",
+        "corrigido": "destacou-se",
+        "arquivo": "breviario.json",
+        "data": "14/03",
+        "id": 73,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "GENERAL- KYCH",
+        "corrigido": "GENERAL-KYCH",
+        "arquivo": "breviario.json",
+        "data": "15/03",
+        "id": 74,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "KYCH- PHA",
+        "corrigido": "KYCH-PHA",
+        "arquivo": "breviario.json",
+        "data": "15/03",
+        "id": 74,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "transformá- lo",
+        "corrigido": "transformá-lo",
+        "arquivo": "breviario.json",
+        "data": "16/03",
+        "id": 75,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "deve- se",
+        "corrigido": "deve-se",
+        "arquivo": "breviario.json",
+        "data": "20/03",
+        "id": 79,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "25/03",
+        "id": 84,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "pedro- juk",
+        "corrigido": "pedro-juk",
+        "arquivo": "breviario.json",
+        "data": "10/04",
+        "id": 100,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "dividiu- se",
+        "corrigido": "dividiu-se",
+        "arquivo": "breviario.json",
+        "data": "12/04",
+        "id": 102,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "freimaurer- wiki",
+        "corrigido": "freimaurer-wiki",
+        "arquivo": "breviario.json",
+        "data": "16/04",
+        "id": 106,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Anti- Maçônico",
+        "corrigido": "Anti-Maçônico",
+        "arquivo": "breviario.json",
+        "data": "17/04",
+        "id": 107,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "sextas- feiras",
+        "corrigido": "sextas-feiras",
+        "arquivo": "breviario.json",
+        "data": "19/04",
+        "id": 109,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "guarda- chuva",
+        "corrigido": "guarda-chuva",
+        "arquivo": "breviario.json",
+        "data": "24/04",
+        "id": 114,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "wp- content",
+        "corrigido": "wp-content",
+        "arquivo": "breviario.json",
+        "data": "27/04",
+        "id": 117,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Primeiro- Ministro",
+        "corrigido": "Primeiro-Ministro",
+        "arquivo": "breviario.json",
+        "data": "29/04",
+        "id": 119,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "04/05",
+        "id": 124,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "about- the",
+        "corrigido": "about-the",
+        "arquivo": "breviario.json",
+        "data": "04/05",
+        "id": 124,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "latino- americanas",
+        "corrigido": "latino-americanas",
+        "arquivo": "breviario.json",
+        "data": "14/05",
+        "id": 134,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Centro- Americana",
+        "corrigido": "Centro-Americana",
+        "arquivo": "breviario.json",
+        "data": "14/05",
+        "id": 134,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "voltando- se",
+        "corrigido": "voltando-se",
+        "arquivo": "breviario.json",
+        "data": "16/05",
+        "id": 136,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "for- masons",
+        "corrigido": "for-masons",
+        "arquivo": "breviario.json",
+        "data": "20/05",
+        "id": 140,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Brasília- DF",
+        "corrigido": "Brasília-DF",
+        "arquivo": "breviario.json",
+        "data": "29/05",
+        "id": 149,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "relacionam- nas",
+        "corrigido": "relacionam-nas",
+        "arquivo": "breviario.json",
+        "data": "30/05",
+        "id": 150,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestrado",
+        "corrigido": "Grão-Mestrado",
+        "arquivo": "breviario.json",
+        "data": "02/06",
+        "id": 153,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "05/06",
+        "id": 156,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "05/06",
+        "id": 156,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestres",
+        "corrigido": "Grão-Mestres",
+        "arquivo": "breviario.json",
+        "data": "08/06",
+        "id": 159,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "porto- riquenho",
+        "corrigido": "porto-riquenho",
+        "arquivo": "breviario.json",
+        "data": "11/06",
+        "id": 162,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestres",
+        "corrigido": "Grão-Mestres",
+        "arquivo": "breviario.json",
+        "data": "17/06",
+        "id": 168,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "referia- se",
+        "corrigido": "referia-se",
+        "arquivo": "breviario.json",
+        "data": "21/06",
+        "id": 172,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "motivou- a",
+        "corrigido": "motivou-a",
+        "arquivo": "breviario.json",
+        "data": "25/06",
+        "id": 176,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "freimaurer- wiki",
+        "corrigido": "freimaurer-wiki",
+        "arquivo": "breviario.json",
+        "data": "29/06",
+        "id": 180,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tirá- la",
+        "corrigido": "tirá-la",
+        "arquivo": "breviario.json",
+        "data": "06/07",
+        "id": 187,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "masoneria- argentina",
+        "corrigido": "masoneria-argentina",
+        "arquivo": "breviario.json",
+        "data": "09/07",
+        "id": 190,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "la- masoneria",
+        "corrigido": "la-masoneria",
+        "arquivo": "breviario.json",
+        "data": "09/07",
+        "id": 190,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "usá- los",
+        "corrigido": "usá-los",
+        "arquivo": "breviario.json",
+        "data": "12/07",
+        "id": 193,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "masonic- philosophy",
+        "corrigido": "masonic-philosophy",
+        "arquivo": "breviario.json",
+        "data": "16/07",
+        "id": 197,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "aventurar- se",
+        "corrigido": "aventurar-se",
+        "arquivo": "breviario.json",
+        "data": "22/07",
+        "id": 203,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "01/08",
+        "id": 213,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "in- the",
+        "corrigido": "in-the",
+        "arquivo": "breviario.json",
+        "data": "06/08",
+        "id": 218,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "torna- se",
+        "corrigido": "torna-se",
+        "arquivo": "breviario.json",
+        "data": "08/08",
+        "id": 220,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "discover- freemasonry",
+        "corrigido": "discover-freemasonry",
+        "arquivo": "breviario.json",
+        "data": "19/08",
+        "id": 231,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tornando- se",
+        "corrigido": "tornando-se",
+        "arquivo": "breviario.json",
+        "data": "11/09",
+        "id": 254,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "diferenciá- las",
+        "corrigido": "diferenciá-las",
+        "arquivo": "breviario.json",
+        "data": "18/09",
+        "id": 261,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Jean- Baptiste",
+        "corrigido": "Jean-Baptiste",
+        "arquivo": "breviario.json",
+        "data": "20/09",
+        "id": 263,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Centro- Americano",
+        "corrigido": "Centro-Americano",
+        "arquivo": "breviario.json",
+        "data": "22/09",
+        "id": 265,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "freimaurer- wiki",
+        "corrigido": "freimaurer-wiki",
+        "arquivo": "breviario.json",
+        "data": "03/10",
+        "id": 276,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "retificando- se",
+        "corrigido": "retificando-se",
+        "arquivo": "breviario.json",
+        "data": "06/10",
+        "id": 279,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tem- se",
+        "corrigido": "tem-se",
+        "arquivo": "breviario.json",
+        "data": "06/10",
+        "id": 279,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "enxofree- mercurio",
+        "corrigido": "enxofree-mercurio",
+        "arquivo": "breviario.json",
+        "data": "06/10",
+        "id": 279,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "gprus- freemasons",
+        "corrigido": "gprus-freemasons",
+        "arquivo": "breviario.json",
+        "data": "08/10",
+        "id": 281,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Lembre- se",
+        "corrigido": "Lembre-se",
+        "arquivo": "breviario.json",
+        "data": "09/10",
+        "id": 282,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "grandlodge- albania",
+        "corrigido": "grandlodge-albania",
+        "arquivo": "breviario.json",
+        "data": "14/10",
+        "id": 287,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "05/11",
+        "id": 309,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "maçônico- socialista",
+        "corrigido": "maçônico-socialista",
+        "arquivo": "breviario.json",
+        "data": "10/11",
+        "id": 314,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "político- social",
+        "corrigido": "político-social",
+        "arquivo": "breviario.json",
+        "data": "10/11",
+        "id": 314,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grasse- Tilly",
+        "corrigido": "Grasse-Tilly",
+        "arquivo": "breviario.json",
+        "data": "26/11",
+        "id": 330,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "rites- ecossais",
+        "corrigido": "rites-ecossais",
+        "arquivo": "breviario.json",
+        "data": "26/11",
+        "id": 330,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Centro- Americano",
+        "corrigido": "Centro-Americano",
+        "arquivo": "breviario.json",
+        "data": "27/11",
+        "id": 331,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "HISTORIA- DE",
+        "corrigido": "HISTORIA-DE",
+        "arquivo": "breviario.json",
+        "data": "27/11",
+        "id": 331,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Grão- Mestre",
+        "corrigido": "Grão-Mestre",
+        "arquivo": "breviario.json",
+        "data": "30/11",
+        "id": 334,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "recomenda- se",
+        "corrigido": "recomenda-se",
+        "arquivo": "breviario.json",
+        "data": "30/11",
+        "id": 334,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "de- la",
+        "corrigido": "de-la",
+        "arquivo": "breviario.json",
+        "data": "07/12",
+        "id": 341,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "az- aasr",
+        "corrigido": "az-aasr",
+        "arquivo": "breviario.json",
+        "data": "08/12",
+        "id": 342,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "recém- iniciados",
+        "corrigido": "recém-iniciados",
+        "arquivo": "breviario.json",
+        "data": "09/12",
+        "id": 343,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "saca- rolhas",
+        "corrigido": "saca-rolhas",
+        "arquivo": "breviario.json",
+        "data": "21/12",
+        "id": 355,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "an- absolute",
+        "corrigido": "an-absolute",
+        "arquivo": "breviario.json",
+        "data": "21/12",
+        "id": 355,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "decidiu- se",
+        "corrigido": "decidiu-se",
+        "arquivo": "breviario.json",
+        "data": "22/12",
+        "id": 356,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Acredita- se",
+        "corrigido": "Acredita-se",
+        "arquivo": "breviario.json",
+        "data": "22/12",
+        "id": 356,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "desconhecendo- se",
+        "corrigido": "desconhecendo-se",
+        "arquivo": "breviario.json",
+        "data": "27/12",
+        "id": 361,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "rendeu- lhe",
+        "corrigido": "rendeu-lhe",
+        "arquivo": "breviario.json",
+        "data": "29/12",
+        "id": 363,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "obra- prima",
+        "corrigido": "obra-prima",
+        "arquivo": "breviario.json",
+        "data": "29/12",
+        "id": 363,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "da- populacao",
+        "corrigido": "da-populacao",
+        "arquivo": "breviario.json",
+        "data": "31/12",
+        "id": 365,
+        "campo": "rodape"
+      },
+      {
+        "tipo": "espaco",
+        "original": "sobrevi vência",
+        "corrigido": "sobrevivência",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "10/01",
+        "id": 10,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "pala vra",
+        "corrigido": "palavra",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "17/01",
+        "id": 17,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "prin cípio",
+        "corrigido": "princípio",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "18/01",
+        "id": 18,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "caracte rísticas",
+        "corrigido": "características",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "26/01",
+        "id": 26,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "segu rança",
+        "corrigido": "segurança",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "27/01",
+        "id": 27,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Frater nidade",
+        "corrigido": "Fraternidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "06/02",
+        "id": 37,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "estabe lecido",
+        "corrigido": "estabelecido",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/02",
+        "id": 43,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "sig nifica",
+        "corrigido": "significa",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "18/02",
+        "id": 49,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "vocá bulo",
+        "corrigido": "vocábulo",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "23/02",
+        "id": 54,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mes tre",
+        "corrigido": "Mestre",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "24/02",
+        "id": 55,
+        "campo": "texto"
+      },
+      {
+        "tipo": "ligadura",
+        "original": "difi cilmente",
+        "corrigido": "dificilmente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "25/02",
+        "id": 56,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "BOM- II",
+        "corrigido": "BOM-II",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "26/02",
+        "id": 57,
+        "campo": "titulo"
+      },
+      {
+        "tipo": "espaco",
+        "original": "expe riência",
+        "corrigido": "experiência",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "06/03",
+        "id": 65,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Natu reza",
+        "corrigido": "Natureza",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/03",
+        "id": 71,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "constran gimentos",
+        "corrigido": "constrangimentos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "13/03",
+        "id": 72,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen",
+        "original": "coraça- o",
+        "corrigido": "coração",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "27/03",
+        "id": 86,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen",
+        "original": "expressa- o",
+        "corrigido": "expressão",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "27/03",
+        "id": 86,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Cris tianismo",
+        "corrigido": "Cristianismo",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "01/04",
+        "id": 91,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "perso nalidade",
+        "corrigido": "personalidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "15/04",
+        "id": 105,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen",
+        "original": "constitui- çao",
+        "corrigido": "constituição",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "24/04",
+        "id": 114,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "ho mem",
+        "corrigido": "homem",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "03/05",
+        "id": 123,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "hemis fério",
+        "corrigido": "hemisfério",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "06/05",
+        "id": 126,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "cava leiros",
+        "corrigido": "cavaleiros",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "08/05",
+        "id": 128,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "equi líbrio",
+        "corrigido": "equilíbrio",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "21/05",
+        "id": 141,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "neces sidade",
+        "corrigido": "necessidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "02/06",
+        "id": 153,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Fra ternidade",
+        "corrigido": "Fraternidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "03/06",
+        "id": 154,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "ati vidades",
+        "corrigido": "atividades",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "04/06",
+        "id": 155,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Maçô nicas",
+        "corrigido": "Maçônicas",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "05/06",
+        "id": 156,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "ampu lheta",
+        "corrigido": "ampulheta",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "07/06",
+        "id": 158,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "harmo nia",
+        "corrigido": "harmonia",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "13/06",
+        "id": 164,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "conhe cimento",
+        "corrigido": "conhecimento",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "05/07",
+        "id": 186,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "verdadei ramente",
+        "corrigido": "verdadeiramente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "10/07",
+        "id": 191,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Maço naria",
+        "corrigido": "Maçonaria",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "23/07",
+        "id": 204,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "neces sário",
+        "corrigido": "necessário",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "24/07",
+        "id": 205,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Maçona ria",
+        "corrigido": "Maçonaria",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "25/07",
+        "id": 206,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Maço naria",
+        "corrigido": "Maçonaria",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/08",
+        "id": 224,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "prer rogativas",
+        "corrigido": "prerrogativas",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "13/08",
+        "id": 225,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mes tre",
+        "corrigido": "Mestre",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "14/08",
+        "id": 226,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Maço naria",
+        "corrigido": "Maçonaria",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "19/08",
+        "id": 231,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Frater nidade",
+        "corrigido": "Fraternidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "22/08",
+        "id": 234,
+        "campo": "texto"
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signifi cados",
+        "corrigido": "significados",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "27/08",
+        "id": 239,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "indi víduo",
+        "corrigido": "indivíduo",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "28/08",
+        "id": 240,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "sig nifica",
+        "corrigido": "significa",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "01/09",
+        "id": 244,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mes tre",
+        "corrigido": "Mestre",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "03/09",
+        "id": 246,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "mes mo",
+        "corrigido": "mesmo",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "11/09",
+        "id": 254,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "rea lidade",
+        "corrigido": "realidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/10",
+        "id": 285,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "mes mo",
+        "corrigido": "mesmo",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "26/10",
+        "id": 299,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "exis tência",
+        "corrigido": "existência",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "30/10",
+        "id": 303,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "conhe cimento",
+        "corrigido": "conhecimento",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "02/11",
+        "id": 306,
+        "campo": "texto"
+      },
+      {
+        "tipo": "ligadura",
+        "original": "sufi ciente",
+        "corrigido": "suficiente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "08/11",
+        "id": 312,
+        "campo": "texto"
+      },
+      {
+        "tipo": "manual",
+        "original": "ab e rta, fra nca",
+        "corrigido": "aberta, franca",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "17/11",
+        "id": 321,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "compa nheiro",
+        "corrigido": "companheiro",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "19/11",
+        "id": 323,
+        "campo": "texto"
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signifi cando",
+        "corrigido": "significando",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "25/11",
+        "id": 329,
+        "campo": "texto"
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signifi cando",
+        "corrigido": "significando",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "04/12",
+        "id": 338,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "Repú blica",
+        "corrigido": "República",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "24/12",
+        "id": 358,
+        "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "presen ça",
+        "corrigido": "presença",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "24/12",
+        "id": 358,
+        "campo": "texto"
+      },
+      {
+        "tipo": "hifen",
+        "original": "na- o",
+        "corrigido": "não",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "29/12",
+        "id": 363,
+        "campo": "texto"
+      }
+    ]
+  }
+}

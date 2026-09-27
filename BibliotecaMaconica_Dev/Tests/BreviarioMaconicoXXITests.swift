@@ -762,6 +762,22 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
     }
 
+    /// Words split by the import/OCR (Tools/corrigir_palavras_quebradas.py) stay joined, as on Android.
+    func testBreviaryReadingsHaveNoWordsSplitByOCR() throws {
+        let quebradas = ["difi cilmente", "signifi cando", "constran gimentos", "coraça- o", "na- o", "Maço naria", "exis tência", "tornando- se", "Grão- Mestre"]
+        var textos: [String] = []
+        for obra in BibliotecaObra.padroes where obra.recursoJSON != nil {
+            for item in try BreviarioStore.carregarDadosDaObra(obra).itens {
+                textos.append([item.titulo, item.frase, item.texto, item.rodape ?? ""].joined(separator: "\n"))
+            }
+        }
+        for quebrada in quebradas {
+            XCTAssertFalse(textos.contains { $0.contains(quebrada) }, quebrada)
+        }
+        let rizzardo = try BreviarioStore.carregarDadosDaObra(.breviarioRizzardo).itens
+        XCTAssertTrue(try XCTUnwrap(rizzardo.first { $0.data == "25/02" }).texto.contains("pois dificilmente se pode"))
+    }
+
     func testIndexWithoutRecordedDatesIsLinkedByPrintedPage() {
         let item = BreviarioItem(id: 1, data: "10/02", titulo: "T", frase: "", texto: "", rodape: "170 Nota da página", pagina: 41)
         let vinculado = BreviarioImportService.vincularIndice([IndiceRemissivoEntry(id: 1, termo: "Termo", paginas: [170], datas: [])], aos: [item])
