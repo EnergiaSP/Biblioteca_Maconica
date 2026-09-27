@@ -9,7 +9,8 @@ func buscarBiblioteca(
         limite: Int = 50,
         offset: Int = 0,
         obraID: String? = nil,
-        filtro: BibliotecaFiltroMetadados = .init()
+        filtro: BibliotecaFiltroMetadados = .init(),
+        variantes: [String: [String]] = [:]
     ) async throws -> [BibliotecaResultadoBusca] {
         let termoLimpo = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termoLimpo.isEmpty == false else {
@@ -70,7 +71,7 @@ func buscarBiblioteca(
                     ].joined(separator: " "))
                 }
                 let conteudos = Dictionary(uniqueKeysWithValues: textos.map { ($0.chave, $0.texto) })
-                let pontuacoes = try BibliotecaSQLiteService.pontuarTextosLocais(termo: termoLimpo, textos: textos)
+                let pontuacoes = try BibliotecaSQLiteService.pontuarTextosLocais(termo: termoLimpo, textos: textos, variantes: variantes)
                 for item in dados.itens {
                     guard let ranking = pontuacoes[item.chavePersistencia] else { continue }
                     resultados.append(
@@ -88,12 +89,14 @@ func buscarBiblioteca(
             let catalogo = try BibliotecaRAGCatalogService()
             let excluidas = obrasLocais.union(excluidasPorMetadados)
             resultados += try catalogo.buscar(termo: termoLimpo, escopo: escopo,
-                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro)
+                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro,
+                    variantes: variantes)
             let urlBanco = BibliotecaSQLiteService.urlBancoPadrao()
             if FileManager.default.fileExists(atPath: urlBanco.path) {
                 let banco = try BibliotecaSQLiteService(url: urlBanco)
                 let encontrados = try banco.buscarResultadosBiblioteca(termo: termoLimpo, escopo: escopo,
-                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro)
+                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro,
+                    variantes: variantes)
                 resultados += encontrados
             }
             try Task.checkCancellation()

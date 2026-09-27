@@ -48,6 +48,36 @@ class DataIntegrityTest {
         assertEquals(setOf("b"), rankLocalTexts("lei", texts).keys)
     }
 
+    /** The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly. */
+    @Test
+    fun dossierAnalysisMatchesReferenceCases() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val config = DossierAnalysis.loadConfig(context)
+        val cases = JSONObject(context.assets.open("casos_dossie_v1.json").bufferedReader().use { it.readText() }).getJSONArray("casos")
+        assertTrue(cases.length() > 0)
+        fun canonical(value: Any?): Any? = when (value) {
+            is JSONObject -> value.keys().asSequence().associateWith { canonical(value.get(it)) }.toSortedMap()
+            is org.json.JSONArray -> List(value.length()) { canonical(value.get(it)) }
+            is Number -> value.toLong()
+            else -> value
+        }
+        for (index in 0 until cases.length()) {
+            val case = cases.getJSONObject(index)
+            val rows = case.getJSONArray("fontes")
+            val sources = List(rows.length()) { row -> rows.getJSONObject(row).let {
+                DossierAnalysis.Source(it.getString("id"), it.getString("obraId"), it.getString("tituloObra"), it.getString("area"),
+                    it.getInt("pagina"), it.optString("data").ifEmpty { null }, it.optString("texto"), it.optString("rodape"))
+            } }
+            val analysis = DossierAnalysis.analyze(case.getString("termo"), sources, config, java.time.LocalDate.parse(case.getString("hoje")))
+            val result = analysis.toJson().put("exibicao", DossierAnalysis.display(case.getString("termo"), analysis, sources, config).toJson())
+            val expected = case.getJSONObject("esperado")
+            assertEquals(case.getString("id"), expected.keys().asSequence().toSet(), result.keys().asSequence().toSet())
+            for (key in expected.keys()) {
+                assertEquals("${case.getString("id")}.$key", canonical(expected.get(key)), canonical(result.get(key)))
+            }
+        }
+    }
+
     /** Collections built from the two integrated breviaries, compared with iOS by rule id. */
     @Test
     fun localBreviaryCollectionsAreRecordedForParity() {

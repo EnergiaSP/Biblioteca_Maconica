@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia do dossie sem IA. 'esperado' e gerado por Tools/dossie_referencia.py e deve ser reproduzido pelos apps iOS e Android.",
+  "casos": [
+    {
+      "id": "escada_de_jaco",
+      "termo": "Escada de Jacó",
+      "hoje": "2026-09-27",
+      "fontes": [
+        {
+          "id": "dic:106:dic-p106-b1",
+          "obraId": "dic",
+          "tituloObra": "Dicionário de Teste",
+          "area": "dicionariosMaconicos",
+          "pagina": 106,
+          "texto": "ESCADA DE JACÓ. A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade. Outros autores a associam ao painel do Aprendiz.",
+          "rodape": ""
+        },
+        {
+          "id": "instrucoes:84:instrucoes-p84-b1",
+          "obraId": "instrucoes",
+          "tituloObra": "Instruções de Teste",
+          "area": "bibliotecaMaconica",
+          "pagina": 84,
+          "texto": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.",
+          "rodape": ""
+        },
+        {
+          "id": "breviario_x:185:03/07",
+          "obraId": "breviario_x",
+          "tituloObra": "Breviário de Teste",
+          "area": "breviarios",
+          "pagina": 185,
+          "data": "03/07",
+          "texto": "A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. A caridade completa a subida.",
+          "rodape": ""
+        },
+        {
+          "id": "livro2:12:livro2-p12-b1",
+          "obraId": "livro2",
+          "tituloObra": "Livro Divergente",
+          "area": "bibliotecaMaconica",
+          "pagina": 12,
+          "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; porém o painel mostra apenas três degraus principais, ligados à esperança e à caridade.",
+          "rodape": "12 Ver também a Escada de Jacó no painel."
+        },
+        {
+          "id": "instrucoes:47:instrucoes-p47-b1",
+          "obraId": "instrucoes",
+          "tituloObra": "Instruções de Teste",
+          "area": "bibliotecaMaconica",
+          "pagina": 47,
+          "texto": "ESCADA DE JACÓ Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade.",
+          "rodape": ""
+        }
+      ],
+      "esperado": {
+        "definicoes": [
+          {
+            "texto": "A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.",
+            "fonte": "dic:106:dic-p106-b1"
+          }
+        ],
+        "resumo": [
+          {
+            "texto": "A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.",
+            "fonte": "breviario_x:185:03/07"
+          },
+          {
+            "texto": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.",
+            "fonte": "instrucoes:84:instrucoes-p84-b1"
+          },
+          {
+            "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó;",
+            "fonte": "livro2:12:livro2-p12-b1"
+          }
+        ],
+        "divergencias": [
+          {
+            "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó;",
+            "fonte": "livro2:12:livro2-p12-b1"
+          }
+        ],
+        "metricas": {
+          "fontes": 5,
+          "obras": 4,
+          "ocorrencias": 8,
+          "porArea": [
+            [
+              "bibliotecaMaconica",
+              3
+            ],
+            [
+              "breviarios",
+              1
+            ],
+            [
+              "dicionariosMaconicos",
+              1
+            ]
+          ]
+        },
+        "obrasCentrais": [
+          {
+            "obraId": "instrucoes",
+            "titulo": "Instruções de Teste",
+            "ocorrencias": 3,
+            "fontes": 2
+          },
+          {
+            "obraId": "dic",
+            "titulo": "Dicionário de Teste",
+            "ocorrencias": 2,
+            "fontes": 1
+          },
+          {
+            "obraId": "livro2",
+            "titulo": "Livro Divergente",
+            "ocorrencias": 2,
+            "fontes": 1
+          },
+          {
+            "obraId": "breviario_x",
+            "titulo": "Breviário de Teste",
+            "ocorrencias": 1,
+            "fontes": 1
+          }
+        ],
+        "capitulosDedicados": [
+          "dic:106:dic-p106-b1",
+          "breviario_x:185:03/07",
+          "instrucoes:47:instrucoes-p47-b1"
+        ],
+        "termosAssociados": [
+          {
+            "termo": "caridade",
+            "ocorrencias": 7,
+            "obras": 4
+          },
+          {
+            "termo": "degraus",
+            "ocorrencias": 5,
+            "obras": 3
+          },
+          {
+            "termo": "esperanca",
+            "ocorrencias": 5,
+            "obras": 3
+          },
+          {
+            "termo": "degrau",
+            "ocorrencias": 4,
+            "obras": 3
+          },
+          {
+            "termo": "espiritual",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "painel",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "aprendiz",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "ascensao",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "associam",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "autores",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "definido",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "macom",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "plana",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "simbolo",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "superficie",
+            "ocorrencias": 2,
+            "obras": 1
+          }
+        ],
+        "perguntas": [
+          {
+            "pergunta": "A Fé representa o primeiro _____ da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.",
+            "resposta": "degrau",
+            "fonte": "breviario_x:185:03/07"
+          },
+          {
+            "pergunta": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a _____.",
+            "resposta": "caridade",
+            "fonte": "instrucoes:84:instrucoes-p84-b1"
+          },
+          {
+            "pergunta": "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó;",
+            "resposta": "degrau",
+            "fonte": "livro2:12:livro2-p12-b1"
+          }
+        ],
+        "roteiro": [
+          {
+            "etapa": "Definição",
+            "texto": "Comece pela definição em Dicionário de Teste, p. 106."
+          },
+          {
+            "etapa": "Fonte central",
+            "texto": "Leia Instruções de Teste (3 ocorrências), a partir de p. 47."
+          },
+          {
+            "etapa": "Breviários",
+            "texto": "Leia nos breviários: Breviário de Teste, 03/07."
+          },
+          {
+            "etapa": "Aprofundamento",
+            "texto": "Aprofunde em: Dicionário de Teste; Livro Divergente; Breviário de Teste."
+          },
+          {
+            "etapa": "Comparação",
+            "texto": "Compare como Instruções de Teste e Dicionário de Teste tratam o tema."
+          },
+          {
+            "etapa": "Síntese",
+            "texto": "Escreva uma síntese citando a obra e a página de cada trecho usado."
+          }
+        ],
+        "revisao": [
+          {
+            "data": "2026-09-27",
+            "tarefa": "Ler a definição e as fontes centrais; marcar os trechos principais."
+          },
+          {
+            "data": "2026-09-28",
+            "tarefa": "Reler o resumo e escrever uma síntese de cinco linhas com as fontes."
+          },
+          {
+            "data": "2026-09-30",
+            "tarefa": "Responder às perguntas de lacuna sem consultar o texto."
+          },
+          {
+            "data": "2026-10-04",
+            "tarefa": "Comparar os pontos divergentes entre as obras citadas."
+          },
+          {
+            "data": "2026-10-18",
+            "tarefa": "Revisar a síntese e transformar em estudo, prancha ou anotação final."
+          }
+        ],
+        "exibicao": {
+          "definicoes": [
+            "A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade. — Dicionário de Teste, p. 106"
+          ],
+          "resumo": [
+            "A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. — Breviário de Teste, 03/07",
+            "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade. — Instruções de Teste, p. 84",
+            "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; — Livro Divergente, p. 12"
+          ],
+          "divergencias": [
+            "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; — Livro Divergente, p. 12"
+          ],
+          "metricas": [
+            "5 fonte(s) em 4 obra(s); 8 ocorrência(s) do tema.",
+            "Áreas: Biblioteca Maçônica (3), Breviários (1), Dicionários Maçônicos (1)."
+          ],
+          "obrasCentrais": [
+            "Instruções de Teste: 3 ocorrência(s) em 2 fonte(s)",
+            "Dicionário de Teste: 2 ocorrência(s) em 1 fonte(s)",
+            "Livro Divergente: 2 ocorrência(s) em 1 fonte(s)",
+            "Breviário de Teste: 1 ocorrência(s) em 1 fonte(s)"
+          ],
+          "capitulosDedicados": [
+            "Dicionário de Teste, p. 106",
+            "Breviário de Teste, 03/07",
+            "Instruções de Teste, p. 47"
+          ],
+          "mapa": [
+            "Escada de Jacó → caridade (7 ocorrência(s), 4 obra(s))",
+            "Escada de Jacó → degraus (5 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → esperanca (5 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → degrau (4 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → espiritual (3 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → painel (3 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → aprendiz (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → ascensao (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → associam (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → autores (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → definido (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → macom (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → plana (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → simbolo (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → superficie (2 ocorrência(s), 1 obra(s))"
+          ],
+          "perguntas": [
+            "A Fé representa o primeiro _____ da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. (Resposta: degrau — Breviário de Teste, 03/07)",
+            "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a _____. (Resposta: caridade — Instruções de Teste, p. 84)",
+            "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó; (Resposta: degrau — Livro Divergente, p. 12)"
+          ],
+          "roteiro": [
+            "Definição: Comece pela definição em Dicionário de Teste, p. 106.",
+            "Fonte central: Leia Instruções de Teste (3 ocorrências), a partir de p. 47.",
+            "Breviários: Leia nos breviários: Breviário de Teste, 03/07.",
+            "Aprofundamento: Aprofunde em: Dicionário de Teste; Livro Divergente; Breviário de Teste.",
+            "Comparação: Compare como Instruções de Teste e Dicionário de Teste tratam o tema.",
+            "Síntese: Escreva uma síntese citando a obra e a página de cada trecho usado."
+          ],
+          "revisao": [
+            "27/09/2026: Ler a definição e as fontes centrais; marcar os trechos principais.",
+            "28/09/2026: Reler o resumo e escrever uma síntese de cinco linhas com as fontes.",
+            "30/09/2026: Responder às perguntas de lacuna sem consultar o texto.",
+            "04/10/2026: Comparar os pontos divergentes entre as obras citadas.",
+            "18/10/2026: Revisar a síntese e transformar em estudo, prancha ou anotação final."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sem_fontes",
+      "termo": "Termo inexistente",
+      "hoje": "2026-09-27",
+      "fontes": [],
+      "esperado": {
+        "definicoes": [],
+        "resumo": [],
+        "divergencias": [],
+        "metricas": {
+          "fontes": 0,
+          "obras": 0,
+          "ocorrencias": 0,
+          "porArea": []
+        },
+        "obrasCentrais": [],
+        "capitulosDedicados": [],
+        "termosAssociados": [],
+        "perguntas": [],
+        "roteiro": [
+          {
+            "etapa": "Definição",
+            "texto": "Nenhum dicionário do acervo define o termo; comece pela fonte central."
+          },
+          {
+            "etapa": "Síntese",
+            "texto": "Escreva uma síntese citando a obra e a página de cada trecho usado."
+          }
+        ],
+        "revisao": [
+          {
+            "data": "2026-09-27",
+            "tarefa": "Ler a definição e as fontes centrais; marcar os trechos principais."
+          },
+          {
+            "data": "2026-09-28",
+            "tarefa": "Reler o resumo e escrever uma síntese de cinco linhas com as fontes."
+          },
+          {
+            "data": "2026-09-30",
+            "tarefa": "Responder às perguntas de lacuna sem consultar o texto."
+          },
+          {
+            "data": "2026-10-04",
+            "tarefa": "Comparar os pontos divergentes entre as obras citadas."
+          },
+          {
+            "data": "2026-10-18",
+            "tarefa": "Revisar a síntese e transformar em estudo, prancha ou anotação final."
+          }
+        ],
+        "exibicao": {
+          "definicoes": [],
+          "resumo": [],
+          "divergencias": [],
+          "metricas": [
+            "0 fonte(s) em 0 obra(s); 0 ocorrência(s) do tema."
+          ],
+          "obrasCentrais": [],
+          "capitulosDedicados": [],
+          "mapa": [],
+          "perguntas": [],
+          "roteiro": [
+            "Definição: Nenhum dicionário do acervo define o termo; comece pela fonte central.",
+            "Síntese: Escreva uma síntese citando a obra e a página de cada trecho usado."
+          ],
+          "revisao": [
+            "27/09/2026: Ler a definição e as fontes centrais; marcar os trechos principais.",
+            "28/09/2026: Reler o resumo e escrever uma síntese de cinco linhas com as fontes.",
+            "30/09/2026: Responder às perguntas de lacuna sem consultar o texto.",
+            "04/10/2026: Comparar os pontos divergentes entre as obras citadas.",
+            "18/10/2026: Revisar a síntese e transformar em estudo, prancha ou anotação final."
+          ]
+        }
+      }
+    }
+  ]
+}

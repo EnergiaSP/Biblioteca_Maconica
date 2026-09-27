@@ -38,11 +38,14 @@
 		010000000000000000000117 /* BibliotecaSQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000018 /* BibliotecaSQLiteService.swift */; };
 		D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000002 /* BibliotecaNotasSearch.swift */; };
 		D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000102 /* BibliotecaEstudoIndice.swift */; };
+		D92100000000000000000201 /* DossieEstudoAnalise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000202 /* DossieEstudoAnalise.swift */; };
 		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
 		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
 		01000000000000000000011A /* rag_catalogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001B /* rag_catalogo.json */; };
 		EE0000000000000000000001 /* regras_estudo_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000002 /* regras_estudo_v1.json */; };
 		EE0000000000000000000003 /* casos_comuns_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000004 /* casos_comuns_v1.json */; };
+		EE0000000000000000000105 /* casos_dossie_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000106 /* casos_dossie_v1.json */; };
+		EE0000000000000000000103 /* estudo_dossie_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000104 /* estudo_dossie_v1.json */; };
 		01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001C /* BibliotecaRAGCatalogService.swift */; };
 		01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001D /* BibliotecaOfflinePackageService.swift */; };
 		020000000000000000000101 /* BreviarioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000001 /* BreviarioWidget.swift */; };
@@ -194,11 +197,14 @@
 		010000000000000000000018 /* BibliotecaSQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaSQLiteService.swift; sourceTree = "<group>"; };
 		D92100000000000000000002 /* BibliotecaNotasSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaNotasSearch.swift; sourceTree = "<group>"; };
 		D92100000000000000000102 /* BibliotecaEstudoIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaEstudoIndice.swift; sourceTree = "<group>"; };
+		D92100000000000000000202 /* DossieEstudoAnalise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieEstudoAnalise.swift; sourceTree = "<group>"; };
 		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
 		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		01000000000000000000001B /* rag_catalogo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rag_catalogo.json; sourceTree = "<group>"; };
 		EE0000000000000000000002 /* regras_estudo_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regras_estudo_v1.json; sourceTree = "<group>"; };
 		EE0000000000000000000004 /* casos_comuns_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_comuns_v1.json; sourceTree = "<group>"; };
+		EE0000000000000000000106 /* casos_dossie_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_dossie_v1.json; sourceTree = "<group>"; };
+		EE0000000000000000000104 /* estudo_dossie_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = estudo_dossie_v1.json; sourceTree = "<group>"; };
 		01000000000000000000001C /* BibliotecaRAGCatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaRAGCatalogService.swift; sourceTree = "<group>"; };
 		01000000000000000000001D /* BibliotecaOfflinePackageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaOfflinePackageService.swift; sourceTree = "<group>"; };
 		020000000000000000000001 /* BreviarioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioWidget.swift; sourceTree = "<group>"; };
@@ -390,6 +396,7 @@
 				010000000000000000000018 /* BibliotecaSQLiteService.swift */,
 				D92100000000000000000002 /* BibliotecaNotasSearch.swift */,
 				D92100000000000000000102 /* BibliotecaEstudoIndice.swift */,
+				D92100000000000000000202 /* DossieEstudoAnalise.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
 				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
@@ -429,6 +436,8 @@
 				01000000000000000000001B /* rag_catalogo.json */,
 				EE0000000000000000000002 /* regras_estudo_v1.json */,
 				EE0000000000000000000004 /* casos_comuns_v1.json */,
+				EE0000000000000000000106 /* casos_dossie_v1.json */,
+				EE0000000000000000000104 /* estudo_dossie_v1.json */,
 				F72BA004B6B84748A020B300 /* progress_sync_v1.tsv */,
 				010000000000000000000013 /* PrivacyInfo.xcprivacy */,
 			);
@@ -671,6 +680,8 @@
 				01000000000000000000011A /* rag_catalogo.json in Resources */,
 				EE0000000000000000000001 /* regras_estudo_v1.json in Resources */,
 				EE0000000000000000000003 /* casos_comuns_v1.json in Resources */,
+				EE0000000000000000000105 /* casos_dossie_v1.json in Resources */,
+				EE0000000000000000000103 /* estudo_dossie_v1.json in Resources */,
 				F72BA004B6B84748A020B301 /* progress_sync_v1.tsv in Resources */,
 				010000000000000000000112 /* PrivacyInfo.xcprivacy in Resources */,
 				01000000000000000000010E /* Assets.xcassets in Resources */,
@@ -755,6 +766,7 @@
 				010000000000000000000117 /* BibliotecaSQLiteService.swift in Sources */,
 				D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */,
 				D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */,
+				D92100000000000000000201 /* DossieEstudoAnalise.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
 				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,

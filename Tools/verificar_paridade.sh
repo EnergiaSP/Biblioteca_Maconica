@@ -43,6 +43,7 @@ grep -q 'Marcar' "$ROOT_DIR/projetos/BreviarioMaconicoAndroid/wear/src/main/java
 grep -q 'WatchProgressService' "$ROOT_DIR/BibliotecaMaconica_Dev/Watch/BreviarioWatchApp.swift" || falhar "Marcação de leitura ausente no watchOS."
 
 python3 "$ROOT_DIR/Tools/sincronizar_regras_estudo.py" --check || falhar "Regras ou casos de teste comuns divergentes."
+python3 "$ROOT_DIR/Tools/dossie_referencia.py" --check || falhar "Casos do dossie desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/auditar_paridade_profunda.py" "$@" || falhar "Auditoria de conteúdo, capacidades ou liberação encontrou pendências."
 
 echo "Paridade estrutural validada para a versão $IOS_VERSION."

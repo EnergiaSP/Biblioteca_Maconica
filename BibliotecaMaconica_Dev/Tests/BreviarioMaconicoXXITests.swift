@@ -737,6 +737,34 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(vinculado.first?.datas, ["10/02"])
     }
 
+    /// The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly.
+    func testDossierAnalysisMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_dossie_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let casos = try XCTUnwrap(raiz["casos"] as? [[String: Any]])
+        XCTAssertFalse(casos.isEmpty)
+        var calendario = Calendar(identifier: .gregorian)
+        calendario.timeZone = TimeZone(identifier: "UTC")!
+        for caso in casos {
+            let id = try XCTUnwrap(caso["id"] as? String)
+            let fontesJSON = try JSONSerialization.data(withJSONObject: try XCTUnwrap(caso["fontes"]))
+            let fontes = try JSONDecoder().decode([DossieEstudoAnalise.Fonte].self, from: fontesJSON)
+            let partes = try XCTUnwrap(caso["hoje"] as? String).split(separator: "-").compactMap { Int($0) }
+            let hoje = try XCTUnwrap(calendario.date(from: DateComponents(year: partes[0], month: partes[1], day: partes[2])))
+            let resultado = DossieEstudoAnalise.analisar(termo: try XCTUnwrap(caso["termo"] as? String), fontes: fontes,
+                                                         configuracao: configuracao, hoje: hoje, calendario: calendario)
+            let esperado = try XCTUnwrap(caso["esperado"] as? [String: Any])
+            var obtido = resultado.json
+            obtido["exibicao"] = DossieEstudoAnalise.exibicao(termo: try XCTUnwrap(caso["termo"] as? String), resultado: resultado,
+                                                             fontes: fontes, configuracao: configuracao).json
+            XCTAssertEqual(Set(obtido.keys), Set(esperado.keys), id)
+            for (chave, valor) in esperado {
+                XCTAssertEqual(NSObject.normalizarJSON(obtido[chave]), NSObject.normalizarJSON(valor), "\(id).\(chave)")
+            }
+        }
+    }
+
     /// Collections built from the two integrated breviaries, compared with Android by rule id.
     func testLocalBreviaryCollectionsAreRecordedForParity() throws {
         var itens: [BreviarioItem] = []
@@ -1316,5 +1344,13 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertTrue(ReadingProgressService.concluidos(obraID: work).contains(date))
         ReadingProgressService.definirConcluido(date, obraID: work, lido: false, sincronizar: false)
         XCTAssertFalse(ReadingProgressService.concluidos(obraID: work).contains(date))
+    }
+}
+
+private extension NSObject {
+    /// Canonical JSON text of a value, so nested dictionaries and arrays compare structurally.
+    static func normalizarJSON(_ valor: Any?) -> String {
+        guard let valor, let dados = try? JSONSerialization.data(withJSONObject: ["v": valor], options: [.sortedKeys]) else { return "nil" }
+        return String(decoding: dados, as: UTF8.self)
     }
 }

@@ -112,14 +112,15 @@ final class BibliotecaSQLiteService {
         area: BibliotecaArea? = nil,
         obraID: String? = nil,
         limite: Int = 50,
-        obrasExcluidas: Set<String> = []
+        obrasExcluidas: Set<String> = [],
+        variantes: [String: [String]] = [:]
     ) throws -> [BibliotecaRAGResultadoBusca] {
         let busca = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard busca.isEmpty == false else {
             return []
         }
 
-        let consultaFTS = Self.consultaFTSSegura(busca)
+        let consultaFTS = Self.consultaFTSSegura(busca, variantes: variantes)
         var filtros: [String] = []
         // Only the page text is searched; the work title in the index would match every page of the work.
         var parametros: [SQLValor] = [SQLValor.text("texto : (\(consultaFTS))")]
@@ -159,7 +160,7 @@ final class BibliotecaSQLiteService {
                 pagina: Int(sqlite3_column_int(statement, 5))
             )
         }
-        let termos = Self.termosContagem(busca)
+        let termos = Self.termosContagem(busca, variantes: variantes)
         if !candidatos.isEmpty && somenteLeitura {
             // query_only also blocks the temporary counting table; the file stays opened read-only.
             try executar("PRAGMA query_only = OFF")
@@ -206,8 +207,21 @@ final class BibliotecaSQLiteService {
     }
 
     /// Words and quoted phrases of a search, normalized like the FTS index for counting.
-    static func termosContagem(_ termo: String) -> Set<String> {
-        Set(termosBusca(termo).map { RegrasEstudo.normalizar($0).trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty })
+    static func termosContagem(_ termo: String, variantes: [String: [String]] = [:]) -> Set<String> {
+        Set(termosBusca(termo).flatMap { alternativas(de: $0, variantes: variantes) })
+    }
+
+    /// Normalized forms of a search word or phrase, with every combination of its words' spelling variants.
+    static func alternativas(de termo: String, variantes: [String: [String]]) -> [String] {
+        let palavras = RegrasEstudo.normalizar(termo).split(separator: " ").map(String.init)
+        guard !palavras.isEmpty else { return [] }
+        var combinacoes = [[String]()]
+        for palavra in palavras {
+            let opcoes = [palavra] + (variantes[palavra] ?? [])
+            combinacoes = combinacoes.flatMap { prefixo in opcoes.map { prefixo + [$0] } }
+        }
+        // Bounded so a topic full of variant words cannot explode the query.
+        return combinacoes.prefix(8).map { $0.joined(separator: " ") }
     }
 
     /// Occurrences of the searched words and phrases in a text outside the index (notes, breviaries).
@@ -223,7 +237,8 @@ final class BibliotecaSQLiteService {
         limite: Int = 80,
         obrasExcluidas: Set<String> = [],
         incluirNotas: Bool = true,
-        filtro: BibliotecaFiltroMetadados = .init()
+        filtro: BibliotecaFiltroMetadados = .init(),
+        variantes: [String: [String]] = [:]
     ) throws -> [BibliotecaResultadoBusca] {
         let areaBusca: BibliotecaArea?
         switch escopo {
@@ -243,7 +258,8 @@ final class BibliotecaSQLiteService {
             area: areaBusca,
             obraID: escopo == .obraAtual ? obraID : nil,
             limite: limite,
-            obrasExcluidas: excluidas
+            obrasExcluidas: excluidas,
+            variantes: variantes
         )
 
         var notasPorObra: [String: [Int: [String]]] = [:]
@@ -737,7 +753,8 @@ final class BibliotecaSQLiteService {
     /// Matches texts outside the downloaded packages (integrated breviaries, JSON imports) with the same
     /// FTS5 tokenizer and query used for the packages, and scores them by the shared occurrence count.
     /// Returns the negative count of each matching key; lower is more relevant, as in the package search.
-    static func pontuarTextosLocais(termo: String, textos: [(chave: String, texto: String)]) throws -> [String: Double] {
+    static func pontuarTextosLocais(termo: String, textos: [(chave: String, texto: String)],
+                                    variantes: [String: [String]] = [:]) throws -> [String: Double] {
         let busca = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard busca.isEmpty == false, textos.isEmpty == false else { return [:] }
         var db: OpaquePointer?
@@ -772,28 +789,33 @@ final class BibliotecaSQLiteService {
             throw Erro.falhaPreparar(String(cString: sqlite3_errmsg(db)))
         }
         defer { sqlite3_finalize(consulta) }
-        sqlite3_bind_text(consulta, 1, "texto : (\(consultaFTSSegura(busca)))", -1, SQLITE_TRANSIENT)
+        sqlite3_bind_text(consulta, 1, "texto : (\(consultaFTSSegura(busca, variantes: variantes)))", -1, SQLITE_TRANSIENT)
         var encontrados = Set<String>()
         while sqlite3_step(consulta) == SQLITE_ROW {
             encontrados.insert(colunaTexto(consulta, 0))
         }
         // Per-index bm25 is not comparable across indexes, so relevance is the shared occurrence count.
-        let termos = termosContagem(busca)
+        let termos = termosContagem(busca, variantes: variantes)
         let porChave = Dictionary(textos.map { ($0.chave, $0.texto) }, uniquingKeysWith: { primeiro, _ in primeiro })
         return Dictionary(uniqueKeysWithValues: encontrados.map { chave in
             (chave, -Double(ocorrenciasBusca(termos: termos, texto: porChave[chave] ?? "")))
         })
     }
 
-    private static func consultaFTSSegura(_ termo: String) -> String {
+    private static func consultaFTSSegura(_ termo: String, variantes: [String: [String]] = [:]) -> String {
         let tokens = termosBusca(termo)
+        func literal(_ texto: String) -> String { "\"\(texto.replacingOccurrences(of: "\"", with: "\"\""))\"" }
 
         guard tokens.isEmpty == false else {
-            return "\"\(termo.replacingOccurrences(of: "\"", with: "\"\""))\""
+            return literal(termo)
         }
 
-        return tokens.map { "\"\($0.replacingOccurrences(of: "\"", with: "\"\""))\"" }
-            .joined(separator: " AND ")
+        return tokens.map { token in
+            let alternativas = alternativas(de: token, variantes: variantes)
+            // Without variants the query stays exactly as typed; with them each spelling is accepted.
+            guard alternativas.count > 1 else { return literal(token) }
+            return "(" + alternativas.map(literal).joined(separator: " OR ") + ")"
+        }.joined(separator: " AND ")
     }
 
     static func termosBusca(_ termo: String) -> [String] {

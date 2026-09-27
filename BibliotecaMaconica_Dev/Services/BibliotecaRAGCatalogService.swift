@@ -52,7 +52,8 @@ final class BibliotecaRAGCatalogService {
         limite: Int = 80,
         offset: Int = 0,
         obrasExcluidas: Set<String> = [],
-        filtro: BibliotecaFiltroMetadados = .init()
+        filtro: BibliotecaFiltroMetadados = .init(),
+        variantes: [String: [String]] = [:]
     ) throws -> [BibliotecaResultadoBusca] {
         let termoLimpo = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termoLimpo.isEmpty == false else {
@@ -83,7 +84,8 @@ final class BibliotecaRAGCatalogService {
                         limite: limitePorPacote,
                         obrasExcluidas: obrasExcluidas,
                         incluirNotas: false,
-                        filtro: filtro
+                        filtro: filtro,
+                        variantes: variantes
                     )
                 }
             })
