@@ -50,7 +50,7 @@
           "tituloObra": "Instruções de Teste",
           "area": "bibliotecaMaconica",
           "pagina": 47,
-          "texto": "ESCADA DE JACÓ Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade, sempre com o maçom em busca da luz e do aperfeiçoamento moral.",
+          "texto": "49 49 10ª INSTRUÇÃO 10ª INSTRUÇÃO ESCADA DE JACÓ ESCADA DE JACÓ VM VM Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade, sempre com o maçom em busca da luz e do aperfeiçoamento moral.",
           "rodape": ""
         },
         {
@@ -104,14 +104,14 @@
           }
         ],
         "metricas": {
-          "fontes": 6,
-          "obras": 5,
-          "ocorrencias": 10,
-          "duplicadas": 1,
+          "fontes": 7,
+          "obras": 6,
+          "ocorrencias": 12,
+          "duplicadas": 0,
           "porArea": [
             [
               "bibliotecaMaconica",
-              4
+              5
             ],
             [
               "breviarios",
@@ -131,6 +131,12 @@
             "fontes": 2
           },
           {
+            "obraId": "copia",
+            "titulo": "Cópia das Instruções",
+            "ocorrencias": 2,
+            "fontes": 1
+          },
+          {
             "obraId": "dic",
             "titulo": "Dicionário de Teste",
             "ocorrencias": 2,
@@ -147,12 +153,6 @@
             "titulo": "Livro com Ruído",
             "ocorrencias": 2,
             "fontes": 1
-          },
-          {
-            "obraId": "breviario_x",
-            "titulo": "Breviário de Teste",
-            "ocorrencias": 1,
-            "fontes": 1
           }
         ],
         "capitulosDedicados": [
@@ -164,32 +164,26 @@
           {
             "termo": "caridade",
             "forma": "caridade",
-            "ocorrencias": 7,
-            "obras": 4
-          },
-          {
-            "termo": "degraus",
-            "forma": "degraus",
-            "ocorrencias": 5,
-            "obras": 3
-          },
-          {
-            "termo": "esperanca",
-            "forma": "esperança",
-            "ocorrencias": 5,
-            "obras": 3
+            "ocorrencias": 6,
+            "obras": 5
           },
           {
             "termo": "degrau",
             "forma": "degrau",
             "ocorrencias": 4,
-            "obras": 3
+            "obras": 4
           },
           {
-            "termo": "macom",
-            "forma": "maçom",
+            "termo": "degraus",
+            "forma": "degraus",
             "ocorrencias": 4,
-            "obras": 2
+            "obras": 4
+          },
+          {
+            "termo": "esperanca",
+            "forma": "esperança",
+            "ocorrencias": 4,
+            "obras": 4
           },
           {
             "termo": "mundo",
@@ -201,53 +195,59 @@
             "termo": "virtude",
             "forma": "virtude",
             "ocorrencias": 4,
-            "obras": 2
+            "obras": 3
           },
           {
             "termo": "aperfeicoamento",
             "forma": "aperfeiçoamento",
             "ocorrencias": 3,
-            "obras": 1
-          },
-          {
-            "termo": "espiritual",
-            "forma": "espiritual",
-            "ocorrencias": 3,
             "obras": 2
           },
           {
-            "termo": "painel",
-            "forma": "painel",
+            "termo": "macom",
+            "forma": "maçom",
             "ocorrencias": 3,
-            "obras": 2
-          },
-          {
-            "termo": "aprendiz",
-            "forma": "aprendiz",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "ascensao",
-            "forma": "ascensão",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "associam",
-            "forma": "associam",
-            "ocorrencias": 2,
-            "obras": 1
-          },
-          {
-            "termo": "autores",
-            "forma": "autores",
-            "ocorrencias": 2,
-            "obras": 1
+            "obras": 3
           },
           {
             "termo": "busca",
             "forma": "busca",
+            "ocorrencias": 2,
+            "obras": 2
+          },
+          {
+            "termo": "criador",
+            "forma": "criador",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "definido",
+            "forma": "definido",
+            "ocorrencias": 2,
+            "obras": 2
+          },
+          {
+            "termo": "espiritual",
+            "forma": "espiritual",
+            "ocorrencias": 2,
+            "obras": 2
+          },
+          {
+            "termo": "eterno",
+            "forma": "eterno",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "liga",
+            "forma": "liga",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "loja",
+            "forma": "loja",
             "ocorrencias": 2,
             "obras": 1
           }
@@ -289,11 +289,11 @@
           },
           {
             "etapa": "Aprofundamento",
-            "texto": "Aprofunde em: Dicionário de Teste; Livro Divergente; Livro com Ruído."
+            "texto": "Aprofunde em: Cópia das Instruções; Dicionário de Teste; Livro Divergente."
           },
           {
             "etapa": "Comparação",
-            "texto": "Compare como Instruções de Teste e Dicionário de Teste tratam o tema."
+            "texto": "Compare como Instruções de Teste e Cópia das Instruções tratam o tema."
           },
           {
             "etapa": "Síntese",
@@ -336,16 +336,15 @@
             "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; — Livro Divergente, p. 12"
           ],
           "metricas": [
-            "6 fonte(s) em 5 obra(s); 10 ocorrência(s) do tema.",
-            "Áreas: Biblioteca Maçônica (4), Breviários (1), Dicionários Maçônicos (1).",
-            "1 fonte(s) com texto repetido de outra obra desconsiderada(s)."
+            "7 fonte(s) em 6 obra(s); 12 ocorrência(s) do tema.",
+            "Áreas: Biblioteca Maçônica (5), Breviários (1), Dicionários Maçônicos (1)."
           ],
           "obrasCentrais": [
             "Instruções de Teste: 3 ocorrência(s) em 2 fonte(s)",
+            "Cópia das Instruções: 2 ocorrência(s) em 1 fonte(s)",
             "Dicionário de Teste: 2 ocorrência(s) em 1 fonte(s)",
             "Livro Divergente: 2 ocorrência(s) em 1 fonte(s)",
-            "Livro com Ruído: 2 ocorrência(s) em 1 fonte(s)",
-            "Breviário de Teste: 1 ocorrência(s) em 1 fonte(s)"
+            "Livro com Ruído: 2 ocorrência(s) em 1 fonte(s)"
           ],
           "capitulosDedicados": [
             "Dicionário de Teste, p. 106",
@@ -353,21 +352,21 @@
             "Instruções de Teste, p. 47"
           ],
           "mapa": [
-            "Escada de Jacó → caridade (7 ocorrência(s), 4 obra(s))",
-            "Escada de Jacó → degraus (5 ocorrência(s), 3 obra(s))",
-            "Escada de Jacó → esperança (5 ocorrência(s), 3 obra(s))",
-            "Escada de Jacó → degrau (4 ocorrência(s), 3 obra(s))",
-            "Escada de Jacó → maçom (4 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → caridade (6 ocorrência(s), 5 obra(s))",
+            "Escada de Jacó → degrau (4 ocorrência(s), 4 obra(s))",
+            "Escada de Jacó → degraus (4 ocorrência(s), 4 obra(s))",
+            "Escada de Jacó → esperança (4 ocorrência(s), 4 obra(s))",
             "Escada de Jacó → mundo (4 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → virtude (4 ocorrência(s), 2 obra(s))",
-            "Escada de Jacó → aperfeiçoamento (3 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → espiritual (3 ocorrência(s), 2 obra(s))",
-            "Escada de Jacó → painel (3 ocorrência(s), 2 obra(s))",
-            "Escada de Jacó → aprendiz (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → ascensão (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → associam (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → autores (2 ocorrência(s), 1 obra(s))",
-            "Escada de Jacó → busca (2 ocorrência(s), 1 obra(s))"
+            "Escada de Jacó → virtude (4 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → aperfeiçoamento (3 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → maçom (3 ocorrência(s), 3 obra(s))",
+            "Escada de Jacó → busca (2 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → criador (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → definido (2 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → espiritual (2 ocorrência(s), 2 obra(s))",
+            "Escada de Jacó → eterno (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → liga (2 ocorrência(s), 1 obra(s))",
+            "Escada de Jacó → loja (2 ocorrência(s), 1 obra(s))"
           ],
           "perguntas": [
             "A Fé representa o primeiro _____ da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. (Resposta: degrau — Breviário de Teste, 03/07)",
@@ -379,8 +378,8 @@
             "Definição: Comece pela definição em Dicionário de Teste, p. 106.",
             "Fonte central: Leia Instruções de Teste (3 ocorrências), a partir de p. 47.",
             "Breviários: Leia nos breviários: Breviário de Teste, 03/07.",
-            "Aprofundamento: Aprofunde em: Dicionário de Teste; Livro Divergente; Livro com Ruído.",
-            "Comparação: Compare como Instruções de Teste e Dicionário de Teste tratam o tema.",
+            "Aprofundamento: Aprofunde em: Cópia das Instruções; Dicionário de Teste; Livro Divergente.",
+            "Comparação: Compare como Instruções de Teste e Cópia das Instruções tratam o tema.",
             "Síntese: Escreva uma síntese citando a obra e a página de cada trecho usado."
           ],
           "revisao": [
@@ -469,6 +468,56 @@
           ]
         }
       }
+    }
+  ],
+  "titulos": [
+    {
+      "id": "cabecalho_ocr",
+      "texto": "49 49 10ª INSTRUÇÃO 10ª INSTRUÇÃO ESCADA DE JACÓ ESCADA DE JACÓ VM VM Degrau é definido como uma superfície.",
+      "esperado": [
+        "10ª INSTRUÇÃO ESCADA DE JACÓ VM",
+        "Degrau é definido como uma superfície."
+      ]
+    },
+    {
+      "id": "letra_do_corpo",
+      "texto": "ESCADA DE JACÓ A escada liga a terra ao céu.",
+      "esperado": [
+        "ESCADA DE JACÓ",
+        "A escada liga a terra ao céu."
+      ]
+    },
+    {
+      "id": "sem_titulo",
+      "texto": "A escada liga a terra ao céu.",
+      "esperado": [
+        "",
+        "A escada liga a terra ao céu."
+      ]
+    },
+    {
+      "id": "so_maiusculas",
+      "texto": "CAPÍTULO PRIMEIRO",
+      "esperado": [
+        "",
+        "CAPÍTULO PRIMEIRO"
+      ]
+    },
+    {
+      "id": "sigla_com_numero",
+      "texto": "PILULA MAÇÔNICA Nº 161 Escada de Jacó e Escada em Caracol.",
+      "esperado": [
+        "PILULA MAÇÔNICA Nº 161",
+        "Escada de Jacó e Escada em Caracol."
+      ]
+    },
+    {
+      "id": "numero_e_letra",
+      "texto": "4 A virtude está representada por uma escada.",
+      "esperado": [
+        "",
+        "4 A virtude está representada por uma escada."
+      ]
     }
   ]
 }

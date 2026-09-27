@@ -200,6 +200,33 @@ internal object DossierAnalysis {
         return output.joinToString(" ")
     }
 
+    private fun countType(word: String, test: (Int) -> Boolean): Int = codePoints(word).count { test(Character.getType(it)) }
+
+    /**
+     * Separates a heading glued by OCR to the start of a page: the leading words with no lowercase
+     * letter ("49 10ª INSTRUÇÃO ESCADA DE JACÓ VM Degrau é..."). Page numbers at the very start are
+     * dropped from the heading; a final single capital letter belongs to the body ("... JACÓ A escada").
+     * Works on an already cleaned text; the heading is "" when there is none.
+     */
+    fun splitHeading(cleaned: String): Pair<String, String> {
+        val letter: (Int) -> Boolean = { it in setOf(Character.UPPERCASE_LETTER, Character.LOWERCASE_LETTER, Character.TITLECASE_LETTER,
+            Character.MODIFIER_LETTER, Character.OTHER_LETTER).map(Byte::toInt) }
+        val number: (Int) -> Boolean = { it in setOf(Character.DECIMAL_DIGIT_NUMBER, Character.LETTER_NUMBER, Character.OTHER_NUMBER).map(Byte::toInt) }
+        val items = if (cleaned.isEmpty()) emptyList() else cleaned.split(' ')
+        // Only the Unicode lowercase category: "ª" and "º" (10ª, Nº) are not lowercase words.
+        val prefix = items.takeWhile { word -> countType(word) { it == Character.LOWERCASE_LETTER.toInt() } == 0 }.toMutableList()
+        if (prefix.isEmpty() || prefix.size == items.size || prefix.size > 20) return "" to cleaned
+        val body = items.drop(prefix.size).toMutableList()
+        while (prefix.isNotEmpty() && countType(prefix.last(), letter) == 1 && countType(prefix.last(), number) == 0) {
+            body.add(0, prefix.removeAt(prefix.lastIndex))
+        }
+        while (prefix.isNotEmpty() && countType(prefix.first()) { it == Character.DECIMAL_DIGIT_NUMBER.toInt() } == codePoints(prefix.first()).size) {
+            prefix.removeAt(0)
+        }
+        if (prefix.none { word -> countType(word) { it == Character.UPPERCASE_LETTER.toInt() } >= 2 }) return "" to cleaned
+        return prefix.joinToString(" ") to body.joinToString(" ")
+    }
+
     /** Cuts after '.', '!', '?' or ';' followed by a space; [cleaned] is already collapsed. */
     fun sentences(cleaned: String): List<String> {
         val points = codePoints(cleaned)
@@ -276,12 +303,13 @@ internal object DossierAnalysis {
         val associatedWorks = HashMap<String, MutableSet<String>>()
         val associatedForms = HashMap<String, MutableMap<String, Int>>()
         sources.forEachIndexed { position, source ->
-            val cleaned = clean(source.texto)
+            val (heading, cleaned) = splitHeading(clean(source.texto))
             val sourceWords = words(cleaned)
             val tokens = sourceWords.normalized
             val found = occurrences(tokens, termAlts)
-            occurrencesBySource.add(found.size + occurrences(words(clean(source.rodape)).normalized, termAlts).size)
-            startsWithTerm.add(found.any { it < limits.chapterStart })
+            val inHeading = occurrences(words(heading).normalized, termAlts).size
+            occurrencesBySource.add(found.size + occurrences(words(clean(source.rodape)).normalized, termAlts).size + inHeading)
+            startsWithTerm.add(inHeading > 0 || found.any { it < limits.chapterStart })
             for (index in found) {
                 val afterStart = minOf(tokens.size, index + termAlts.size)
                 val positions = (maxOf(0, index - limits.associationWindow) until index) +

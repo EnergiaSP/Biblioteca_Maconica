@@ -164,8 +164,9 @@ internal object StudyIndex {
  */
 internal suspend fun BibliotecaCatalogRepository.scoreStudy(workIds: Set<String>, rules: List<Set<String>>, limits: List<Int>):
     Pair<List<List<StudyIndex.PageScore>>, List<String>> = coroutineScope {
+    val duplicates = duplicateWorksInstalled()
     val jobs = pacotes.mapNotNull { pacote ->
-        val works = pacote.obras.map { it.id }.toSet().intersect(workIds)
+        val works = pacote.obras.map { it.id }.toSet().intersect(workIds) - duplicates
         val file = localFile(pacote)
         if (works.isEmpty() || !file.exists()) null else Triple(pacote.titulo, file, works)
     }.distinctBy { it.second.absolutePath }
@@ -259,4 +260,13 @@ internal fun localStudySelection(readings: List<BreviarioItem>, index: List<Indi
         .associate { (id, rule) ->
             id to StudyRules.incorporateNormalized(emptyList(), readings, rule.first.map(StudyRules::studyNormalized), texts, rule.second)
         }
+}
+
+/**
+ * Works whose content repeats another installed work; left out of search, collections and dossiers so
+ * the same text is not counted twice. A copy stays in use while its original is not downloaded.
+ */
+internal fun BibliotecaCatalogRepository.duplicateWorksInstalled(): Set<String> {
+    val installed = pacotes.filter { localFile(it).exists() }.flatMap { p -> p.obras.map { it.id } }.toSet()
+    return pacotes.flatMap { it.obras }.filter { it.duplicataDe != null && it.duplicataDe in installed }.map { it.id }.toSet()
 }

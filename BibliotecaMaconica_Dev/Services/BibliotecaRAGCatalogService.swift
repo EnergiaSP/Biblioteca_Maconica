@@ -64,6 +64,7 @@ final class BibliotecaRAGCatalogService {
         guard pacotes.isEmpty == false else {
             return []
         }
+        let obrasExcluidas = obrasExcluidas.union(obrasDuplicadasInstaladas())
 
         let inicio = max(0, offset)
         let tamanho = max(1, limite)
@@ -119,6 +120,15 @@ final class BibliotecaRAGCatalogService {
                 item: hit.item.atualizado(rodape: notas[hit.obra.id]?[hit.item.pagina ?? 0]?.joined(separator: "\n")),
                 contexto: hit.contexto, ranking: hit.ranking, blocoID: hit.blocoID)
         }
+    }
+
+    /// Works whose content repeats another installed work; left out of search, collections and dossiers
+    /// so the same text is not counted twice. A copy stays in use while its original is not downloaded.
+    func obrasDuplicadasInstaladas() -> Set<String> {
+        let instaladas = Set(pacotes.filter { urlPacote($0) != nil }.flatMap(\.obraIDs))
+        return Set(pacotes.flatMap(\.obras).compactMap { obra in
+            obra.duplicataDe.flatMap { instaladas.contains($0) ? obra.id : nil }
+        })
     }
 
     func obras(area: BibliotecaArea? = nil) -> [BibliotecaObra] {

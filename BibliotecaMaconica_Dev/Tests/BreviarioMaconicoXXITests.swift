@@ -775,6 +775,12 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
         let casos = try XCTUnwrap(raiz["casos"] as? [[String: Any]])
         XCTAssertFalse(casos.isEmpty)
+        let titulos = try XCTUnwrap(raiz["titulos"] as? [[String: Any]])
+        XCTAssertFalse(titulos.isEmpty)
+        for caso in titulos {
+            let separado = DossieEstudoAnalise.separarTitulo(DossieEstudoAnalise.limpar(try XCTUnwrap(caso["texto"] as? String)))
+            XCTAssertEqual([separado.titulo, separado.corpo], caso["esperado"] as? [String], caso["id"] as? String ?? "")
+        }
         var calendario = Calendar(identifier: .gregorian)
         calendario.timeZone = TimeZone(identifier: "UTC")!
         for caso in casos {

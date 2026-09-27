@@ -173,6 +173,8 @@ struct BibliotecaRAGPacoteObra: Codable, Identifiable, Hashable {
     let paragrafos: Int
     let notas: Int
     let assuntos: [String]
+    /// Work with the same content (the same book imported twice), marked by Tools/marcar_duplicatas_catalogo.py.
+    var duplicataDe: String? = nil
 }
 
 struct BibliotecaRAGContextoIA: Codable {

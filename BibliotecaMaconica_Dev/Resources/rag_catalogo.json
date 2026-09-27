@@ -1676,7 +1676,8 @@
           "paginas": 96,
           "paragrafos": 96,
           "tipo": "livro",
-          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan"
+          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
+          "duplicataDe": "a_sociedade_dos_templarios_lourivaldo_p_bacan"
         }
       ],
       "sha256": "bedb5460485dc8bf110c69ce2f21918a0971c65aab350aaea7064db09539b129",
@@ -1982,7 +1983,8 @@
           "paginas": 168,
           "paragrafos": 167,
           "tipo": "livro",
-          "titulo": "A_Chave_de_Salomao - Greg_Taylor"
+          "titulo": "A_Chave_de_Salomao - Greg_Taylor",
+          "duplicataDe": "a_chave_de_salomao_greg_taylor"
         }
       ],
       "sha256": "e8ce2cde1b5d6b95de9a5f2f4982a1661943a220d102196ca27a37f762d176a6",
@@ -2050,7 +2052,8 @@
           "paginas": 369,
           "paragrafos": 369,
           "tipo": "livro",
-          "titulo": "A_Ciencia_Secreta_Vol_2 - Henri_Durville"
+          "titulo": "A_Ciencia_Secreta_Vol_2 - Henri_Durville",
+          "duplicataDe": "a_ciencia_secreta_ii"
         }
       ],
       "sha256": "a5d03f83be5b6609d1cb413e6db982a96fd4b005f136a0d85341010cebbe7e31",
@@ -2288,7 +2291,8 @@
           "paginas": 46,
           "paragrafos": 46,
           "tipo": "livro",
-          "titulo": "Abóbada_Celeste_no_Templo_Maçonico"
+          "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
+          "duplicataDe": "abobada_celeste"
         }
       ],
       "sha256": "78e3d6ae0fc68280707b64145a28239eff71bacb0eb1cc4b63449f4770df3ba1",
@@ -2662,7 +2666,8 @@
           "paginas": 454,
           "paragrafos": 454,
           "tipo": "livro",
-          "titulo": "As Claviculas Salomao Mathers"
+          "titulo": "As Claviculas Salomao Mathers",
+          "duplicataDe": "as_chaves_de_salomao"
         }
       ],
       "sha256": "21c19dd9272d9ef87426d8bab97e9c056fc061e979e95457056a46f1e3c976d2",
@@ -3818,7 +3823,8 @@
           "paginas": 310,
           "paragrafos": 308,
           "tipo": "livro",
-          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira"
+          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
+          "duplicataDe": "de_profecia_e_inquisicao_padre_antonio_vieira"
         }
       ],
       "sha256": "06053b27b5f7c654dd14ff52629a27e86c30b63a8c4297aba9e275cb66d2e35d",
@@ -5348,7 +5354,8 @@
           "paginas": 72,
           "paragrafos": 71,
           "tipo": "livro",
-          "titulo": "Jacques Demolay - A vida de Jacques Demolay"
+          "titulo": "Jacques Demolay - A vida de Jacques Demolay",
+          "duplicataDe": "a_vida_de_jacques_demolay"
         }
       ],
       "sha256": "1ae6f83b6af0f338e6319b018b231c4f2298a49e0c7ed146757c8d085596102d",
@@ -5756,7 +5763,8 @@
           "paginas": 178,
           "paragrafos": 178,
           "tipo": "livro",
-          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL"
+          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
+          "duplicataDe": "a_linhagem_do_santo_graal_laurence_gardner"
         }
       ],
       "sha256": "be41372dab83474c16358e0cb34753b6457314520c6defdb4210e8757ae032a9",
@@ -8374,7 +8382,8 @@
           "paginas": 95,
           "paragrafos": 88,
           "tipo": "livro",
-          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey"
+          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
+          "duplicataDe": "os_principios_das_leis_maconicas"
         }
       ],
       "sha256": "576603f8b9820924358b0fec34687c1830e618b946b087a0a27d51ac42348764",
@@ -8782,7 +8791,8 @@
           "paginas": 225,
           "paragrafos": 225,
           "tipo": "livro",
-          "titulo": "Os-Templarios - Michael-Lamy"
+          "titulo": "Os-Templarios - Michael-Lamy",
+          "duplicataDe": "os_templarios_michael_lamy"
         }
       ],
       "sha256": "db1ef0a96607c0ae09fbab1daec5b5a91e5fb1f836a6a132bd30b670e3f65d84",
@@ -9394,7 +9404,8 @@
           "paginas": 34,
           "paragrafos": 32,
           "tipo": "livro",
-          "titulo": "Quadrivium"
+          "titulo": "Quadrivium",
+          "duplicataDe": "lvr_quadrivium_john_martineau"
         }
       ],
       "sha256": "d0f6a604d9663d9a6c064cf610353cc6c361be52fe178b529a2c5e831c026d4c",
@@ -10584,7 +10595,8 @@
           "paginas": 888,
           "paragrafos": 888,
           "tipo": "livro",
-          "titulo": "Trilogia do Templo III - Esquin de Floyrac - O Fim do Templo"
+          "titulo": "Trilogia do Templo III - Esquin de Floyrac - O Fim do Templo",
+          "duplicataDe": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix"
         }
       ],
       "sha256": "50b70c30568ce38619b3687e0f1b4b665e2bab5ff996143ab4fb349eb2724b34",
@@ -10754,7 +10766,8 @@
           "paginas": 479,
           "paragrafos": 444,
           "tipo": "livro",
-          "titulo": "Zodiaco - Arquetipos dos Zodíacos"
+          "titulo": "Zodiaco - Arquetipos dos Zodíacos",
+          "duplicataDe": "arquetipos_do_zodiaco_kathleen_burt"
         }
       ],
       "sha256": "b172fe3a0ff572c725f4194ec8642221016bf2b0787d736be23de785b3996bac",

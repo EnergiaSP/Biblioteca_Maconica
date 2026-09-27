@@ -17,7 +17,8 @@
     "inicioCapitulo": 12,
     "tamanhoMinimoTermoAssociado": 4,
     "tokensChaveDuplicata": 60,
-    "tokensMinimosDuplicata": 20
+    "tokensMinimosDuplicata": 20,
+    "tokensImpressaoDigital": 3000
   },
   "variantes": {
     "jaco": [

@@ -223,6 +223,7 @@ extension BibliotecaRAGCatalogService {
     /// Packages that fail are reported in `falhas` so the caller can warn instead of hiding them.
     func pontuarEstudo(obraIDs: Set<String>, regras: [Set<String>], limites: [Int])
         throws -> (pontuacoes: [[BibliotecaEstudoIndice.Pontuacao]], falhas: [String]) {
+        let obraIDs = obraIDs.subtracting(obrasDuplicadasInstaladas())
         let trabalhos = pacotes.compactMap { pacote -> (titulo: String, url: URL, obras: Set<String>)? in
             let obras = Set(pacote.obraIDs).intersection(obraIDs)
             guard !obras.isEmpty, let url = urlPacote(pacote) else { return nil }

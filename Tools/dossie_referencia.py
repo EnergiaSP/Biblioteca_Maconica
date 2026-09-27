@@ -9,6 +9,7 @@ must reproduce these results exactly; `Paridade/casos_dossie_v1.json` holds the 
 """
 import argparse
 import datetime
+import hashlib
 import json
 import re
 import unicodedata
@@ -41,6 +42,16 @@ def spans(text: str):
     if start is not None:
         result.append((start, len(text)))
     return result
+
+
+def fingerprint(pages: list, limit: int) -> str:
+    """Identity of a work's content: normalized words of its first pages, independent of layout."""
+    tokens = []
+    for page in pages:
+        tokens.extend(words(clean(page))[2])
+        if len(tokens) >= limit:
+            break
+    return hashlib.sha256(" ".join(tokens[:limit]).encode("utf-8")).hexdigest()
 
 
 def is_number(word: str) -> bool:
@@ -76,6 +87,31 @@ def clean(text: str) -> str:
             output.append(items[index])
             index += 1
     return " ".join(output)
+
+
+def split_heading(text: str) -> tuple:
+    """Separates a heading glued by OCR to the start of a page: the leading words with no lowercase
+    letter ("49 10ª INSTRUÇÃO ESCADA DE JACÓ VM Degrau é..."). Page numbers at the very start are
+    dropped from the heading; a final single capital letter belongs to the body ("... JACÓ A escada").
+    Returns (heading, body) of an already cleaned text; heading is "" when there is none."""
+    items = text.split(" ") if text else []
+    prefix = []
+    for word in items:
+        # Only the Unicode lowercase category: "ª" and "º" (10ª, Nº) are not lowercase words.
+        if any(unicodedata.category(char) == "Ll" for char in word):
+            break
+        prefix.append(word)
+    if not prefix or len(prefix) == len(items) or len(prefix) > 20:
+        return "", text
+    body = items[len(prefix):]
+    while prefix and sum(1 for char in prefix[-1] if unicodedata.category(char)[0] == "L") == 1 \
+            and all(unicodedata.category(char)[0] != "N" for char in prefix[-1]):
+        body.insert(0, prefix.pop())
+    while prefix and all(unicodedata.category(char) == "Nd" for char in prefix[0]):
+        prefix.pop(0)
+    if not any(sum(1 for char in word if unicodedata.category(char) == "Lu") >= 2 for word in prefix):
+        return "", text
+    return " ".join(prefix), " ".join(body)
 
 
 def sentences(text: str) -> list:
@@ -149,12 +185,13 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
     starts_with_term = []
     associated, associated_works, associated_forms = {}, {}, {}
     for position, source in enumerate(sources):
-        text = clean(source.get("texto", ""))
+        heading, text = split_heading(clean(source.get("texto", "")))
         notes = clean(source.get("rodape", ""))
         _, lower_tokens, tokens = words(text)
         found = occurrences(tokens, term_alts)
-        occurrence_by_source.append(len(found) + len(occurrences(words(notes)[2], term_alts)))
-        starts_with_term.append(any(index < limits["inicioCapitulo"] for index in found))
+        in_heading = len(occurrences(words(heading)[2], term_alts))
+        occurrence_by_source.append(len(found) + len(occurrences(words(notes)[2], term_alts)) + in_heading)
+        starts_with_term.append(in_heading > 0 or any(index < limits["inicioCapitulo"] for index in found))
         for index in found:
             positions = list(range(max(0, index - limits["janelaAssociacao"]), index)) + \
                 list(range(index + len(term_alts), min(len(tokens), index + len(term_alts) + limits["janelaAssociacao"])))
@@ -323,6 +360,11 @@ def main() -> None:
     for case in cases["casos"]:
         result = analyze(case["termo"], case["fontes"], config, case["hoje"])
         result["exibicao"] = display(case["termo"], result, case["fontes"], config)
+        if case.get("esperado") != result:
+            changed.append(case["id"])
+            case["esperado"] = result
+    for case in cases.get("titulos", []):
+        result = list(split_heading(clean(case["texto"])))
         if case.get("esperado") != result:
             changed.append(case["id"])
             case["esperado"] = result

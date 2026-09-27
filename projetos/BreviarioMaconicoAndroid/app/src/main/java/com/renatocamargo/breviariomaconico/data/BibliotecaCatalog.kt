@@ -23,7 +23,9 @@ data class BibliotecaObraCatalogo(
     val titulo: String,
     val autor: String?,
     val paginas: Int,
-    val assuntos: List<String> = emptyList()
+    val assuntos: List<String> = emptyList(),
+    /** Work with the same content (the same book imported twice), marked by Tools/marcar_duplicatas_catalogo.py. */
+    val duplicataDe: String? = null
 )
 
 data class LibraryMetadataFilter(val autor: String = "", val assunto: String = "") {
@@ -129,7 +131,8 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                         paginas = obra.optInt("paginas"),
                         assuntos = obra.optJSONArray("assuntos")?.let { topics ->
                             List(topics.length()) { topics.optString(it) }.filter { it.isNotBlank() }
-                        }.orEmpty()
+                        }.orEmpty(),
+                        duplicataDe = obra.optString("duplicataDe").takeIf { it.isNotBlank() }
                     )
                 }
             }.orEmpty()
@@ -316,6 +319,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             .filter { pacote -> pacote.obras.any { filtro.matches(it) } }
 
         val terms = StudyIndex.searchTerms(query, variants)
+        val duplicadas = duplicateWorksInstalled()
         val resultados = mutableListOf<BibliotecaBuscaResultado>()
         // Packages are independent files: each is searched on its own read-only connection in parallel.
         val porPacote = candidatos.distinctBy { localFile(it).absolutePath }.parallelStream().map { pacote ->
@@ -323,7 +327,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             val resultados = mutableListOf<BibliotecaBuscaResultado>()
             val permitidas = candidatos.filter { localFile(it) == localFile(pacote) }
                 .flatMap { it.obras }.filter(filtro::matches).map { it.id }.toSet()
-            val excluidas = obrasBreviariosIntegrados.mapTo(mutableSetOf()) { it.id }
+            val excluidas = obrasBreviariosIntegrados.mapTo(mutableSetOf()) { it.id }.apply { addAll(duplicadas) }
             abrirSomenteLeitura(localFile(pacote)).use { db ->
                 // A file may contain works absent from this catalog entry.
                 db.rawQuery("SELECT id FROM rag_obras", emptyArray()).use { cursor ->

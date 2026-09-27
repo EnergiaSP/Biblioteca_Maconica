@@ -8,7 +8,7 @@ enum DossieEstudoAnalise {
             let fontesAnalisadas, fontesExibidas, definicoes, resumo, termosAssociados, janelaAssociacao: Int
             let perguntas, divergencias, obrasCentrais, capitulosDedicados: Int
             let tamanhoMinimoFrase, tamanhoMaximoFrase, inicioCapitulo, tamanhoMinimoTermoAssociado: Int
-            let tokensChaveDuplicata, tokensMinimosDuplicata: Int
+            let tokensChaveDuplicata, tokensMinimosDuplicata, tokensImpressaoDigital: Int
         }
         struct Revisao: Decodable {
             let dias: Int
@@ -244,6 +244,37 @@ enum DossieEstudoAnalise {
         return saida.joined(separator: " ")
     }
 
+    /// Separates a heading glued by OCR to the start of a page: the leading words with no lowercase
+    /// letter ("49 10ª INSTRUÇÃO ESCADA DE JACÓ VM Degrau é..."). Page numbers at the very start are
+    /// dropped from the heading; a final single capital letter belongs to the body ("... JACÓ A escada").
+    /// Works on an already cleaned text; the heading is "" when there is none.
+    static func separarTitulo(_ limpo: String) -> (titulo: String, corpo: String) {
+        func categoria(_ palavra: String, _ teste: (Unicode.GeneralCategory) -> Bool) -> Int {
+            palavra.unicodeScalars.filter { teste($0.properties.generalCategory) }.count
+        }
+        let ehLetra: (Unicode.GeneralCategory) -> Bool = {
+            [.uppercaseLetter, .lowercaseLetter, .titlecaseLetter, .modifierLetter, .otherLetter].contains($0)
+        }
+        let ehNumero: (Unicode.GeneralCategory) -> Bool = { [.decimalNumber, .letterNumber, .otherNumber].contains($0) }
+        let itens = limpo.isEmpty ? [] : limpo.components(separatedBy: " ")
+        var prefixo: [String] = []
+        // Only the Unicode lowercase category: "ª" and "º" (10ª, Nº) are not lowercase words.
+        for palavra in itens {
+            if categoria(palavra, { $0 == .lowercaseLetter }) > 0 { break }
+            prefixo.append(palavra)
+        }
+        guard !prefixo.isEmpty, prefixo.count < itens.count, prefixo.count <= 20 else { return ("", limpo) }
+        var corpo = Array(itens[prefixo.count...])
+        while let ultima = prefixo.last, categoria(ultima, ehLetra) == 1, categoria(ultima, ehNumero) == 0 {
+            corpo.insert(prefixo.removeLast(), at: 0)
+        }
+        while let primeira = prefixo.first, categoria(primeira, { $0 == .decimalNumber }) == primeira.unicodeScalars.count {
+            prefixo.removeFirst()
+        }
+        guard prefixo.contains(where: { categoria($0, { $0 == .uppercaseLetter }) >= 2 }) else { return ("", limpo) }
+        return (prefixo.joined(separator: " "), corpo.joined(separator: " "))
+    }
+
     /// Cuts after '.', '!', '?' or ';' followed by a space; `texto` is already collapsed.
     static func frases(_ limpo: String) -> [String] {
         let escalares = Array(limpo.unicodeScalars)
@@ -338,11 +369,12 @@ enum DossieEstudoAnalise {
         var obrasPorAssociado: [String: Set<String>] = [:]
         var formasPorAssociado: [String: [String: Int]] = [:]
         for (posicao, fonte) in fontes.enumerated() {
-            let limpo = limpar(fonte.texto)
+            let (titulo, limpo) = separarTitulo(limpar(fonte.texto))
             let (_, minusculasTexto, tokens) = palavras(limpo)
             let encontrados = ocorrencias(tokens, termoAlternativas)
-            ocorrenciasPorFonte.append(encontrados.count + ocorrencias(palavras(limpar(fonte.rodape)).normalizadas, termoAlternativas).count)
-            comecaComTermo.append(encontrados.contains { $0 < limites.inicioCapitulo })
+            let noTitulo = ocorrencias(palavras(titulo).normalizadas, termoAlternativas).count
+            ocorrenciasPorFonte.append(encontrados.count + ocorrencias(palavras(limpar(fonte.rodape)).normalizadas, termoAlternativas).count + noTitulo)
+            comecaComTermo.append(noTitulo > 0 || encontrados.contains { $0 < limites.inicioCapitulo })
             for indice in encontrados {
                 let depoisInicio = min(tokens.count, indice + termoAlternativas.count)
                 let posicoes = Array(max(0, indice - limites.janelaAssociacao)..<indice)

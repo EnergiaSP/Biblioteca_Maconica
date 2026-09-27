@@ -53,8 +53,17 @@ class DataIntegrityTest {
     fun dossierAnalysisMatchesReferenceCases() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val config = DossierAnalysis.loadConfig(context)
-        val cases = JSONObject(context.assets.open("casos_dossie_v1.json").bufferedReader().use { it.readText() }).getJSONArray("casos")
+        val root = JSONObject(context.assets.open("casos_dossie_v1.json").bufferedReader().use { it.readText() })
+        val cases = root.getJSONArray("casos")
         assertTrue(cases.length() > 0)
+        val headings = root.getJSONArray("titulos")
+        assertTrue(headings.length() > 0)
+        for (index in 0 until headings.length()) {
+            val case = headings.getJSONObject(index)
+            val (heading, body) = DossierAnalysis.splitHeading(DossierAnalysis.clean(case.getString("texto")))
+            val expected = case.getJSONArray("esperado")
+            assertEquals(case.getString("id"), listOf(expected.getString(0), expected.getString(1)), listOf(heading, body))
+        }
         fun canonical(value: Any?): Any? = when (value) {
             is JSONObject -> value.keys().asSequence().associateWith { canonical(value.get(it)) }.toSortedMap()
             is org.json.JSONArray -> List(value.length()) { canonical(value.get(it)) }

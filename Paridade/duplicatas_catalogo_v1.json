@@ -1,0 +1,188 @@
+{
+  "obras": 321,
+  "duplicadas": 13,
+  "grupos": [
+    {
+      "mantida": {
+        "id": "a_chave_de_salomao_greg_taylor",
+        "titulo": "A Chave de Salomao - Greg Taylor",
+        "paginas": 168
+      },
+      "duplicadas": [
+        {
+          "id": "a_chave_de_salomao_greg_taylor_2",
+          "titulo": "A_Chave_de_Salomao - Greg_Taylor",
+          "paginas": 168
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "a_ciencia_secreta_ii",
+        "titulo": "A Ciência Secreta II",
+        "paginas": 369
+      },
+      "duplicadas": [
+        {
+          "id": "a_ciencia_secreta_vol_2_henri_durville",
+          "titulo": "A_Ciencia_Secreta_Vol_2 - Henri_Durville",
+          "paginas": 369
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "a_linhagem_do_santo_graal_laurence_gardner",
+        "titulo": "A linhagem do Santo Graal - Laurence Gardner",
+        "paginas": 178
+      },
+      "duplicadas": [
+        {
+          "id": "maconaria_laurence_gardner_a_linhagem_do_santo_graal",
+          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
+          "paginas": 178
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "a_sociedade_dos_templarios_lourivaldo_p_bacan",
+        "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan",
+        "paginas": 96
+      },
+      "duplicadas": [
+        {
+          "id": "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan",
+          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
+          "paginas": 96
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "a_vida_de_jacques_demolay",
+        "titulo": "A vida de Jacques Demolay",
+        "paginas": 72
+      },
+      "duplicadas": [
+        {
+          "id": "jacques_demolay_a_vida_de_jacques_demolay",
+          "titulo": "Jacques Demolay - A vida de Jacques Demolay",
+          "paginas": 72
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "abobada_celeste",
+        "titulo": "Abóbada Celeste",
+        "paginas": 46
+      },
+      "duplicadas": [
+        {
+          "id": "abobada_celeste_no_templo_maconico",
+          "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
+          "paginas": 46
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "arquetipos_do_zodiaco_kathleen_burt",
+        "titulo": "Arquétipos do Zodíaco – Kathleen Burt",
+        "paginas": 479
+      },
+      "duplicadas": [
+        {
+          "id": "zodiaco_arquetipos_dos_zodiacos",
+          "titulo": "Zodiaco - Arquetipos dos Zodíacos",
+          "paginas": 479
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "as_chaves_de_salomao",
+        "titulo": "AS CHAVES DE SALOMÃO",
+        "paginas": 454
+      },
+      "duplicadas": [
+        {
+          "id": "as_claviculas_salomao_mathers",
+          "titulo": "As Claviculas Salomao Mathers",
+          "paginas": 454
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "de_profecia_e_inquisicao_padre_antonio_vieira",
+        "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
+        "paginas": 310
+      },
+      "duplicadas": [
+        {
+          "id": "de_profecia_e_inquisicao_padre_antonio_vieira_2",
+          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
+          "paginas": 310
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "lvr_quadrivium_john_martineau",
+        "titulo": "LVR, Quadrivium, John Martineau",
+        "paginas": 34
+      },
+      "duplicadas": [
+        {
+          "id": "quadrivium",
+          "titulo": "Quadrivium",
+          "paginas": 34
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix",
+        "titulo": "O Fim do Templo - Esquin de Floyrac - Ze_Rodrix",
+        "paginas": 888
+      },
+      "duplicadas": [
+        {
+          "id": "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo",
+          "titulo": "Trilogia do Templo III - Esquin de Floyrac - O Fim do Templo",
+          "paginas": 888
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "os_principios_das_leis_maconicas",
+        "titulo": "Os Principios das Leis Maçónicas ",
+        "paginas": 95
+      },
+      "duplicadas": [
+        {
+          "id": "os_principios_das_leis_maconicas_vol1_albert_g_mackey",
+          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
+          "paginas": 95
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "os_templarios_michael_lamy",
+        "titulo": "Os Templarios - Michael Lamy",
+        "paginas": 225
+      },
+      "duplicadas": [
+        {
+          "id": "os_templarios_michael_lamy_2",
+          "titulo": "Os-Templarios - Michael-Lamy",
+          "paginas": 225
+        }
+      ]
+    }
+  ]
+}
