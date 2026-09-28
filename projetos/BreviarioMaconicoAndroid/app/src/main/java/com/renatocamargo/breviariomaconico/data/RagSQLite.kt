@@ -18,6 +18,18 @@ internal class RagSQLite private constructor(private val connection: SQLiteConne
 
     fun rawQuery(sql: String, args: Array<out Any?>): Rows = Rows(statement(sql, args))
 
+    /** Runs one statement for many rows, preparing it once (bulk inserts into a fresh index). */
+    fun execSQLForEach(sql: String, rows: Iterable<Array<out Any?>>) {
+        connection.prepare(sql).use { statement ->
+            for (row in rows) {
+                row.forEachIndexed { index, value -> bind(statement, index + 1, value) }
+                statement.step()
+                statement.reset()
+                statement.clearBindings()
+            }
+        }
+    }
+
     fun insert(table: String, values: ContentValues) {
         val columns = values.keySet().toList()
         fun identifier(value: String): String {
@@ -32,23 +44,24 @@ internal class RagSQLite private constructor(private val connection: SQLiteConne
     private fun statement(sql: String, args: Array<out Any?>): SQLiteStatement {
         val statement = connection.prepare(sql)
         try {
-            args.forEachIndexed { index, value ->
-                val position = index + 1
-                when (value) {
-                    null -> statement.bindNull(position)
-                    is String -> statement.bindText(position, value)
-                    is ByteArray -> statement.bindBlob(position, value)
-                    is Float -> statement.bindDouble(position, value.toDouble())
-                    is Double -> statement.bindDouble(position, value)
-                    is Number -> statement.bindLong(position, value.toLong())
-                    is Boolean -> statement.bindLong(position, if (value) 1 else 0)
-                    else -> error("Tipo de parametro SQLite nao suportado")
-                }
-            }
+            args.forEachIndexed { index, value -> bind(statement, index + 1, value) }
             return statement
         } catch (error: Throwable) {
             statement.close()
             throw error
+        }
+    }
+
+    private fun bind(statement: SQLiteStatement, position: Int, value: Any?) {
+        when (value) {
+            null -> statement.bindNull(position)
+            is String -> statement.bindText(position, value)
+            is ByteArray -> statement.bindBlob(position, value)
+            is Float -> statement.bindDouble(position, value.toDouble())
+            is Double -> statement.bindDouble(position, value)
+            is Number -> statement.bindLong(position, value.toLong())
+            is Boolean -> statement.bindLong(position, if (value) 1 else 0)
+            else -> error("Tipo de parametro SQLite nao suportado")
         }
     }
 

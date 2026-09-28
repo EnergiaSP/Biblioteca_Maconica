@@ -21,6 +21,8 @@ class BreviarioRepository private constructor(context: Context) {
      * only the reading itself. The work's author, title and subjects belong to the metadata filter.
      */
     val textosPesquisa: Map<String, String>
+    /** Built on the first search and kept: the readings are fixed while the app runs. */
+    internal val indiceBusca: LocalTextIndex by lazy { LocalTextIndex(textosPesquisa) }
 
     init {
         val roots = listOf(

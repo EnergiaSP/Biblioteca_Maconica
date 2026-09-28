@@ -46,9 +46,22 @@ Reprovacoes no iPhone e o que foi feito:
 
 As quatro auditorias ajustadas passam no simulador. A nova execucao no iPhone ficou pendente: o aparelho ficou indisponivel para o Xcode no meio do trabalho.
 
+## Desempenho da busca no Android (medido no moto g84)
+
+Medicao por etapas da busca "maçonaria" (314 pacotes, 6.975 trechos encontrados): consulta ao indice 0,25 s, contagem de ocorrencias 0,21 s, notas 0,48 s, mas a busca completa levava 4,2 s. O gargalo era a pontuacao dos breviarios locais: a cada busca o app montava do zero um indice em memoria com as 730 leituras (cerca de 2,5 s), o mesmo problema corrigido no iOS no item 14.
+
+- `LocalTextIndex`: o indice dos breviarios e montado uma vez (1,6 s) e reaproveitado; o app o monta em segundo plano ao abrir. Mesma consulta, mesma contagem e mesma ordem de antes.
+- O processamento paralelo dos pacotes foi mantido: medido no aparelho, e mais rapido que o sequencial (2,1 s contra 2,9 s).
+
+| Busca no moto g84 | Antes | Depois |
+| --- | --- | --- |
+| "maçonaria" | 3,85 s | 2,39 s |
+| "grande loja" | 1,78 s | 1,87 s |
+| "ética virtude" | 1,73 s | 1,47 s |
+
 ## Pendencias
 
-- Desempenho no Android intermediario: a busca de termos muito frequentes leva cerca de 4 s porque a relevancia conta cada ocorrencia em todos os trechos encontrados. Otimizar sem mudar a ordem dos resultados (por exemplo, contagem por trecho pre-calculada no pacote, ou limite de candidatos com o mesmo criterio nas duas plataformas).
+- Desempenho: a busca de termos muito frequentes ainda leva cerca de 2 s num Android intermediario; o restante e consulta, contagem e notas distribuidos pelos 314 pacotes.
 - Assinatura Android: `keystore.properties` nao esta no projeto; sem ele nao ha AAB assinado para a Play Store.
 - Numero de versao: continua 1.0.15 nas duas plataformas; subir antes de enviar as lojas.
 - Publicacao nas lojas: depende das contas do responsavel.

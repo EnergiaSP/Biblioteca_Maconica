@@ -320,6 +320,10 @@ internal fun BreviarioAndroidApp(
         kotlinx.coroutines.delay(2500)
         showSplash = false
     }
+    // The breviaries' search index is built in the background, so the first search does not wait for it.
+    LaunchedEffect(repo) {
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { repo.indiceBusca }
+    }
 
     LaunchedEffect(openData, openWorkId) {
         val data = openData ?: return@LaunchedEffect

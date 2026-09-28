@@ -80,6 +80,10 @@ class FullCatalogBenchmarkTest {
         assertTrue(packages.none { p -> p.obras.any { it.id == "breviario_maconico_rizzardo_da_camino" } })
         assertTrue("Copy the audited corpus to the test emulator before running this suite", packages.all { catalog.localFile(it).isFile })
         val timings = JSONArray()
+        // The app builds the breviaries' index in the background at start; measured on its own.
+        val inicioIndice = SystemClock.elapsedRealtime()
+        BreviarioRepository.get(context).indiceBusca
+        val indiceBreviarios = SystemClock.elapsedRealtime() - inicioIndice
         for (query in listOf("maçonaria", "\"grande loja\"", "ética virtude")) {
             val start = SystemClock.elapsedRealtime()
             val hits = catalog.buscarConteudo(query, limite = 120)
@@ -111,7 +115,7 @@ class FullCatalogBenchmarkTest {
         assertTrue(catalog.indicePaginas(largest.id, filtro = last.pagina.toString()).any { it.pagina == last.pagina })
         File(context.filesDir, "medicao-acervo-android.json").writeText(JSONObject()
             .put("environment", ambiente())
-            .put("packages", packages.size).put("queries", timings).put("topResults", topResults)
+            .put("packages", packages.size).put("breviaryIndexMilliseconds", indiceBreviarios).put("queries", timings).put("topResults", topResults)
             .put("largestWorkPages", pages.size).put("pageIndexMilliseconds", SystemClock.elapsedRealtime() - start).toString(2))
     }
 
