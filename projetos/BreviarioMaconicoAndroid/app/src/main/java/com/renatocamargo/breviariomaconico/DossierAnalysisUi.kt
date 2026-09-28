@@ -14,7 +14,13 @@ import com.renatocamargo.breviariomaconico.data.BibliotecaBuscaResultado
 import com.renatocamargo.breviariomaconico.data.DossierAnalysis
 
 /** AI-free dossier analysis kept with the dossier; every line is extracted from the sources and cites one. */
-internal data class DossierStudy(val display: DossierAnalysis.Display, val relatedTerms: List<String>, val analyzedSources: Int)
+internal data class DossierStudy(
+    val display: DossierAnalysis.Display,
+    val relatedTerms: List<String>,
+    val analyzedSources: Int,
+    /** With occurrence counts, for the drawn map. */
+    val related: List<DossierAnalysis.RelatedTerm> = emptyList()
+)
 
 /** The topic is studied as an expression ("Escada de Jacó"), accepting spelling variants ("Jacob"). */
 internal fun dossierQuery(topic: String): String {
@@ -22,13 +28,20 @@ internal fun dossierQuery(topic: String): String {
     return if ('"' in clean || ' ' !in clean) clean else "\"$clean\""
 }
 
-internal fun analyzeDossier(topic: String, results: List<BibliotecaBuscaResultado>, config: DossierAnalysis.Config): DossierStudy {
+/** [today] dates the review plan; a reopened saved dossier passes the day it was saved. */
+internal fun analyzeDossier(
+    topic: String,
+    results: List<BibliotecaBuscaResultado>,
+    config: DossierAnalysis.Config,
+    today: java.time.LocalDate = java.time.LocalDate.now()
+): DossierStudy {
     val sources = results.map {
         DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
             it.pagina, it.data, it.trecho, it.rodape)
     }
-    val analysis = DossierAnalysis.analyze(topic.trim(), sources, config, java.time.LocalDate.now())
-    return DossierStudy(DossierAnalysis.display(topic.trim(), analysis, sources, config), analysis.relatedTerms.map { it.form }, sources.size)
+    val analysis = DossierAnalysis.analyze(topic.trim(), sources, config, today)
+    return DossierStudy(DossierAnalysis.display(topic.trim(), analysis, sources, config), analysis.relatedTerms.map { it.form }, sources.size,
+        analysis.relatedTerms)
 }
 
 /** Sections shown only when the dossier has its analysis, in the same order as on iOS. */

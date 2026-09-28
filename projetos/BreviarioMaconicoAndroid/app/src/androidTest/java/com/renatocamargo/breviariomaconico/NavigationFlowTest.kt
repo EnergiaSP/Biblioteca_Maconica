@@ -2,6 +2,11 @@ package com.renatocamargo.breviariomaconico
 
 import android.content.Intent
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.performScrollToIndex
+import androidx.compose.ui.test.assertTextContains
+import androidx.compose.ui.test.assertIsOff
+import androidx.compose.ui.test.assertIsOn
+import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.assertIsNotSelected
@@ -92,6 +97,60 @@ class NavigationFlowTest {
         compose.onNodeWithText("Resumo com fontes").assertIsDisplayed()
         compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.plan")
         compose.onNodeWithTag("dossier.results").assertIsDisplayed()
+    }
+
+    /** Save, mark a review, leave, reopen from the review notification and delete, as on iOS. */
+    @Test
+    fun savedDossierKeepsReviewsReopensFromNotificationAndCanBeDeleted() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = com.renatocamargo.breviariomaconico.data.SavedDossierStore(context)
+        val before = store.all()
+        before.forEach { store.remove(it.id) }
+        try {
+            compose.onNodeWithTag("tab.dossier").performClick()
+            compose.onNodeWithTag("dossier.topic").performTextReplacement("virtude")
+            compose.onNodeWithText("Gerar dossiê").performScrollTo().performClick()
+            assertDossierGenerated()
+            compose.onNodeWithTag("dossier.list").performScrollToIndex(0)
+            compose.onNodeWithTag("dossier.save").performScrollTo().performClick()
+            compose.waitUntil(5_000) { store.all().size == 1 }
+            val saved = store.all().single()
+            org.junit.Assert.assertEquals("virtude", saved.tema)
+            compose.onNodeWithTag("dossier.save").assertIsNotEnabled()
+            compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.reviews")
+            compose.onNodeWithTag("dossier.review.0").performClick()
+            compose.waitUntil(5_000) { store.find(saved.id)?.revisoesConcluidas == listOf(0) }
+            compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.map")
+            compose.onNodeWithTag("dossier.map").assertIsDisplayed()
+            saveScreen("dossier-map")
+
+            // Another topic is not the saved dossier any more.
+            compose.onNodeWithTag("dossier.list").performScrollToIndex(0)
+            compose.onNodeWithTag("dossier.topic").performTextReplacement("simbolo")
+            compose.onNodeWithTag("dossier.reviews").assertDoesNotExist()
+
+            // Cold start from the review notification (a running app handles the link in the same function).
+            scenario.close()
+            scenario = ActivityScenario.launch(Intent(context, MainActivity::class.java)
+                .setData(DossierReminders.uri(saved.id))
+                .putExtra("ui_testing", true)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+            compose.waitUntil(20_000) {
+                compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
+            }
+            compose.onNodeWithTag("dossier.topic").assertTextContains("virtude")
+            compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.reviews")
+            compose.onNodeWithTag("dossier.review.0").assertIsOn()
+            compose.onNodeWithTag("dossier.review.1").assertIsOff()
+
+            compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.saved")
+            compose.onNodeWithTag("dossier.saved.delete").performClick()
+            compose.waitUntil(5_000) { store.all().isEmpty() }
+            compose.onNodeWithTag("dossier.saved").assertDoesNotExist()
+        } finally {
+            store.all().forEach { store.remove(it.id) }
+            before.forEach { store.save(it) }
+        }
     }
 
     @Test

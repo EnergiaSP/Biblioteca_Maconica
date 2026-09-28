@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "descricao": "Regras do dossie de estudo sem IA: tudo e extraido dos textos do acervo, com fonte. Texto normalizado = minusculas, sem acentos, apenas letras e digitos. verbosDefinicao e marcadoresDivergencia comparam palavras em minusculas COM acento, para distinguir 'é' de 'e'.",
+  "descricao": "Regras do dossie de estudo sem IA: tudo e extraido dos textos do acervo, com fonte. Texto normalizado = minusculas, sem acentos, apenas letras e digitos. verbosDefinicao e marcadoresDivergencia comparam palavras em minusculas COM acento, para distinguir 'é' de 'e'. lembreteRevisao e o horario local das notificacoes de revisao dos dossies salvos.",
   "limites": {
     "fontesAnalisadas": 300,
     "fontesExibidas": 30,
@@ -254,6 +254,10 @@
       "tarefa": "Revisar a síntese e transformar em estudo, prancha ou anotação final."
     }
   ],
+  "lembreteRevisao": {
+    "hora": 9,
+    "minuto": 0
+  },
   "areas": {
     "breviarios": "Breviários",
     "dicionariosMaconicos": "Dicionários Maçônicos",

@@ -17,6 +17,12 @@ func abrirData(_ data: Date) {
             return
         }
 
+        if url.host == "dossie" {
+            let id = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first { $0.name == "id" }?.value
+            if let id { abrirDossieSalvo(id: id) }
+            return
+        }
+
         let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
         let obraQuery = queryItems?
             .first(where: { $0.name == "obra" || $0.name == "obraID" })?

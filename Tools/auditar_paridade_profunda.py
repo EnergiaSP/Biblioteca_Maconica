@@ -265,8 +265,13 @@ require_markers(
 )
 require_markers(
     ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/LibrarySearchUi.kt",
-    ["var buscando", "var montando", "libraryQuery", "consultaJob?.cancel()"],
+    ["var buscando", "libraryQuery", "consultaJob?.cancel()"],
     "Busca assíncrona Android",
+)
+require_markers(
+    ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/DossierScreen.kt",
+    ["var montando", "libraryQuery", "consultaJob?.cancel()"],
+    "Dossiê assíncrono Android",
 )
 require_markers(
     ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/MainActivity.kt",

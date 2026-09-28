@@ -150,6 +150,8 @@ import java.util.Locale
 class MainActivity : ComponentActivity() {
     private var openData by mutableStateOf<String?>(null)
     private var openWorkId by mutableStateOf<String?>(null)
+    /** Saved dossier to open, from a review notification; the pair's second value makes each tap a new request. */
+    private var openDossier by mutableStateOf<Pair<String, Long>?>(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -159,6 +161,7 @@ class MainActivity : ComponentActivity() {
             BreviarioAndroidApp(
                 openData,
                 openWorkId,
+                openDossier = openDossier,
                 uiTesting = (applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE) != 0
                     && intent.getBooleanExtra("ui_testing", false)
             )
@@ -174,6 +177,9 @@ class MainActivity : ComponentActivity() {
     private fun consumeNavigationIntent(intent: Intent) {
         openData = intent.getStringExtra("data")
         openWorkId = intent.getStringExtra("obraId")
+        intent.data?.takeIf { it.scheme == "breviario" && it.host == "dossie" }?.getQueryParameter("id")?.let {
+            openDossier = it to System.nanoTime()
+        }
     }
 }
 
@@ -249,7 +255,12 @@ internal fun palette(mode: AppThemeMode): Palette = when (mode) {
 }
 
 @Composable
-internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesting: Boolean = false) {
+internal fun BreviarioAndroidApp(
+    openData: String?,
+    openWorkId: String?,
+    uiTesting: Boolean = false,
+    openDossier: Pair<String, Long>? = null
+) {
     val context = LocalContext.current
     val prefs = remember { PreferencesStore(context) }
     val repo = remember { BreviarioRepository.get(context) }
@@ -317,6 +328,13 @@ internal fun BreviarioAndroidApp(openData: String?, openWorkId: String?, uiTesti
             navigation.showReader(target)
             showSplash = false
         }
+    }
+
+    LaunchedEffect(openDossier) {
+        val id = openDossier?.first ?: return@LaunchedEffect
+        dossieSession.pendingSavedDossierId = id
+        navigation.show(Screen.Dossier)
+        showSplash = false
     }
 
     fun goReader(item: BreviarioItem) {

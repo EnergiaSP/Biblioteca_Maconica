@@ -39,6 +39,7 @@
 		D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000002 /* BibliotecaNotasSearch.swift */; };
 		D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000102 /* BibliotecaEstudoIndice.swift */; };
 		D92100000000000000000201 /* DossieEstudoAnalise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000202 /* DossieEstudoAnalise.swift */; };
+		D92100000000000000000901 /* DossieSalvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000902 /* DossieSalvo.swift */; };
 		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
 		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
 		01000000000000000000011A /* rag_catalogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001B /* rag_catalogo.json */; };
@@ -95,6 +96,7 @@
 		B0303A7B80DD08E7077B6B8F /* ReadingEditorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608FEAA46268C9D1992650A /* ReadingEditorComponents.swift */; };
 		B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F17202B641F3D9B3893A34 /* LibraryComponents.swift */; };
 		D92100000000000000000301 /* DossieAnaliseSecoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000302 /* DossieAnaliseSecoes.swift */; };
+		D92100000000000000000903 /* DossieSalvoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000904 /* DossieSalvoViews.swift */; };
 		BCB5F1A239606A5BAFF070CA /* BreviarioStoreSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */; };
 		C54BE34F031BFF29F5598C84 /* LibraryStudyScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23035FB36A7EDD30813A7AB /* LibraryStudyScreens.swift */; };
 		CB8516DD582F9514D56FB3A1 /* OfflineCatalogScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D8050C7052A7D203C2F54 /* OfflineCatalogScreens.swift */; };
@@ -199,6 +201,7 @@
 		D92100000000000000000002 /* BibliotecaNotasSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaNotasSearch.swift; sourceTree = "<group>"; };
 		D92100000000000000000102 /* BibliotecaEstudoIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaEstudoIndice.swift; sourceTree = "<group>"; };
 		D92100000000000000000202 /* DossieEstudoAnalise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieEstudoAnalise.swift; sourceTree = "<group>"; };
+		D92100000000000000000902 /* DossieSalvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieSalvo.swift; sourceTree = "<group>"; };
 		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
 		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		01000000000000000000001B /* rag_catalogo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rag_catalogo.json; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 		4A7AC4F2F979B1EF6FA6DFBB /* BreviarioTitleIndexBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioTitleIndexBuilder.swift; sourceTree = "<group>"; };
 		58F17202B641F3D9B3893A34 /* LibraryComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryComponents.swift; sourceTree = "<group>"; };
 		D92100000000000000000302 /* DossieAnaliseSecoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieAnaliseSecoes.swift; sourceTree = "<group>"; };
+		D92100000000000000000904 /* DossieSalvoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieSalvoViews.swift; sourceTree = "<group>"; };
 		597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreviarioMaconicoXXITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioStoreSearch.swift; sourceTree = "<group>"; };
 		66C613D5FCD3144ECB98613F /* AppNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 				37CE78AB0DCC197A9F6DFA21 /* HomeViewComponents.swift */,
 				58F17202B641F3D9B3893A34 /* LibraryComponents.swift */,
 				D92100000000000000000302 /* DossieAnaliseSecoes.swift */,
+				D92100000000000000000904 /* DossieSalvoViews.swift */,
 				EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */,
 				3E6B82797280D4C8172EE6BE /* ExportComponents.swift */,
 				7F58884A788334FFE19142EC /* HomePresentation.swift */,
@@ -400,6 +405,7 @@
 				D92100000000000000000002 /* BibliotecaNotasSearch.swift */,
 				D92100000000000000000102 /* BibliotecaEstudoIndice.swift */,
 				D92100000000000000000202 /* DossieEstudoAnalise.swift */,
+				D92100000000000000000902 /* DossieSalvo.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
 				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
@@ -770,12 +776,14 @@
 				D92100000000000000000001 /* BibliotecaNotasSearch.swift in Sources */,
 				D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */,
 				D92100000000000000000201 /* DossieEstudoAnalise.swift in Sources */,
+				D92100000000000000000901 /* DossieSalvo.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
 				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,
 				0421D557D40C056AFE702606 /* HomeViewComponents.swift in Sources */,
 				B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */,
 				D92100000000000000000301 /* DossieAnaliseSecoes.swift in Sources */,
+				D92100000000000000000903 /* DossieSalvoViews.swift in Sources */,
 				A975A59E10735E631F91355E /* ReadingComponents.swift in Sources */,
 				D419AD0C6BEB3D7D853725D0 /* ExportComponents.swift in Sources */,
 				3D159078B21A249226F5A846 /* HomePresentation.swift in Sources */,
