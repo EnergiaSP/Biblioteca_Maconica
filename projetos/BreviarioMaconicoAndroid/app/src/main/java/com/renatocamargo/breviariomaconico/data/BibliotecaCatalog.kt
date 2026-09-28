@@ -331,8 +331,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
         val terms = StudyIndex.searchTerms(query, variants)
         val duplicadas = duplicateWorksInstalled()
         val resultados = mutableListOf<BibliotecaBuscaResultado>()
-        // Packages are independent files: each is searched on its own read-only connection in parallel.
-        // Measured on a moto g84: parallel packages beat a sequential pass (2.1 s against 2.9 s).
+        // Independent files, each on its own read-only connection in parallel (faster than sequential on a moto g84).
         val porPacote = candidatos.distinctBy { localFile(it).absolutePath }.parallelStream().map { pacote ->
             if (cancelled()) throw kotlinx.coroutines.CancellationException()
             val resultados = mutableListOf<BibliotecaBuscaResultado>()
