@@ -62,7 +62,9 @@ data class BibliotecaPacoteCatalogo(
 data class BibliotecaPacoteEstado(
     val pacote: BibliotecaPacoteCatalogo,
     val instalado: Boolean,
-    val tamanhoLocalBytes: Long
+    val tamanhoLocalBytes: Long,
+    /** Installed from an earlier catalog version: the recorded sha256 differs from the catalog's. */
+    val desatualizado: Boolean = false
 )
 
 data class BibliotecaPaginaLeitura(
@@ -174,7 +176,8 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             BibliotecaPacoteEstado(
                 pacote = pacote,
                 instalado = local.exists(),
-                tamanhoLocalBytes = if (local.exists()) local.length() else 0L
+                tamanhoLocalBytes = if (local.exists()) local.length() else 0L,
+                desatualizado = local.exists() && desatualizado(pacote)
             )
         }
 
@@ -190,6 +193,11 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
 
     fun localFile(pacote: BibliotecaPacoteCatalogo): File =
         File(appFilesDir, "RAGPackages/${pacote.arquivo}")
+
+    /** Same rule as iOS: `<arquivo>.sha256` records the version installed; missing counts as outdated. */
+    private fun versionFile(pacote: BibliotecaPacoteCatalogo) = File(appFilesDir, "RAGPackages/${pacote.arquivo}.sha256")
+    fun desatualizado(pacote: BibliotecaPacoteCatalogo): Boolean =
+        pacote.sha256?.equals(versionFile(pacote).takeIf { it.exists() }?.readText()?.trim(), ignoreCase = true) == false
 
     fun instalar(pacote: BibliotecaPacoteCatalogo, onProgress: (String) -> Unit = {}) {
         require(pacote.url.isNotBlank()) { "Esta obra foi importada localmente e já está instalada." }
@@ -225,6 +233,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             }
             // Same-directory rename is atomic and keeps the previous package on failure.
             android.system.Os.rename(temporario.absolutePath, destino.absolutePath)
+            pacote.sha256?.let { versionFile(pacote).writeText(it) }
         } finally {
             temporario.delete()
         }
@@ -236,6 +245,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             LocalPdfOcrImporter(appContext).remove(localWork)
         } else {
             localFile(pacote).takeIf { it.exists() }?.delete()
+            versionFile(pacote).delete()
         }
     }
 

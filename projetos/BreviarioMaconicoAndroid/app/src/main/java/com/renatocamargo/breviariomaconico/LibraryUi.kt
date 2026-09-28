@@ -56,6 +56,7 @@ import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
@@ -198,9 +199,9 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
     fun baixarTodos() {
         scope.launch {
             atualizando = true
-            val pendentes = catalogo.estados(area).filterNot { it.instalado }
+            val pendentes = catalogo.estados(area).filter { !it.instalado || it.desatualizado }
             if (pendentes.isEmpty()) {
-                status = "Todas as obras desta área já estão baixadas."
+                status = "Todas as obras desta área já estão baixadas e atualizadas."
             } else {
                 runCatching {
                     pendentes.forEachIndexed { index, estado ->
@@ -248,6 +249,10 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
                     singleLine = true
                 )
                 Text("${filtrados.size} obra(s) encontrada(s) nesta área.", color = colors.secondary, fontSize = 13.sp)
+                val atualizacoes = estados.count { it.desatualizado }
+                if (atualizacoes > 0) {
+                    Text("$atualizacoes obra(s) com atualização disponível.", color = colors.accent, fontSize = 13.sp)
+                }
                 Button(enabled = !atualizando, onClick = { baixarTodos() }) {
                     Icon(Icons.Default.CloudDownload, null)
                     Spacer(Modifier.width(8.dp))
@@ -304,7 +309,20 @@ internal fun AcervoPackageCard(
                 }
                 Text(estado.pacote.area.titulo, color = colors.accent, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
                 Text(estado.pacote.detalhe, color = colors.secondary, fontSize = 13.sp)
-                Text(if (estado.instalado) "Disponível offline" else "Não baixado", color = if (estado.instalado) colors.success else colors.secondary, fontSize = 13.sp)
+                Text(
+                    when {
+                        estado.desatualizado -> "Atualização disponível"
+                        estado.instalado -> "Disponível offline"
+                        else -> "Não baixado"
+                    },
+                    color = if (estado.instalado && !estado.desatualizado) colors.success else colors.secondary,
+                    fontSize = 13.sp
+                )
+            }
+            if (estado.desatualizado) {
+                IconButton(enabled = !busy, onClick = onInstall) {
+                    Icon(Icons.Default.Refresh, contentDescription = "Atualizar", tint = colors.accent)
+                }
             }
             IconButton(enabled = !busy, onClick = if (estado.instalado) onRemove else onInstall) {
                 Icon(

@@ -762,6 +762,34 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
     }
 
+    /// A package installed from an earlier catalog is offered as an update, as on Android.
+    func testInstalledPackageFromEarlierCatalogIsOutdated() throws {
+        let arquivo = "teste_versao_\(UUID().uuidString).sqlite"
+        let works = [BibliotecaRAGPacoteObra(id: "versao", titulo: "versao", autor: nil, tipo: .livro, paginas: 1, paragrafos: 0, notas: 0, assuntos: [])]
+        let package = BibliotecaRAGPacote(area: .bibliotecaMaconica, titulo: "Versão", arquivo: arquivo, url: nil, sha256: "ABC123", nivel: nil, tamanhoBytes: 1, estatisticas: .init(obras: 1, paginas: 1, paragrafos: 0, notas: 0, imagens: 0, blocosFTS: 0), obras: works)
+        let catalog = BibliotecaRAGCatalogo(versaoFormato: 1, estrategia: "teste", geradoEm: "teste", origem: nil, baseURL: nil, pacotes: [package], totais: .init(pacotes: 1, obras: 1, paginas: 1, paragrafos: 0, notas: 0, blocosFTS: 0, tamanhoBytes: 1))
+        let catalogURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".json")
+        try JSONEncoder().encode(catalog).write(to: catalogURL)
+        let raiz = BibliotecaRAGCatalogService.raizPacotesLocal()
+        try FileManager.default.createDirectory(at: raiz, withIntermediateDirectories: true)
+        let local = raiz.appendingPathComponent(arquivo)
+        let versao = raiz.appendingPathComponent(arquivo + ".sha256")
+        defer {
+            try? FileManager.default.removeItem(at: local)
+            try? FileManager.default.removeItem(at: versao)
+            try? FileManager.default.removeItem(at: catalogURL)
+        }
+        let servico = try BibliotecaOfflinePackageService(catalogo: BibliotecaRAGCatalogService(catalogoURL: catalogURL))
+
+        XCTAssertFalse(try XCTUnwrap(servico.estados().first).desatualizado, "Not installed is not outdated")
+        try Data("x".utf8).write(to: local)
+        XCTAssertTrue(try XCTUnwrap(servico.estados().first).desatualizado, "No recorded version counts as outdated")
+        try Data("0000".utf8).write(to: versao)
+        XCTAssertTrue(servico.desatualizado(package))
+        try Data("abc123\n".utf8).write(to: versao)
+        XCTAssertFalse(try XCTUnwrap(servico.estados().first).desatualizado)
+    }
+
     /// Words split by the import/OCR (Tools/corrigir_palavras_quebradas.py) stay joined, as on Android.
     func testBreviaryReadingsHaveNoWordsSplitByOCR() throws {
         let quebradas = ["difi cilmente", "signifi cando", "constran gimentos", "coraça- o", "na- o", "Maço naria", "exis tência", "tornando- se", "Grão- Mestre"]

@@ -334,6 +334,27 @@ class DataIntegrityTest {
         createDossierPdf(File(context.filesDir, "paridade-dossie-android.pdf"), topic, sources, "ANALISEINTEGRALFIM [F30]", scope = filteredScope)
     }
 
+    /** A package installed from an earlier catalog is offered as an update, as on iOS. */
+    @Test
+    fun installedPackageFromEarlierCatalogIsOutdated() {
+        val catalog = BibliotecaCatalogRepository(context)
+        val estado = BibliotecaArea.values().flatMap { catalog.estados(it) }.first { it.instalado }
+        val pacote = estado.pacote
+        val versao = File(context.filesDir, "RAGPackages/${pacote.arquivo}.sha256")
+        val anterior = versao.takeIf { it.exists() }?.readBytes()
+        try {
+            versao.delete()
+            assertTrue("No recorded version counts as outdated", catalog.desatualizado(pacote))
+            versao.writeText("0000")
+            assertTrue(catalog.desatualizado(pacote))
+            versao.writeText(pacote.sha256!!.uppercase())
+            assertFalse(catalog.desatualizado(pacote))
+            assertFalse(catalog.estados(pacote.area).first { it.pacote.id == pacote.id }.desatualizado)
+        } finally {
+            if (anterior != null) versao.writeBytes(anterior) else versao.delete()
+        }
+    }
+
     /** Words split by the import/OCR (Tools/corrigir_palavras_quebradas.py) stay joined, as on iOS. */
     @Test
     fun breviaryReadingsHaveNoWordsSplitByOcr() {
