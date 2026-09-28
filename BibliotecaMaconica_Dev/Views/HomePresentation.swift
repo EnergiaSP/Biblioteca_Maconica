@@ -282,13 +282,25 @@ func avisoGlobal(_ mensagem: String) -> some View {
             abrirLeitura(item)
         } label: {
             VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top) {
-                    Label(leitura.obra.titulo, systemImage: "calendar.badge.clock")
-                        .font(.subheadline)
-                        .foregroundStyle(textoSecundarioApp)
-                        .fixedSize(horizontal: false, vertical: true)
+                // At accessibility text sizes the date goes under the work's name: side by side, the
+                // name was squeezed into a narrow column, one syllable per line.
+                let cabecalho = dynamicTypeSize.isAccessibilitySize
+                    ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+                    : AnyLayout(HStackLayout(alignment: .top))
+                cabecalho {
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        Image(systemName: "calendar.badge.clock")
+                            .accessibilityHidden(true)
+                        Text(leitura.obra.titulo)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(textoSecundarioApp)
+                    .layoutPriority(1)
 
-                    Spacer()
+                    if dynamicTypeSize.isAccessibilitySize == false {
+                        Spacer()
+                    }
 
                     Label(leitura.item?.data ?? "Pendente", systemImage: "sun.max")
                         .font(.footnote)

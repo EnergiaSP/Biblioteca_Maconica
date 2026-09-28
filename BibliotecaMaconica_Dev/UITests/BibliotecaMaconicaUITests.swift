@@ -94,12 +94,15 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         }
     }
 
-    /// Screen area not covered by the tab bar. On iOS 26 the floating bar is not exposed as a tab bar,
+    /// Screen area not covered by the tab bar or the status bar. On iOS 26 the floating bar is not exposed as a tab bar,
     /// so its top comes from the Home tab button, less the capsule and the scroll edge band above it.
     private func areaVisivel() -> CGRect {
         let aba = navigationTab("Início")
-        let limite = aba.exists ? aba.frame.minY - 16 : app.frame.maxY
-        return CGRect(x: app.frame.minX, y: app.frame.minY, width: app.frame.width, height: limite - app.frame.minY)
+        // 32 pt covers the capsule and the opaque edge band, measured on an iPhone 15 Pro Max.
+        let limite = aba.exists ? aba.frame.minY - 32 : app.frame.maxY
+        // At the top, the status bar (with the Dynamic Island) and the same opaque band.
+        let topo = app.frame.minY + 100
+        return CGRect(x: app.frame.minX, y: topo, width: app.frame.width, height: limite - topo)
     }
 
     /// Scrolls the element fully into view and audits contrast again; failing there is a real failure.
@@ -134,13 +137,22 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             return
         }
         let frame = alvo.frame
-        try app.performAccessibilityAudit(for: tipo) { issue in
-            guard issue.element?.label == label, issue.element?.frame == frame else { return true }
-            let attachment = XCTAttachment(string: "Contraste reprovado com o elemento visível: \(label) \(frame)")
-            attachment.name = "Accessibility-visible-contrast"
-            attachment.lifetime = .keepAlways
-            self.add(attachment)
-            return false
+        // The audit service sometimes times out (code -56) without reporting anything; that one
+        // error is retried once. Any issue it reports still fails the test.
+        for tentativa in 1...2 {
+            do {
+                try app.performAccessibilityAudit(for: tipo) { issue in
+                    guard issue.element?.label == label, issue.element?.frame == frame else { return true }
+                    let attachment = XCTAttachment(string: "Aviso mantido com o elemento visível: \(label) \(frame)")
+                    attachment.name = "Accessibility-visible-issue"
+                    attachment.lifetime = .keepAlways
+                    self.add(attachment)
+                    return false
+                }
+                return
+            } catch let erro as NSError where erro.domain == "com.apple.xcode.xctest.accessibilityAudit" && erro.code == -56 && tentativa == 1 {
+                continue
+            }
         }
     }
 

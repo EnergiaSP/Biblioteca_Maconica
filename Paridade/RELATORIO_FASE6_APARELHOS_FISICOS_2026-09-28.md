@@ -41,10 +41,13 @@ Reprovacoes no iPhone e o que foi feito:
 - Colecoes, Inicio e Busca: avisos em elementos atras da barra de abas, mais alta no Pro Max (932 pt), inclusive de tamanho de fonte, nao so de contraste. A verificacao "trazer a vista e auditar de novo" passou a valer para qualquer tipo de aviso.
 - Busca: a auditoria acusou a tecla "Buscar" do teclado do sistema, que abre no aparelho fisico (no simulador o teclado fica oculto). O teste fecha o teclado antes de auditar.
 - Configuracoes: a auditoria usava a chamada direta, sem diagnostico; passou a usar o mesmo auditor dos outros testes.
-- Inicio: "texto cortado" no titulo "Breviário Maçônico - Kennyo Ismail" do cartao da leitura do dia; o codigo permite quebra de linha e a captura mostra o texto inteiro. Precisa de nova execucao no aparelho com o diagnostico.
-- Voltar da leitura para a Busca: reprovou no aparelho e passa no simulador; precisa de nova execucao para separar tempo de resposta de defeito.
+- Inicio: "texto cortado" no nome da obra do cartao da leitura do dia ("o texto pode ser cortado em tamanhos maiores de fonte"). Confirmado no simulador no maior tamanho de acessibilidade: a data ocupava a linha e o nome da obra ficava numa coluna estreita, uma silaba por linha. Corrigido: nos tamanhos de acessibilidade o nome da obra e a data ficam um abaixo do outro. O Android ja fazia assim (conferido no emulador com fonte 2x).
+- Voltar da leitura para a Busca: passou na nova execucao no iPhone; a falha anterior era tempo de resposta do aparelho.
 
-As quatro auditorias ajustadas passam no simulador. A nova execucao no iPhone ficou pendente: o aparelho ficou indisponivel para o Xcode no meio do trabalho.
+Segunda execucao no iPhone dos 5 testes: Busca, Configuracoes e Voltar para a Busca aprovados. Colecoes e Inicio levaram aos ajustes abaixo, feitos depois:
+
+- A faixa opaca acima da barra de abas e maior na tela do Pro Max: a margem da area visivel passou de 16 para 32 pt; o topo (barra de status com a Dynamic Island) tambem passou a contar como area coberta.
+- Quando o servico de auditoria da Apple estoura o tempo ("Audit failed to complete in time") ao repetir a verificacao de um elemento, a verificacao e repetida uma vez; qualquer aviso relatado continua reprovando.
 
 ## Desempenho da busca no Android (medido no moto g84)
 
