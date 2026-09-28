@@ -62,7 +62,7 @@ final class BibliotecaMaconicaUITests: XCTestCase {
     private func auditAccessibility(_ types: XCUIAccessibilityAuditType = .all) throws {
         // Text under the tab bar or cut by the screen edge is measured against the bar, not the
         // app's colors. Such elements are brought fully into view and audited again below.
-        var cobertos: [(label: String, frame: CGRect)] = []
+        var cobertos: [(label: String, frame: CGRect, tipo: XCUIAccessibilityAuditType)] = []
         let visivel = areaVisivel()
         try app.performAccessibilityAudit(for: types) { issue in
             let element = issue.element
@@ -80,15 +80,17 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             attachment.lifetime = .keepAlways
             self.add(attachment)
             print("ACCESSIBILITY_DIAGNOSTIC: \(details)")
-            if issue.auditType == .contrast, let element, !element.label.isEmpty, !visivel.contains(element.frame) {
-                cobertos.append((element.label, element.frame))
+            // Any kind of issue on an element hidden by a bar or cut by the edge (the taller iPhone
+            // Pro Max also reported text size there) is checked again with the element in view.
+            if let element, !element.label.isEmpty, !visivel.contains(element.frame) {
+                cobertos.append((element.label, element.frame, issue.auditType))
                 return true
             }
             return false
         }
         var verificados = Set<String>()
-        for coberto in cobertos where verificados.insert(coberto.label).inserted {
-            try verificarContrasteVisivel(label: coberto.label, frameOriginal: coberto.frame)
+        for coberto in cobertos where verificados.insert("\(coberto.label)|\(coberto.tipo.rawValue)").inserted {
+            try verificarContrasteVisivel(label: coberto.label, frameOriginal: coberto.frame, tipo: coberto.tipo)
         }
     }
 
@@ -101,7 +103,8 @@ final class BibliotecaMaconicaUITests: XCTestCase {
     }
 
     /// Scrolls the element fully into view and audits contrast again; failing there is a real failure.
-    private func verificarContrasteVisivel(label: String, frameOriginal: CGRect) throws {
+    private func verificarContrasteVisivel(label: String, frameOriginal: CGRect,
+                                           tipo: XCUIAccessibilityAuditType = .contrast) throws {
         let alvo = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
         guard alvo.exists else {
             XCTFail("Elemento com contraste acusado sumiu antes da verificação: \(label)")
@@ -131,7 +134,7 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             return
         }
         let frame = alvo.frame
-        try app.performAccessibilityAudit(for: .contrast) { issue in
+        try app.performAccessibilityAudit(for: tipo) { issue in
             guard issue.element?.label == label, issue.element?.frame == frame else { return true }
             let attachment = XCTAttachment(string: "Contraste reprovado com o elemento visível: \(label) \(frame)")
             attachment.name = "Accessibility-visible-contrast"
@@ -407,6 +410,11 @@ final class BibliotecaMaconicaUITests: XCTestCase {
     func testFullAccessibilitySearch() throws {
         app.buttons["Buscar na biblioteca"].tap()
         XCTAssertTrue(app.navigationBars["Busca"].waitForExistence(timeout: 5))
+        // On a physical iPhone the system keyboard opens with the field; it is not app content.
+        // With the field empty, the keyboard's search key only closes the keyboard.
+        let teclaBuscar = app.keyboards.buttons.matching(NSPredicate(format: "label IN %@", ["Buscar", "search", "Search"])).firstMatch
+        if teclaBuscar.exists { teclaBuscar.tap() }
+        _ = app.keyboards.firstMatch.waitForNonExistence(timeout: 3)
         try auditAccessibility()
     }
 
@@ -448,7 +456,7 @@ final class BibliotecaMaconicaUITests: XCTestCase {
     func testFullAccessibilitySettings() throws {
         app.buttons["Configurações"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Configurações"].waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try auditAccessibility()
     }
 
     @MainActor
