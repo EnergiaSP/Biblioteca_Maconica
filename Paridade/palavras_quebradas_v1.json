@@ -1298,6 +1298,386 @@
         "data": "29/12",
         "id": 363,
         "campo": "texto"
+      },
+      {
+        "tipo": "espaco",
+        "original": "encon trar",
+        "corrigido": "encontrar",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/01",
+        "id": 12,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "exclusi vamente",
+        "corrigido": "exclusivamente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "23/01",
+        "id": 23,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conhe cimentos",
+        "corrigido": "conhecimentos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "31/01",
+        "id": 31,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "inte resse",
+        "corrigido": "interesse",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "26/02",
+        "id": 57,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "circun ferência",
+        "corrigido": "circunferência",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "18/03",
+        "id": 77,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi fica",
+        "corrigido": "significa",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "11/04",
+        "id": 101,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "absolu tamente",
+        "corrigido": "absolutamente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "21/04",
+        "id": 111,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conside rar",
+        "corrigido": "considerar",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "25/04",
+        "id": 115,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "consti tuem",
+        "corrigido": "constituem",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "18/05",
+        "id": 138,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pen samentos",
+        "corrigido": "pensamentos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "18/05",
+        "id": 138,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "orga nismo",
+        "corrigido": "organismo",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "08/06",
+        "id": 159,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "lin guagem",
+        "corrigido": "linguagem",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "04/07",
+        "id": 185,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "traba lho",
+        "corrigido": "trabalho",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "11/07",
+        "id": 192,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "perspec tiva",
+        "corrigido": "perspectiva",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "30/07",
+        "id": 211,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "cha mado",
+        "corrigido": "chamado",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "01/08",
+        "id": 213,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "hu manidade",
+        "corrigido": "humanidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "09/08",
+        "id": 221,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "admi nistração",
+        "corrigido": "administração",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "14/08",
+        "id": 226,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "espon taneamente",
+        "corrigido": "espontaneamente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "03/09",
+        "id": 246,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "oportu nidade",
+        "corrigido": "oportunidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "06/09",
+        "id": 249,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "astronô micos",
+        "corrigido": "astronômicos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "11/09",
+        "id": 254,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi ficando",
+        "corrigido": "significando",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "28/09",
+        "id": 271,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "perma nente",
+        "corrigido": "permanente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/10",
+        "id": 285,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "desconhe cido",
+        "corrigido": "desconhecido",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/10",
+        "id": 285,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "absolu tamente",
+        "corrigido": "absolutamente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/10",
+        "id": 285,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "consi derando",
+        "corrigido": "considerando",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "16/10",
+        "id": 289,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "lin guagem",
+        "corrigido": "linguagem",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "20/10",
+        "id": 293,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Pru dência",
+        "corrigido": "Prudência",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "23/10",
+        "id": 296,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "comple tamente",
+        "corrigido": "completamente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "25/10",
+        "id": 298,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Inqui sição",
+        "corrigido": "Inquisição",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "27/10",
+        "id": 300,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "questio namentos",
+        "corrigido": "questionamentos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "03/11",
+        "id": 307,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conhe cimentos",
+        "corrigido": "conhecimentos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "11/11",
+        "id": 315,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "ceri monial",
+        "corrigido": "cerimonial",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "16/11",
+        "id": 320,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "atri butos",
+        "corrigido": "atributos",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "24/11",
+        "id": 328,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Bene ficente",
+        "corrigido": "Beneficente",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "27/11",
+        "id": 331,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi ficado",
+        "corrigido": "significado",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "03/12",
+        "id": 337,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "núme ro",
+        "corrigido": "número",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "19/12",
+        "id": 353,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "interpre tação",
+        "corrigido": "interpretação",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "19/12",
+        "id": 353,
+        "campo": "texto",
+        "passada": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "represen tação",
+        "corrigido": "representação",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "21/02",
+        "id": 52,
+        "campo": "texto",
+        "passada": 3
       }
     ]
   }
