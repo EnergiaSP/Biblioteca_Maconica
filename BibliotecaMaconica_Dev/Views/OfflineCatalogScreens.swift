@@ -566,7 +566,7 @@ var acervoOfflineView: some View {
     func dossieIAView(_ dossie: BibliotecaDossieEstudo) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Label("Análise IA opcional", systemImage: "sparkles")
+                Label("Interpretação assistida (opcional)", systemImage: "sparkles")
                     .font(.headline)
                     .foregroundStyle(destaqueApp)
 
@@ -579,10 +579,15 @@ var acervoOfflineView: some View {
             }
 
             if analiseIAAtiva == false {
-                Text("A IA está desativada em Configurações. O dossiê local permanece disponível sem IA.")
+                Text("A IA está desativada em Configurações. O dossiê acima é completo sem IA.")
                     .font(.callout)
                     .foregroundStyle(textoSecundarioApp)
             } else {
+                Text("A IA recebe somente os \(dossie.resultados.count) trechos exibidos neste dossiê. Ficam apenas as frases que citam um trecho; o resto é removido.")
+                    .font(.caption)
+                    .foregroundStyle(textoSecundarioApp)
+                    .fixedSize(horizontal: false, vertical: true)
+
                 SecureField("Chave API Gemini", text: $geminiAPIKey)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
@@ -594,7 +599,7 @@ var acervoOfflineView: some View {
                 Button {
                     gerarAnaliseDossieGemini(dossie)
                 } label: {
-                    Label(gerandoAnaliseDossieIA ? "Gerando análise..." : "Gerar análise do dossiê", systemImage: "sparkles.rectangle.stack")
+                    Label(gerandoAnaliseDossieIA ? "Gerando interpretação..." : "Gerar interpretação assistida", systemImage: "sparkles.rectangle.stack")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
@@ -616,9 +621,9 @@ var acervoOfflineView: some View {
 
                     Button {
                         UIPasteboard.general.string = analiseDossieIA
-                        mensagemErro = "Análise do dossiê copiada."
+                        mensagemErro = "Interpretação assistida copiada."
                     } label: {
-                        Label("Copiar análise", systemImage: "doc.on.doc")
+                        Label("Copiar interpretação", systemImage: "doc.on.doc")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.bordered)

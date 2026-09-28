@@ -56,10 +56,7 @@ class FullCatalogBenchmarkTest {
         val results = catalog.buscarConteudo("\"$term\"", area = BibliotecaArea.Biblioteca, limite = config.limits.analyzedSources,
             variants = config.variants)
         assertTrue(results.isNotEmpty())
-        val sources = results.map {
-            DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
-                it.pagina, it.data, it.trecho, it.rodape)
-        }
+        val sources = dossierSources(results)
         val start = SystemClock.elapsedRealtime()
         val analysis = DossierAnalysis.analyze(term, sources, config, java.time.LocalDate.parse("2026-09-27"))
         val elapsed = SystemClock.elapsedRealtime() - start
@@ -67,7 +64,11 @@ class FullCatalogBenchmarkTest {
         File(context.filesDir, "dossie-acervo-android.json").writeText(analysis.toJson()
             .put("exibicao", DossierAnalysis.display(term, analysis, sources, config).toJson())
             .put("fontesIds", JSONArray(sources.map { it.id }))
-            .put("milissegundosAnalise", elapsed).toString(2))
+            .put("milissegundosAnalise", elapsed)
+            // The AI prompt for the excerpts shown in this dossier, compared byte by byte with iOS.
+            .put("promptIA", AssistedInterpretation.prompt(term, sources.take(config.limits.shownSources), emptyList(),
+                AssistedInterpretation.loadConfig(context), config))
+            .toString(2))
     }
 
     @Test

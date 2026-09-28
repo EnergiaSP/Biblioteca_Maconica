@@ -322,7 +322,7 @@ class DataIntegrityTest {
         val text = textoDossie(topic, sources, escopo = filteredScope)
         assertTrue(text.contains("Autor: José"))
         assertTrue(text.contains("Assunto: Ética"))
-        val prompt = promptAnaliseDossie(topic, sources)
+        val prompt = promptAnaliseDossie(context, topic, sources)
         for (index in 1..sources.size) for (content in listOf(text, prompt)) {
             assertTrue(content.contains("[F$index]"))
             assertTrue(content.contains("FIMFONTE${index}FIM"))
@@ -332,6 +332,45 @@ class DataIntegrityTest {
         val withAnalysis = textoDossie(topic, sources, "ANALISEINTEGRALFIM [F30]")
         assertTrue(withAnalysis.contains("ANALISEINTEGRALFIM"))
         createDossierPdf(File(context.filesDir, "paridade-dossie-android.pdf"), topic, sources, "ANALISEINTEGRALFIM [F30]", scope = filteredScope)
+    }
+
+    /** The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly. */
+    @Test
+    fun assistedInterpretationMatchesReferenceCases() {
+        val config = AssistedInterpretation.loadConfig(context)
+        val study = DossierAnalysis.loadConfig(context)
+        val root = JSONObject(context.assets.open("casos_ia_v1.json").bufferedReader().use { it.readText() })
+        fun sources(array: org.json.JSONArray) = List(array.length()) { index ->
+            val item = array.getJSONObject(index)
+            DossierAnalysis.Source(item.getString("id"), item.getString("obraId"), item.getString("tituloObra"), item.getString("area"),
+                item.getInt("pagina"), item.optString("data").takeIf { item.has("data") && it.isNotEmpty() }, item.optString("texto"), item.optString("rodape"))
+        }
+        val prompts = root.getJSONArray("prompts")
+        for (index in 0 until prompts.length()) {
+            val case = prompts.getJSONObject(index)
+            val official = case.optJSONArray("fontesOficiais")?.let { array ->
+                List(array.length()) { array.getJSONObject(it).let { o ->
+                    AssistedInterpretation.OfficialSource(o.getString("titulo"), o.getString("origem"), o.getString("url"), o.getString("observacao"))
+                } }
+            }.orEmpty()
+            assertEquals(case.getString("id"), case.getString("esperado"),
+                AssistedInterpretation.prompt(case.getString("termo"), sources(case.getJSONArray("fontes")), official, config, study))
+        }
+        val sets = root.getJSONObject("fontes")
+        val answers = root.getJSONArray("respostas")
+        for (index in 0 until answers.length()) {
+            val case = answers.getJSONObject(index)
+            val id = case.getString("id")
+            val list = sources(sets.getJSONArray(case.getString("fontes")))
+            val expected = case.getJSONObject("esperado")
+            val result = AssistedInterpretation.filter(case.getString("resposta"), list, config)
+            assertEquals(id, expected.getString("texto"), result.text)
+            assertEquals(id, expected.getInt("frasesMantidas"), result.kept)
+            assertEquals(id, expected.getInt("frasesRemovidas"), result.removed)
+            val cited = expected.getJSONArray("fontesCitadas")
+            assertEquals(id, List(cited.length()) { cited.getInt(it) }, result.citedSources)
+            assertEquals(id, expected.getString("exibicao"), AssistedInterpretation.display(result, list, config, study))
+        }
     }
 
     /** Saved dossiers date their reviews from the day they were saved, with the same rule as iOS. */
