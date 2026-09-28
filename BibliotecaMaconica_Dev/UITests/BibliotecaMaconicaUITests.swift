@@ -30,6 +30,27 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Biblioteca Maçônica"].waitForExistence(timeout: 12))
     }
 
+    /// Updates the installed collection to the current catalog through "Acervo offline", as a user
+    /// would. Opt-in because it downloads the whole collection: `TEST_RUNNER_ATUALIZAR_ACERVO=1 xcodebuild test ...`.
+    @MainActor
+    func testOutdatedPackagesAreUpdatedFromOfflineCollection() throws {
+        try XCTSkipUnless(ProcessInfo.processInfo.environment["ATUALIZAR_ACERVO"] == "1", "Downloads the whole collection")
+        navigationTab("Mais").tap()
+        app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Acervo offline")).firstMatch.tap()
+        let aviso = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "com atualização disponível")).firstMatch
+        XCTAssertTrue(aviso.waitForExistence(timeout: 10), "Installed packages from the previous catalog are offered as updates")
+        app.buttons["Baixar todo o acervo"].firstMatch.tap()
+        let concluido = app.staticTexts["Todo o acervo está disponível offline."]
+        let interrompido = app.staticTexts["O download geral foi interrompido antes de concluir."]
+        let fim = Date().addingTimeInterval(60 * 60)
+        while Date() < fim && concluido.exists == false && interrompido.exists == false {
+            _ = concluido.waitForExistence(timeout: 30)
+        }
+        XCTAssertFalse(interrompido.exists)
+        XCTAssertTrue(concluido.exists)
+        XCTAssertFalse(aviso.exists, "No update left after downloading everything")
+    }
+
     private func navigationTab(_ title: String) -> XCUIElement {
         let compactTab = app.tabBars.buttons[title]
         if compactTab.exists { return compactTab }

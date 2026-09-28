@@ -47,6 +47,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.ui.platform.testTag
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.NavigateBefore
 import androidx.compose.material.icons.automirrored.filled.NavigateNext
@@ -229,11 +230,13 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     BibliotecaArea.entries.forEach { item ->
                         AssistChip(
+                            modifier = Modifier.testTag("acervo.area.${item.raw}"),
                             onClick = {
                                 area = item
                                 busca = ""
                             },
-                            label = { Text(item.titulo, color = if (item == area) Color.Black else colors.text) },
+                            // The chip has no fill: black text vanished on the dark theme. The check marks the selection.
+                            label = { Text(item.titulo, color = colors.text, fontWeight = if (item == area) FontWeight.Bold else null) },
                             leadingIcon = {
                                 if (item == area) Icon(Icons.Default.CheckCircle, null, tint = Color(0xFF1F7A3A))
                             }
