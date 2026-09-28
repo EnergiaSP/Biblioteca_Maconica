@@ -11,6 +11,7 @@ var detalhe: some View {
 
             if let item = itemSelecionado {
                 GeometryReader { proxy in
+                    ScrollViewReader { rolagem in
                     ScrollView {
                         VStack(alignment: .leading, spacing: 20) {
 
@@ -80,6 +81,17 @@ var detalhe: some View {
                                 )
                                 .font(.caption)
                                 .foregroundColor(temaLeitura.textoSecundario)
+
+                                // The notes come after the whole work in continuous reading.
+                                if modoLeituraSemDistracoes == false {
+                                    Button {
+                                        withAnimation { rolagem.scrollTo("reading.notes", anchor: .top) }
+                                    } label: {
+                                        Label("Ir para comentário e reflexão", systemImage: "text.bubble")
+                                    }
+                                    .buttonStyle(.bordered)
+                                    .accessibilityIdentifier("reading.jumpToNotes")
+                                }
                             }
 
                             if let frase = item.fraseExibicao, leituraContinuaDaObraAtiva == false {
@@ -103,6 +115,7 @@ var detalhe: some View {
                                 VStack(alignment: .leading, spacing: 10) {
 
                                     Text("Minha reflexão de hoje")
+                                        .id("reading.notes")
                                         .font(.headline)
                                         .foregroundColor(temaLeitura.destaque)
 
@@ -110,8 +123,9 @@ var detalhe: some View {
                                         .font(.caption)
                                         .foregroundColor(temaLeitura.textoSecundario)
 
+                                    CampoRascunho(rascunho: rascunho, campo: \.reflexao) { texto in
                                     JustifiedEditableTextView(
-                                        texto: $reflexaoPessoal,
+                                        texto: texto,
                                         font: UIFont.systemFont(ofSize: CGFloat(tamanhoTextoLeitura)),
                                         color: temaLeitura.textoUIColor,
                                         lineSpacing: CGFloat(espacamentoTextoLeitura),
@@ -119,6 +133,7 @@ var detalhe: some View {
                                         rotuloAcessibilidade: "Minha reflexão de hoje",
                                         identificadorAcessibilidade: "reading.reflection"
                                     )
+                                    }
                                     .frame(maxWidth: .infinity, minHeight: 180)
                                     .padding(8)
                                     .background(temaLeitura.painel)
@@ -167,8 +182,9 @@ var detalhe: some View {
                                     )
                                 }
 
+                                CampoRascunho(rascunho: rascunho, campo: \.comentario) { texto in
                                 JustifiedEditableTextView(
-                                    texto: $comentario,
+                                    texto: texto,
                                     font: UIFont.systemFont(ofSize: CGFloat(tamanhoTextoLeitura)),
                                     color: temaLeitura.textoUIColor,
                                     lineSpacing: CGFloat(espacamentoTextoLeitura),
@@ -176,6 +192,7 @@ var detalhe: some View {
                                     rotuloAcessibilidade: "Comentário",
                                     identificadorAcessibilidade: "reading.comment"
                                 )
+                                }
                                     .frame(maxWidth: .infinity, minHeight: alturaMinimaCampoComentario)
                                     .padding(8)
                                     .background(temaLeitura.painel)
@@ -225,9 +242,10 @@ var detalhe: some View {
                                 )
 
                                 if let mensagemErro {
-                                    Text(mensagemErro)
+                                    // Same kind as the global banner: "Comentário salvo" is not an error.
+                                    Label(mensagemErro, systemImage: iconeAvisoGlobal(mensagemErro))
                                         .font(.caption)
-                                        .foregroundColor(.red.opacity(0.9))
+                                        .foregroundStyle(corAvisoGlobal(mensagemErro))
                                 }
                                 }
                             }
@@ -238,6 +256,7 @@ var detalhe: some View {
                             alignment: .leading
                         )
                         .frame(maxWidth: .infinity, alignment: .center)
+                    }
                     }
                 }
             } else {

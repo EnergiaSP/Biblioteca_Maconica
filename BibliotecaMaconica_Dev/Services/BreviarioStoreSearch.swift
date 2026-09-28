@@ -43,35 +43,40 @@ func buscarBiblioteca(
                 guard obra.recursoJSON != nil || Self.urlImportadoExistente(obraID: obra.id) != nil else {
                     continue
                 }
-                let dados = try Self.carregarDadosDaObra(obra)
+                guard let url = try Self.urlDadosDaObra(obra) else { continue }
+                let corpus = try BuscaLocalCache.compartilhado.corpus(obraID: obra.id, url: url) {
+                    let dados = try Self.carregarDadosDaObra(obra)
+                    let termosPorData = Dictionary(grouping: dados.indiceRemissivo.flatMap { entrada in
+                        entrada.datas.map { data in
+                            (data: data, termo: entrada.termo)
+                        }
+                    }, by: \.data)
+                        .mapValues { pares in
+                            pares.map(\.termo).joined(separator: " ")
+                        }
+
+                    // Only the reading itself is searched: the work's title, author, area and subjects belong
+                    // to the metadata filter, and would otherwise match every page of the work.
+                    let textos = dados.itens.map { item in
+                        (chave: item.chavePersistencia, texto: [
+                            item.titulo,
+                            item.frase,
+                            item.texto,
+                            item.rodape ?? "",
+                            item.data,
+                            termosPorData[item.data] ?? ""
+                        ].joined(separator: " "))
+                    }
+                    return (dados, textos)
+                }
+                let dados = corpus.dados
                 guard !dados.itens.isEmpty else { continue }
 
                 // The local edition owns its navigation IDs and must not be duplicated by a RAG copy.
                 obrasLocais.insert(obra.id)
 
-                let termosPorData = Dictionary(grouping: dados.indiceRemissivo.flatMap { entrada in
-                    entrada.datas.map { data in
-                        (data: data, termo: entrada.termo)
-                    }
-                }, by: \.data)
-                    .mapValues { pares in
-                        pares.map(\.termo).joined(separator: " ")
-                    }
-
-                // Only the reading itself is searched: the work's title, author, area and subjects belong
-                // to the metadata filter, and would otherwise match every page of the work.
-                let textos = dados.itens.map { item in
-                    (chave: item.chavePersistencia, texto: [
-                        item.titulo,
-                        item.frase,
-                        item.texto,
-                        item.rodape ?? "",
-                        item.data,
-                        termosPorData[item.data] ?? ""
-                    ].joined(separator: " "))
-                }
-                let conteudos = Dictionary(uniqueKeysWithValues: textos.map { ($0.chave, $0.texto) })
-                let pontuacoes = try BibliotecaSQLiteService.pontuarTextosLocais(termo: termoLimpo, textos: textos, variantes: variantes)
+                let conteudos = corpus.conteudos
+                let pontuacoes = try corpus.indice.pontuar(termo: termoLimpo, variantes: variantes)
                 for item in dados.itens {
                     guard let ranking = pontuacoes[item.chavePersistencia] else { continue }
                     resultados.append(

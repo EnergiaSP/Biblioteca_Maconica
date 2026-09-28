@@ -5,27 +5,25 @@ import UIKit
 extension HomeView {
 /// Builds the dossier for the current fields; a saved one keeps its review dates.
 func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
-        let termo = buscaBiblioteca.trimmingCharacters(in: .whitespacesAndNewlines)
+        let termo = temaDossie.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termo.isEmpty == false else {
             mensagemErro = "Informe um tema para montar o dossiê."
             return
         }
 
-        buscaBibliotecaTask?.cancel()
-        buscandoBiblioteca = false
-        buscaBibliotecaTemMais = false
+        dossieTask?.cancel()
         gerandoDossieEstudo = true
-        let escopo = escopoBuscaBiblioteca
-        let area = areaBuscaBiblioteca
-        let obraID = obraBuscaBibliotecaID
-        let filtro = filtroMetadadosBiblioteca
+        let escopo = escopoDossie
+        let area = areaDossie
+        let obraID = obraDossieID
+        let filtro = filtroDossie
         let dataBase = salvo?.dataCriacao ?? Date()
         dossieEstudo = nil
         analiseDossieIA = ""
         chaveDossieEmCurso = chaveDossieAtual()
         dossieSalvoID = salvo?.id
 
-        buscaBibliotecaTask = Task { @MainActor in
+        dossieTask = Task { @MainActor in
             do {
                 let dossie = try await store.montarDossieEstudo(
                     termo: termo,
@@ -39,18 +37,16 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
                 guard Task.isCancelled == false else { return }
 
                 dossieEstudo = dossie
-                resultadosBuscaBiblioteca = dossie?.resultados ?? []
                 analiseDossieIA = ""
                 gerandoDossieEstudo = false
-                buscaBibliotecaTask = nil
-                telaMais = .dossieEstudo
+                dossieTask = nil
                 mensagemErro = dossie?.resultados.isEmpty == true
                     ? "Dossiê criado sem ocorrências; refine o tema ou importe novas obras."
                     : "Dossiê de estudo criado."
             } catch {
                 guard !Task.isCancelled else { return }
                 gerandoDossieEstudo = false
-                buscaBibliotecaTask = nil
+                dossieTask = nil
                 dossieEstudo = nil
                 mensagemErro = "Não foi possível concluir o dossiê. \(error.localizedDescription)"
             }
@@ -99,25 +95,25 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
     /// Same key as a saved dossier, so reopening one does not count as a change of question.
     func chaveDossieAtual() -> String {
         DossieSalvo.chave(
-            tema: buscaBiblioteca,
-            area: escopoBuscaBiblioteca == .area ? areaBuscaBiblioteca.rawValue : nil,
-            obraId: escopoBuscaBiblioteca == .obraAtual ? (obraBuscaBibliotecaID ?? store.obraSelecionada.id) : nil,
-            autor: filtroMetadadosBiblioteca.autor,
-            assunto: filtroMetadadosBiblioteca.assunto
+            tema: temaDossie,
+            area: escopoDossie == .area ? areaDossie.rawValue : nil,
+            obraId: escopoDossie == .obraAtual ? (obraDossieID ?? store.obraSelecionada.id) : nil,
+            autor: filtroDossie.autor,
+            assunto: filtroDossie.assunto
         )
     }
 
     func abrirDossieSalvo(_ salvo: DossieSalvo) {
-        buscaBiblioteca = salvo.tema
-        filtroMetadadosBiblioteca = BibliotecaFiltroMetadados(autor: salvo.autor, assunto: salvo.assunto)
+        temaDossie = salvo.tema
+        filtroDossie = BibliotecaFiltroMetadados(autor: salvo.autor, assunto: salvo.assunto)
         if let obraId = salvo.obraId {
-            escopoBuscaBiblioteca = .obraAtual
-            obraBuscaBibliotecaID = obraId == store.obraSelecionada.id ? nil : obraId
+            escopoDossie = .obraAtual
+            obraDossieID = obraId == store.obraSelecionada.id ? nil : obraId
         } else if let area = salvo.area.flatMap(BibliotecaArea.init(rawValue:)) {
-            escopoBuscaBiblioteca = .area
-            areaBuscaBiblioteca = area
+            escopoDossie = .area
+            areaDossie = area
         } else {
-            escopoBuscaBiblioteca = .appTodo
+            escopoDossie = .appTodo
         }
         navigation.selectedTab = AppNavigationController.Tab.dossie.rawValue
         gerarDossieEstudo(salvo: salvo)
@@ -136,11 +132,11 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         let store = DossiesSalvosStore()
         let salvo = store.buscar(chave: chaveDossieAtual()) ?? DossieSalvo(
             id: UUID().uuidString,
-            tema: buscaBiblioteca.trimmingCharacters(in: .whitespacesAndNewlines),
-            area: escopoBuscaBiblioteca == .area ? areaBuscaBiblioteca.rawValue : nil,
-            obraId: escopoBuscaBiblioteca == .obraAtual ? (obraBuscaBibliotecaID ?? self.store.obraSelecionada.id) : nil,
-            autor: filtroMetadadosBiblioteca.autor.trimmingCharacters(in: .whitespacesAndNewlines),
-            assunto: filtroMetadadosBiblioteca.assunto.trimmingCharacters(in: .whitespacesAndNewlines),
+            tema: temaDossie.trimmingCharacters(in: .whitespacesAndNewlines),
+            area: escopoDossie == .area ? areaDossie.rawValue : nil,
+            obraId: escopoDossie == .obraAtual ? (obraDossieID ?? self.store.obraSelecionada.id) : nil,
+            autor: filtroDossie.autor.trimmingCharacters(in: .whitespacesAndNewlines),
+            assunto: filtroDossie.assunto.trimmingCharacters(in: .whitespacesAndNewlines),
             criadoEm: DossieSalvo.data(Date())
         )
         store.salvar(salvo)
@@ -172,8 +168,8 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         guard chaveDossieAtual() != chaveDossieEmCurso else { return }
         chaveDossieEmCurso = nil
         dossieSalvoID = nil
-        buscaBibliotecaTask?.cancel()
-        buscaBibliotecaTask = nil
+        dossieTask?.cancel()
+        dossieTask = nil
         gerandoDossieEstudo = false
         dossieEstudo = nil
         analiseDossieIA = ""

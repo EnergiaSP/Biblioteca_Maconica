@@ -413,12 +413,13 @@ var configuracoes: some View {
                 Label("WhatsApp", systemImage: "message")
             }
 
-            Button {
-                compartilharWhatsApp(item, incluirComentario: true)
-            } label: {
-                Label("WhatsApp com comentário", systemImage: "message.badge")
+            SeHaComentario(rascunho: rascunho) {
+                Button {
+                    compartilharWhatsApp(item, incluirComentario: true)
+                } label: {
+                    Label("WhatsApp com comentário", systemImage: "message.badge")
+                }
             }
-            .disabled(comentarioAtualTrimmed.isEmpty)
 
             Button {
                 gerarPDF(item: item, incluirComentario: false)
@@ -426,12 +427,13 @@ var configuracoes: some View {
                 Label("PDF leitura completa", systemImage: "doc.richtext")
             }
 
-            Button {
-                gerarPDF(item: item, incluirComentario: true)
-            } label: {
-                Label("PDF com comentário", systemImage: "doc.badge.plus")
+            SeHaComentario(rascunho: rascunho) {
+                Button {
+                    gerarPDF(item: item, incluirComentario: true)
+                } label: {
+                    Label("PDF com comentário", systemImage: "doc.badge.plus")
+                }
             }
-            .disabled(comentarioAtualTrimmed.isEmpty)
 
             Button {
                 copiarTexto(item, incluirComentario: false)
@@ -439,12 +441,13 @@ var configuracoes: some View {
                 Label("Copiar texto", systemImage: "doc.on.doc")
             }
 
-            Button {
-                copiarTexto(item, incluirComentario: true)
-            } label: {
-                Label("Copiar com comentário", systemImage: "doc.on.clipboard")
+            SeHaComentario(rascunho: rascunho) {
+                Button {
+                    copiarTexto(item, incluirComentario: true)
+                } label: {
+                    Label("Copiar com comentário", systemImage: "doc.on.clipboard")
+                }
             }
-            .disabled(comentarioAtualTrimmed.isEmpty)
         } label: {
             Image(systemName: "square.and.arrow.up")
                 .font(.headline)

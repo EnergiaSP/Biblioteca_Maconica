@@ -763,6 +763,20 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
     }
 
+    /// Success is not shown as an error, progress stays until replaced, errors stay longer.
+    func testAppMessagesHaveTheirKindAndTime() {
+        XCTAssertEqual(AvisoApp.tipo("Comentário salvo."), .sucesso)
+        XCTAssertEqual(AvisoApp.tipo("Dossiê \"virtude\" excluído."), .sucesso)
+        XCTAssertEqual(AvisoApp.tipo("Este dossiê salvo foi excluído."), .alerta)
+        XCTAssertEqual(AvisoApp.tipo("Informe um tema para montar o dossiê."), .alerta)
+        XCTAssertEqual(AvisoApp.tipo("Não foi possível concluir o dossiê."), .erro)
+        XCTAssertEqual(AvisoApp.tipo("Gerando interpretação assistida..."), .progresso)
+        XCTAssertNil(AvisoApp.duracao("Gerando PDF avançado do dossiê..."))
+        XCTAssertEqual(AvisoApp.duracao("Comentário salvo."), 4)
+        XCTAssertGreaterThanOrEqual(AvisoApp.duracao("Não foi possível gerar o PDF.") ?? 0, 8)
+        XCTAssertGreaterThan(AvisoApp.duracao(String(repeating: "palavra ", count: 20) + "salva.") ?? 0, 4)
+    }
+
     /// The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly.
     func testAssistedInterpretationMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(InterpretacaoAssistida.Configuracao.compartilhada)

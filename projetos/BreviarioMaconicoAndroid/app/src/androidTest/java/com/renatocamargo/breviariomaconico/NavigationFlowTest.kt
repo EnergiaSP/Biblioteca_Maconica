@@ -19,6 +19,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextReplacement
+import androidx.compose.ui.test.performImeAction
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performScrollToKey
 import androidx.compose.ui.test.performScrollToNode
@@ -97,6 +98,15 @@ class NavigationFlowTest {
         compose.onNodeWithText("Resumo com fontes").assertIsDisplayed()
         compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.plan")
         compose.onNodeWithTag("dossier.results").assertIsDisplayed()
+    }
+
+    /** The keyboard action builds the dossier, as Return does on iOS. */
+    @Test
+    fun keyboardActionBuildsTheDossier() {
+        compose.onNodeWithTag("tab.dossier").performClick()
+        compose.onNodeWithTag("dossier.topic").performTextReplacement("virtude")
+        compose.onNodeWithTag("dossier.topic").performImeAction()
+        assertDossierGenerated()
     }
 
     /** Save, mark a review, leave, reopen from the review notification and delete, as on iOS. */

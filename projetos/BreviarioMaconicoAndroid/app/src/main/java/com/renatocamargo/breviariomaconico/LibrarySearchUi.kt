@@ -1,5 +1,8 @@
 package com.renatocamargo.breviariomaconico
 
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.platform.LocalFocusManager
 import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -166,6 +169,7 @@ internal fun StructuredSearchScreen(
 ) {
     val context = LocalContext.current
     val catalogo = remember { BibliotecaCatalogRepository.get(context) }
+    val focusManager = LocalFocusManager.current
     val scope = rememberCoroutineScope()
     var termo by session::termo
     var metadataFilter by session::metadataFilter
@@ -249,6 +253,9 @@ internal fun StructuredSearchScreen(
                     label = { Text("Pesquisar no acervo") },
                     leadingIcon = { Icon(Icons.Default.Search, null) },
                     singleLine = true,
+                    // The search already runs while typing; the key just shows the results.
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                    keyboardActions = KeyboardActions(onSearch = { focusManager.clearFocus() }),
                     colors = librarySearchFieldColors(colors)
                 )
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -297,12 +304,15 @@ internal fun StructuredSearchScreen(
 
 @Composable
 internal fun MetadataFilterFields(colors: Palette, filter: LibraryMetadataFilter, onChange: (LibraryMetadataFilter) -> Unit) {
+    val focusManager = LocalFocusManager.current
+    val done = KeyboardOptions(imeAction = ImeAction.Done)
+    val close = KeyboardActions(onDone = { focusManager.clearFocus() })
     OutlinedTextField(value = filter.autor, onValueChange = { onChange(filter.copy(autor = it)) },
         label = { Text("Filtrar por autor") }, modifier = Modifier.fillMaxWidth().testTag("search.author"),
-        singleLine = true, colors = librarySearchFieldColors(colors))
+        singleLine = true, keyboardOptions = done, keyboardActions = close, colors = librarySearchFieldColors(colors))
     OutlinedTextField(value = filter.assunto, onValueChange = { onChange(filter.copy(assunto = it)) },
         label = { Text("Filtrar por assunto") }, modifier = Modifier.fillMaxWidth().testTag("search.subject"),
-        singleLine = true, colors = librarySearchFieldColors(colors))
+        singleLine = true, keyboardOptions = done, keyboardActions = close, colors = librarySearchFieldColors(colors))
 }
 
 @Composable

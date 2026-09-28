@@ -263,7 +263,6 @@ func salvarConfiguracaoNotificacao() {
 
     func agendarBuscaBiblioteca() {
         buscaBibliotecaTask?.cancel()
-        gerandoDossieEstudo = false
         resultadosBuscaBiblioteca = []
         buscaBibliotecaTemMais = false
         buscandoBiblioteca = false
@@ -280,7 +279,6 @@ func salvarConfiguracaoNotificacao() {
     func executarBuscaBiblioteca(mais: Bool = false) {
         if mais && (buscandoBiblioteca || !buscaBibliotecaTemMais) { return }
         buscaBibliotecaTask?.cancel()
-        gerandoDossieEstudo = false
         let termo = buscaBiblioteca.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termo.isEmpty == false else {
             resultadosBuscaBiblioteca = []

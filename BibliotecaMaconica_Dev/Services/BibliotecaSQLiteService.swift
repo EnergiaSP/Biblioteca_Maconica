@@ -757,52 +757,10 @@ final class BibliotecaSQLiteService {
                                     variantes: [String: [String]] = [:]) throws -> [String: Double] {
         let busca = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard busca.isEmpty == false, textos.isEmpty == false else { return [:] }
-        var db: OpaquePointer?
-        guard sqlite3_open(":memory:", &db) == SQLITE_OK else {
-            sqlite3_close(db)
-            throw Erro.naoAbriuBanco("Índice temporário indisponível.")
-        }
-        defer { sqlite3_close(db) }
-        let criar = "CREATE VIRTUAL TABLE local_fts USING fts5(chave UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')"
-        guard sqlite3_exec(db, criar, nil, nil, nil) == SQLITE_OK,
-              sqlite3_exec(db, "BEGIN", nil, nil, nil) == SQLITE_OK else {
-            throw Erro.falhaSQL(String(cString: sqlite3_errmsg(db)))
-        }
-        var inserir: OpaquePointer?
-        guard sqlite3_prepare_v2(db, "INSERT INTO local_fts VALUES (?, ?)", -1, &inserir, nil) == SQLITE_OK else {
-            throw Erro.falhaPreparar(String(cString: sqlite3_errmsg(db)))
-        }
-        for documento in textos {
-            sqlite3_bind_text(inserir, 1, documento.chave, -1, SQLITE_TRANSIENT)
-            sqlite3_bind_text(inserir, 2, documento.texto, -1, SQLITE_TRANSIENT)
-            guard sqlite3_step(inserir) == SQLITE_DONE else {
-                sqlite3_finalize(inserir)
-                throw Erro.falhaSQL(String(cString: sqlite3_errmsg(db)))
-            }
-            sqlite3_reset(inserir)
-        }
-        sqlite3_finalize(inserir)
-        sqlite3_exec(db, "COMMIT", nil, nil, nil)
-
-        var consulta: OpaquePointer?
-        guard sqlite3_prepare_v2(db, "SELECT chave FROM local_fts WHERE local_fts MATCH ?", -1, &consulta, nil) == SQLITE_OK else {
-            throw Erro.falhaPreparar(String(cString: sqlite3_errmsg(db)))
-        }
-        defer { sqlite3_finalize(consulta) }
-        sqlite3_bind_text(consulta, 1, "texto : (\(consultaFTSSegura(busca, variantes: variantes)))", -1, SQLITE_TRANSIENT)
-        var encontrados = Set<String>()
-        while sqlite3_step(consulta) == SQLITE_ROW {
-            encontrados.insert(colunaTexto(consulta, 0))
-        }
-        // Per-index bm25 is not comparable across indexes, so relevance is the shared occurrence count.
-        let termos = termosContagem(busca, variantes: variantes)
-        let porChave = Dictionary(textos.map { ($0.chave, $0.texto) }, uniquingKeysWith: { primeiro, _ in primeiro })
-        return Dictionary(uniqueKeysWithValues: encontrados.map { chave in
-            (chave, -Double(ocorrenciasBusca(termos: termos, texto: porChave[chave] ?? "")))
-        })
+        return try IndiceLocal(textos: textos).pontuar(termo: busca, variantes: variantes)
     }
 
-    private static func consultaFTSSegura(_ termo: String, variantes: [String: [String]] = [:]) -> String {
+    static func consultaFTSSegura(_ termo: String, variantes: [String: [String]] = [:]) -> String {
         let tokens = termosBusca(termo)
         func literal(_ texto: String) -> String { "\"\(texto.replacingOccurrences(of: "\"", with: "\"\""))\"" }
 
@@ -872,7 +830,7 @@ private enum SQLValor {
     case double(Double)
 }
 
-private func colunaTexto(_ statement: OpaquePointer?, _ coluna: Int32) -> String {
+func colunaTexto(_ statement: OpaquePointer?, _ coluna: Int32) -> String {
     guard let cString = sqlite3_column_text(statement, coluna) else {
         return ""
     }
