@@ -411,8 +411,12 @@ class DataIntegrityTest {
     @Test
     fun installedPackageFromEarlierCatalogIsOutdated() {
         val catalog = BibliotecaCatalogRepository(context)
-        val estado = BibliotecaArea.values().flatMap { catalog.estados(it) }.first { it.instalado }
-        val pacote = estado.pacote
+        // Works on a device without the collection: a stand-in file is created for the check.
+        val pacote = BibliotecaArea.values().flatMap { catalog.estados(it) }
+            .let { estados -> (estados.firstOrNull { it.instalado } ?: estados.first { it.pacote.sha256 != null }).pacote }
+        val local = catalog.localFile(pacote)
+        val criado = !local.exists()
+        if (criado) { local.parentFile?.mkdirs(); local.writeText("pacote de teste") }
         val versao = File(context.filesDir, "RAGPackages/${pacote.arquivo}.sha256")
         val anterior = versao.takeIf { it.exists() }?.readBytes()
         try {
@@ -425,6 +429,7 @@ class DataIntegrityTest {
             assertFalse(catalog.estados(pacote.area).first { it.pacote.id == pacote.id }.desatualizado)
         } finally {
             if (anterior != null) versao.writeBytes(anterior) else versao.delete()
+            if (criado) local.delete()
         }
     }
 
