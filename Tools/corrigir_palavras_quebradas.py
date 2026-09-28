@@ -169,10 +169,15 @@ def decidir(vocab: Vocabulario, a: str, b: str, hifen: bool):
     if len(a) < 2 or len(b) < 2:
         return None
     n_a, n_b = vocab.palavras[a.lower()], vocab.palavras[b.lower()]
-    if a.lower().endswith(("fi", "fl", "ff")) and len(a) >= 3:
+    ligadura = (a.lower().endswith(("fi", "fl", "ff")) and len(a) >= 3) or (
+        # A ligadura também pode abrir o segundo pedaço: "signi ficando".
+        b.lower().startswith(("fi", "fl", "ff")) and len(a) >= 3)
+    if ligadura:
         # Pedaços de ligadura ("signifi") se repetem no acervo justamente por
         # causa da quebra; basta serem menos comuns que a palavra inteira.
-        if n_a >= n_juncao or n_b >= n_juncao:
+        # Quando a ligadura abre o segundo pedaço, ele pode ser palavra real
+        # ("signi ficando"): só o primeiro precisa ser fragmento.
+        if n_a >= n_juncao or (n_b >= n_juncao and not b.lower().startswith(("fi", "fl", "ff"))):
             return None
     else:
         # Os dois pedaços precisam ser fragmentos (raros sozinhos); caso
@@ -183,7 +188,7 @@ def decidir(vocab: Vocabulario, a: str, b: str, hifen: bool):
     # Sem trocar acentos que o texto trazia ("nè sì" não vira "nesi").
     if not acentos(a + b) <= acentos(juncao):
         return None
-    tipo = "ligadura" if a.lower().endswith(("fi", "fl", "ff")) else "espaco"
+    tipo = "ligadura" if ligadura else "espaco"
     return tipo, caixa(a, juncao)
 
 
@@ -352,7 +357,11 @@ def main() -> None:
     acervo = corrigir_pacotes(args.pacotes, vocab, args.corrigir_pacotes)
     descricao = "Palavras partidas na importação/OCR. A forma corrigida sempre existe inteira em outro ponto do acervo."
     if args.aplicar_breviarios:
-        gravar(RELATORIO, {"schemaVersion": 1, "descricao": descricao, "breviarios": {"correcoes": breviarios}})
+        # Each run adds its corrections to the history; earlier passes stay recorded.
+        anteriores = json.loads(RELATORIO.read_text(encoding="utf-8"))["breviarios"]["correcoes"] if RELATORIO.exists() else []
+        passada = max((c.get("passada", 1) for c in anteriores), default=0) + 1
+        historico = anteriores + [{**c, "passada": passada} for c in breviarios]
+        gravar(RELATORIO, {"schemaVersion": 1, "descricao": descricao, "breviarios": {"correcoes": historico}})
     gravar(RELATORIO_ACERVO, {"schemaVersion": 1, "descricao": descricao, "acervoRAG": resumo(acervo, "obra")})
     print(f"Breviários: {len(breviarios)} correções{' aplicadas' if args.aplicar_breviarios else ' pendentes'}")
     for a in breviarios:

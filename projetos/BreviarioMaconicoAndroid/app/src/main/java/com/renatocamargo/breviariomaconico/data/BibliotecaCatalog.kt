@@ -331,7 +331,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
         val terms = StudyIndex.searchTerms(query, variants)
         val duplicadas = duplicateWorksInstalled()
         val resultados = mutableListOf<BibliotecaBuscaResultado>()
-        // Packages are independent files: each is searched on its own read-only connection in parallel.
+        // Independent files, each on its own read-only connection in parallel (faster than sequential on a moto g84).
         val porPacote = candidatos.distinctBy { localFile(it).absolutePath }.parallelStream().map { pacote ->
             if (cancelled()) throw kotlinx.coroutines.CancellationException()
             val resultados = mutableListOf<BibliotecaBuscaResultado>()
@@ -403,7 +403,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             val embedded = BreviarioRepository.get(appContext)
             val allowedWorks = obrasBreviariosIntegrados.filter(filtro::matches).associateBy { it.id }
             val readings = embedded.itens.filter { item -> item.obraId in allowedWorks && (obraId == null || item.obraId == obraId) }
-            val ranking = rankLocalTexts(query, readings.associate { it.chavePersistencia to embedded.textosPesquisa[it.chavePersistencia].orEmpty() }, variants)
+            val ranking = embedded.indiceBusca.rank(query, variants, readings.mapTo(HashSet()) { it.chavePersistencia })
             readings.forEach {
                 val score = ranking[it.chavePersistencia] ?: return@forEach
                 resultados.add(BibliotecaBuscaResultado(it.obraId, allowedWorks.getValue(it.obraId).titulo, BibliotecaArea.Breviarios,

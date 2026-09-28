@@ -60,6 +60,10 @@ final class BibliotecaMaconicaUITests: XCTestCase {
 
     @MainActor
     private func auditAccessibility(_ types: XCUIAccessibilityAuditType = .all) throws {
+        // Text under the tab bar or cut by the screen edge is measured against the bar, not the
+        // app's colors. Such elements are brought fully into view and audited again below.
+        var cobertos: [(label: String, frame: CGRect, tipo: XCUIAccessibilityAuditType)] = []
+        let visivel = areaVisivel()
         try app.performAccessibilityAudit(for: types) { issue in
             let element = issue.element
             let details = """
@@ -76,8 +80,79 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             attachment.lifetime = .keepAlways
             self.add(attachment)
             print("ACCESSIBILITY_DIAGNOSTIC: \(details)")
-            // Record evidence without accepting or suppressing any audit failure.
+            // Any kind of issue on an element hidden by a bar or cut by the edge (the taller iPhone
+            // Pro Max also reported text size there) is checked again with the element in view.
+            if let element, !element.label.isEmpty, !visivel.contains(element.frame) {
+                cobertos.append((element.label, element.frame, issue.auditType))
+                return true
+            }
             return false
+        }
+        var verificados = Set<String>()
+        for coberto in cobertos where verificados.insert("\(coberto.label)|\(coberto.tipo.rawValue)").inserted {
+            try verificarContrasteVisivel(label: coberto.label, frameOriginal: coberto.frame, tipo: coberto.tipo)
+        }
+    }
+
+    /// Screen area not covered by the tab bar or the status bar. On iOS 26 the floating bar is not exposed as a tab bar,
+    /// so its top comes from the Home tab button, less the capsule and the scroll edge band above it.
+    private func areaVisivel() -> CGRect {
+        let aba = navigationTab("Início")
+        // 32 pt covers the capsule and the opaque edge band, measured on an iPhone 15 Pro Max.
+        let limite = aba.exists ? aba.frame.minY - 32 : app.frame.maxY
+        // At the top, the status bar (with the Dynamic Island) and the same opaque band.
+        let topo = app.frame.minY + 100
+        return CGRect(x: app.frame.minX, y: topo, width: app.frame.width, height: limite - topo)
+    }
+
+    /// Scrolls the element fully into view and audits contrast again; failing there is a real failure.
+    private func verificarContrasteVisivel(label: String, frameOriginal: CGRect,
+                                           tipo: XCUIAccessibilityAuditType = .contrast) throws {
+        let alvo = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
+        guard alvo.exists else {
+            XCTFail("Elemento com contraste acusado sumiu antes da verificação: \(label)")
+            return
+        }
+        for _ in 0..<6 where !areaVisivel().contains(alvo.frame) {
+            let area = areaVisivel()
+            // Vertical position first: a carousel can only be swiped while its row is on screen.
+            if alvo.frame.maxY > area.maxY {
+                app.swipeUp(velocity: .slow)
+            } else if alvo.frame.minY < area.minY {
+                app.swipeDown(velocity: .slow)
+            } else {
+                // Horizontal carousels: swipe the smallest scroll view that holds the element.
+                let carrossel = app.scrollViews.containing(NSPredicate(format: "label == %@", label))
+                    .allElementsBoundByIndex.filter { $0.frame.height < area.height / 2 && area.intersects($0.frame) }
+                    .min { $0.frame.height < $1.frame.height }
+                guard let carrossel else {
+                    XCTFail("Carrossel de \(label) não encontrado; frame \(alvo.frame)")
+                    return
+                }
+                if alvo.frame.maxX > area.maxX { carrossel.swipeLeft() } else { carrossel.swipeRight() }
+            }
+        }
+        guard areaVisivel().contains(alvo.frame) else {
+            XCTFail("Não foi possível trazer para a área visível: \(label) \(alvo.frame) em \(areaVisivel())")
+            return
+        }
+        let frame = alvo.frame
+        // The audit service sometimes times out (code -56) without reporting anything; that one
+        // error is retried once. Any issue it reports still fails the test.
+        for tentativa in 1...2 {
+            do {
+                try app.performAccessibilityAudit(for: tipo) { issue in
+                    guard issue.element?.label == label, issue.element?.frame == frame else { return true }
+                    let attachment = XCTAttachment(string: "Aviso mantido com o elemento visível: \(label) \(frame)")
+                    attachment.name = "Accessibility-visible-issue"
+                    attachment.lifetime = .keepAlways
+                    self.add(attachment)
+                    return false
+                }
+                return
+            } catch let erro as NSError where erro.domain == "com.apple.xcode.xctest.accessibilityAudit" && erro.code == -56 && tentativa == 1 {
+                continue
+            }
         }
     }
 
@@ -130,6 +205,23 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         for _ in 0..<40 where !apagar.isHittable { app.swipeDown(velocity: .fast) }
         apagar.tap()
         XCTAssertTrue(app.otherElements["dossier.saved"].waitForNonExistence(timeout: 5))
+    }
+
+    /// Return builds the dossier instead of adding a line break, and the Search keeps its own topic.
+    func testReturnKeyBuildsTheDossierAndKeepsSearchSeparate() {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        topic.tap()
+        topic.typeText("virtude\n")
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        XCTAssertEqual(topic.value as? String, "virtude")
+
+        navigationTab("Início").tap()
+        app.buttons["Buscar na biblioteca"].tap()
+        let query = app.textFields["Buscar"].firstMatch
+        XCTAssertTrue(query.waitForExistence(timeout: 5))
+        XCTAssertNotEqual(query.value as? String, "virtude", "The Search does not inherit the dossier topic")
     }
 
     func testMainTabsOpenExpectedScreens() {
@@ -330,6 +422,11 @@ final class BibliotecaMaconicaUITests: XCTestCase {
     func testFullAccessibilitySearch() throws {
         app.buttons["Buscar na biblioteca"].tap()
         XCTAssertTrue(app.navigationBars["Busca"].waitForExistence(timeout: 5))
+        // On a physical iPhone the system keyboard opens with the field; it is not app content.
+        // With the field empty, the keyboard's search key only closes the keyboard.
+        let teclaBuscar = app.keyboards.buttons.matching(NSPredicate(format: "label IN %@", ["Buscar", "search", "Search"])).firstMatch
+        if teclaBuscar.exists { teclaBuscar.tap() }
+        _ = app.keyboards.firstMatch.waitForNonExistence(timeout: 3)
         try auditAccessibility()
     }
 
@@ -371,7 +468,7 @@ final class BibliotecaMaconicaUITests: XCTestCase {
     func testFullAccessibilitySettings() throws {
         app.buttons["Configurações"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Configurações"].waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try auditAccessibility()
     }
 
     @MainActor

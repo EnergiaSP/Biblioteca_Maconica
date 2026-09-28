@@ -34,6 +34,7 @@ var acervoOfflineView: some View {
 
                         TextField("Título da obra", text: $buscaAcervoOffline, axis: .vertical)
                             .lineLimit(1...3)
+                            .retornoExecuta($buscaAcervoOffline) { fecharTeclado() }
                             .accessibilityLabel("Buscar pelo título da obra")
                             .textInputAutocapitalization(.words)
                             .autocorrectionDisabled()
@@ -230,7 +231,8 @@ var acervoOfflineView: some View {
                             .foregroundStyle(textoApp)
                             .background(temaApp.background.opacity(0.36))
                             .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .onSubmit {
+                            .retornoExecuta($buscaBiblioteca) {
+                                fecharTeclado()
                                 executarBuscaBiblioteca()
                             }
 
@@ -357,7 +359,6 @@ var acervoOfflineView: some View {
             agendarBuscaBiblioteca()
         }
         .onChange(of: filtroMetadadosBiblioteca) { _, _ in
-            invalidarDossieEstudo()
             agendarBuscaBiblioteca()
         }
     }
@@ -380,7 +381,7 @@ var acervoOfflineView: some View {
                     }
 
                     VStack(alignment: .leading, spacing: 14) {
-                        TextField("Assunto", text: $buscaBiblioteca,
+                        TextField("Assunto", text: $temaDossie,
                                   prompt: Text("Assunto").foregroundStyle(textoSecundarioApp), axis: .vertical)
                             .lineLimit(1...3)
                             .accessibilityLabel("Tema, termo ou frase do dossiê")
@@ -391,19 +392,22 @@ var acervoOfflineView: some View {
                             .foregroundStyle(textoApp)
                             .background(temaApp.background.opacity(0.36))
                             .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .onSubmit {
-                                gerarDossieEstudo()
+                            .retornoExecuta($temaDossie) {
+                                fecharTeclado()
+                                if !gerandoDossieEstudo, !temaDossie.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                                    gerarDossieEstudo()
+                                }
                             }
 
-                        Picker("Escopo", selection: $escopoBuscaBiblioteca) {
+                        Picker("Escopo", selection: $escopoDossie) {
                             ForEach(BibliotecaBuscaEscopo.allCases) { escopo in
                                 Text(escopo.titulo).tag(escopo)
                             }
                         }
                         .pickerStyle(.segmented)
 
-                        if escopoBuscaBiblioteca == .obraAtual {
-                            Picker("Obra", selection: $obraBuscaBibliotecaID) {
+                        if escopoDossie == .obraAtual {
+                            Picker("Obra", selection: $obraDossieID) {
                                 Text(store.obraSelecionada.titulo).tag(String?.none)
                                 ForEach(store.obras.filter { $0.ativa && $0.id != store.obraSelecionada.id }) { obra in
                                     Text(obra.titulo).tag(Optional(obra.id))
@@ -413,8 +417,8 @@ var acervoOfflineView: some View {
                             .tint(destaqueApp)
                         }
 
-                        if escopoBuscaBiblioteca == .area {
-                            Picker("Área", selection: $areaBuscaBiblioteca) {
+                        if escopoDossie == .area {
+                            Picker("Área", selection: $areaDossie) {
                                 ForEach(BibliotecaArea.allCases) { area in
                                     Text(area.titulo).tag(area)
                                 }
@@ -423,7 +427,7 @@ var acervoOfflineView: some View {
                             .tint(destaqueApp)
                         }
 
-                        filtrosMetadadosBibliotecaView
+                        filtrosMetadadosView($filtroDossie)
 
                         Button {
                             gerarDossieEstudo()
@@ -433,7 +437,7 @@ var acervoOfflineView: some View {
                         }
                         .buttonStyle(AccessibleActionButtonStyle(tema: temaApp))
                         .tint(destaqueApp)
-                        .disabled(gerandoDossieEstudo || buscaBiblioteca.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                        .disabled(gerandoDossieEstudo || temaDossie.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                     }
                     .padding()
                     .background(temaApp.painel)
@@ -518,24 +522,29 @@ var acervoOfflineView: some View {
         }
         .navigationTitle("Dossiê")
         .onAppear { dossiesSalvos = DossiesSalvosStore().todos() }
-        .onChange(of: buscaBiblioteca) { _, _ in invalidarDossieEstudo() }
-        .onChange(of: escopoBuscaBiblioteca) { _, _ in invalidarDossieEstudo() }
-        .onChange(of: areaBuscaBiblioteca) { _, _ in invalidarDossieEstudo() }
-        .onChange(of: obraBuscaBibliotecaID) { _, _ in invalidarDossieEstudo() }
-        .onChange(of: filtroMetadadosBiblioteca) { _, _ in invalidarDossieEstudo() }
+        .onChange(of: temaDossie) { _, _ in invalidarDossieEstudo() }
+        .onChange(of: escopoDossie) { _, _ in invalidarDossieEstudo() }
+        .onChange(of: areaDossie) { _, _ in invalidarDossieEstudo() }
+        .onChange(of: obraDossieID) { _, _ in invalidarDossieEstudo() }
+        .onChange(of: filtroDossie) { _, _ in invalidarDossieEstudo() }
         .onAppear {
             carregarChaveGeminiSeNecessario()
         }
     }
 
     var filtrosMetadadosBibliotecaView: some View {
+        filtrosMetadadosView($filtroMetadadosBiblioteca)
+    }
+
+    func filtrosMetadadosView(_ filtro: Binding<BibliotecaFiltroMetadados>) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Filtrar por autor")
                 .font(.subheadline)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityIdentifier("search.author.label")
-            TextField("", text: $filtroMetadadosBiblioteca.autor, axis: .vertical)
+            TextField("", text: filtro.autor, axis: .vertical)
                 .lineLimit(1...3)
+                .retornoExecuta(filtro.autor, rotulo: .done) { fecharTeclado() }
                 .accessibilityLabel("Filtrar por autor")
                 .accessibilityIdentifier("search.author")
                 .frame(minHeight: 44)
@@ -547,8 +556,9 @@ var acervoOfflineView: some View {
                 .font(.subheadline)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityIdentifier("search.subject.label")
-            TextField("", text: $filtroMetadadosBiblioteca.assunto, axis: .vertical)
+            TextField("", text: filtro.assunto, axis: .vertical)
                 .lineLimit(1...3)
+                .retornoExecuta(filtro.assunto, rotulo: .done) { fecharTeclado() }
                 .accessibilityLabel("Filtrar por assunto")
                 .accessibilityIdentifier("search.subject")
                 .frame(minHeight: 44)

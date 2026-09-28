@@ -419,8 +419,6 @@ extension HomeView {
                 colecoes
             case .buscaBiblioteca:
                 buscaBibliotecaView
-            case .dossieEstudo:
-                dossieEstudoView
             case .indicesBiblioteca:
                 indicesBibliotecaView
             case .acervoOffline:

@@ -2,4310 +2,2282 @@
   "schemaVersion": 1,
   "descricao": "Palavras partidas na importação/OCR. A forma corrigida sempre existe inteira em outro ponto do acervo.",
   "acervoRAG": {
-    "ocorrencias": 54214,
+    "ocorrencias": 449,
     "porTipo": {
-      "espaco": 783,
-      "hifen": 38743,
-      "hifen-composto": 13442,
-      "ligadura": 1246
+      "espaco": 228,
+      "hifen": 71,
+      "hifen-composto": 61,
+      "ligadura": 89
     },
     "porOrigem": {
-      "zohar": 2842,
-      "as_linguagens_da_experiencia_religiosa": 2654,
-      "antiguos_ritos_misticos": 2588,
-      "a_verdade_sufocada_carlos_alberto_brilhante_ustra": 2525,
-      "a_maconaria_no_centenario_1822_1922": 1771,
-      "desaparicoes_misteriosas_o_cosmo_observa_nos": 1692,
-      "o_homem_e_seus_simbolos_carl_gustav_jung": 1689,
-      "a_conspiracao_de_1817": 1570,
-      "de_profecia_e_inquisicao_padre_antonio_vieira": 1569,
-      "de_profecia_e_inquisicao_padre_antonio_vieira_2": 1569,
-      "historia_da_maconaria_aulas_1_a_12": 1569,
-      "o_trivium_biblioteca_freemasonry": 1493,
-      "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": 1332,
-      "a_tradicao_hermetica_julius_evola": 1324,
-      "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": 1260,
-      "maconaria_e_simbologia": 1231,
-      "o_livro_de_urantia_urantia_foundation": 1122,
-      "historia_dos_hebreus_flavio_josefo": 953,
-      "os_povos_da_biblia_joseph_rhymer": 933,
-      "biblia_de_jerusalem_editora_paulus": 925,
-      "grau_de_aprendiz_e_seus_misterios_jorge_adoum": 918,
-      "o_livro_de_urantia": 859,
-      "a_maconaria_em_portugal": 843,
-      "dicionario_cultural_da_biblia": 808,
-      "proverbios_e_pensamentos": 730,
-      "maconaria_completa": 724,
-      "a_maconaria_e_os_jesuitas": 707,
-      "pitagoras_ciencia_e_magia_na_antiga_grecia": 593,
-      "os_principios_das_leis_maconicas_vol_2_albert_g_mackey": 592,
-      "a_iniciacao_de_jesus": 460,
-      "os_principios_das_leis_maconicas": 422,
-      "os_principios_das_leis_maconicas_vol1_albert_g_mackey": 422,
-      "enciclopedia_de_fatos_da_biblia": 372,
-      "curso_de_filosofia_oculta_eliphas_levi": 307,
-      "as_chaves_de_enoch_2": 273,
-      "os_filhos_do_graal": 273,
-      "o_taro_cabalistico_robert_wang": 270,
-      "o_fim_do_templo_esquin_de_floyrac_ze_rodrix": 265,
-      "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo": 265,
-      "a_magia_da_maconaria_arthur_powell": 261
+      "o_taro_cabalistico_robert_wang": 104,
+      "o_codigo_da_biblia_michael_drosnin": 59,
+      "o_homem_e_seus_simbolos_carl_gustav_jung": 37,
+      "zohar": 29,
+      "maconaria_e_simbologia": 25,
+      "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": 23,
+      "as_linguagens_da_experiencia_religiosa": 19,
+      "antiguos_ritos_misticos": 16,
+      "cristianismo_e_mitraismo": 15,
+      "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto": 12,
+      "o_livro_de_urantia_urantia_foundation": 10,
+      "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": 9,
+      "desaparicoes_misteriosas_o_cosmo_observa_nos": 8,
+      "a_verdade_sufocada_carlos_alberto_brilhante_ustra": 7,
+      "proverbios_e_pensamentos": 7,
+      "a_maconaria_no_centenario_1822_1922": 5,
+      "a_maconaria_em_portugal": 4,
+      "enciclopedia_de_fatos_da_biblia": 4,
+      "a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels": 3,
+      "a_maconaria_e_os_jesuitas": 3,
+      "o_trivium_biblioteca_freemasonry": 3,
+      "sobre_a_luz_da_cabala": 3,
+      "a_tradicao_hermetica_julius_evola": 2,
+      "as_dez_sociedades_mais_influentes_da_historia": 2,
+      "biblia_de_jerusalem_editora_paulus": 2,
+      "dos_faraos_a_fisica_quantica_ricardo_di_bernardi": 2,
+      "grau_de_aprendiz_e_seus_misterios_jorge_adoum": 2,
+      "jesus_o_divino_mestre_albert_paul_dahoui": 2,
+      "o_livro_secreto_da_maconaria_lourivaldo_pere": 2,
+      "os_povos_da_biblia_joseph_rhymer": 2,
+      "tratado_da_reintegracao_dos_seres_martines_pasqually": 2,
+      "100_instrucoes_de_aprendiz": 1,
+      "a_conspiracao_de_1817": 1,
+      "a_doutrina_secreta_sintese": 1,
+      "a_iniciacao_de_jesus": 1,
+      "a_maconaria_na_historia": 1,
+      "a_revelacao_dos_templarios_lynn_picknett": 1,
+      "a_sintese_da_doutrina_secreta_blavatsky": 1,
+      "as_chaves_de_enoch_2": 1,
+      "combate_ao_clericalismo": 1
     },
     "formasMaisFrequentes": [
       {
-        "tipo": "ligadura",
-        "original": "Sefi rot",
-        "corrigido": "Sefirot",
-        "vezes": 317
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi ca",
-        "corrigido": "significa",
-        "vezes": 210
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Grão- Mestre",
-        "corrigido": "Grão-Mestre",
-        "vezes": 198
-      },
-      {
-        "tipo": "hifen",
-        "original": "tam- bém",
-        "corrigido": "também",
-        "vezes": 136
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "tornou- se",
-        "corrigido": "tornou-se",
-        "vezes": 71
-      },
-      {
-        "tipo": "hifen",
-        "original": "qual- quer",
-        "corrigido": "qualquer",
-        "vezes": 67
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Grã- Bretanha",
-        "corrigido": "Grã-Bretanha",
-        "vezes": 66
-      },
-      {
-        "tipo": "hifen",
-        "original": "por- que",
-        "corrigido": "porque",
-        "vezes": 65
-      },
-      {
-        "tipo": "hifen",
-        "original": "ho- mem",
-        "corrigido": "homem",
-        "vezes": 65
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "auto- outorga",
-        "corrigido": "auto-outorga",
-        "vezes": 59
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "tornar- se",
-        "corrigido": "tornar-se",
-        "vezes": 57
-      },
-      {
-        "tipo": "hifen",
-        "original": "Maço- naria",
-        "corrigido": "Maçonaria",
-        "vezes": 56
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "norte- americano",
-        "corrigido": "norte-americano",
-        "vezes": 53
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "le- Château",
-        "corrigido": "le-Château",
-        "vezes": 53
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Franco- Maçonaria",
-        "corrigido": "Franco-Maçonaria",
-        "vezes": 52
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "torna- se",
-        "corrigido": "torna-se",
-        "vezes": 51
-      },
-      {
-        "tipo": "hifen",
-        "original": "mes- mo",
-        "corrigido": "mesmo",
-        "vezes": 51
-      },
-      {
-        "tipo": "hifen",
-        "original": "de- pois",
-        "corrigido": "depois",
-        "vezes": 50
-      },
-      {
-        "tipo": "hifen",
-        "original": "to- dos",
-        "corrigido": "todos",
-        "vezes": 48
-      },
-      {
-        "tipo": "hifen",
-        "original": "ou- tros",
-        "corrigido": "outros",
-        "vezes": 47
-      },
-      {
-        "tipo": "hifen",
-        "original": "Ma- çonaria",
-        "corrigido": "Maçonaria",
-        "vezes": 47
-      },
-      {
-        "tipo": "hifen",
-        "original": "Cria- dor",
-        "corrigido": "Criador",
-        "vezes": 46
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Todo- Poderoso",
-        "corrigido": "Todo-Poderoso",
-        "vezes": 45
-      },
-      {
-        "tipo": "hifen",
-        "original": "so- bre",
-        "corrigido": "sobre",
-        "vezes": 45
-      },
-      {
-        "tipo": "hifen",
-        "original": "Mal- chut",
-        "corrigido": "Malchut",
-        "vezes": 44
-      },
-      {
-        "tipo": "hifen",
-        "original": "mun- do",
-        "corrigido": "mundo",
-        "vezes": 43
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "sede- central",
-        "corrigido": "sede-central",
-        "vezes": 43
-      },
-      {
-        "tipo": "hifen",
-        "original": "mem- bros",
-        "corrigido": "membros",
-        "vezes": 41
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "bem- estar",
-        "corrigido": "bem-estar",
-        "vezes": 40
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cado",
-        "corrigido": "significado",
-        "vezes": 40
-      },
-      {
-        "tipo": "hifen",
-        "original": "as- sim",
-        "corrigido": "assim",
-        "vezes": 39
-      },
-      {
-        "tipo": "hifen",
-        "original": "co- mo",
-        "corrigido": "como",
-        "vezes": 39
-      },
-      {
-        "tipo": "hifen",
-        "original": "quan- do",
-        "corrigido": "quando",
-        "vezes": 38
-      },
-      {
-        "tipo": "hifen",
-        "original": "pri- meiro",
-        "corrigido": "primeiro",
-        "vezes": 38
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cando",
-        "corrigido": "significando",
-        "vezes": 38
-      },
-      {
-        "tipo": "hifen",
-        "original": "sen- tido",
-        "corrigido": "sentido",
-        "vezes": 37
-      },
-      {
-        "tipo": "hifen",
-        "original": "Gran- de",
-        "corrigido": "Grande",
-        "vezes": 37
-      },
-      {
-        "tipo": "hifen",
-        "original": "en- quanto",
-        "corrigido": "enquanto",
-        "vezes": 36
-      },
-      {
-        "tipo": "hifen",
-        "original": "mui- tos",
-        "corrigido": "muitos",
-        "vezes": 36
-      },
-      {
-        "tipo": "hifen",
-        "original": "pa- ra",
-        "corrigido": "para",
-        "vezes": 36
-      },
-      {
-        "tipo": "hifen",
-        "original": "ma- neira",
-        "corrigido": "maneira",
-        "vezes": 36
-      },
-      {
         "tipo": "espaco",
-        "original": "tam bém",
-        "corrigido": "também",
-        "vezes": 36
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Afi nal",
-        "corrigido": "Afinal",
-        "vezes": 36
-      },
-      {
-        "tipo": "hifen",
-        "original": "res- peito",
-        "corrigido": "respeito",
-        "vezes": 35
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "norte- americanos",
-        "corrigido": "norte-americanos",
-        "vezes": 34
-      },
-      {
-        "tipo": "hifen",
-        "original": "sem- pre",
-        "corrigido": "sempre",
-        "vezes": 34
-      },
-      {
-        "tipo": "hifen",
-        "original": "ape- nas",
-        "corrigido": "apenas",
-        "vezes": 34
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "fazê- lo",
-        "corrigido": "fazê-lo",
-        "vezes": 33
-      },
-      {
-        "tipo": "hifen",
-        "original": "Fran- cisco",
-        "corrigido": "Francisco",
-        "vezes": 33
-      },
-      {
-        "tipo": "hifen",
-        "original": "to- das",
-        "corrigido": "todas",
-        "vezes": 33
-      },
-      {
-        "tipo": "hifen",
-        "original": "sím- bolo",
-        "corrigido": "símbolo",
-        "vezes": 33
-      },
-      {
-        "tipo": "hifen",
-        "original": "natu- reza",
-        "corrigido": "natureza",
-        "vezes": 32
-      },
-      {
-        "tipo": "hifen",
-        "original": "cha- mada",
-        "corrigido": "chamada",
-        "vezes": 32
-      },
-      {
-        "tipo": "hifen",
-        "original": "Tem- plo",
-        "corrigido": "Templo",
-        "vezes": 32
-      },
-      {
-        "tipo": "hifen",
-        "original": "pró- prio",
-        "corrigido": "próprio",
-        "vezes": 32
-      },
-      {
-        "tipo": "espaco",
-        "original": "univ erso",
-        "corrigido": "universo",
-        "vezes": 32
-      },
-      {
-        "tipo": "hifen",
-        "original": "ho- mens",
-        "corrigido": "homens",
-        "vezes": 31
-      },
-      {
-        "tipo": "hifen",
-        "original": "Maçona- ria",
-        "corrigido": "Maçonaria",
-        "vezes": 31
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "norte- americana",
-        "corrigido": "norte-americana",
-        "vezes": 30
-      },
-      {
-        "tipo": "hifen",
-        "original": "pala- vras",
-        "corrigido": "palavras",
-        "vezes": 30
-      },
-      {
-        "tipo": "hifen",
-        "original": "se- gundo",
-        "corrigido": "segundo",
-        "vezes": 30
-      },
-      {
-        "tipo": "hifen",
-        "original": "con- tra",
-        "corrigido": "contra",
-        "vezes": 30
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "disse- lhe",
-        "corrigido": "disse-lhe",
-        "vezes": 30
-      },
-      {
-        "tipo": "hifen",
-        "original": "conheci- mento",
+        "original": "conheci mento",
         "corrigido": "conhecimento",
-        "vezes": 29
-      },
-      {
-        "tipo": "hifen",
-        "original": "tra- balho",
-        "corrigido": "trabalho",
-        "vezes": 29
-      },
-      {
-        "tipo": "hifen",
-        "original": "cha- mado",
-        "corrigido": "chamado",
-        "vezes": 29
-      },
-      {
-        "tipo": "hifen",
-        "original": "Mes- tre",
-        "corrigido": "Mestre",
-        "vezes": 29
-      },
-      {
-        "tipo": "hifen",
-        "original": "sím- bolos",
-        "corrigido": "símbolos",
-        "vezes": 28
-      },
-      {
-        "tipo": "hifen",
-        "original": "rela- ção",
-        "corrigido": "relação",
-        "vezes": 28
-      },
-      {
-        "tipo": "hifen",
-        "original": "im- pério",
-        "corrigido": "império",
-        "vezes": 28
-      },
-      {
-        "tipo": "hifen",
-        "original": "Ban- darra",
-        "corrigido": "Bandarra",
-        "vezes": 28
-      },
-      {
-        "tipo": "hifen",
-        "original": "pró- pria",
-        "corrigido": "própria",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "du- rante",
-        "corrigido": "durante",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "gran- des",
-        "corrigido": "grandes",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "ver- dade",
-        "corrigido": "verdade",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "al- guns",
-        "corrigido": "alguns",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "pre- sente",
-        "corrigido": "presente",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "pri- meira",
-        "corrigido": "primeira",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "cons- ciência",
-        "corrigido": "consciência",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "livre- arbítrio",
-        "corrigido": "livre-arbítrio",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "en- tre",
-        "corrigido": "entre",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen",
-        "original": "cria- ção",
-        "corrigido": "criação",
-        "vezes": 27
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "meio- dia",
-        "corrigido": "meio-dia",
-        "vezes": 26
-      },
-      {
-        "tipo": "hifen",
-        "original": "pala- vra",
-        "corrigido": "palavra",
-        "vezes": 26
-      },
-      {
-        "tipo": "hifen",
-        "original": "mes- mos",
-        "corrigido": "mesmos",
-        "vezes": 26
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "deve- se",
-        "corrigido": "deve-se",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "grão- mestre",
-        "corrigido": "grão-mestre",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen",
-        "original": "gran- de",
-        "corrigido": "grande",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen",
-        "original": "ou- tras",
-        "corrigido": "outras",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen",
-        "original": "nin- guém",
-        "corrigido": "ninguém",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen",
-        "original": "tem- po",
-        "corrigido": "tempo",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen",
-        "original": "co- nhecimento",
-        "corrigido": "conhecimento",
-        "vezes": 25
-      },
-      {
-        "tipo": "hifen",
-        "original": "Maso- nería",
-        "corrigido": "Masonería",
-        "vezes": 25
+        "vezes": 10
       },
       {
         "tipo": "ligadura",
-        "original": "infl uência",
-        "corrigido": "influência",
-        "vezes": 25
+        "original": "científi ca",
+        "corrigido": "científica",
+        "vezes": 9
       },
       {
         "tipo": "espaco",
-        "original": "tr ês",
-        "corrigido": "três",
-        "vezes": 25
+        "original": "prin cípios",
+        "corrigido": "princípios",
+        "vezes": 8
+      },
+      {
+        "tipo": "espaco",
+        "original": "Histó ria",
+        "corrigido": "História",
+        "vezes": 7
       },
       {
         "tipo": "ligadura",
-        "original": "defi nido",
-        "corrigido": "definido",
-        "vezes": 25
+        "original": "superna fins",
+        "corrigido": "supernafins",
+        "vezes": 7
       },
       {
-        "tipo": "hifen",
-        "original": "impor- tante",
-        "corrigido": "importante",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Rosa- Cruz",
-        "corrigido": "Rosa-Cruz",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "rosa- cruzes",
-        "corrigido": "rosa-cruzes",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen",
-        "original": "Lo- ja",
-        "corrigido": "Loja",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen",
-        "original": "fo- ram",
+        "tipo": "espaco",
+        "original": "fo ram",
         "corrigido": "foram",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen",
-        "original": "símbo- los",
-        "corrigido": "símbolos",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "espaço- tempo",
-        "corrigido": "espaço-tempo",
-        "vezes": 24
-      },
-      {
-        "tipo": "espaco",
-        "original": "conhecim ento",
-        "corrigido": "conhecimento",
-        "vezes": 24
-      },
-      {
-        "tipo": "hifen",
-        "original": "ne- nhum",
-        "corrigido": "nenhum",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen",
-        "original": "espiri- tual",
-        "corrigido": "espiritual",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen",
-        "original": "ele- mentos",
-        "corrigido": "elementos",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "vice- versa",
-        "corrigido": "vice-versa",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen",
-        "original": "hu- mano",
-        "corrigido": "humano",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen",
-        "original": "ori- gem",
-        "corrigido": "origem",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen",
-        "original": "duran- te",
-        "corrigido": "durante",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "boas- novas",
-        "corrigido": "boas-novas",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "formas- pensamento",
-        "corrigido": "formas-pensamento",
-        "vezes": 23
-      },
-      {
-        "tipo": "hifen",
-        "original": "po- dem",
-        "corrigido": "podem",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen",
-        "original": "se- guinte",
-        "corrigido": "seguinte",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen",
-        "original": "espi- ritual",
-        "corrigido": "espiritual",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen",
-        "original": "socie- dade",
-        "corrigido": "sociedade",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "tornaram- se",
-        "corrigido": "tornaram-se",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen",
-        "original": "dife- rentes",
-        "corrigido": "diferentes",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen",
-        "original": "hu- mana",
-        "corrigido": "humana",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen",
-        "original": "exem- plo",
-        "corrigido": "exemplo",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "aproximou- se",
-        "corrigido": "aproximou-se",
-        "vezes": 22
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cados",
-        "corrigido": "significados",
-        "vezes": 22
-      },
-      {
-        "tipo": "espaco",
-        "original": "pala vras",
-        "corrigido": "palavras",
-        "vezes": 22
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nida",
-        "corrigido": "definida",
-        "vezes": 22
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "se- á",
-        "corrigido": "se-á",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "princi- palmente",
-        "corrigido": "principalmente",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "principal- mente",
-        "corrigido": "principalmente",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "ou- tro",
-        "corrigido": "outro",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "meia- noite",
-        "corrigido": "meia-noite",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "den- tro",
-        "corrigido": "dentro",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "for- ma",
-        "corrigido": "forma",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "inte- rior",
-        "corrigido": "interior",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "reli- gião",
-        "corrigido": "religião",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "sedes- centrais",
-        "corrigido": "sedes-centrais",
-        "vezes": 21
-      },
-      {
-        "tipo": "hifen",
-        "original": "rece- ber",
-        "corrigido": "receber",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "pes- soas",
-        "corrigido": "pessoas",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "Joa- quim",
-        "corrigido": "Joaquim",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "ne- cessário",
-        "corrigido": "necessário",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "verda- deira",
-        "corrigido": "verdadeira",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "pas- sado",
-        "corrigido": "passado",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "mo- mento",
-        "corrigido": "momento",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "Miste- rios",
-        "corrigido": "Misterios",
-        "vezes": 20
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sufi ciente",
-        "corrigido": "suficiente",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Grande- Inquisidor",
-        "corrigido": "Grande-Inquisidor",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "universo- mestre",
-        "corrigido": "universo-mestre",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "super- universos",
-        "corrigido": "superuniversos",
-        "vezes": 20
-      },
-      {
-        "tipo": "hifen",
-        "original": "Ingla- terra",
-        "corrigido": "Inglaterra",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "Jeru- salém",
-        "corrigido": "Jerusalém",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "pe- los",
-        "corrigido": "pelos",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "ver- dadeira",
-        "corrigido": "verdadeira",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "ma- çons",
-        "corrigido": "maçons",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "Or- dem",
-        "corrigido": "Ordem",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "tornando- se",
-        "corrigido": "tornando-se",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "nú- mero",
-        "corrigido": "número",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "dirigiu- se",
-        "corrigido": "dirigiu-se",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "pro- priedades",
-        "corrigido": "propriedades",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen",
-        "original": "ma- çonaria",
-        "corrigido": "maçonaria",
-        "vezes": 19
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cam",
-        "corrigido": "significam",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "auto- outorgas",
-        "corrigido": "auto-outorgas",
-        "vezes": 19
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Trata- se",
-        "corrigido": "Trata-se",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "Portu- gal",
-        "corrigido": "Portugal",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "so- mente",
-        "corrigido": "somente",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "go- verno",
-        "corrigido": "governo",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "exis- tência",
-        "corrigido": "existência",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "de- vem",
-        "corrigido": "devem",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "al- guma",
-        "corrigido": "alguma",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "pode- se",
-        "corrigido": "pode-se",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "conhe- cimento",
-        "corrigido": "conhecimento",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "ima- gem",
-        "corrigido": "imagem",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "ex- periência",
-        "corrigido": "experiência",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "qua- tro",
-        "corrigido": "quatro",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "repre- senta",
-        "corrigido": "representa",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "expe- riência",
-        "corrigido": "experiência",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "sen- do",
-        "corrigido": "sendo",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen",
-        "original": "experiên- cia",
-        "corrigido": "experiência",
-        "vezes": 18
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "Saint- Germain",
-        "corrigido": "Saint-Germain",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "norte- americanas",
-        "corrigido": "norte-americanas",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "tão- somente",
-        "corrigido": "tão-somente",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "pro- cesso",
-        "corrigido": "processo",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "an- tes",
-        "corrigido": "antes",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "por- tanto",
-        "corrigido": "portanto",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "Se- nhor",
-        "corrigido": "Senhor",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "neces- sário",
-        "corrigido": "necessário",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "po- der",
-        "corrigido": "poder",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "segun- do",
-        "corrigido": "segundo",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "ain- da",
-        "corrigido": "ainda",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "im- portante",
-        "corrigido": "importante",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "minis- tros",
-        "corrigido": "ministros",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "elemen- tos",
-        "corrigido": "elementos",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "ex- pressão",
-        "corrigido": "expressão",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "refere- se",
-        "corrigido": "refere-se",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "atra- vés",
-        "corrigido": "através",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "for- mas",
-        "corrigido": "formas",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "cris- tianismo",
-        "corrigido": "cristianismo",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "huma- no",
-        "corrigido": "humano",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "pen- samento",
-        "corrigido": "pensamento",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen",
-        "original": "tex- tos",
-        "corrigido": "textos",
-        "vezes": 17
-      },
-      {
-        "tipo": "espaco",
-        "original": "difí cil",
-        "corrigido": "difícil",
-        "vezes": 17
-      },
-      {
-        "tipo": "hifen-composto",
-        "original": "encontrava- se",
-        "corrigido": "encontrava-se",
-        "vezes": 16
-      }
-    ],
-    "espacoELigadura": [
-      {
-        "tipo": "ligadura",
-        "original": "Sefi rot",
-        "corrigido": "Sefirot",
-        "vezes": 317
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi ca",
-        "corrigido": "significa",
-        "vezes": 210
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cado",
-        "corrigido": "significado",
-        "vezes": 40
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cando",
-        "corrigido": "significando",
-        "vezes": 38
-      },
-      {
-        "tipo": "espaco",
-        "original": "tam bém",
-        "corrigido": "também",
-        "vezes": 36
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Afi nal",
-        "corrigido": "Afinal",
-        "vezes": 36
-      },
-      {
-        "tipo": "espaco",
-        "original": "univ erso",
-        "corrigido": "universo",
-        "vezes": 32
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uência",
-        "corrigido": "influência",
-        "vezes": 25
-      },
-      {
-        "tipo": "espaco",
-        "original": "tr ês",
-        "corrigido": "três",
-        "vezes": 25
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nido",
-        "corrigido": "definido",
-        "vezes": 25
-      },
-      {
-        "tipo": "espaco",
-        "original": "conhecim ento",
-        "corrigido": "conhecimento",
-        "vezes": 24
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cados",
-        "corrigido": "significados",
-        "vezes": 22
-      },
-      {
-        "tipo": "espaco",
-        "original": "pala vras",
-        "corrigido": "palavras",
-        "vezes": 22
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nida",
-        "corrigido": "definida",
-        "vezes": 22
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sufi ciente",
-        "corrigido": "suficiente",
-        "vezes": 20
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cam",
-        "corrigido": "significam",
-        "vezes": 19
-      },
-      {
-        "tipo": "espaco",
-        "original": "difí cil",
-        "corrigido": "difícil",
-        "vezes": 17
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rma",
-        "corrigido": "afirma",
-        "vezes": 16
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Refl etida",
-        "corrigido": "Refletida",
-        "vezes": 16
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rmar",
-        "corrigido": "afirmar",
-        "vezes": 14
-      },
-      {
-        "tipo": "espaco",
-        "original": "hom ens",
-        "corrigido": "homens",
-        "vezes": 12
-      },
-      {
-        "tipo": "ligadura",
-        "original": "ofi cial",
-        "corrigido": "oficial",
-        "vezes": 11
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cami nho",
-        "corrigido": "Caminho",
-        "vezes": 10
-      },
-      {
-        "tipo": "espaco",
-        "original": "exem plo",
-        "corrigido": "exemplo",
-        "vezes": 10
-      },
-      {
-        "tipo": "espaco",
-        "original": "fem inino",
-        "corrigido": "feminino",
-        "vezes": 10
-      },
-      {
-        "tipo": "espaco",
-        "original": "co mo",
-        "corrigido": "como",
-        "vezes": 9
-      },
-      {
-        "tipo": "ligadura",
-        "original": "difi culdade",
-        "corrigido": "dificuldade",
-        "vezes": 9
-      },
-      {
-        "tipo": "ligadura",
-        "original": "verifi car",
-        "corrigido": "verificar",
-        "vezes": 9
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi nito",
-        "corrigido": "infinito",
-        "vezes": 9
-      },
-      {
-        "tipo": "ligadura",
-        "original": "profi ssional",
-        "corrigido": "profissional",
-        "vezes": 9
-      },
-      {
-        "tipo": "espaco",
-        "original": "ho mem",
-        "corrigido": "homem",
-        "vezes": 8
-      },
-      {
-        "tipo": "ligadura",
-        "original": "codifi cado",
-        "corrigido": "codificado",
-        "vezes": 8
-      },
-      {
-        "tipo": "espaco",
-        "original": "pala vra",
-        "corrigido": "palavra",
-        "vezes": 8
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nidas",
-        "corrigido": "definidas",
-        "vezes": 8
-      },
-      {
-        "tipo": "espaco",
-        "original": "elem entos",
-        "corrigido": "elementos",
-        "vezes": 8
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uenciado",
-        "corrigido": "influenciado",
-        "vezes": 7
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nitivo",
-        "corrigido": "definitivo",
-        "vezes": 7
-      },
-      {
-        "tipo": "ligadura",
-        "original": "especifi camente",
-        "corrigido": "especificamente",
-        "vezes": 7
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rmou",
-        "corrigido": "afirmou",
-        "vezes": 7
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Infi nito",
-        "corrigido": "Infinito",
-        "vezes": 7
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi rmou",
-        "corrigido": "confirmou",
-        "vezes": 7
-      },
-      {
-        "tipo": "ligadura",
-        "original": "unifi cação",
-        "corrigido": "unificação",
-        "vezes": 7
-      },
-      {
-        "tipo": "espaco",
-        "original": "infor mações",
-        "corrigido": "informações",
-        "vezes": 6
-      },
-      {
-        "tipo": "ligadura",
-        "original": "difi culdades",
-        "corrigido": "dificuldades",
         "vezes": 6
       },
       {
         "tipo": "espaco",
-        "original": "primei ro",
+        "original": "fam osa",
+        "corrigido": "famosa",
+        "vezes": 6
+      },
+      {
+        "tipo": "espaco",
+        "original": "Elem ento",
+        "corrigido": "Elemento",
+        "vezes": 5
+      },
+      {
+        "tipo": "espaco",
+        "original": "pri meiro",
         "corrigido": "primeiro",
-        "vezes": 6
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cami nhos",
-        "corrigido": "Caminhos",
-        "vezes": 6
-      },
-      {
-        "tipo": "espaco",
-        "original": "cami nho",
-        "corrigido": "caminho",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "seme lhante",
-        "corrigido": "semelhante",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nições",
-        "corrigido": "definições",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cató lica",
-        "corrigido": "Católica",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "pes soa",
-        "corrigido": "pessoa",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl exão",
-        "corrigido": "reflexão",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Filosófi ca",
-        "corrigido": "Filosófica",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rmação",
-        "corrigido": "afirmação",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rmam",
-        "corrigido": "afirmam",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "personifi cação",
-        "corrigido": "personificação",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi rma",
-        "corrigido": "confirma",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "identifi car",
-        "corrigido": "identificar",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "Jerusa lém",
-        "corrigido": "Jerusalém",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "Deute ronômio",
-        "corrigido": "Deuteronômio",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "desenvolvim ento",
-        "corrigido": "desenvolvimento",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "conhecim entos",
-        "corrigido": "conhecimentos",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "fam ília",
-        "corrigido": "família",
-        "vezes": 5
-      },
-      {
-        "tipo": "ligadura",
-        "original": "insignifi cância",
-        "corrigido": "insignificância",
-        "vezes": 5
-      },
-      {
-        "tipo": "espaco",
-        "original": "mes mo",
-        "corrigido": "mesmo",
         "vezes": 4
       },
       {
-        "tipo": "ligadura",
-        "original": "profi ssionais",
-        "corrigido": "profissionais",
+        "tipo": "hifen-composto",
+        "original": "de- O",
+        "corrigido": "de-O",
         "vezes": 4
       },
       {
-        "tipo": "ligadura",
-        "original": "afi rmações",
-        "corrigido": "afirmações",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cativo",
-        "corrigido": "significativo",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "insignifi cantes",
-        "corrigido": "insignificantes",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uenciou",
-        "corrigido": "influenciou",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "profi ssão",
-        "corrigido": "profissão",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sufi cientes",
-        "corrigido": "suficientes",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl ete",
-        "corrigido": "reflete",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl exo",
-        "corrigido": "reflexo",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cativa",
-        "corrigido": "significativa",
+        "tipo": "hifen-composto",
+        "original": "con- pode",
+        "corrigido": "con-pode",
         "vezes": 4
       },
       {
         "tipo": "espaco",
-        "original": "expe riência",
-        "corrigido": "experiência",
+        "original": "elem ento",
+        "corrigido": "elemento",
         "vezes": 4
       },
       {
         "tipo": "espaco",
-        "original": "pes soas",
-        "corrigido": "pessoas",
+        "original": "fem inina",
+        "corrigido": "feminina",
         "vezes": 4
       },
       {
-        "tipo": "espaco",
-        "original": "supe rior",
-        "corrigido": "superior",
+        "tipo": "hifen-composto",
+        "original": "CRIA- DOR",
+        "corrigido": "CRIA-DOR",
         "vezes": 4
       },
       {
-        "tipo": "espaco",
-        "original": "dife rentes",
-        "corrigido": "diferentes",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "Deutero nômio",
-        "corrigido": "Deuteronômio",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "fant asias",
-        "corrigido": "fantasias",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "rel igiosa",
-        "corrigido": "religiosa",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "mot ivo",
-        "corrigido": "motivo",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "simbó lica",
-        "corrigido": "simbólica",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "mul her",
-        "corrigido": "mulher",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "neces sário",
-        "corrigido": "necessário",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "inte rior",
-        "corrigido": "interior",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "Supe rior",
-        "corrigido": "Superior",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "nascim ento",
-        "corrigido": "nascimento",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "inim igos",
-        "corrigido": "inimigos",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "docum entos",
-        "corrigido": "documentos",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "relig ião",
-        "corrigido": "religião",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl etir",
-        "corrigido": "refletir",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nidos",
-        "corrigido": "definidos",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "purifi cado",
-        "corrigido": "purificado",
-        "vezes": 4
-      },
-      {
-        "tipo": "ligadura",
-        "original": "santifi cado",
-        "corrigido": "santificado",
-        "vezes": 4
-      },
-      {
-        "tipo": "espaco",
-        "original": "ing lês",
-        "corrigido": "inglês",
+        "tipo": "hifen",
+        "original": "sacraliza- ção",
+        "corrigido": "sacralização",
         "vezes": 3
       },
       {
-        "tipo": "espaco",
-        "original": "verda deira",
-        "corrigido": "verdadeira",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "Apó stolos",
-        "corrigido": "Apóstolos",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "símb olos",
-        "corrigido": "símbolos",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "cab eça",
-        "corrigido": "cabeça",
+        "tipo": "hifen-composto",
+        "original": "es- O",
+        "corrigido": "es-O",
         "vezes": 3
       },
       {
         "tipo": "ligadura",
-        "original": "desconfi ança",
-        "corrigido": "desconfiança",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi nidade",
-        "corrigido": "infinidade",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nição",
-        "corrigido": "definição",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "científi cos",
-        "corrigido": "científicos",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi cação",
-        "corrigido": "significação",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sufi cientemente",
-        "corrigido": "suficientemente",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi ança",
-        "corrigido": "confiança",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi ssões",
-        "corrigido": "confissões",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nitivamente",
-        "corrigido": "definitivamente",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uencia",
-        "corrigido": "influencia",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nitiva",
-        "corrigido": "definitiva",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "justifi cativa",
-        "corrigido": "justificativa",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl exões",
-        "corrigido": "reflexões",
+        "original": "afi rmamos",
+        "corrigido": "afirmamos",
         "vezes": 3
       },
       {
         "tipo": "espaco",
-        "original": "conhe cido",
-        "corrigido": "conhecido",
+        "original": "resul tados",
+        "corrigido": "resultados",
+        "vezes": 3
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "so- Mas",
+        "corrigido": "so-Mas",
         "vezes": 3
       },
       {
         "tipo": "espaco",
-        "original": "Nin guém",
-        "corrigido": "Ninguém",
+        "original": "verda deiramente",
+        "corrigido": "verdadeiramente",
         "vezes": 3
       },
       {
         "tipo": "espaco",
-        "original": "Ho mem",
-        "corrigido": "Homem",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "Tam bém",
-        "corrigido": "Também",
+        "original": "tra balho",
+        "corrigido": "trabalho",
         "vezes": 3
       },
       {
         "tipo": "ligadura",
-        "original": "Retifi cado",
-        "corrigido": "Retificado",
+        "original": "classifi car",
+        "corrigido": "classificar",
         "vezes": 3
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tornar- O",
+        "corrigido": "tornar-O",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "pri- pode",
+        "corrigido": "pri-pode",
+        "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "Ofi cial",
-        "corrigido": "Oficial",
-        "vezes": 3
+        "original": "desa fios",
+        "corrigido": "desafios",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "espiritua- les",
+        "corrigido": "espirituales",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "peren- ne",
+        "corrigido": "perenne",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "lis- tos",
+        "corrigido": "listos",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "edifi cio",
+        "corrigido": "edificio",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "Rotha- res",
+        "corrigido": "Rothares",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "muchísi- mo",
+        "corrigido": "muchísimo",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "fal- tos",
+        "corrigido": "faltos",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "Dam- car",
+        "corrigido": "Damcar",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tam- O",
+        "corrigido": "tam-O",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "expulsa- mos",
+        "corrigido": "expulsamos",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "sig nifica",
+        "original": "pos sível",
+        "corrigido": "possível",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "compo sição",
+        "corrigido": "composição",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "Bil- dade",
+        "corrigido": "Bildade",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "glorifi car",
+        "corrigido": "glorificar",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "ramifi cação",
+        "corrigido": "ramificação",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signifi cações",
+        "corrigido": "significações",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "codi ficado",
+        "corrigido": "codificado",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "preci samente",
+        "corrigido": "precisamente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "dimen sões",
+        "corrigido": "dimensões",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "infor mação",
+        "corrigido": "informação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "atin gido",
+        "corrigido": "atingido",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Orde nou",
+        "corrigido": "Ordenou",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "primei ros",
+        "corrigido": "primeiros",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Univer sidade",
+        "corrigido": "Universidade",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "veri ficados",
+        "corrigido": "verificados",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "cien tífico",
+        "corrigido": "científico",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "tradu zido",
+        "corrigido": "traduzido",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Embai xada",
+        "corrigido": "Embaixada",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "proxi midade",
+        "corrigido": "proximidade",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "inte resse",
+        "corrigido": "interesse",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "perso nagem",
+        "corrigido": "personagem",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Bibliogra fia",
+        "corrigido": "Bibliografia",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "distri buição",
+        "corrigido": "distribuição",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "possí vel",
+        "corrigido": "possível",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "comen tários",
+        "corrigido": "comentários",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "ve zes",
+        "corrigido": "vezes",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Ent re",
+        "corrigido": "Entre",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "pro- tos",
+        "corrigido": "protos",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "hu manos",
+        "corrigido": "humanos",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "triun fante",
+        "corrigido": "triunfante",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "nas- sa",
+        "corrigido": "nassa",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "sonhar- mos",
+        "corrigido": "sonharmos",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "re- pode",
+        "corrigido": "re-pode",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "primi tiva",
+        "corrigido": "primitiva",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "te- nenhuma",
+        "corrigido": "te-nenhuma",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pen samentos",
+        "corrigido": "pensamentos",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "secona fim",
+        "corrigido": "seconafim",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "traba lho",
+        "corrigido": "trabalho",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "magnífi cas",
+        "corrigido": "magníficas",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "certifi cado",
+        "corrigido": "certificado",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "lin guagem",
+        "corrigido": "linguagem",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "intelec tuais",
+        "corrigido": "intelectuais",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "exer cício",
+        "corrigido": "exercício",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "espe cialmente",
+        "corrigido": "especialmente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "ques tões",
+        "corrigido": "questões",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi fica",
         "corrigido": "significa",
-        "vezes": 3
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "ener gia",
-        "corrigido": "energia",
-        "vezes": 3
+        "original": "proba bilidade",
+        "corrigido": "probabilidade",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Prin cípio",
-        "corrigido": "Princípio",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "cham ado",
+        "original": "cha mado",
         "corrigido": "chamado",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "prim eiros",
-        "corrigido": "primeiros",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "eg ípcio",
-        "corrigido": "egípcio",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "anfi trião",
-        "corrigido": "anfitrião",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "purifi cação",
-        "corrigido": "purificação",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl etida",
-        "corrigido": "refletida",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "específi cas",
-        "corrigido": "específicas",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "insignifi cante",
-        "corrigido": "insignificante",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi nita",
-        "corrigido": "infinita",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "magnifi cência",
-        "corrigido": "magnificência",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "unifi cado",
-        "corrigido": "unificado",
-        "vezes": 3
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sacrifi cou",
-        "corrigido": "sacrificou",
-        "vezes": 3
-      },
-      {
-        "tipo": "espaco",
-        "original": "ShaKE sPEAre",
-        "corrigido": "Shakespeare",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "prime iros",
-        "corrigido": "primeiros",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "sac erdotes",
-        "corrigido": "sacerdotes",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Ing laterra",
-        "corrigido": "Inglaterra",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "merg ulhou",
-        "corrigido": "mergulhou",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "ág uia",
-        "corrigido": "águia",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "pa ra",
-        "corrigido": "para",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "crim inosos",
-        "corrigido": "criminosos",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "antik varisk",
-        "corrigido": "antikvarisk",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Mefistó feles",
-        "corrigido": "Mefistófeles",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Vigi lante",
-        "corrigido": "Vigilante",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Eze quiel",
-        "corrigido": "Ezequiel",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "consci enciais",
-        "corrigido": "conscienciais",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Apó stolo",
-        "corrigido": "Apóstolo",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "leontoce phaline",
-        "corrigido": "leontocephaline",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "téc nicas",
-        "corrigido": "técnicas",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "geo metria",
-        "corrigido": "geometria",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "internaci onais",
-        "corrigido": "internacionais",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi nir",
-        "corrigido": "definir",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "modifi cações",
-        "corrigido": "modificações",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "justifi cável",
-        "corrigido": "justificável",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "identifi cação",
-        "corrigido": "identificação",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uenciaram",
-        "corrigido": "influenciaram",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "verifi cado",
-        "corrigido": "verificado",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sofi sticado",
-        "corrigido": "sofisticado",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "classifi cadas",
-        "corrigido": "classificadas",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "verifi camos",
-        "corrigido": "verificamos",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confl itos",
-        "corrigido": "conflitos",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "profi ssões",
-        "corrigido": "profissões",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi ssão",
-        "corrigido": "confissão",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi rmar",
-        "corrigido": "confirmar",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "modifi cou",
-        "corrigido": "modificou",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "verifi cáveis",
-        "corrigido": "verificáveis",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "identifi cados",
-        "corrigido": "identificados",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "superfi cialmente",
-        "corrigido": "superficialmente",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "signifi car",
-        "corrigido": "significar",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Refl exões",
-        "corrigido": "Reflexões",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl etindo",
-        "corrigido": "refletindo",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rmando",
-        "corrigido": "afirmando",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "inteli gência",
-        "corrigido": "inteligência",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Bí blia",
-        "corrigido": "Bíblia",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "sobrevi ventes",
-        "corrigido": "sobreviventes",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "compu tador",
-        "corrigido": "computador",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "pla neta",
-        "corrigido": "planeta",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "anteci padamente",
-        "corrigido": "antecipadamente",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "so bre",
-        "corrigido": "sobre",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "atra vés",
-        "corrigido": "através",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "feve reiro",
-        "corrigido": "fevereiro",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "gigan tesco",
-        "corrigido": "gigantesco",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "aconte cimentos",
-        "corrigido": "acontecimentos",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Pa ra",
-        "corrigido": "Para",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "classifi cação",
-        "corrigido": "classificação",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Profes sor",
-        "corrigido": "Professor",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "cien tistas",
-        "corrigido": "cientistas",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cris tianismo",
-        "corrigido": "Cristianismo",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Có digos",
-        "corrigido": "Códigos",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "ati tude",
-        "corrigido": "atitude",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "ent anto",
-        "corrigido": "entanto",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "asp ectos",
-        "corrigido": "aspectos",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "conh ecimento",
-        "corrigido": "conhecimento",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "enc ontrar",
-        "corrigido": "encontrar",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "nat ural",
-        "corrigido": "natural",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "ta mbém",
-        "corrigido": "também",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "abs oluta",
-        "corrigido": "absoluta",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "simbó lico",
-        "corrigido": "simbólico",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "sí mbolo",
-        "corrigido": "símbolo",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "aleg órico",
-        "corrigido": "alegórico",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "simb ólica",
-        "corrigido": "simbólica",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "símb olo",
-        "corrigido": "símbolo",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "qua ndo",
-        "corrigido": "quando",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "dep ois",
-        "corrigido": "depois",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "naturalme nte",
-        "corrigido": "naturalmente",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "consc iente",
-        "corrigido": "consciente",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "egí pcia",
-        "corrigido": "egípcia",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "nebul osas",
-        "corrigido": "nebulosas",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "cond uta",
-        "corrigido": "conduta",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "expre ssa",
-        "corrigido": "expressa",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "esque rdo",
-        "corrigido": "esquerdo",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "rea lidade",
-        "corrigido": "realidade",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "mod erno",
-        "corrigido": "moderno",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "fo rma",
-        "corrigido": "forma",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "comb inado",
-        "corrigido": "combinado",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "hermafr odita",
-        "corrigido": "hermafrodita",
+        "original": "ativi dades",
+        "corrigido": "atividades",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "totalme nte",
-        "corrigido": "totalmente",
+        "original": "evan gelistas",
+        "corrigido": "evangelistas",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "qualid ades",
+        "original": "quali dades",
         "corrigido": "qualidades",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "aco ntece",
-        "corrigido": "acontece",
+        "original": "relacio namento",
+        "corrigido": "relacionamento",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "probl ema",
-        "corrigido": "problema",
+        "original": "fre qüentemente",
+        "corrigido": "freqüentemente",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "efe itos",
-        "corrigido": "efeitos",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "ofi cina",
-        "corrigido": "oficina",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi rmada",
-        "corrigido": "confirmada",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Inconfi dência",
-        "corrigido": "Inconfidência",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi rmado",
-        "corrigido": "confirmado",
+        "original": "Mis térios",
+        "corrigido": "Mistérios",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "indi víduo",
-        "corrigido": "indivíduo",
+        "original": "dire tamente",
+        "corrigido": "diretamente",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "cristia nismo",
-        "corrigido": "cristianismo",
+        "original": "comen tário",
+        "corrigido": "comentário",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "abso lutamente",
-        "corrigido": "absolutamente",
+        "original": "estru turas",
+        "corrigido": "estruturas",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "sig nificado",
-        "corrigido": "significado",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "Assem bléia",
-        "corrigido": "Assembléia",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "evo lução",
-        "corrigido": "evolução",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "exis tência",
-        "corrigido": "existência",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "inaba lável",
-        "corrigido": "inabalável",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "ple namente",
-        "corrigido": "plenamente",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "espiri tual",
-        "corrigido": "espiritual",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "responsa bilidade",
-        "corrigido": "responsabilidade",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "atribu ídos",
-        "corrigido": "atribuídos",
-        "vezes": 2
-      },
-      {
-        "tipo": "espaco",
-        "original": "consi derado",
+        "original": "conside rado",
         "corrigido": "considerado",
         "vezes": 2
       },
       {
-        "tipo": "espaco",
-        "original": "equilí brio",
-        "corrigido": "equilíbrio",
+        "tipo": "ligadura",
+        "original": "sacri ficada",
+        "corrigido": "sacrificada",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "cami nhos",
-        "corrigido": "caminhos",
+        "original": "relacio nados",
+        "corrigido": "relacionados",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "desenvol vimento",
-        "corrigido": "desenvolvimento",
+        "original": "neces sariamente",
+        "corrigido": "necessariamente",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "bai xo",
-        "corrigido": "baixo",
+        "original": "neces sária",
+        "corrigido": "necessária",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "invi sível",
-        "corrigido": "invisível",
+        "original": "relaci onavam",
+        "corrigido": "relacionavam",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi ficando",
+        "corrigido": "significando",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "relaci onada",
-        "corrigido": "relacionada",
+        "original": "conside rados",
+        "corrigido": "considerados",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "cristi anismo",
-        "corrigido": "cristianismo",
+        "original": "extre midades",
+        "corrigido": "extremidades",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "conhe cimento",
+        "original": "Reve lação",
+        "corrigido": "Revelação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "fron teira",
+        "corrigido": "fronteira",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "manifes tação",
+        "corrigido": "manifestação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "compo nentes",
+        "corrigido": "componentes",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conhe cida",
+        "corrigido": "conhecida",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "atri butos",
+        "corrigido": "atributos",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "transfor mação",
+        "corrigido": "transformação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "femi ninas",
+        "corrigido": "femininas",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "espan tosa",
+        "corrigido": "espantosa",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Vin gança",
+        "corrigido": "Vingança",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "con fiança",
+        "corrigido": "confiança",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "tradi cional",
+        "corrigido": "tradicional",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "dim ensões",
+        "corrigido": "dimensões",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "con- na",
+        "corrigido": "con-na",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "infl uenciá",
+        "corrigido": "influenciá",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "unifi car",
+        "corrigido": "unificar",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "sahi- ram",
+        "corrigido": "sahiram",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "perg aminhos",
+        "corrigido": "pergaminhos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "embalsamamen- to",
+        "corrigido": "embalsamamento",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "DI- RIGE",
+        "corrigido": "DI-RIGE",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "alme jamos",
+        "corrigido": "almejamos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "accusa- ção",
+        "corrigido": "accusação",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "enthusias- tas",
+        "corrigido": "enthusiastas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "pag- pag",
+        "corrigido": "pag-pag",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "fauto- res",
+        "corrigido": "fautores",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "desconcentra- ção",
+        "corrigido": "desconcentração",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Philoso phie",
+        "corrigido": "Philosophie",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "nola- vel",
+        "corrigido": "nolavel",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Perci- ra",
+        "corrigido": "Percira",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Se- lembro",
+        "corrigido": "Selembro",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "resurgi- mento",
+        "corrigido": "resurgimento",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "effei- to",
+        "corrigido": "effeito",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "dim ensão",
+        "corrigido": "dimensão",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "miste riosas",
+        "corrigido": "misteriosas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "desaba- mento",
+        "corrigido": "desabamento",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "suces sivos",
+        "corrigido": "sucessivos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "improvisa- ção",
+        "corrigido": "improvisação",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "identi ficação",
+        "corrigido": "identificação",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "abastecimen- to",
+        "corrigido": "abastecimento",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Anto nio",
+        "corrigido": "Antonio",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "interro gatórios",
+        "corrigido": "interrogatórios",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "repri mendas",
+        "corrigido": "reprimendas",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "traba lhar",
+        "corrigido": "trabalhar",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "ca- cia",
+        "corrigido": "cacia",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "de- Em",
+        "corrigido": "de-Em",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Se- Em",
+        "corrigido": "Se-Em",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "anti- ca",
+        "corrigido": "antica",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "demitologiza- ção",
+        "corrigido": "demitologização",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "en- ção",
+        "corrigido": "enção",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "ex- nos",
+        "corrigido": "ex-nos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "de- Na",
+        "corrigido": "de-Na",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "desmembra- ram",
+        "corrigido": "desmembraram",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "reali- tes",
+        "corrigido": "réalités",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "con- Na",
+        "corrigido": "con-Na",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "ou- O",
+        "corrigido": "ou-O",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Pa rte",
+        "corrigido": "Parte",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "dança- mos",
+        "corrigido": "dançamos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "popu lação",
+        "corrigido": "população",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "exce pcional",
+        "corrigido": "excepcional",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Altís simo",
+        "corrigido": "Altíssimo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "fo go",
+        "corrigido": "fogo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "perse guição",
+        "corrigido": "perseguição",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mitolo gias",
+        "corrigido": "Mitologias",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "gre gos",
+        "corrigido": "gregos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Provi dência",
+        "corrigido": "Providência",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "orga nismo",
+        "corrigido": "organismo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "psiquiá trica",
+        "corrigido": "psiquiátrica",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "meteo rológico",
+        "corrigido": "meteorológico",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "inves tigar",
+        "corrigido": "investigar",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "inqué- ritos",
+        "corrigido": "inquéritos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Inqué- ritos",
+        "corrigido": "Inquéritos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "electrici- dade",
+        "corrigido": "electricidade",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Coverda- le",
+        "corrigido": "Coverdale",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "siría- ca",
+        "corrigido": "siríaca",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "des- Esta",
+        "corrigido": "des-Esta",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "UNI- VERSO",
+        "corrigido": "UNI-VERSO",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "HO- MEM",
+        "corrigido": "HO-MEM",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "tarda- mos",
+        "corrigido": "tardamos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ilum inada",
+        "corrigido": "iluminada",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "chi- im",
+        "corrigido": "chiim",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Vuh- Dahth",
+        "corrigido": "Vuh-Dahth",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "profi ssionalismo",
+        "corrigido": "profissionalismo",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Científi ca",
+        "corrigido": "Científica",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "intensifi cação",
+        "corrigido": "intensificação",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "certifi cando",
+        "corrigido": "certificando",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "sacrifi cando",
+        "corrigido": "sacrificando",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "modifi carem",
+        "corrigido": "modificarem",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "afi liados",
+        "corrigido": "afiliados",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "infl uenciaria",
+        "corrigido": "influenciaria",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Pontifi cado",
+        "corrigido": "Pontificado",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "personifi cado",
+        "corrigido": "personificado",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "afi rmasse",
+        "corrigido": "afirmasse",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "reafi rmou",
+        "corrigido": "reafirmou",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "multiletra- mentos",
+        "corrigido": "multiletramentos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Her- ra",
+        "corrigido": "Her-ra",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "veri fica",
+        "corrigido": "verifica",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "desco briu",
+        "corrigido": "descobriu",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "cla ramente",
+        "corrigido": "claramente",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "remanes centes",
+        "corrigido": "remanescentes",
+        "vezes": 1
+      }
+    ],
+    "espacoELigadura": [
+      {
+        "tipo": "espaco",
+        "original": "conheci mento",
         "corrigido": "conhecimento",
-        "vezes": 2
+        "vezes": 10
+      },
+      {
+        "tipo": "ligadura",
+        "original": "científi ca",
+        "corrigido": "científica",
+        "vezes": 9
       },
       {
         "tipo": "espaco",
-        "original": "Mu lher",
-        "corrigido": "Mulher",
-        "vezes": 2
+        "original": "prin cípios",
+        "corrigido": "princípios",
+        "vezes": 8
       },
       {
         "tipo": "espaco",
-        "original": "femi nino",
-        "corrigido": "feminino",
-        "vezes": 2
+        "original": "Histó ria",
+        "corrigido": "História",
+        "vezes": 7
+      },
+      {
+        "tipo": "ligadura",
+        "original": "superna fins",
+        "corrigido": "supernafins",
+        "vezes": 7
       },
       {
         "tipo": "espaco",
-        "original": "compa nheiro",
-        "corrigido": "companheiro",
-        "vezes": 2
+        "original": "fo ram",
+        "corrigido": "foram",
+        "vezes": 6
       },
       {
         "tipo": "espaco",
-        "original": "intro dução",
-        "corrigido": "introdução",
-        "vezes": 2
+        "original": "fam osa",
+        "corrigido": "famosa",
+        "vezes": 6
       },
       {
         "tipo": "espaco",
-        "original": "Dictio nary",
-        "corrigido": "Dictionary",
-        "vezes": 2
+        "original": "Elem ento",
+        "corrigido": "Elemento",
+        "vezes": 5
       },
       {
         "tipo": "espaco",
-        "original": "ori gem",
-        "corrigido": "origem",
-        "vezes": 2
+        "original": "pri meiro",
+        "corrigido": "primeiro",
+        "vezes": 4
       },
       {
         "tipo": "espaco",
-        "original": "prim itivos",
-        "corrigido": "primitivos",
-        "vezes": 2
+        "original": "elem ento",
+        "corrigido": "elemento",
+        "vezes": 4
       },
       {
         "tipo": "espaco",
-        "original": "alquim istas",
-        "corrigido": "alquimistas",
-        "vezes": 2
+        "original": "fem inina",
+        "corrigido": "feminina",
+        "vezes": 4
+      },
+      {
+        "tipo": "ligadura",
+        "original": "afi rmamos",
+        "corrigido": "afirmamos",
+        "vezes": 3
       },
       {
         "tipo": "espaco",
-        "original": "Stoy anov",
-        "corrigido": "Stoyanov",
-        "vezes": 2
+        "original": "resul tados",
+        "corrigido": "resultados",
+        "vezes": 3
       },
       {
         "tipo": "espaco",
-        "original": "seg uinte",
-        "corrigido": "seguinte",
-        "vezes": 2
+        "original": "verda deiramente",
+        "corrigido": "verdadeiramente",
+        "vezes": 3
       },
       {
         "tipo": "espaco",
-        "original": "ning uém",
-        "corrigido": "ninguém",
+        "original": "tra balho",
+        "corrigido": "trabalho",
+        "vezes": 3
+      },
+      {
+        "tipo": "ligadura",
+        "original": "classifi car",
+        "corrigido": "classificar",
+        "vezes": 3
+      },
+      {
+        "tipo": "ligadura",
+        "original": "desa fios",
+        "corrigido": "desafios",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "justifi cação",
-        "corrigido": "justificação",
+        "original": "edifi cio",
+        "corrigido": "edificio",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pos sível",
+        "corrigido": "possível",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "compo sição",
+        "corrigido": "composição",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "justifi car",
-        "corrigido": "justificar",
+        "original": "glorifi car",
+        "corrigido": "glorificar",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "infl uenciar",
-        "corrigido": "influenciar",
+        "original": "ramifi cação",
+        "corrigido": "ramificação",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "afi nal",
-        "corrigido": "afinal",
+        "original": "signifi cações",
+        "corrigido": "significações",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "Confi rma",
-        "corrigido": "Confirma",
+        "original": "codi ficado",
+        "corrigido": "codificado",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "preci samente",
+        "corrigido": "precisamente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "dimen sões",
+        "corrigido": "dimensões",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "infor mação",
+        "corrigido": "informação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "atin gido",
+        "corrigido": "atingido",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Orde nou",
+        "corrigido": "Ordenou",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "primei ros",
+        "corrigido": "primeiros",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Univer sidade",
+        "corrigido": "Universidade",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "confi rmaram",
-        "corrigido": "confirmaram",
+        "original": "veri ficados",
+        "corrigido": "verificados",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "cien tífico",
+        "corrigido": "científico",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "tradu zido",
+        "corrigido": "traduzido",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Embai xada",
+        "corrigido": "Embaixada",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "proxi midade",
+        "corrigido": "proximidade",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "inte resse",
+        "corrigido": "interesse",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "perso nagem",
+        "corrigido": "personagem",
         "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "confl ito",
-        "corrigido": "conflito",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "modifi car",
-        "corrigido": "modificar",
-        "vezes": 2
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Signifi cado",
-        "corrigido": "Significado",
+        "original": "Bibliogra fia",
+        "corrigido": "Bibliografia",
         "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "mamí feros",
-        "corrigido": "mamíferos",
-        "vezes": 1
+        "original": "distri buição",
+        "corrigido": "distribuição",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Ortog ráfico",
-        "corrigido": "Ortográfico",
-        "vezes": 1
+        "original": "possí vel",
+        "corrigido": "possível",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Portug uesa",
-        "corrigido": "Portuguesa",
-        "vezes": 1
+        "original": "comen tários",
+        "corrigido": "comentários",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "oxig enado",
-        "corrigido": "oxigenado",
-        "vezes": 1
+        "original": "ve zes",
+        "corrigido": "vezes",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Seg undo",
-        "corrigido": "Segundo",
-        "vezes": 1
+        "original": "Ent re",
+        "corrigido": "Entre",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Ág ua",
-        "corrigido": "Água",
-        "vezes": 1
+        "original": "hu manos",
+        "corrigido": "humanos",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "prosseg uiu",
-        "corrigido": "prosseguiu",
-        "vezes": 1
+        "original": "triun fante",
+        "corrigido": "triunfante",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "ág ua",
-        "corrigido": "água",
-        "vezes": 1
+        "original": "primi tiva",
+        "corrigido": "primitiva",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Relig ião",
-        "corrigido": "Religião",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Eg ito",
-        "corrigido": "Egito",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Seg unda",
-        "corrigido": "Segunda",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "cartag inesa",
-        "corrigido": "cartaginesa",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ig ualmente",
-        "corrigido": "igualmente",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "eleg antemente",
-        "corrigido": "elegantemente",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "cronolog icamente",
-        "corrigido": "cronologicamente",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Philosop hical",
-        "corrigido": "Philosophical",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cavale iros",
-        "corrigido": "Cavaleiros",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Jacare paguá",
-        "corrigido": "Jacarepaguá",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Willer moz",
-        "corrigido": "Willermoz",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "def inido",
-        "corrigido": "definido",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "inf luência",
-        "corrigido": "influência",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "inf erior",
-        "corrigido": "inferior",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "signif icados",
-        "corrigido": "significados",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "maçô nica",
-        "corrigido": "maçônica",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Bonif ácio",
-        "corrigido": "Bonifácio",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "vít imas",
-        "corrigido": "vítimas",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "rit ual",
-        "corrigido": "ritual",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Longj umeau",
-        "corrigido": "Longjumeau",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "fo sse",
-        "corrigido": "fosse",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "po rque",
-        "corrigido": "porque",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "fre nte",
-        "corrigido": "frente",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "rapidame nte",
-        "corrigido": "rapidamente",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "perg untou",
-        "corrigido": "perguntou",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Co mo",
-        "corrigido": "Como",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Thermi dash",
-        "corrigido": "Thermidash",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "nece ssidade",
-        "corrigido": "necessidade",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "recon hecer",
-        "corrigido": "reconhecer",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "sac rifício",
-        "corrigido": "sacrifício",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "enq uanto",
-        "corrigido": "enquanto",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Tmer mish",
-        "corrigido": "Tmermish",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "consc iência",
-        "corrigido": "consciência",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "desencam inhou",
-        "corrigido": "desencaminhou",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "conj unto",
-        "corrigido": "conjunto",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "lucif erismo",
-        "corrigido": "luciferismo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "constit uem",
-        "corrigido": "constituem",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ref ere",
-        "corrigido": "refere",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "substâ ncia",
-        "corrigido": "substância",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "mu lher",
-        "corrigido": "mulher",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "fo rça",
-        "corrigido": "força",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "abran gendo",
-        "corrigido": "abrangendo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Inteli gência",
-        "corrigido": "Inteligência",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "qua tro",
-        "corrigido": "quatro",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Kierk egaard",
-        "corrigido": "Kierkegaard",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "esfr egá",
-        "corrigido": "esfregá",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "deb aixo",
-        "corrigido": "debaixo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "tzim tzum",
-        "corrigido": "tzimtzum",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Satu rno",
-        "corrigido": "Saturno",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Jú piter",
-        "corrigido": "Júpiter",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Thip hereth",
-        "corrigido": "Thiphereth",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "interm ediária",
-        "corrigido": "intermediária",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "estab elecer",
-        "corrigido": "estabelecer",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cauto pates",
-        "corrigido": "Cautopates",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "convo sco",
-        "corrigido": "convosco",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "fó rmula",
-        "corrigido": "fórmula",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "descob ertas",
-        "corrigido": "descobertas",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "lib erdade",
-        "corrigido": "liberdade",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "igre jas",
-        "corrigido": "igrejas",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "pens amentos",
+        "original": "pen samentos",
         "corrigido": "pensamentos",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Gö ttingen",
-        "corrigido": "Göttingen",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Gö ttin",
-        "corrigido": "Göttin",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Símb olos",
-        "corrigido": "Símbolos",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "natu ral",
-        "corrigido": "natural",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "volun tariamente",
-        "corrigido": "voluntariamente",
-        "vezes": 1
+        "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "transfi gurados",
-        "corrigido": "transfigurados",
-        "vezes": 1
+        "original": "secona fim",
+        "corrigido": "seconafim",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "imor talidade",
-        "corrigido": "imortalidade",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ho mens",
-        "corrigido": "homens",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Enciclo pédia",
-        "corrigido": "Enciclopédia",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Nebuchad nezzar",
-        "corrigido": "Nebuchadnezzar",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Ambro siana",
-        "corrigido": "Ambrosiana",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "composi tione",
-        "corrigido": "compositione",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "nausea bundo",
-        "corrigido": "nauseabundo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "cande labro",
-        "corrigido": "candelabro",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "endem oninhado",
-        "corrigido": "endemoninhado",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "endem oniado",
-        "corrigido": "endemoniado",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "internaci onal",
-        "corrigido": "internacional",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "funci onários",
-        "corrigido": "funcionários",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Brasile iro",
-        "corrigido": "Brasileiro",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ofic ial",
-        "corrigido": "oficial",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "reje itará",
-        "corrigido": "rejeitará",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Fraternid ade",
-        "corrigido": "Fraternidade",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "socied ades",
-        "corrigido": "sociedades",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "oper andi",
-        "corrigido": "operandi",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Alfr edo",
-        "corrigido": "Alfredo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "enfr entando",
-        "corrigido": "enfrentando",
-        "vezes": 1
+        "original": "traba lho",
+        "corrigido": "trabalho",
+        "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "supérfl uos",
-        "corrigido": "supérfluos",
-        "vezes": 1
+        "original": "magnífi cas",
+        "corrigido": "magníficas",
+        "vezes": 2
       },
       {
         "tipo": "ligadura",
-        "original": "verifi cou",
-        "corrigido": "verificou",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sacrifi cadas",
-        "corrigido": "sacrificadas",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sacrifi caram",
-        "corrigido": "sacrificaram",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Edifi car",
-        "corrigido": "Edificar",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "benefi ciaram",
-        "corrigido": "beneficiaram",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uentes",
-        "corrigido": "influentes",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "cientifi camente",
-        "corrigido": "cientificamente",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "verifi cável",
-        "corrigido": "verificável",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "qualifi cado",
-        "corrigido": "qualificado",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "identifi cáveis",
-        "corrigido": "identificáveis",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl uenciadas",
-        "corrigido": "influenciadas",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "científi cas",
-        "corrigido": "científicas",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "panfl etos",
-        "corrigido": "panfletos",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "panfl eto",
-        "corrigido": "panfleto",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi ltração",
-        "corrigido": "infiltração",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "falsifi cador",
-        "corrigido": "falsificador",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "falsifi cações",
-        "corrigido": "falsificações",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "glorifi cação",
-        "corrigido": "glorificação",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "reafi rmava",
-        "corrigido": "reafirmava",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "sofi sticados",
-        "corrigido": "sofisticados",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "específi cos",
-        "corrigido": "específicos",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "prefi gurado",
-        "corrigido": "prefigurado",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Crucifi cado",
-        "corrigido": "Crucificado",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi ltrar",
-        "corrigido": "infiltrar",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "difi cil",
-        "corrigido": "dificil",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl igida",
-        "corrigido": "infligida",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "modifi caram",
-        "corrigido": "modificaram",
-        "vezes": 1
+        "original": "certifi cado",
+        "corrigido": "certificado",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "Shak espeare",
-        "corrigido": "Shakespeare",
-        "vezes": 1
+        "original": "lin guagem",
+        "corrigido": "linguagem",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "concen traçao",
-        "corrigido": "concentração",
-        "vezes": 1
+        "original": "intelec tuais",
+        "corrigido": "intelectuais",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "ára bes",
-        "corrigido": "árabes",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Verifi quei",
-        "corrigido": "Verifiquei",
-        "vezes": 1
+        "original": "exer cício",
+        "corrigido": "exercício",
+        "vezes": 2
       },
       {
         "tipo": "espaco",
-        "original": "espé cie",
-        "corrigido": "espécie",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Je rusalém",
-        "corrigido": "Jerusalém",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "catas trófico",
-        "corrigido": "catastrófico",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "estran geiro",
-        "corrigido": "estrangeiro",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "cilín drica",
-        "corrigido": "cilíndrica",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "infâ ncia",
-        "corrigido": "infância",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "flashba cks",
-        "corrigido": "flashbacks",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "pal avras",
-        "corrigido": "palavras",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "cava leiro",
-        "corrigido": "cavaleiro",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "segr edo",
-        "corrigido": "segredo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "imp ério",
-        "corrigido": "império",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "verd ade",
-        "corrigido": "verdade",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "sentim entos",
-        "corrigido": "sentimentos",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ventrom edianos",
-        "corrigido": "ventromedianos",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "norepine frina",
-        "corrigido": "norepinefrina",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Oxy tocin",
-        "corrigido": "Oxytocin",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Qua ndo",
-        "corrigido": "Quando",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "hab itantes",
-        "corrigido": "habitantes",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "cont rário",
-        "corrigido": "contrário",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "vár ios",
-        "corrigido": "vários",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "espec ialmente",
+        "original": "espe cialmente",
         "corrigido": "especialmente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "ques tões",
+        "corrigido": "questões",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi fica",
+        "corrigido": "significa",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "proba bilidade",
+        "corrigido": "probabilidade",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "cha mado",
+        "corrigido": "chamado",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "ativi dades",
+        "corrigido": "atividades",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "evan gelistas",
+        "corrigido": "evangelistas",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "quali dades",
+        "corrigido": "qualidades",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "relacio namento",
+        "corrigido": "relacionamento",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "fre qüentemente",
+        "corrigido": "freqüentemente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mis térios",
+        "corrigido": "Mistérios",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "dire tamente",
+        "corrigido": "diretamente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "comen tário",
+        "corrigido": "comentário",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "estru turas",
+        "corrigido": "estruturas",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conside rado",
+        "corrigido": "considerado",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "sacri ficada",
+        "corrigido": "sacrificada",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "relacio nados",
+        "corrigido": "relacionados",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "neces sariamente",
+        "corrigido": "necessariamente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "neces sária",
+        "corrigido": "necessária",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "relaci onavam",
+        "corrigido": "relacionavam",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signi ficando",
+        "corrigido": "significando",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conside rados",
+        "corrigido": "considerados",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "extre midades",
+        "corrigido": "extremidades",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Reve lação",
+        "corrigido": "Revelação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "fron teira",
+        "corrigido": "fronteira",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "manifes tação",
+        "corrigido": "manifestação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "compo nentes",
+        "corrigido": "componentes",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "conhe cida",
+        "corrigido": "conhecida",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "atri butos",
+        "corrigido": "atributos",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "transfor mação",
+        "corrigido": "transformação",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "femi ninas",
+        "corrigido": "femininas",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "espan tosa",
+        "corrigido": "espantosa",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Vin gança",
+        "corrigido": "Vingança",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "con fiança",
+        "corrigido": "confiança",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "tradi cional",
+        "corrigido": "tradicional",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "dim ensões",
+        "corrigido": "dimensões",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "infl uenciá",
+        "corrigido": "influenciá",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "unifi car",
+        "corrigido": "unificar",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "perg aminhos",
+        "corrigido": "pergaminhos",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "enc ontra",
-        "corrigido": "encontra",
+        "original": "alme jamos",
+        "corrigido": "almejamos",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "ocu lto",
-        "corrigido": "oculto",
+        "original": "Philoso phie",
+        "corrigido": "Philosophie",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "enc ontramos",
-        "corrigido": "encontramos",
+        "original": "dim ensão",
+        "corrigido": "dimensão",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "desenvo lvimento",
-        "corrigido": "desenvolvimento",
+        "original": "miste riosas",
+        "corrigido": "misteriosas",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "líq uidos",
-        "corrigido": "líquidos",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Melquise deques",
-        "corrigido": "Melquisedeques",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Westm inster",
-        "corrigido": "Westminster",
+        "original": "suces sivos",
+        "corrigido": "sucessivos",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "confi rmados",
-        "corrigido": "confirmados",
+        "original": "identi ficação",
+        "corrigido": "identificação",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Anto nio",
+        "corrigido": "Antonio",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "interro gatórios",
+        "corrigido": "interrogatórios",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "repri mendas",
+        "corrigido": "reprimendas",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "traba lhar",
+        "corrigido": "trabalhar",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Pa rte",
+        "corrigido": "Parte",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "popu lação",
+        "corrigido": "população",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "exce pcional",
+        "corrigido": "excepcional",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Altís simo",
+        "corrigido": "Altíssimo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "fo go",
+        "corrigido": "fogo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "perse guição",
+        "corrigido": "perseguição",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mitolo gias",
+        "corrigido": "Mitologias",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "gre gos",
+        "corrigido": "gregos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Provi dência",
+        "corrigido": "Providência",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "orga nismo",
+        "corrigido": "organismo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "psiquiá trica",
+        "corrigido": "psiquiátrica",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "meteo rológico",
+        "corrigido": "meteorológico",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "inves tigar",
+        "corrigido": "investigar",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ilum inada",
+        "corrigido": "iluminada",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "qualifi cação",
-        "corrigido": "qualificação",
+        "original": "profi ssionalismo",
+        "corrigido": "profissionalismo",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "Pontífi ce",
-        "corrigido": "Pontífice",
+        "original": "Científi ca",
+        "corrigido": "Científica",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "ofi cialmente",
-        "corrigido": "oficialmente",
+        "original": "intensifi cação",
+        "corrigido": "intensificação",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "identifi cando",
-        "corrigido": "identificando",
+        "original": "certifi cando",
+        "corrigido": "certificando",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "afi rmava",
-        "corrigido": "afirmava",
+        "original": "sacrifi cando",
+        "corrigido": "sacrificando",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "artífi ces",
-        "corrigido": "artífices",
+        "original": "modifi carem",
+        "corrigido": "modificarem",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "identifi cou",
-        "corrigido": "identificou",
+        "original": "afi liados",
+        "corrigido": "afiliados",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "Garfi eld",
-        "corrigido": "Garfield",
+        "original": "infl uenciaria",
+        "corrigido": "influenciaria",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "Ofi ciais",
-        "corrigido": "Oficiais",
+        "original": "Pontifi cado",
+        "corrigido": "Pontificado",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "benefi cencia",
-        "corrigido": "beneficencia",
+        "original": "personifi cado",
+        "corrigido": "personificado",
         "vezes": 1
       },
       {
         "tipo": "ligadura",
-        "original": "ofi cinas",
-        "corrigido": "oficinas",
+        "original": "afi rmasse",
+        "corrigido": "afirmasse",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "reafi rmou",
+        "corrigido": "reafirmou",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "veri fica",
+        "corrigido": "verifica",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "efe tivamente",
-        "corrigido": "efetivamente",
+        "original": "desco briu",
+        "corrigido": "descobriu",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "extre mamente",
-        "corrigido": "extremamente",
+        "original": "cla ramente",
+        "corrigido": "claramente",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "fenôm eno",
-        "corrigido": "fenômeno",
+        "original": "remanes centes",
+        "corrigido": "remanescentes",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "codi ficados",
+        "corrigido": "codificados",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "perm issão",
-        "corrigido": "permissão",
+        "original": "acon tecimentos",
+        "corrigido": "acontecimentos",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "desm ontado",
-        "corrigido": "desmontado",
+        "original": "compre ensão",
+        "corrigido": "compreensão",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "cerim ônias",
-        "corrigido": "cerimônias",
+        "original": "núme ro",
+        "corrigido": "número",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "perm anecem",
-        "corrigido": "permanecem",
+        "original": "enten dimento",
+        "corrigido": "entendimento",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "Pneum atikos",
-        "corrigido": "Pneumatikos",
+        "original": "Provér bios",
+        "corrigido": "Provérbios",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "flam ejante",
-        "corrigido": "flamejante",
+        "original": "pec uliaridades",
+        "corrigido": "peculiaridades",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "secona fins",
+        "corrigido": "seconafins",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "identifi carem",
+        "corrigido": "identificarem",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "intensifi caram",
+        "corrigido": "intensificaram",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "certifi car",
+        "corrigido": "certificar",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "signifi cativas",
+        "corrigido": "significativas",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "infl uindo",
+        "corrigido": "influindo",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Offi cial",
+        "corrigido": "Official",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "confi scados",
+        "corrigido": "confiscados",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Filosó fico",
+        "corrigido": "Filosófico",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "cham ados",
-        "corrigido": "chamados",
+        "original": "mis térios",
+        "corrigido": "mistérios",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "transm issão",
-        "corrigido": "transmissão",
+        "original": "insa tisfeito",
+        "corrigido": "insatisfeito",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "verm elhos",
-        "corrigido": "vermelhos",
+        "original": "organi zada",
+        "corrigido": "organizada",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "cerim ônia",
-        "corrigido": "cerimônia",
+        "original": "orga nizações",
+        "corrigido": "organizações",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "perm anece",
-        "corrigido": "permanece",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Ilim itado",
-        "corrigido": "Ilimitado",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ilum inados",
-        "corrigido": "iluminados",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "verm elhas",
-        "corrigido": "vermelhas",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "fam ílias",
-        "corrigido": "famílias",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "alim entar",
-        "corrigido": "alimentar",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Testam ento",
-        "corrigido": "Testamento",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "verm elha",
-        "corrigido": "vermelha",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Fam ília",
-        "corrigido": "Família",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Prim itivo",
-        "corrigido": "Primitivo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "exí lio",
-        "corrigido": "exílio",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "mila gres",
-        "corrigido": "milagres",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ferra mentas",
-        "corrigido": "ferramentas",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "suj eitos",
-        "corrigido": "sujeitos",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Univ erso",
-        "corrigido": "Universo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Mila gres",
-        "corrigido": "Milagres",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "mu ito",
-        "corrigido": "muito",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "denom inado",
-        "corrigido": "denominado",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Radcly ffe",
-        "corrigido": "Radclyffe",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "antissem itismo",
-        "corrigido": "antissemitismo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Hospita lários",
-        "corrigido": "Hospitalários",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "ilum inado",
-        "corrigido": "iluminado",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "túm ulo",
-        "corrigido": "túmulo",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "apocaly pse",
-        "corrigido": "apocalypse",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "verossim ilmente",
-        "corrigido": "verossimilmente",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Alg uém",
-        "corrigido": "Alguém",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "imag inar",
-        "corrigido": "imaginar",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "surg imento",
-        "corrigido": "surgimento",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "protag onistas",
-        "corrigido": "protagonistas",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "intelig ência",
+        "original": "inte ligência",
         "corrigido": "inteligência",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "conseg uem",
-        "corrigido": "conseguem",
+        "original": "Hiero fante",
+        "corrigido": "Hierofante",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "Pereg rinos",
-        "corrigido": "Peregrinos",
+        "original": "Flam ígera",
+        "corrigido": "Flamígera",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "Orig inalmente",
-        "corrigido": "Originalmente",
+        "original": "Exem plos",
+        "corrigido": "Exemplos",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "relig iões",
-        "corrigido": "religiões",
+        "original": "Je sus",
+        "corrigido": "Jesus",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "Bhag avad",
-        "corrigido": "Bhagavad",
+        "original": "peram bular",
+        "corrigido": "perambular",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "perg untar",
-        "corrigido": "perguntar",
+        "original": "interrom pendo",
+        "corrigido": "interrompendo",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "confi guram",
+        "corrigido": "configuram",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "defi nimos",
+        "corrigido": "definimos",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "infi nitesimal",
+        "corrigido": "infinitesimal",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "especifi cado",
+        "corrigido": "especificado",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Partzu fim",
+        "corrigido": "Partzufim",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "codifi caram",
+        "corrigido": "codificaram",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "autogratifi cação",
+        "corrigido": "autogratificação",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "benefi cio",
+        "corrigido": "beneficio",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "purifi caram",
+        "corrigido": "purificaram",
         "vezes": 1
       },
       {
         "tipo": "espaco",
-        "original": "Desc oberta",
-        "corrigido": "Descoberta",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Verda deira",
-        "corrigido": "Verdadeira",
-        "vezes": 1
-      },
-      {
-        "tipo": "espaco",
-        "original": "Cron ologia",
-        "corrigido": "Cronologia",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi gurações",
-        "corrigido": "configurações",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl etiu",
-        "corrigido": "refletiu",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "Infi nidade",
-        "corrigido": "Infinidade",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl etiam",
-        "corrigido": "refletiam",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "refl etidas",
-        "corrigido": "refletidas",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi rmação",
-        "corrigido": "confirmação",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "defi niu",
-        "corrigido": "definiu",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "glorifi cado",
-        "corrigido": "glorificado",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi nitas",
-        "corrigido": "infinitas",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "purifi cou",
-        "corrigido": "purificou",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi ada",
-        "corrigido": "confiada",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi nados",
-        "corrigido": "confinados",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afi rmaram",
-        "corrigido": "afirmaram",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi ado",
-        "corrigido": "confiado",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi adas",
-        "corrigido": "confiadas",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "afl uxo",
-        "corrigido": "afluxo",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "vivifi cante",
-        "corrigido": "vivificante",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "purifi car",
-        "corrigido": "purificar",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infi nitamente",
-        "corrigido": "infinitamente",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "purifi cações",
-        "corrigido": "purificações",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "santifi cação",
-        "corrigido": "santificação",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "infl igir",
-        "corrigido": "infligir",
-        "vezes": 1
-      },
-      {
-        "tipo": "ligadura",
-        "original": "confi ando",
-        "corrigido": "confiando",
+        "original": "acon teceu",
+        "corrigido": "aconteceu",
         "vezes": 1
       }
     ]

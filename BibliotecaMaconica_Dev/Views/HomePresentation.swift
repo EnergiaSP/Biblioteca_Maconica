@@ -39,48 +39,20 @@ func avisoGlobal(_ mensagem: String) -> some View {
     }
 
     func iconeAvisoGlobal(_ mensagem: String) -> String {
-        if mensagem.localizedCaseInsensitiveContains("gerando") {
-            return "clock"
-        }
-
-        if mensagem.localizedCaseInsensitiveContains("não")
-            || mensagem.localizedCaseInsensitiveContains("nao")
-            || mensagem.localizedCaseInsensitiveContains("nenhum")
-            || mensagem.localizedCaseInsensitiveContains("selecione") {
-            return "exclamationmark.triangle"
-        }
-
-        return "checkmark.circle.fill"
+        AvisoApp.tipo(mensagem).icone
     }
 
     func corAvisoGlobal(_ mensagem: String) -> Color {
-        if mensagem.localizedCaseInsensitiveContains("gerando") {
-            return temaApp.destaque
+        switch AvisoApp.tipo(mensagem) {
+        case .progresso: temaApp.destaque
+        case .erro: .red
+        case .alerta: .orange
+        case .sucesso: .green
         }
-
-        if mensagem.localizedCaseInsensitiveContains("não")
-            || mensagem.localizedCaseInsensitiveContains("nao")
-            || mensagem.localizedCaseInsensitiveContains("nenhum")
-            || mensagem.localizedCaseInsensitiveContains("selecione") {
-            return .orange
-        }
-
-        return .green
     }
 
     func corFundoAvisoGlobal(_ mensagem: String) -> Color {
-        if mensagem.localizedCaseInsensitiveContains("gerando") {
-            return Color(red: 0.20, green: 0.23, blue: 0.30)
-        }
-
-        if mensagem.localizedCaseInsensitiveContains("não")
-            || mensagem.localizedCaseInsensitiveContains("nao")
-            || mensagem.localizedCaseInsensitiveContains("nenhum")
-            || mensagem.localizedCaseInsensitiveContains("selecione") {
-            return Color(red: 0.72, green: 0.38, blue: 0.05)
-        }
-
-        return Color(red: 0.08, green: 0.42, blue: 0.24)
+        AvisoApp.tipo(mensagem).fundo
     }
 
     func agendarOcultacaoMensagem(_ mensagem: String?) {
@@ -90,12 +62,15 @@ func avisoGlobal(_ mensagem: String) -> some View {
             return
         }
 
-        guard mensagem.localizedCaseInsensitiveContains("gerando") == false else {
+        // Read by VoiceOver even though the banner itself does not take focus.
+        UIAccessibility.post(notification: .announcement, argument: mensagem)
+
+        guard let segundos = AvisoApp.duracao(mensagem) else {
             return
         }
 
         mensagemErroTask = Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 2_800_000_000)
+            try? await Task.sleep(nanoseconds: UInt64(segundos * 1_000_000_000))
             guard Task.isCancelled == false, mensagemErro == mensagem else {
                 return
             }
@@ -307,13 +282,25 @@ func avisoGlobal(_ mensagem: String) -> some View {
             abrirLeitura(item)
         } label: {
             VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top) {
-                    Label(leitura.obra.titulo, systemImage: "calendar.badge.clock")
-                        .font(.subheadline)
-                        .foregroundStyle(textoSecundarioApp)
-                        .fixedSize(horizontal: false, vertical: true)
+                // At accessibility text sizes the date goes under the work's name: side by side, the
+                // name was squeezed into a narrow column, one syllable per line.
+                let cabecalho = dynamicTypeSize.isAccessibilitySize
+                    ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6))
+                    : AnyLayout(HStackLayout(alignment: .top))
+                cabecalho {
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        Image(systemName: "calendar.badge.clock")
+                            .accessibilityHidden(true)
+                        Text(leitura.obra.titulo)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(textoSecundarioApp)
+                    .layoutPriority(1)
 
-                    Spacer()
+                    if dynamicTypeSize.isAccessibilitySize == false {
+                        Spacer()
+                    }
 
                     Label(leitura.item?.data ?? "Pendente", systemImage: "sun.max")
                         .font(.footnote)
@@ -643,4 +630,35 @@ private struct HomeScrollEdgeVisibility: ViewModifier {
             content
         }
     }
+}
+
+extension View {
+    /// Text-heavy screens: on iOS 26 the content scrolling under the glass bars gets an opaque edge,
+    /// so reading text never sits half-visible behind the tab or navigation bar.
+    @ViewBuilder
+    func bordasDeRolagemLegiveis() -> some View {
+        if #available(iOS 26.0, *) {
+            scrollEdgeEffectStyle(.hard, for: .all)
+        } else {
+            self
+        }
+    }
+}
+
+extension View {
+    /// Multi-line fields wrap long text, but Return must act, not insert a line break:
+    /// the break is removed and the field's action runs (search, build the dossier, close).
+    func retornoExecuta(_ texto: Binding<String>, rotulo: SubmitLabel = .search, acao: @escaping () -> Void) -> some View {
+        submitLabel(rotulo)
+            .onChange(of: texto.wrappedValue) { _, novo in
+                guard novo.contains("\n") else { return }
+                texto.wrappedValue = novo.replacingOccurrences(of: "\n", with: "")
+                acao()
+            }
+    }
+}
+
+@MainActor
+func fecharTeclado() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }

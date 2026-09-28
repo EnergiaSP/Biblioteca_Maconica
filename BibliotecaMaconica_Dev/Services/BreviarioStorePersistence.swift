@@ -89,16 +89,19 @@ func restaurarDadosEmbutidos() {
     }
 
     nonisolated static func carregarDadosDaObra(_ obra: BibliotecaObra) throws -> BreviarioData {
-        let urlImportado = try criarURLImportado(obraID: obra.id)
-        let url = FileManager.default.fileExists(atPath: urlImportado.path)
-            ? urlImportado
-            : obra.recursoJSON.flatMap { Bundle.main.url(forResource: $0, withExtension: "json") }
-
-        guard let url else {
+        guard let url = try urlDadosDaObra(obra) else {
             return BreviarioData(itens: [], indiceRemissivo: [])
         }
 
         return try carregarDados(url: url, obraID: obra.id)
+    }
+
+    /// The imported or edited copy when it exists, otherwise the bundled file.
+    nonisolated static func urlDadosDaObra(_ obra: BibliotecaObra) throws -> URL? {
+        let urlImportado = try criarURLImportado(obraID: obra.id)
+        return FileManager.default.fileExists(atPath: urlImportado.path)
+            ? urlImportado
+            : obra.recursoJSON.flatMap { Bundle.main.url(forResource: $0, withExtension: "json") }
     }
 
     nonisolated static func carregarItensDaObra(_ obra: BibliotecaObra) throws -> [BreviarioItem] {

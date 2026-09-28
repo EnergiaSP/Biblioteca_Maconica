@@ -30,7 +30,6 @@ enum TelaMais: String {
     case menu
     case colecoes
     case buscaBiblioteca
-    case dossieEstudo
     case indicesBiblioteca
     case acervoOffline
     case fontesOficiais

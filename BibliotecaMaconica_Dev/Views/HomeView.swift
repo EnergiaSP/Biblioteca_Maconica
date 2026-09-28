@@ -37,6 +37,13 @@ struct HomeView: View {
     @State var filtroMetadadosBiblioteca = BibliotecaFiltroMetadados()
     @State var buscandoBiblioteca = false
     @State var dossieEstudo: BibliotecaDossieEstudo?
+    /// The dossier has its own question, independent of the Search screen (as on Android).
+    @State var temaDossie = ""
+    @State var escopoDossie = BibliotecaBuscaEscopo.appTodo
+    @State var areaDossie = BibliotecaArea.breviarios
+    @State var obraDossieID: String?
+    @State var filtroDossie = BibliotecaFiltroMetadados()
+    @State var dossieTask: Task<Void, Never>?
     /// Saved dossier shown now, the saved list, and the question of the dossier being built or shown.
     @State var dossieSalvoID: String?
     @State var dossiesSalvos: [DossieSalvo] = []
@@ -78,8 +85,16 @@ struct HomeView: View {
     @State var itemSelecionadoID: Int?
     /// Reading whose comment, reflection and highlights are currently loaded in the editors.
     @State var itemEstadoLeitura: BreviarioItem?
-    @State var comentario = ""
-    @State var reflexaoPessoal = ""
+    /// Typed texts live outside the screen's state: see `RascunhoLeitura`.
+    @State var rascunho = RascunhoLeitura()
+    var comentario: String {
+        get { rascunho.comentario }
+        nonmutating set { rascunho.comentario = newValue }
+    }
+    var reflexaoPessoal: String {
+        get { rascunho.reflexao }
+        nonmutating set { rascunho.reflexao = newValue }
+    }
     @State var comentarioExpandido = false
     @State var analiseIA: AnaliseIA?
     @State var mensagemIA: String?
@@ -520,6 +535,7 @@ struct HomeView: View {
                 .accessibilityIdentifier("tab.mais")
                 .tag(4)
             }
+            .bordasDeRolagemLegiveis()
 
             if manterTelaAbertura {
                 telaAberturaCarregamento

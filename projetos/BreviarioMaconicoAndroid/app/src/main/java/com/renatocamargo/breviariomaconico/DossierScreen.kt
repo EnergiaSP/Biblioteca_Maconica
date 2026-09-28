@@ -1,5 +1,8 @@
 package com.renatocamargo.breviariomaconico
 
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.platform.LocalFocusManager
 import com.renatocamargo.breviariomaconico.data.AssistedInterpretation
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.filled.BookmarkAdd
@@ -172,6 +175,7 @@ internal fun DossierScreen(
     val catalogo = remember { BibliotecaCatalogRepository.get(context) }
     val prefs = remember { PreferencesStore(context) }
     val scope = rememberCoroutineScope()
+    val focusManager = LocalFocusManager.current
     var tema by session::termo
     var metadataFilter by session::metadataFilter
     var resultados by session::resultados
@@ -298,6 +302,11 @@ internal fun DossierScreen(
                     value = tema,
                     onValueChange = { invalidar(); tema = it },
                     modifier = Modifier.fillMaxWidth().testTag("dossier.topic"),
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                    keyboardActions = KeyboardActions(onSearch = {
+                        focusManager.clearFocus()
+                        if (tema.isNotBlank() && !montando && !gerandoIa) gerar()
+                    }),
                     label = { Text("Tema, símbolo, frase ou assunto") },
                     leadingIcon = { Icon(Icons.Default.Search, null) },
                     singleLine = true,

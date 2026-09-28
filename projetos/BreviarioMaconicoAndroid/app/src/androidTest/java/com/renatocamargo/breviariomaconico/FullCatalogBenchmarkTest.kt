@@ -42,7 +42,7 @@ class FullCatalogBenchmarkTest {
             .put("ruleIDs", JSONArray(rules.collections.map { it.id } + rules.paths.map { it.id }))
             .put("selectedPages", JSONArray(selected.map { row -> JSONArray(row.map { "${it.ref.obraId}:${it.ref.pagina}" }) }))
             .put("engine", "fts5vocab")
-            .put("environment", "emulator, not physical certification").toString(2))
+            .put("environment", ambiente()).toString(2))
     }
 
     /** Real-corpus dossier for "Escada de Jacó" in the books area, compared with iOS item by item. */
@@ -80,6 +80,10 @@ class FullCatalogBenchmarkTest {
         assertTrue(packages.none { p -> p.obras.any { it.id == "breviario_maconico_rizzardo_da_camino" } })
         assertTrue("Copy the audited corpus to the test emulator before running this suite", packages.all { catalog.localFile(it).isFile })
         val timings = JSONArray()
+        // The app builds the breviaries' index in the background at start; measured on its own.
+        val inicioIndice = SystemClock.elapsedRealtime()
+        BreviarioRepository.get(context).indiceBusca
+        val indiceBreviarios = SystemClock.elapsedRealtime() - inicioIndice
         for (query in listOf("maçonaria", "\"grande loja\"", "ética virtude")) {
             val start = SystemClock.elapsedRealtime()
             val hits = catalog.buscarConteudo(query, limite = 120)
@@ -110,8 +114,16 @@ class FullCatalogBenchmarkTest {
         val last = pages.last()
         assertTrue(catalog.indicePaginas(largest.id, filtro = last.pagina.toString()).any { it.pagina == last.pagina })
         File(context.filesDir, "medicao-acervo-android.json").writeText(JSONObject()
-            .put("environment", "Android emulator API 36; not a physical-device certification")
-            .put("packages", packages.size).put("queries", timings).put("topResults", topResults)
+            .put("environment", ambiente())
+            .put("packages", packages.size).put("breviaryIndexMilliseconds", indiceBreviarios).put("queries", timings).put("topResults", topResults)
             .put("largestWorkPages", pages.size).put("pageIndexMilliseconds", SystemClock.elapsedRealtime() - start).toString(2))
     }
+
+/** Where the measurement ran: a physical device is named, an emulator is marked as such. */
+private fun ambiente(): String {
+    val emulador = android.os.Build.FINGERPRINT.contains("generic") || android.os.Build.MODEL.contains("sdk_gphone")
+    val aparelho = "${android.os.Build.MANUFACTURER} ${android.os.Build.MODEL}, Android ${android.os.Build.VERSION.RELEASE}"
+    return if (emulador) "emulator ($aparelho)" else "physical device ($aparelho)"
+}
+
 }

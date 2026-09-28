@@ -40,6 +40,9 @@
 		D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000102 /* BibliotecaEstudoIndice.swift */; };
 		D92100000000000000000201 /* DossieEstudoAnalise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000202 /* DossieEstudoAnalise.swift */; };
 		D92100000000000000000901 /* DossieSalvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000902 /* DossieSalvo.swift */; };
+		D9210000000000000000090B /* RascunhoLeitura.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9210000000000000000090C /* RascunhoLeitura.swift */; };
+		D92100000000000000000909 /* BuscaLocalIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9210000000000000000090A /* BuscaLocalIndice.swift */; };
+		D92100000000000000000907 /* AvisoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000908 /* AvisoApp.swift */; };
 		D92100000000000000000905 /* InterpretacaoAssistida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000906 /* InterpretacaoAssistida.swift */; };
 		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
 		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
@@ -205,6 +208,9 @@
 		D92100000000000000000102 /* BibliotecaEstudoIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaEstudoIndice.swift; sourceTree = "<group>"; };
 		D92100000000000000000202 /* DossieEstudoAnalise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieEstudoAnalise.swift; sourceTree = "<group>"; };
 		D92100000000000000000902 /* DossieSalvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieSalvo.swift; sourceTree = "<group>"; };
+		D9210000000000000000090C /* RascunhoLeitura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RascunhoLeitura.swift; sourceTree = "<group>"; };
+		D9210000000000000000090A /* BuscaLocalIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscaLocalIndice.swift; sourceTree = "<group>"; };
+		D92100000000000000000908 /* AvisoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisoApp.swift; sourceTree = "<group>"; };
 		D92100000000000000000906 /* InterpretacaoAssistida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretacaoAssistida.swift; sourceTree = "<group>"; };
 		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
 		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -389,6 +395,7 @@
 				010000000000000000000003 /* BreviarioItem.swift */,
 				010000000000000000000016 /* BibliotecaObra.swift */,
 				010000000000000000000017 /* BibliotecaRAGModels.swift */,
+				D9210000000000000000090C /* RascunhoLeitura.swift */,
 				01000000000000000000000B /* IndiceRemissivoEntry.swift */,
 				66C613D5FCD3144ECB98613F /* AppNavigationController.swift */,
 				B82E96EDFD16854BBB700FB1 /* ReadingMetricsController.swift */,
@@ -412,6 +419,8 @@
 				D92100000000000000000102 /* BibliotecaEstudoIndice.swift */,
 				D92100000000000000000202 /* DossieEstudoAnalise.swift */,
 				D92100000000000000000902 /* DossieSalvo.swift */,
+				D9210000000000000000090A /* BuscaLocalIndice.swift */,
+				D92100000000000000000908 /* AvisoApp.swift */,
 				D92100000000000000000906 /* InterpretacaoAssistida.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
@@ -788,6 +797,9 @@
 				D92100000000000000000101 /* BibliotecaEstudoIndice.swift in Sources */,
 				D92100000000000000000201 /* DossieEstudoAnalise.swift in Sources */,
 				D92100000000000000000901 /* DossieSalvo.swift in Sources */,
+				D9210000000000000000090B /* RascunhoLeitura.swift in Sources */,
+				D92100000000000000000909 /* BuscaLocalIndice.swift in Sources */,
+				D92100000000000000000907 /* AvisoApp.swift in Sources */,
 				D92100000000000000000905 /* InterpretacaoAssistida.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
