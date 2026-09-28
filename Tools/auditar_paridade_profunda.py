@@ -154,6 +154,17 @@ if not wear_match or wear_match.group(1) != android_match.group(1):
 if not android_code or not wear_code or android_code.group(1) != wear_code.group(1):
     fail("Wear OS e aplicativo Android possuem códigos de build divergentes")
 
+# Both integrated breviaries must reach the watches: Apple Watch bundles both files and Wear OS
+# opens the Rizzardo file for its readings (a Rizzardo reading used to show as unavailable).
+watch_phase = re.search(r"030000000000000000000023 /\* Resources \*/ = \{.*?files = \((.*?)\);", pbx, re.S)
+if not watch_phase or "breviario_rizzardo.json" not in watch_phase.group(1) or "breviario.json" not in watch_phase.group(1):
+    fail("Apple Watch sem os dois breviários integrados nos recursos")
+require_markers(
+    ANDROID / "wear/src/main/java/com/renatocamargo/breviariomaconico/wear/WearMainActivity.kt",
+    ["breviario_rizzardo.json", "breviario_rizzardo_da_camino"],
+    "Breviários no Wear OS",
+)
+
 require_markers(
     IOS / "Services/UserDataPersistenceService.swift",
     ["comentario_", "reflexao_", "leituras_concluidas", "destaques_", "edicoes_textos_diarios", "backup_solicitacoes_obras", "backup_fontes_oficiais"],

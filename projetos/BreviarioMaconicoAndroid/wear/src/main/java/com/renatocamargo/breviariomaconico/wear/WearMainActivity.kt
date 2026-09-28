@@ -99,14 +99,17 @@ class WearMainActivity : ComponentActivity() {
 internal fun loadWearReading(context: android.content.Context, date: String? = null, workId: String? = null): WearReading? {
         val portuguese = Locale.Builder().setLanguage("pt").setRegion("BR").build()
         val today = date ?: SimpleDateFormat("dd/MM", portuguese).format(Date())
-        val json = context.assets.open("breviario.json").bufferedReader().use { it.readText() }
+        // Both integrated breviaries ship with the watch, as on the phone and on Apple Watch.
+        val asset = if (workId == "breviario_rizzardo_da_camino") "breviario_rizzardo.json" else "breviario.json"
+        val json = context.assets.open(asset).bufferedReader().use { it.readText() }
+        val defaultWork = if (asset == "breviario.json") "breviario_seculo_xxi" else "breviario_rizzardo_da_camino"
         val items = JSONObject(json).getJSONArray("itens")
         val selected = (0 until items.length())
             .map { items.getJSONObject(it) }
-            .firstOrNull { it.optString("data") == today && (workId == null || it.optString("obraID", it.optString("obraId", "breviario_seculo_xxi")) == workId) }
+            .firstOrNull { it.optString("data") == today && (workId == null || it.optString("obraID", it.optString("obraId", defaultWork)) == workId) }
             ?: return null
         return WearReading(
-            obraId = selected.optString("obraID", selected.optString("obraId", "breviario_seculo_xxi")),
+            obraId = selected.optString("obraID", selected.optString("obraId", defaultWork)),
             data = selected.optString("data"),
             titulo = selected.optString("titulo", "Leitura diária"),
             autor = selected.optString("autor"),

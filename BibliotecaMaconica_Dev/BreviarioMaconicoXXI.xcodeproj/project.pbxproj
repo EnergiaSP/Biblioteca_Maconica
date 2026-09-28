@@ -21,6 +21,7 @@
 		010000000000000000000108 /* breviario.json in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000008 /* breviario.json */; };
 		A10000000000000000000101 /* breviario_rizzardo.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000100 /* breviario_rizzardo.json */; };
 		A10000000000000000000102 /* breviario_rizzardo.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000100 /* breviario_rizzardo.json */; };
+		A10000000000000000000103 /* breviario_rizzardo.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000100 /* breviario_rizzardo.json */; };
 		010000000000000000000109 /* BreviarioImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000A /* BreviarioImportService.swift */; };
 		01000000000000000000010A /* IndiceRemissivoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000B /* IndiceRemissivoEntry.swift */; };
 		01000000000000000000010B /* BreviarioSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000C /* BreviarioSnapshot.swift */; };
@@ -731,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				030000000000000000000103 /* breviario.json in Resources */,
+				A10000000000000000000103 /* breviario_rizzardo.json in Resources */,
 				030000000000000000000105 /* PrivacyInfo.xcprivacy in Resources */,
 				030000000000000000000107 /* Assets.xcassets in Resources */,
 				030000000000000000000108 /* WatchIcon-48.png in Resources */,
