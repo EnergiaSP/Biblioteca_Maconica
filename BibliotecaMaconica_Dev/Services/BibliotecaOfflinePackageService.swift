@@ -6,6 +6,8 @@ struct BibliotecaPacoteOfflineEstado: Identifiable, Hashable {
     let instalado: Bool
     let tamanhoLocalBytes: Int
     let origemDisponivel: Bool
+    /// Installed from an earlier catalog version: the recorded sha256 differs from the catalog's.
+    var desatualizado = false
 
     var id: String { pacote.id }
 
@@ -73,24 +75,33 @@ final class BibliotecaOfflinePackageService {
         let destino = Self.urlLocal(arquivo: pacote.arquivo, fileManager: fileManager)
         try fileManager.createDirectory(at: destino.deletingLastPathComponent(), withIntermediateDirectories: true)
 
-        if fileManager.fileExists(atPath: destino.path) {
-            try fileManager.removeItem(at: destino)
-        }
+        // Download beside the package and replace only after validation, as on Android:
+        // a failed update keeps the version already installed.
+        let novo = destino.appendingPathExtension("download")
+        try? fileManager.removeItem(at: novo)
 
         if let origem = catalogo.urlOrigemPacote(pacote) {
-            try fileManager.copyItem(at: origem, to: destino)
+            try fileManager.copyItem(at: origem, to: novo)
         } else if let remota = catalogo.urlRemotaPacote(pacote) {
             let (temporario, resposta) = try await URLSession.shared.download(from: remota)
             guard let http = resposta as? HTTPURLResponse,
                   (200...299).contains(http.statusCode) else {
                 throw Erro.downloadInvalido(pacote.titulo)
             }
-            try fileManager.moveItem(at: temporario, to: destino)
+            try fileManager.moveItem(at: temporario, to: novo)
         } else {
             throw Erro.origemIndisponivel(pacote.titulo)
         }
 
-        try validarPacote(pacote, em: destino)
+        try validarPacote(pacote, em: novo)
+        if fileManager.fileExists(atPath: destino.path) {
+            _ = try fileManager.replaceItemAt(destino, withItemAt: novo)
+        } else {
+            try fileManager.moveItem(at: novo, to: destino)
+        }
+        if let sha256 = pacote.sha256, sha256.isEmpty == false {
+            try Data(sha256.utf8).write(to: Self.urlVersao(arquivo: pacote.arquivo, fileManager: fileManager), options: .atomic)
+        }
     }
 
     func removerPacote(_ pacote: BibliotecaRAGPacote) throws {
@@ -100,6 +111,7 @@ final class BibliotecaOfflinePackageService {
         }
 
         try fileManager.removeItem(at: destino)
+        try? fileManager.removeItem(at: Self.urlVersao(arquivo: pacote.arquivo, fileManager: fileManager))
     }
 
     func instalarTodos(
@@ -110,7 +122,7 @@ final class BibliotecaOfflinePackageService {
         let total = pacotes.count
 
         for (indice, pacote) in pacotes.enumerated() {
-            if Self.urlLocalExiste(arquivo: pacote.arquivo, fileManager: fileManager) == false {
+            if Self.urlLocalExiste(arquivo: pacote.arquivo, fileManager: fileManager) == false || desatualizado(pacote) {
                 try await instalarPacote(pacote)
             }
             progresso(indice + 1, total, pacote.obras.first?.titulo ?? pacote.titulo)
@@ -126,8 +138,19 @@ final class BibliotecaOfflinePackageService {
             pacote: pacote,
             instalado: instalado,
             tamanhoLocalBytes: tamanhoLocal,
-            origemDisponivel: catalogo.urlOrigemPacote(pacote) != nil || catalogo.urlRemotaPacote(pacote) != nil
+            origemDisponivel: catalogo.urlOrigemPacote(pacote) != nil || catalogo.urlRemotaPacote(pacote) != nil,
+            desatualizado: instalado && desatualizado(pacote)
         )
+    }
+
+    /// Same rule as Android: `<arquivo>.sha256` records the version installed; missing counts as outdated.
+    func desatualizado(_ pacote: BibliotecaRAGPacote) -> Bool {
+        guard let esperado = pacote.sha256, esperado.isEmpty == false else {
+            return false
+        }
+        let gravado = (try? String(contentsOf: Self.urlVersao(arquivo: pacote.arquivo, fileManager: fileManager), encoding: .utf8))?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        return gravado?.lowercased() != esperado.lowercased()
     }
 
     private func validarPacote(_ pacote: BibliotecaRAGPacote, em url: URL) throws {
@@ -169,6 +192,10 @@ final class BibliotecaOfflinePackageService {
     private static func urlLocal(arquivo: String, fileManager: FileManager) -> URL {
         BibliotecaRAGCatalogService.raizPacotesLocal(fileManager: fileManager)
             .appendingPathComponent(arquivo)
+    }
+
+    private static func urlVersao(arquivo: String, fileManager: FileManager) -> URL {
+        urlLocal(arquivo: arquivo + ".sha256", fileManager: fileManager)
     }
 
     private static func urlLocalExiste(arquivo: String, fileManager: FileManager) -> Bool {

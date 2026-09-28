@@ -16,6 +16,8 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextReplacement
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performScrollToKey
+import androidx.compose.ui.test.performScrollToNode
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.printToString
 import androidx.compose.ui.test.performTouchInput
@@ -85,6 +87,9 @@ class NavigationFlowTest {
         compose.waitUntil(20_000) {
             compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
         }
+        // The AI-free analysis is shown with the dossier, before the roadmap.
+        compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.analysis")
+        compose.onNodeWithText("Resumo com fontes").assertIsDisplayed()
         compose.onNodeWithTag("dossier.list").performScrollToKey("dossier.plan")
         compose.onNodeWithTag("dossier.results").assertIsDisplayed()
     }
@@ -164,7 +169,7 @@ class NavigationFlowTest {
 
     @Test
     fun structuredSearchOpensFromHome() {
-        compose.onNodeWithText("Buscar na biblioteca").performClick()
+        openStructuredSearchFromHome()
         compose.onAllNodesWithText("Busca estruturada")[0].assertIsDisplayed()
     }
 
@@ -221,6 +226,13 @@ class NavigationFlowTest {
                     val paint = android.graphics.Paint().apply { textSize = 22f; color = android.graphics.Color.BLACK }
                     page.canvas.drawText(if (number == 1) "Apresentacao documental neutra" else "Estudo documental sobre virtude", 36f, 60f, paint)
                     page.canvas.drawText("Conteudo integral da pagina $number.", 36f, 105f, paint)
+                    if (number == 2) {
+                        // Collections rank by distinct keywords, so this page must really be about the theme.
+                        listOf("honra prudencia temperanca coragem", "fortaleza fraternidade humildade",
+                            "tolerancia caridade lealdade").forEachIndexed { line, text ->
+                            page.canvas.drawText(text, 36f, 150f + line * 45f, paint)
+                        }
+                    }
                     pdf.finishPage(page)
                 }
                 source.outputStream().use { pdf.writeTo(it) }
@@ -230,10 +242,6 @@ class NavigationFlowTest {
                     com.renatocamargo.breviariomaconico.data.BibliotecaArea.Biblioteca) { }
             }
             imported = work
-            // The global collection is bounded and ordered by work ID, not insertion date.
-            val catalog = com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository.get(context)
-            org.junit.Assert.assertTrue("Fixture must precede the installed corpus to test the preview link",
-                catalog.obrasInstaladas().filter { it.id != work.id }.all { it.id > work.id })
             val batchItems = mutableListOf<com.renatocamargo.breviariomaconico.data.BreviarioItem>()
             com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository.get(context).percorrerItensEstudo(work.id) { batchItems.addAll(it); true }
             org.junit.Assert.assertEquals(listOf(1, 2), batchItems.map { it.pagina })
@@ -282,7 +290,7 @@ class NavigationFlowTest {
                 scenario.close()
                 preferences.edit().putString("theme", theme.name).commit()
                 launch()
-                compose.onNodeWithText("Buscar na biblioteca").performClick()
+                openStructuredSearchFromHome()
                 compose.onAllNodesWithText("Busca estruturada")[0].assertIsDisplayed()
                 compose.onNodeWithText("Todo acervo").assertIsSelected()
                 compose.onNodeWithText("Breviários").performClick().assertIsSelected()
@@ -311,8 +319,8 @@ class NavigationFlowTest {
     @Test
     fun dailyReadingOpensAndReturnsHome() {
         compose.onAllNodesWithText("Leitura")[0].performClick()
-        compose.onAllNodesWithContentDescription("Voltar ao início")[0].assertIsDisplayed()
-        compose.onAllNodesWithContentDescription("Voltar ao início")[0].performClick()
+        compose.onAllNodesWithContentDescription("Voltar")[0].assertIsDisplayed()
+        compose.onAllNodesWithContentDescription("Voltar")[0].performClick()
         compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
     }
 
@@ -338,7 +346,7 @@ class NavigationFlowTest {
                 prefs.recentDailyItems(repo.itens).filter { it.obraId == today.obraId }
                     .map { it.chavePersistencia } == expected
             }
-            compose.onAllNodesWithContentDescription("Voltar ao início")[0].performClick()
+            compose.onAllNodesWithContentDescription("Voltar")[0].performClick()
             compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
         } finally {
             raw.edit().apply {
@@ -354,7 +362,7 @@ class NavigationFlowTest {
         compose.onAllNodesWithContentDescription("Configurações").fetchSemanticsNodes()
         compose.onAllNodesWithContentDescription("Editar leitura")[0].assertIsDisplayed().performClick()
         compose.onAllNodesWithText("Cancelar")[0].performClick()
-        compose.onAllNodesWithContentDescription("Voltar ao início")[0].performClick()
+        compose.onAllNodesWithContentDescription("Voltar")[0].performClick()
         compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
     }
 
@@ -388,5 +396,11 @@ class NavigationFlowTest {
             compose.onAllNodesWithContentDescription("Home")[0].performClick()
             compose.onAllNodesWithText("Biblioteca Maçônica")[0].assertIsDisplayed()
         }
+    }
+
+    /** The home list only composes visible cards; with two breviaries the search card starts below the fold. */
+    private fun openStructuredSearchFromHome() {
+        compose.onNodeWithTag("home.list").performScrollToNode(hasText("Buscar na biblioteca"))
+        compose.onNodeWithText("Buscar na biblioteca").performClick()
     }
 }

@@ -82,6 +82,13 @@ func prepararCachesIniciais() {
     }
 
     func aoMudarAba(_ novaAba: Int) {
+        salvarRascunhosLeitura()
+
+        if novaAba != AppNavigationController.Tab.acervo.rawValue {
+            // Leaving the reading by hand means Back should stay inside the Acervo tab later.
+            navigation.forgetReadingOrigin()
+        }
+
         if novaAba == 0 {
             fecharCaixasHome()
         }
@@ -93,7 +100,7 @@ func prepararCachesIniciais() {
         }
 
         if novaAba == 1 || (novaAba == 4 && telaMais == .colecoes) {
-            atualizarConteudoPremiumCache()
+            atualizarConteudoPremiumCache(apenasSeMudou: true)
         }
     }
 
@@ -106,15 +113,16 @@ func prepararCachesIniciais() {
             if itemSelecionadoID != id {
                 itemSelecionadoID = id
             }
-        } else if itemSelecionadoID != nil {
-            limparEstadoLeituraSelecionada()
+        } else {
+            if itemSelecionadoID != nil {
+                limparEstadoLeituraSelecionada()
+            }
+            // Covers the edge-swipe pop, which empties the path without going through the Back button.
+            navigation.closeReading()
         }
     }
 
     func abrirLeitura(_ item: BreviarioItem) {
-        if abaSelecionada != 3 {
-            aberturaProgramaticaLeitura = true
-        }
         itemSelecionadoID = item.id
         navigation.showReading(itemID: item.id)
         processandoVoltarLeitura = false
@@ -143,19 +151,58 @@ func prepararCachesIniciais() {
         }
 
         processandoVoltarLeitura = true
-        if aberturaProgramaticaLeitura {
-            aberturaProgramaticaLeitura = false
-            navigation.showHome()
-            limparEstadoLeituraSelecionada()
-        } else {
-            if caminhoLeitura.isEmpty == false {
-                caminhoLeitura.removeAll()
-            }
-            limparEstadoLeituraSelecionada()
-        }
+        limparEstadoLeituraSelecionada()
+        // Returns to the Dossiê, Coleções, Busca or Início screen that opened the reading, if any.
+        navigation.closeReading()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
             processandoVoltarLeitura = false
+        }
+    }
+
+    /// Binds the reading editors to `item`, saving unsaved text of the previous reading first.
+    /// Keeping the editors tied to one reading prevents text from being saved onto another page.
+    func sincronizarEstadoLeitura(com item: BreviarioItem?, registrar: Bool = true) {
+        guard item?.chavePersistencia != itemEstadoLeitura?.chavePersistencia else {
+            return
+        }
+
+        salvarRascunhosLeitura()
+        itemEstadoLeitura = item
+        novoDestaque = ""
+        trechoSelecionadoTexto = ""
+
+        guard let item else {
+            comentario = ""
+            reflexaoPessoal = ""
+            analiseIA = nil
+            destaques = []
+            return
+        }
+
+        comentario = item.comentarioSalvo
+        reflexaoPessoal = ReflexoesService.carregar(data: item.data, obraID: item.obraID)
+        analiseIA = AnaliseIAService.carregar(data: item.data, obraID: item.obraID)
+        destaques = DestaquesService.carregar(data: item.data, obraID: item.obraID)
+        if registrar {
+            registrarLeituraAberta(item)
+        }
+    }
+
+    /// Persists the comment and reflection typed for the loaded reading when they differ from what is saved.
+    func salvarRascunhosLeitura() {
+        guard let item = itemEstadoLeitura else {
+            return
+        }
+
+        if comentario != CommentsService.carregar(data: item.data, obraID: item.obraID) {
+            CommentsService.salvar(comentario: comentario, para: item.data, obraID: item.obraID)
+            atualizarComentariosCache()
+        }
+
+        if reflexaoPessoal != ReflexoesService.carregar(data: item.data, obraID: item.obraID) {
+            ReflexoesService.salvar(reflexaoPessoal, para: item.data, obraID: item.obraID)
+            atualizarConteudoPremiumCache()
         }
     }
 
@@ -289,18 +336,6 @@ func prepararCachesIniciais() {
     func voltarParaHome() {
         mostrandoLeituraTelaCheia = false
         navigation.showHome()
-    }
-
-    func gestoHorizontalParaDireita(_ valor: DragGesture.Value) -> Bool {
-        let horizontal = valor.translation.width
-        let vertical = valor.translation.height
-        return horizontal > 90 && abs(horizontal) > abs(vertical) * 1.35
-    }
-
-    func gestoHorizontalParaEsquerda(_ valor: DragGesture.Value) -> Bool {
-        let horizontal = valor.translation.width
-        let vertical = valor.translation.height
-        return horizontal < -90 && abs(horizontal) > abs(vertical) * 1.35
     }
 
     func mudarMesCalendario(_ valor: Int) {

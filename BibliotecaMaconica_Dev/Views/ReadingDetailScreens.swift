@@ -115,7 +115,9 @@ var detalhe: some View {
                                         font: UIFont.systemFont(ofSize: CGFloat(tamanhoTextoLeitura)),
                                         color: temaLeitura.textoUIColor,
                                         lineSpacing: CGFloat(espacamentoTextoLeitura),
-                                        backgroundColor: UIColor(temaLeitura.painel)
+                                        backgroundColor: UIColor(temaLeitura.painel),
+                                        rotuloAcessibilidade: "Minha reflexão de hoje",
+                                        identificadorAcessibilidade: "reading.reflection"
                                     )
                                     .frame(maxWidth: .infinity, minHeight: 180)
                                     .padding(8)
@@ -170,7 +172,9 @@ var detalhe: some View {
                                     font: UIFont.systemFont(ofSize: CGFloat(tamanhoTextoLeitura)),
                                     color: temaLeitura.textoUIColor,
                                     lineSpacing: CGFloat(espacamentoTextoLeitura),
-                                    backgroundColor: UIColor(temaLeitura.painel)
+                                    backgroundColor: UIColor(temaLeitura.painel),
+                                    rotuloAcessibilidade: "Comentário",
+                                    identificadorAcessibilidade: "reading.comment"
                                 )
                                     .frame(maxWidth: .infinity, minHeight: alturaMinimaCampoComentario)
                                     .padding(8)
@@ -270,26 +274,11 @@ var detalhe: some View {
                     tema: temaLeitura
                 ) {
                     mostrandoLeituraTelaCheia = false
-                    voltarParaHome()
                 }
             } else {
                 ContentUnavailableView("Nenhuma leitura selecionada", systemImage: "book")
             }
         }
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 60, coordinateSpace: .local)
-                .onEnded { valor in
-                    guard itemSelecionadoID != nil else {
-                        return
-                    }
-
-                    if gestoHorizontalParaDireita(valor) {
-                        voltarParaHome()
-                    } else if gestoHorizontalParaEsquerda(valor) {
-                        avancarDia()
-                    }
-                }
-        )
         .preferredColorScheme(temaLeitura.preferredColorScheme)
         .onReceive(NotificationCenter.default.publisher(for: DestaquesService.alterados).receive(on: RunLoop.main)) { notification in
             guard let item = itemSelecionado,

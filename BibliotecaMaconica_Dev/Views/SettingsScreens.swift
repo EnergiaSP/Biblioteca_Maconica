@@ -214,7 +214,7 @@ var configuracoes: some View {
                 Button("Restaurar dados do app") {
                     store.restaurarDadosEmbutidos()
                     itemSelecionadoID = store.itemDoDia?.id
-                    comentario = store.itemDoDia?.comentarioSalvo ?? ""
+                    sincronizarEstadoLeitura(com: store.itemDoDia, registrar: false)
                     mensagemErro = "Configuração salva: dados restaurados."
                 }
             }

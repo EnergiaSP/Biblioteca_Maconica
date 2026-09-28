@@ -107,6 +107,14 @@ struct BibliotecaRAGResultadoBusca: Identifiable, Hashable {
     let blocoID: String
     let trecho: String
     let ranking: Double
+
+    func comRanking(_ novo: Double) -> Self {
+        .init(id: id, obraID: obraID, tituloObra: tituloObra, area: area, pagina: pagina, blocoID: blocoID, trecho: trecho, ranking: novo)
+    }
+
+    func comTrecho(_ novo: String) -> Self {
+        .init(id: id, obraID: obraID, tituloObra: tituloObra, area: area, pagina: pagina, blocoID: blocoID, trecho: novo, ranking: ranking)
+    }
 }
 
 struct BibliotecaRAGCatalogo: Codable {
@@ -165,6 +173,8 @@ struct BibliotecaRAGPacoteObra: Codable, Identifiable, Hashable {
     let paragrafos: Int
     let notas: Int
     let assuntos: [String]
+    /// Work with the same content (the same book imported twice), marked by Tools/marcar_duplicatas_catalogo.py.
+    var duplicataDe: String? = nil
 }
 
 struct BibliotecaRAGContextoIA: Codable {

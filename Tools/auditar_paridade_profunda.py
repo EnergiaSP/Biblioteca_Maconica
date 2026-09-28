@@ -159,20 +159,27 @@ require_markers(
     ["comentario_", "reflexao_", "leituras_concluidas", "destaques_", "edicoes_textos_diarios", "backup_solicitacoes_obras", "backup_fontes_oficiais"],
     "Backup iOS",
 )
+# The Rizzardo breviary is a permanent integrated work (commit dfe9cca); its RAG package copy
+# must stay excluded on both platforms so it does not appear twice in catalog, search and dossier.
 require_markers(
     IOS / "Services/BibliotecaRAGCatalogService.swift",
     ['"breviario_maconico_rizzardo_da_camino"', "pacotesPermitidos"],
-    "Exclusão do breviário não autorizado no iOS",
+    "Exclusão da cópia RAG do breviário integrado no iOS",
 )
 require_markers(
     ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/data/BibliotecaCatalog.kt",
-    ['it.id == "breviario_maconico_rizzardo_da_camino"'],
-    "Exclusão do breviário não autorizado no Android",
+    ['"breviario_maconico_rizzardo_da_camino"', "ObraId.BREVIARIO_RIZZARDO"],
+    "Exclusão da cópia RAG do breviário integrado no Android",
 )
-reject_markers(
+require_markers(
     IOS / "Models/BibliotecaObra.swift",
-    ["static let breviarioRizzardo", 'id: "breviario_rizzardo"'],
-    "Resíduo do breviário excluído no iOS",
+    ["static let breviarioRizzardo", 'recursoJSON: "breviario_rizzardo"'],
+    "Breviário Rizzardo integrado no iOS",
+)
+require_markers(
+    ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/data/BibliotecaCatalog.kt",
+    ["obrasBreviariosIntegrados", '"Breviário Maçônico - Rizzardo da Camino"'],
+    "Breviário Rizzardo integrado no Android",
 )
 require_markers(
     ANDROID / "app/src/main/res/xml/data_extraction_rules.xml",
@@ -435,7 +442,8 @@ require_markers(
 )
 require_markers(
     ANDROID / "app/src/main/java/com/renatocamargo/breviariomaconico/data/NotesSearchIndex.kt",
-    ["notes_fts", "readOnly = true", "cache_meta", "checkCancellation", "obra_id != ?"],
+    # Excluded works are filtered in code: the bundled SQLite refuses MATCH next to many "!=" constraints.
+    ["notes_fts", "readOnly = true", "cache_meta", "checkCancellation", "in excluded) continue"],
     "Busca em notas Android",
 )
 

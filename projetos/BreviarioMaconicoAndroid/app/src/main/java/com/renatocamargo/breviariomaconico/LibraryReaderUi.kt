@@ -176,7 +176,7 @@ internal fun LibraryReaderScreen(
     LazyColumn(Modifier.fillMaxSize().padding(horizontal = 18.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         item {
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = onHome) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Voltar ao início", tint = colors.text) }
+                IconButton(onClick = onHome) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Voltar", tint = colors.text) }
                 Row {
                     IconButton(onClick = onToggleFullscreen) { Icon(if (fullscreen) Icons.Default.FullscreenExit else Icons.Default.Fullscreen, if (fullscreen) "Sair da tela cheia" else "Tela cheia", tint = colors.text) }
                     IconButton(enabled = paginaAtual > 0, onClick = { onPageChange((paginaAtual - 1).coerceAtLeast(0)) }) {

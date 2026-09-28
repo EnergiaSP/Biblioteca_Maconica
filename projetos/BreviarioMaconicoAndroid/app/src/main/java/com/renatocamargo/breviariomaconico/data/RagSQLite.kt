@@ -57,6 +57,7 @@ internal class RagSQLite private constructor(private val connection: SQLiteConne
     class Rows internal constructor(private val statement: SQLiteStatement) : Closeable {
         fun moveToNext(): Boolean = statement.step()
         fun getInt(column: Int): Int = statement.getLong(column).toInt()
+        fun getLong(column: Int): Long = statement.getLong(column)
         fun getDouble(column: Int): Double = statement.getDouble(column)
         fun getString(column: Int): String = if (statement.isNull(column)) "" else statement.getText(column)
         override fun close() = statement.close()

@@ -22,6 +22,159 @@ import org.json.JSONObject
 
 @RunWith(AndroidJUnit4::class)
 class DataIntegrityTest {
+    /**
+     * Searching matches the reading itself, not the work's title, author or subjects, and local
+     * readings carry the same bm25 relevance as downloaded packages.
+     */
+    @Test
+    fun librarySearchMatchesReadingTextNotWorkMetadata() {
+        val catalog = BibliotecaCatalogRepository.get(ApplicationProvider.getApplicationContext())
+        for ((term, expected) in listOf("filosofia" to 20, "ética" to 4)) {
+            val results = catalog.buscarConteudo(term, obraId = ObraId.BREVIARIO_SECULO_XXI, limite = 500)
+            assertEquals(term, expected, results.size)
+            assertTrue(term, results.all { it.ranking < 0 })
+            assertEquals(term, results.map { it.ranking }.sorted(), results.map { it.ranking })
+        }
+    }
+
+    @Test
+    fun localTextsUseTheSameFtsQueryAsPackages() {
+        val texts = mapOf("a" to "A Escada de Jacó e a escada.", "b" to "Leitura e lei.", "c" to "Escada simples")
+        assertEquals(setOf("a"), rankLocalTexts("\"escada de jaco\"", texts).keys)
+        assertEquals(setOf("a", "c"), rankLocalTexts("escada", texts).keys)
+        // bm25 also weighs text length, so frequency is compared on texts of equal length.
+        val frequency = rankLocalTexts("escada", mapOf("two" to "escada escada neutro", "one" to "escada neutro neutro"))
+        assertTrue("More occurrences rank first", frequency.getValue("two") < frequency.getValue("one"))
+        assertEquals(setOf("b"), rankLocalTexts("lei", texts).keys)
+    }
+
+    /** The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly. */
+    @Test
+    fun dossierAnalysisMatchesReferenceCases() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val config = DossierAnalysis.loadConfig(context)
+        val root = JSONObject(context.assets.open("casos_dossie_v1.json").bufferedReader().use { it.readText() })
+        val cases = root.getJSONArray("casos")
+        assertTrue(cases.length() > 0)
+        val headings = root.getJSONArray("titulos")
+        assertTrue(headings.length() > 0)
+        for (index in 0 until headings.length()) {
+            val case = headings.getJSONObject(index)
+            val (heading, body) = DossierAnalysis.splitHeading(DossierAnalysis.clean(case.getString("texto")))
+            val expected = case.getJSONArray("esperado")
+            assertEquals(case.getString("id"), listOf(expected.getString(0), expected.getString(1)), listOf(heading, body))
+        }
+        fun canonical(value: Any?): Any? = when (value) {
+            is JSONObject -> value.keys().asSequence().associateWith { canonical(value.get(it)) }.toSortedMap()
+            is org.json.JSONArray -> List(value.length()) { canonical(value.get(it)) }
+            is Number -> value.toLong()
+            else -> value
+        }
+        for (index in 0 until cases.length()) {
+            val case = cases.getJSONObject(index)
+            val rows = case.getJSONArray("fontes")
+            val sources = List(rows.length()) { row -> rows.getJSONObject(row).let {
+                DossierAnalysis.Source(it.getString("id"), it.getString("obraId"), it.getString("tituloObra"), it.getString("area"),
+                    it.getInt("pagina"), it.optString("data").ifEmpty { null }, it.optString("texto"), it.optString("rodape"))
+            } }
+            val analysis = DossierAnalysis.analyze(case.getString("termo"), sources, config, java.time.LocalDate.parse(case.getString("hoje")))
+            val result = analysis.toJson().put("exibicao", DossierAnalysis.display(case.getString("termo"), analysis, sources, config).toJson())
+            val expected = case.getJSONObject("esperado")
+            assertEquals(case.getString("id"), expected.keys().asSequence().toSet(), result.keys().asSequence().toSet())
+            for (key in expected.keys()) {
+                assertEquals("${case.getString("id")}.$key", canonical(expected.get(key)), canonical(result.get(key)))
+            }
+        }
+    }
+
+    /** Collections built from the two integrated breviaries, compared with iOS by rule id. */
+    @Test
+    fun localBreviaryCollectionsAreRecordedForParity() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val repo = BreviarioRepository.get(context)
+        val rules = StudyRules.load(context)
+        val selection = localStudySelection(repo.itens, repo.indice, rules)
+        assertEquals(rules.collections.size + rules.paths.size, selection.size)
+        assertTrue(selection.values.all { it.isNotEmpty() })
+        val json = JSONObject()
+        selection.forEach { (id, items) -> json.put(id, org.json.JSONArray(items.map { it.item.chavePersistencia })) }
+        File(context.filesDir, "estudos-locais-android.json").writeText(json.toString(2))
+    }
+
+    /** The index engine must rank pages exactly like the shared in-memory rule, in both index layouts. */
+    @Test
+    fun indexStudyScoringMatchesSharedRule() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val blocks = listOf(
+            1 to "A Escada de Jacó tem degraus: a escada de Jacó e a Grande Loja.",
+            2 to "Leitura do espírito; nenhuma palavra inteira aqui.",
+            3 to "Uma ética da virtude.",
+            3 to "Segundo bloco da mesma página com virtude e ética.",
+            4 to "Texto neutro.",
+            5 to "Grande   loja, grande loja e lei."
+        )
+        val note = "Nota sobre a Escada de Jacó e a lei."
+        val ruleTexts = listOf(listOf("escada de jaco", "degraus", "grande loja"), listOf("etica", "virtude"), listOf("lei", "rito", "grande loja"))
+        val rules = ruleTexts.map { words -> StudyRules.studyKeywords(words.map(StudyRules::studyNormalized)) }
+        val limits = listOf(3, 3, 3)
+        val items = (1..5).map { page ->
+            BreviarioItem("estudo-pagina-$page".hashCode(), "P$page", "Página $page", "",
+                blocks.filter { it.first == page }.joinToString("\n") { it.second }, if (page == 4) "578 $note" else "", page, "estudo")
+        }
+        val texts = items.associate { it.chavePersistencia to listOf(it.titulo, it.texto, it.rodape).joinToString(" ") }
+        for (catalogLayout in listOf(true, false)) {
+            val file = File(context.cacheDir, "estudo-${System.nanoTime()}.sqlite")
+            try {
+                val scores = RagSQLite.open(file.path).use { db ->
+                    db.execSQL("CREATE TABLE rag_paragrafos(id TEXT PRIMARY KEY, obra_id TEXT, pagina INTEGER, texto TEXT)")
+                    db.execSQL("CREATE TABLE rag_notas(obra_id TEXT, pagina INTEGER, numero TEXT, texto TEXT)")
+                    db.execSQL(if (catalogLayout) "CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, obra_id UNINDEXED, titulo_obra, area UNINDEXED, pagina UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')"
+                        else "CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')")
+                    blocks.forEachIndexed { index, (page, text) ->
+                        db.execSQL("INSERT INTO rag_paragrafos VALUES (?, 'estudo', ?, ?)", arrayOf("b$index", page, text))
+                        if (catalogLayout) db.execSQL("INSERT INTO rag_fts VALUES (?, 'estudo', 'Estudo', 'bibliotecaMaconica', ?, ?)", arrayOf("b$index", page, text))
+                        else db.execSQL("INSERT INTO rag_fts VALUES (?, ?)", arrayOf("b$index", text))
+                    }
+                    db.execSQL("INSERT INTO rag_notas VALUES ('estudo', 4, '578', ?)", arrayOf(note))
+                    StudyIndex.score(db, setOf("estudo"), rules, limits)
+                }
+                ruleTexts.forEachIndexed { index, words ->
+                    val memory = StudyRules.select(items, words, texts, limits[index])
+                    assertEquals("layout $catalogLayout, rule $index", memory.map { it.pagina }, scores[index].map { it.ref.pagina })
+                }
+                assertEquals(listOf(1, 5, 4), scores[0].map { it.ref.pagina })
+                assertEquals(3, scores[0].first().topics)
+                assertEquals(4, scores[0].first().occurrences)
+                assertEquals(listOf(5, 1, 4), scores[2].map { it.ref.pagina })
+            } finally {
+                file.delete()
+            }
+        }
+    }
+
+    /** Phase 1 scores study themes straight from the FTS index; the bundled SQLite must provide fts5vocab. */
+    @Test
+    fun bundledSQLiteSupportsIndexOnlyTermCounts() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val file = File(context.cacheDir, "fts5vocab-${System.nanoTime()}.sqlite")
+        try {
+            RagSQLite.open(file.path).use { db ->
+                db.execSQL("CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2')")
+                db.execSQL("INSERT INTO rag_fts VALUES ('a', 'A Escada de Jacó e a escada do templo.')")
+                db.execSQL("INSERT INTO rag_fts VALUES ('b', 'Leitura sem o termo.')")
+                db.execSQL("CREATE VIRTUAL TABLE temp.vocab USING fts5vocab(main, rag_fts, 'instance')")
+                val rows = mutableListOf<List<Int>>()
+                db.rawQuery("SELECT doc, count(DISTINCT term), count(*) FROM temp.vocab WHERE term IN ('escada', 'jaco', 'lei') GROUP BY doc", emptyArray()).use {
+                    while (it.moveToNext()) rows.add(listOf(it.getInt(0), it.getInt(1), it.getInt(2)))
+                }
+                // Whole words, accents folded: "lei" does not count inside "Leitura".
+                assertEquals(listOf(listOf(1, 2, 3)), rows)
+            }
+        } finally {
+            file.delete()
+        }
+    }
+
     @Test
     fun metadataFiltersFollowSharedCasesAndPrecedePagination() {
         val fixture = JSONObject(context.assets.open("casos_comuns_v1.json").bufferedReader().use { it.readText() })
@@ -133,12 +286,19 @@ class DataIntegrityTest {
         val catalog = BibliotecaCatalogRepository(context)
         val expected = BreviarioRepository.get(context).indice
         val all = catalog.indiceRemissivoGlobal()
-        assertEquals(expected.map { it.id }.toSet(), all.map { it.entrada.id }.toSet())
+        // Entry ids restart in each integrated breviary, so entries are identified by work and id.
+        assertEquals(expected.map { it.obraId to it.id }.toSet(), all.map { it.entrada.obraId to it.entrada.id }.toSet())
         assertEquals(all, catalog.indiceRemissivoGlobal(BibliotecaArea.Breviarios))
-        assertEquals(all, catalog.indiceRemissivoGlobal(obraId = ObraId.BREVIARIO_SECULO_XXI))
+        for (work in listOf(ObraId.BREVIARIO_SECULO_XXI, ObraId.BREVIARIO_RIZZARDO)) {
+            val byWork = catalog.indiceRemissivoGlobal(obraId = work)
+            assertTrue(work, byWork.isNotEmpty())
+            assertEquals(all.filter { it.entrada.obraId == work }, byWork)
+        }
         assertTrue(catalog.indiceRemissivoGlobal(BibliotecaArea.Dicionarios).isEmpty())
         assertTrue(catalog.indiceRemissivoGlobal(obraId = "missing").isEmpty())
-        assertTrue(all.all { reference -> expected.first { it.id == reference.entrada.id } == reference.entrada })
+        assertTrue(all.all { reference ->
+            expected.first { it.obraId == reference.entrada.obraId && it.id == reference.entrada.id } == reference.entrada
+        })
     }
 
     @Test
@@ -172,6 +332,37 @@ class DataIntegrityTest {
         val withAnalysis = textoDossie(topic, sources, "ANALISEINTEGRALFIM [F30]")
         assertTrue(withAnalysis.contains("ANALISEINTEGRALFIM"))
         createDossierPdf(File(context.filesDir, "paridade-dossie-android.pdf"), topic, sources, "ANALISEINTEGRALFIM [F30]", scope = filteredScope)
+    }
+
+    /** A package installed from an earlier catalog is offered as an update, as on iOS. */
+    @Test
+    fun installedPackageFromEarlierCatalogIsOutdated() {
+        val catalog = BibliotecaCatalogRepository(context)
+        val estado = BibliotecaArea.values().flatMap { catalog.estados(it) }.first { it.instalado }
+        val pacote = estado.pacote
+        val versao = File(context.filesDir, "RAGPackages/${pacote.arquivo}.sha256")
+        val anterior = versao.takeIf { it.exists() }?.readBytes()
+        try {
+            versao.delete()
+            assertTrue("No recorded version counts as outdated", catalog.desatualizado(pacote))
+            versao.writeText("0000")
+            assertTrue(catalog.desatualizado(pacote))
+            versao.writeText(pacote.sha256!!.uppercase())
+            assertFalse(catalog.desatualizado(pacote))
+            assertFalse(catalog.estados(pacote.area).first { it.pacote.id == pacote.id }.desatualizado)
+        } finally {
+            if (anterior != null) versao.writeBytes(anterior) else versao.delete()
+        }
+    }
+
+    /** Words split by the import/OCR (Tools/corrigir_palavras_quebradas.py) stay joined, as on iOS. */
+    @Test
+    fun breviaryReadingsHaveNoWordsSplitByOcr() {
+        val broken = listOf("difi cilmente", "signifi cando", "constran gimentos", "coraça- o", "na- o", "Maço naria", "exis tência", "tornando- se", "Grão- Mestre")
+        val repository = BreviarioRepository.get(context)
+        val texts = repository.itens.map { listOf(it.titulo, it.texto, it.rodape).joinToString("\n") }
+        broken.forEach { piece -> assertFalse(piece, texts.any { it.contains(piece) }) }
+        assertTrue(repository.porObraEData(ObraId.BREVIARIO_RIZZARDO, "25/02")!!.texto.contains("pois dificilmente se pode"))
     }
 
     @Test
@@ -290,9 +481,9 @@ class DataIntegrityTest {
             }
             assertEquals(expected, selected.map { it.chavePersistencia })
             assertEquals(selected, StudyRules.incorporateNormalized(emptyList(), items,
-                words.map { com.renatocamargo.breviariomaconico.data.normalized(it) },
-                texts.mapValues { com.renatocamargo.breviariomaconico.data.normalized(it.value) }, limit))
-            assertEquals("578 Estudo da ÉTICA.", selected.first().rodape)
+                words.map { StudyRules.studyNormalized(it) },
+                texts.mapValues { StudyRules.studyNormalized(it.value) }, limit).map { it.item })
+            assertEquals("578 Estudo da ÉTICA.", selected.first { it.chavePersistencia == "a_P2" }.rodape)
         }
         assertTrue(StudyRules.select(items, words, texts, 0).isEmpty())
     }

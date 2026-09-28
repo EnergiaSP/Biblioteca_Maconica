@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "matching": "case-diacritic-insensitive-substring-any-keyword",
+  "matching": "case-diacritic-insensitive-whole-word-any-keyword", "ranking": "distinct-keywords-desc-then-occurrences-desc-then-work-page-date",
   "collectionLimit": 24,
   "pathLimit": 18,
   "colecoes": [

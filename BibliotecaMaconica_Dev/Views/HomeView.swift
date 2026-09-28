@@ -72,6 +72,8 @@ struct HomeView: View {
     @State var dataEscolhida = Date()
     @State var calendarioMesExibido = Date()
     @State var itemSelecionadoID: Int?
+    /// Reading whose comment, reflection and highlights are currently loaded in the editors.
+    @State var itemEstadoLeitura: BreviarioItem?
     @State var comentario = ""
     @State var reflexaoPessoal = ""
     @State var comentarioExpandido = false
@@ -122,9 +124,10 @@ struct HomeView: View {
     @State var comentariosTask: Task<Void, Never>?
     @State var telaAberturaTask: Task<Void, Never>?
     @State var carregandoColecoes = false
+    /// Inputs of the last collection computation; reopening the tab reuses it while they are unchanged.
+    @State var chaveConteudoPremiumCalculada: String?
     @State var appInicializado = false
     @State var processandoVoltarLeitura = false
-    @State var aberturaProgramaticaLeitura = false
     @State var urlBreviarioPendente: URL?
     @State var cachesIniciaisAgendados = false
     @State var manterTelaAbertura = true
@@ -526,16 +529,6 @@ struct HomeView: View {
         }
         .preferredColorScheme(temaApp.preferredColorScheme)
         .environment(\.locale, localePortugues)
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 60, coordinateSpace: .local)
-                .onEnded { valor in
-                    guard gestoHorizontalParaDireita(valor) else {
-                        return
-                    }
-
-                    voltarParaHome()
-                }
-        )
         .onAppear {
             normalizarTemasSelecionados()
             if appInicializado == false {
@@ -547,13 +540,7 @@ struct HomeView: View {
                 prepararCachesIniciais()
                 iniciarTelaAberturaTemporizada()
             }
-            let itemInicial = itemSelecionado ?? store.itemDoDia
-            comentario = itemInicial?.comentarioSalvo ?? ""
-            if let item = itemInicial {
-                reflexaoPessoal = ReflexoesService.carregar(data: item.data, obraID: item.obraID)
-                analiseIA = AnaliseIAService.carregar(data: item.data, obraID: item.obraID)
-                destaques = DestaquesService.carregar(data: item.data, obraID: item.obraID)
-            }
+            sincronizarEstadoLeitura(com: itemSelecionado ?? store.itemDoDia, registrar: false)
         }
         .onChange(of: abaSelecionada) { _, novaAba in
             aoMudarAba(novaAba)
@@ -578,34 +565,19 @@ struct HomeView: View {
         }
         .onChange(of: itemSelecionadoID) { _, _ in
             leitorVoz.parar()
-            guard let item = itemSelecionado else {
-                comentario = ""
-                reflexaoPessoal = ""
-                analiseIA = nil
-                mensagemIA = nil
-                destaques = []
-                novoDestaque = ""
-                trechoSelecionadoTexto = ""
-                pdfURL = nil
-                mensagemErro = nil
-                mostrandoEditor = false
-                mostrandoLeituraTelaCheia = false
-                return
-            }
-
-            comentario = item.comentarioSalvo
-            reflexaoPessoal = ReflexoesService.carregar(data: item.data, obraID: item.obraID)
-            analiseIA = AnaliseIAService.carregar(data: item.data, obraID: item.obraID)
             mensagemIA = nil
-            destaques = DestaquesService.carregar(data: item.data, obraID: item.obraID)
-            novoDestaque = ""
-            trechoSelecionadoTexto = ""
             pdfURL = nil
             mensagemErro = nil
             mostrandoEditor = false
-            registrarLeituraAberta(item)
+            if itemSelecionado == nil {
+                mostrandoLeituraTelaCheia = false
+            }
+            sincronizarEstadoLeitura(com: itemSelecionado)
         }
         .onChange(of: scenePhase) { _, novaFase in
+            if novaFase != .active {
+                salvarRascunhosLeitura()
+            }
             if novaFase == .active, abaSelecionada == 0 {
                 fecharCaixasHome()
             }
@@ -622,6 +594,10 @@ struct HomeView: View {
             // @Published emits items before indexes and loading state are updated.
             guard !carregando else { return }
             prepararEstadoAposCarregamento()
+            // A reading opened from another work resolves only after that work finishes loading.
+            if let item = itemSelecionado {
+                sincronizarEstadoLeitura(com: item)
+            }
             processarURLBreviarioPendenteSePossivel()
         }
         .onChange(of: notificationRouter.pendingURL, initial: true) { _, url in

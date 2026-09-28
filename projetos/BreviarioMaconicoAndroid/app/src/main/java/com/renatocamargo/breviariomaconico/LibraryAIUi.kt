@@ -251,15 +251,21 @@ internal fun ReadingAIScreen(
     }
 }
 
-internal fun textoDossie(tema: String, resultados: List<BibliotecaBuscaResultado>, analise: String = "", escopo: String = "Toda a biblioteca"): String =
+internal fun textoDossie(tema: String, resultados: List<BibliotecaBuscaResultado>, analise: String = "", escopo: String = "Toda a biblioteca",
+    study: DossierStudy? = null): String =
     buildString {
-        val plan = buildDossierStudyPlan(tema, resultados)
+        val plan = buildDossierStudyPlan(tema, resultados, study)
         appendLine("Dossiê de estudos")
         appendLine(tema.ifBlank { "Tema pesquisado" })
         appendLine()
         appendLine("Escopo")
         appendLine(escopo)
         appendLine()
+        study?.let { dossierAnalysisSections(it.display) }?.forEach { (title, lines) ->
+            appendLine(title)
+            lines.forEach { appendLine("• $it") }
+            appendLine()
+        }
         appendLine("Roteiro")
         plan.roadmap.forEachIndexed { index, stage -> appendLine("${index + 1}. $stage") }
         appendLine()

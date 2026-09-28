@@ -307,6 +307,9 @@ struct BibliotecaDossieEstudo: Identifiable {
     let cruzamentos: [String]
     let limitesDaBase: [String]
     var filtroMetadados: BibliotecaFiltroMetadados = .init()
+    /// AI-free analysis of all analyzed sources; `resultados` keeps only the ones shown.
+    var analise: DossieEstudoAnalise.Resultado? = nil
+    var exibicao: DossieEstudoAnalise.Exibicao? = nil
 
     var id: String {
         [

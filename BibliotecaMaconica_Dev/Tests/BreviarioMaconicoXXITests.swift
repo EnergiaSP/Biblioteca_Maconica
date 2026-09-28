@@ -553,18 +553,55 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         for area in BibliotecaArea.allCases {
             XCTAssertTrue(try service.buscar(termo: "maçonaria", escopo: .area, area: area, obraID: nil).allSatisfy { $0.obra.area == area })
         }
+        // Same books-only scope on both platforms; compared result by result across iOS and Android.
+        var topResults: [String: [String]] = [:]
+        for query in ["maçonaria", "\"grande loja\"", "ética virtude", "\"escada de jacó\""] {
+            let hits = try service.buscar(termo: query, escopo: .area, area: .bibliotecaMaconica, obraID: nil, limite: 120)
+            topResults[query] = hits.map { "\($0.obra.id):\($0.item.pagina ?? 0):\($0.blocoID ?? $0.item.data)" }
+        }
         let largest = try XCTUnwrap(service.pacotes.flatMap(\.obras).max { $0.paginas < $1.paginas })
         let start = ProcessInfo.processInfo.systemUptime
         let pages = try service.carregarIndicePaginas(obraID: largest.id)
         XCTAssertEqual(pages.count, largest.paginas)
         let report: [String: Any] = [
             "environment": "iPhone simulator; not a physical-device certification",
-            "packages": service.pacotes.count, "queries": timings,
+            "packages": service.pacotes.count, "queries": timings, "topResults": topResults,
             "largestWorkPages": pages.count,
             "pageIndexMilliseconds": (ProcessInfo.processInfo.systemUptime - start) * 1000
         ]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
             .write(to: documents.appendingPathComponent("medicao-acervo-ios.json"), options: .atomic)
+    }
+
+    /// Real-corpus dossier for "Escada de Jacó" in the books area, compared with Android item by item.
+    func testCorpusDossierIsRecordedForParity() throws {
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let catalogURL = documents.appendingPathComponent("rag_catalogo.json")
+        guard FileManager.default.fileExists(atPath: catalogURL.path) else { throw XCTSkip("Audit corpus not installed") }
+        let service = try BibliotecaRAGCatalogService(catalogoURL: catalogURL)
+        let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let termo = "Escada de Jacó"
+        let resultados = try service.buscar(termo: "\"\(termo)\"", escopo: .area, area: .bibliotecaMaconica, obraID: nil,
+                                            limite: configuracao.limites.fontesAnalisadas, variantes: configuracao.variantes)
+        XCTAssertFalse(resultados.isEmpty)
+        let fontes = resultados.map { resultado in
+            DossieEstudoAnalise.Fonte(id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
+                obraId: resultado.obra.id, tituloObra: resultado.obra.titulo, area: resultado.obra.area.rawValue,
+                pagina: resultado.item.pagina ?? 0, data: resultado.item.data, texto: resultado.item.texto, rodape: resultado.item.rodape ?? "")
+        }
+        var calendario = Calendar(identifier: .gregorian)
+        calendario.timeZone = TimeZone(identifier: "UTC")!
+        let hoje = try XCTUnwrap(calendario.date(from: DateComponents(year: 2026, month: 9, day: 27)))
+        let inicio = ProcessInfo.processInfo.systemUptime
+        let analise = DossieEstudoAnalise.analisar(termo: termo, fontes: fontes, configuracao: configuracao, hoje: hoje, calendario: calendario)
+        let milissegundos = (ProcessInfo.processInfo.systemUptime - inicio) * 1000
+        XCTAssertFalse(analise.resumo.isEmpty)
+        var relatorio = analise.json
+        relatorio["exibicao"] = DossieEstudoAnalise.exibicao(termo: termo, resultado: analise, fontes: fontes, configuracao: configuracao).json
+        relatorio["fontesIds"] = fontes.map(\.id)
+        relatorio["milissegundosAnalise"] = milissegundos
+        try JSONSerialization.data(withJSONObject: relatorio, options: [.prettyPrinted, .sortedKeys])
+            .write(to: documents.appendingPathComponent("dossie-acervo-ios.json"), options: .atomic)
     }
 
     func testFullCatalogStudyBatchesWhenAuditCorpusIsInstalled() throws {
@@ -573,35 +610,26 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         guard FileManager.default.fileExists(atPath: catalogURL.path) else { throw XCTSkip("Audit corpus not installed") }
         let catalog = try BibliotecaRAGCatalogService(catalogoURL: catalogURL)
         let rules = RegrasEstudo.compartilhadas
-        let words = (rules.colecoes.map(\.palavrasChave) + rules.trilhas.map(\.palavrasChave)).map { $0.map(RegrasEstudo.normalizar) }
+        let words = (rules.colecoes.map(\.palavrasChave) + rules.trilhas.map(\.palavrasChave))
+            .map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
         let limits = Array(repeating: rules.collectionLimit, count: rules.colecoes.count) + Array(repeating: rules.pathLimit, count: rules.trilhas.count)
-        var selected = Array(repeating: [BreviarioItem](), count: words.count)
-        var total = 0
-        var maxBatch = 0
         let start = ProcessInfo.processInfo.systemUptime
-        for work in catalog.obras() {
-            try catalog.percorrerItens(obraID: work.id) { batch in
-                total += batch.count
-                maxBatch = max(maxBatch, batch.count)
-                let texts = Dictionary(uniqueKeysWithValues: batch.map { ($0.chavePersistencia, RegrasEstudo.normalizar([$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " "))) })
-                for i in words.indices {
-                    selected[i] = RegrasEstudo.incorporarNormalizados(selected[i], lote: batch, palavras: words[i], textos: texts, limite: limits[i])
-                }
-                return true
-            }
-        }
-        XCTAssertEqual(total, catalog.totaisPorObra().values.reduce(0, +))
-        XCTAssertLessThanOrEqual(maxBatch, 100)
+        let works = Set(catalog.obras().map(\.id))
+        let scored = try catalog.pontuarEstudo(obraIDs: works, regras: words, limites: limits)
+        XCTAssertTrue(scored.falhas.isEmpty, "Packages failed: \(scored.falhas)")
+        let selected = scored.pontuacoes
+        let total = catalog.totaisPorObra().filter { works.contains($0.key) }.values.reduce(0, +)
+        let maxBatch = 0
         for i in selected.indices {
             XCTAssertFalse(selected[i].isEmpty)
             XCTAssertLessThanOrEqual(selected[i].count, limits[i])
-            XCTAssertTrue(selected[i].allSatisfy { ($0.pagina ?? 0) > 0 })
+            XCTAssertTrue(selected[i].allSatisfy { $0.referencia.pagina > 0 })
         }
         let report: [String: Any] = ["pages": total, "maxBatch": maxBatch, "milliseconds": (ProcessInfo.processInfo.systemUptime - start) * 1000,
             "resultsPerRule": selected.map(\.count),
             "ruleIDs": rules.colecoes.map(\.id) + rules.trilhas.map(\.id),
-            "selectedPages": selected.map { $0.map { "\($0.obraID):\($0.pagina ?? 0)" } },
-            "environment": "simulator, not physical certification"]
+            "selectedPages": selected.map { $0.map { "\($0.referencia.obraID):\($0.referencia.pagina)" } },
+            "engine": "fts5vocab", "environment": "simulator, not physical certification"]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: documents.appendingPathComponent("medicao-estudos-ios.json"), options: .atomic)
     }
 
@@ -693,6 +721,219 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertThrowsError(try service.buscar(termo: "simbolismo", escopo: .appTodo, area: nil, obraID: nil))
     }
 
+    /// Searching matches the reading itself, not the work's title, author or subjects, and local
+    /// readings carry the same bm25 relevance as downloaded packages.
+    @MainActor
+    func testLibrarySearchMatchesReadingTextNotWorkMetadata() async throws {
+        let store = BreviarioStore()
+        for (termo, esperado) in [("filosofia", 20), ("ética", 4)] {
+            let resultados = try await store.buscarBiblioteca(termo: termo, escopo: .obraAtual, area: nil,
+                                                                limite: 500, obraID: ObraID.breviarioSeculoXXI)
+            XCTAssertEqual(resultados.count, esperado, termo)
+            XCTAssertTrue(resultados.allSatisfy { $0.ranking < 0 }, termo)
+            XCTAssertEqual(resultados.map(\.ranking), resultados.map(\.ranking).sorted(), termo)
+        }
+    }
+
+    func testLocalTextsUseTheSameFTSQueryAsPackages() throws {
+        let textos = [(chave: "a", texto: "A Escada de Jacó e a escada."), (chave: "b", texto: "Leitura e lei."), (chave: "c", texto: "Escada simples")]
+        let frase = try BibliotecaSQLiteService.pontuarTextosLocais(termo: "\"escada de jaco\"", textos: textos)
+        XCTAssertEqual(Set(frase.keys), ["a"])
+        XCTAssertEqual(Set(try BibliotecaSQLiteService.pontuarTextosLocais(termo: "escada", textos: textos).keys), ["a", "c"])
+        // bm25 also weighs text length, so frequency is compared on texts of equal length.
+        let mesmoTamanho = [(chave: "duas", texto: "escada escada neutro"), (chave: "uma", texto: "escada neutro neutro")]
+        let frequencia = try BibliotecaSQLiteService.pontuarTextosLocais(termo: "escada", textos: mesmoTamanho)
+        XCTAssertLessThan(try XCTUnwrap(frequencia["duas"]), try XCTUnwrap(frequencia["uma"]), "More occurrences rank first")
+        XCTAssertTrue(try BibliotecaSQLiteService.pontuarTextosLocais(termo: "lei", textos: textos).keys.elementsEqual(["b"]))
+    }
+
+    /// The remissive index keeps the reading dates recorded in each breviary, as Android does.
+    func testIntegratedBreviaryIndexKeepsRecordedDates() throws {
+        for obra in BibliotecaObra.padroes where obra.recursoJSON != nil {
+            let url = try XCTUnwrap(Bundle.main.url(forResource: obra.recursoJSON, withExtension: "json"))
+            let gravado = try JSONDecoder().decode(BreviarioData.self, from: Data(contentsOf: url))
+            let carregado = try BreviarioStore.carregarDadosDaObra(obra)
+            let porID = Dictionary(uniqueKeysWithValues: carregado.indiceRemissivo.map { ($0.id, $0.datas) })
+            for entrada in gravado.indiceRemissivo {
+                XCTAssertEqual(porID[entrada.id], entrada.datas, "\(obra.id): \(entrada.termo)")
+            }
+        }
+        let rizzardo = try BreviarioStore.carregarDadosDaObra(.breviarioRizzardo)
+        XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
+    }
+
+    /// A package installed from an earlier catalog is offered as an update, as on Android.
+    func testInstalledPackageFromEarlierCatalogIsOutdated() throws {
+        let arquivo = "teste_versao_\(UUID().uuidString).sqlite"
+        let works = [BibliotecaRAGPacoteObra(id: "versao", titulo: "versao", autor: nil, tipo: .livro, paginas: 1, paragrafos: 0, notas: 0, assuntos: [])]
+        let package = BibliotecaRAGPacote(area: .bibliotecaMaconica, titulo: "Versão", arquivo: arquivo, url: nil, sha256: "ABC123", nivel: nil, tamanhoBytes: 1, estatisticas: .init(obras: 1, paginas: 1, paragrafos: 0, notas: 0, imagens: 0, blocosFTS: 0), obras: works)
+        let catalog = BibliotecaRAGCatalogo(versaoFormato: 1, estrategia: "teste", geradoEm: "teste", origem: nil, baseURL: nil, pacotes: [package], totais: .init(pacotes: 1, obras: 1, paginas: 1, paragrafos: 0, notas: 0, blocosFTS: 0, tamanhoBytes: 1))
+        let catalogURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".json")
+        try JSONEncoder().encode(catalog).write(to: catalogURL)
+        let raiz = BibliotecaRAGCatalogService.raizPacotesLocal()
+        try FileManager.default.createDirectory(at: raiz, withIntermediateDirectories: true)
+        let local = raiz.appendingPathComponent(arquivo)
+        let versao = raiz.appendingPathComponent(arquivo + ".sha256")
+        defer {
+            try? FileManager.default.removeItem(at: local)
+            try? FileManager.default.removeItem(at: versao)
+            try? FileManager.default.removeItem(at: catalogURL)
+        }
+        let servico = try BibliotecaOfflinePackageService(catalogo: BibliotecaRAGCatalogService(catalogoURL: catalogURL))
+
+        XCTAssertFalse(try XCTUnwrap(servico.estados().first).desatualizado, "Not installed is not outdated")
+        try Data("x".utf8).write(to: local)
+        XCTAssertTrue(try XCTUnwrap(servico.estados().first).desatualizado, "No recorded version counts as outdated")
+        try Data("0000".utf8).write(to: versao)
+        XCTAssertTrue(servico.desatualizado(package))
+        try Data("abc123\n".utf8).write(to: versao)
+        XCTAssertFalse(try XCTUnwrap(servico.estados().first).desatualizado)
+    }
+
+    /// Words split by the import/OCR (Tools/corrigir_palavras_quebradas.py) stay joined, as on Android.
+    func testBreviaryReadingsHaveNoWordsSplitByOCR() throws {
+        let quebradas = ["difi cilmente", "signifi cando", "constran gimentos", "coraça- o", "na- o", "Maço naria", "exis tência", "tornando- se", "Grão- Mestre"]
+        var textos: [String] = []
+        for obra in BibliotecaObra.padroes where obra.recursoJSON != nil {
+            for item in try BreviarioStore.carregarDadosDaObra(obra).itens {
+                textos.append([item.titulo, item.frase, item.texto, item.rodape ?? ""].joined(separator: "\n"))
+            }
+        }
+        for quebrada in quebradas {
+            XCTAssertFalse(textos.contains { $0.contains(quebrada) }, quebrada)
+        }
+        let rizzardo = try BreviarioStore.carregarDadosDaObra(.breviarioRizzardo).itens
+        XCTAssertTrue(try XCTUnwrap(rizzardo.first { $0.data == "25/02" }).texto.contains("pois dificilmente se pode"))
+    }
+
+    func testIndexWithoutRecordedDatesIsLinkedByPrintedPage() {
+        let item = BreviarioItem(id: 1, data: "10/02", titulo: "T", frase: "", texto: "", rodape: "170 Nota da página", pagina: 41)
+        let vinculado = BreviarioImportService.vincularIndice([IndiceRemissivoEntry(id: 1, termo: "Termo", paginas: [170], datas: [])], aos: [item])
+        XCTAssertEqual(vinculado.first?.datas, ["10/02"])
+    }
+
+    /// The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly.
+    func testDossierAnalysisMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_dossie_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let casos = try XCTUnwrap(raiz["casos"] as? [[String: Any]])
+        XCTAssertFalse(casos.isEmpty)
+        let titulos = try XCTUnwrap(raiz["titulos"] as? [[String: Any]])
+        XCTAssertFalse(titulos.isEmpty)
+        for caso in titulos {
+            let separado = DossieEstudoAnalise.separarTitulo(DossieEstudoAnalise.limpar(try XCTUnwrap(caso["texto"] as? String)))
+            XCTAssertEqual([separado.titulo, separado.corpo], caso["esperado"] as? [String], caso["id"] as? String ?? "")
+        }
+        var calendario = Calendar(identifier: .gregorian)
+        calendario.timeZone = TimeZone(identifier: "UTC")!
+        for caso in casos {
+            let id = try XCTUnwrap(caso["id"] as? String)
+            let fontesJSON = try JSONSerialization.data(withJSONObject: try XCTUnwrap(caso["fontes"]))
+            let fontes = try JSONDecoder().decode([DossieEstudoAnalise.Fonte].self, from: fontesJSON)
+            let partes = try XCTUnwrap(caso["hoje"] as? String).split(separator: "-").compactMap { Int($0) }
+            let hoje = try XCTUnwrap(calendario.date(from: DateComponents(year: partes[0], month: partes[1], day: partes[2])))
+            let resultado = DossieEstudoAnalise.analisar(termo: try XCTUnwrap(caso["termo"] as? String), fontes: fontes,
+                                                         configuracao: configuracao, hoje: hoje, calendario: calendario)
+            let esperado = try XCTUnwrap(caso["esperado"] as? [String: Any])
+            var obtido = resultado.json
+            obtido["exibicao"] = DossieEstudoAnalise.exibicao(termo: try XCTUnwrap(caso["termo"] as? String), resultado: resultado,
+                                                             fontes: fontes, configuracao: configuracao).json
+            XCTAssertEqual(Set(obtido.keys), Set(esperado.keys), id)
+            for (chave, valor) in esperado {
+                XCTAssertEqual(NSObject.normalizarJSON(obtido[chave]), NSObject.normalizarJSON(valor), "\(id).\(chave)")
+            }
+        }
+    }
+
+    /// Collections built from the two integrated breviaries, compared with Android by rule id.
+    func testLocalBreviaryCollectionsAreRecordedForParity() throws {
+        var itens: [BreviarioItem] = []
+        var termosPorChave: [String: String] = [:]
+        for obra in BibliotecaObra.padroes where obra.recursoJSON != nil {
+            let dados = try BreviarioStore.carregarDadosDaObra(obra)
+            itens += dados.itens
+            for entrada in dados.indiceRemissivo {
+                for data in entrada.datas { termosPorChave["\(obra.id)_\(data)", default: ""] += " " + entrada.termo }
+            }
+        }
+        let resultado = HomeView.montarConteudoPremiumCache(itens: itens, indice: [], termosPorChave: termosPorChave)
+        var selecao: [String: [String]] = [:]
+        for colecao in resultado.colecoes { selecao[colecao.id] = colecao.itens.map(\.chavePersistencia) }
+        for trilha in resultado.trilhas { selecao[trilha.id] = trilha.itens.map(\.chavePersistencia) }
+        XCTAssertEqual(selecao.count, RegrasEstudo.compartilhadas.colecoes.count + RegrasEstudo.compartilhadas.trilhas.count)
+        XCTAssertTrue(selecao.values.allSatisfy { !$0.isEmpty })
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        try JSONSerialization.data(withJSONObject: selecao, options: [.prettyPrinted, .sortedKeys])
+            .write(to: documents.appendingPathComponent("estudos-locais-ios.json"), options: .atomic)
+    }
+
+    /// The index engine must rank pages exactly like the shared in-memory rule, notes and phrases included.
+    func testIndexStudyScoringMatchesSharedRule() throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let url = root.appendingPathComponent("RAGPackages/estudo.sqlite")
+        let db = try BibliotecaSQLiteService(url: url)
+        let obra = BibliotecaRAGObra(id: "estudo", area: .bibliotecaMaconica, tipo: .livro, titulo: "Estudo", autor: nil, origem: nil, edicao: nil, assuntos: [], dataImportacao: Date())
+        let blocos: [(Int, String)] = [
+            (1, "A Escada de Jacó tem degraus: a escada de Jacó e a Grande Loja."),
+            (2, "Leitura do espírito; nenhuma palavra inteira aqui."),
+            (3, "Uma ética da virtude."),
+            (3, "Segundo bloco da mesma página com virtude e ética."),
+            (4, "Texto neutro."),
+            (5, "Grande   loja, grande loja e lei.")
+        ]
+        let paragrafos = blocos.enumerated().map { indice, bloco in
+            BibliotecaRAGParagrafo(obraID: "estudo", pagina: bloco.0, ordem: indice, texto: bloco.1, capitulo: nil, secao: nil, temas: [], palavrasChave: [])
+        }
+        let paginas = (1...5).map { numero in
+            BibliotecaRAGPagina(obraID: "estudo", numeroOriginal: numero, titulo: nil,
+                                textoIntegral: blocos.filter { $0.0 == numero }.map(\.1).joined(separator: "\n"), largura: 595, altura: 842)
+        }
+        let notas = [BibliotecaRAGNotaRodape(obraID: "estudo", pagina: 4, numero: "578", texto: "Nota sobre a Escada de Jacó e a lei.")]
+        try db.substituirObra(obra: obra, paginas: paginas, paragrafos: paragrafos, notas: notas, imagens: [])
+
+        let regrasTexto = [["escada de jaco", "degraus", "grande loja"], ["etica", "virtude"], ["lei", "rito", "grande loja"]]
+        let regras = regrasTexto.map { RegrasEstudo.palavrasChave($0.map(RegrasEstudo.normalizar)) }
+        let limites = [3, 3, 3]
+        let indice = try BibliotecaEstudoIndice.pontuar(url: url, obras: ["estudo"], regras: regras, limites: limites)
+
+        let itens = try db.carregarItensBiblioteca(obraID: "estudo")
+        let textos = Dictionary(uniqueKeysWithValues: itens.map { ($0.chavePersistencia, [$0.titulo, $0.texto, $0.rodape ?? ""].joined(separator: " ")) })
+        for (numero, palavras) in regrasTexto.enumerated() {
+            let memoria = RegrasEstudo.selecionar(itens, palavras: palavras, textos: textos, limite: limites[numero])
+            XCTAssertEqual(indice[numero].map(\.referencia.pagina), memoria.compactMap(\.pagina), "regra \(numero)")
+        }
+        XCTAssertEqual(indice[0].map(\.referencia.pagina), [1, 5, 4])
+        XCTAssertEqual(indice[0].first?.temas, 3)
+        XCTAssertEqual(indice[0].first?.ocorrencias, 4)
+        XCTAssertEqual(indice[2].map(\.referencia.pagina), [5, 1, 4], "\"lei\" and \"rito\" must not match inside other words")
+    }
+
+    /// Phase 1 scores study themes straight from the FTS index; the platform SQLite must provide fts5vocab.
+    func testSystemSQLiteSupportsIndexOnlyTermCounts() throws {
+        var db: OpaquePointer?
+        XCTAssertEqual(sqlite3_open(":memory:", &db), SQLITE_OK)
+        defer { sqlite3_close(db) }
+        let setup = """
+        CREATE VIRTUAL TABLE rag_fts USING fts5(bloco_id UNINDEXED, texto, tokenize = 'unicode61 remove_diacritics 2');
+        INSERT INTO rag_fts VALUES ('a', 'A Escada de Jacó e a escada do templo.');
+        INSERT INTO rag_fts VALUES ('b', 'Leitura sem o termo.');
+        CREATE VIRTUAL TABLE temp.vocab USING fts5vocab(main, rag_fts, 'instance');
+        """
+        XCTAssertEqual(sqlite3_exec(db, setup, nil, nil, nil), SQLITE_OK, String(cString: sqlite3_errmsg(db)))
+        var statement: OpaquePointer?
+        let query = "SELECT doc, count(DISTINCT term), count(*) FROM temp.vocab WHERE term IN ('escada', 'jaco', 'lei') GROUP BY doc"
+        XCTAssertEqual(sqlite3_prepare_v2(db, query, -1, &statement, nil), SQLITE_OK)
+        defer { sqlite3_finalize(statement) }
+        var rows: [[Int]] = []
+        while sqlite3_step(statement) == SQLITE_ROW {
+            rows.append((0..<3).map { Int(sqlite3_column_int64(statement, Int32($0))) })
+        }
+        // Whole words, accents folded: "lei" does not count inside "Leitura".
+        XCTAssertEqual(rows, [[1, 2, 3]])
+    }
+
     func testSharedStudySelectionIsIndependentOfBatchSizeAndOrder() throws {
         struct Fixture: Decodable {
             struct Item: Decodable { let work, date, title, body, notes, index: String; let page: Int }
@@ -712,7 +953,7 @@ final class BreviarioMaconicoXXITests: XCTestCase {
                     XCTAssertLessThanOrEqual(selecionados.count, fixture.limit)
                 }
                 XCTAssertEqual(selecionados.map(\.chavePersistencia), fixture.expected)
-                XCTAssertEqual(selecionados.first?.rodape, "578 Estudo da ÉTICA.")
+                XCTAssertEqual(selecionados.first { $0.chavePersistencia == "a_P2" }?.rodape, "578 Estudo da ÉTICA.")
             }
         }
         XCTAssertTrue(RegrasEstudo.selecionar(itens, palavras: fixture.keywords, textos: textos, limite: 0).isEmpty)
@@ -1068,6 +1309,43 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     @MainActor
+    func testClosingReadingReturnsToTheTabThatOpenedIt() {
+        let navigation = AppNavigationController()
+        navigation.selectedTab = AppNavigationController.Tab.dossie.rawValue
+        navigation.showReading(itemID: 7)
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.acervo.rawValue)
+        XCTAssertEqual(navigation.readingReturnTab, AppNavigationController.Tab.dossie.rawValue)
+
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.dossie.rawValue)
+        XCTAssertTrue(navigation.readingPath.isEmpty)
+        XCTAssertNil(navigation.readingReturnTab)
+
+        navigation.showMore(.buscaBiblioteca)
+        navigation.showReading(itemID: 8)
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.mais.rawValue)
+        XCTAssertEqual(navigation.moreScreen, .buscaBiblioteca)
+    }
+
+    @MainActor
+    func testClosingReadingOpenedInsideAcervoStaysInAcervo() {
+        let navigation = AppNavigationController()
+        navigation.showLibrary()
+        navigation.showReading(itemID: 3)
+        XCTAssertNil(navigation.readingReturnTab)
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.acervo.rawValue)
+        XCTAssertTrue(navigation.readingPath.isEmpty)
+
+        navigation.selectedTab = AppNavigationController.Tab.colecoes.rawValue
+        navigation.showReading(itemID: 4)
+        navigation.forgetReadingOrigin()
+        navigation.closeReading()
+        XCTAssertEqual(navigation.selectedTab, AppNavigationController.Tab.acervo.rawValue)
+    }
+
+    @MainActor
     func testNavigationControllerOpensMoreDestination() {
         let navigation = AppNavigationController()
         navigation.showMore(.fontesOficiais)
@@ -1147,5 +1425,13 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertTrue(ReadingProgressService.concluidos(obraID: work).contains(date))
         ReadingProgressService.definirConcluido(date, obraID: work, lido: false, sincronizar: false)
         XCTAssertFalse(ReadingProgressService.concluidos(obraID: work).contains(date))
+    }
+}
+
+private extension NSObject {
+    /// Canonical JSON text of a value, so nested dictionaries and arrays compare structurally.
+    static func normalizarJSON(_ valor: Any?) -> String {
+        guard let valor, let dados = try? JSONSerialization.data(withJSONObject: ["v": valor], options: [.sortedKeys]) else { return "nil" }
+        return String(decoding: dados, as: UTF8.self)
     }
 }

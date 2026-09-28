@@ -81,6 +81,7 @@ extension HomeView {
                         }
                     }
                     .navigationBarBackButtonHidden(true)
+                    .background(GestoVoltarPelaBorda())
             }
     }
 

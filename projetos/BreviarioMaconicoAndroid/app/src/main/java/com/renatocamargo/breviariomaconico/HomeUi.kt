@@ -42,6 +42,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.ui.platform.testTag
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -169,7 +170,7 @@ internal fun HomeScreen(
     val comentadas = prefs.commentedItems(repo.itens)
     val ultimasLeituras = prefs.recentDailyItems(repo.itens)
     var expandedArea by remember { mutableStateOf<BibliotecaArea?>(null) }
-    LazyColumn(Modifier.fillMaxSize().padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+    LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("home.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         item {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 Text("Biblioteca Maçônica", modifier = Modifier.weight(1f), color = colors.text, fontSize = 30.sp, fontWeight = FontWeight.Bold)

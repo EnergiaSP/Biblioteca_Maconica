@@ -9,7 +9,8 @@ func buscarBiblioteca(
         limite: Int = 50,
         offset: Int = 0,
         obraID: String? = nil,
-        filtro: BibliotecaFiltroMetadados = .init()
+        filtro: BibliotecaFiltroMetadados = .init(),
+        variantes: [String: [String]] = [:]
     ) async throws -> [BibliotecaResultadoBusca] {
         let termoLimpo = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termoLimpo.isEmpty == false else {
@@ -57,32 +58,30 @@ func buscarBiblioteca(
                         pares.map(\.termo).joined(separator: " ")
                     }
 
-                for item in dados.itens {
-                    let conteudo = [
-                        obra.titulo,
-                        obra.autor ?? "",
-                        obra.area.titulo,
-                        obra.assuntos.joined(separator: " "),
-                        item.data,
+                // Only the reading itself is searched: the work's title, author, area and subjects belong
+                // to the metadata filter, and would otherwise match every page of the work.
+                let textos = dados.itens.map { item in
+                    (chave: item.chavePersistencia, texto: [
                         item.titulo,
                         item.frase,
                         item.texto,
                         item.rodape ?? "",
+                        item.data,
                         termosPorData[item.data] ?? ""
-                    ].joined(separator: " ")
-
-                    guard BibliotecaSQLiteService.corresponde(termo: termoLimpo, texto: conteudo) else {
-                        continue
-                    }
-
+                    ].joined(separator: " "))
+                }
+                let conteudos = Dictionary(uniqueKeysWithValues: textos.map { ($0.chave, $0.texto) })
+                let pontuacoes = try BibliotecaSQLiteService.pontuarTextosLocais(termo: termoLimpo, textos: textos, variantes: variantes)
+                for item in dados.itens {
+                    guard let ranking = pontuacoes[item.chavePersistencia] else { continue }
                     resultados.append(
                         BibliotecaResultadoBusca(
                             obra: obra,
                             item: item,
-                            contexto: Self.contextoBusca(termo: termoLimpo, em: conteudo)
+                            contexto: Self.contextoBusca(termo: termoLimpo, em: conteudos[item.chavePersistencia] ?? item.texto),
+                            ranking: ranking
                         )
                     )
-
                 }
             }
 
@@ -90,12 +89,14 @@ func buscarBiblioteca(
             let catalogo = try BibliotecaRAGCatalogService()
             let excluidas = obrasLocais.union(excluidasPorMetadados)
             resultados += try catalogo.buscar(termo: termoLimpo, escopo: escopo,
-                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro)
+                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro,
+                    variantes: variantes)
             let urlBanco = BibliotecaSQLiteService.urlBancoPadrao()
             if FileManager.default.fileExists(atPath: urlBanco.path) {
                 let banco = try BibliotecaSQLiteService(url: urlBanco)
                 let encontrados = try banco.buscarResultadosBiblioteca(termo: termoLimpo, escopo: escopo,
-                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro)
+                    area: areaEfetiva, obraID: obraAtualID, limite: quantidade, obrasExcluidas: excluidas, filtro: filtro,
+                    variantes: variantes)
                 resultados += encontrados
             }
             try Task.checkCancellation()
@@ -124,6 +125,68 @@ func buscarBiblioteca(
             return nil
         }
 
+        guard let configuracao = DossieEstudoAnalise.Configuracao.compartilhada else {
+            return try await montarDossieSemAnalise(termo: termoLimpo, escopo: escopo, area: area, obraID: obraID, filtro: filtro)
+        }
+        // The topic is studied as an expression ("Escada de Jacó"), accepting spelling variants ("Jacob").
+        let consulta = termoLimpo.contains("\"") || !termoLimpo.contains(" ") ? termoLimpo : "\"\(termoLimpo)\""
+        let todos = try await buscarBiblioteca(
+            termo: consulta,
+            escopo: escopo,
+            area: area,
+            limite: configuracao.limites.fontesAnalisadas,
+            obraID: obraID,
+            filtro: filtro,
+            variantes: configuracao.variantes
+        )
+        let fontes = todos.map { resultado in
+            DossieEstudoAnalise.Fonte(
+                id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
+                obraId: resultado.obra.id,
+                tituloObra: resultado.obra.titulo,
+                area: resultado.obra.area.rawValue,
+                pagina: resultado.item.pagina ?? 0,
+                data: resultado.item.data,
+                texto: resultado.item.texto,
+                rodape: resultado.item.rodape ?? ""
+            )
+        }
+        let analise = await Task.detached(priority: .userInitiated) {
+            DossieEstudoAnalise.analisar(termo: termoLimpo, fontes: fontes, configuracao: configuracao, hoje: Date())
+        }.value
+        let exibicao = DossieEstudoAnalise.exibicao(termo: termoLimpo, resultado: analise, fontes: fontes, configuracao: configuracao)
+        let resultados = Array(todos.prefix(configuracao.limites.fontesExibidas))
+        let obrasEnvolvidas = todos.reduce(into: [BibliotecaObra]()) { parcial, resultado in
+            if !parcial.contains(where: { $0.id == resultado.obra.id }) { parcial.append(resultado.obra) }
+        }
+
+        return BibliotecaDossieEstudo(
+            termo: termoLimpo,
+            escopo: escopo,
+            area: area,
+            resultados: resultados,
+            termosRelacionados: analise.termosAssociados.map(\.forma),
+            obrasEnvolvidas: obrasEnvolvidas,
+            roteiro: exibicao.roteiro,
+            perguntasFixacao: exibicao.perguntas,
+            mapaConceitual: exibicao.mapa,
+            revisaoEspacada: exibicao.revisao,
+            cruzamentos: Self.cruzamentosEstudo(resultados: todos),
+            limitesDaBase: Self.limitesDaBase(resultados: todos),
+            filtroMetadados: filtro,
+            analise: analise,
+            exibicao: exibicao
+        )
+    }
+
+    /// Previous template dossier, kept only if the shared dossier rules cannot be read.
+    private func montarDossieSemAnalise(
+        termo termoLimpo: String,
+        escopo: BibliotecaBuscaEscopo,
+        area: BibliotecaArea?,
+        obraID: String?,
+        filtro: BibliotecaFiltroMetadados
+    ) async throws -> BibliotecaDossieEstudo? {
         let resultados = try await buscarBiblioteca(
             termo: termoLimpo,
             escopo: escopo,

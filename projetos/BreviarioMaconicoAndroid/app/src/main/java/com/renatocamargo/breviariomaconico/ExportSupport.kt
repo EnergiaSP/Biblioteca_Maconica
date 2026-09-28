@@ -66,9 +66,10 @@ internal fun shareLibraryPdf(context: Context, paginas: List<BibliotecaPaginaLei
     }
 }
 
-internal fun shareDossierPdf(context: Context, tema: String, resultados: List<BibliotecaBuscaResultado>, analise: String = "", escopo: String = "Toda a biblioteca", nome: String = "") {
+internal fun shareDossierPdf(context: Context, tema: String, resultados: List<BibliotecaBuscaResultado>, analise: String = "", escopo: String = "Toda a biblioteca", nome: String = "",
+    study: DossierStudy? = null) {
     exportPdf(context, "biblioteca-maconica-dossie", "Compartilhar PDF") {
-        createDossierPdf(it, tema, resultados, analise, escopo, nome)
+        createDossierPdf(it, tema, resultados, analise, escopo, nome, study)
     }
 }
 

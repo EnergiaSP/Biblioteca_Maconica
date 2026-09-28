@@ -136,6 +136,7 @@ import com.renatocamargo.breviariomaconico.data.GeminiService
 import com.renatocamargo.breviariomaconico.data.IndiceRemissivoEntry
 import com.renatocamargo.breviariomaconico.data.LibraryRecent
 import com.renatocamargo.breviariomaconico.data.LibraryMetadataFilter
+import com.renatocamargo.breviariomaconico.data.DossierAnalysis
 import com.renatocamargo.breviariomaconico.data.LocalPdfOcrImporter
 import com.renatocamargo.breviariomaconico.data.OfficialSource
 import com.renatocamargo.breviariomaconico.data.PreferencesStore
@@ -157,21 +158,34 @@ import java.util.Locale
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun StructuredSearchScreen(colors: Palette, termoInicial: String = "", abrirResultado: (BibliotecaBuscaResultado) -> Unit) {
+internal fun StructuredSearchScreen(
+    colors: Palette,
+    termoInicial: String = "",
+    session: LibraryStudySession = remember { LibraryStudySession(MENSAGEM_INICIAL_BUSCA, termoInicial) },
+    abrirResultado: (BibliotecaBuscaResultado) -> Unit
+) {
     val context = LocalContext.current
     val catalogo = remember { BibliotecaCatalogRepository.get(context) }
     val scope = rememberCoroutineScope()
-    var termo by remember { mutableStateOf(termoInicial) }
-    var metadataFilter by remember { mutableStateOf(LibraryMetadataFilter()) }
-    var area by remember { mutableStateOf<BibliotecaArea?>(null) }
-    var obraId by remember { mutableStateOf<String?>(null) }
+    var termo by session::termo
+    var metadataFilter by session::metadataFilter
+    var area by session::area
+    var obraId by session::obraId
     var obras by remember { mutableStateOf(emptyList<com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo>()) }
     var escolherObra by remember { mutableStateOf(false) }
-    var resultados by remember { mutableStateOf(emptyList<BibliotecaBuscaResultado>()) }
-    var mensagem by remember { mutableStateOf("Digite um termo para buscar nas obras baixadas.") }
+    var resultados by session::resultados
+    var mensagem by session::status
     var buscando by remember { mutableStateOf(false) }
-    var temMais by remember { mutableStateOf(false) }
+    var temMais by session::temMais
     var consultaJob by remember { mutableStateOf<Job?>(null) }
+    DisposableEffect(Unit) {
+        onDispose {
+            if (buscando) {
+                mensagem = "Busca interrompida. Toque em buscar novamente."
+                session.ultimaConsulta = null
+            }
+        }
+    }
 
     fun pesquisar(mais: Boolean = false) {
         if (mais && (buscando || !temMais)) return
@@ -202,6 +216,10 @@ internal fun StructuredSearchScreen(colors: Palette, termoInicial: String = "", 
     }
 
     LaunchedEffect(termo, area, obraId, metadataFilter) {
+        // Returning from an opened result must keep the results already loaded for the same query.
+        val consulta = listOf(termo, area, obraId, metadataFilter)
+        if (consulta == session.ultimaConsulta) return@LaunchedEffect
+        session.ultimaConsulta = consulta
         consultaJob?.cancel()
         resultados = emptyList()
         temMais = false
@@ -210,8 +228,12 @@ internal fun StructuredSearchScreen(colors: Palette, termoInicial: String = "", 
         pesquisar()
     }
     DisposableEffect(Unit) { onDispose { consultaJob?.cancel() } }
+    var areaDasObras by remember { mutableStateOf(area) }
     LaunchedEffect(area) {
-        obraId = null
+        if (area != areaDasObras) {
+            obraId = null
+            areaDasObras = area
+        }
         libraryQuery { catalogo.obrasDisponiveis(area) }.onSuccess { obras = it }
     }
 
@@ -307,25 +329,31 @@ internal fun SearchResultCard(colors: Palette, resultado: BibliotecaBuscaResulta
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResultado) -> Unit) {
+internal fun DossierScreen(
+    colors: Palette,
+    session: LibraryStudySession = remember { LibraryStudySession(MENSAGEM_INICIAL_DOSSIE) },
+    abrirResultado: (BibliotecaBuscaResultado) -> Unit
+) {
     val context = LocalContext.current
     val catalogo = remember { BibliotecaCatalogRepository.get(context) }
     val prefs = remember { PreferencesStore(context) }
     val scope = rememberCoroutineScope()
-    var tema by remember { mutableStateOf("") }
-    var metadataFilter by remember { mutableStateOf(LibraryMetadataFilter()) }
-    var resultados by remember { mutableStateOf(emptyList<BibliotecaBuscaResultado>()) }
-    var status by remember { mutableStateOf("Informe um tema para montar um dossiê com fontes do acervo baixado.") }
-    var analiseIa by remember { mutableStateOf("") }
+    var tema by session::termo
+    var metadataFilter by session::metadataFilter
+    var resultados by session::resultados
+    var status by session::status
+    var analiseIa by session::analiseIa
+    var study by session::dossierStudy
+    val dossierConfig = remember { DossierAnalysis.loadConfig(context) }
     var gerandoIa by remember { mutableStateOf(false) }
     var montando by remember { mutableStateOf(false) }
-    var area by remember { mutableStateOf<BibliotecaArea?>(null) }
-    var obraId by remember { mutableStateOf<String?>(null) }
+    var area by session::area
+    var obraId by session::obraId
     var obras by remember { mutableStateOf(emptyList<com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo>()) }
     var escolherObra by remember { mutableStateOf(false) }
     var consultaJob by remember { mutableStateOf<Job?>(null) }
     var analiseJob by remember { mutableStateOf<Job?>(null) }
-    val studyPlan = remember(tema, resultados) { buildDossierStudyPlan(tema, resultados) }
+    val studyPlan = remember(tema, resultados, study) { buildDossierStudyPlan(tema, resultados, study) }
     val resumoEscopo = listOf(obras.firstOrNull { it.id == obraId }?.titulo ?: area?.titulo ?: "Toda a biblioteca",
         metadataFilter.descricao).filter { it.isNotEmpty() }.joinToString(" • ")
 
@@ -337,10 +365,14 @@ internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResu
         montando = false
         gerandoIa = false
         status = "Gere o dossiê para consultar a seleção atual."
+        study = null
     }
     LaunchedEffect(area) {
         obras = emptyList()
         libraryQuery { catalogo.obrasDisponiveis(area) }.onSuccess { obras = it }
+    }
+    DisposableEffect(Unit) {
+        onDispose { if (montando) status = "Montagem interrompida. Toque em gerar dossiê novamente." }
     }
 
     LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("dossier.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -395,13 +427,19 @@ internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResu
                         val requestContext = currentCoroutineContext()
                         try {
                             analiseIa = ""
-                            libraryQuery { catalogo.buscarConteudo(consulta, areaSelecionada, obraSelecionada,
-                                limite = 30, cancelled = { !requestContext.isActive }, filtro = filtroSelecionado) }
-                                .onSuccess {
-                                    resultados = it
-                                    status = if (it.isEmpty()) "Não encontrei base documental suficiente nas obras baixadas." else "Dossiê criado com ${it.size} fonte(s) documentais."
+                            libraryQuery {
+                                val todos = catalogo.buscarConteudo(dossierQuery(consulta), areaSelecionada, obraSelecionada,
+                                    limite = dossierConfig.limits.analyzedSources, cancelled = { !requestContext.isActive },
+                                    filtro = filtroSelecionado, variants = dossierConfig.variants)
+                                todos to analyzeDossier(consulta, todos, dossierConfig)
+                            }
+                                .onSuccess { (todos, analise) ->
+                                    resultados = todos.take(dossierConfig.limits.shownSources)
+                                    study = analise
+                                    status = if (todos.isEmpty()) "Não encontrei base documental suficiente nas obras baixadas." else "Dossiê criado com ${todos.size} fonte(s) documentais."
                                 }.onFailure {
                                     resultados = emptyList()
+                                    study = null
                                     status = "Não foi possível montar o dossiê. Verifique os downloads no Acervo e tente novamente."
                                 }
                         } finally {
@@ -413,14 +451,14 @@ internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResu
                 }
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
-                        shareText(context, textoDossie(tema, resultados, analiseIa, resumoEscopo))
+                        shareText(context, textoDossie(tema, resultados, analiseIa, resumoEscopo, study))
                     }) {
                         Icon(Icons.Default.IosShare, null)
                         Spacer(Modifier.width(6.dp))
                         Text("Compartilhar")
                     }
                     Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
-                        shareDossierPdf(context, tema, resultados, analiseIa, resumoEscopo, prefs.settings.premiumPdfName)
+                        shareDossierPdf(context, tema, resultados, analiseIa, resumoEscopo, prefs.settings.premiumPdfName, study)
                     }) {
                         Icon(Icons.Default.PictureAsPdf, null)
                         Spacer(Modifier.width(6.dp))
@@ -485,6 +523,9 @@ internal fun DossierScreen(colors: Palette, abrirResultado: (BibliotecaBuscaResu
                     }
                 }
             }
+        }
+        study?.takeIf { resultados.isNotEmpty() }?.let { current ->
+            item(key = "dossier.analysis") { DossierAnalysisSections(colors, current.display) }
         }
         if (resultados.isNotEmpty()) {
             item(key = "dossier.plan") {

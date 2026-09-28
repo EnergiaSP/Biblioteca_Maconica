@@ -67,6 +67,8 @@ A rodada de 21/09/2026 está em `RELATORIO_ESTUDOS_ACESSIBILIDADE_2026-09-21.md`
 
 A continuação está em `RELATORIO_COLECOES_TRILHAS_2026-09-21.md`: metadados completos de estudos no Android, identidade estável das trilhas no iOS, navegação com fonte ampliada, comparação dos PDFs e correções de permissões iCloud Documents e incorporação do Watch. Os dez bloqueios funcionais permanecem abertos; os testes ignorados, interrompidos ou sem casos executados não contam como aprovação.
 
+A rodada de 26/09/2026 está em `RELATORIO_NAVEGACAO_RASCUNHOS_2026-09-26.md`: Voltar retorna à tela que abriu a leitura, o Voltar do Android não fecha mais o app, busca e dossiê preservam o estado e anotações não salvas são gravadas na leitura correta. Os testes Android desta rodada ainda não foram executados.
+
 Cada alteração deve registrar: requisito comum, implementação em ambas as plataformas, teste de regressão executado, resultado e limitações. Um marcador no código ou uma compilação bem-sucedida não substitui esse teste.
 
 Diferenças visuais próprias dos sistemas permanecem permitidas. A marcação de leitura é sincronizada entre telefone e relógio por WatchConnectivity no ecossistema Apple e pelo Wearable Data Layer persistente no Android/Wear OS. Consultas pesadas de busca, índices e dossiês devem ocorrer fora da linha principal da interface nas duas plataformas.

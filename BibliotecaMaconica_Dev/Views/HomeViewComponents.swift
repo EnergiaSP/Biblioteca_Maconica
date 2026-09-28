@@ -216,15 +216,39 @@ struct RegrasEstudo: Decodable {
     let colecoes: [Colecao]
     let trilhas: [Trilha]
 
+    /// A page belongs to a theme when a keyword appears as whole words: "lei" does not match "leitura".
     static func corresponde(texto: String, palavras: [String]) -> Bool {
-        palavras.contains { palavra in
-            !palavra.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
-            texto.range(of: palavra, options: [.caseInsensitive, .diacriticInsensitive]) != nil
-        }
+        !contarPalavras(normalizar(texto), palavras: palavrasChave(palavras.map(normalizar))).isEmpty
     }
 
+    /// Folds case and accents and keeps only words, padded with spaces so keywords match whole words.
     static func normalizar(_ texto: String) -> String {
-        texto.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "pt_BR"))
+        let dobrado = texto
+            .folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "pt_BR"))
+            .lowercased()
+        var saida = String.UnicodeScalarView()
+        saida.append(" ")
+        var terminouEmEspaco = true
+        for caractere in dobrado.unicodeScalars {
+            if alfanumericos.contains(caractere) {
+                saida.append(caractere)
+                terminouEmEspaco = false
+            } else if !terminouEmEspaco {
+                saida.append(" ")
+                terminouEmEspaco = true
+            }
+        }
+        if !terminouEmEspaco { saida.append(" ") }
+        return String(saida)
+    }
+
+    private static let alfanumericos = CharacterSet.alphanumerics
+
+    /// Relevance of a page for a theme: distinct keywords found first, then total occurrences.
+    struct ItemPontuado {
+        let item: BreviarioItem
+        let temas: Int
+        let ocorrencias: Int
     }
 
     static func selecionar(_ itens: [BreviarioItem], palavras: [String], textos: [String: String], limite: Int) -> [BreviarioItem] {
@@ -232,29 +256,92 @@ struct RegrasEstudo: Decodable {
     }
 
     static func incorporar(_ selecionados: [BreviarioItem], lote: [BreviarioItem], palavras: [String], textos: [String: String], limite: Int) -> [BreviarioItem] {
-        incorporarNormalizados(selecionados, lote: lote, palavras: palavras.map(normalizar), textos: textos.mapValues(normalizar), limite: limite)
+        let palavrasNormalizadas = palavras.map(normalizar)
+        let textosNormalizados = textos.mapValues(normalizar)
+        let anteriores = incorporarNormalizados([], lote: selecionados, palavras: palavrasNormalizadas,
+                                                textos: textosNormalizados, limite: Int.max)
+        return incorporarNormalizados(anteriores, lote: lote, palavras: palavrasNormalizadas,
+                                      textos: textosNormalizados, limite: limite).map(\.item)
     }
 
-    static func incorporarNormalizados(_ selecionados: [BreviarioItem], lote: [BreviarioItem], palavras: [String], textos: [String: String], limite: Int) -> [BreviarioItem] {
+    static func incorporarNormalizados(_ selecionados: [ItemPontuado], lote: [BreviarioItem], palavras: [String], textos: [String: String], limite: Int) -> [ItemPontuado] {
+        let chaves = palavrasChave(palavras)
+        let contador = ContadorPalavras(palavras: chaves)
+        let contagens = textos.mapValues(contador.contar)
+        return incorporarContagens(selecionados, lote: lote, palavras: chaves, contagens: contagens, limite: limite)
+    }
+
+    /// Keeps the `limite` most relevant pages. The result does not depend on batch size or order,
+    /// so the catalog can be streamed in batches without holding every page in memory.
+    /// `contagens` comes from `contarPalavras` over all rules' keywords, so each page is read once.
+    static func incorporarContagens(_ selecionados: [ItemPontuado], lote: [BreviarioItem], palavras: Set<String>, contagens: [String: [String: Int]], limite: Int) -> [ItemPontuado] {
         guard limite > 0 else { return [] }
-        let acumulados = selecionados.sorted(by: precede).prefix(limite)
-        let fronteira = acumulados.count == limite ? acumulados.last : nil
-        let palavras = palavras.filter { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-        let candidatos = acumulados + lote.filter { item in
-            // Later references cannot displace the already selected top results.
-            if let fronteira, !precede(item, fronteira) { return false }
-            let texto = (textos[item.chavePersistencia] ?? "") as NSString
-            return palavras.contains { texto.range(of: $0, options: .literal).location != NSNotFound }
+        let candidatos = selecionados + lote.compactMap { item in
+            pontuar(item, palavras: palavras, contagens: contagens[item.chavePersistencia] ?? [:])
         }
-        var chaves = Set<String>()
-        return candidatos.filter { chaves.insert($0.chavePersistencia).inserted }
-            .sorted(by: precede).prefix(limite).map { $0 }
+        var vistas = Set<String>()
+        return candidatos.sorted(by: precede).filter { vistas.insert($0.item.chavePersistencia).inserted }
+            .prefix(limite).map { $0 }
     }
 
-    private static func precede(_ lhs: BreviarioItem, _ rhs: BreviarioItem) -> Bool {
-        if lhs.obraID != rhs.obraID { return lhs.obraID < rhs.obraID }
-        if (lhs.pagina ?? 0) != (rhs.pagina ?? 0) { return (lhs.pagina ?? 0) < (rhs.pagina ?? 0) }
-        return lhs.data < rhs.data
+    /// Normalized keywords without padding, ignoring blanks and repetitions.
+    static func palavrasChave(_ palavras: [String]) -> Set<String> {
+        Set(palavras.map { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty })
+    }
+
+    /// Counts, in a single pass over a normalized page, the occurrences of each keyword, including phrases.
+    static func contarPalavras(_ texto: String, palavras: Set<String>) -> [String: Int] {
+        ContadorPalavras(palavras: palavras).contar(texto)
+    }
+
+    /// Keyword lookup built once and reused across many texts.
+    struct ContadorPalavras {
+        private let simples: Set<Substring>
+        private let expressoes: [[Substring]]
+        private let iniciosExpressoes: Set<Substring>
+
+        init(palavras: Set<String>) {
+            simples = Set(palavras.filter { !$0.contains(" ") }.map { Substring($0) })
+            expressoes = palavras.filter { $0.contains(" ") }.map { $0.split(separator: " ") }
+            iniciosExpressoes = Set(expressoes.compactMap(\.first))
+        }
+
+        func contar(_ texto: String) -> [String: Int] {
+            let tokens = texto.split(separator: " ")
+            var contagens: [String: Int] = [:]
+            for (indice, token) in tokens.enumerated() {
+                if simples.contains(token) {
+                    contagens[String(token), default: 0] += 1
+                }
+                guard iniciosExpressoes.contains(token) else { continue }
+                for expressao in expressoes where expressao.first == token && indice + expressao.count <= tokens.count {
+                    if tokens[indice..<(indice + expressao.count)].elementsEqual(expressao) {
+                        contagens[expressao.joined(separator: " "), default: 0] += 1
+                    }
+                }
+            }
+            return contagens
+        }
+    }
+
+    private static func pontuar(_ item: BreviarioItem, palavras: Set<String>, contagens: [String: Int]) -> ItemPontuado? {
+        var temas = 0
+        var ocorrencias = 0
+        for palavra in palavras {
+            if let quantidade = contagens[palavra], quantidade > 0 {
+                temas += 1
+                ocorrencias += quantidade
+            }
+        }
+        return temas == 0 ? nil : ItemPontuado(item: item, temas: temas, ocorrencias: ocorrencias)
+    }
+
+    private static func precede(_ lhs: ItemPontuado, _ rhs: ItemPontuado) -> Bool {
+        if lhs.temas != rhs.temas { return lhs.temas > rhs.temas }
+        if lhs.ocorrencias != rhs.ocorrencias { return lhs.ocorrencias > rhs.ocorrencias }
+        if lhs.item.obraID != rhs.item.obraID { return lhs.item.obraID < rhs.item.obraID }
+        if (lhs.item.pagina ?? 0) != (rhs.item.pagina ?? 0) { return (lhs.item.pagina ?? 0) < (rhs.item.pagina ?? 0) }
+        return lhs.item.data < rhs.item.data
     }
 
     struct Colecao: Decodable {

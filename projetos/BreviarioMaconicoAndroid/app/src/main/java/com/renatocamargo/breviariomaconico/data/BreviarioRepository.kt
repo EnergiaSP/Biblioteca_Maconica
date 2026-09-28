@@ -16,6 +16,12 @@ class BreviarioRepository private constructor(context: Context) {
     private val itensPorObraEData: Map<String, BreviarioItem>
     private val pesquisaNormalizada: Map<String, String>
 
+    /**
+     * Text searched by the library search and dossier, keyed by [BreviarioItem.chavePersistencia]:
+     * only the reading itself. The work's author, title and subjects belong to the metadata filter.
+     */
+    val textosPesquisa: Map<String, String>
+
     init {
         val roots = listOf(
             "breviario.json" to ObraId.BREVIARIO_SECULO_XXI,
@@ -55,6 +61,13 @@ class BreviarioRepository private constructor(context: Context) {
         itensPorObraEData = itens.associateBy { "${it.obraId}|${it.data}" }
         val indicePorData = indice.flatMap { entry -> entry.datas.map { "${entry.obraId}|$it" to entry.termo } }
             .groupBy({ it.first }, { it.second })
+        val frases = roots.flatMap { (defaultWorkId, root) ->
+            root.getJSONArray("itens").toList { obj ->
+                "${obj.optString("obraID").ifBlank { defaultWorkId }}_${obj.optString("data")}" to obj.optString("frase")
+            }
+        }.toMap()
+        textosPesquisa = itens.associate { item -> item.chavePersistencia to listOf(item.titulo, frases[item.chavePersistencia].orEmpty(),
+            item.texto, item.rodape, item.data, indicePorData["${item.obraId}|${item.data}"].orEmpty().joinToString(" ")).joinToString(" ") }
         pesquisaNormalizada = itens.associate { item -> item.chavePersistencia to normalized(
             listOf(item.titulo, item.texto, item.rodape, item.data, item.autor,
                 indicePorData["${item.obraId}|${item.data}"].orEmpty().joinToString(" ")).joinToString(" ")) }
@@ -136,10 +149,28 @@ object TextoFormatter {
         return resultado.toString()
     }
 
-    fun consultaFTSSegura(termo: String): String {
+    fun consultaFTSSegura(termo: String, variants: Map<String, List<String>> = emptyMap()): String {
         val tokens = termosBusca(termo)
         fun literal(text: String) = "\"${text.replace("\"", "\"\"")}\""
-        return if (tokens.isEmpty()) literal(termo) else tokens.joinToString(" AND ", transform = ::literal)
+        if (tokens.isEmpty()) return literal(termo)
+        return tokens.joinToString(" AND ") { token ->
+            val alternatives = alternativas(token, variants)
+            // Without variants the query stays exactly as typed; with them each spelling is accepted.
+            if (alternatives.size > 1) alternatives.joinToString(" OR ", "(", ")", transform = ::literal) else literal(token)
+        }
+    }
+
+    /** Normalized forms of a search word or phrase, with every combination of its words' spelling variants. */
+    fun alternativas(termo: String, variants: Map<String, List<String>>): List<String> {
+        val words = StudyRules.studyNormalized(termo).trim().split(' ').filter { it.isNotEmpty() }
+        if (words.isEmpty()) return emptyList()
+        var combinations = listOf(emptyList<String>())
+        for (word in words) {
+            val options = listOf(word) + variants[word].orEmpty()
+            combinations = combinations.flatMap { prefix -> options.map { prefix + it } }
+        }
+        // Bounded so a topic full of variant words cannot explode the query.
+        return combinations.take(8).map { it.joinToString(" ") }
     }
 
     fun termosBusca(termo: String): List<String> = Regex("\"([^\"]+)\"|([\\p{L}\\p{N}]+)").findAll(termo.lowercase(Locale.ROOT)).mapNotNull {

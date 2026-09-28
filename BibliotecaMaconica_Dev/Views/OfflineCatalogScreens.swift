@@ -71,6 +71,13 @@ var acervoOfflineView: some View {
                             }
                         }
 
+                        let atualizacoes = pacotesOffline.filter(\.desatualizado).count
+                        if atualizacoes > 0 {
+                            Text("\(atualizacoes) obra(s) com atualização disponível.")
+                                .font(.caption)
+                                .foregroundStyle(destaqueApp)
+                        }
+
                         if progressoAcervoOffline.isEmpty == false {
                             Text(progressoAcervoOffline)
                                 .font(.caption)
@@ -147,6 +154,12 @@ var acervoOfflineView: some View {
                     .font(.caption)
                     .foregroundStyle(textoSecundarioApp)
 
+                if estado.desatualizado {
+                    Text("Atualização disponível")
+                        .font(.caption2)
+                        .foregroundStyle(destaqueApp)
+                }
+
                 if estado.origemDisponivel == false && estado.instalado == false {
                     Text("Pacote ainda não disponível para download nesta instalação.")
                         .font(.caption2)
@@ -155,6 +168,19 @@ var acervoOfflineView: some View {
             }
 
             Spacer()
+
+            if estado.desatualizado {
+                Button {
+                    instalarPacoteOffline(estado)
+                } label: {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                        .font(.headline)
+                        .frame(width: 34, height: 34)
+                }
+                .buttonStyle(.bordered)
+                .disabled(instalandoPacotesOffline || estado.origemDisponivel == false)
+                .accessibilityLabel("Atualizar obra offline")
+            }
 
             Button {
                 if estado.instalado {
@@ -435,6 +461,7 @@ var acervoOfflineView: some View {
                                 gerarPDFDossieEstudo(dossieEstudo)
                             }
                         )
+                        .accessibilityElement(children: .contain)
                         .accessibilityIdentifier("dossier.results")
 
                         dossieIAView(dossieEstudo)

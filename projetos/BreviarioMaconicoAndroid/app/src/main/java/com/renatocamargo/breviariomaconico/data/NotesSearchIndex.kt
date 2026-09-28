@@ -50,7 +50,8 @@ internal object NotesSearchIndex {
             val args = mutableListOf(query)
             if (area != null) { filters.add("area = ?"); args.add(area.raw) }
             if (workId != null) { filters.add("obra_id = ?"); args.add(workId) }
-            excluded.sorted().forEach { filters.add("obra_id != ?"); args.add(it) }
+            // Excluded works are filtered below: many "!=" constraints next to MATCH make the bundled
+            // SQLite refuse the query ("unable to use function MATCH in the requested context").
             args.add(limit.coerceAtLeast(0).toString())
             db.rawQuery("""SELECT bloco_id, obra_id, titulo, area, pagina, texto, bm25(notes_fts)
                 FROM notes_fts WHERE ${filters.joinToString(" AND ")}
@@ -58,6 +59,7 @@ internal object NotesSearchIndex {
                 buildList {
                     while (rows.moveToNext()) {
                         checkCancellation()
+                        if (rows.getString(1) in excluded) continue
                         add(BibliotecaBuscaResultado(rows.getString(1), rows.getString(2), BibliotecaArea.from(rows.getString(3)),
                             rows.getInt(4), rows.getString(5), rows.getDouble(6), blocoId = rows.getString(0)))
                     }

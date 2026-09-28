@@ -22,26 +22,15 @@ class FullCatalogBenchmarkTest {
         assertEquals(314, packages.size)
         assertTrue(packages.all { catalog.localFile(it).isFile })
         val rules = StudyRules.load(context)
-        val words = (rules.collections.map { it.keywords } + rules.paths.map { it.keywords }).map { it.map(::normalized) }
+        val words = (rules.collections.map { it.keywords } + rules.paths.map { it.keywords })
+            .map { keywords -> StudyRules.studyKeywords(keywords.map(StudyRules::studyNormalized)) }
         val limits = List(rules.collections.size) { rules.collectionLimit } + List(rules.paths.size) { rules.pathLimit }
-        val selected = MutableList(words.size) { emptyList<BreviarioItem>() }
         val works = packages.flatMap { it.obras }
-        var pages = 0
-        var maxBatch = 0
+        val pages = works.sumOf { it.paginas }
+        val maxBatch = 0
         val start = SystemClock.elapsedRealtime()
-        for (work in works) {
-            catalog.percorrerItensEstudo(work.id) { batch ->
-                pages += batch.size
-                maxBatch = maxOf(maxBatch, batch.size)
-                val texts = batch.associate { it.chavePersistencia to normalized(listOf(it.titulo, it.texto, it.rodape).joinToString(" ")) }
-                words.indices.forEach { i ->
-                    selected[i] = StudyRules.incorporateNormalized(selected[i], batch, words[i], texts, limits[i])
-                }
-                true
-            }
-        }
-        assertEquals(works.sumOf { it.paginas }, pages)
-        assertTrue(maxBatch <= 100)
+        val (selected, failures) = kotlinx.coroutines.runBlocking { catalog.scoreStudy(works.map { it.id }.toSet(), words, limits) }
+        assertTrue("Packages failed: $failures", failures.isEmpty())
         selected.indices.forEach { i ->
             assertTrue(selected[i].isNotEmpty())
             assertTrue(selected[i].size <= limits[i])
@@ -51,8 +40,34 @@ class FullCatalogBenchmarkTest {
             .put("milliseconds", SystemClock.elapsedRealtime() - start)
             .put("resultsPerRule", JSONArray(selected.map { it.size }))
             .put("ruleIDs", JSONArray(rules.collections.map { it.id } + rules.paths.map { it.id }))
-            .put("selectedPages", JSONArray(selected.map { row -> JSONArray(row.map { "${it.obraId}:${it.pagina}" }) }))
+            .put("selectedPages", JSONArray(selected.map { row -> JSONArray(row.map { "${it.ref.obraId}:${it.ref.pagina}" }) }))
+            .put("engine", "fts5vocab")
             .put("environment", "emulator, not physical certification").toString(2))
+    }
+
+    /** Real-corpus dossier for "Escada de Jacó" in the books area, compared with iOS item by item. */
+    @Test
+    fun installedCorpusDossierIsRecordedForParity() {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val catalog = BibliotecaCatalogRepository.get(context)
+        assertTrue(catalog.pacotes.filter { it.url.isNotBlank() }.all { catalog.localFile(it).isFile })
+        val config = DossierAnalysis.loadConfig(context)
+        val term = "Escada de Jacó"
+        val results = catalog.buscarConteudo("\"$term\"", area = BibliotecaArea.Biblioteca, limite = config.limits.analyzedSources,
+            variants = config.variants)
+        assertTrue(results.isNotEmpty())
+        val sources = results.map {
+            DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
+                it.pagina, it.data, it.trecho, it.rodape)
+        }
+        val start = SystemClock.elapsedRealtime()
+        val analysis = DossierAnalysis.analyze(term, sources, config, java.time.LocalDate.parse("2026-09-27"))
+        val elapsed = SystemClock.elapsedRealtime() - start
+        assertTrue(analysis.summary.isNotEmpty())
+        File(context.filesDir, "dossie-acervo-android.json").writeText(analysis.toJson()
+            .put("exibicao", DossierAnalysis.display(term, analysis, sources, config).toJson())
+            .put("fontesIds", JSONArray(sources.map { it.id }))
+            .put("milissegundosAnalise", elapsed).toString(2))
     }
 
     @Test
@@ -81,6 +96,12 @@ class FullCatalogBenchmarkTest {
         assertTrue(catalog.buscarConteudo("maçonaria", obraId = sample.obraId).all { it.obraId == sample.obraId })
         val all = catalog.buscarConteudo("maçonaria", limite = 80)
         assertEquals(all.drop(40), catalog.buscarConteudo("maçonaria", limite = 40, offset = 40))
+        // Same books-only scope on both platforms; compared result by result across iOS and Android.
+        val topResults = JSONObject()
+        for (query in listOf("maçonaria", "\"grande loja\"", "ética virtude", "\"escada de jacó\"")) {
+            topResults.put(query, JSONArray(catalog.buscarConteudo(query, area = BibliotecaArea.Biblioteca, limite = 120)
+                .map { "${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}" }))
+        }
         val largest = packages.flatMap { it.obras }.maxBy { it.paginas }
         val start = SystemClock.elapsedRealtime()
         val pages = catalog.indicePaginas(largest.id, limite = largest.paginas + 1)
@@ -89,7 +110,7 @@ class FullCatalogBenchmarkTest {
         assertTrue(catalog.indicePaginas(largest.id, filtro = last.pagina.toString()).any { it.pagina == last.pagina })
         File(context.filesDir, "medicao-acervo-android.json").writeText(JSONObject()
             .put("environment", "Android emulator API 36; not a physical-device certification")
-            .put("packages", packages.size).put("queries", timings)
+            .put("packages", packages.size).put("queries", timings).put("topResults", topResults)
             .put("largestWorkPages", pages.size).put("pageIndexMilliseconds", SystemClock.elapsedRealtime() - start).toString(2))
     }
 }
