@@ -42,7 +42,7 @@ class FullCatalogBenchmarkTest {
             .put("ruleIDs", JSONArray(rules.collections.map { it.id } + rules.paths.map { it.id }))
             .put("selectedPages", JSONArray(selected.map { row -> JSONArray(row.map { "${it.ref.obraId}:${it.ref.pagina}" }) }))
             .put("engine", "fts5vocab")
-            .put("environment", "emulator, not physical certification").toString(2))
+            .put("environment", ambiente()).toString(2))
     }
 
     /** Real-corpus dossier for "Escada de Jacó" in the books area, compared with iOS item by item. */
@@ -110,8 +110,16 @@ class FullCatalogBenchmarkTest {
         val last = pages.last()
         assertTrue(catalog.indicePaginas(largest.id, filtro = last.pagina.toString()).any { it.pagina == last.pagina })
         File(context.filesDir, "medicao-acervo-android.json").writeText(JSONObject()
-            .put("environment", "Android emulator API 36; not a physical-device certification")
+            .put("environment", ambiente())
             .put("packages", packages.size).put("queries", timings).put("topResults", topResults)
             .put("largestWorkPages", pages.size).put("pageIndexMilliseconds", SystemClock.elapsedRealtime() - start).toString(2))
     }
+
+/** Where the measurement ran: a physical device is named, an emulator is marked as such. */
+private fun ambiente(): String {
+    val emulador = android.os.Build.FINGERPRINT.contains("generic") || android.os.Build.MODEL.contains("sdk_gphone")
+    val aparelho = "${android.os.Build.MANUFACTURER} ${android.os.Build.MODEL}, Android ${android.os.Build.VERSION.RELEASE}"
+    return if (emulador) "emulator ($aparelho)" else "physical device ($aparelho)"
+}
+
 }
