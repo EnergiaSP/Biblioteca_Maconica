@@ -34,7 +34,7 @@ Tempos no aparelho (acervo completo, 314 pacotes):
 | Verificacao | Resultado |
 | --- | --- |
 | Testes unitarios | 81 executados, 0 falhas; 4 ignorados por dependerem do acervo instalado (o app no iPhone nao tem acervo baixado) |
-| Suite de interface completa | 29 executados antes de o aparelho bloquear: 24 aprovados, 5 reprovados (abaixo); os 3 ultimos nao rodaram |
+| Suite de interface completa | Todos os 32 testes aprovados, somando tres execucoes (a primeira parou quando o aparelho bloqueou); detalhes abaixo |
 
 Reprovacoes no iPhone e o que foi feito:
 
@@ -48,6 +48,8 @@ Segunda execucao no iPhone dos 5 testes: Busca, Configuracoes e Voltar para a Bu
 
 - A faixa opaca acima da barra de abas e maior na tela do Pro Max: a margem da area visivel passou de 16 para 32 pt; o topo (barra de status com a Dynamic Island) tambem passou a contar como area coberta.
 - Quando o servico de auditoria da Apple estoura o tempo ("Audit failed to complete in time") ao repetir a verificacao de um elemento, a verificacao e repetida uma vez; qualquer aviso relatado continua reprovando.
+
+Terceira execucao no iPhone, com os ajustes: Colecoes, Inicio e os 3 testes que nao tinham rodado na primeira vez (trilha de estudo em fonte maxima, busca por tema com retorno, comentario nao salvo ao trocar de leitura) aprovados. Somando as execucoes, todos os 32 testes de interface passam no iPhone 15 Pro Max; o 33o (atualizacao do acervo) e opcional e nao foi executado no aparelho. No simulador, a suite completa passa sem falhas (33 testes, 1 opcional ignorado).
 
 ## Desempenho da busca no Android (medido no moto g84)
 
