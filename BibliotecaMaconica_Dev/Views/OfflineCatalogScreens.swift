@@ -439,6 +439,17 @@ var acervoOfflineView: some View {
                     .background(temaApp.painel)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
 
+                    if dossiesSalvos.isEmpty == false {
+                        DossiesSalvosCard(
+                            salvos: dossiesSalvos,
+                            passos: DossieEstudoAnalise.Configuracao.compartilhada?.revisao ?? [],
+                            tema: temaApp,
+                            habilitado: gerandoDossieEstudo == false,
+                            abrir: { abrirDossieSalvo($0) },
+                            excluir: { excluirDossieSalvo($0) }
+                        )
+                    }
+
                     if gerandoDossieEstudo {
                         ProgressView("Organizando estudo")
                             .tint(destaqueApp)
@@ -448,6 +459,18 @@ var acervoOfflineView: some View {
                             .background(temaApp.painel)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                     } else if let dossieEstudo {
+                        let salvoAtual = dossiesSalvos.first { $0.id == dossieSalvoID }
+                        Button {
+                            salvarDossieEstudo()
+                        } label: {
+                            Label(salvoAtual == nil ? "Salvar dossiê" : "Dossiê salvo", systemImage: salvoAtual == nil ? "bookmark" : "bookmark.fill")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(AccessibleActionButtonStyle(tema: temaApp))
+                        .tint(destaqueApp)
+                        .disabled(salvoAtual != nil || dossieEstudo.resultados.isEmpty)
+                        .accessibilityIdentifier("dossier.save")
+
                         DossieEstudoCard(
                             dossie: dossieEstudo,
                             tema: temaApp,
@@ -463,6 +486,20 @@ var acervoOfflineView: some View {
                         )
                         .accessibilityElement(children: .contain)
                         .accessibilityIdentifier("dossier.results")
+
+                        if let salvoAtual, let configuracao = DossieEstudoAnalise.Configuracao.compartilhada {
+                            RevisoesDossieCard(
+                                salvo: salvoAtual,
+                                passos: configuracao.revisao,
+                                lembrete: configuracao.lembreteRevisao,
+                                tema: temaApp,
+                                alternar: { alternarRevisaoDossie(salvoAtual, dias: $0) }
+                            )
+                        }
+
+                        if let termos = dossieEstudo.analise?.termosAssociados, termos.isEmpty == false {
+                            MapaDossieView(termo: dossieEstudo.termo, termos: termos, tema: temaApp)
+                        }
 
                         dossieIAView(dossieEstudo)
                     } else {
@@ -480,6 +517,7 @@ var acervoOfflineView: some View {
             }
         }
         .navigationTitle("Dossiê")
+        .onAppear { dossiesSalvos = DossiesSalvosStore().todos() }
         .onChange(of: buscaBiblioteca) { _, _ in invalidarDossieEstudo() }
         .onChange(of: escopoBuscaBiblioteca) { _, _ in invalidarDossieEstudo() }
         .onChange(of: areaBuscaBiblioteca) { _, _ in invalidarDossieEstudo() }

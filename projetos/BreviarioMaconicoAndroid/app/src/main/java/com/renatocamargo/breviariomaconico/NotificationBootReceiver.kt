@@ -43,6 +43,7 @@ class NotificationBootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
         if (intent?.action == Intent.ACTION_BOOT_COMPLETED || intent?.action == Intent.ACTION_MY_PACKAGE_REPLACED) {
             NotificationScheduler.schedule(context, PreferencesStore(context).settings)
+            DossierReminders.rescheduleAll(context)
         }
     }
 }

@@ -42,6 +42,10 @@
         </service>
 
         <receiver
+            android:name=".DossierReviewReceiver"
+            android:exported="false" />
+
+        <receiver
             android:name=".NotificationBootReceiver"
             android:enabled="true"
             android:exported="true">

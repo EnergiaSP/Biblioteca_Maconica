@@ -118,7 +118,8 @@ func buscarBiblioteca(
         escopo: BibliotecaBuscaEscopo,
         area: BibliotecaArea?,
         obraID: String? = nil,
-        filtro: BibliotecaFiltroMetadados = .init()
+        filtro: BibliotecaFiltroMetadados = .init(),
+        dataBase: Date = Date()
     ) async throws -> BibliotecaDossieEstudo? {
         let termoLimpo = termo.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termoLimpo.isEmpty == false else {
@@ -152,7 +153,7 @@ func buscarBiblioteca(
             )
         }
         let analise = await Task.detached(priority: .userInitiated) {
-            DossieEstudoAnalise.analisar(termo: termoLimpo, fontes: fontes, configuracao: configuracao, hoje: Date())
+            DossieEstudoAnalise.analisar(termo: termoLimpo, fontes: fontes, configuracao: configuracao, hoje: dataBase)
         }.value
         let exibicao = DossieEstudoAnalise.exibicao(termo: termoLimpo, resultado: analise, fontes: fontes, configuracao: configuracao)
         let resultados = Array(todos.prefix(configuracao.limites.fontesExibidas))

@@ -21,8 +21,11 @@ internal object DossierAnalysis {
     data class Config(
         val limits: Limits, val variants: Map<String, List<String>>, val definingVerbs: List<String>,
         val divergenceMarkers: List<String>, val stopWords: List<String>, val review: List<ReviewStep>,
-        val areas: Map<String, String>
+        val areas: Map<String, String>,
+        /** Local time of saved-dossier review notifications. */
+        val reviewReminder: ReminderTime = ReminderTime(9, 0)
     )
+    data class ReminderTime(val hour: Int, val minute: Int)
 
     data class Source(
         val id: String, val obraId: String, val tituloObra: String, val area: String, val pagina: Int,
@@ -86,7 +89,8 @@ internal object DossierAnalysis {
             json.getJSONArray("revisao").let { steps ->
                 List(steps.length()) { ReviewStep(steps.getJSONObject(it).getInt("dias"), steps.getJSONObject(it).getString("tarefa")) }
             },
-            json.getJSONObject("areas").let { areas -> areas.keys().asSequence().associateWith { areas.getString(it) } }
+            json.getJSONObject("areas").let { areas -> areas.keys().asSequence().associateWith { areas.getString(it) } },
+            json.getJSONObject("lembreteRevisao").let { ReminderTime(it.getInt("hora"), it.getInt("minuto")) }
         )
     }
 

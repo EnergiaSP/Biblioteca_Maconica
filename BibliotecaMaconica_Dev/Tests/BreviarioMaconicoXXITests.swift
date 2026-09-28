@@ -1,4 +1,5 @@
 import XCTest
+import UserNotifications
 import PDFKit
 import UIKit
 import SQLite3
@@ -760,6 +761,68 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         }
         let rizzardo = try BreviarioStore.carregarDadosDaObra(.breviarioRizzardo)
         XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
+    }
+
+    /// Saved dossiers date their reviews from the day they were saved, with the same rule as Android.
+    func testSavedDossierReviewsFollowSharedSchedule() throws {
+        let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let passos = configuracao.revisao
+        XCTAssertEqual(passos.map(\.dias), [0, 1, 3, 7, 21])
+        let salvo = DossieSalvo(id: "t", tema: "Escada de Jacó", area: "bibliotecaMaconica", obraId: nil, autor: "", assunto: "",
+                                criadoEm: "2026-09-20", revisoesConcluidas: [0])
+        let hoje = try XCTUnwrap(DossieSalvo(id: "", tema: "", area: nil, obraId: nil, autor: "", assunto: "", criadoEm: "2026-09-23").dataCriacao)
+        let revisoes = salvo.revisoes(passos: passos, hoje: hoje)
+        XCTAssertEqual(revisoes.map { DossieSalvo.data($0.data) }, ["2026-09-20", "2026-09-21", "2026-09-23", "2026-09-27", "2026-10-11"])
+        XCTAssertEqual(revisoes.map(\.situacao), [.feita, .atrasada, .hoje, .proxima, .proxima])
+        XCTAssertEqual(salvo.proximaRevisao(passos: passos, hoje: hoje)?.dias, 1)
+        XCTAssertEqual(salvo.alternando(1).proximaRevisao(passos: passos, hoje: hoje)?.dias, 3)
+        XCTAssertEqual(salvo.alternando(1).alternando(1).revisoesConcluidas, [0])
+        XCTAssertEqual(salvo.chave, DossieSalvo.chave(tema: "  escada de JACÓ ", area: "bibliotecaMaconica", obraId: nil, autor: "", assunto: ""))
+        XCTAssertEqual(configuracao.lembreteRevisao.hora, 9)
+        XCTAssertEqual(configuracao.lembreteRevisao.minuto, 0)
+
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: "teste-dossies-\(UUID().uuidString)"))
+        let store = DossiesSalvosStore(defaults: defaults)
+        store.salvar(salvo)
+        var copia = salvo.alternando(1)
+        copia = DossieSalvo(id: "u", tema: copia.tema, area: copia.area, obraId: nil, autor: "", assunto: "",
+                            criadoEm: copia.criadoEm, revisoesConcluidas: copia.revisoesConcluidas)
+        store.salvar(copia)
+        XCTAssertEqual(store.todos().filter { $0.chave == salvo.chave }.map(\.id), ["u"], "Same study is replaced, not duplicated")
+        XCTAssertEqual(store.buscar(id: "u")?.revisoesConcluidas, [0, 1])
+        store.remover(id: "u")
+        XCTAssertNil(store.buscar(chave: salvo.chave))
+    }
+
+    /// Pending reviews of a saved dossier become notifications that open it, as on Android.
+    @MainActor
+    func testSavedDossierRemindersOpenTheDossier() throws {
+        let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let hoje = DossieSalvo.calendario.startOfDay(for: Date())
+        let agora = try XCTUnwrap(DossieSalvo.calendario.date(byAdding: .hour, value: 12, to: hoje))
+        let salvo = DossieSalvo(id: "abc", tema: "Lembrete de teste", area: nil, obraId: nil, autor: "", assunto: "",
+                                criadoEm: DossieSalvo.data(hoje), revisoesConcluidas: [0, 3])
+        let requests = NotificationService.requisicoesRevisao(salvo, configuracao: configuracao, agora: agora)
+        XCTAssertEqual(requests.map(\.identifier), ["breviario.dossie.abc.1", "breviario.dossie.abc.7", "breviario.dossie.abc.21"],
+                       "Completed reviews are never scheduled")
+        let primeira = try XCTUnwrap(requests.first)
+        XCTAssertEqual(primeira.content.title, "Revisão do dossiê: Lembrete de teste")
+        XCTAssertEqual(primeira.content.body, configuracao.revisao[1].tarefa)
+        XCTAssertEqual(primeira.content.userInfo["url"] as? String, "breviario://dossie?id=abc")
+        let gatilho = try XCTUnwrap(primeira.trigger as? UNCalendarNotificationTrigger)
+        XCTAssertEqual(gatilho.dateComponents.hour, configuracao.lembreteRevisao.hora)
+        XCTAssertEqual(gatilho.dateComponents.minute, configuracao.lembreteRevisao.minuto)
+        XCTAssertEqual(DossieSalvo.calendario.date(from: gatilho.dateComponents).map { DossieSalvo.calendario.startOfDay(for: $0) },
+                       DossieSalvo.calendario.date(byAdding: .day, value: 1, to: hoje))
+        // Tapping the notification hands its link to the router the dossier screen observes.
+        let router = NotificationReadingRouter()
+        let url = try XCTUnwrap(URL(string: try XCTUnwrap(primeira.content.userInfo["url"] as? String)))
+        router.receive(url)
+        XCTAssertEqual(router.pendingURL, url)
+        router.receive(URL(string: "outro://dossie?id=abc")!)
+        XCTAssertEqual(router.pendingURL, url, "Only the app's own scheme is accepted")
+        XCTAssertEqual(DossieSalvoTextos.progresso(salvo, passos: configuracao.revisao, hoje: agora),
+                       "Próxima revisão em \(DossieSalvoTextos.data(try XCTUnwrap(DossieSalvo.calendario.date(byAdding: .day, value: 1, to: hoje)))): \(configuracao.revisao[1].tarefa)")
     }
 
     /// A package installed from an earlier catalog is offered as an update, as on Android.

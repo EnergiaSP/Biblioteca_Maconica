@@ -8,7 +8,7 @@ final class NotificationReadingRouter: ObservableObject {
     @Published private(set) var pendingURL: URL?
 
     func receive(_ url: URL) {
-        guard url.scheme == "breviario", url.host == "leitura" else { return }
+        guard url.scheme == "breviario", url.host == "leitura" || url.host == "dossie" else { return }
         pendingURL = url
     }
 

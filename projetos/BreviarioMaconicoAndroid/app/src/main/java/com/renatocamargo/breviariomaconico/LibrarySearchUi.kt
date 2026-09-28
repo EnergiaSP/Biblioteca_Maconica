@@ -296,7 +296,7 @@ internal fun StructuredSearchScreen(
 }
 
 @Composable
-private fun MetadataFilterFields(colors: Palette, filter: LibraryMetadataFilter, onChange: (LibraryMetadataFilter) -> Unit) {
+internal fun MetadataFilterFields(colors: Palette, filter: LibraryMetadataFilter, onChange: (LibraryMetadataFilter) -> Unit) {
     OutlinedTextField(value = filter.autor, onValueChange = { onChange(filter.copy(autor = it)) },
         label = { Text("Filtrar por autor") }, modifier = Modifier.fillMaxWidth().testTag("search.author"),
         singleLine = true, colors = librarySearchFieldColors(colors))
@@ -306,7 +306,7 @@ private fun MetadataFilterFields(colors: Palette, filter: LibraryMetadataFilter,
 }
 
 @Composable
-private fun librarySearchFieldColors(colors: Palette) = OutlinedTextFieldDefaults.colors(
+internal fun librarySearchFieldColors(colors: Palette) = OutlinedTextFieldDefaults.colors(
     focusedTextColor = colors.text,
     unfocusedTextColor = colors.text,
     focusedLabelColor = colors.secondary,
@@ -327,255 +327,6 @@ internal fun SearchResultCard(colors: Palette, resultado: BibliotecaBuscaResulta
     }
 }
 
-@OptIn(ExperimentalLayoutApi::class)
-@Composable
-internal fun DossierScreen(
-    colors: Palette,
-    session: LibraryStudySession = remember { LibraryStudySession(MENSAGEM_INICIAL_DOSSIE) },
-    abrirResultado: (BibliotecaBuscaResultado) -> Unit
-) {
-    val context = LocalContext.current
-    val catalogo = remember { BibliotecaCatalogRepository.get(context) }
-    val prefs = remember { PreferencesStore(context) }
-    val scope = rememberCoroutineScope()
-    var tema by session::termo
-    var metadataFilter by session::metadataFilter
-    var resultados by session::resultados
-    var status by session::status
-    var analiseIa by session::analiseIa
-    var study by session::dossierStudy
-    val dossierConfig = remember { DossierAnalysis.loadConfig(context) }
-    var gerandoIa by remember { mutableStateOf(false) }
-    var montando by remember { mutableStateOf(false) }
-    var area by session::area
-    var obraId by session::obraId
-    var obras by remember { mutableStateOf(emptyList<com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo>()) }
-    var escolherObra by remember { mutableStateOf(false) }
-    var consultaJob by remember { mutableStateOf<Job?>(null) }
-    var analiseJob by remember { mutableStateOf<Job?>(null) }
-    val studyPlan = remember(tema, resultados, study) { buildDossierStudyPlan(tema, resultados, study) }
-    val resumoEscopo = listOf(obras.firstOrNull { it.id == obraId }?.titulo ?: area?.titulo ?: "Toda a biblioteca",
-        metadataFilter.descricao).filter { it.isNotEmpty() }.joinToString(" • ")
-
-    fun invalidar() {
-        consultaJob?.cancel()
-        analiseJob?.cancel()
-        resultados = emptyList()
-        analiseIa = ""
-        montando = false
-        gerandoIa = false
-        status = "Gere o dossiê para consultar a seleção atual."
-        study = null
-    }
-    LaunchedEffect(area) {
-        obras = emptyList()
-        libraryQuery { catalogo.obrasDisponiveis(area) }.onSuccess { obras = it }
-    }
-    DisposableEffect(Unit) {
-        onDispose { if (montando) status = "Montagem interrompida. Toque em gerar dossiê novamente." }
-    }
-
-    LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("dossier.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        item {
-            PremiumCard(colors) {
-                Text("Dossiê de estudos", color = colors.text, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                Text("Gera um roteiro documental com base apenas nos trechos encontrados nas obras baixadas.", color = colors.secondary)
-                OutlinedTextField(
-                    value = tema,
-                    onValueChange = { invalidar(); tema = it },
-                    modifier = Modifier.fillMaxWidth().testTag("dossier.topic"),
-                    label = { Text("Tema, símbolo, frase ou assunto") },
-                    leadingIcon = { Icon(Icons.Default.Search, null) },
-                    singleLine = true,
-                    colors = librarySearchFieldColors(colors)
-                )
-                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    val chipColors = FilterChipDefaults.filterChipColors(labelColor = colors.text,
-                        selectedContainerColor = colors.accentSurface, selectedLabelColor = colors.onAccent)
-                    FilterChip(selected = area == null, onClick = { invalidar(); area = null; obraId = null },
-                        label = { Text("Todo acervo") }, colors = chipColors)
-                    BibliotecaArea.entries.forEach { item ->
-                        FilterChip(selected = area == item, onClick = { invalidar(); area = item; obraId = null },
-                            label = { Text(item.titulo) }, colors = chipColors)
-                    }
-                }
-                Box {
-                    TextButton(onClick = { escolherObra = true }) {
-                        Text(obras.firstOrNull { it.id == obraId }?.titulo ?: "Todas as obras da seleção", color = colors.text)
-                    }
-                    DropdownMenu(expanded = escolherObra, onDismissRequest = { escolherObra = false }) {
-                        DropdownMenuItem(text = { Text("Todas as obras da seleção") }, onClick = {
-                            invalidar(); obraId = null; escolherObra = false
-                        })
-                        obras.forEach { obra ->
-                            DropdownMenuItem(text = { Text(obra.titulo) }, onClick = {
-                                invalidar(); obraId = obra.id; escolherObra = false
-                            })
-                        }
-                    }
-                }
-                MetadataFilterFields(colors, metadataFilter) { invalidar(); metadataFilter = it }
-                Button(colors = libraryActionColors(colors), enabled = tema.isNotBlank() && !montando && !gerandoIa, onClick = {
-                    invalidar()
-                    val consulta = tema.trim()
-                    val areaSelecionada = area
-                    val obraSelecionada = obraId
-                    val filtroSelecionado = metadataFilter
-                    montando = true
-                    status = "Consultando as obras baixadas..."
-                    consultaJob = scope.launch {
-                        val requestContext = currentCoroutineContext()
-                        try {
-                            analiseIa = ""
-                            libraryQuery {
-                                val todos = catalogo.buscarConteudo(dossierQuery(consulta), areaSelecionada, obraSelecionada,
-                                    limite = dossierConfig.limits.analyzedSources, cancelled = { !requestContext.isActive },
-                                    filtro = filtroSelecionado, variants = dossierConfig.variants)
-                                todos to analyzeDossier(consulta, todos, dossierConfig)
-                            }
-                                .onSuccess { (todos, analise) ->
-                                    resultados = todos.take(dossierConfig.limits.shownSources)
-                                    study = analise
-                                    status = if (todos.isEmpty()) "Não encontrei base documental suficiente nas obras baixadas." else "Dossiê criado com ${todos.size} fonte(s) documentais."
-                                }.onFailure {
-                                    resultados = emptyList()
-                                    study = null
-                                    status = "Não foi possível montar o dossiê. Verifique os downloads no Acervo e tente novamente."
-                                }
-                        } finally {
-                            if (requestContext.isActive) montando = false
-                        }
-                    }
-                }) {
-                    Text(if (montando) "Montando..." else "Gerar dossiê")
-                }
-                FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
-                        shareText(context, textoDossie(tema, resultados, analiseIa, resumoEscopo, study))
-                    }) {
-                        Icon(Icons.Default.IosShare, null)
-                        Spacer(Modifier.width(6.dp))
-                        Text("Compartilhar")
-                    }
-                    Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
-                        shareDossierPdf(context, tema, resultados, analiseIa, resumoEscopo, prefs.settings.premiumPdfName, study)
-                    }) {
-                        Icon(Icons.Default.PictureAsPdf, null)
-                        Spacer(Modifier.width(6.dp))
-                        Text("PDF")
-                    }
-                }
-                Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty() && !gerandoIa, onClick = {
-                    val settings = prefs.settings
-                    if (!settings.aiEnabled) {
-                        Toast.makeText(context, "Ative a IA nas configurações.", Toast.LENGTH_LONG).show()
-                        return@Button
-                    }
-                    if (settings.geminiApiKey.isBlank()) {
-                        Toast.makeText(context, "Informe a chave Gemini nas configurações.", Toast.LENGTH_LONG).show()
-                        return@Button
-                    }
-                    gerandoIa = true
-                    val fontes = resultados.toList()
-                    val consulta = tema
-                    analiseJob = scope.launch {
-                        try {
-                        val resultado = libraryQuery {
-                                GeminiService.gerarTexto(promptAnaliseDossie(consulta, fontes, prefs.officialSources()), settings.geminiApiKey)
-                                    .also { GeminiService.validarCitacoes(it, fontes.size) }
-                        }
-                        resultado.onSuccess { texto ->
-                            if (tema == consulta && resultados == fontes) {
-                                analiseIa = texto
-                                Toast.makeText(context, "Análise do dossiê gerada.", Toast.LENGTH_LONG).show()
-                            }
-                        }.onFailure { erro ->
-                            Toast.makeText(context, erro.message ?: "Não foi possível gerar a análise.", Toast.LENGTH_LONG).show()
-                        }
-                        } finally {
-                            if (currentCoroutineContext().isActive) gerandoIa = false
-                        }
-                    }
-                }) {
-                    Icon(Icons.Default.TextFields, null)
-                    Spacer(Modifier.width(6.dp))
-                    Text(if (gerandoIa) "Gerando análise..." else "Gerar análise IA")
-                }
-                Text(status, modifier = Modifier.testTag("dossier.status"), color = colors.accent, fontWeight = FontWeight.SemiBold)
-            }
-        }
-        if (analiseIa.isNotBlank()) {
-            item {
-                PremiumCard(colors) {
-                    Text("Análise IA", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    Text(analiseIa, color = colors.secondary, lineHeight = 21.sp)
-                    FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Button(colors = libraryActionColors(colors), onClick = { copyText(context, analiseIa) }) {
-                            Icon(Icons.Default.ContentCopy, null)
-                            Spacer(Modifier.width(6.dp))
-                            Text("Copiar")
-                        }
-                        Button(colors = libraryActionColors(colors), onClick = { shareText(context, analiseIa) }) {
-                            Icon(Icons.Default.IosShare, null)
-                            Spacer(Modifier.width(6.dp))
-                            Text("Compartilhar")
-                        }
-                    }
-                }
-            }
-        }
-        study?.takeIf { resultados.isNotEmpty() }?.let { current ->
-            item(key = "dossier.analysis") { DossierAnalysisSections(colors, current.display) }
-        }
-        if (resultados.isNotEmpty()) {
-            item(key = "dossier.plan") {
-                PremiumCard(colors) {
-                    Text("Roteiro de estudo", modifier = Modifier.testTag("dossier.results"), color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    studyPlan.roadmap.forEachIndexed { index, stage ->
-                        Text("${index + 1}. $stage", color = colors.secondary)
-                    }
-                }
-            }
-            item {
-                PremiumCard(colors) {
-                    Text("Perguntas de fixação", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    studyPlan.questions.forEach { question -> Text("• $question", color = colors.secondary) }
-                }
-            }
-            item {
-                PremiumCard(colors) {
-                    Text("Mapa conceitual", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    studyPlan.conceptMap.forEach { relation -> Text("• $relation", color = colors.secondary) }
-                }
-            }
-            item {
-                PremiumCard(colors) {
-                    Text("Revisão espaçada", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    studyPlan.spacedReview.forEach { stage -> Text("• $stage", color = colors.secondary) }
-                }
-            }
-            item {
-                PremiumCard(colors) {
-                    Text("Cruzamento documental", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    studyPlan.crossReferences.forEach { crossing -> Text("• $crossing", color = colors.secondary) }
-                }
-            }
-            item {
-                PremiumCard(colors) {
-                    Text("Termos relacionados", color = colors.text, fontWeight = FontWeight.Bold)
-                    Text(studyPlan.relatedTerms.joinToString(", "), color = colors.secondary)
-                    Text("Limites da base", color = colors.text, fontWeight = FontWeight.Bold)
-                    studyPlan.limits.forEach { Text("• $it", color = colors.secondary) }
-                }
-            }
-        }
-        items(resultados, key = { it.id }) { resultado ->
-            SearchResultCard(colors, resultado, abrirResultado)
-        }
-    }
-}
-
-
 internal fun textoCompartilhavelPagina(pagina: BibliotecaPaginaLeitura): String =
     buildString {
         appendLine(pagina.tituloObra)
@@ -591,7 +342,7 @@ internal fun textoCompartilhavelPagina(pagina: BibliotecaPaginaLeitura): String 
     }.trim()
 
 @androidx.compose.runtime.Composable
-private fun libraryActionColors(colors: Palette) = androidx.compose.material3.ButtonDefaults.buttonColors(
+internal fun libraryActionColors(colors: Palette) = androidx.compose.material3.ButtonDefaults.buttonColors(
     containerColor = colors.accentSurface,
     contentColor = colors.onAccent,
     disabledContainerColor = colors.surface,

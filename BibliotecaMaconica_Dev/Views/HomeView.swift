@@ -37,6 +37,10 @@ struct HomeView: View {
     @State var filtroMetadadosBiblioteca = BibliotecaFiltroMetadados()
     @State var buscandoBiblioteca = false
     @State var dossieEstudo: BibliotecaDossieEstudo?
+    /// Saved dossier shown now, the saved list, and the question of the dossier being built or shown.
+    @State var dossieSalvoID: String?
+    @State var dossiesSalvos: [DossieSalvo] = []
+    @State var chaveDossieEmCurso: String?
     @State var gerandoDossieEstudo = false
     @State var analiseDossieIA = ""
     @State var gerandoAnaliseDossieIA = false

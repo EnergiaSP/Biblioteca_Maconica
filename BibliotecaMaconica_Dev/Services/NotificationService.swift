@@ -109,6 +109,77 @@ enum NotificationService {
         }
     }
 
+    /// One notification per pending review of a saved dossier, at the shared reminder time
+    /// (`lembreteRevisao`). Tapping it opens the saved dossier, as on Android.
+    static func agendarRevisoesDossie(
+        _ dossie: DossieSalvo,
+        configuracao: DossieEstudoAnalise.Configuracao? = .compartilhada,
+        completion: (@Sendable (Int) -> Void)? = nil
+    ) {
+        guard let configuracao else { return }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+            Task {
+                // Built here: notification requests are not Sendable.
+                let requests = requisicoesRevisao(dossie, configuracao: configuracao, agora: Date())
+                await removerPendentes(prefixo: prefixoRevisao(dossie.id))
+                var agendadas = 0
+                for request in requests {
+                    if await adicionar(request) { agendadas += 1 }
+                }
+                completion?(agendadas)
+            }
+        }
+    }
+
+    static func cancelarRevisoesDossie(_ dossie: DossieSalvo) {
+        Task { await removerPendentes(prefixo: prefixoRevisao(dossie.id)) }
+    }
+
+    static func requisicoesRevisao(
+        _ dossie: DossieSalvo,
+        configuracao: DossieEstudoAnalise.Configuracao,
+        agora: Date
+    ) -> [UNNotificationRequest] {
+        dossie.revisoes(passos: configuracao.revisao, hoje: agora)
+            .filter { $0.situacao != .feita }
+            .compactMap { revisao in
+                var componentes = DossieSalvo.calendario.dateComponents([.year, .month, .day], from: revisao.data)
+                componentes.hour = configuracao.lembreteRevisao.hora
+                componentes.minute = configuracao.lembreteRevisao.minuto
+                guard let quando = DossieSalvo.calendario.date(from: componentes), quando > agora else { return nil }
+                let conteudo = UNMutableNotificationContent()
+                conteudo.title = "Revisão do dossiê: \(dossie.tema)"
+                conteudo.body = revisao.tarefa
+                conteudo.userInfo = ["url": urlDossie(dossie.id).absoluteString]
+                conteudo.sound = .default
+                return UNNotificationRequest(
+                    identifier: "\(prefixoRevisao(dossie.id)).\(revisao.dias)",
+                    content: conteudo,
+                    trigger: UNCalendarNotificationTrigger(dateMatching: componentes, repeats: false)
+                )
+            }
+    }
+
+    static func urlDossie(_ id: String) -> URL {
+        var componentes = URLComponents()
+        componentes.scheme = "breviario"
+        componentes.host = "dossie"
+        componentes.queryItems = [URLQueryItem(name: "id", value: id)]
+        return componentes.url ?? URL(string: "breviario://dossie")!
+    }
+
+    private static func prefixoRevisao(_ id: String) -> String { "breviario.dossie.\(id)" }
+
+    private static func removerPendentes(prefixo: String) async {
+        await withCheckedContinuation { continuation in
+            UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+                let ids = requests.map(\.identifier).filter { $0.hasPrefix(prefixo + ".") }
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
+                continuation.resume()
+            }
+        }
+    }
+
     static func cancelarNotificacaoDiaria() {
         Task {
             await removerNotificacoesDoBreviario()

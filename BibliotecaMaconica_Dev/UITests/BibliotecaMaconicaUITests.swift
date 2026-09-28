@@ -81,6 +81,57 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         }
     }
 
+    /// Save, mark a review, leave, reopen from the saved list and delete, as on Android.
+    func testSavedDossierKeepsReviewsReopensAndCanBeDeleted() {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        let apagar = app.buttons.matching(identifier: "dossier.saved.delete").firstMatch
+        while apagar.exists { apagar.tap() }
+
+        topic.tap()
+        topic.typeText("virtude")
+        app.buttons["Montar dossiê"].tap()
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        let salvar = app.buttons["dossier.save"].firstMatch
+        for _ in 0..<6 where !salvar.isHittable { app.swipeUp(velocity: .slow) }
+        salvar.tap()
+        XCTAssertTrue(app.buttons["Dossiê salvo"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["dossier.save"].isEnabled)
+
+        let revisao = app.buttons["dossier.review.0"].firstMatch
+        for _ in 0..<30 where !revisao.isHittable { app.swipeUp(velocity: .slow) }
+        revisao.tap()
+        XCTAssertEqual(app.buttons["dossier.review.0"].value as? String, "Feita")
+        let mapa = app.otherElements["dossier.map"].firstMatch
+        XCTAssertTrue(mapa.exists)
+        for _ in 0..<6 where !mapa.isHittable { app.swipeUp(velocity: .slow) }
+        let captura = XCTAttachment(screenshot: app.screenshot())
+        captura.name = "dossier-map"
+        captura.lifetime = .keepAlways
+        add(captura)
+
+        // Another topic is not the saved dossier any more.
+        for _ in 0..<40 where !topic.isHittable { app.swipeDown(velocity: .fast) }
+        topic.tap()
+        topic.typeText(" adicional")
+        XCTAssertTrue(app.buttons["dossier.review.0"].waitForNonExistence(timeout: 5))
+
+        let abrir = app.buttons["dossier.saved.open"].firstMatch
+        for _ in 0..<6 where !abrir.isHittable { app.swipeUp(velocity: .slow) }
+        abrir.tap()
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        XCTAssertEqual(topic.value as? String, "virtude")
+        let reaberta = app.buttons["dossier.review.0"].firstMatch
+        for _ in 0..<30 where !reaberta.isHittable { app.swipeUp(velocity: .slow) }
+        XCTAssertEqual(reaberta.value as? String, "Feita")
+        XCTAssertEqual(app.buttons["dossier.review.1"].value as? String, "Pendente")
+
+        for _ in 0..<40 where !apagar.isHittable { app.swipeDown(velocity: .fast) }
+        apagar.tap()
+        XCTAssertTrue(app.otherElements["dossier.saved"].waitForNonExistence(timeout: 5))
+    }
+
     func testMainTabsOpenExpectedScreens() {
         navigationTab("Coleções").tap()
         XCTAssertTrue(app.navigationBars["Coleções"].waitForExistence(timeout: 5))

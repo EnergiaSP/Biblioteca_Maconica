@@ -334,6 +334,40 @@ class DataIntegrityTest {
         createDossierPdf(File(context.filesDir, "paridade-dossie-android.pdf"), topic, sources, "ANALISEINTEGRALFIM [F30]", scope = filteredScope)
     }
 
+    /** Saved dossiers date their reviews from the day they were saved, with the same rule as iOS. */
+    @Test
+    fun savedDossierReviewsFollowSharedSchedule() {
+        val steps = DossierAnalysis.loadConfig(context).review
+        assertEquals(listOf(0, 1, 3, 7, 21), steps.map { it.days })
+        val saved = SavedDossier("t", "Escada de Jacó", "bibliotecaMaconica", null, "", "", "2026-09-20", listOf(0))
+        val today = java.time.LocalDate.parse("2026-09-23")
+        val reviews = saved.reviews(steps, today)
+        assertEquals(listOf("2026-09-20", "2026-09-21", "2026-09-23", "2026-09-27", "2026-10-11"), reviews.map { it.date.toString() })
+        assertEquals(
+            listOf(SavedDossier.Status.FEITA, SavedDossier.Status.ATRASADA, SavedDossier.Status.HOJE, SavedDossier.Status.PROXIMA, SavedDossier.Status.PROXIMA),
+            reviews.map { it.status }
+        )
+        assertEquals(1, saved.nextReview(steps, today)?.days)
+        assertEquals(3, saved.toggled(1).nextReview(steps, today)?.days)
+        assertEquals(listOf(0), saved.toggled(1).toggled(1).revisoesConcluidas)
+        assertEquals(saved.chave, SavedDossier.chave("  escada de JACÓ ", "bibliotecaMaconica", null, "", ""))
+        assertEquals(DossierAnalysis.ReminderTime(9, 0), DossierAnalysis.loadConfig(context).reviewReminder)
+
+        val store = SavedDossierStore(context)
+        val before = store.all()
+        try {
+            store.save(saved)
+            store.save(saved.copy(id = "u", revisoesConcluidas = listOf(0, 1)))
+            assertEquals("Same study is replaced, not duplicated", listOf("u"), store.all().filter { it.chave == saved.chave }.map { it.id })
+            assertEquals(listOf(0, 1), store.find("u")?.revisoesConcluidas)
+            store.remove("u")
+            assertNull(store.findByKey(saved.chave))
+        } finally {
+            store.all().forEach { store.remove(it.id) }
+            before.forEach { store.save(it) }
+        }
+    }
+
     /** A package installed from an earlier catalog is offered as an update, as on iOS. */
     @Test
     fun installedPackageFromEarlierCatalogIsOutdated() {
@@ -415,6 +449,52 @@ class DataIntegrityTest {
             manager.activeNotifications.filter { it.notification.channelId == "breviario_daily" }.forEach { manager.cancel(it.id) }
         }
     }
+    /** Pending reviews of a saved dossier are scheduled; the posted reminder opens the saved dossier. */
+    @Test
+    fun savedDossierRemindersAreScheduledAndPosted() {
+        val instrumentation = androidx.test.platform.app.InstrumentationRegistry.getInstrumentation()
+        if (android.os.Build.VERSION.SDK_INT >= 33) {
+            instrumentation.uiAutomation.grantRuntimePermission(context.packageName, android.Manifest.permission.POST_NOTIFICATIONS)
+        }
+        val config = DossierAnalysis.loadConfig(context)
+        val store = SavedDossierStore(context)
+        val saved = SavedDossier(UUID.randomUUID().toString(), "Lembrete de teste", null, null, "", "",
+            java.time.LocalDate.now().toString(), listOf(0, 1))
+        val manager = context.getSystemService(android.app.NotificationManager::class.java)
+        try {
+            store.save(saved)
+            DossierReminders.schedule(context, saved, config)
+            assertFalse("Review of today at 09:00 may be past; completed ones are never scheduled", DossierReminders.isScheduled(context, saved, 1))
+            assertTrue(DossierReminders.isScheduled(context, saved, 3))
+            assertTrue(DossierReminders.isScheduled(context, saved, 21))
+
+            DossierReviewReceiver().onReceive(context, android.content.Intent().setData(
+                DossierReminders.uri(saved.id).buildUpon().appendQueryParameter("dias", "3").build()).putExtra("tarefa", "Tarefa 3"))
+            val deadline = android.os.SystemClock.elapsedRealtime() + 5_000
+            while (manager.activeNotifications.none { it.notification.channelId == "dossie_revisao" } && android.os.SystemClock.elapsedRealtime() < deadline) {
+                Thread.sleep(100)
+            }
+            val posted = manager.activeNotifications.single { it.notification.channelId == "dossie_revisao" }
+            assertEquals("Revisão do dossiê: Lembrete de teste", posted.notification.extras.getCharSequence(android.app.Notification.EXTRA_TITLE).toString())
+            assertTrue(posted.notification.actions.orEmpty().any { it.title.toString() == "Abrir dossiê" && it.actionIntent != null })
+
+            // A completed review no longer notifies, even if its alarm fires.
+            manager.cancel(posted.id)
+            store.save(saved.toggled(3))
+            DossierReviewReceiver().onReceive(context, android.content.Intent().setData(
+                DossierReminders.uri(saved.id).buildUpon().appendQueryParameter("dias", "3").build()))
+            Thread.sleep(300)
+            assertTrue(manager.activeNotifications.none { it.notification.channelId == "dossie_revisao" })
+
+            DossierReminders.cancel(context, saved, config)
+            assertFalse(DossierReminders.isScheduled(context, saved, 21))
+        } finally {
+            DossierReminders.cancel(context, saved, config)
+            store.remove(saved.id)
+            manager.activeNotifications.filter { it.notification.channelId == "dossie_revisao" }.forEach { manager.cancel(it.id) }
+        }
+    }
+
     @Test
     fun sharedGoldenCasesMatchSearchAndFootnotes() {
         val cases = org.json.JSONObject(context.assets.open("casos_comuns_v1.json").bufferedReader().use { it.readText() })

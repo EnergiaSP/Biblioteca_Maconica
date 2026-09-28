@@ -3,7 +3,8 @@ import UniformTypeIdentifiers
 import UIKit
 
 extension HomeView {
-func gerarDossieEstudo() {
+/// Builds the dossier for the current fields; a saved one keeps its review dates.
+func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         let termo = buscaBiblioteca.trimmingCharacters(in: .whitespacesAndNewlines)
         guard termo.isEmpty == false else {
             mensagemErro = "Informe um tema para montar o dossiê."
@@ -18,8 +19,11 @@ func gerarDossieEstudo() {
         let area = areaBuscaBiblioteca
         let obraID = obraBuscaBibliotecaID
         let filtro = filtroMetadadosBiblioteca
+        let dataBase = salvo?.dataCriacao ?? Date()
         dossieEstudo = nil
         analiseDossieIA = ""
+        chaveDossieEmCurso = chaveDossieAtual()
+        dossieSalvoID = salvo?.id
 
         buscaBibliotecaTask = Task { @MainActor in
             do {
@@ -28,7 +32,8 @@ func gerarDossieEstudo() {
                     escopo: escopo,
                     area: escopo == .area ? area : nil,
                     obraID: obraID,
-                    filtro: filtro
+                    filtro: filtro,
+                    dataBase: dataBase
                 )
 
                 guard Task.isCancelled == false else { return }
@@ -91,7 +96,82 @@ func gerarDossieEstudo() {
         "Dossiê de estudo\n\n" + PDFService.textoDossieEstudo(dossie)
     }
 
+    /// Same key as a saved dossier, so reopening one does not count as a change of question.
+    func chaveDossieAtual() -> String {
+        DossieSalvo.chave(
+            tema: buscaBiblioteca,
+            area: escopoBuscaBiblioteca == .area ? areaBuscaBiblioteca.rawValue : nil,
+            obraId: escopoBuscaBiblioteca == .obraAtual ? (obraBuscaBibliotecaID ?? store.obraSelecionada.id) : nil,
+            autor: filtroMetadadosBiblioteca.autor,
+            assunto: filtroMetadadosBiblioteca.assunto
+        )
+    }
+
+    func abrirDossieSalvo(_ salvo: DossieSalvo) {
+        buscaBiblioteca = salvo.tema
+        filtroMetadadosBiblioteca = BibliotecaFiltroMetadados(autor: salvo.autor, assunto: salvo.assunto)
+        if let obraId = salvo.obraId {
+            escopoBuscaBiblioteca = .obraAtual
+            obraBuscaBibliotecaID = obraId == store.obraSelecionada.id ? nil : obraId
+        } else if let area = salvo.area.flatMap(BibliotecaArea.init(rawValue:)) {
+            escopoBuscaBiblioteca = .area
+            areaBuscaBiblioteca = area
+        } else {
+            escopoBuscaBiblioteca = .appTodo
+        }
+        navigation.selectedTab = AppNavigationController.Tab.dossie.rawValue
+        gerarDossieEstudo(salvo: salvo)
+    }
+
+    func abrirDossieSalvo(id: String) {
+        dossiesSalvos = DossiesSalvosStore().todos()
+        guard let salvo = dossiesSalvos.first(where: { $0.id == id }) else {
+            mensagemErro = "Este dossiê salvo foi excluído."
+            return
+        }
+        abrirDossieSalvo(salvo)
+    }
+
+    func salvarDossieEstudo() {
+        let store = DossiesSalvosStore()
+        let salvo = store.buscar(chave: chaveDossieAtual()) ?? DossieSalvo(
+            id: UUID().uuidString,
+            tema: buscaBiblioteca.trimmingCharacters(in: .whitespacesAndNewlines),
+            area: escopoBuscaBiblioteca == .area ? areaBuscaBiblioteca.rawValue : nil,
+            obraId: escopoBuscaBiblioteca == .obraAtual ? (obraBuscaBibliotecaID ?? self.store.obraSelecionada.id) : nil,
+            autor: filtroMetadadosBiblioteca.autor.trimmingCharacters(in: .whitespacesAndNewlines),
+            assunto: filtroMetadadosBiblioteca.assunto.trimmingCharacters(in: .whitespacesAndNewlines),
+            criadoEm: DossieSalvo.data(Date())
+        )
+        store.salvar(salvo)
+        NotificationService.agendarRevisoesDossie(salvo)
+        dossiesSalvos = store.todos()
+        dossieSalvoID = salvo.id
+        mensagemErro = "Dossiê salvo. Você será lembrado de cada revisão."
+    }
+
+    func alternarRevisaoDossie(_ salvo: DossieSalvo, dias: Int) {
+        let atualizado = salvo.alternando(dias)
+        let store = DossiesSalvosStore()
+        store.salvar(atualizado)
+        NotificationService.agendarRevisoesDossie(atualizado)
+        dossiesSalvos = store.todos()
+    }
+
+    func excluirDossieSalvo(_ salvo: DossieSalvo) {
+        NotificationService.cancelarRevisoesDossie(salvo)
+        let store = DossiesSalvosStore()
+        store.remover(id: salvo.id)
+        if dossieSalvoID == salvo.id { dossieSalvoID = nil }
+        dossiesSalvos = store.todos()
+        mensagemErro = "Dossiê \"\(salvo.tema)\" excluído."
+    }
+
     func invalidarDossieEstudo() {
+        // Fields changed by reopening a saved dossier still ask the same question.
+        guard chaveDossieAtual() != chaveDossieEmCurso else { return }
+        chaveDossieEmCurso = nil
+        dossieSalvoID = nil
         buscaBibliotecaTask?.cancel()
         buscaBibliotecaTask = nil
         gerandoDossieEstudo = false

@@ -21,7 +21,14 @@ enum DossieEstudoAnalise {
         let marcadoresDivergencia: [String]
         let palavrasVazias: [String]
         let revisao: [Revisao]
+        /// Local time of saved-dossier review notifications.
+        let lembreteRevisao: Lembrete
         let areas: [String: String]
+
+        struct Lembrete: Decodable {
+            let hora: Int
+            let minuto: Int
+        }
 
         static let compartilhada: Configuracao? = {
             guard let url = Bundle.main.url(forResource: "estudo_dossie_v1", withExtension: "json"),
