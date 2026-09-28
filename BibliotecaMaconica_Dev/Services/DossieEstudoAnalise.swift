@@ -180,11 +180,11 @@ enum DossieEstudoAnalise {
 
     // MARK: - Text, by Unicode code point as in the reference
 
-    private static func nfc(_ texto: String) -> String {
+    static func nfc(_ texto: String) -> String {
         texto.precomposedStringWithCanonicalMapping
     }
 
-    private static func ehCaractereDePalavra(_ escalar: Unicode.Scalar) -> Bool {
+    static func ehCaractereDePalavra(_ escalar: Unicode.Scalar) -> Bool {
         switch escalar.properties.generalCategory {
         case .uppercaseLetter, .lowercaseLetter, .titlecaseLetter, .modifierLetter, .otherLetter,
              .decimalNumber, .letterNumber, .otherNumber:
@@ -195,7 +195,7 @@ enum DossieEstudoAnalise {
     }
 
     /// Runs of letters and digits with their code point positions.
-    private static func intervalos(_ escalares: [Unicode.Scalar]) -> [Range<Int>] {
+    static func intervalos(_ escalares: [Unicode.Scalar]) -> [Range<Int>] {
         var resultado: [Range<Int>] = []
         var inicio: Int?
         for (indice, escalar) in escalares.enumerated() {
@@ -210,13 +210,13 @@ enum DossieEstudoAnalise {
         return resultado
     }
 
-    private static func texto(_ escalares: ArraySlice<Unicode.Scalar>) -> String {
+    static func texto(_ escalares: ArraySlice<Unicode.Scalar>) -> String {
         var visao = String.UnicodeScalarView()
         visao.append(contentsOf: escalares)
         return String(visao)
     }
 
-    private static func dobrar(_ palavra: String) -> String {
+    static func dobrar(_ palavra: String) -> String {
         texto(ArraySlice(palavra.lowercased().decomposedStringWithCanonicalMapping.unicodeScalars
             .filter { $0.properties.generalCategory != .nonspacingMark }))
     }
@@ -226,7 +226,7 @@ enum DossieEstudoAnalise {
     }
 
     /// Original, lowercase (with accents) and normalized words, index-aligned.
-    private static func palavras(_ frase: String) -> (originais: [String], minusculas: [String], normalizadas: [String]) {
+    static func palavras(_ frase: String) -> (originais: [String], minusculas: [String], normalizadas: [String]) {
         let escalares = Array(frase.unicodeScalars)
         let originais = intervalos(escalares).map { texto(escalares[$0]) }
         return (originais, originais.map { $0.lowercased() }, originais.map(dobrar))
@@ -321,14 +321,14 @@ enum DossieEstudoAnalise {
         return ""
     }
 
-    private static func ocorrencias(_ tokens: [String], _ termo: [Set<String>]) -> [Int] {
+    static func ocorrencias(_ tokens: [String], _ termo: [Set<String>]) -> [Int] {
         guard !termo.isEmpty, tokens.count >= termo.count else { return [] }
         return (0...(tokens.count - termo.count)).filter { indice in
             termo.indices.allSatisfy { termo[$0].contains(tokens[indice + $0]) }
         }
     }
 
-    private static func referencia(_ fonte: Fonte) -> String {
+    static func referencia(_ fonte: Fonte) -> String {
         if let data = fonte.data, data.range(of: #"^\d{2}/\d{2}$"#, options: .regularExpression) != nil {
             return data
         }

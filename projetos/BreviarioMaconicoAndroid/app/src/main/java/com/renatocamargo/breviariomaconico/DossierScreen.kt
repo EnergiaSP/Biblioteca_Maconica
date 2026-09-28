@@ -1,5 +1,7 @@
 package com.renatocamargo.breviariomaconico
 
+import com.renatocamargo.breviariomaconico.data.AssistedInterpretation
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.filled.BookmarkAdd
 import com.renatocamargo.breviariomaconico.data.SavedDossier
 import com.renatocamargo.breviariomaconico.data.SavedDossierStore
@@ -367,16 +369,21 @@ internal fun DossierScreen(
                     gerandoIa = true
                     val fontes = resultados.toList()
                     val consulta = tema
+                    val iaConfig = AssistedInterpretation.loadConfig(context)
                     analiseJob = scope.launch {
                         try {
                         val resultado = libraryQuery {
-                                GeminiService.gerarTexto(promptAnaliseDossie(consulta, fontes, prefs.officialSources()), settings.geminiApiKey)
-                                    .also { GeminiService.validarCitacoes(it, fontes.size) }
+                                val sources = dossierSources(fontes)
+                                val resposta = GeminiService.gerarTexto(promptAnaliseDossie(context, consulta, fontes, prefs.officialSources()), settings.geminiApiKey)
+                                // Only sentences citing the dossier excerpts are kept; the rest is removed, not shown.
+                                val filtered = AssistedInterpretation.filter(resposta, sources, iaConfig)
+                                AssistedInterpretation.display(filtered, sources, iaConfig, dossierConfig)
                         }
                         resultado.onSuccess { texto ->
                             if (tema == consulta && resultados == fontes) {
                                 analiseIa = texto
-                                Toast.makeText(context, "Análise do dossiê gerada.", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, if (texto.isEmpty()) iaConfig.labels.nothingKept else "Interpretação assistida gerada.",
+                                    Toast.LENGTH_LONG).show()
                             }
                         }.onFailure { erro ->
                             Toast.makeText(context, erro.message ?: "Não foi possível gerar a análise.", Toast.LENGTH_LONG).show()
@@ -388,7 +395,11 @@ internal fun DossierScreen(
                 }) {
                     Icon(Icons.Default.TextFields, null)
                     Spacer(Modifier.width(6.dp))
-                    Text(if (gerandoIa) "Gerando análise..." else "Gerar análise IA")
+                    Text(if (gerandoIa) "Gerando interpretação..." else "Gerar interpretação assistida")
+                }
+                if (resultados.isNotEmpty()) {
+                    Text("A IA recebe somente os ${resultados.size} trechos exibidos neste dossiê. Ficam apenas as frases que citam um trecho; o resto é removido.",
+                        color = colors.secondary, fontSize = 13.sp)
                 }
                 Text(status, modifier = Modifier.testTag("dossier.status"), color = colors.accent, fontWeight = FontWeight.SemiBold)
             }
@@ -406,8 +417,8 @@ internal fun DossierScreen(
         if (analiseIa.isNotBlank()) {
             item {
                 PremiumCard(colors) {
-                    Text("Análise IA", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-                    Text(analiseIa, color = colors.secondary, lineHeight = 21.sp)
+                    // The text starts with its own title ("Interpretação assistida por IA") and notice.
+                    SelectionContainer { Text(analiseIa, color = colors.secondary, lineHeight = 21.sp, modifier = Modifier.testTag("dossier.ai")) }
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         Button(colors = libraryActionColors(colors), onClick = { copyText(context, analiseIa) }) {
                             Icon(Icons.Default.ContentCopy, null)

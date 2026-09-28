@@ -28,6 +28,12 @@ internal fun dossierQuery(topic: String): String {
     return if ('"' in clean || ' ' !in clean) clean else "\"$clean\""
 }
 
+/** Sources of the dossier analysis and of the AI prompt ([F1] is the first result shown). */
+internal fun dossierSources(results: List<BibliotecaBuscaResultado>): List<DossierAnalysis.Source> = results.map {
+    DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
+        it.pagina, it.data, it.trecho, it.rodape)
+}
+
 /** [today] dates the review plan; a reopened saved dossier passes the day it was saved. */
 internal fun analyzeDossier(
     topic: String,
@@ -35,10 +41,7 @@ internal fun analyzeDossier(
     config: DossierAnalysis.Config,
     today: java.time.LocalDate = java.time.LocalDate.now()
 ): DossierStudy {
-    val sources = results.map {
-        DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
-            it.pagina, it.data, it.trecho, it.rodape)
-    }
+    val sources = dossierSources(results)
     val analysis = DossierAnalysis.analyze(topic.trim(), sources, config, today)
     return DossierStudy(DossierAnalysis.display(topic.trim(), analysis, sources, config), analysis.relatedTerms.map { it.form }, sources.size,
         analysis.relatedTerms)

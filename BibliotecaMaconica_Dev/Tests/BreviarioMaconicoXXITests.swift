@@ -585,11 +585,7 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         let resultados = try service.buscar(termo: "\"\(termo)\"", escopo: .area, area: .bibliotecaMaconica, obraID: nil,
                                             limite: configuracao.limites.fontesAnalisadas, variantes: configuracao.variantes)
         XCTAssertFalse(resultados.isEmpty)
-        let fontes = resultados.map { resultado in
-            DossieEstudoAnalise.Fonte(id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
-                obraId: resultado.obra.id, tituloObra: resultado.obra.titulo, area: resultado.obra.area.rawValue,
-                pagina: resultado.item.pagina ?? 0, data: resultado.item.data, texto: resultado.item.texto, rodape: resultado.item.rodape ?? "")
-        }
+        let fontes = BreviarioStore.fontesDossie(resultados)
         var calendario = Calendar(identifier: .gregorian)
         calendario.timeZone = TimeZone(identifier: "UTC")!
         let hoje = try XCTUnwrap(calendario.date(from: DateComponents(year: 2026, month: 9, day: 27)))
@@ -601,6 +597,10 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         relatorio["exibicao"] = DossieEstudoAnalise.exibicao(termo: termo, resultado: analise, fontes: fontes, configuracao: configuracao).json
         relatorio["fontesIds"] = fontes.map(\.id)
         relatorio["milissegundosAnalise"] = milissegundos
+        // The AI prompt for the excerpts shown in this dossier, compared byte by byte with Android.
+        relatorio["promptIA"] = InterpretacaoAssistida.prompt(
+            termo: termo, fontes: Array(fontes.prefix(configuracao.limites.fontesExibidas)), oficiais: [],
+            configuracao: try XCTUnwrap(InterpretacaoAssistida.Configuracao.compartilhada), estudo: configuracao)
         try JSONSerialization.data(withJSONObject: relatorio, options: [.prettyPrinted, .sortedKeys])
             .write(to: documents.appendingPathComponent("dossie-acervo-ios.json"), options: .atomic)
     }
@@ -761,6 +761,39 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         }
         let rizzardo = try BreviarioStore.carregarDadosDaObra(.breviarioRizzardo)
         XCTAssertEqual(rizzardo.indiceRemissivo.first { $0.termo == "TOLERANCIA" }?.datas, ["07/07"])
+    }
+
+    /// The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly.
+    func testAssistedInterpretationMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(InterpretacaoAssistida.Configuracao.compartilhada)
+        let estudo = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_ia_v1", withExtension: "json"))
+        let casos = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        func fontes(_ lista: Any?) throws -> [DossieEstudoAnalise.Fonte] {
+            let dados = try JSONSerialization.data(withJSONObject: try XCTUnwrap(lista))
+            return try JSONDecoder().decode([DossieEstudoAnalise.Fonte].self, from: dados)
+        }
+        for caso in try XCTUnwrap(casos["prompts"] as? [[String: Any]]) {
+            let oficiais = (caso["fontesOficiais"] as? [[String: String]] ?? []).map {
+                InterpretacaoAssistida.FonteOficial(titulo: $0["titulo"] ?? "", origem: $0["origem"] ?? "", url: $0["url"] ?? "", observacao: $0["observacao"] ?? "")
+            }
+            let prompt = InterpretacaoAssistida.prompt(termo: try XCTUnwrap(caso["termo"] as? String), fontes: try fontes(caso["fontes"]),
+                                                       oficiais: oficiais, configuracao: configuracao, estudo: estudo)
+            XCTAssertEqual(prompt, caso["esperado"] as? String, "\(caso["id"] ?? "")")
+        }
+        let conjuntos = try XCTUnwrap(casos["fontes"] as? [String: Any])
+        for caso in try XCTUnwrap(casos["respostas"] as? [[String: Any]]) {
+            let lista = try fontes(conjuntos[try XCTUnwrap(caso["fontes"] as? String)])
+            let esperado = try XCTUnwrap(caso["esperado"] as? [String: Any])
+            let resultado = InterpretacaoAssistida.filtrar(resposta: try XCTUnwrap(caso["resposta"] as? String), fontes: lista, configuracao: configuracao)
+            let id = "\(caso["id"] ?? "")"
+            XCTAssertEqual(resultado.texto, esperado["texto"] as? String, id)
+            XCTAssertEqual(resultado.frasesMantidas, esperado["frasesMantidas"] as? Int, id)
+            XCTAssertEqual(resultado.frasesRemovidas, esperado["frasesRemovidas"] as? Int, id)
+            XCTAssertEqual(resultado.fontesCitadas, esperado["fontesCitadas"] as? [Int], id)
+            XCTAssertEqual(InterpretacaoAssistida.exibicao(resultado, fontes: lista, configuracao: configuracao, estudo: estudo),
+                           esperado["exibicao"] as? String, id)
+        }
     }
 
     /// Saved dossiers date their reviews from the day they were saved, with the same rule as Android.

@@ -428,7 +428,8 @@ static func desenharTextoPaginado(
         }
 
         if !analise.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            partes.append("Análise por IA\n" + analise)
+            // The assisted interpretation carries its own title, notice and cited sources.
+            partes.append(analise)
         }
 
         partes.append("Nota de confiabilidade\nEste dossiê foi organizado somente com base nas obras disponíveis no app. Conteúdos externos devem ser aceitos apenas quando forem comprovadamente oficiais e regulares.")

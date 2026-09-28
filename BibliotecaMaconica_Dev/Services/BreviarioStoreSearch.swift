@@ -113,6 +113,22 @@ func buscarBiblioteca(
         return try await withTaskCancellationHandler(operation: { try await trabalho.value }, onCancel: { trabalho.cancel() })
     }
 
+    /// Sources of the dossier analysis and of the AI prompt ([F1] is the first result shown).
+    nonisolated static func fontesDossie(_ resultados: [BibliotecaResultadoBusca]) -> [DossieEstudoAnalise.Fonte] {
+        resultados.map { resultado in
+            DossieEstudoAnalise.Fonte(
+                id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
+                obraId: resultado.obra.id,
+                tituloObra: resultado.obra.titulo,
+                area: resultado.obra.area.rawValue,
+                pagina: resultado.item.pagina ?? 0,
+                data: resultado.item.data,
+                texto: resultado.item.texto,
+                rodape: resultado.item.rodape ?? ""
+            )
+        }
+    }
+
     func montarDossieEstudo(
         termo: String,
         escopo: BibliotecaBuscaEscopo,
@@ -140,18 +156,7 @@ func buscarBiblioteca(
             filtro: filtro,
             variantes: configuracao.variantes
         )
-        let fontes = todos.map { resultado in
-            DossieEstudoAnalise.Fonte(
-                id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
-                obraId: resultado.obra.id,
-                tituloObra: resultado.obra.titulo,
-                area: resultado.obra.area.rawValue,
-                pagina: resultado.item.pagina ?? 0,
-                data: resultado.item.data,
-                texto: resultado.item.texto,
-                rodape: resultado.item.rodape ?? ""
-            )
-        }
+        let fontes = Self.fontesDossie(todos)
         let analise = await Task.detached(priority: .userInitiated) {
             DossieEstudoAnalise.analisar(termo: termoLimpo, fontes: fontes, configuracao: configuracao, hoje: dataBase)
         }.value

@@ -131,7 +131,7 @@ internal object DossierAnalysis {
 
     // Text, by Unicode code point as in the reference.
 
-    private fun nfc(text: String): String = Normalizer.normalize(text, Normalizer.Form.NFC)
+    fun nfc(text: String): String = Normalizer.normalize(text, Normalizer.Form.NFC)
 
     private fun isWordChar(codePoint: Int): Boolean = when (Character.getType(codePoint).toByte()) {
         Character.UPPERCASE_LETTER, Character.LOWERCASE_LETTER, Character.TITLECASE_LETTER, Character.MODIFIER_LETTER,
@@ -139,12 +139,12 @@ internal object DossierAnalysis {
         else -> false
     }
 
-    private fun codePoints(text: String): IntArray = text.codePoints().toArray()
+    fun codePoints(text: String): IntArray = text.codePoints().toArray()
 
-    private fun string(points: IntArray, from: Int, to: Int): String = String(points, from, to - from)
+    fun string(points: IntArray, from: Int, to: Int): String = String(points, from, to - from)
 
     /** Runs of letters and digits with their code point positions. */
-    private fun spans(points: IntArray): List<IntRange> {
+    fun spans(points: IntArray): List<IntRange> {
         val result = mutableListOf<IntRange>()
         var start = -1
         points.forEachIndexed { index, point ->
@@ -159,7 +159,7 @@ internal object DossierAnalysis {
         return result
     }
 
-    private fun fold(word: String): String {
+    fun fold(word: String): String {
         val decomposed = codePoints(Normalizer.normalize(word.lowercase(), Normalizer.Form.NFD))
         val kept = decomposed.filter { Character.getType(it) != Character.NON_SPACING_MARK.toInt() }.toIntArray()
         return String(kept, 0, kept.size)
@@ -168,10 +168,10 @@ internal object DossierAnalysis {
     private fun isNumber(word: String): Boolean =
         codePoints(word).all { Character.getType(it) == Character.DECIMAL_DIGIT_NUMBER.toInt() }
 
-    private class Words(val original: List<String>, val lower: List<String>, val normalized: List<String>)
+    class Words(val original: List<String>, val lower: List<String>, val normalized: List<String>)
 
     /** Original, lowercase (with accents) and normalized words, index-aligned. */
-    private fun words(text: String): Words {
+    fun words(text: String): Words {
         val points = codePoints(text)
         val original = spans(points).map { string(points, it.first, it.last + 1) }
         return Words(original, original.map { it.lowercase() }, original.map(::fold))
@@ -246,7 +246,7 @@ internal object DossierAnalysis {
         return result.map(::trimNoise).filter { it.isNotEmpty() }
     }
 
-    private fun isLetter(point: Int): Boolean = when (Character.getType(point).toByte()) {
+    fun isLetter(point: Int): Boolean = when (Character.getType(point).toByte()) {
         Character.UPPERCASE_LETTER, Character.LOWERCASE_LETTER, Character.TITLECASE_LETTER, Character.MODIFIER_LETTER,
         Character.OTHER_LETTER -> true
         else -> false
@@ -270,12 +270,12 @@ internal object DossierAnalysis {
         return ""
     }
 
-    private fun occurrences(tokens: List<String>, term: List<Set<String>>): List<Int> {
+    fun occurrences(tokens: List<String>, term: List<Set<String>>): List<Int> {
         if (term.isEmpty() || tokens.size < term.size) return emptyList()
         return (0..tokens.size - term.size).filter { index -> term.indices.all { tokens[index + it] in term[it] } }
     }
 
-    private fun reference(source: Source): String =
+    fun reference(source: Source): String =
         source.data?.takeIf { Regex("^\\d{2}/\\d{2}$").matches(it) } ?: "p. ${source.pagina}"
 
     private class Candidate(
