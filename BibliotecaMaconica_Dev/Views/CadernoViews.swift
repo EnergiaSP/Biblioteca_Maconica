@@ -26,7 +26,23 @@ struct CadernoEstudoView: View {
     @State private var exportando = false
     @State private var importando = false
     @State private var mensagem = ""
+    @State private var opcao = CadernoSincronizacao.opcaoEscolhida
+    @State private var sincronizando = false
+    @State private var ultima = CadernoSincronizacao.ultimaSincronizacao
     private let configuracao = CadernoEstudo.Configuracao.compartilhada
+
+    /// Options offered on this device: iCloud here, Google Drive on Android; the own account when published.
+    private var opcoes: [CadernoSincronizacao.Opcao] {
+        [.nenhuma, .icloud] + (ContaPropriaCaderno.provedor() == nil ? [] : [.contaPropria])
+    }
+
+    private func nome(_ opcao: CadernoSincronizacao.Opcao) -> String {
+        switch opcao {
+        case .nenhuma: rotulo("opcaoNenhuma")
+        case .icloud: rotulo("opcaoICloud")
+        case .contaPropria: rotulo("opcaoContaPropria")
+        }
+    }
 
     private func rotulo(_ chave: String, _ valores: [String: String] = [:]) -> String {
         configuracao?.rotulo(chave, valores) ?? chave
@@ -68,6 +84,8 @@ struct CadernoEstudoView: View {
                 .background(tema.painel)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
 
+                sincronizacao
+
                 if !mensagem.isEmpty {
                     Text(mensagem)
                         .foregroundStyle(tema.textoPrincipal)
@@ -85,6 +103,60 @@ struct CadernoEstudoView: View {
         }
         .fileImporter(isPresented: $importando, allowedContentTypes: [.json]) { resultado in
             if case .success(let url) = resultado { importar(url) }
+        }
+    }
+
+    private var sincronizacao: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(rotulo("sincronizacao"))
+                .font(.headline)
+                .foregroundStyle(tema.textoPrincipal)
+            Text(rotulo("descricaoSincronizacao"))
+                .font(.subheadline)
+                .foregroundStyle(tema.textoSecundario)
+                .fixedSize(horizontal: false, vertical: true)
+            Picker(rotulo("sincronizacao"), selection: $opcao) {
+                ForEach(opcoes) { Text(nome($0)).tag($0) }
+            }
+            .pickerStyle(.inline)
+            .labelsHidden()
+            .tint(tema.destaque)
+            .accessibilityIdentifier("notebook.sync.option")
+            .onChange(of: opcao) { _, nova in
+                CadernoSincronizacao.opcaoEscolhida = nova
+                if nova != .nenhuma { sincronizar() }
+            }
+            if opcao != .nenhuma {
+                Button(sincronizando ? "Sincronizando..." : rotulo("sincronizar")) { sincronizar() }
+                    .buttonStyle(AccessibleActionButtonStyle(tema: tema))
+                    .disabled(sincronizando)
+                    .accessibilityIdentifier("notebook.sync.now")
+                if let ultima {
+                    Text(rotulo("sincronizado", ["data": ultima.formatted(date: .numeric, time: .shortened)]))
+                        .font(.caption)
+                        .foregroundStyle(tema.textoSecundario)
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(tema.painel)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+
+    private func sincronizar() {
+        guard let configuracao, let provedor = CadernoSincronizacao.provedor(opcao), !sincronizando else { return }
+        sincronizando = true
+        Task { @MainActor in
+            defer { sincronizando = false }
+            do {
+                let caderno = try await CadernoSincronizacao.sincronizar(com: provedor, configuracao: configuracao)
+                ultima = CadernoSincronizacao.ultimaSincronizacao
+                atualizarResumo()
+                mensagem = rotulo("importado", contagens(caderno))
+            } catch {
+                mensagem = error.localizedDescription
+            }
         }
     }
 

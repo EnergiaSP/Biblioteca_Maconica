@@ -10,6 +10,17 @@
     "importar": "Importar caderno",
     "exportado": "Caderno exportado com {leituras} leitura(s), {dossies} dossiê(s) e {cartoes} cartão(ões).",
     "importado": "Caderno importado: {leituras} leitura(s), {dossies} dossiê(s) e {cartoes} cartão(ões) no aparelho. Nada do que já estava aqui foi apagado.",
-    "invalido": "Este arquivo não é um caderno da Biblioteca Maçônica ou é de uma versão mais nova do app."
+    "invalido": "Este arquivo não é um caderno da Biblioteca Maçônica ou é de uma versão mais nova do app.",
+    "sincronizacao": "Sincronização automática",
+    "descricaoSincronizacao": "O caderno é mesclado com o da nuvem ao abrir o app e ao tocar em Sincronizar agora. Nada é apagado: anotações diferentes ficam as duas.",
+    "opcaoNenhuma": "Não sincronizar",
+    "opcaoICloud": "iCloud (iPhone e iPad)",
+    "opcaoGoogle": "Google Drive (Android)",
+    "opcaoContaPropria": "Conta própria (iPhone, iPad e Android)",
+    "sincronizar": "Sincronizar agora",
+    "sincronizado": "Sincronizado em {data}.",
+    "semICloud": "Entre na sua conta do iCloud nos Ajustes do aparelho para sincronizar.",
+    "semGoogle": "Entre com uma conta Google para sincronizar pelo Google Drive.",
+    "remotoIlegivel": "O caderno na nuvem é de uma versão mais nova do app e não foi alterado. Atualize o app neste aparelho."
   }
 }

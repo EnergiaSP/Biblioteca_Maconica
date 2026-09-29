@@ -816,6 +816,50 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertEqual(CadernoEstudo.decodificar(try Data(contentsOf: doAndroid), configuracao: configuracao), esperado)
     }
 
+    /// Sync through a service: the merged notebook is applied here and written back; a remote file
+    /// from a newer version of the app is never overwritten.
+    @MainActor
+    func testStudyNotebookSyncMergesAndProtectsUnreadableRemote() async throws {
+        final class Memoria: ProvedorCaderno, @unchecked Sendable {
+            let opcao = CadernoSincronizacao.Opcao.contaPropria
+            var dados: Data?
+            var gravacoes = 0
+            init(_ dados: Data?) { self.dados = dados }
+            func ler() async throws -> Data? { dados }
+            func gravar(_ novos: Data) async throws { dados = novos; gravacoes += 1 }
+        }
+        let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let obra = "teste_caderno_sincronizacao"
+        defer {
+            for chave in UserDefaults.standard.dictionaryRepresentation().keys where chave.contains(obra) {
+                UserDefaults.standard.removeObject(forKey: chave)
+            }
+            UserDefaults.standard.removeObject(forKey: "sincronizacaoCadernoEm")
+        }
+        var outroAparelho = CadernoEstudo.vazio(configuracao)
+        var leitura = CadernoEstudo.Leitura(obraId: obra, data: "05/07")
+        leitura.comentario = "Anotação feita no outro aparelho."
+        outroAparelho.leituras = [leitura]
+        let nuvem = Memoria(try CadernoEstudo.codificar(outroAparelho))
+
+        let mesclado = try await CadernoSincronizacao.sincronizar(com: nuvem, configuracao: configuracao)
+        XCTAssertEqual(CommentsService.carregar(data: "05/07", obraID: obra), "Anotação feita no outro aparelho.")
+        XCTAssertEqual(CadernoEstudo.decodificar(try XCTUnwrap(nuvem.dados), configuracao: configuracao), mesclado)
+        let depois = nuvem.gravacoes
+        _ = try await CadernoSincronizacao.sincronizar(com: nuvem, configuracao: configuracao)
+        XCTAssertEqual(nuvem.gravacoes, depois, "Nothing changed, nothing is written")
+
+        let futuro = Data(#"{"formato":"caderno-biblioteca-maconica","versao":99}"#.utf8)
+        let nuvemFutura = Memoria(futuro)
+        do {
+            _ = try await CadernoSincronizacao.sincronizar(com: nuvemFutura, configuracao: configuracao)
+            XCTFail("A notebook from a newer version must not be merged")
+        } catch {
+            XCTAssertEqual(nuvemFutura.dados, futuro)
+            XCTAssertEqual(nuvemFutura.gravacoes, 0)
+        }
+    }
+
     /// A notebook written to this device and collected again keeps the reading, its highlight and edit.
     func testStudyNotebookRoundTripOnThisDevice() throws {
         let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
