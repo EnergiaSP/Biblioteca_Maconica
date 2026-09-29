@@ -22,7 +22,7 @@ Casos: geracao sobre o dossie "Escada de Jacó" dos casos do dossie (6 cartoes, 
 - Os cartoes sao gerados junto com o dossie (onde as fontes estao a mao) e guardados quando o dossie e salvo; a mensagem informa quantos foram criados. Reabrir um dossie salvo acrescenta os que faltam (os existentes mantem o progresso); excluir o dossie remove os cartoes dele.
 - Aba Dossie, logo abaixo do formulario (montar o dossie continua sendo a primeira acao): "Revisão ativa", "N cartão(ões) para revisar hoje" e "Revisar agora". No topo, o resumo empurrava "Montar dossiê" para baixo da barra de abas e a auditoria de acessibilidade acusava texto parcialmente coberto.
 - Sessao: frente; "Mostrar resposta" mostra o verso e a fonte; "Errei", "Difícil", "Acertei" (lado a lado quando cabem, um abaixo do outro nos tamanhos grandes de texto). Nas lacunas, "Múltipla escolha" mostra as alternativas; a escolha mostra "Correto." ou "A resposta é: ...", a fonte e "Próximo" (acerto conta como "Acertei", erro como "Errei").
-- Armazenamento local: iOS `UserDefaults` (`cartoesRevisaoV1`), Android `SharedPreferences` (`cartoes_revisao`), como os dossies salvos; entram no backup do aparelho.
+- Armazenamento local: iOS `UserDefaults` (`cartoesRevisaoV1`), Android `SharedPreferences` (`cartoes_revisao`), como os dossies salvos. No Android entram no backup automatico; no iOS estao no backup do aparelho, mas ainda nao no backup do app pelo iCloud (`UserDataPersistenceService`), como tambem os dossies salvos: fica para a Fase 10.
 - Contrato de paridade: regra e casos como fontes identicas; capacidade `active_review_flashcards_quiz`.
 
 ## Evidencias
@@ -32,7 +32,8 @@ Casos: geracao sobre o dossie "Escada de Jacó" dos casos do dossie (6 cartoes, 
 | Casos de referencia (iOS `testActiveReviewMatchesReferenceCases`, Android `ActiveReviewTest`) | Identicos a referencia |
 | Fluxo salvar dossie, revisar e marcar (iOS `testSavedDossierCreatesReviewCardsAndSessionGradesThem`, Android `savedDossierCreatesReviewCardsAndSessionGradesThem`) | Aprovados |
 | iOS unitarios | 83, 0 falhas |
-| iOS interface (iPhone 17): suite completa e, depois do ajuste do resumo, os 6 testes do Dossie (inclusive a auditoria de acessibilidade) | Aprovados |
+| iOS interface (iPhone 17), suite completa | 34 de 35 (1 opcional ignorado): a auditoria do Dossie acusou o resumo no topo; corrigido |
+| iOS interface, depois do ajuste: os 6 testes do Dossie (inclusive a auditoria de acessibilidade) | Aprovados |
 | Android `NavigationFlowTest`, `DataIntegrityTest`, `ActiveReviewTest`, `TextQualityTest` | 21, 40, 1 e 1, 0 falhas |
 | Gate `Tools/verificar_paridade.sh` | 0 falhas |
 
