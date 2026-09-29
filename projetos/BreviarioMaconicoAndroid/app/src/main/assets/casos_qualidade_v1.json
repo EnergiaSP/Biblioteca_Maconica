@@ -231,7 +231,7 @@
       "tipo": "token",
       "texto": "1Rs",
       "esperado": {
-        "classe": "misto"
+        "classe": "normal"
       }
     },
     {
@@ -239,7 +239,7 @@
       "tipo": "token",
       "texto": "3a",
       "esperado": {
-        "classe": "misto"
+        "classe": "solta"
       }
     },
     {
@@ -247,7 +247,7 @@
       "tipo": "token",
       "texto": "72x#00",
       "esperado": {
-        "classe": "misto"
+        "classe": "simbolo"
       }
     },
     {
@@ -312,6 +312,86 @@
       "texto": "ª",
       "esperado": {
         "classe": "solta"
+      }
+    },
+    {
+      "nome": "palavra жа",
+      "tipo": "token",
+      "texto": "жа",
+      "esperado": {
+        "classe": "escrita"
+      }
+    },
+    {
+      "nome": "palavra 12LX9I",
+      "tipo": "token",
+      "texto": "12LX9I",
+      "esperado": {
+        "classe": "misto"
+      }
+    },
+    {
+      "nome": "palavra LL.-.",
+      "tipo": "token",
+      "texto": "LL.-.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra Constit.*.",
+      "tipo": "token",
+      "texto": "Constit.*.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra WWW.GLESP.ORG.BR",
+      "tipo": "token",
+      "texto": "WWW.GLESP.ORG.BR",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra http://www.ugle.org.uk/",
+      "tipo": "token",
+      "texto": "http://www.ugle.org.uk/",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra שלום",
+      "tipo": "token",
+      "texto": "שלום",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra λόγος",
+      "tipo": "token",
+      "texto": "λόγος",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra gnoses116",
+      "tipo": "token",
+      "texto": "gnoses116",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 15ele",
+      "tipo": "token",
+      "texto": "15ele",
+      "esperado": {
+        "classe": "normal"
       }
     },
     {
@@ -484,6 +564,17 @@
       "ilegiveis": 2,
       "esperado": {
         "nivel": "boa"
+      }
+    },
+    {
+      "nome": "pagina da biblia com versiculos",
+      "tipo": "pagina",
+      "texto": "15ele forma o coração de cada um e discerne todos os seus atos. 16Nenhum rei se salva com exército numeroso, o valente não se livra por sua grande força. 17Ilusão é o cavalo para a vitória, e todo o seu vigor não o faz escapar. 18Eis que o olho de Iahweh está sobre os que o temem, sobre os que esperam o seu amor.",
+      "esperado": {
+        "palavras": 64,
+        "suspeitas": 0,
+        "nivel": "legivel",
+        "motivos": {}
       }
     }
   ]

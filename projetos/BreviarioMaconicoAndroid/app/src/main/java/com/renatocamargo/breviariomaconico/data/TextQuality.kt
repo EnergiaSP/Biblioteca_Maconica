@@ -21,7 +21,8 @@ internal object TextQuality {
     data class Config(
         val limits: Limits, val borders: Set<Int>, val abbreviationMarks: Set<Int>, val ordinalMarks: Set<Int>,
         val numericSigns: Set<Int>, val innerSigns: Set<Int>, val romanDigits: Set<Int>, val oneLetterWords: Set<Int>,
-        val vowels: Set<Int>, val latinRanges: List<IntRange>, val labels: Labels
+        val vowels: Set<Int>, val latinRanges: List<IntRange>, val expectedScripts: List<IntRange>,
+        val addressPrefixes: List<String>, val labels: Labels
     )
     enum class Level(val id: String) { SHORT("curta"), READABLE("legivel"), NOISY("ruidosa"), UNREADABLE("ilegivel") }
     data class Rating(val words: Int, val suspicious: Int, val level: Level, val reasons: Map<String, Int>)
@@ -47,14 +48,17 @@ internal object TextQuality {
         val limits = json.getJSONObject("limites")
         val labels = json.getJSONObject("rotulos")
         val work = labels.getJSONObject("obra")
-        val ranges = json.getJSONArray("faixasLatinas")
+        fun ranges(key: String) = json.getJSONArray(key).let { array ->
+            List(array.length()) { array.getJSONArray(it).let { r -> r.getInt(0)..r.getInt(1) } }
+        }
+        val prefixes = json.getJSONArray("prefixosEndereco")
         return Config(
             Limits(limits.getInt("palavrasMinimasPagina"), limits.getInt("palavrasMinimasFrase"),
                 limits.getInt("ruidosaPercentual"), limits.getInt("ilegivelPercentual"), limits.getInt("letrasSemVogal"),
                 limits.getInt("obraBoaPercentual"), limits.getInt("obraRegularPercentual")),
             set("bordas"), set("marcasAbreviacao"), set("marcasOrdinais"), set("sinaisNumericos"), set("sinaisInternos"),
             set("algarismosRomanos"), set("palavrasDeUmaLetra"), set("vogais"),
-            List(ranges.length()) { ranges.getJSONArray(it).let { r -> r.getInt(0)..r.getInt(1) } },
+            ranges("faixasLatinas"), ranges("escritasEsperadas"), List(prefixes.length()) { prefixes.getString(it) },
             Labels(labels.getString("paginaRuidosa"), labels.getString("paginaIlegivel"), labels.getString("fonteRuidosa"),
                 work.keys().asSequence().associateWith { work.getString(it) })
         )
@@ -121,6 +125,19 @@ internal object TextQuality {
         return digit(body.first()) && digit(body.last())
     }
 
+    /** A digit with letters on both sides ("c0m"); verse or note numbers glued at the start or end are normal. */
+    private fun digitBetweenLetters(t: List<Int>): Boolean {
+        var seenLetter = false
+        var digitAfterLetter = false
+        for (cp in t) {
+            if (letter(cp)) {
+                if (digitAfterLetter) return true
+                seenLetter = true
+            } else if (digit(cp) && seenLetter) digitAfterLetter = true
+        }
+        return false
+    }
+
     fun classify(word: String, config: Config): String? =
         classify(Normalizer.normalize(word, Normalizer.Form.NFC).codePoints().toArray(), config)
 
@@ -128,6 +145,8 @@ internal object TextQuality {
     fun classify(word: IntArray, config: Config): String? {
         var t = strip(word, config.borders)
         if (t.none { alnum(it) }) return null
+        val lower = String(t.toIntArray(), 0, t.size).lowercase()
+        if (config.addressPrefixes.any { lower.startsWith(it) }) return "normal"
         if (masonic(t, config.abbreviationMarks) || ordinal(t, config.ordinalMarks)) return "normal"
         val dot = '.'.code
         val abbreviated = t.lastOrNull() == dot
@@ -136,15 +155,14 @@ internal object TextQuality {
         if (t.all { digit(it) || it in config.numericSigns }) return "normal"
         if (t.all { it in config.romanDigits } && (t.all { upper(it) } || t.size >= 2)) return "normal"
         val letters = t.filter { letter(it) }
-        val hasDigit = t.any { digit(it) }
         val others = t.any { !alnum(it) && it !in config.innerSigns }
-        if (letters.any { cp -> config.latinRanges.none { cp in it } }) return "escrita"
-        if (letters.isNotEmpty() && hasDigit) return "misto"
+        if (letters.any { cp -> config.expectedScripts.none { cp in it } }) return "escrita"
+        if (digitBetweenLetters(t)) return "misto"
         if (letters.isNotEmpty() && others) return "simbolo"
         if (letters.size == 1 && !abbreviated && !(t.size == 1 && t[0] in config.oneLetterWords)) return "solta"
         if (t.size >= 3 && t.zipWithNext().any { (a, b) -> lower(a) && upper(b) }) return "caixa"
-        if (letters.size >= config.limits.lettersWithoutVowel && letters.none { it in config.vowels } &&
-            !letters.all { upper(it) }) return "semVogal"
+        if (letters.size >= config.limits.lettersWithoutVowel && letters.all { cp -> config.latinRanges.any { cp in it } } &&
+            letters.none { it in config.vowels } && !letters.all { upper(it) }) return "semVogal"
         return "normal"
     }
 

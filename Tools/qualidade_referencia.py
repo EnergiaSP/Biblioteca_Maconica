@@ -40,9 +40,14 @@ def is_separator(char: str) -> bool:
     return char in "\t\n\u000b\f\r" or category(char) in ("Zs", "Zl", "Zp")
 
 
-def is_latin(char: str, config: dict) -> bool:
+def in_ranges(char: str, ranges: list) -> bool:
     code = ord(char)
-    return any(start <= code <= end for start, end in config["faixasLatinas"])
+    return any(start <= code <= end for start, end in ranges)
+
+
+def is_expected_script(char: str, config: dict) -> bool:
+    code = ord(char)
+    return any(start <= code <= end for start, end in config["escritasEsperadas"])
 
 
 def tokens(text: str) -> list:
@@ -101,11 +106,28 @@ def is_ordinal(text: str, config: dict) -> bool:
     return category(body[0]) == "Nd" and category(body[-1]) == "Nd"
 
 
+def digit_between_letters(text: str) -> bool:
+    """A digit with letters on both sides ("c0m", "M4ALANNiXA"); verse or note numbers glued at the
+    start or end of a word ("15ele", "gnoses116") are normal."""
+    seen_letter = False
+    digit_after_letter = False
+    for char in text:
+        if is_letter(char):
+            if digit_after_letter:
+                return True
+            seen_letter = True
+        elif category(char) == "Nd" and seen_letter:
+            digit_after_letter = True
+    return False
+
+
 def classify(token: str, config: dict):
     """None: ignored (punctuation only); "normal"; or the reason it is suspicious."""
     text = strip_chars(token, config["bordas"])
     if not any(is_alnum(c) for c in text):
         return None
+    if any(text.lower().startswith(prefix) for prefix in config["prefixosEndereco"]):
+        return "normal"
     if is_masonic(text, config["marcasAbreviacao"]):
         return "normal"
     if is_ordinal(text, config):
@@ -122,11 +144,10 @@ def classify(token: str, config: dict):
             (all(category(c) == "Lu" for c in text) or len(text) >= 2):
         return "normal"
     letters = [c for c in text if is_letter(c)]
-    digits = [c for c in text if category(c) == "Nd"]
     others = [c for c in text if not is_alnum(c) and c not in config["sinaisInternos"]]
-    if any(not is_latin(c, config) for c in letters):
+    if any(not is_expected_script(c, config) for c in letters):
         return "escrita"
-    if letters and digits:
+    if digit_between_letters(text):
         return "misto"
     if letters and others:
         return "simbolo"
@@ -134,8 +155,8 @@ def classify(token: str, config: dict):
         return "solta"
     if len(text) >= 3 and any(category(a) == "Ll" and category(b) == "Lu" for a, b in zip(text, text[1:])):
         return "caixa"
-    if len(letters) >= config["limites"]["letrasSemVogal"] and not any(c in config["vogais"] for c in letters) \
-            and not all(category(c) == "Lu" for c in letters):
+    if len(letters) >= config["limites"]["letrasSemVogal"] and all(in_ranges(c, config["faixasLatinas"]) for c in letters) \
+            and not any(c in config["vogais"] for c in letters) and not all(category(c) == "Lu" for c in letters):
         return "semVogal"
     return "normal"
 

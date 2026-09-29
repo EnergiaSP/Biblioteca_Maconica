@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "descricao": "Qualidade do texto das paginas do acervo (ruido de OCR). Texto em NFC dividido em palavras pelos separadores (\\t \\n \\v \\f \\r e categorias Zs, Zl, Zp). De cada palavra saem as bordas; sem letra ou digito ela e ignorada. Sao normais: abreviacoes maconicas (grupos de letras seguidos de marcasAbreviacao), ordinais, numeros e algarismos romanos. Suspeitas: letra fora das faixasLatinas (escrita), letras com digitos (misto), letras com sinais que nao sejam sinaisInternos (simbolo), letra sozinha que nao e palavra (solta; abreviacao com ponto e normal), minuscula seguida de maiuscula em palavra de 3 ou mais pontos de codigo (caixa) e palavra de letrasSemVogal ou mais letras sem vogal que nao esteja toda em maiusculas (semVogal). Nivel: curta (menos palavras que o minimo), ilegivel, ruidosa ou legivel pelos percentuais inteiros de palavras suspeitas. Obra: boa, regular ou baixa pelo percentual de paginas avaliadas que sao legiveis.",
+  "descricao": "Qualidade do texto das paginas do acervo (ruido de OCR). Texto em NFC dividido em palavras pelos separadores (\\t \\n \\v \\f \\r e categorias Zs, Zl, Zp). De cada palavra saem as bordas; sem letra ou digito ela e ignorada. Sao normais: enderecos (prefixosEndereco, sem diferenciar maiusculas), abreviacoes maconicas (grupos de letras seguidos de marcasAbreviacao), ordinais, numeros e algarismos romanos (maiusculos, ou minusculos com 2 ou mais letras). Suspeitas: letra fora das escritasEsperadas (latim, grego e hebraico; escrita), digito entre letras (misto; numero de versiculo ou de nota colado no inicio ou no fim e normal), letras com sinais que nao sejam sinaisInternos (simbolo), letra sozinha que nao e palavra (solta; abreviacao com ponto e normal), minuscula seguida de maiuscula em palavra de 3 ou mais pontos de codigo (caixa) e palavra so com letras das faixasLatinas, de letrasSemVogal ou mais letras, sem vogal e que nao esteja toda em maiusculas (semVogal). Nivel: curta (menos palavras que o minimo), ilegivel, ruidosa ou legivel pelos percentuais inteiros de palavras suspeitas. Obra: boa, regular ou baixa pelo percentual de paginas avaliadas que sao legiveis.",
   "limites": {
     "palavrasMinimasPagina": 30,
     "palavrasMinimasFrase": 8,
@@ -11,14 +11,98 @@
     "obraRegularPercentual": 80
   },
   "bordas": "\"'«»“”‘’()[]{}—–-…,;:!?*•·",
-  "marcasAbreviacao": ".:∴•'´\"",
+  "marcasAbreviacao": ".:∴•'´\"*-",
   "marcasOrdinais": "ªº°",
   "sinaisNumericos": ".,:/-–",
   "sinaisInternos": "-'’.",
   "algarismosRomanos": "IVXLCDMivxlcdm",
   "palavrasDeUmaLetra": "aeoàáéêóôAEOÀÁÉÊÓÔ",
   "vogais": "aeiouyáéíóúâêôãõàüAEIOUYÁÉÍÓÚÂÊÔÃÕÀÜ",
-  "faixasLatinas": [[65, 90], [97, 122], [170, 170], [186, 186], [192, 214], [216, 246], [248, 591], [7680, 7935]],
+  "faixasLatinas": [
+    [
+      65,
+      90
+    ],
+    [
+      97,
+      122
+    ],
+    [
+      170,
+      170
+    ],
+    [
+      186,
+      186
+    ],
+    [
+      192,
+      214
+    ],
+    [
+      216,
+      246
+    ],
+    [
+      248,
+      591
+    ],
+    [
+      7680,
+      7935
+    ]
+  ],
+  "escritasEsperadas": [
+    [
+      65,
+      90
+    ],
+    [
+      97,
+      122
+    ],
+    [
+      170,
+      170
+    ],
+    [
+      186,
+      186
+    ],
+    [
+      192,
+      214
+    ],
+    [
+      216,
+      246
+    ],
+    [
+      248,
+      591
+    ],
+    [
+      880,
+      1023
+    ],
+    [
+      1424,
+      1535
+    ],
+    [
+      7680,
+      7935
+    ],
+    [
+      7936,
+      8191
+    ]
+  ],
+  "prefixosEndereco": [
+    "http://",
+    "https://",
+    "www."
+  ],
   "rotulos": {
     "paginaRuidosa": "Esta página tem ruído de digitalização. Confira o trecho no original.",
     "paginaIlegivel": "O texto desta página saiu com muitos erros de digitalização. Confira no original.",

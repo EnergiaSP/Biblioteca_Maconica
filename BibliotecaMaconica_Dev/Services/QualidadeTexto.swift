@@ -18,7 +18,8 @@ enum QualidadeTexto {
         let limites: Limites
         let bordas, marcasAbreviacao, marcasOrdinais, sinaisNumericos, sinaisInternos: String
         let algarismosRomanos, palavrasDeUmaLetra, vogais: String
-        let faixasLatinas: [[UInt32]]
+        let faixasLatinas, escritasEsperadas: [[UInt32]]
+        let prefixosEndereco: [String]
         let rotulos: Rotulos
 
         static let compartilhada: Configuracao? = {
@@ -127,8 +128,23 @@ enum QualidadeTexto {
         return digito(primeiro) && digito(ultimo)
     }
 
-    private static func latina(_ s: Unicode.Scalar, _ faixas: [[UInt32]]) -> Bool {
+    private static func nasFaixas(_ s: Unicode.Scalar, _ faixas: [[UInt32]]) -> Bool {
         faixas.contains { $0[0] <= s.value && s.value <= $0[1] }
+    }
+
+    /// A digit with letters on both sides ("c0m"); verse or note numbers glued at the start or end
+    /// of a word ("15ele", "gnoses116") are normal.
+    private static func digitoEntreLetras(_ t: [Unicode.Scalar]) -> Bool {
+        var viuLetra = false, digitoDepoisDeLetra = false
+        for s in t {
+            if letra(s) {
+                if digitoDepoisDeLetra { return true }
+                viuLetra = true
+            } else if digito(s) && viuLetra {
+                digitoDepoisDeLetra = true
+            }
+        }
+        return false
     }
 
     /// nil: ignored (punctuation only); "normal"; or the reason the word is suspicious.
@@ -139,6 +155,8 @@ enum QualidadeTexto {
     static func classificar(_ palavra: [Unicode.Scalar], _ configuracao: Configuracao, _ k: Conjuntos) -> String? {
         var t = aparar(palavra, k.bordas)
         guard t.contains(where: alfanumerico) else { return nil }
+        let minusculo = String(String.UnicodeScalarView(t)).lowercased()
+        if configuracao.prefixosEndereco.contains(where: { minusculo.hasPrefix($0) }) { return "normal" }
         if maconica(t, k.marcas) || ordinal(t, k.ordinais) { return "normal" }
         let abreviada = t.last == "."
         while t.last == "." { t.removeLast() }
@@ -146,15 +164,15 @@ enum QualidadeTexto {
         if t.allSatisfy({ digito($0) || k.numericos.contains($0) }) { return "normal" }
         if t.allSatisfy({ k.romanos.contains($0) }) && (t.allSatisfy(maiuscula) || t.count >= 2) { return "normal" }
         let letras = t.filter(letra)
-        let temDigito = t.contains(where: digito)
         let outros = t.contains { !alfanumerico($0) && !k.internos.contains($0) }
-        if letras.contains(where: { !latina($0, configuracao.faixasLatinas) }) { return "escrita" }
-        if !letras.isEmpty && temDigito { return "misto" }
+        if letras.contains(where: { !nasFaixas($0, configuracao.escritasEsperadas) }) { return "escrita" }
+        if digitoEntreLetras(t) { return "misto" }
         if !letras.isEmpty && outros { return "simbolo" }
         if letras.count == 1 && !abreviada && !(t.count == 1 && k.umaLetra.contains(t[0])) { return "solta" }
         if t.count >= 3 && zip(t, t.dropFirst()).contains(where: { minuscula($0) && maiuscula($1) }) { return "caixa" }
-        if letras.count >= configuracao.limites.letrasSemVogal && !letras.contains(where: { k.vogais.contains($0) })
-            && !letras.allSatisfy(maiuscula) { return "semVogal" }
+        if letras.count >= configuracao.limites.letrasSemVogal
+            && letras.allSatisfy({ nasFaixas($0, configuracao.faixasLatinas) })
+            && !letras.contains(where: { k.vogais.contains($0) }) && !letras.allSatisfy(maiuscula) { return "semVogal" }
         return "normal"
     }
 

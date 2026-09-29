@@ -53,6 +53,7 @@ TROCAS = str.maketrans({
     "–": "-", "—": "-", "°": "º",
 })
 PALAVRA = re.compile(r"[^\W\d_]+")
+KERNING = re.compile(r"(?<![^\W\d_])([^\W\d_]) ([^\W\d_]{2,})")
 TIPOGRAFIA = set(".,;:!?-'\"()ªº“”‘’«»—–…")
 DIGITOS = re.compile(r"\d+")
 
@@ -113,8 +114,15 @@ class Vocabulario:
         raras = sum(1 for p in palavras if self.contagem[p.lower()] < FREQUENCIA_COMUM)
         suspeitas = qualidade.rate(linha, QUALIDADE, 0)["suspeitas"]
         ligaduras = sum(1 for c in linha if unicodedata.normalize("NFKC", c) != c and c not in TIPOGRAFIA)
+        # Letter split off by kerning ("M açonaria", "E sses"): the joined word is common in the
+        # collection and the fragment is not. "a casa" and "e depois" are not affected.
+        kerning = sum(
+            2 for letra, resto in KERNING.findall(linha)
+            if self.contagem[(letra + resto).lower()] >= FREQUENCIA_COMUM
+            and self.contagem[(letra + resto).lower()] > 10 * self.contagem[resto.lower()]
+        )
         sinais = sum(1 for c in linha if not (c.isalnum() or c.isspace() or c in TIPOGRAFIA))
-        return raras + suspeitas + ligaduras, sinais
+        return raras + suspeitas + ligaduras + kerning, sinais
 
 
 def palavras_dobradas(linha: str) -> tuple[set[str], str | None]:
