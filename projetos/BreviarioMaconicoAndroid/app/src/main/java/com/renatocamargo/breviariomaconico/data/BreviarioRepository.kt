@@ -59,7 +59,9 @@ class BreviarioRepository private constructor(context: Context) {
             }
         }.sortedWith(compareBy({ it.obraId }, { normalized(it.termo) }))
 
-        itensPorData = buildMap { itens.forEach { item -> if (item.data !in this) put(item.data, item) } }
+        // The daily reading follows the order of the integrated breviaries (Século XXI, then Rizzardo),
+        // as on iOS; `itens` stays sorted by work id for search and collections.
+        itensPorData = buildMap { itensNaOrdemDosBreviarios().forEach { item -> if (item.data !in this) put(item.data, item) } }
         itensPorObraEData = itens.associateBy { "${it.obraId}|${it.data}" }
         val indicePorData = indice.flatMap { entry -> entry.datas.map { "${entry.obraId}|$it" to entry.termo } }
             .groupBy({ it.first }, { it.second })
@@ -85,7 +87,12 @@ class BreviarioRepository private constructor(context: Context) {
 
     fun leiturasDeHoje(obraIds: Set<String>? = null): List<BreviarioItem> {
         val hoje = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM"))
-        return itens.filter { it.data == hoje && (obraIds == null || it.obraId in obraIds) }
+        return itensNaOrdemDosBreviarios().filter { it.data == hoje && (obraIds == null || it.obraId in obraIds) }
+    }
+
+    private fun itensNaOrdemDosBreviarios(): List<BreviarioItem> {
+        val ordem = listOf(ObraId.BREVIARIO_SECULO_XXI, ObraId.BREVIARIO_RIZZARDO)
+        return itens.sortedBy { item -> ordem.indexOf(item.obraId).let { if (it < 0) ordem.size else it } }
     }
 
     fun proximo(item: BreviarioItem): BreviarioItem {

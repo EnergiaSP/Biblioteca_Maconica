@@ -19,6 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
@@ -45,7 +46,10 @@ internal fun StudyCollectionCard(
         Text("${matches.size} ${if (matches.size == 1) "leitura" else "leituras"}", color = colors.secondary)
         Text(collection.subtitle, color = colors.secondary)
         Text(collection.detail, color = colors.secondary)
-        FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        // One accessibility element for the whole row, as on iOS: "Tópicos: Honra, Prudência, ...".
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp),
+            modifier = Modifier.testTag("study.topics.${collection.id}")
+                .clearAndSetSemantics { contentDescription = "Tópicos: " + collection.topics.joinToString(", ") }) {
             collection.topics.forEach { topic ->
                 Text(topic, color = colors.text, fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.background(colors.accent.copy(alpha = 0.15f), RoundedCornerShape(8.dp))

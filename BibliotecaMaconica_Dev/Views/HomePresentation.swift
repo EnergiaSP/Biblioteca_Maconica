@@ -662,3 +662,45 @@ extension View {
 func fecharTeclado() {
     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }
+
+/// Lays chips out left to right and wraps to a new line when the next one does not fit.
+struct FluxoDeChips: Layout {
+    var espaco: CGFloat
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let linhas = organizar(largura: proposal.width ?? .infinity, subviews: subviews)
+        let largura = linhas.map { $0.largura }.max() ?? 0
+        let altura = linhas.map { $0.altura }.reduce(0, +) + espaco * CGFloat(max(linhas.count - 1, 0))
+        return CGSize(width: proposal.width ?? largura, height: altura)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var y = bounds.minY
+        for linha in organizar(largura: bounds.width, subviews: subviews) {
+            var x = bounds.minX
+            for indice in linha.indices {
+                let tamanho = subviews[indice].sizeThatFits(.unspecified)
+                subviews[indice].place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(tamanho))
+                x += min(tamanho.width, bounds.width) + espaco
+            }
+            y += linha.altura + espaco
+        }
+    }
+
+    private func organizar(largura: CGFloat, subviews: Subviews) -> [(indices: [Int], largura: CGFloat, altura: CGFloat)] {
+        var linhas: [(indices: [Int], largura: CGFloat, altura: CGFloat)] = []
+        var atual: (indices: [Int], largura: CGFloat, altura: CGFloat) = ([], 0, 0)
+        for indice in subviews.indices {
+            let tamanho = subviews[indice].sizeThatFits(.unspecified)
+            let necessario = atual.indices.isEmpty ? tamanho.width : atual.largura + espaco + tamanho.width
+            if !atual.indices.isEmpty, necessario > largura {
+                linhas.append(atual)
+                atual = ([indice], tamanho.width, tamanho.height)
+            } else {
+                atual = (atual.indices + [indice], necessario, max(atual.altura, tamanho.height))
+            }
+        }
+        if !atual.indices.isEmpty { linhas.append(atual) }
+        return linhas
+    }
+}
