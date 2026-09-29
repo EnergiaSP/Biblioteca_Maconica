@@ -155,6 +155,13 @@ var acervoOfflineView: some View {
                     .font(.caption)
                     .foregroundStyle(textoSecundarioApp)
 
+                if let qualidade = estado.rotuloQualidade {
+                    Text(qualidade)
+                        .font(.caption)
+                        .foregroundStyle(textoSecundarioApp)
+                        .accessibilityIdentifier("acervo.qualidade")
+                }
+
                 if estado.desatualizado {
                     Text("Atualização disponível")
                         .font(.caption2)

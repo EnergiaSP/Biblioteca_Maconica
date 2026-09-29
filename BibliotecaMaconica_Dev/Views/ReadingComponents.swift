@@ -502,8 +502,40 @@ struct TextoMarcavelDaPagina: View {
     var aoSelecionarTexto: ((String) -> Void)?
     let aoSalvar: () -> Void
     @State private var destaques: [DestaqueLeitura] = []
+    @State private var avisoQualidade: String?
 
     var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let avisoQualidade {
+                Label(avisoQualidade, systemImage: "exclamationmark.triangle")
+                    .font(.footnote)
+                    .foregroundStyle(tema.textoPrincipal)
+                    .padding(10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(tema.destaque.opacity(0.16))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .accessibilityIdentifier("reading.quality.notice")
+            }
+            textoJustificado
+        }
+        .task(id: item.chavePersistencia) {
+            atualizar()
+            avisoQualidade = Self.aviso(para: item)
+        }
+    }
+
+    /// Library pages with OCR noise tell the reader to check the original (qualidade_texto_v1.json);
+    /// breviary readings are curated text and are not rated.
+    static func aviso(para item: BreviarioItem) -> String? {
+        guard item.data.hasPrefix("P"), let configuracao = QualidadeTexto.Configuracao.compartilhada else { return nil }
+        switch QualidadeTexto.avaliarPagina(item.texto, configuracao: configuracao).nivel {
+        case .ruidosa: return configuracao.rotulos.paginaRuidosa
+        case .ilegivel: return configuracao.rotulos.paginaIlegivel
+        case .curta, .legivel: return nil
+        }
+    }
+
+    private var textoJustificado: some View {
         JustifiedTextView(
             texto: TextoLeituraFormatter.comParagrafosVisiveis(item.texto),
             font: UIFont.systemFont(ofSize: CGFloat(tamanhoTexto)),
@@ -519,7 +551,6 @@ struct TextoMarcavelDaPagina: View {
             }
         )
         .frame(maxWidth: .infinity, alignment: .leading)
-        .task(id: item.chavePersistencia) { atualizar() }
         .onReceive(NotificationCenter.default.publisher(for: DestaquesService.alterados).receive(on: RunLoop.main)) { notification in
             guard notification.userInfo?["obraID"] as? String == item.obraID,
                   notification.userInfo?["data"] as? String == item.data else { return }

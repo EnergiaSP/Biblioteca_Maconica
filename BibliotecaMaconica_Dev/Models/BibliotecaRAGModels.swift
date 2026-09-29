@@ -175,6 +175,15 @@ struct BibliotecaRAGPacoteObra: Codable, Identifiable, Hashable {
     let assuntos: [String]
     /// Work with the same content (the same book imported twice), marked by Tools/marcar_duplicatas_catalogo.py.
     var duplicataDe: String? = nil
+    /// Pages rated for OCR noise by Tools/avaliar_qualidade_acervo.py (qualidade_texto_v1.json).
+    var qualidadeTexto: QualidadeTextoObra? = nil
+}
+
+/// Rated, noisy and unreadable pages of a work, as recorded in the catalog.
+struct QualidadeTextoObra: Codable, Hashable {
+    let avaliadas: Int
+    let ruidosas: Int
+    let ilegiveis: Int
 }
 
 struct BibliotecaRAGContextoIA: Codable {

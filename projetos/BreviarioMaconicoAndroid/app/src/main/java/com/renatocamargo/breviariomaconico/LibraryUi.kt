@@ -1,5 +1,6 @@
 package com.renatocamargo.breviariomaconico
 
+import com.renatocamargo.breviariomaconico.data.TextQuality
 import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -312,6 +313,10 @@ internal fun AcervoPackageCard(
                 }
                 Text(estado.pacote.area.titulo, color = colors.accent, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
                 Text(estado.pacote.detalhe, color = colors.secondary, fontSize = 13.sp)
+                val context = LocalContext.current
+                remember(estado.pacote.id) { TextQuality.packageLabel(estado.pacote.obras, TextQuality.loadConfig(context)) }?.let {
+                    Text(it, color = colors.secondary, fontSize = 13.sp, modifier = Modifier.testTag("acervo.qualidade"))
+                }
                 Text(
                     when {
                         estado.desatualizado -> "Atualização disponível"

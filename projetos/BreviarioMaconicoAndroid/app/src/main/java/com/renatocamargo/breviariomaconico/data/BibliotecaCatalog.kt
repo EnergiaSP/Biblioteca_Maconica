@@ -25,18 +25,10 @@ data class BibliotecaObraCatalogo(
     val paginas: Int,
     val assuntos: List<String> = emptyList(),
     /** Work with the same content (the same book imported twice), marked by Tools/marcar_duplicatas_catalogo.py. */
-    val duplicataDe: String? = null
+    val duplicataDe: String? = null,
+    /** Pages rated for OCR noise by Tools/avaliar_qualidade_acervo.py (qualidade_texto_v1.json). */
+    val qualidade: TextQualityCount? = null
 )
-
-data class LibraryMetadataFilter(val autor: String = "", val assunto: String = "") {
-    val descricao: String get() = listOf("Autor" to autor, "Assunto" to assunto)
-        .mapNotNull { (label, value) -> value.trim().takeIf { it.isNotEmpty() }?.let { "$label: $it" } }
-        .joinToString(" • ")
-
-    fun matches(work: BibliotecaObraCatalogo): Boolean =
-        (autor.isBlank() || TextoFormatter.corresponde(autor, work.autor.orEmpty())) &&
-        (assunto.isBlank() || TextoFormatter.corresponde(assunto, work.assuntos.joinToString(" ")))
-}
 
 data class BibliotecaPacoteCatalogo(
     val id: String,
@@ -134,7 +126,10 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                         assuntos = obra.optJSONArray("assuntos")?.let { topics ->
                             List(topics.length()) { topics.optString(it) }.filter { it.isNotBlank() }
                         }.orEmpty(),
-                        duplicataDe = obra.optString("duplicataDe").takeIf { it.isNotBlank() }
+                        duplicataDe = obra.optString("duplicataDe").takeIf { it.isNotBlank() },
+                        qualidade = obra.optJSONObject("qualidadeTexto")?.let {
+                            TextQualityCount(it.optInt("avaliadas"), it.optInt("ruidosas"), it.optInt("ilegiveis"))
+                        }
                     )
                 }
             }.orEmpty()

@@ -60,10 +60,12 @@ enum DossieEstudoAnalise {
         let obras: Int
         let ocorrencias: Int
         let duplicadas: Int
+        let frasesComRuido: Int
         let porArea: [(area: String, fontes: Int)]
 
         static func == (lhs: Metricas, rhs: Metricas) -> Bool {
             lhs.fontes == rhs.fontes && lhs.obras == rhs.obras && lhs.ocorrencias == rhs.ocorrencias && lhs.duplicadas == rhs.duplicadas
+                && lhs.frasesComRuido == rhs.frasesComRuido
                 && lhs.porArea.elementsEqual(rhs.porArea) { $0.area == $1.area && $0.fontes == $1.fontes }
         }
     }
@@ -119,6 +121,7 @@ enum DossieEstudoAnalise {
                 "resumo": trechos(resumo),
                 "divergencias": trechos(divergencias),
                 "metricas": ["fontes": metricas.fontes, "obras": metricas.obras, "ocorrencias": metricas.ocorrencias, "duplicadas": metricas.duplicadas,
+                             "frasesComRuido": metricas.frasesComRuido,
                              "porArea": metricas.porArea.map { [$0.area, $0.fontes] as [Any] }],
                 "obrasCentrais": obrasCentrais.map { ["obraId": $0.obraId, "titulo": $0.titulo, "ocorrencias": $0.ocorrencias, "fontes": $0.fontes] },
                 "capitulosDedicados": capitulosDedicados,
@@ -166,7 +169,8 @@ enum DossieEstudoAnalise {
             divergencias: trechos(resultado.divergencias),
             metricas: ["\(metricas.fontes) fonte(s) em \(metricas.obras) obra(s); \(metricas.ocorrencias) ocorrência(s) do tema."]
                 + (areas.isEmpty ? [] : ["Áreas: \(areas)."])
-                + (metricas.duplicadas == 0 ? [] : ["\(metricas.duplicadas) fonte(s) com texto repetido de outra obra desconsiderada(s)."]),
+                + (metricas.duplicadas == 0 ? [] : ["\(metricas.duplicadas) fonte(s) com texto repetido de outra obra desconsiderada(s)."])
+                + (metricas.frasesComRuido == 0 ? [] : ["\(metricas.frasesComRuido) frase(s) com ruído de digitalização desconsiderada(s)."]),
             obrasCentrais: resultado.obrasCentrais.map { "\($0.titulo): \($0.ocorrencias) ocorrência(s) em \($0.fontes) fonte(s)" },
             capitulosDedicados: resultado.capitulosDedicados.map(citar),
             mapa: resultado.termosAssociados.map { "\(tema) → \($0.forma) (\($0.ocorrencias) ocorrência(s), \($0.obras) obra(s))" },
@@ -369,6 +373,9 @@ enum DossieEstudoAnalise {
         let definidores = Set(configuracao.verbosDefinicao)
         let divergentes = Set(configuracao.marcadoresDivergencia)
 
+        // Sentences with OCR noise are not quoted as statements (qualidade_texto_v1.json).
+        let qualidade = QualidadeTexto.Configuracao.compartilhada
+        var frasesComRuido = 0
         var candidatas: [Candidata] = []
         var ocorrenciasPorFonte: [Int] = []
         var comecaComTermo: [Bool] = []
@@ -400,6 +407,10 @@ enum DossieEstudoAnalise {
                 guard !ocorrencias(normalizadas, termoAlternativas).isEmpty else { continue }
                 let tamanho = frase.unicodeScalars.count
                 guard tamanho >= limites.tamanhoMinimoFrase, tamanho <= limites.tamanhoMaximoFrase else { continue }
+                if let qualidade, [.ruidosa, .ilegivel].contains(QualidadeTexto.avaliarFrase(frase, configuracao: qualidade).nivel) {
+                    frasesComRuido += 1
+                    continue
+                }
                 let definicao = minusculas.contains(where: definidores.contains)
                 let pontos = (definicao ? 3 : 0) + (fonte.area == "dicionariosMaconicos" ? 2 : 0) + (fonte.area != "bibliotecaMaconica" ? 1 : 0)
                 candidatas.append(Candidata(pontos: pontos, fonte: posicao, ordem: ordem, texto: frase, definicao: definicao,
@@ -514,6 +525,7 @@ enum DossieEstudoAnalise {
             resumo: resumo.map(trecho),
             divergencias: divergencias.map(trecho),
             metricas: Metricas(fontes: fontes.count, obras: obras.count, ocorrencias: ocorrenciasPorFonte.reduce(0, +), duplicadas: duplicadas,
+                               frasesComRuido: frasesComRuido,
                                porArea: porArea.map { (area: $0.key, fontes: $0.value) }
                                 .sorted { $0.fontes != $1.fontes ? $0.fontes > $1.fontes : $0.area < $1.area }),
             obrasCentrais: centrais.map { ObraCentral(obraId: $0.id, titulo: $0.dados.titulo, ocorrencias: $0.dados.ocorrencias, fontes: $0.dados.fontes) },

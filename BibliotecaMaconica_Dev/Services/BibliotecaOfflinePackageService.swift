@@ -15,6 +15,17 @@ struct BibliotecaPacoteOfflineEstado: Identifiable, Hashable {
         pacote.obras.first?.titulo ?? pacote.titulo
     }
 
+    /// Text quality of the package's works (qualidade_texto_v1.json); nil when no page was rated.
+    var rotuloQualidade: String? {
+        guard let configuracao = QualidadeTexto.Configuracao.compartilhada else { return nil }
+        let contagens = pacote.obras.compactMap(\.qualidadeTexto)
+        let total = QualidadeTextoObra(avaliadas: contagens.reduce(0) { $0 + $1.avaliadas },
+                                       ruidosas: contagens.reduce(0) { $0 + $1.ruidosas },
+                                       ilegiveis: contagens.reduce(0) { $0 + $1.ilegiveis })
+        let nivel = QualidadeTexto.nivelObra(total, configuracao: configuracao)
+        return nivel == "semAvaliacao" ? nil : configuracao.rotulos.obra[nivel]
+    }
+
     var detalhe: String {
         let paginas = pacote.estatisticas.paginas
         let tamanho = Self.formatarBytes(instalado ? tamanhoLocalBytes : pacote.tamanhoBytes)
