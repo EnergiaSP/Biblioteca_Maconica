@@ -11,6 +11,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.renatocamargo.breviariomaconico.data.BibliotecaBuscaResultado
+import com.renatocamargo.breviariomaconico.data.ActiveReview
 import com.renatocamargo.breviariomaconico.data.DossierAnalysis
 
 /** AI-free dossier analysis kept with the dossier; every line is extracted from the sources and cites one. */
@@ -19,7 +20,9 @@ internal data class DossierStudy(
     val relatedTerms: List<String>,
     val analyzedSources: Int,
     /** With occurrence counts, for the drawn map. */
-    val related: List<DossierAnalysis.RelatedTerm> = emptyList()
+    val related: List<DossierAnalysis.RelatedTerm> = emptyList(),
+    /** Review cards made from the analysis, stored when the dossier is saved (revisao_ativa_v1.json). */
+    val cards: List<ActiveReview.Card> = emptyList()
 )
 
 /** The topic is studied as an expression ("Escada de Jacó"), accepting spelling variants ("Jacob"). */
@@ -39,12 +42,16 @@ internal fun analyzeDossier(
     topic: String,
     results: List<BibliotecaBuscaResultado>,
     config: DossierAnalysis.Config,
-    today: java.time.LocalDate = java.time.LocalDate.now()
+    today: java.time.LocalDate = java.time.LocalDate.now(),
+    reviewConfig: ActiveReview.Config? = null
 ): DossierStudy {
     val sources = dossierSources(results)
     val analysis = DossierAnalysis.analyze(topic.trim(), sources, config, today)
+    val cards = reviewConfig?.let {
+        ActiveReview.generate(topic.trim(), analysis.definitions, analysis.questions, analysis.relatedTerms.map { term -> term.form }, sources, it)
+    }.orEmpty()
     return DossierStudy(DossierAnalysis.display(topic.trim(), analysis, sources, config), analysis.relatedTerms.map { it.form }, sources.size,
-        analysis.relatedTerms)
+        analysis.relatedTerms, cards)
 }
 
 /** Sections shown only when the dossier has its analysis, in the same order as on iOS. */

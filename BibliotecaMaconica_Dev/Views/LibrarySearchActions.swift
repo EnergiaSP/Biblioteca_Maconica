@@ -40,6 +40,12 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
                 analiseDossieIA = ""
                 gerandoDossieEstudo = false
                 dossieTask = nil
+                // A reopened saved dossier gets the cards it does not have yet; stored ones keep their progress.
+                if let salvo, let dossie {
+                    CartoesRevisaoStore().adicionar(dossie.cartoesRevisao, dossieId: salvo.id, tema: salvo.tema,
+                                                    hoje: DossieSalvo.data(Date()))
+                    atualizarRevisaoAtiva()
+                }
                 mensagemErro = dossie?.resultados.isEmpty == true
                     ? "Dossiê criado sem ocorrências; refine o tema ou importe novas obras."
                     : "Dossiê de estudo criado."
@@ -143,7 +149,11 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         NotificationService.agendarRevisoesDossie(salvo)
         dossiesSalvos = store.todos()
         dossieSalvoID = salvo.id
-        mensagemErro = "Dossiê salvo. Você será lembrado de cada revisão."
+        let criados = CartoesRevisaoStore().adicionar(dossieEstudo?.cartoesRevisao ?? [], dossieId: salvo.id, tema: salvo.tema,
+                                                      hoje: DossieSalvo.data(Date()))
+        atualizarRevisaoAtiva()
+        let cartoes = criados == 0 ? "" : " " + (RevisaoAtiva.Configuracao.compartilhada?.rotulo("criados", ["n": "\(criados)"]) ?? "")
+        mensagemErro = "Dossiê salvo. Você será lembrado de cada revisão." + cartoes
     }
 
     func alternarRevisaoDossie(_ salvo: DossieSalvo, dias: Int) {
@@ -158,6 +168,8 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         NotificationService.cancelarRevisoesDossie(salvo)
         let store = DossiesSalvosStore()
         store.remover(id: salvo.id)
+        CartoesRevisaoStore().removerDossie(salvo.id)
+        atualizarRevisaoAtiva()
         if dossieSalvoID == salvo.id { dossieSalvoID = nil }
         dossiesSalvos = store.todos()
         mensagemErro = "Dossiê \"\(salvo.tema)\" excluído."

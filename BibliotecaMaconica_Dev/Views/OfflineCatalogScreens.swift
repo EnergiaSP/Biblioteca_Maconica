@@ -451,6 +451,9 @@ var acervoOfflineView: some View {
                     .background(temaApp.painel)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
 
+                    // After the form, so building a dossier stays the first action (as on Android).
+                    revisaoAtivaResumo
+
                     if dossiesSalvos.isEmpty == false {
                         DossiesSalvosCard(
                             salvos: dossiesSalvos,
