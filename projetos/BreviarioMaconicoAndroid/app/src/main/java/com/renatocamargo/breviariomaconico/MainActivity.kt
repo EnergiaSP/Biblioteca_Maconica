@@ -200,6 +200,7 @@ internal enum class Screen(val title: String) {
     Dossier("Dossiê"),
     OfficialSources("Fontes oficiais"),
     RequestWork("Solicitar obra"),
+    Notebook("Caderno de estudo"),
     ReadingAI("IA da leitura"),
     Export("Exportar"),
     Settings("Configurações"),
@@ -553,6 +554,7 @@ internal fun BreviarioAndroidApp(
                             }
                         )
                         Screen.More -> MoreScreen(colors, navigation::show)
+                        Screen.Notebook -> StudyNotebookScreen(colors)
                     }
                 }
             }

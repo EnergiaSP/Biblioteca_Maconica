@@ -34,6 +34,23 @@ class StudyNotebookTest {
         }
     }
 
+    /**
+     * The file written by each app opens in the other: this app writes the reference notebook to
+     * files/caderno-android.json and reads files/caderno-ios.json when it was copied there.
+     */
+    @Test
+    fun studyNotebookFilesCrossPlatform() {
+        val config = StudyNotebook.loadConfig(context)
+        val root = JSONObject(context.assets.open("casos_caderno_v1.json").bufferedReader().use { it.readText() })
+        val expected = StudyNotebook.fromJson(root.getJSONArray("mesclagens").getJSONObject(1).getJSONObject("esperado"))
+        java.io.File(context.filesDir, "caderno-android.json").writeText(StudyNotebook.toJson(expected, config).toString(2))
+        val fromIos = java.io.File(context.filesDir, "caderno-ios.json")
+        org.junit.Assume.assumeTrue("Copy the file written by the iOS test to files/caderno-ios.json", fromIos.exists())
+        val json = JSONObject(fromIos.readText())
+        assertTrue(StudyNotebook.valid(json, config))
+        assertEquals(expected, StudyNotebook.fromJson(json))
+    }
+
     /** A notebook written to this device and collected again keeps the reading, its highlight and edit. */
     @Test
     fun studyNotebookRoundTripOnThisDevice() {

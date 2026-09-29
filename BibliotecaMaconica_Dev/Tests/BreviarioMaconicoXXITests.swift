@@ -798,6 +798,24 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         }
     }
 
+    /// The file written by each app opens in the other: this app writes the reference notebook to
+    /// Documents/caderno-ios.json and reads Documents/caderno-android.json when it was copied there.
+    func testStudyNotebookFilesCrossPlatform() throws {
+        let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_caderno_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let caso = try XCTUnwrap((raiz["mesclagens"] as? [[String: Any]])?[1])
+        let esperado = try JSONDecoder().decode(CadernoEstudo.Caderno.self,
+                                                from: JSONSerialization.data(withJSONObject: try XCTUnwrap(caso["esperado"])))
+        let documentos = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        try CadernoEstudo.codificar(esperado).write(to: documentos.appendingPathComponent("caderno-ios.json"), options: .atomic)
+        let doAndroid = documentos.appendingPathComponent("caderno-android.json")
+        guard FileManager.default.fileExists(atPath: doAndroid.path) else {
+            throw XCTSkip("Copy the file written by the Android test to Documents/caderno-android.json to check it here.")
+        }
+        XCTAssertEqual(CadernoEstudo.decodificar(try Data(contentsOf: doAndroid), configuracao: configuracao), esperado)
+    }
+
     /// A notebook written to this device and collected again keeps the reading, its highlight and edit.
     func testStudyNotebookRoundTripOnThisDevice() throws {
         let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
