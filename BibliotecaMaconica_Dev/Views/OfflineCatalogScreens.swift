@@ -36,6 +36,7 @@ var acervoOfflineView: some View {
                             .lineLimit(1...3)
                             .retornoExecuta($buscaAcervoOffline) { fecharTeclado() }
                             .accessibilityLabel("Buscar pelo título da obra")
+                            .accessibilityIdentifier("acervo.busca")
                             .textInputAutocapitalization(.words)
                             .autocorrectionDisabled()
                             .padding(12)

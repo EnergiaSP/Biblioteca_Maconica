@@ -15,15 +15,19 @@ struct BibliotecaPacoteOfflineEstado: Identifiable, Hashable {
         pacote.obras.first?.titulo ?? pacote.titulo
     }
 
-    /// Text quality of the package's works (qualidade_texto_v1.json); nil when no page was rated.
+    /// Text quality of the package's works (qualidade_texto_v1.json), as on Android: the level of a
+    /// single work; in a package of several works, only the works with noise are named, so one noisy
+    /// dictionary does not mark the others. nil when no page was rated.
     var rotuloQualidade: String? {
         guard let configuracao = QualidadeTexto.Configuracao.compartilhada else { return nil }
-        let contagens = pacote.obras.compactMap(\.qualidadeTexto)
-        let total = QualidadeTextoObra(avaliadas: contagens.reduce(0) { $0 + $1.avaliadas },
-                                       ruidosas: contagens.reduce(0) { $0 + $1.ruidosas },
-                                       ilegiveis: contagens.reduce(0) { $0 + $1.ilegiveis })
-        let nivel = QualidadeTexto.nivelObra(total, configuracao: configuracao)
-        return nivel == "semAvaliacao" ? nil : configuracao.rotulos.obra[nivel]
+        let niveis = pacote.obras.compactMap { obra in
+            obra.qualidadeTexto.map { (titulo: obra.titulo, nivel: QualidadeTexto.nivelObra($0, configuracao: configuracao)) }
+        }.filter { $0.nivel != "semAvaliacao" }
+        guard !niveis.isEmpty else { return nil }
+        if pacote.obras.count == 1 { return configuracao.rotulos.obra[niveis[0].nivel] }
+        let comRuido = niveis.filter { $0.nivel != "boa" }
+        guard !comRuido.isEmpty else { return configuracao.rotulos.obra["boa"] }
+        return comRuido.map { "\(configuracao.rotulos.obra[$0.nivel] ?? $0.nivel): \($0.titulo)" }.joined(separator: " • ")
     }
 
     var detalhe: String {

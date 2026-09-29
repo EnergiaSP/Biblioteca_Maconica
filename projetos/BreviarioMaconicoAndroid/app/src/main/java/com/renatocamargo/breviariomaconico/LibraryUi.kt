@@ -247,7 +247,7 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
                 OutlinedTextField(
                     value = busca,
                     onValueChange = { busca = it },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().testTag("acervo.busca"),
                     label = { Text("Buscar livro pelo título") },
                     leadingIcon = { Icon(Icons.Default.Search, null) },
                     singleLine = true

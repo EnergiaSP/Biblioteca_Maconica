@@ -28,11 +28,18 @@ internal object TextQuality {
     data class Rating(val words: Int, val suspicious: Int, val level: Level, val reasons: Map<String, Int>)
     fun workLevel(count: TextQualityCount, config: Config) = workLevel(count.rated, count.noisy, count.unreadable, config)
 
-    /** Text quality of a package's works, as on iOS; null when no page was rated. */
+    /**
+     * Text quality of a package's works, as on iOS: the level of a single work; in a package of several
+     * works, only the works with noise are named. null when no page was rated.
+     */
     fun packageLabel(works: List<BibliotecaObraCatalogo>, config: Config): String? {
-        val counts = works.mapNotNull { it.qualidade }
-        val level = workLevel(TextQualityCount(counts.sumOf { it.rated }, counts.sumOf { it.noisy }, counts.sumOf { it.unreadable }), config)
-        return if (level == "semAvaliacao") null else config.labels.work[level]
+        val levels = works.mapNotNull { work -> work.qualidade?.let { work.titulo to workLevel(it, config) } }
+            .filter { it.second != "semAvaliacao" }
+        if (levels.isEmpty()) return null
+        if (works.size == 1) return config.labels.work[levels[0].second]
+        val noisy = levels.filter { it.second != "boa" }
+        if (noisy.isEmpty()) return config.labels.work["boa"]
+        return noisy.joinToString(" • ") { (title, level) -> "${config.labels.work[level] ?: level}: $title" }
     }
 
     @Volatile private var cached: Config? = null

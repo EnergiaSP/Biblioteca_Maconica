@@ -796,4 +796,19 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             XCTAssertGreaterThanOrEqual(medidas[1], medidas[0] * minimo, "\(nome): \(medidas)")
         }
     }
+
+    /// Each work in the offline collection shows its text quality, as on Android (Phase 8).
+    func testOfflineCollectionShowsTextQuality() {
+        navigationTab("Mais").tap()
+        app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Acervo offline")).firstMatch.tap()
+        let busca = app.descendants(matching: .any).matching(identifier: "acervo.busca").firstMatch
+        XCTAssertTrue(busca.waitForExistence(timeout: 10))
+        // The list below reloads as the screen appears; tap again until the field has focus.
+        for _ in 0..<3 where (busca.value(forKey: "hasKeyboardFocus") as? Bool) != true {
+            busca.tap()
+            _ = app.keyboards.firstMatch.waitForExistence(timeout: 2)
+        }
+        busca.typeText("Boletim GOB")
+        XCTAssertTrue(app.staticTexts["Texto com muito ruído"].firstMatch.waitForExistence(timeout: 10))
+    }
 }
