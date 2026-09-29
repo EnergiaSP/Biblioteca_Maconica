@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Caderno de estudo portatil, o mesmo arquivo no iOS e no Android. Leituras por obra e data: comentario, reflexao, favorita, lida, marcadores (id, texto, criadoEm em milissegundos) e edicao do texto (titulo, frase, texto, rodape e autor; o Android usa titulo, texto e rodape); dossies salvos e cartoes de revisao com o progresso. Mesclagem de um caderno importado no local, sem perder nada: texto vazio de um lado fica o do outro; iguais ou um contido no outro fica o mais completo; diferentes ficam os dois, o local, uma linha em branco, marcadorImportacao com a data e o importado; favorita e lida ficam marcadas se estiverem em qualquer lado; marcadores entram todos, sem repetir o mesmo texto (fica o local), em ordem de criacao e texto; edicao local prevalece. Dossies pelo mesmo estudo (tema, area, obra, autor e assunto, sem diferenciar maiusculas e sem espacos nas pontas): fica o id local, a data mais antiga e a uniao das revisoes feitas. Cartoes pelo id: fica o de mais respostas (acertos + erros; empate, o local), a data de criacao mais antiga, e o dossie aponta para o dossie local do mesmo estudo. Ordem do arquivo: leituras por obra e data, dossies por data, tema e id, cartoes por id. Leitura sem nenhum conteudo nao entra.",
+  "formato": "caderno-biblioteca-maconica",
+  "versao": 1,
+  "marcadorImportacao": "— Importado em {data} —",
+  "rotulos": {
+    "titulo": "Caderno de estudo",
+    "exportar": "Exportar caderno",
+    "importar": "Importar caderno",
+    "exportado": "Caderno exportado com {leituras} leitura(s), {dossies} dossiê(s) e {cartoes} cartão(ões).",
+    "importado": "Caderno importado: {leituras} leitura(s), {dossies} dossiê(s) e {cartoes} cartão(ões) no aparelho. Nada do que já estava aqui foi apagado.",
+    "invalido": "Este arquivo não é um caderno da Biblioteca Maçônica ou é de uma versão mais nova do app."
+  }
+}

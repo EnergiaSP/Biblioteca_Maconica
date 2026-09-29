@@ -778,6 +778,52 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly.
+    /// Same merges and file checks as `Tools/caderno_referencia.py` and Android (`casos_caderno_v1.json`).
+    func testStudyNotebookMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_caderno_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        func caderno(_ valor: Any?) throws -> CadernoEstudo.Caderno {
+            try JSONDecoder().decode(CadernoEstudo.Caderno.self, from: JSONSerialization.data(withJSONObject: try XCTUnwrap(valor)))
+        }
+        for caso in try XCTUnwrap(raiz["mesclagens"] as? [[String: Any]]) {
+            let resultado = CadernoEstudo.mesclar(local: try caderno(caso["local"]), importado: try caderno(caso["importado"]),
+                                                  hoje: try XCTUnwrap(caso["hoje"] as? String), configuracao: configuracao)
+            XCTAssertEqual(resultado, try caderno(caso["esperado"]), "\(caso["nome"] ?? "")")
+        }
+        for caso in try XCTUnwrap(raiz["validacao"] as? [[String: Any]]) {
+            let arquivo = try XCTUnwrap(caso["caderno"] as? [String: Any])
+            XCTAssertEqual(CadernoEstudo.valido(formato: arquivo["formato"] as? String, versao: arquivo["versao"] as? Int,
+                                                configuracao: configuracao), caso["valido"] as? Bool, "\(caso["nome"] ?? "")")
+        }
+    }
+
+    /// A notebook written to this device and collected again keeps the reading, its highlight and edit.
+    func testStudyNotebookRoundTripOnThisDevice() throws {
+        let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let obra = "teste_caderno_ida_e_volta"
+        defer {
+            for chave in UserDefaults.standard.dictionaryRepresentation().keys where chave.contains(obra) {
+                UserDefaults.standard.removeObject(forKey: chave)
+            }
+        }
+        var leitura = CadernoEstudo.Leitura(obraId: obra, data: "03/07")
+        leitura.comentario = "Comentário importado."
+        leitura.reflexao = "Reflexão importada."
+        leitura.favorita = true
+        leitura.lida = true
+        leitura.destaques = [CadernoEstudo.Destaque(id: UUID().uuidString, texto: "trecho marcado", criadoEm: 1_790_000_000_000)]
+        leitura.edicao = CadernoEstudo.Edicao(titulo: "Título", frase: "", texto: "Texto", rodape: "Nota", autor: "")
+        var importado = CadernoEstudo.vazio(configuracao)
+        importado.leituras = [leitura]
+        let local = CadernoEstudo.coletar(configuracao: configuracao)
+        CadernoEstudo.aplicar(CadernoEstudo.mesclar(local: local, importado: importado, hoje: "2026-10-10", configuracao: configuracao))
+        let coletada = CadernoEstudo.coletar(configuracao: configuracao).leituras.first { $0.obraId == obra }
+        XCTAssertEqual(coletada, leitura)
+        let dados = try CadernoEstudo.codificar(CadernoEstudo.coletar(configuracao: configuracao))
+        XCTAssertNotNil(CadernoEstudo.decodificar(dados, configuracao: configuracao))
+    }
+
     /// Same cards, schedule and sessions as `Tools/revisao_referencia.py` and Android (`casos_revisao_v1.json`).
     func testActiveReviewMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(RevisaoAtiva.Configuracao.compartilhada)

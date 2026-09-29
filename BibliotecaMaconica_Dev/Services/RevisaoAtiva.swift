@@ -198,6 +198,11 @@ struct CartoesRevisaoStore {
             .compactMap { porId[$0] }
     }
 
+    /// Replaces every card (a merged notebook already kept the ones that were here).
+    func substituir(_ registros: [Registro]) {
+        gravar(registros)
+    }
+
     func removerDossie(_ dossieId: String) {
         gravar(todos().filter { $0.dossieId != dossieId })
     }

@@ -182,7 +182,8 @@ enum DestaquesService {
         }
     }
 
-    private static func salvar(
+    /// Replaces the highlights of a reading (also used to import a notebook with its ids and dates).
+    static func salvar(
         _ destaques: [DestaqueLeitura],
         para data: String,
         obraID: String
@@ -592,6 +593,16 @@ enum ReadingProgressService {
             favoritos.insert(data)
         }
 
+        salvarSet(favoritos, chave: chaveFavoritos, obraID: obraID)
+    }
+
+    static func definirFavorito(
+        _ data: String,
+        obraID: String = ObraID.breviarioSeculoXXI,
+        favorita: Bool
+    ) {
+        var favoritos = favoritos(obraID: obraID)
+        if favorita { favoritos.insert(data) } else { favoritos.remove(data) }
         salvarSet(favoritos, chave: chaveFavoritos, obraID: obraID)
     }
 

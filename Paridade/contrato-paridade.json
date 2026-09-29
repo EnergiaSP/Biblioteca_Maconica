@@ -71,6 +71,18 @@
       "ios": "BibliotecaMaconica_Dev/Resources/casos_revisao_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_revisao_v1.json",
       "mustBeIdentical": true
+    },
+    "notebookRules": {
+      "canonical": "Paridade/caderno_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/caderno_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/caderno_v1.json",
+      "mustBeIdentical": true
+    },
+    "notebookCases": {
+      "canonical": "Paridade/casos_caderno_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_caderno_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_caderno_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -101,7 +113,8 @@
     "work_request_sharing",
     "local_pdf_ocr_import",
     "text_quality_notice",
-    "active_review_flashcards_quiz"
+    "active_review_flashcards_quiz",
+    "portable_study_notebook"
   ],
   "nativeEquivalents": [
     {

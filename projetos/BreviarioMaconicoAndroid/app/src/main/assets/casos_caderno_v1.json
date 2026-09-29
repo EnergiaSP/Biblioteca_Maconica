@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia do caderno portatil (Paridade/caderno_v1.json), gerados por Tools/caderno_referencia.py --atualizar. iOS e Android devem reproduzir cada mesclagem.",
+  "mesclagens": [
+    {
+      "nome": "importar em aparelho vazio",
+      "hoje": "2026-10-10",
+      "local": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [],
+        "dossies": [],
+        "cartoes": []
+      },
+      "importado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título importado",
+              "frase": "",
+              "texto": "Texto importado",
+              "rodape": "n",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "20/08",
+            "comentario": "Nova anotação do outro aparelho.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [
+              {
+                "id": "b1",
+                "texto": "primeiro degrau ",
+                "criadoEm": 900
+              },
+              {
+                "id": "b2",
+                "texto": "sabedoria do espírito",
+                "criadoEm": 1100
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança no estudo.",
+            "reflexao": "Rever os símbolos.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "outro-9",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-09-30",
+            "revisoesConcluidas": [
+              3
+            ]
+          },
+          {
+            "id": "outro-7",
+            "tema": "Acácia",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-03",
+            "revisoesConcluidas": []
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-9",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-09-30",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 1
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-9",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 2,
+              "vencimento": "2026-10-05",
+              "acertos": 2,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c3",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-7",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      },
+      "esperado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título importado",
+              "frase": "",
+              "texto": "Texto importado",
+              "rodape": "n",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "20/08",
+            "comentario": "Nova anotação do outro aparelho.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [
+              {
+                "id": "b1",
+                "texto": "primeiro degrau ",
+                "criadoEm": 900
+              },
+              {
+                "id": "b2",
+                "texto": "sabedoria do espírito",
+                "criadoEm": 1100
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança no estudo.",
+            "reflexao": "Rever os símbolos.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "outro-9",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-09-30",
+            "revisoesConcluidas": [
+              3
+            ]
+          },
+          {
+            "id": "outro-7",
+            "tema": "Acácia",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-03",
+            "revisoesConcluidas": []
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-9",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-09-30",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 1
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-9",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 2,
+              "vencimento": "2026-10-05",
+              "acertos": 2,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c3",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-7",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "nome": "mesclar com o caderno local",
+      "hoje": "2026-10-10",
+      "local": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.",
+            "reflexao": "Estudar o painel.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-02",
+            "revisoesConcluidas": [
+              0
+            ]
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 1,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      },
+      "importado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título importado",
+              "frase": "",
+              "texto": "Texto importado",
+              "rodape": "n",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "20/08",
+            "comentario": "Nova anotação do outro aparelho.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [
+              {
+                "id": "b1",
+                "texto": "primeiro degrau ",
+                "criadoEm": 900
+              },
+              {
+                "id": "b2",
+                "texto": "sabedoria do espírito",
+                "criadoEm": 1100
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança no estudo.",
+            "reflexao": "Rever os símbolos.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "outro-9",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-09-30",
+            "revisoesConcluidas": [
+              3
+            ]
+          },
+          {
+            "id": "outro-7",
+            "tema": "Acácia",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-03",
+            "revisoesConcluidas": []
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-9",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-09-30",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 1
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-9",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 2,
+              "vencimento": "2026-10-05",
+              "acertos": 2,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c3",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-7",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      },
+      "esperado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": true,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "20/08",
+            "comentario": "Nova anotação do outro aparelho.",
+            "reflexao": "",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": true,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              },
+              {
+                "id": "b2",
+                "texto": "sabedoria do espírito",
+                "criadoEm": 1100
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.\n\n— Importado em 10/10/2026 —\nEsperança e perseverança no estudo.",
+            "reflexao": "Estudar o painel.\n\n— Importado em 10/10/2026 —\nRever os símbolos.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-09-30",
+            "revisoesConcluidas": [
+              0,
+              3
+            ]
+          },
+          {
+            "id": "outro-7",
+            "tema": "Acácia",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-03",
+            "revisoesConcluidas": []
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-09-30",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 1
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 2,
+              "vencimento": "2026-10-05",
+              "acertos": 2,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c3",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "outro-7",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "nome": "importar o proprio caderno nao muda nada",
+      "hoje": "2026-10-10",
+      "local": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.",
+            "reflexao": "Estudar o painel.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-02",
+            "revisoesConcluidas": [
+              0
+            ]
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 1,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      },
+      "importado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.",
+            "reflexao": "Estudar o painel.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-02",
+            "revisoesConcluidas": [
+              0
+            ]
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 1,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      },
+      "esperado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.",
+            "reflexao": "Estudar o painel.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-02",
+            "revisoesConcluidas": [
+              0
+            ]
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 1,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "nome": "arquivo vazio nao muda nada",
+      "hoje": "2026-10-10",
+      "local": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.",
+            "reflexao": "Estudar o painel.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-02",
+            "revisoesConcluidas": [
+              0
+            ]
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 1,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      },
+      "importado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [],
+        "dossies": [],
+        "cartoes": []
+      },
+      "esperado": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1,
+        "leituras": [
+          {
+            "obraId": "breviario_rizzardo_da_camino",
+            "data": "12/08",
+            "comentario": "",
+            "reflexao": "",
+            "favorita": false,
+            "lida": true,
+            "destaques": [],
+            "edicao": {
+              "titulo": "Título local",
+              "frase": "",
+              "texto": "Texto local",
+              "rodape": "",
+              "autor": ""
+            }
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "03/07",
+            "comentario": "A fé é o primeiro degrau.",
+            "reflexao": "",
+            "favorita": true,
+            "lida": false,
+            "destaques": [
+              {
+                "id": "a1",
+                "texto": "primeiro degrau",
+                "criadoEm": 1000
+              }
+            ],
+            "edicao": null
+          },
+          {
+            "obraId": "breviario_seculo_xxi",
+            "data": "04/07",
+            "comentario": "Esperança e perseverança.",
+            "reflexao": "Estudar o painel.",
+            "favorita": false,
+            "lida": false,
+            "destaques": [],
+            "edicao": null
+          }
+        ],
+        "dossies": [
+          {
+            "id": "local-1",
+            "tema": "Escada de Jacó",
+            "area": null,
+            "obraId": null,
+            "autor": "",
+            "assunto": "",
+            "criadoEm": "2026-10-02",
+            "revisoesConcluidas": [
+              0
+            ]
+          }
+        ],
+        "cartoes": [
+          {
+            "cartao": {
+              "id": "c1",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 1,
+              "vencimento": "2026-10-05",
+              "acertos": 1,
+              "erros": 0
+            }
+          },
+          {
+            "cartao": {
+              "id": "c2",
+              "tipo": "lacuna",
+              "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+              "verso": "degrau",
+              "fonte": "Breviário, 03/07",
+              "alternativas": [
+                "caridade",
+                "degrau",
+                "esperança"
+              ]
+            },
+            "dossieId": "local-1",
+            "tema": "escada de jacó",
+            "criadoEm": "2026-10-01",
+            "estado": {
+              "caixa": 0,
+              "vencimento": "2026-10-05",
+              "acertos": 0,
+              "erros": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "validacao": [
+    {
+      "nome": "caderno da versao 1",
+      "caderno": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 1
+      },
+      "valido": true
+    },
+    {
+      "nome": "versao futura",
+      "caderno": {
+        "formato": "caderno-biblioteca-maconica",
+        "versao": 2
+      },
+      "valido": false
+    },
+    {
+      "nome": "outro formato",
+      "caderno": {
+        "formato": "backup",
+        "versao": 1
+      },
+      "valido": false
+    },
+    {
+      "nome": "sem versao",
+      "caderno": {
+        "formato": "caderno-biblioteca-maconica"
+      },
+      "valido": false
+    }
+  ]
+}
