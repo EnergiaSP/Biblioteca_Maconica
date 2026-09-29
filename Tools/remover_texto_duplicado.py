@@ -71,6 +71,12 @@ def so_letras_e_digitos(linha: str) -> str:
     return "".join(c for c in linha.lower() if c.isalnum())
 
 
+def espacada(linha: str) -> bool:
+    """Linha com as letras separadas por espaços: ao menos 40% das palavras têm uma só letra."""
+    palavras = PALAVRA.findall(linha)
+    return len(palavras) >= 6 and sum(1 for p in palavras if len(p) == 1) * 10 >= len(palavras) * 4
+
+
 def parecidas(a: str, b: str) -> bool:
     """Duas versões da mesma linha: mesmos números e texto igual ou quase igual."""
     if not a or not b:
@@ -79,24 +85,42 @@ def parecidas(a: str, b: str) -> bool:
         return True
     if DIGITOS.findall(a) != DIGITOS.findall(b):
         return False
+    letras_a, letras_b = so_letras_e_digitos(a), so_letras_e_digitos(b)
     if max(len(a), len(b)) < LINHA_CURTA:
         # Linhas curtas (títulos, células de tabela) só diferem em pontuação.
-        return so_letras_e_digitos(a) == so_letras_e_digitos(b)
-    if min(len(a), len(b)) / max(len(a), len(b)) < SEMELHANCA_MINIMA:
+        return letras_a == letras_b
+    if min(len(a), len(b)) / max(len(a), len(b)) >= SEMELHANCA_MINIMA and \
+            difflib.SequenceMatcher(None, a, b, autojunk=False).ratio() >= SEMELHANCA_MINIMA:
+        return True
+    # Camada com as letras espaçadas ("o u p erd ê-lo e m m a us"): as mesmas letras sem os espaços.
+    # Só vale quando uma das linhas é de fato espaçada; frases parecidas ("psallite Deo nostro" /
+    # "psallite Regi nostro") não são a mesma linha.
+    if not (espacada(a) or espacada(b)):
         return False
-    return difflib.SequenceMatcher(None, a, b, autojunk=False).ratio() >= SEMELHANCA_MINIMA
+    if not letras_a or not letras_b or min(len(letras_a), len(letras_b)) / max(len(letras_a), len(letras_b)) < SEMELHANCA_MINIMA:
+        return False
+    return difflib.SequenceMatcher(None, letras_a, letras_b, autojunk=False).ratio() >= SEMELHANCA_MINIMA
 
 
 def metades(linha: str):
-    """(primeira, segunda) quando a linha é a mesma frase escrita duas vezes."""
-    meio = len(linha) // 2
-    for deslocamento in range(0, max(4, len(linha) // 10)):
-        for corte in (meio - deslocamento, meio + deslocamento):
-            if 0 < corte < len(linha) and linha[corte] == " ":
-                a, b = linha[:corte].strip(), linha[corte + 1:].strip()
-                if len(a) >= 8 and parecidas(normalizar(a), normalizar(b)):
-                    return a, b
-    return None
+    """(primeira, segunda) quando a linha é a mesma frase escrita duas vezes, separadas por espaço ou
+    coladas ("...Lojas.com a localização..."). O corte é o ponto em que as duas metades têm quase o
+    mesmo tamanho, para não levar uma palavra da emenda junto com a metade descartada."""
+    texto = linha.strip()
+    meio = len(texto) // 2
+    # Filtro rápido: o começo da linha precisa reaparecer perto do meio.
+    letras = so_letras_e_digitos(texto)
+    if len(letras) < 16 or letras[:6] not in letras[len(letras) // 2 - 6:len(letras) // 2 + 7]:
+        return None
+    candidatos = []
+    for corte in range(max(1, meio - max(3, len(texto) // 40)), min(len(texto), meio + max(3, len(texto) // 40)) + 1):
+        a, b = texto[:corte].strip(), texto[corte:].strip()
+        if len(a) >= 8 and len(b) >= 8 and parecidas(normalizar(a), normalizar(b)):
+            candidatos.append((abs(len(a) - len(b)), 0 if texto[corte - 1:corte + 1].strip() != texto[corte - 1:corte + 1] else 1, a, b))
+    if not candidatos:
+        return None
+    _, _, a, b = min(candidatos)
+    return a, b
 
 
 class Vocabulario:
@@ -309,6 +333,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--pacotes", type=Path, required=True, help="pasta RAGPackages de origem")
     parser.add_argument("--gravar", type=Path, metavar="SAIDA", help="grava cópias corrigidas em SAIDA")
+    parser.add_argument("--relatorio", type=Path, default=RELATORIO, help="arquivo do relatório")
     args = parser.parse_args()
     vocab = montar_vocabulario(args.pacotes)
     resultado = processar(args.pacotes, vocab, args.gravar)
@@ -319,9 +344,9 @@ def main() -> None:
                    "linhaCurta": LINHA_CURTA, "frequenciaComum": FREQUENCIA_COMUM},
         **resultado,
     }
-    RELATORIO.write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    args.relatorio.write_text(json.dumps(dados, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(resultado["totais"], ensure_ascii=False))
-    print(f"Relatório: {RELATORIO.relative_to(RAIZ)}")
+    print(f"Relatório: {args.relatorio}")
 
 
 if __name__ == "__main__":

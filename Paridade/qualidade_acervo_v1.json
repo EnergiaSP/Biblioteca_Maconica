@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Qualidade do texto do acervo RAG pela regra Paridade/qualidade_texto_v1.json.",
+  "paginas": {
+    "avaliadas": 66422,
+    "ruidosas": 522,
+    "ilegiveis": 596
+  },
+  "obrasPorNivel": {
+    "baixa": 9,
+    "boa": 291,
+    "regular": 21
+  },
+  "motivos": {
+    "simbolo": 113162,
+    "solta": 68596,
+    "misto": 7350,
+    "caixa": 5637,
+    "escrita": 1555,
+    "semVogal": 431
+  },
+  "obrasComMaisRuido": [
+    {
+      "obra": "voltaire_dicionario_filosofico_ridendo_castigat_mores",
+      "avaliadas": 451,
+      "ruidosas": 0,
+      "ilegiveis": 451,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "regulador_do_reaa_grande_oriente_do_passeio_1858",
+      "avaliadas": 58,
+      "ruidosas": 15,
+      "ilegiveis": 39,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "mestre_cerimonias_jun_09",
+      "avaliadas": 31,
+      "ruidosas": 25,
+      "ilegiveis": 1,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "macons_que_leem",
+      "avaliadas": 28,
+      "ruidosas": 10,
+      "ilegiveis": 13,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "a_abobada_celeste_de_um_templo_maconico_do_reaa_v1",
+      "avaliadas": 54,
+      "ruidosas": 5,
+      "ilegiveis": 21,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "os_segredos_da_mente_milionaria",
+      "avaliadas": 112,
+      "ruidosas": 42,
+      "ilegiveis": 0,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "a_tradicao_hermetica_julius_evola",
+      "avaliadas": 126,
+      "ruidosas": 39,
+      "ilegiveis": 0,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "maconaria_revelada_os_segredos_do_aprendiz_macom",
+      "avaliadas": 336,
+      "ruidosas": 101,
+      "ilegiveis": 2,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "boletim_gob_1890",
+      "avaliadas": 33,
+      "ruidosas": 4,
+      "ilegiveis": 6,
+      "nivel": "baixa"
+    },
+    {
+      "obra": "a_mais_antiga_ata_maconica",
+      "avaliadas": 5,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro",
+      "avaliadas": 81,
+      "ruidosas": 14,
+      "ilegiveis": 1,
+      "nivel": "regular"
+    },
+    {
+      "obra": "combate_ao_clericalismo",
+      "avaliadas": 24,
+      "ruidosas": 2,
+      "ilegiveis": 2,
+      "nivel": "regular"
+    },
+    {
+      "obra": "constituicao_da_confederacao_maconaria_portugueza",
+      "avaliadas": 31,
+      "ruidosas": 3,
+      "ilegiveis": 2,
+      "nivel": "regular"
+    },
+    {
+      "obra": "historia_nat_geo_ramses_ii",
+      "avaliadas": 55,
+      "ruidosas": 8,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "a_maconaria_em_portugal",
+      "avaliadas": 145,
+      "ruidosas": 16,
+      "ilegiveis": 1,
+      "nivel": "regular"
+    },
+    {
+      "obra": "painel_do_grau_de_aprendiz_completo_booz",
+      "avaliadas": 28,
+      "ruidosas": 3,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "a_geometria_sagrada",
+      "avaliadas": 48,
+      "ruidosas": 5,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "pistis_sophia_traducao_do_texto_original",
+      "avaliadas": 180,
+      "ruidosas": 8,
+      "ilegiveis": 9,
+      "nivel": "regular"
+    },
+    {
+      "obra": "o_nome_de_deus_adonai_roberto_aguilar_silva",
+      "avaliadas": 11,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "diccionario_breve_de_la_masoneria_biblioteca_freemasonry",
+      "avaliadas": 81,
+      "ruidosas": 4,
+      "ilegiveis": 3,
+      "nivel": "regular"
+    },
+    {
+      "obra": "mecanica_quantica_resumo_de_conceitos",
+      "avaliadas": 107,
+      "ruidosas": 9,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "origens_da_maconaria_basilio_thome_de_freitas_junior",
+      "avaliadas": 12,
+      "ruidosas": 0,
+      "ilegiveis": 1,
+      "nivel": "regular"
+    },
+    {
+      "obra": "escolas_do_pensamento_maconico_bondarik",
+      "avaliadas": 42,
+      "ruidosas": 1,
+      "ilegiveis": 2,
+      "nivel": "regular"
+    },
+    {
+      "obra": "geometria_sagrada",
+      "avaliadas": 47,
+      "ruidosas": 3,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "fernando_pessoa_e_a_maconaria_roberto_aguilar_silva",
+      "avaliadas": 16,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "cores_na_maconaria",
+      "avaliadas": 17,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "regular"
+    },
+    {
+      "obra": "as_chaves_de_salomao",
+      "avaliadas": 393,
+      "ruidosas": 18,
+      "ilegiveis": 5,
+      "nivel": "regular"
+    },
+    {
+      "obra": "as_claviculas_salomao_mathers",
+      "avaliadas": 393,
+      "ruidosas": 18,
+      "ilegiveis": 5,
+      "nivel": "regular"
+    },
+    {
+      "obra": "sistema_golden_dawn_2_0",
+      "avaliadas": 112,
+      "ruidosas": 5,
+      "ilegiveis": 1,
+      "nivel": "regular"
+    },
+    {
+      "obra": "maconaria_e_simbologia",
+      "avaliadas": 170,
+      "ruidosas": 7,
+      "ilegiveis": 2,
+      "nivel": "regular"
+    },
+    {
+      "obra": "aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves",
+      "avaliadas": 21,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz",
+      "avaliadas": 86,
+      "ruidosas": 4,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "simbologia_dos_numeros_no_grau_de_aprendiz_macom",
+      "avaliadas": 23,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "projetos_secretos",
+      "avaliadas": 24,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "catedrais_goticas",
+      "avaliadas": 26,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "dicionario_de_simbolos_esotericos",
+      "avaliadas": 58,
+      "ruidosas": 0,
+      "ilegiveis": 2,
+      "nivel": "boa"
+    },
+    {
+      "obra": "o_codigo_da_biblia_michael_drosnin",
+      "avaliadas": 233,
+      "ruidosas": 6,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "maconaria_simbolos_e_arquetipos",
+      "avaliadas": 112,
+      "ruidosas": 3,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "a_maconaria_durante_as_ditaduras",
+      "avaliadas": 131,
+      "ruidosas": 2,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto",
+      "avaliadas": 142,
+      "ruidosas": 3,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    }
+  ]
+}

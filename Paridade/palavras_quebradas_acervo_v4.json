@@ -1,0 +1,1493 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Palavras partidas na importação/OCR. A forma corrigida sempre existe inteira em outro ponto do acervo.",
+  "acervoRAG": {
+    "ocorrencias": 290,
+    "porTipo": {
+      "espaco": 81,
+      "hifen": 118,
+      "hifen-composto": 88,
+      "ligadura": 3
+    },
+    "porOrigem": {
+      "os_segredos_da_mente_milionaria": 40,
+      "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": 37,
+      "o_livro_de_urantia_urantia_foundation": 25,
+      "zohar": 25,
+      "o_codigo_da_biblia_michael_drosnin": 9,
+      "antiguos_ritos_misticos": 8,
+      "o_taro_cabalistico_robert_wang": 8,
+      "a_maconaria_no_centenario_1822_1922": 7,
+      "regulador_do_reaa_grande_oriente_do_passeio_1858": 7,
+      "biblia_de_jerusalem_editora_paulus": 6,
+      "medico_de_homens_e_almas_taylor_caldwell": 6,
+      "a_revelacao_dos_templarios_lynn_picknett": 5,
+      "a_verdade_sufocada_carlos_alberto_brilhante_ustra": 5,
+      "o_homem_e_seus_simbolos_carl_gustav_jung": 5,
+      "as_linguagens_da_experiencia_religiosa": 4,
+      "por_dentro_do_priorado_de_siao_robert_howells": 4,
+      "a_conspiracao_de_1817": 3,
+      "a_doutrina_secreta_sintese": 3,
+      "a_sintese_da_doutrina_secreta_blavatsky": 3,
+      "combate_ao_clericalismo": 3,
+      "enciclopedia_de_fatos_da_biblia": 3,
+      "a_maconaria_em_portugal": 2,
+      "a_magia_da_maconaria_arthur_powell": 2,
+      "a_sociedade_feudal_marc_bloch_1": 2,
+      "a_tradicao_hermetica_julius_evola": 2,
+      "cabala_mistica": 2,
+      "desaparicoes_misteriosas_o_cosmo_observa_nos": 2,
+      "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro": 2,
+      "historia_da_maconaria_aulas_1_a_12": 2,
+      "jesus_o_divino_mestre_albert_paul_dahoui": 2,
+      "maconaria_e_simbologia": 2,
+      "o_legado_dos_templarios_steve_berry": 2,
+      "o_trivium_biblioteca_freemasonry": 2,
+      "os_100_maiores_misterios_do_mundo": 2,
+      "pitagoras_ciencia_e_magia_na_antiga_grecia": 2,
+      "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": 2,
+      "a_ciencia_secreta_vol_3_henri_durville": 1,
+      "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii": 1,
+      "a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels": 1,
+      "a_maconaria_na_historia": 1
+    },
+    "formasMaisFrequentes": [
+      {
+        "tipo": "espaco",
+        "original": "dinh eiro",
+        "corrigido": "dinheiro",
+        "vezes": 33
+      },
+      {
+        "tipo": "hifen",
+        "original": "exacta- mente",
+        "corrigido": "exactamente",
+        "vezes": 5
+      },
+      {
+        "tipo": "hifen",
+        "original": "profa- nos",
+        "corrigido": "profanos",
+        "vezes": 4
+      },
+      {
+        "tipo": "espaco",
+        "original": "pergam inhos",
+        "corrigido": "pergaminhos",
+        "vezes": 3
+      },
+      {
+        "tipo": "espaco",
+        "original": "ori ginal",
+        "corrigido": "original",
+        "vezes": 3
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "de- com",
+        "corrigido": "de-com",
+        "vezes": 3
+      },
+      {
+        "tipo": "espaco",
+        "original": "fam oso",
+        "corrigido": "famoso",
+        "vezes": 3
+      },
+      {
+        "tipo": "hifen",
+        "original": "subordi- nada",
+        "corrigido": "subordinada",
+        "vezes": 3
+      },
+      {
+        "tipo": "hifen",
+        "original": "Sefi- rot",
+        "corrigido": "Sefirot",
+        "vezes": 3
+      },
+      {
+        "tipo": "hifen",
+        "original": "desembarga- dores",
+        "corrigido": "desembargadores",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "dizen- do",
+        "corrigido": "dizendo",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "sí mbolo",
+        "corrigido": "símbolo",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "pré- colombianos",
+        "corrigido": "pré-colombianos",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Dhyani- Buda",
+        "corrigido": "Dhyani-Buda",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "prim eiro",
+        "corrigido": "primeiro",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "cualida- des",
+        "corrigido": "cualidades",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "basán- dose",
+        "corrigido": "basándose",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "extendién- dose",
+        "corrigido": "extendiéndose",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "cana- les",
+        "corrigido": "canales",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "refugia- se",
+        "corrigido": "refugia-se",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "esti- mar",
+        "corrigido": "estimar",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "originariamen- te",
+        "corrigido": "originariamente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pri meira",
+        "corrigido": "primeira",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "universo- mestre",
+        "corrigido": "universo-mestre",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pró prio",
+        "corrigido": "próprio",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "suposta- mente",
+        "corrigido": "supostamente",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Thotm oses",
+        "corrigido": "Thotmoses",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "disp osto",
+        "corrigido": "disposto",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "refl etora",
+        "corrigido": "refletora",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen",
+        "original": "defi- nidas",
+        "corrigido": "definidas",
+        "vezes": 2
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "gozá- la",
+        "corrigido": "gozá-la",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Conservam- se",
+        "corrigido": "Conservam-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Trag édia",
+        "corrigido": "Tragédia",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Eliz abeth",
+        "corrigido": "Elizabeth",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Commenda- dor",
+        "corrigido": "Commendador",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Cavalcan- ti",
+        "corrigido": "Cavalcanti",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "li- belo",
+        "corrigido": "libelo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "maconica- mente",
+        "corrigido": "maçonicamente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Fratogian- ni",
+        "corrigido": "Fratogianni",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "gratuita- mente",
+        "corrigido": "gratuitamente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Mel- lo",
+        "corrigido": "Mello",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "emo- tivas",
+        "corrigido": "emotivas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "usá- lo",
+        "corrigido": "usá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "ex- chefe",
+        "corrigido": "ex-chefe",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Rennes- le",
+        "corrigido": "Rennes-le",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "crédulas- crédulas",
+        "corrigido": "crédulas-crédulas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "depois- depois",
+        "corrigido": "depois-depois",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "lugar- tenente",
+        "corrigido": "lugar-tenente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Baixo- Sena",
+        "corrigido": "Baixo-Sena",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Vemo- la",
+        "corrigido": "Vemo-la",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "demó- nios",
+        "corrigido": "demónios",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "depo imentos",
+        "corrigido": "depoimentos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "acor- dadas",
+        "corrigido": "acordadas",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Exér cito",
+        "corrigido": "Exército",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "fizes- sem",
+        "corrigido": "fizessem",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "conver- sei",
+        "corrigido": "conversei",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "formas- pensamento",
+        "corrigido": "formas-pensamento",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "neo- templários",
+        "corrigido": "neo-templários",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "demonstrá- los",
+        "corrigido": "demonstrá-los",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "derrubá- lo",
+        "corrigido": "derrubá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "freqüen- te",
+        "corrigido": "freqüente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "al- gum",
+        "corrigido": "algum",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "segun- do",
+        "corrigido": "segundo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "instaura- dores",
+        "corrigido": "instauradores",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "dize- lhe",
+        "corrigido": "dize-lhe",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "tão- somente",
+        "corrigido": "tão-somente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "amarrá- lo",
+        "corrigido": "amarrá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Afastai- vos",
+        "corrigido": "Afastai-vos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Cercaram- me",
+        "corrigido": "Cercaram-me",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "difundia- se",
+        "corrigido": "difundia-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "prolongá- lo",
+        "corrigido": "prolongá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "sacerdotes- iniciados",
+        "corrigido": "sacerdotes-iniciados",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "materialmen- te",
+        "corrigido": "materialmente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "esta- belecimentos",
+        "corrigido": "estabelecimentos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "pernicio- sas",
+        "corrigido": "perniciosas",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "hypo stasis",
+        "corrigido": "hypostasis",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "fi- delidade",
+        "corrigido": "fidelidade",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "aposto- lado",
+        "corrigido": "apostolado",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "extra- terrestres",
+        "corrigido": "extraterrestres",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "pla- nos",
+        "corrigido": "planos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Spam panato",
+        "corrigido": "Spampanato",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "chamou- o",
+        "corrigido": "chamou-o",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Asclé- pius",
+        "corrigido": "Asclépius",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "positi- vista",
+        "corrigido": "positivista",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "reciproca- mente",
+        "corrigido": "reciprocamente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "PORTUGAL- BRASIL",
+        "corrigido": "PORTUGAL-BRASIL",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ignom iniosa",
+        "corrigido": "ignominiosa",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ignom ínias",
+        "corrigido": "ignomínias",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "cons- ciência",
+        "corrigido": "consciência",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "inculcar- lhe",
+        "corrigido": "inculcar-lhe",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "defr ontou",
+        "corrigido": "defrontou",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Pontifi ces",
+        "corrigido": "Pontífices",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "negociá- los",
+        "corrigido": "negociá-los",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "apoderou- se",
+        "corrigido": "apoderou-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "bem- feitos",
+        "corrigido": "bem-feitos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Ouvia- o",
+        "corrigido": "Ouvia-o",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "ver- me",
+        "corrigido": "ver-me",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "sentiu- se",
+        "corrigido": "sentiu-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Profa- nos",
+        "corrigido": "Profanos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Bí blia",
+        "corrigido": "Bíblia",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mili tares",
+        "corrigido": "Militares",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "compu tadorizado",
+        "corrigido": "computadorizado",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "atin gir",
+        "corrigido": "atingir",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "injus tificada",
+        "corrigido": "injustificada",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "esti vesse",
+        "corrigido": "estivesse",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "praticá- lo",
+        "corrigido": "praticá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "pró- e",
+        "corrigido": "pró-e",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "de- fere",
+        "corrigido": "defere",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "De- com",
+        "corrigido": "De-com",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "raí zes",
+        "corrigido": "raízes",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "de- tra",
+        "corrigido": "detrá",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ast rologia",
+        "corrigido": "astrologia",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "foi- lhe",
+        "corrigido": "foi-lhe",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "entregou- lhe",
+        "corrigido": "entregou-lhe",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "transportá- lo",
+        "corrigido": "transportá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "supra- animal",
+        "corrigido": "supra-animal",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "centro- fonte",
+        "corrigido": "centro-fonte",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "super- universos",
+        "corrigido": "superuniversos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "dedicam- se",
+        "corrigido": "dedicam-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Universo- Mestre",
+        "corrigido": "Universo-Mestre",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "sede- central",
+        "corrigido": "sede-central",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "sedes- centrais",
+        "corrigido": "sedes-centrais",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "misturam- se",
+        "corrigido": "misturam-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "pós- Adâmicos",
+        "corrigido": "pós-Adâmicos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "auto- outorgado",
+        "corrigido": "auto-outorgado",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "espalharam- se",
+        "corrigido": "espalharam-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Lao- Tsé",
+        "corrigido": "Lao-Tsé",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "boas- vindas",
+        "corrigido": "boas-vindas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "boas- outorgado",
+        "corrigido": "boas-outorgado",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "inter- relacionados",
+        "corrigido": "inter-relacionados",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Deus- homem",
+        "corrigido": "Deus-homem",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "anunciou- lhes",
+        "corrigido": "anunciou-lhes",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "contra- indicado",
+        "corrigido": "contra-indicado",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "voltou- se",
+        "corrigido": "voltou-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "auto- outorga",
+        "corrigido": "auto-outorga",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "conhecer- me",
+        "corrigido": "conhecer-me",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "terça- feira",
+        "corrigido": "terça-feira",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "norte- americano",
+        "corrigido": "norte-americano",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "badm inton",
+        "corrigido": "badminton",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "prin cipalmente",
+        "corrigido": "principalmente",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "legí timas",
+        "corrigido": "legítimas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "auto- ilusão",
+        "corrigido": "auto-ilusão",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "eter nidade",
+        "corrigido": "eternidade",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "prin cipal",
+        "corrigido": "principal",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Precon ceituoso",
+        "corrigido": "Preconceituoso",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "manci- ra",
+        "corrigido": "mancira",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "ex- positiva",
+        "corrigido": "expositiva",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Yehu- aber",
+        "corrigido": "Yehu-aber",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "encontra- se",
+        "corrigido": "encontra-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "si- mesma",
+        "corrigido": "si-mesma",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "co- imperador",
+        "corrigido": "co-imperador",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "polê- micos",
+        "corrigido": "polêmicos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "tem- plo",
+        "corrigido": "templo",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "fragm entos",
+        "corrigido": "fragmentos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Cristianis- mo",
+        "corrigido": "Cristianismo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "desenvolvi- mento",
+        "corrigido": "desenvolvimento",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "mu- çulmanos",
+        "corrigido": "muçulmanos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "huma- na",
+        "corrigido": "humana",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Pai- Nosso",
+        "corrigido": "Pai-Nosso",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "exa- me",
+        "corrigido": "exame",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "liga- m",
+        "corrigido": "ligam",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "cris- tas",
+        "corrigido": "cristãs",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "chama- do",
+        "corrigido": "chamado",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Diana- Artemis",
+        "corrigido": "Diana-Artemis",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "es- tavam",
+        "corrigido": "estavam",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "ocasio- nalmente",
+        "corrigido": "ocasionalmente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "possivel- mente",
+        "corrigido": "possivelmente",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Asm odeus",
+        "corrigido": "Asmodeus",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Her- mes",
+        "corrigido": "Hermes",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "espiri- tual",
+        "corrigido": "espiritual",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "ani- madas",
+        "corrigido": "animadas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "superá- lo",
+        "corrigido": "superá-lo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Sim- bolicamente",
+        "corrigido": "Simbolicamente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Hermes- Mercúrio",
+        "corrigido": "Hermes-Mercúrio",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "obscure- ceram",
+        "corrigido": "obscureceram",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "espéci- mes",
+        "corrigido": "espécimes",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Ir- mãos",
+        "corrigido": "Irmãos",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "espiri- tualidade",
+        "corrigido": "espiritualidade",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Her- mética",
+        "corrigido": "Hermética",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "bem- humorada",
+        "corrigido": "bem-humorada",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "Lembre- se",
+        "corrigido": "Lembre-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "concentram- se",
+        "corrigido": "concentram-se",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "bem- sucedidas",
+        "corrigido": "bem-sucedidas",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "transfe- rindo",
+        "corrigido": "transferindo",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "zar- par",
+        "corrigido": "zarpar",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "pergam inho",
+        "corrigido": "pergaminho",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "bem- sucedido",
+        "corrigido": "bem-sucedido",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "ordinariamen- te",
+        "corrigido": "ordinariamente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "in- gresso",
+        "corrigido": "ingresso",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "presen- ça",
+        "corrigido": "presença",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "nen- hum",
+        "corrigido": "nenhum",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "con- f",
+        "corrigido": "conf",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "tempora- riamente",
+        "corrigido": "temporariamente",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "cons- tar",
+        "corrigido": "constar",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "filia- rem",
+        "corrigido": "filia-rem",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "instrum ento",
+        "corrigido": "instrumento",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "opera- tórios",
+        "corrigido": "operatórios",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "Maçô- nico",
+        "corrigido": "Maçônico",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen-composto",
+        "original": "vice- versa",
+        "corrigido": "vice-versa",
+        "vezes": 1
+      },
+      {
+        "tipo": "hifen",
+        "original": "afli- giam",
+        "corrigido": "afligiam",
+        "vezes": 1
+      }
+    ],
+    "espacoELigadura": [
+      {
+        "tipo": "espaco",
+        "original": "dinh eiro",
+        "corrigido": "dinheiro",
+        "vezes": 33
+      },
+      {
+        "tipo": "espaco",
+        "original": "pergam inhos",
+        "corrigido": "pergaminhos",
+        "vezes": 3
+      },
+      {
+        "tipo": "espaco",
+        "original": "ori ginal",
+        "corrigido": "original",
+        "vezes": 3
+      },
+      {
+        "tipo": "espaco",
+        "original": "fam oso",
+        "corrigido": "famoso",
+        "vezes": 3
+      },
+      {
+        "tipo": "espaco",
+        "original": "sí mbolo",
+        "corrigido": "símbolo",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "prim eiro",
+        "corrigido": "primeiro",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pri meira",
+        "corrigido": "primeira",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "pró prio",
+        "corrigido": "próprio",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Thotm oses",
+        "corrigido": "Thotmoses",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "disp osto",
+        "corrigido": "disposto",
+        "vezes": 2
+      },
+      {
+        "tipo": "ligadura",
+        "original": "refl etora",
+        "corrigido": "refletora",
+        "vezes": 2
+      },
+      {
+        "tipo": "espaco",
+        "original": "Trag édia",
+        "corrigido": "Tragédia",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Eliz abeth",
+        "corrigido": "Elizabeth",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "depo imentos",
+        "corrigido": "depoimentos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Exér cito",
+        "corrigido": "Exército",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "hypo stasis",
+        "corrigido": "hypostasis",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Spam panato",
+        "corrigido": "Spampanato",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ignom iniosa",
+        "corrigido": "ignominiosa",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ignom ínias",
+        "corrigido": "ignomínias",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "defr ontou",
+        "corrigido": "defrontou",
+        "vezes": 1
+      },
+      {
+        "tipo": "ligadura",
+        "original": "Pontifi ces",
+        "corrigido": "Pontífices",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Bí blia",
+        "corrigido": "Bíblia",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Mili tares",
+        "corrigido": "Militares",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "compu tadorizado",
+        "corrigido": "computadorizado",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "atin gir",
+        "corrigido": "atingir",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "injus tificada",
+        "corrigido": "injustificada",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "esti vesse",
+        "corrigido": "estivesse",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "raí zes",
+        "corrigido": "raízes",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "ast rologia",
+        "corrigido": "astrologia",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "badm inton",
+        "corrigido": "badminton",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "prin cipalmente",
+        "corrigido": "principalmente",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "legí timas",
+        "corrigido": "legítimas",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "eter nidade",
+        "corrigido": "eternidade",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "prin cipal",
+        "corrigido": "principal",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Precon ceituoso",
+        "corrigido": "Preconceituoso",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "fragm entos",
+        "corrigido": "fragmentos",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "Asm odeus",
+        "corrigido": "Asmodeus",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "pergam inho",
+        "corrigido": "pergaminho",
+        "vezes": 1
+      },
+      {
+        "tipo": "espaco",
+        "original": "instrum ento",
+        "corrigido": "instrumento",
+        "vezes": 1
+      }
+    ]
+  }
+}

@@ -1678,6 +1678,26 @@
         "id": 52,
         "campo": "texto",
         "passada": 3
+      },
+      {
+        "tipo": "espaco",
+        "original": "espiritu alidade",
+        "corrigido": "espiritualidade",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "07/05",
+        "id": 127,
+        "campo": "texto",
+        "passada": 4
+      },
+      {
+        "tipo": "espaco",
+        "original": "asso ciados",
+        "corrigido": "associados",
+        "arquivo": "breviario_rizzardo.json",
+        "data": "12/08",
+        "id": 224,
+        "campo": "texto",
+        "passada": 4
       }
     ]
   }
