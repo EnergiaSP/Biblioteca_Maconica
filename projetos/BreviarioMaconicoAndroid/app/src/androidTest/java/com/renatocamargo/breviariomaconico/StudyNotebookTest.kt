@@ -51,6 +51,46 @@ class StudyNotebookTest {
         assertEquals(expected, StudyNotebook.fromJson(json))
     }
 
+    /**
+     * Sync through a service: the merged notebook is applied here and written back; a remote file from a
+     * newer version of the app is never overwritten. Same as the iOS test.
+     */
+    @Test
+    fun studyNotebookSyncMergesAndProtectsUnreadableRemote() = kotlinx.coroutines.runBlocking {
+        class Memory(var text: String?) : com.renatocamargo.breviariomaconico.data.NotebookProvider {
+            override val option = com.renatocamargo.breviariomaconico.data.NotebookSync.Option.OWN_ACCOUNT
+            var writes = 0
+            override suspend fun read() = text
+            override suspend fun write(text: String) { this.text = text; writes++ }
+        }
+        val sync = com.renatocamargo.breviariomaconico.data.NotebookSync
+        val config = StudyNotebook.loadConfig(context)
+        val obra = "teste_caderno_sincronizacao"
+        val prefs = context.getSharedPreferences("breviario_prefs", android.content.Context.MODE_PRIVATE)
+        try {
+            val other = StudyNotebook.Notebook(listOf(StudyNotebook.Reading(obra, "05/07", comment = "Anotação feita no outro aparelho.")))
+            val cloud = Memory(StudyNotebook.toJson(other, config).toString())
+            val merged = sync.sync(context, cloud, config)
+            assertEquals("Anotação feita no outro aparelho.", prefs.getString("comment_${obra}_05/07", null))
+            assertEquals(merged, StudyNotebook.fromJson(JSONObject(cloud.text!!)))
+            val writes = cloud.writes
+            sync.sync(context, cloud, config)
+            assertEquals("Nothing changed, nothing is written", writes, cloud.writes)
+
+            val future = """{"formato":"caderno-biblioteca-maconica","versao":99}"""
+            val futureCloud = Memory(future)
+            val failed = runCatching { sync.sync(context, futureCloud, config) }.isFailure
+            assertTrue("A notebook from a newer version must not be merged", failed)
+            assertEquals(future, futureCloud.text)
+            assertEquals(0, futureCloud.writes)
+        } finally {
+            val editor = prefs.edit()
+            prefs.all.keys.filter { obra in it }.forEach { editor.remove(it) }
+            editor.commit()
+            context.getSharedPreferences("caderno_sync", android.content.Context.MODE_PRIVATE).edit().clear().commit()
+        }
+    }
+
     /** A notebook written to this device and collected again keeps the reading, its highlight and edit. */
     @Test
     fun studyNotebookRoundTripOnThisDevice() {

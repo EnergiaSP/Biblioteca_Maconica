@@ -1,5 +1,6 @@
 package com.renatocamargo.breviariomaconico
 
+import androidx.lifecycle.lifecycleScope
 import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -152,6 +153,12 @@ class MainActivity : ComponentActivity() {
     private var openWorkId by mutableStateOf<String?>(null)
     /** Saved dossier to open, from a review notification; the pair's second value makes each tap a new request. */
     private var openDossier by mutableStateOf<Pair<String, Long>?>(null)
+
+    /** Syncs the study notebook with the chosen service whenever the app comes back to the foreground. */
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch { com.renatocamargo.breviariomaconico.data.NotebookSync.syncIfChosen(this@MainActivity) }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
