@@ -25,6 +25,7 @@ enum AudioSequencia {
 /// Small speaker button placed on a collection or study path card.
 struct BotaoOuvirSequencia: View {
     let tema: TemaLeitura
+    var titulo = ""
     let ouvir: () -> Void
 
     var body: some View {
@@ -37,7 +38,7 @@ struct BotaoOuvirSequencia: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel(configuracao.rotulo("ouvir"))
+            .accessibilityLabel(titulo.isEmpty ? configuracao.rotulo("ouvir") : "\(configuracao.rotulo("ouvir")): \(titulo)")
             .accessibilityIdentifier("audio.sequence.play")
         }
     }

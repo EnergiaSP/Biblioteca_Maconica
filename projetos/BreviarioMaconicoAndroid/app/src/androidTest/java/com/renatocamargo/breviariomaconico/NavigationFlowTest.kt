@@ -170,6 +170,7 @@ class NavigationFlowTest {
         compose.onNodeWithTag("tab.more").performClick()
         compose.onNodeWithText("Trilhas por grau").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("0 de 10 etapas (0%)")
+        compose.onNodeWithTag("trilha.aprendiz.etapas").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.etapa.aprendiz_iniciacao.marcar").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("1 de 10 etapas (10%)")
         compose.onNodeWithTag("trilha.aprendiz.marco").assertExists()

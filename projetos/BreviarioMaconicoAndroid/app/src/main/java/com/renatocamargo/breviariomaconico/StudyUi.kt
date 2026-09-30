@@ -348,7 +348,7 @@ internal fun CollectionsScreen(
             item(key = "collection:${collection.id}") {
                 val matches = content.collections[collection.id].orEmpty()
                 StudyCollectionCard(collection, matches, colors, content::readingLabel, ::openReading) {
-                    AudioSequenceButton(colors, audio) { audio.play(collection.title, matches) }
+                    AudioSequenceButton(colors, audio, collection.title) { audio.play(collection.title, matches) }
                 }
             }
         }
@@ -361,7 +361,7 @@ internal fun CollectionsScreen(
                 PremiumCard(colors) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(path.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
-                        AudioSequenceButton(colors, audio) { audio.play(path.title, relatedReadings) }
+                        AudioSequenceButton(colors, audio, path.title) { audio.play(path.title, relatedReadings) }
                     }
                     Text(path.subtitle, color = colors.secondary)
                     Text(path.objective, color = colors.secondary)

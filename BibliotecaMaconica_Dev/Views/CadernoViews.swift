@@ -303,9 +303,17 @@ struct CadernoPorTemaView: View {
                 .font(.subheadline)
                 .foregroundStyle(tema.textoSecundario)
                 .fixedSize(horizontal: false, vertical: true)
-            TextField(regra.rotulo("buscar"), text: $consulta)
+            // Label above the field, as in the other search fields: the placeholder was cut in narrow widths.
+            Text(regra.rotulo("buscar"))
+                .font(.subheadline)
+                .foregroundStyle(tema.textoPrincipal)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityHidden(true)
+            TextField("", text: $consulta, axis: .vertical)
+                .lineLimit(1...3)
                 .textFieldStyle(.roundedBorder)
                 .autocorrectionDisabled()
+                .accessibilityLabel(regra.rotulo("buscar"))
                 .accessibilityIdentifier("notebook.theme.search")
             if !temas.isEmpty {
                 Text(regra.rotulo("temas"))

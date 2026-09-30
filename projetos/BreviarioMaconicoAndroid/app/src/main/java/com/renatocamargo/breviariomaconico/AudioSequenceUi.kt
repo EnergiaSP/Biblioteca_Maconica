@@ -113,9 +113,9 @@ internal fun rememberAudioSequence(): AudioSequence {
 
 /** Small speaker button on a collection or study path card. */
 @Composable
-internal fun AudioSequenceButton(colors: Palette, sequence: AudioSequence, onClick: () -> Unit) {
+internal fun AudioSequenceButton(colors: Palette, sequence: AudioSequence, title: String, onClick: () -> Unit) {
     IconButton(onClick = onClick, modifier = Modifier.testTag("audio.sequence.play")) {
-        Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = sequence.label("ouvir"), tint = colors.accent)
+        Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = "${sequence.label("ouvir")}: $title", tint = colors.accent)
     }
 }
 

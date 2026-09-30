@@ -521,7 +521,7 @@ struct ColecaoTematicaCard: View {
                         .foregroundStyle(tema.textoSecundario)
                 }
                 Spacer(minLength: 0)
-                if let ouvir { BotaoOuvirSequencia(tema: tema, ouvir: ouvir) }
+                if let ouvir { BotaoOuvirSequencia(tema: tema, titulo: colecao.titulo, ouvir: ouvir) }
             }
 
             Text(colecao.subtitulo)
@@ -622,7 +622,7 @@ struct TrilhaEstudoCard: View {
             HStack {
                 Label(trilha.titulo, systemImage: trilha.icone).font(.headline).foregroundStyle(tema.destaque)
                 Spacer(minLength: 0)
-                if let ouvir { BotaoOuvirSequencia(tema: tema, ouvir: ouvir) }
+                if let ouvir { BotaoOuvirSequencia(tema: tema, titulo: trilha.titulo, ouvir: ouvir) }
             }
 
             let etiquetas = dynamicTypeSize.isAccessibilitySize
