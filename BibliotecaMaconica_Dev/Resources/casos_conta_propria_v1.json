@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia da conta propria (Paridade/conta_propria_v1.json), gerados por node Tools/conta_propria_referencia.mjs --atualizar. iOS e Android devem reproduzir cada resultado.",
+  "formatacao": [
+    {
+      "bytes": "000102030405060708090a0b0c0d0e0f10111213",
+      "codigo": "AAAQ-EAYE-AUDA-OCAJ-BIFQ-YDIO-B4IB-CEQT"
+    },
+    {
+      "bytes": "ffffffffffffffffffffffffffffffffffffffff",
+      "codigo": "7777-7777-7777-7777-7777-7777-7777-7777"
+    },
+    {
+      "bytes": "9f3c0a77e41d2b58c6a0f19e3d7b55c2e8014a6d",
+      "codigo": "T46A-U57E-DUVV-RRVA-6GPD-262V-YLUA-CSTN"
+    }
+  ],
+  "normalizacao": [
+    {
+      "entrada": "T46A-U57E-DUVV-RRVA-6GPD-262V-YLUA-CSTN",
+      "esperado": "T46AU57EDUVVRRVA6GPD262VYLUACSTN"
+    },
+    {
+      "entrada": "t46a-u57e-duvv-rrva-6gpd-262v-ylua-cstn",
+      "esperado": "T46AU57EDUVVRRVA6GPD262VYLUACSTN"
+    },
+    {
+      "entrada": "T46A U57E DUVV RRVA 6GPD 262V YLUA CSTN",
+      "esperado": "T46AU57EDUVVRRVA6GPD262VYLUACSTN"
+    },
+    {
+      "entrada": "T46A-U57E-DUVV-RRVA-6GPD-262V-YLUA-CST",
+      "esperado": null
+    },
+    {
+      "entrada": "T46A-U57E-DUVV-RRVA-6GPD-262V-YLUA-CST1",
+      "esperado": null
+    },
+    {
+      "entrada": "",
+      "esperado": null
+    }
+  ],
+  "derivacao": [
+    {
+      "codigo": "AAAQEAYEAUDAOCAJBIFQYDIOB4IBCEQT",
+      "conta": "abd9072980d41d084ea5bac63b98892c",
+      "credencial": "a6bffa9790ce5c073706c51e0e84fd0bec002fdb7c0b2d2e09bf8581af1f508d",
+      "chave": "6ade04b1762fb5ce7592a66e2dfe905e6e3621e6f60923f6153f72395dbac070"
+    },
+    {
+      "codigo": "77777777777777777777777777777777",
+      "conta": "f724f6bfc02b98001f2b1c56f856da6d",
+      "credencial": "0f2fc1a6825ce0ec166cf1ab3a3cf53b8f2511d83d023a10493ae490983e457e",
+      "chave": "e44376ea1cdde721e959089700164aa0992935453d4e77cd7a2b76f57e90209b"
+    },
+    {
+      "codigo": "T46AU57EDUVVRRVA6GPD262VYLUACSTN",
+      "conta": "53ea88dbca7a7c18e7e866b48fd82eab",
+      "credencial": "6b29f360c15fa408d7f911b1f0c453799e32421c31d2b1349dec5780bef8b180",
+      "chave": "b54b9ac2c407db11a1b71d5780fdcfc40d1c979ea3f4591d8ac2874ab4ed913e"
+    }
+  ],
+  "cifragem": [
+    {
+      "nome": "caderno curto",
+      "chave": "b54b9ac2c407db11a1b71d5780fdcfc40d1c979ea3f4591d8ac2874ab4ed913e",
+      "nonce": "000000000000000000000000",
+      "texto": "{\"formato\":\"caderno-biblioteca-maconica\",\"versao\":1}",
+      "cifrado": "000000000000000000000000782c87af49db23f9d040cb864618977df1e6a8115d9652e1e71fc5bc618bdac40263d1813fad29bf64ebc04695a52c8ecfe169c333e3e05512ecc0582f62f7a78ef53cda"
+    },
+    {
+      "nome": "acentos e simbolos",
+      "chave": "b54b9ac2c407db11a1b71d5780fdcfc40d1c979ea3f4591d8ac2874ab4ed913e",
+      "nonce": "0102030405060708090a0b0c",
+      "texto": "Escada de Jacó — ∴ acácia",
+      "cifrado": "0102030405060708090a0b0c8c94b0d9fb16cd91a9a7fd268f953973b873718f267a9e8d15faa7f1d362cb04902774800fdd3f95c3e097c4b2858d"
+    },
+    {
+      "nome": "vazio",
+      "chave": "b54b9ac2c407db11a1b71d5780fdcfc40d1c979ea3f4591d8ac2874ab4ed913e",
+      "nonce": "ffffffffffffffffffffffff",
+      "texto": "",
+      "cifrado": "ffffffffffffffffffffffff7e132bb4c574749e0be2593be0e56c0d"
+    }
+  ]
+}

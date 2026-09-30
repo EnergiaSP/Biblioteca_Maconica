@@ -145,6 +145,34 @@ class NavigationFlowTest {
         }
     }
 
+    /** A saved dossier appears as a theme of the notebook with its interpretation; its note opens the dossier again, as on iOS. */
+    @Test
+    fun notebookByThemeListsSavedDossierAndOpensIt() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = com.renatocamargo.breviariomaconico.data.SavedDossierStore(context)
+        val before = store.all()
+        before.forEach { store.remove(it.id) }
+        try {
+            store.save(com.renatocamargo.breviariomaconico.data.SavedDossier("teste-tema", "virtude", null, null, "", "",
+                java.time.LocalDate.now().toString(), interpretacao = com.renatocamargo.breviariomaconico.data.StudyNotebook
+                    .Interpretation("A virtude é o caminho do aprendiz [1].", System.currentTimeMillis())))
+            compose.onNodeWithTag("tab.more").performClick()
+            compose.onNodeWithText("Caderno de estudo").performScrollTo().performClick()
+            compose.waitUntil(10_000) { compose.onAllNodesWithTag("notebook.theme.virtude").fetchSemanticsNodes().isNotEmpty() }
+            compose.onNodeWithTag("notebook.theme.virtude").performClick()
+            compose.onNodeWithTag("notebook.theme.search").assertTextContains("virtude")
+            compose.onAllNodesWithText("A virtude é o caminho do aprendiz [1].")[0].assertIsDisplayed()
+            compose.onAllNodesWithTag("notebook.note")[0].performClick()
+            compose.waitUntil(20_000) {
+                compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
+            }
+            compose.onNodeWithTag("dossier.topic").assertTextContains("virtude")
+        } finally {
+            store.all().forEach { store.remove(it.id) }
+            before.forEach { store.save(it) }
+        }
+    }
+
     /** Save, mark a review, leave, reopen from the review notification and delete, as on iOS. */
     @Test
     fun savedDossierKeepsReviewsReopensFromNotificationAndCanBeDeleted() {

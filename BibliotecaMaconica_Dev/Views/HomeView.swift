@@ -605,6 +605,9 @@ struct HomeView: View {
             if novaFase == .active, abaSelecionada == 0 {
                 fecharCaixasHome()
             }
+            if novaFase == .active {
+                Task { await CadernoSincronizacao.sincronizarSeEscolhido() }
+            }
         }
         .onReceive(store.$itens) { _ in
             chaveIndiceBibliotecaCache = ""

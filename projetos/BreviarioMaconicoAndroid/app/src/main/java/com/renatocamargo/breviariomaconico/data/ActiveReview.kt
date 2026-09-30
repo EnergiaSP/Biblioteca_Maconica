@@ -161,6 +161,9 @@ internal class ReviewCardStore(context: Context) {
             .mapNotNull { byId[it] }
     }
 
+    /** Replaces every card (a merged notebook already kept the ones that were here). */
+    fun replaceAll(entries: List<Entry>) = write(entries)
+
     fun removeDossier(dossierId: String) = write(all().filterNot { it.dossierId == dossierId })
 
     private fun write(list: List<Entry>) {

@@ -343,6 +343,33 @@ class PreferencesStore(context: Context) {
         prefs.edit().putString("libraryRecents", array.toString()).apply()
     }
 
+    /** Every study key of this device, for the portable notebook (StudyNotebook.collect). */
+    internal fun studyEntries(): Map<String, *> = prefs.all
+
+    /** Writes an imported reading in this app's keys; the notebook merge already kept what was here. */
+    internal fun importReading(
+        key: String, comment: String, reflection: String, favorite: Boolean, read: Boolean,
+        highlights: List<TextHighlight>, edit: BreviarioTextEdit?
+    ) {
+        val editor = prefs.edit()
+        if (prefs.getString("comment_$key", null).orEmpty() != comment) editor.putString("comment_$key", comment)
+        if (prefs.getString("reflection_$key", null).orEmpty() != reflection) {
+            editor.putString("reflection_$key", reflection).putLong("reflectionUpdated_$key", System.currentTimeMillis())
+        }
+        if (favorite) editor.putStringSet("favorites", (prefs.getStringSet("favorites", emptySet()).orEmpty() + key).toSet())
+        if (read) editor.putStringSet("readDates", (readDates() + key).toSet())
+        if (highlights.isNotEmpty()) {
+            editor.putString("highlights_$key", JSONArray(highlights.map {
+                JSONObject().put("id", it.id).put("text", it.text).put("createdAt", it.createdAt)
+            }).toString())
+        }
+        if (edit != null && !prefs.contains("textEdit_$key")) {
+            editor.putString("textEdit_$key", JSONObject().put("title", edit.title).put("text", edit.text)
+                .put("footnote", edit.footnote).toString())
+        }
+        editor.apply()
+    }
+
     private fun toggleSet(key: String, value: String, legacyValue: String? = null) {
         val set = (prefs.getStringSet(key, emptySet()) ?: emptySet()).toMutableSet()
         val legacyPresent = legacyValue != null && set.contains(legacyValue)

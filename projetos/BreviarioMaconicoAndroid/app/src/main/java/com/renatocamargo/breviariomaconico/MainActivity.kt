@@ -1,5 +1,6 @@
 package com.renatocamargo.breviariomaconico
 
+import androidx.lifecycle.lifecycleScope
 import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -153,6 +154,12 @@ class MainActivity : ComponentActivity() {
     /** Saved dossier to open, from a review notification; the pair's second value makes each tap a new request. */
     private var openDossier by mutableStateOf<Pair<String, Long>?>(null)
 
+    /** Syncs the study notebook with the chosen service whenever the app comes back to the foreground. */
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch { com.renatocamargo.breviariomaconico.data.NotebookSync.syncIfChosen(this@MainActivity) }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         com.renatocamargo.breviariomaconico.progress.ProgressTransport.flush(applicationContext)
@@ -200,6 +207,7 @@ internal enum class Screen(val title: String) {
     Dossier("Dossiê"),
     OfficialSources("Fontes oficiais"),
     RequestWork("Solicitar obra"),
+    Notebook("Caderno de estudo"),
     ReadingAI("IA da leitura"),
     Export("Exportar"),
     Settings("Configurações"),
@@ -553,6 +561,19 @@ internal fun BreviarioAndroidApp(
                             }
                         )
                         Screen.More -> MoreScreen(colors, navigation::show)
+                        Screen.Notebook -> StudyNotebookScreen(colors, titles = {
+                            BibliotecaCatalogRepository.get(context).obrasDisponiveis().associate { it.id to it.titulo }
+                        }) { note ->
+                            val page = note.data?.let { Regex("P(\\d+)").matchEntire(it) }?.groupValues?.get(1)?.toInt()
+                            when {
+                                note.dossierId != null -> {
+                                    dossieSession.pendingSavedDossierId = note.dossierId
+                                    navigation.show(Screen.Dossier)
+                                }
+                                page != null && note.obraId != null -> abrirObraBiblioteca(note.obraId, page)
+                                note.obraId != null && note.data != null -> repo.porObraEData(note.obraId, note.data)?.let(::goReader)
+                            }
+                        }
                     }
                 }
             }

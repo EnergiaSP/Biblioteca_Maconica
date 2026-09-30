@@ -13,8 +13,17 @@ import javax.crypto.spec.GCMParameterSpec
 class SecureKeyStore(context: Context) {
     private val secrets = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
 
-    fun loadGeminiKey(): String {
-        val payload = secrets.getString(KEY_PAYLOAD, null) ?: return ""
+    fun loadGeminiKey(): String = loadSecret(KEY_PAYLOAD)
+
+    fun saveGeminiKey(value: String) = saveSecret(KEY_PAYLOAD, value)
+
+    /** Sync code of the notebook's own account; blank when there is none. */
+    fun loadNotebookCode(): String = loadSecret(KEY_NOTEBOOK_CODE)
+
+    fun saveNotebookCode(value: String) = saveSecret(KEY_NOTEBOOK_CODE, value)
+
+    private fun loadSecret(name: String): String {
+        val payload = secrets.getString(name, null) ?: return ""
         val parts = payload.split(':', limit = 2)
         if (parts.size != 2) return ""
 
@@ -27,10 +36,10 @@ class SecureKeyStore(context: Context) {
         }.getOrDefault("")
     }
 
-    fun saveGeminiKey(value: String) {
+    private fun saveSecret(name: String, value: String) {
         val clean = value.trim()
         if (clean.isBlank()) {
-            secrets.edit().remove(KEY_PAYLOAD).apply()
+            secrets.edit().remove(name).apply()
             return
         }
 
@@ -41,7 +50,7 @@ class SecureKeyStore(context: Context) {
             Base64.encodeToString(cipher.iv, Base64.NO_WRAP),
             Base64.encodeToString(encrypted, Base64.NO_WRAP)
         ).joinToString(":")
-        secrets.edit().putString(KEY_PAYLOAD, payload).apply()
+        secrets.edit().putString(name, payload).apply()
     }
 
     private fun getOrCreateKey(): SecretKey {
@@ -65,6 +74,7 @@ class SecureKeyStore(context: Context) {
     companion object {
         const val PREFERENCES_NAME = "secure_secrets"
         private const val KEY_PAYLOAD = "gemini_api_key_encrypted"
+        private const val KEY_NOTEBOOK_CODE = "caderno_codigo_encrypted"
         private const val KEY_ALIAS = "biblioteca_maconica_gemini_key"
         private const val ANDROID_KEY_STORE = "AndroidKeyStore"
         private const val TRANSFORMATION = "AES/GCM/NoPadding"

@@ -1,0 +1,10 @@
+# Own-account notebook sync. Publish only with the owner's confirmation:
+#   wrangler r2 bucket create biblioteca-maconica-cadernos
+#   wrangler deploy
+name = "biblioteca-maconica-caderno"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[[r2_buckets]]
+binding = "CADERNOS"
+bucket_name = "biblioteca-maconica-cadernos"

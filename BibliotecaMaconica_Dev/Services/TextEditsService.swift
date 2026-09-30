@@ -51,9 +51,10 @@ enum TextEditsService {
                 return item
             }
 
+            // An empty phrase keeps the original (an edit imported from Android has no phrase).
             return item.atualizado(
                 titulo: edicao.titulo,
-                frase: edicao.frase,
+                frase: edicao.frase.isEmpty ? nil : edicao.frase,
                 texto: edicao.texto,
                 rodape: edicao.rodape,
                 autor: edicao.autor
