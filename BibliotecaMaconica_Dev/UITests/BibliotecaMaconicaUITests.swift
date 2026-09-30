@@ -291,6 +291,28 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         apagar.tap()
     }
 
+    /// A step marked by hand counts in the progress of its degree; "Estudar no Dossiê" builds the dossier of the topic. Same as Android.
+    func testDegreeTrackCountsMarkedStepAndStudiesTopic() {
+        navigationTab("Mais").tap()
+        let trilhas = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Trilhas por grau")).firstMatch
+        XCTAssertTrue(trilhas.waitForExistence(timeout: 5))
+        for _ in 0..<4 where !trilhas.isHittable { app.swipeUp(velocity: .slow) }
+        trilhas.tap()
+        let progresso = app.staticTexts["trilha.aprendiz.progresso"]
+        XCTAssertTrue(progresso.waitForExistence(timeout: 5))
+        let marcar = app.buttons["trilha.etapa.aprendiz_iniciacao.marcar"]
+        if marcar.label == "Desmarcar" { marcar.tap() }
+        XCTAssertEqual(progresso.label, "0 de 10 etapas (0%)")
+        marcar.tap()
+        XCTAssertTrue(progresso.wait(for: \.label, toEqual: "1 de 10 etapas (10%)", timeout: 5), progresso.label)
+        XCTAssertTrue(app.staticTexts["trilha.aprendiz.marco"].exists)
+        marcar.tap()
+        XCTAssertTrue(progresso.wait(for: \.label, toEqual: "0 de 10 etapas (0%)", timeout: 5), progresso.label)
+        app.buttons["trilha.etapa.aprendiz_pedra_bruta.estudar"].tap()
+        XCTAssertTrue(app.navigationBars["Dossiê"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 30))
+    }
+
     /// The prancha of a dossier shows each author side by side and the text with ABNT references. Same as Android.
     func testDossierBuildsPranchaWithReferences() {
         navigationTab("Dossiê").tap()

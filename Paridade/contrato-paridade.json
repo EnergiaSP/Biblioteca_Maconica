@@ -113,6 +113,18 @@
       "ios": "BibliotecaMaconica_Dev/Resources/obras_referencias_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/obras_referencias_v1.json",
       "mustBeIdentical": true
+    },
+    "degreeTracksRules": {
+      "canonical": "Paridade/trilhas_grau_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/trilhas_grau_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/trilhas_grau_v1.json",
+      "mustBeIdentical": true
+    },
+    "degreeTracksCases": {
+      "canonical": "Paridade/casos_trilhas_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_trilhas_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_trilhas_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -146,7 +158,8 @@
     "active_review_flashcards_quiz",
     "portable_study_notebook",
     "notebook_sync_own_account",
-    "prancha_abnt"
+    "prancha_abnt",
+    "degree_study_tracks"
   ],
   "nativeEquivalents": [
     {

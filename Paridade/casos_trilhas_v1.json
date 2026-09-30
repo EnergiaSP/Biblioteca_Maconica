@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia das trilhas por grau (Paridade/trilhas_grau_v1.json), gerados por Tools/trilhas_referencia.py --atualizar. iOS e Android devem reproduzir cada resultado.",
+  "casos": [
+    {
+      "nome": "nada estudado",
+      "temasSalvos": [],
+      "marcadas": [],
+      "esperado": [
+        {
+          "grau": "aprendiz",
+          "concluidas": [],
+          "total": 10,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "aprendiz_iniciacao"
+        },
+        {
+          "grau": "companheiro",
+          "concluidas": [],
+          "total": 9,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "companheiro_pedra_cubica"
+        },
+        {
+          "grau": "mestre",
+          "concluidas": [],
+          "total": 8,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "mestre_hiram"
+        }
+      ]
+    },
+    {
+      "nome": "um dossie salvo conta a etapa",
+      "temasSalvos": [
+        "INICIAÇÃO  "
+      ],
+      "marcadas": [],
+      "esperado": [
+        {
+          "grau": "aprendiz",
+          "concluidas": [
+            "aprendiz_iniciacao"
+          ],
+          "total": 10,
+          "percentual": 10,
+          "marco": "Primeira etapa estudada",
+          "proxima": "aprendiz_pedra_bruta"
+        },
+        {
+          "grau": "companheiro",
+          "concluidas": [],
+          "total": 9,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "companheiro_pedra_cubica"
+        },
+        {
+          "grau": "mestre",
+          "concluidas": [],
+          "total": 8,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "mestre_hiram"
+        }
+      ]
+    },
+    {
+      "nome": "metade por dossies e marcas",
+      "temasSalvos": [
+        "Iniciação",
+        "Pedra bruta",
+        "Maço e cinzel",
+        "Régua de 24 polegadas",
+        "Colunas"
+      ],
+      "marcadas": [
+        "aprendiz_pavimento"
+      ],
+      "esperado": [
+        {
+          "grau": "aprendiz",
+          "concluidas": [
+            "aprendiz_iniciacao",
+            "aprendiz_pedra_bruta",
+            "aprendiz_maco_cinzel",
+            "aprendiz_regua",
+            "aprendiz_colunas",
+            "aprendiz_pavimento"
+          ],
+          "total": 10,
+          "percentual": 60,
+          "marco": "Metade da trilha",
+          "proxima": "aprendiz_luzes"
+        },
+        {
+          "grau": "companheiro",
+          "concluidas": [],
+          "total": 9,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "companheiro_pedra_cubica"
+        },
+        {
+          "grau": "mestre",
+          "concluidas": [],
+          "total": 8,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "mestre_hiram"
+        }
+      ]
+    },
+    {
+      "nome": "trilha concluida",
+      "temasSalvos": [
+        "Iniciação",
+        "Pedra bruta",
+        "Maço e cinzel",
+        "Régua de 24 polegadas",
+        "Colunas",
+        "Pavimento mosaico",
+        "Três grandes luzes",
+        "Avental",
+        "Escada de Jacó",
+        "Silêncio"
+      ],
+      "marcadas": [],
+      "esperado": [
+        {
+          "grau": "aprendiz",
+          "concluidas": [
+            "aprendiz_iniciacao",
+            "aprendiz_pedra_bruta",
+            "aprendiz_maco_cinzel",
+            "aprendiz_regua",
+            "aprendiz_colunas",
+            "aprendiz_pavimento",
+            "aprendiz_luzes",
+            "aprendiz_avental",
+            "aprendiz_escada",
+            "aprendiz_silencio"
+          ],
+          "total": 10,
+          "percentual": 100,
+          "marco": "Trilha concluída",
+          "proxima": null
+        },
+        {
+          "grau": "companheiro",
+          "concluidas": [],
+          "total": 9,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "companheiro_pedra_cubica"
+        },
+        {
+          "grau": "mestre",
+          "concluidas": [],
+          "total": 8,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "mestre_hiram"
+        }
+      ]
+    },
+    {
+      "nome": "marca de outro grau",
+      "temasSalvos": [],
+      "marcadas": [
+        "mestre_hiram",
+        "etapa_inexistente"
+      ],
+      "esperado": [
+        {
+          "grau": "aprendiz",
+          "concluidas": [],
+          "total": 10,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "aprendiz_iniciacao"
+        },
+        {
+          "grau": "companheiro",
+          "concluidas": [],
+          "total": 9,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "companheiro_pedra_cubica"
+        },
+        {
+          "grau": "mestre",
+          "concluidas": [
+            "mestre_hiram"
+          ],
+          "total": 8,
+          "percentual": 12,
+          "marco": "Primeira etapa estudada",
+          "proxima": "mestre_acacia"
+        }
+      ]
+    },
+    {
+      "nome": "tema parecido nao conta",
+      "temasSalvos": [
+        "Iniciação e outros"
+      ],
+      "marcadas": [],
+      "esperado": [
+        {
+          "grau": "aprendiz",
+          "concluidas": [],
+          "total": 10,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "aprendiz_iniciacao"
+        },
+        {
+          "grau": "companheiro",
+          "concluidas": [],
+          "total": 9,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "companheiro_pedra_cubica"
+        },
+        {
+          "grau": "mestre",
+          "concluidas": [],
+          "total": 8,
+          "percentual": 0,
+          "marco": "",
+          "proxima": "mestre_hiram"
+        }
+      ]
+    }
+  ]
+}

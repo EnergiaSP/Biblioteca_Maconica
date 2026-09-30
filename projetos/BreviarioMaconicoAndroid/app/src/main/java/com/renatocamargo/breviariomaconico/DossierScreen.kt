@@ -315,6 +315,16 @@ internal fun DossierScreen(
         savedList = savedStore.all()
         savedStore.find(id)?.let(::abrirSalvo) ?: run { status = "Este dossiê salvo foi excluído." }
     }
+    LaunchedEffect(session.pendingTopic) {
+        val topic = session.pendingTopic ?: return@LaunchedEffect
+        session.pendingTopic = null
+        tema = topic
+        area = null
+        obraId = null
+        metadataFilter = LibraryMetadataFilter("", "")
+        // A study of the same topic saved before keeps its review dates.
+        gerar(savedStore.findByKey(SavedDossier.chave(topic, null, null, "", "")))
+    }
     LaunchedEffect(area) {
         obras = emptyList()
         libraryQuery { catalogo.obrasDisponiveis(area) }.onSuccess { obras = it }

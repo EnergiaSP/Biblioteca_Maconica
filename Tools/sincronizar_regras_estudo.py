@@ -35,7 +35,8 @@ print("Casos comuns versionados: verificados." if args.check else "Casos comuns 
 for name in ("estudo_dossie_v1.json", "casos_dossie_v1.json", "ia_assistida_v1.json", "casos_ia_v1.json",
              "qualidade_texto_v1.json", "casos_qualidade_v1.json", "revisao_ativa_v1.json", "casos_revisao_v1.json",
              "caderno_v1.json", "casos_caderno_v1.json", "conta_propria_v1.json", "casos_conta_propria_v1.json",
-             "prancha_v1.json", "casos_prancha_v1.json", "obras_referencias_v1.json"):
+             "prancha_v1.json", "casos_prancha_v1.json", "obras_referencias_v1.json",
+             "trilhas_grau_v1.json", "casos_trilhas_v1.json"):
     shared = root / "Paridade" / name
     json.loads(shared.read_text())
     for folder in (dest.parent for dest in destinations):

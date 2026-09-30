@@ -380,7 +380,8 @@ internal fun MoreScreen(colors: Palette, onOpen: (Screen) -> Unit) {
     LazyColumn(Modifier.fillMaxSize().padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         item { ReadingCardLike(colors, "Índices da Biblioteca", "Obras, áreas e índice remissivo geral.") { onOpen(Screen.GlobalIndex) } }
         item { ReadingCardLike(colors, "Acervo offline", "Baixar uma obra ou todas as obras.") { onOpen(Screen.Acervo) } }
-        item { ReadingCardLike(colors, "Caderno de estudo", "Anotações por tema, exportar, importar e sincronizar.") { onOpen(Screen.Notebook) } }
+        item { ReadingCardLike(colors, "Trilhas por grau", "Aprendiz, Companheiro e Mestre: etapas, progresso e obras.") { onOpen(Screen.Tracks) } }
+        item { ReadingCardLike(colors, "Caderno de estudo","Anotações por tema, exportar, importar e sincronizar.") { onOpen(Screen.Notebook) } }
         item { ReadingCardLike(colors, "Fontes oficiais", "Referências confiáveis para IA e estudos.") { onOpen(Screen.OfficialSources) } }
         item { ReadingCardLike(colors, "Solicitar obra", "Sugerir novos PDFs e títulos.") { onOpen(Screen.RequestWork) } }
         item { ReadingCardLike(colors, "IA da leitura", "Resumo e explicação da leitura atual.") { onOpen(Screen.ReadingAI) } }
