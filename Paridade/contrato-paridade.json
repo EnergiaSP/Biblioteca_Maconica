@@ -47,6 +47,18 @@
       "ios": "Paridade/fixtures/progress_sync_v1.tsv",
       "android": "Paridade/fixtures/progress_sync_v1.tsv",
       "mustBeIdentical": true
+    },
+    "textQualityRules": {
+      "canonical": "Paridade/qualidade_texto_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/qualidade_texto_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/qualidade_texto_v1.json",
+      "mustBeIdentical": true
+    },
+    "textQualityCases": {
+      "canonical": "Paridade/casos_qualidade_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_qualidade_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_qualidade_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -75,7 +87,8 @@
     "secure_api_key_storage",
     "widget_deep_link",
     "work_request_sharing",
-    "local_pdf_ocr_import"
+    "local_pdf_ocr_import",
+    "text_quality_notice"
   ],
   "nativeEquivalents": [
     {

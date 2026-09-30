@@ -23,7 +23,9 @@ internal object DossierAnalysis {
         val divergenceMarkers: List<String>, val stopWords: List<String>, val review: List<ReviewStep>,
         val areas: Map<String, String>,
         /** Local time of saved-dossier review notifications. */
-        val reviewReminder: ReminderTime = ReminderTime(9, 0)
+        val reviewReminder: ReminderTime = ReminderTime(9, 0),
+        /** Sentences with OCR noise are not quoted as statements (qualidade_texto_v1.json). */
+        val quality: TextQuality.Config? = null
     )
     data class ReminderTime(val hour: Int, val minute: Int)
 
@@ -32,7 +34,10 @@ internal object DossierAnalysis {
         val data: String? = null, val texto: String = "", val rodape: String = ""
     )
     data class Excerpt(val texto: String, val fonte: String)
-    data class Metrics(val sources: Int, val works: Int, val occurrences: Int, val duplicates: Int, val byArea: List<Pair<String, Int>>)
+    data class Metrics(
+        val sources: Int, val works: Int, val occurrences: Int, val duplicates: Int, val noisySentences: Int,
+        val byArea: List<Pair<String, Int>>
+    )
     data class CentralWork(val obraId: String, val titulo: String, val occurrences: Int, val sources: Int)
     /** [form] is the most frequent written form, shown to the reader ("maçom", not "macom"). */
     data class RelatedTerm(val term: String, val form: String, val occurrences: Int, val works: Int)
@@ -53,6 +58,7 @@ internal object DossierAnalysis {
                 .put("divergencias", excerpts(divergences))
                 .put("metricas", JSONObject().put("fontes", metrics.sources).put("obras", metrics.works)
                     .put("ocorrencias", metrics.occurrences).put("duplicadas", metrics.duplicates)
+                    .put("frasesComRuido", metrics.noisySentences)
                     .put("porArea", JSONArray(metrics.byArea.map { JSONArray().put(it.first).put(it.second) })))
                 .put("obrasCentrais", JSONArray(centralWorks.map {
                     JSONObject().put("obraId", it.obraId).put("titulo", it.titulo).put("ocorrencias", it.occurrences).put("fontes", it.sources)
@@ -90,7 +96,8 @@ internal object DossierAnalysis {
                 List(steps.length()) { ReviewStep(steps.getJSONObject(it).getInt("dias"), steps.getJSONObject(it).getString("tarefa")) }
             },
             json.getJSONObject("areas").let { areas -> areas.keys().asSequence().associateWith { areas.getString(it) } },
-            json.getJSONObject("lembreteRevisao").let { ReminderTime(it.getInt("hora"), it.getInt("minuto")) }
+            json.getJSONObject("lembreteRevisao").let { ReminderTime(it.getInt("hora"), it.getInt("minuto")) },
+            TextQuality.loadConfig(context)
         )
     }
 
@@ -119,7 +126,8 @@ internal object DossierAnalysis {
             excerpts(result.definitions), excerpts(result.summary), excerpts(result.divergences),
             listOf("${metrics.sources} fonte(s) em ${metrics.works} obra(s); ${metrics.occurrences} ocorrência(s) do tema.") +
                 (if (areas.isEmpty()) emptyList() else listOf("Áreas: $areas.")) +
-                (if (metrics.duplicates == 0) emptyList() else listOf("${metrics.duplicates} fonte(s) com texto repetido de outra obra desconsiderada(s).")),
+                (if (metrics.duplicates == 0) emptyList() else listOf("${metrics.duplicates} fonte(s) com texto repetido de outra obra desconsiderada(s).")) +
+                (if (metrics.noisySentences == 0) emptyList() else listOf("${metrics.noisySentences} frase(s) com ruído de digitalização desconsiderada(s).")),
             result.centralWorks.map { "${it.titulo}: ${it.occurrences} ocorrência(s) em ${it.sources} fonte(s)" },
             result.dedicatedChapters.map(::cite),
             result.relatedTerms.map { "$topic → ${it.form} (${it.occurrences} ocorrência(s), ${it.works} obra(s))" },
@@ -298,6 +306,7 @@ internal object DossierAnalysis {
         // Defining verbs describe the term instead of being associated with it.
         val stop = config.stopWords.toSet() + config.definingVerbs.map(::fold)
         val defining = config.definingVerbs.toSet()
+        var noisySentences = 0
         val divergence = config.divergenceMarkers.toSet()
 
         val candidates = mutableListOf<Candidate>()
@@ -331,6 +340,12 @@ internal object DossierAnalysis {
                 if (occurrences(parts.normalized, termAlts).isEmpty()) return@forEachIndexed
                 val length = sentence.codePointCount(0, sentence.length)
                 if (length < limits.minSentence || length > limits.maxSentence) return@forEachIndexed
+                val quality = config.quality
+                if (quality != null && TextQuality.rateSentence(sentence, quality).level.let {
+                        it == TextQuality.Level.NOISY || it == TextQuality.Level.UNREADABLE }) {
+                    noisySentences++
+                    return@forEachIndexed
+                }
                 val definition = parts.lower.any { it in defining }
                 val score = (if (definition) 3 else 0) + (if (source.area == "dicionariosMaconicos") 2 else 0) +
                     (if (source.area != "bibliotecaMaconica") 1 else 0)
@@ -412,7 +427,7 @@ internal object DossierAnalysis {
 
         return Result(
             definitions.map(::excerpt), summary.map(::excerpt), divergences.map(::excerpt),
-            Metrics(sources.size, works.size, occurrencesBySource.sum(), duplicates,
+            Metrics(sources.size, works.size, occurrencesBySource.sum(), duplicates, noisySentences,
                 byArea.entries.sortedWith(compareByDescending<Map.Entry<String, Int>> { it.value }.thenBy { it.key }).map { it.key to it.value }),
             central.map { CentralWork(it.key, it.value.titulo, it.value.occurrences, it.value.count) },
             dedicated, relatedTerms, questions, roadmap,

@@ -18,6 +18,7 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.performTextReplacement
 import androidx.compose.ui.test.performImeAction
 import androidx.compose.ui.test.performScrollTo
@@ -456,6 +457,17 @@ class NavigationFlowTest {
             compose.onAllNodesWithText("Biblioteca Maçônica").fetchSemanticsNodes().isNotEmpty()
         }
         compose.onNodeWithTag("tab.acervo").assertIsDisplayed()
+    }
+
+    /** Each work in the collection shows its text quality, as on iOS (Phase 8). */
+    @Test
+    fun acervoShowsTextQualityOfEachWork() {
+        compose.onNodeWithTag("tab.acervo").performClick()
+        compose.onNodeWithTag("acervo.area.bibliotecaMaconica").performClick()
+        compose.onNodeWithTag("acervo.busca").performTextInput("Boletim GOB")
+        compose.waitUntil(10_000) {
+            compose.onAllNodesWithText("Texto com muito ruído").fetchSemanticsNodes().isNotEmpty()
+        }
     }
 
     @Test

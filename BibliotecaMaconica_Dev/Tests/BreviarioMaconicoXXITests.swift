@@ -778,6 +778,35 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly.
+    /// Same results as `Tools/qualidade_referencia.py` and Android for every case of `casos_qualidade_v1.json`.
+    func testTextQualityMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(QualidadeTexto.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_qualidade_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        for caso in try XCTUnwrap(raiz["casos"] as? [[String: Any]]) {
+            let nome = caso["nome"] as? String ?? ""
+            let esperado = try XCTUnwrap(caso["esperado"] as? [String: Any])
+            switch caso["tipo"] as? String {
+            case "token":
+                XCTAssertEqual(QualidadeTexto.classificar(caso["texto"] as? String ?? "", configuracao: configuracao),
+                               esperado["classe"] as? String, nome)
+            case "obra":
+                XCTAssertEqual(QualidadeTexto.nivelObra(avaliadas: caso["avaliadas"] as? Int ?? -1, ruidosas: caso["ruidosas"] as? Int ?? -1,
+                                                        ilegiveis: caso["ilegiveis"] as? Int ?? -1, configuracao: configuracao),
+                               esperado["nivel"] as? String, nome)
+            default:
+                let texto = caso["texto"] as? String ?? ""
+                let avaliacao = caso["tipo"] as? String == "pagina"
+                    ? QualidadeTexto.avaliarPagina(texto, configuracao: configuracao)
+                    : QualidadeTexto.avaliarFrase(texto, configuracao: configuracao)
+                XCTAssertEqual(avaliacao.palavras, esperado["palavras"] as? Int, nome)
+                XCTAssertEqual(avaliacao.suspeitas, esperado["suspeitas"] as? Int, nome)
+                XCTAssertEqual(avaliacao.nivel.rawValue, esperado["nivel"] as? String, nome)
+                XCTAssertEqual(avaliacao.motivos, esperado["motivos"] as? [String: Int], nome)
+            }
+        }
+    }
+
     func testAssistedInterpretationMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(InterpretacaoAssistida.Configuracao.compartilhada)
         let estudo = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)

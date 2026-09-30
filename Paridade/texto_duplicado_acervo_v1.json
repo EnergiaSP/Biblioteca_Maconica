@@ -1,0 +1,1026 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Camada de texto duplicada removida das páginas do acervo RAG; de cada par fica uma das versões originais.",
+  "regras": {
+    "coberturaMinima": 0.5,
+    "semelhancaMinima": 0.9,
+    "linhaCurta": 30,
+    "frequenciaComum": 3
+  },
+  "totais": {
+    "paginas": 69884,
+    "paginas_corrigidas": 40366,
+    "linhas_removidas": 1115016,
+    "paragrafos_corrigidos": 40355,
+    "fts_corrigidos": 40355,
+    "paragrafos_sem_correspondencia": 1
+  },
+  "obras": {
+    "o_livro_de_urantia_urantia_foundation": {
+      "paginas": 2669,
+      "linhas_removidas": 85178
+    },
+    "biblia_de_jerusalem_editora_paulus": {
+      "paginas": 2270,
+      "linhas_removidas": 62606
+    },
+    "o_grande_livro_da_lei": {
+      "paginas": 431,
+      "linhas_removidas": 37029
+    },
+    "a_sociedade_feudal_marc_bloch_1": {
+      "paginas": 2385,
+      "linhas_removidas": 36705
+    },
+    "o_fim_do_templo_esquin_de_floyrac_ze_rodrix": {
+      "paginas": 882,
+      "linhas_removidas": 23187
+    },
+    "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo": {
+      "paginas": 882,
+      "linhas_removidas": 23187
+    },
+    "a_vida_mistica_e_oculta_de_jesus": {
+      "paginas": 844,
+      "linhas_removidas": 19084
+    },
+    "medico_de_homens_e_almas_taylor_caldwell": {
+      "paginas": 524,
+      "linhas_removidas": 18818
+    },
+    "as_chaves_de_enoch_2": {
+      "paginas": 600,
+      "linhas_removidas": 17339
+    },
+    "a_doutrina_secreta_sintese": {
+      "paginas": 444,
+      "linhas_removidas": 15342
+    },
+    "a_historia_dos_judeus_simon_schama": {
+      "paginas": 592,
+      "linhas_removidas": 15342
+    },
+    "a_sintese_da_doutrina_secreta_blavatsky": {
+      "paginas": 446,
+      "linhas_removidas": 15341
+    },
+    "arquetipos_do_zodiaco_kathleen_burt": {
+      "paginas": 437,
+      "linhas_removidas": 14921
+    },
+    "zodiaco_arquetipos_dos_zodiacos": {
+      "paginas": 437,
+      "linhas_removidas": 14921
+    },
+    "o_codigo_de_salomao_richard_d_weber": {
+      "paginas": 544,
+      "linhas_removidas": 14727
+    },
+    "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii": {
+      "paginas": 398,
+      "linhas_removidas": 14473
+    },
+    "o_mundo_de_sofia_jostein_gaarder": {
+      "paginas": 1053,
+      "linhas_removidas": 14399
+    },
+    "os_grandes_iniciados_edouard_schure": {
+      "paginas": 441,
+      "linhas_removidas": 14141
+    },
+    "os_segredos_do_templo_de_salomao": {
+      "paginas": 513,
+      "linhas_removidas": 14092
+    },
+    "o_legado_dos_templarios_steve_berry": {
+      "paginas": 375,
+      "linhas_removidas": 13732
+    },
+    "o_livro_da_mitologia_thomas_bulfinch": {
+      "paginas": 579,
+      "linhas_removidas": 13625
+    },
+    "sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari": {
+      "paginas": 497,
+      "linhas_removidas": 12568
+    },
+    "historia_da_magia_eliphas_levi": {
+      "paginas": 413,
+      "linhas_removidas": 12100
+    },
+    "tratado_da_reintegracao_dos_seres_martines_pasqually": {
+      "paginas": 392,
+      "linhas_removidas": 12087
+    },
+    "dogma_e_ritual_de_alta_magia_eliphas_levi": {
+      "paginas": 325,
+      "linhas_removidas": 11916
+    },
+    "o_homem_e_seus_simbolos_carl_gustav_jung": {
+      "paginas": 339,
+      "linhas_removidas": 11584
+    },
+    "zohar": {
+      "paginas": 470,
+      "linhas_removidas": 11483
+    },
+    "a_raca_divina_o_livro_da_saga_humana_vol_i_mikael_lenyer": {
+      "paginas": 321,
+      "linhas_removidas": 11411
+    },
+    "100_instrucoes_de_aprendiz": {
+      "paginas": 352,
+      "linhas_removidas": 11386
+    },
+    "maconaria_100_instrucoes_de_aprendiz": {
+      "paginas": 352,
+      "linhas_removidas": 11386
+    },
+    "a_revelacao_dos_templarios_lynn_picknett": {
+      "paginas": 276,
+      "linhas_removidas": 11190
+    },
+    "jesus_o_divino_mestre_albert_paul_dahoui": {
+      "paginas": 494,
+      "linhas_removidas": 10957
+    },
+    "o_livro_de_ouro_da_mitologia": {
+      "paginas": 411,
+      "linhas_removidas": 10866
+    },
+    "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira": {
+      "paginas": 348,
+      "linhas_removidas": 10582
+    },
+    "o_caminho_dos_essenios_a_vida_oculta_de_jesus": {
+      "paginas": 455,
+      "linhas_removidas": 10421
+    },
+    "as_lagrimas_do_papa": {
+      "paginas": 301,
+      "linhas_removidas": 10064
+    },
+    "por_dentro_do_priorado_de_siao_robert_howells": {
+      "paginas": 333,
+      "linhas_removidas": 9908
+    },
+    "templarios_portugal_primeira_nacao_templaria_freddy_silva": {
+      "paginas": 416,
+      "linhas_removidas": 9729
+    },
+    "os_100_maiores_misterios_do_mundo": {
+      "paginas": 324,
+      "linhas_removidas": 9555
+    },
+    "rito_frances_ou_moderno_historia_reflexoes_e_desenvolvimento_jose_filardo": {
+      "paginas": 325,
+      "linhas_removidas": 9509
+    },
+    "a_noite_de_sao_bartolomeu_j_w_rochester": {
+      "paginas": 292,
+      "linhas_removidas": 9315
+    },
+    "o_taro_cabalistico_robert_wang": {
+      "paginas": 305,
+      "linhas_removidas": 8960
+    },
+    "a_sabedoria_dos_mitos_gregos_ferry_luc": {
+      "paginas": 245,
+      "linhas_removidas": 8956
+    },
+    "os_segredos_perdidos_da_arca_sagrada_biblioteca_freemasonry": {
+      "paginas": 293,
+      "linhas_removidas": 8758
+    },
+    "maconaria_perspectivas_para_o_futuro_cmsb_2020": {
+      "paginas": 212,
+      "linhas_removidas": 8554
+    },
+    "os_arcanos_maiores_do_taro_g_o_mebes": {
+      "paginas": 248,
+      "linhas_removidas": 8425
+    },
+    "maconaria_brasileira_a_historia_ocultada": {
+      "paginas": 246,
+      "linhas_removidas": 8379
+    },
+    "as_chaves_de_salomao": {
+      "paginas": 367,
+      "linhas_removidas": 8230
+    },
+    "as_claviculas_salomao_mathers": {
+      "paginas": 367,
+      "linhas_removidas": 8230
+    },
+    "o_erro_de_descartes_antonio_r_damasio": {
+      "paginas": 281,
+      "linhas_removidas": 8219
+    },
+    "a_ciencia_secreta_ii": {
+      "paginas": 365,
+      "linhas_removidas": 8114
+    },
+    "a_ciencia_secreta_vol_2_henri_durville": {
+      "paginas": 365,
+      "linhas_removidas": 8114
+    },
+    "a_arvore_da_vida_israel_regardie": {
+      "paginas": 211,
+      "linhas_removidas": 8093
+    },
+    "como_as_democracias_morrem_steven_levitsky": {
+      "paginas": 323,
+      "linhas_removidas": 7778
+    },
+    "de_gutenberg_a_diderot_peter_burke": {
+      "paginas": 248,
+      "linhas_removidas": 7564
+    },
+    "ritos_estranhos_no_mundo_jacques_marcireau": {
+      "paginas": 198,
+      "linhas_removidas": 7501
+    },
+    "o_livro_das_religioes_jostein_gaarder": {
+      "paginas": 241,
+      "linhas_removidas": 7381
+    },
+    "as_linguagens_da_experiencia_religiosa": {
+      "paginas": 438,
+      "linhas_removidas": 7289
+    },
+    "a_acao_secreta_da_maconaria_na_politica_mundial_jose_castellani": {
+      "paginas": 213,
+      "linhas_removidas": 6922
+    },
+    "cabala_mistica": {
+      "paginas": 155,
+      "linhas_removidas": 6846
+    },
+    "os_templarios_e_a_arca_da_alianca_graham_phillips": {
+      "paginas": 310,
+      "linhas_removidas": 6737
+    },
+    "sociedades_secretas_sergio_pereira_couto": {
+      "paginas": 176,
+      "linhas_removidas": 6636
+    },
+    "ordem_sobre_o_caos_kennyo_ismail": {
+      "paginas": 254,
+      "linhas_removidas": 6565
+    },
+    "o_codigo_da_biblia_michael_drosnin": {
+      "paginas": 243,
+      "linhas_removidas": 6472
+    },
+    "a_ciencia_secreta_vol_4_henri_durville": {
+      "paginas": 284,
+      "linhas_removidas": 6460
+    },
+    "a_ciencia_secreta_vol_1_henri_durville": {
+      "paginas": 293,
+      "linhas_removidas": 6419
+    },
+    "a_ciencia_secreta_vol_3_henri_durville": {
+      "paginas": 273,
+      "linhas_removidas": 6097
+    },
+    "gnose_philip_gardner": {
+      "paginas": 177,
+      "linhas_removidas": 5699
+    },
+    "abaixo_as_verdades_sagradas_harold_bloom": {
+      "paginas": 168,
+      "linhas_removidas": 5539
+    },
+    "o_grande_livro_da_maconaria_claudio_blanc": {
+      "paginas": 194,
+      "linhas_removidas": 5252
+    },
+    "maconaria_pos_pandemia": {
+      "paginas": 174,
+      "linhas_removidas": 5180
+    },
+    "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": {
+      "paginas": 230,
+      "linhas_removidas": 5163
+    },
+    "sociedades_secretas_philip_gardiner": {
+      "paginas": 166,
+      "linhas_removidas": 5048
+    },
+    "as_escolas_de_misterios_clara_codd": {
+      "paginas": 133,
+      "linhas_removidas": 4991
+    },
+    "sistema_golden_dawn_2_0": {
+      "paginas": 106,
+      "linhas_removidas": 4804
+    },
+    "os_templarios_e_o_pergaminho_de_chinon_encontrado_nos_arquivos_secretos_do_vaticano_barbara_frale": {
+      "paginas": 210,
+      "linhas_removidas": 4771
+    },
+    "introducao_a_simbologia_rosacruz_amorc": {
+      "paginas": 220,
+      "linhas_removidas": 4746
+    },
+    "a_vida_mistica_de_jesus": {
+      "paginas": 215,
+      "linhas_removidas": 4638
+    },
+    "maconaria_e_astrologia_jose_castellani": {
+      "paginas": 156,
+      "linhas_removidas": 4549
+    },
+    "geometria_sagrada_nigel_pennick": {
+      "paginas": 180,
+      "linhas_removidas": 4362
+    },
+    "a_historia_dos_ritos_maconicos_praticados_no_brasil": {
+      "paginas": 156,
+      "linhas_removidas": 4287
+    },
+    "a_retorica_em_aristoteles_marcos_aurelio_de_lima": {
+      "paginas": 131,
+      "linhas_removidas": 4198
+    },
+    "os_segredos_da_mente_milionaria": {
+      "paginas": 110,
+      "linhas_removidas": 4186
+    },
+    "energia_ao_quadrado_pam_grout": {
+      "paginas": 172,
+      "linhas_removidas": 4146
+    },
+    "as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines": {
+      "paginas": 126,
+      "linhas_removidas": 4138
+    },
+    "a_chave_de_salomao_greg_taylor": {
+      "paginas": 159,
+      "linhas_removidas": 4028
+    },
+    "a_chave_de_salomao_greg_taylor_2": {
+      "paginas": 159,
+      "linhas_removidas": 4028
+    },
+    "ritual_de_emulacao_o_grau_de_mestre_macom": {
+      "paginas": 144,
+      "linhas_removidas": 3986
+    },
+    "o_mestre_dos_mestres_augusto_cury": {
+      "paginas": 112,
+      "linhas_removidas": 3953
+    },
+    "biblioteca_de_alexandria_derek_adie_flower": {
+      "paginas": 138,
+      "linhas_removidas": 3732
+    },
+    "desmistificando_a_maconaria": {
+      "paginas": 131,
+      "linhas_removidas": 3544
+    },
+    "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus": {
+      "paginas": 104,
+      "linhas_removidas": 3529
+    },
+    "as_doutrinas_secretas_de_jesus_h_spencer_lewis": {
+      "paginas": 150,
+      "linhas_removidas": 3375
+    },
+    "corpus_hermeticum_versao_1": {
+      "paginas": 123,
+      "linhas_removidas": 3350
+    },
+    "o_livro_secreto_da_maconaria_lourivaldo_pere": {
+      "paginas": 116,
+      "linhas_removidas": 3332
+    },
+    "livro_de_ouro_dos_mantras_otavio_leal": {
+      "paginas": 110,
+      "linhas_removidas": 3270
+    },
+    "astrologia_cabalistica_rav_philip_s_berg": {
+      "paginas": 145,
+      "linhas_removidas": 3256
+    },
+    "liberdade_de_pensar_estudos_a_luz_do_rito_moderno": {
+      "paginas": 151,
+      "linhas_removidas": 3206
+    },
+    "profanos_e_iniciados_huberto_rohden": {
+      "paginas": 116,
+      "linhas_removidas": 3060
+    },
+    "cristianismo_e_mitraismo": {
+      "paginas": 126,
+      "linhas_removidas": 2839
+    },
+    "a_magia_da_maconaria_arthur_powell": {
+      "paginas": 109,
+      "linhas_removidas": 2825
+    },
+    "as_dez_sociedades_mais_influentes_da_historia": {
+      "paginas": 90,
+      "linhas_removidas": 2783
+    },
+    "a_maconaria_na_historia": {
+      "paginas": 145,
+      "linhas_removidas": 2642
+    },
+    "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": {
+      "paginas": 176,
+      "linhas_removidas": 2624
+    },
+    "historias_e_misteios_dos_templarios": {
+      "paginas": 92,
+      "linhas_removidas": 2399
+    },
+    "sociedades_secretas_os_illuminati": {
+      "paginas": 80,
+      "linhas_removidas": 2395
+    },
+    "hermes_trimegisto_charles_vega_parucker": {
+      "paginas": 91,
+      "linhas_removidas": 2332
+    },
+    "historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "paginas": 131,
+      "linhas_removidas": 2307
+    },
+    "a_sociedade_dos_templarios_lourivaldo_p_bacan": {
+      "paginas": 94,
+      "linhas_removidas": 2175
+    },
+    "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan": {
+      "paginas": 94,
+      "linhas_removidas": 2175
+    },
+    "a_arca_da_alianca": {
+      "paginas": 70,
+      "linhas_removidas": 2158
+    },
+    "ata_hermetismo_pitagorismo_e_platonismo": {
+      "paginas": 77,
+      "linhas_removidas": 2077
+    },
+    "realidade_oculta": {
+      "paginas": 70,
+      "linhas_removidas": 2011
+    },
+    "a_santissima_trinosofia": {
+      "paginas": 69,
+      "linhas_removidas": 2000
+    },
+    "a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "paginas": 74,
+      "linhas_removidas": 1978
+    },
+    "liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno": {
+      "paginas": 91,
+      "linhas_removidas": 1891
+    },
+    "rito_escoces_antigo_e_aceito_graus_simbolicos_liturgia_ritualistica_genuinidade_enxertos_supressoes_crendices": {
+      "paginas": 54,
+      "linhas_removidas": 1862
+    },
+    "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood": {
+      "paginas": 67,
+      "linhas_removidas": 1667
+    },
+    "a_vida_de_jacques_demolay": {
+      "paginas": 67,
+      "linhas_removidas": 1667
+    },
+    "jacques_demolay_a_vida_de_jacques_demolay": {
+      "paginas": 67,
+      "linhas_removidas": 1667
+    },
+    "os_templarios_juan_de_garten": {
+      "paginas": 87,
+      "linhas_removidas": 1647
+    },
+    "a_maconaria": {
+      "paginas": 61,
+      "linhas_removidas": 1561
+    },
+    "cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz": {
+      "paginas": 88,
+      "linhas_removidas": 1513
+    },
+    "geometria_sagrada_2": {
+      "paginas": 98,
+      "linhas_removidas": 1395
+    },
+    "poesias_maconicas_vol_i": {
+      "paginas": 54,
+      "linhas_removidas": 1291
+    },
+    "aristoteles_em_90_minutos_paul_strathern": {
+      "paginas": 35,
+      "linhas_removidas": 946
+    },
+    "conspiracoes_sobre_templarios_e_macons_michel_haag": {
+      "paginas": 25,
+      "linhas_removidas": 875
+    },
+    "os_templarios_e_a_sinarquia_olimpio_goncalves": {
+      "paginas": 24,
+      "linhas_removidas": 813
+    },
+    "landmarques_vanildo_de_senna": {
+      "paginas": 36,
+      "linhas_removidas": 700
+    },
+    "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro": {
+      "paginas": 48,
+      "linhas_removidas": 694
+    },
+    "platao_em_90_minutos_paul_strathern": {
+      "paginas": 21,
+      "linhas_removidas": 673
+    },
+    "os_templarios_na_formacao_de_portugal_2018": {
+      "paginas": 32,
+      "linhas_removidas": 556
+    },
+    "decisoes_sabias_para_viver_os_sonhos_de_deus": {
+      "paginas": 48,
+      "linhas_removidas": 555
+    },
+    "painel_do_grau_de_aprendiz_completo_booz": {
+      "paginas": 31,
+      "linhas_removidas": 469
+    },
+    "catedrais_goticas": {
+      "paginas": 67,
+      "linhas_removidas": 465
+    },
+    "os_templos_de_adoracao_do_gadu_05_06_2020": {
+      "paginas": 46,
+      "linhas_removidas": 436
+    },
+    "aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves": {
+      "paginas": 22,
+      "linhas_removidas": 398
+    },
+    "sobre_a_luz_da_cabala": {
+      "paginas": 27,
+      "linhas_removidas": 393
+    },
+    "a_geometria_sagrada": {
+      "paginas": 39,
+      "linhas_removidas": 375
+    },
+    "geometria_sagrada": {
+      "paginas": 39,
+      "linhas_removidas": 368
+    },
+    "a_abobada_celeste_de_um_templo_maconico_do_reaa_v1": {
+      "paginas": 27,
+      "linhas_removidas": 293
+    },
+    "o_nome_de_deus_adonai_roberto_aguilar_silva": {
+      "paginas": 11,
+      "linhas_removidas": 291
+    },
+    "o_reaa_origens_historicas": {
+      "paginas": 26,
+      "linhas_removidas": 291
+    },
+    "combate_ao_clericalismo": {
+      "paginas": 14,
+      "linhas_removidas": 276
+    },
+    "escolas_do_pensamento_maconico_bondarik": {
+      "paginas": 51,
+      "linhas_removidas": 260
+    },
+    "potencias_e_ritos_no_brasil_irmao_samer": {
+      "paginas": 21,
+      "linhas_removidas": 258
+    },
+    "potencias_e_ritos_no_brasil": {
+      "paginas": 18,
+      "linhas_removidas": 236
+    },
+    "o_que_e_a_maconaria": {
+      "paginas": 8,
+      "linhas_removidas": 195
+    },
+    "sao_joao_padroeiro_da_maconaria": {
+      "paginas": 23,
+      "linhas_removidas": 194
+    },
+    "simbologia_dos_numeros_no_grau_de_aprendiz_macom": {
+      "paginas": 28,
+      "linhas_removidas": 188
+    },
+    "ritos_maconicos_praticados_no_brasil_e_suas_diferencas": {
+      "paginas": 20,
+      "linhas_removidas": 183
+    },
+    "huze": {
+      "paginas": 17,
+      "linhas_removidas": 158
+    },
+    "projetos_secretos": {
+      "paginas": 1,
+      "linhas_removidas": 107
+    },
+    "regulador_do_reaa_grande_oriente_do_passeio_1858": {
+      "paginas": 5,
+      "linhas_removidas": 102
+    },
+    "a_mais_antiga_ata_maconica": {
+      "paginas": 3,
+      "linhas_removidas": 47
+    },
+    "cabala_para_o_estudante_michael_laitman": {
+      "paginas": 6,
+      "linhas_removidas": 42
+    },
+    "a_maconaria_e_os_jesuitas": {
+      "paginas": 1,
+      "linhas_removidas": 28
+    },
+    "proverbios_e_pensamentos": {
+      "paginas": 2,
+      "linhas_removidas": 10
+    },
+    "a_maconaria_no_centenario_1822_1922": {
+      "paginas": 1,
+      "linhas_removidas": 5
+    },
+    "biblia_e_misterios": {
+      "paginas": 2,
+      "linhas_removidas": 2
+    },
+    "macons_do_passado_ejvandro_buriti": {
+      "paginas": 1,
+      "linhas_removidas": 2
+    }
+  },
+  "exemplos": [
+    {
+      "obra": "100_instrucoes_de_aprendiz",
+      "pagina": 9,
+      "antes": "11\n11\nPrefácio\nPrefácio\nVerbalizar o pensamento de forma que se possa fazer entender, nem sempre é fácil. Ao\nVerbalizar o pensamento de forma que se possa fazer entender, nem sempre é fácil. Ao\ncontrário, quase sempre é muito difícil. Isto porque as pessoas dentro da sua individualidade,\ncontrário, quase sempre é muito difícil. Isto porque as pessoas dentro da sua individualidade,\nmentalizam seu a",
+      "depois": "11\nPrefácio\nVerbalizar o pensamento de forma que se possa fazer entender, nem sempre é fácil. Ao\ncontrário, quase sempre é muito difícil. Isto porque as pessoas dentro da sua individualidade,\nmentalizam seu aprendizado e entendimento, de acordo com seus arquivos internos, isto é,\nseu conhecimento adquirido através dos anos.\nTornar-se uma tarefa delicada, a de levar uma mensagem escrita para alguém"
+    },
+    {
+      "obra": "a_arca_da_alianca",
+      "pagina": 14,
+      "antes": "14 A ARCA DA ALIANÇA – Hugo Bouter\n14| A ARCA DA ALIANÇA - Hugo Bouter\nlugar onde Deus revelava Seus mandamentos a Moisés. Ali também era o\nlugar onde Deus revelava Seus mandamentos a Moisés. Ali também era o\nlocal aonde o sumo sacerdote fazia a expiação a favor de um povo pecador, de\nlocal aonde o sumo sacerdote fazia a expiação a favor de um povo pecador, de\ntal maneira que as exigências da lei ",
+      "depois": "14 A ARCA DA ALIANÇA – Hugo Bouter\nlugar onde Deus revelava Seus mandamentos a Moisés. Ali também era o\nlocal aonde o sumo sacerdote fazia a expiação a favor de um povo pecador, de\ntal maneira que as exigências da lei eram que, como \"cobertas\", pelo sangue\nexpiatório do sacrifício vicário ou em substituição (ver Levítico 16).\nAntes de prosseguir com o significado da arca vamos alistar, mais uma\nve"
+    },
+    {
+      "obra": "a_ciencia_secreta_ii",
+      "pagina": 13,
+      "antes": "Apolo e as Musas, pelos seus cantos e danças, embelezavam o curso das\nApolo e as Musas, pelos seus cantos e danças, embelezavam o curso das\nhoras. Era a imagem da felicidade para o grego ávido de beleza mais do que os\nhoras. Era a imagem da felicidade para o grego ávido de beleza mais do que os\noutros bens e que satisfazia a sua imaginação poética, povoando de ninfas as\noutros bens e que satisfazi",
+      "depois": "Apolo e as Musas, pelos seus cantos e danças, embelezavam o curso das\nhoras. Era a imagem da felicidade para o grego ávido de beleza mais do que os\noutros bens e que satisfazia a sua imaginação poética, povoando de ninfas as\nfontes, os tanques, as correntes, as árvores, as montanhas, o mar \"de risos infinitos\"\ne tudo o que podia viver.\nNo Céu vivia Zeus, pai dos deuses e dos homens, que os latinos"
+    },
+    {
+      "obra": "a_ciencia_secreta_vol_1_henri_durville",
+      "pagina": 247,
+      "antes": "pela verdade, o bem nos chega com a vida e a luz, e não ficam\npela verdade, o bem nos chega com a vida e a luz, e não ficam\nem nós carrascos de trevas, todas se retiram vencidas”.\nem nós carrascos de trevas, todas se retiram vencidas\".\n\"Tu conheces, meu filho, o caminho de tua\n\"Tu conheces, meu filho, o caminho de tua\nregeneração. Quando a década está completa, meu filho,\nregeneração. •Quando a dé",
+      "depois": "pela verdade, o bem nos chega com a vida e a luz, e não ficam\nem nós carrascos de trevas, todas se retiram vencidas\".\n\"Tu conheces, meu filho, o caminho de tua\nregeneração. Quando a década está completa, meu filho,\ncumpre-se o nascimento ideal, e o décimo segundo carrasco é\nrepelido e nascemos para a contemplação\".\n\"Aquele que obtém da misericórdia divina o\nnascimento em Deus, libertou-se das sens"
+    },
+    {
+      "obra": "a_ciencia_secreta_vol_3_henri_durville",
+      "pagina": 191,
+      "antes": "muito tempo cativo das suas miragens e, como tinha o animismo possante do artista,\nmuito tempo cativo das suas miragens e, como tinha o animismo possante do artista,\ndá-lhe a forma do poema .e do drama, espalhando a sua emoção sobre o animismo\ndá-lhe a forma do poema .e do drama, espalhando a sua emoção sobre o animismo\nda multidão. Acreditou na vida material e, enquanto a sua aparente felicidade ",
+      "depois": "muito tempo cativo das suas miragens e, como tinha o animismo possante do artista,\ndá-lhe a forma do poema .e do drama, espalhando a sua emoção sobre o animismo\nda multidão. Acreditou na vida material e, enquanto a sua aparente felicidade durou,\nnão desejou outra coisa além de fazer expandir a sua emoção em uma forma\nsoberba, de tal sorte que todos os homens dela pudessem comunicar.\nMas veio a hor"
+    },
+    {
+      "obra": "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii",
+      "pagina": 231,
+      "antes": "linhagem, porque somos mais amados e mais considerados do que eles. E parece-me que querem por isso\nlinhagem, porque somos mais amados e mais considerados do que eles. E parece-me que querem por isso\ncombater conosco para nos matar.\ncombater conosco para nos matar. .\n- Pesa-me muito, disse Galaaz, pois já que são da mesa redonda, não devíamos meter mão neles nem\n- Pesa-me muito, disse Galaaz, pois",
+      "depois": "linhagem, porque somos mais amados e mais considerados do que eles. E parece-me que querem por isso\ncombater conosco para nos matar.\n- Pesa-me muito, disse Galaaz, pois já que são da mesa redonda, não devíamos meter mão neles nem\neles em nós. Mas porque é direito que na luta deve cada cavaleiro defender a sua vida, defenderei a minha\nquanto puder.\nE Bliobleris disse o mesmo; depois, como quem mais"
+    },
+    {
+      "obra": "a_doutrina_secreta_sintese",
+      "pagina": 452,
+      "antes": "457\n457\nO sub-plano astral objetivo corresponde .em tudo ao subplano terrestre objetivo. 0\nO sub-plano astral objetivo corresponde em tudo ao subplano terrestre objetivo. O\nsegundo subplano corresponde ao segundo do plano físico, mas os objetos são em\nsegundo subplano corresponde ao segundo do plano fisico, mas os objetos sao em\nextremo tênues, como que de matéria etérica astralizada. E o limite d",
+      "depois": "457\nO sub-plano astral objetivo corresponde .em tudo ao subplano terrestre objetivo. 0\nO sub-plano astral objetivo corresponde em tudo ao subplano terrestre objetivo. O\nsegundo subplano corresponde ao segundo do plano físico, mas os objetos são em\nextremo tênues, como que de matéria etérica astralizada. E o limite dos médiuns\nvulgares, pois não podem transpô-lo. Para uma pessoa comum chegar a este"
+    },
+    {
+      "obra": "a_historia_dos_judeus_simon_schama",
+      "pagina": 427,
+      "antes": "deles odiava os judeus. Nenhum dos dois lados excluía os judeus de toda\ndeles odiava os judeus. Nenhum dos dois lados excluía os judeus de toda\na Palestina, embora não fosse nada fácil morar ali. Um punhado deles,\na Palestina, embora não fosse nada fácil morar ali. Um punhado deles,\nconcentrados sobretudo na Galileia, visitava os túmulos dos ancestrais,\nconcentrados sobretudo na Galileia, visitava",
+      "depois": "deles odiava os judeus. Nenhum dos dois lados excluía os judeus de toda\na Palestina, embora não fosse nada fácil morar ali. Um punhado deles,\nconcentrados sobretudo na Galileia, visitava os túmulos dos ancestrais,\ncomerciava, rezava e se debruçava sobre o Talmude. O reino cruzado\nreinstituíra a antiga proscrição que os afastava de Jerusalém, a não ser\nem questões de comércio e em dias de oração e "
+    },
+    {
+      "obra": "a_magia_da_maconaria_arthur_powell",
+      "pagina": 54,
+      "antes": "Capítulo 5°\nCapítulo 5º\nO SEGUNDO GRAU\nO SEGUNDO GRAU\nO chamamento do 2° Grau da Franco-Maçonaria é\nO chamamento do 2° Grau da Franco-Maçonaria é\ncompletamente diferente e distinto do 1º Grau. Isto é\ncompletamente diferente e distinto do 1º Grau. Isto é\ninevitável e lógico, pois assim como o homem é um ser\ninevitável e lógico, pois assim como o homem é um ser\ncompleto, cuja constituição tem vários",
+      "depois": "Capítulo 5°\nCapítulo 5º\nO SEGUNDO GRAU\nO chamamento do 2° Grau da Franco-Maçonaria é\ncompletamente diferente e distinto do 1º Grau. Isto é\ninevitável e lógico, pois assim como o homem é um ser\ncompleto, cuja constituição tem vários aspectos assim\ntambém a Franco-Maçonaria deve possuir aspectos que\ncorrespondam aos humanos. Só assim pode proclanar\nque sustenta uma filosofia completa da vida e um\nsi"
+    },
+    {
+      "obra": "a_raca_divina_o_livro_da_saga_humana_vol_i_mikael_lenyer",
+      "pagina": 249,
+      "antes": "poder aparente, porque sempre fomos, em última análi se, os escravos\npoder aparente, porque sempre fomos, em última análise, os escravos\ndesses mesmos humanos que teimamos em direcionar.\ndesses mesmos humanos que teimamos em direcionar:\n— Confuso!!! Nós, que fomos feitos e criados para gerar confusão e, de\n- Confuso!!! Nós, que fomos feitos e criados para gerar confusão e, de\ndentro dela marcarmos",
+      "depois": "poder aparente, porque sempre fomos, em última análise, os escravos\ndesses mesmos humanos que teimamos em direcionar.\n— Confuso!!! Nós, que fomos feitos e criados para gerar confusão e, de\ndentro dela marcarmos o caminho que deveria ser trilhado, nos\ndeparamos agora também mergulhados nela.\n— Às vezes, fico me perguntando se sabemos o que estamos fazendo ou\nse a programação está correta... Robôs d"
+    },
+    {
+      "obra": "a_sabedoria_dos_mitos_gregos_ferry_luc",
+      "pagina": 123,
+      "antes": "“comedores de pão”\n\"comedores de pão\" , como Ulisses e seus comparsas. Há caos por todo redor, de\n, como Ulisses e seus comparsas. Há caos por todo redor, de\nfato, mas nada ainda é mágico. Na etapa seguinte, Ulisses sai do mundo real e\nfato, mas nada ainda é mágico. Na etapa seguinte, Ulisses sai do mundo real e\nentra no do imaginário. Vai enfrentar obstáculos que não são mais totalmente\nentra no ",
+      "depois": "“comedores de pão”\n\"comedores de pão\" , como Ulisses e seus comparsas. Há caos por todo redor, de\n, como Ulisses e seus comparsas. Há caos por todo redor, de\nfato, mas nada ainda é mágico. Na etapa seguinte, Ulisses sai do mundo real e\nentra no do imaginário. Vai enfrentar obstáculos que não são mais totalmente\nhumanos, sequer naturais, mas literalmente \"sobrenaturais\". A apreensão dos\nhumanos, se"
+    },
+    {
+      "obra": "a_sintese_da_doutrina_secreta_blavatsky",
+      "pagina": 421,
+      "antes": "425\n425\nO ponto central do círculo é o Logos imanifestado, correspondendo à Vida Absoluta e ao\nO ponto central do círculo é o Logos imanifestado, correspondendo à Vida Absoluta e ao\nSom absoluto.\nSom absoluto.\nA primeira figura geométrica, depois do círculo ou esferóide, é o Triângulo, que\nA primeira figura geométrica, depois do círculo ou esferóide, é o Triângulo, que\ncorresponde ao Movimento, Co",
+      "depois": "425\nO ponto central do círculo é o Logos imanifestado, correspondendo à Vida Absoluta e ao\nSom absoluto.\nA primeira figura geométrica, depois do círculo ou esferóide, é o Triângulo, que\ncorresponde ao Movimento, Cor e Som. O Ponto no Triângulo representa o Segundo\nLogos, o \"Pai-Mãe\" ou o Raio branco, que é sem cor, posto que potencialmente contém\ntodas as cores. Vê-se que irradia do Logos Imanifes"
+    },
+    {
+      "obra": "a_sociedade_feudal_marc_bloch_1",
+      "pagina": 469,
+      "antes": "hábito de celebrarem em verso os feitos\nhábito de celebrarem em verso os feitos\ndos heróis. Entre os Germanos do\ndos heróis. Entre os Germanos do\ncontinente e da Bretanha, parece, aliás,\ncontinente e da Bretanha, parece, aliás,\nque, como entre os Escandinavos, dois\nque, como entre os Escandinavos, dois\ngéneros de poesias guerreiras eram\ngéneros de poesias guerreiras eram\npraticados simultaneamente",
+      "depois": "hábito de celebrarem em verso os feitos\ndos heróis. Entre os Germanos do\ncontinente e da Bretanha, parece, aliás,\nque, como entre os Escandinavos, dois\ngéneros de poesias guerreiras eram\npraticados simultaneamente: - umas\nconsagradas a personagens muito antigos,\npor vezes místicos; as outras, que\nnarravam a glória dos chefes, ao tempo\nvivos ou mortos há pouco. Depois, no\nséculo X, começou um perío"
+    },
+    {
+      "obra": "a_sociedade_feudal_marc_bloch_1",
+      "pagina": 1074,
+      "antes": "os fornecimentos devidos ao exército real\nos fornecimentos devidos ao exército real\nou os pagamentos de substituição que\nou os pagamentos de substituição que\ntinham lugar. A sua reunião a um encargo\ntinham lugar. A sua reunião a um encargo\nque, aproveitando apenas ao senhor, era\nque, aproveitando apenas ao senhor, era\nconcebido como a expressão dos seus\nconcebido como a expressão dos seus\ndireitos",
+      "depois": "os fornecimentos devidos ao exército real\nou os pagamentos de substituição que\ntinham lugar. A sua reunião a um encargo\nque, aproveitando apenas ao senhor, era\nconcebido como a expressão dos seus\ndireitos superiores sobre o solo, atesta,\ncom particular clareza, a preponderância\nadquirida pelo poder próximo do pequeno\nchefe de grupo, à custa de qualquer\nligação mais elevada.\nO problema da hereditar"
+    },
+    {
+      "obra": "a_sociedade_feudal_marc_bloch_1",
+      "pagina": 1678,
+      "antes": "assegurar-se que, mesmo enquanto ele\nassegurar-se que, mesmo enquanto ele\nviveu, esta prudente precaução tenha sido\nviveu, esta prudente precaução tenha sido\nsempre observada. É certo que, no tempo\nsempre observada. É certo que, no temp\ndos seus sucessores, e especialmente\ndos seus sucessores, e especialmente\ndepois da morte de Luís o Pio, ela deixou\ndepois da morte de Luís o Pio, ela deixou\ncompl",
+      "depois": "assegurar-se que, mesmo enquanto ele\nviveu, esta prudente precaução tenha sido\nsempre observada. É certo que, no tempo\ndos seus sucessores, e especialmente\ndepois da morte de Luís o Pio, ela deixou\ncompletamente de o ser. Não se opunha\napenas à voracidade dos magnates; as\npróprias circunstâncias tornavam-na\ndificilmente aplicável. Tendo as invasões,\ntal como as questões dos reis rivais,\nlevado a g"
+    },
+    {
+      "obra": "a_sociedade_feudal_marc_bloch_1",
+      "pagina": 2304,
+      "antes": "[= 275]\n[←275]\nRegra antiga: G. SCHNÜRER, Die\nRegra antiga: G. SCHNÜRER,Die\nursprüngliche Templerregel. 1903.\nursprüngliche Templerregel. 1903. — Regra em\n— Regra em\nfrancês: H. de CUR20N, La règle du Temple\nfrancês: H. de CUR2ON, La règle du Temple\n(Soc. de 1'hist. de France), c. 431; 445; 446;\n(Soc. de 1'hist. de France), c. 431; 445; 446;\n448.\n448. — Disposições análogas nos Hospitalários,\n— Di",
+      "depois": "[= 275]\nRegra antiga: G. SCHNÜRER, Die\nursprüngliche Templerregel. 1903.\nursprüngliche Templerregel. 1903. — Regra em\n— Regra em\nfrancês: H. de CUR20N, La règle du Temple\nfrancês: H. de CUR2ON, La règle du Temple\n(Soc. de 1'hist. de France), c. 431; 445; 446;\n448.\n448. — Disposições análogas nos Hospitalários,\n— Disposições análogas nos Hospitalários,\nno capítulo geral de 1262, 19 de Setembro:\nDEL"
+    },
+    {
+      "obra": "a_vida_mistica_e_oculta_de_jesus",
+      "pagina": 111,
+      "antes": "Na escolha, por ordem de Deus, de um povo apto a conservar essa\nNa escolha, por ordem de Deus, de um povo apto a conservar essa\ntradição, já completamente esquecida e desvirtuada pelos inúmeros cultos\ntradição, já completamente esquecida e desvirtuada pelos inúmeros cultos\nintroduzidos no Egito, pela série de Faraós76, dentre os quais se destacaram os\nintroduzidos no Egito, pela série de Faraós, d",
+      "depois": "Na escolha, por ordem de Deus, de um povo apto a conservar essa\ntradição, já completamente esquecida e desvirtuada pelos inúmeros cultos\nintroduzidos no Egito, pela série de Faraós76, dentre os quais se destacaram os\nintroduzidos no Egito, pela série de Faraós, dentre os quais se destacaram os\nRamsés (Ram-Shes), filiados à Ordem de Rama, Moisés, organizou a corporação\nsacerdotal dos levitas (tribo"
+    },
+    {
+      "obra": "a_vida_mistica_e_oculta_de_jesus",
+      "pagina": 718,
+      "antes": "Vejamos, agora, em que se funda essa abominação da desolação de\nVejamos, agora, em que se funda essa abominação da desolação de\nDaniel, de que falamos acima.\nDaniel, de que falamos acima.\nEsse profeta em seus capítulos VII, 25 e VIII, 14 apresenta os dois\nEsse profeta em seus capítulos VII, 25 e VIII, 14 apresenta os dois\ncuriosos números 1.260 e 2.300 envolvidos em uma charada de um tempo, tempos",
+      "depois": "Vejamos, agora, em que se funda essa abominação da desolação de\nDaniel, de que falamos acima.\nEsse profeta em seus capítulos VII, 25 e VIII, 14 apresenta os dois\ncuriosos números 1.260 e 2.300 envolvidos em uma charada de um tempo, tempos\ne metade de um tempo.\nEssa charada tem dado muito que fazer a idealistas, que viam nela o fim\ndo mundo. Entretanto, é o abade Moreux quem nos vai dar a solução. "
+    },
+    {
+      "obra": "arquetipos_do_zodiaco_kathleen_burt",
+      "pagina": 266,
+      "antes": "meu maior inimigo. Você poderia fazer com que ele tivesse alguns dias bem ruins?\" ou \"Estive em\nmeu maior inimigo. Você poderia fazer com que ele tivesse alguns dias bem ruins?\" ou \"Estive em\ncontato com magia negra por uns tempos e tive a idéia de ver o que poderia fazer com a astrologia,\ncontato com magia negra por uns tempos e tive a idéia de ver o que poderia fazer com a astrologia,\ne por isso",
+      "depois": "meu maior inimigo. Você poderia fazer com que ele tivesse alguns dias bem ruins?\" ou \"Estive em\ncontato com magia negra por uns tempos e tive a idéia de ver o que poderia fazer com a astrologia,\ne por isso quero começar fazendo meu mapa...\", todas essas pessoas podem ser previamente\ntriadas.\ntríadas.\nAlgumas pessoas manipuladoras com Escorpião ascendente ou com planetas na 8ª Casa\nconseguem passar"
+    },
+    {
+      "obra": "as_chaves_de_enoch_2",
+      "pagina": 299,
+      "antes": "transcender a Luz como o povo do espectro Yod. Essa\ntranscender a Luz como o povo do espectro Yod. Essa\ntranscendência lhes permite iluminar o mundo, sendo o foco de um\ntranscendência lhes permite iluminar o mundo, sendo o foco de um\ncanal de Luz que manifesta ensinamentos de Luz diretamente\ncanal de Luz que manifesta ensinamentos de Luz diretamente\nconectados com os Filhos de Luz e com a Grande I",
+      "depois": "transcender a Luz como o povo do espectro Yod. Essa\ntranscendência lhes permite iluminar o mundo, sendo o foco de um\ncanal de Luz que manifesta ensinamentos de Luz diretamente\nconectados com os Filhos de Luz e com a Grande Irmandade\nBranca.\n14. Eles trouxeram essa sabedoria a um mundo onde a consciência\né submetida a múltiplas colisões de eventos acidentais e desprovidas\nde propósito, cujas combin"
+    },
+    {
+      "obra": "as_chaves_de_salomao",
+      "pagina": 316,
+      "antes": "2 concupiscit, et deficit anima mea in atria Domini: Cor meum, et caro mea\n2 concupiscit, et deficit anima mea in atria Domini: Cor meum, et caro mea\nexultaverunt in Deum vivum.\nexultaverunt in Deum vivum.\n3 Etenim passer invenit sibi domum: et turtur nidum sibi, ubi ponat pullos suos:\n3 Etenim passer invenit sibi domum: et turtur nidum sibi, ubi ponat pullos suos:\naltaria tua Domine virtutum: Rex",
+      "depois": "2 concupiscit, et deficit anima mea in atria Domini: Cor meum, et caro mea\nexultaverunt in Deum vivum.\n3 Etenim passer invenit sibi domum: et turtur nidum sibi, ubi ponat pullos suos:\naltaria tua Domine virtutum: Rex meus, et Deus meus.\n4 Beati, qui habitant in domo tua Domine: in sæcula sæculorum laudabunt te.\n5 Beatus vir, cuius est auxilium abs te: ascensiones in corde suo disposuit,\n6 in valle"
+    },
+    {
+      "obra": "as_doutrinas_secretas_de_jesus_h_spencer_lewis",
+      "pagina": 51,
+      "antes": "crescimento lento e do grande abandono das denominações cristãs por parte de\ncrescimento lento e do grande abandono das denominações cristãs por parte de\nseus membros.\nseus membros.\nEmbora eclesiásticos de todas as denominações religiosas tenham se\nEmbora eclesiásticos de todas as denominações religiosas tenham se\nexpressado freqüentemente sobre a influência dessas múltiplas seitas, cultos e\nexpre",
+      "depois": "crescimento lento e do grande abandono das denominações cristãs por parte de\nseus membros.\nEmbora eclesiásticos de todas as denominações religiosas tenham se\nexpressado freqüentemente sobre a influência dessas múltiplas seitas, cultos e\nescolas secretas contra o crescimento e desenvolvimento da igreja cristã, e tenham\nadmitido que esses novos movimentos representam uma séria forma de rivalidade\npa"
+    },
+    {
+      "obra": "as_linguagens_da_experiencia_religiosa",
+      "pagina": 86,
+      "antes": "trar. A nuvem então é o objeto simbólico que desencadeia\ntrar. A nuvem então é o objeto simbólico que desencadeia\numa vivência humana particular. Segundo, as coisas não são\numa vivência humana particular. Segundo, as coisas não são\nsimbólicas em si mesmas, e nem sempre chegam a sê-lo.\nsimbólicas em si mesmas, e nem sempre chegam a sê-lo.\nSão constituídas simbolicamente por algum tipo de expe-\nSão ",
+      "depois": "trar. A nuvem então é o objeto simbólico que desencadeia\numa vivência humana particular. Segundo, as coisas não são\nsimbólicas em si mesmas, e nem sempre chegam a sê-lo.\nSão constituídas simbolicamente por algum tipo de expe-\nSão constituídas simbolicamente por algum tipo de experiência humana. Mas todas podem ser elevadas à dimensão\nriência humana. Mas todas podem ser elevadas à dimensão\nde símbo"
+    },
+    {
+      "obra": "biblia_de_jerusalem_editora_paulus",
+      "pagina": 7,
+      "antes": "fez crescer carne em seu lugar. 22Depois, da costela que tirara do homem,\nfez crescer carne em seu lugar. 22Depois, da costela que tirara do homem,\nIahweh Deus modelou uma mulher e a trouxe ao homem. 23Então o homem\nIahweh Deus modelou uma mulher e a trouxe ao homem. 23Então o homem\nexclamou: \"Esta, sim, é osso de meus ossos e carne de minha carne! Ela será\nexclamou: \"Esta, sim, é osso de meus oss",
+      "depois": "fez crescer carne em seu lugar. 22Depois, da costela que tirara do homem,\nIahweh Deus modelou uma mulher e a trouxe ao homem. 23Então o homem\nexclamou: \"Esta, sim, é osso de meus ossos e carne de minha carne! Ela será\nchamada 'mulher'\nchamada 'mulher', porque foi tirada do homem!\" 24Por isso um homem deixa\n, porque foi tirada do homem!\" 24Por isso um homem deixa\nseu pai e sua mãe, se une à sua mul"
+    },
+    {
+      "obra": "biblia_de_jerusalem_editora_paulus",
+      "pagina": 607,
+      "antes": "ordenou a seus filhos: \"Selai para mim o jumento\"; e eles o selaram. 28Partiu e\nordenou a seus filhos: \"Selai para mim o jumento\"; e eles o selaram. 28Partiu e\nencontrou o cadáver estendido no caminho, com o jumento e o leão ao lado; o\nencontrou o cadáver estendido no caminho, com o jumento e o leão ao lado; o\nleão não tinha devorado o cadáver nem dilacerado o jumento. 29Ergueu o\nleão não tinha de",
+      "depois": "ordenou a seus filhos: \"Selai para mim o jumento\"; e eles o selaram. 28Partiu e\nencontrou o cadáver estendido no caminho, com o jumento e o leão ao lado; o\nleão não tinha devorado o cadáver nem dilacerado o jumento. 29Ergueu o\ncadáver do homem de\nDeus, colocou-o sobre o jumento e conduziu-o para a cidade onde morava, para\nprantea-pranteá-lo e sepultá-lo. 30Depositou o cadáver no seu próprio túmulo"
+    },
+    {
+      "obra": "biblia_de_jerusalem_editora_paulus",
+      "pagina": 1210,
+      "antes": "2Onde entra a insolência, entra a ignomínia, mas com os humildes está a\n2Onde entra a insolência, entra a ignomínia, mas com os humildes está a\nsabedoria. 3A\nsabedoria. ЗА\nintegridade guia os homens retos, e a maldade destrói os traidores. 4No dia da\nintegridade guia os homens retos, e a maldade destrói os traidores. 4No dia da\nira, a riqueza será inútil, mas a justiça liberta da morte. 5A justiça",
+      "depois": "2Onde entra a insolência, entra a ignomínia, mas com os humildes está a\nsabedoria. 3A\nsabedoria. ЗА\nintegridade guia os homens retos, e a maldade destrói os traidores. 4No dia da\nira, a riqueza será inútil, mas a justiça liberta da morte. 5A justiça dos íntegros\nendireita o seu caminho, e o ímpio cai por sua impiedade. 6A justiça dos retos os\nsalva, e os traidores são colhidos em sua cobiça. 7Quan"
+    },
+    {
+      "obra": "biblia_de_jerusalem_editora_paulus",
+      "pagina": 1811,
+      "antes": "2. DISCURSO APOSTÓLICO\n2. DISCURSO APOSTÓLICO\n10 A Missão dos Doze — 1Chamou os doze discípulos\" e deu-lhes autoridade de\n10 A Missão dos Doze — 1Chamou os doze discípulos\" e deu-lhes autoridade de\nexpulsar os espíritos imundos e de curar toda a sorte de males e enfermidades.\nexpulsar os espíritos imundos e de curar toda a sorte de males e enfermidades.\n1Estes são os nomes dos doze apóstolos: prim",
+      "depois": "2. DISCURSO APOSTÓLICO\n10 A Missão dos Doze — 1Chamou os doze discípulos\" e deu-lhes autoridade de\nexpulsar os espíritos imundos e de curar toda a sorte de males e enfermidades.\n1Estes são os nomes dos doze apóstolos: primeiro, Simão, também chamado\nPedro, e André,\nseu irmão; Tiago, filho de Zebedeu, e João, seu ir mão; 3Filipe e Bartolomeu;\nTomé e Mateus, o publicano; Tiago, o filho de Alfeu, e T"
+    },
+    {
+      "obra": "biblioteca_de_alexandria_derek_adie_flower",
+      "pagina": 135,
+      "antes": "XXX\nXXX\n642 d.C.\n642 d.C.\nO fim do espetáculo para a cultura alexandrina aconteceu quando o general árabe\nO fim do espetáculo para a cultura alexandrina aconteceu quando o general árabe\nAmr Ibn Al As conquistou o Egito em nome do califa Ornar131 e, depois de um\nAmr Ibn Al As conquistou o Egito em nome do califa Ornar e, depois de um\ncerco de catorze meses a Alexandria, encerrou quase novecentos an",
+      "depois": "XXX\n642 d.C.\nO fim do espetáculo para a cultura alexandrina aconteceu quando o general árabe\nAmr Ibn Al As conquistou o Egito em nome do califa Ornar131 e, depois de um\nAmr Ibn Al As conquistou o Egito em nome do califa Ornar e, depois de um\ncerco de catorze meses a Alexandria, encerrou quase novecentos anos de\nsoberania greco-romana.\nHeráclio, o último imperador de Roma, não fez nada para salvar "
+    },
+    {
+      "obra": "como_as_democracias_morrem_steven_levitsky",
+      "pagina": 279,
+      "antes": "(Londres: Routledge, 2001), p.58-60.\n(Londres: Routledge, 2001), p.58-60. °\n↩\n25. Gerard Alexander, The Sources of Democratic Consolidation (Ithaca, NY:\n25. Gerard Alexander, The Sources of Democratic Consolidation (Ithaca, NY:\nCornell University Press, 2002), p.111.\nCornell University Press, 2002), p.111. -\n↩\n26. Raymond Carr, Spain 1808-1939 (Oxford: Oxford University Press, 1966),\n26. Raymond C",
+      "depois": "(Londres: Routledge, 2001), p.58-60.\n↩\n25. Gerard Alexander, The Sources of Democratic Consolidation (Ithaca, NY:\nCornell University Press, 2002), p.111.\n↩\n26. Raymond Carr, Spain 1808-1939 (Oxford: Oxford University Press, 1966),\np.621.\nр.621. -\n↩\n27. Michael Mann, Fascists (Cambridge: Cambridge University Press, 2004),\np.330.\n↩\np.330.-\n28. Juan J. Linz,\n28. Juan J. Linz, \"From Great Hopes to Civ"
+    },
+    {
+      "obra": "de_gutenberg_a_diderot_peter_burke",
+      "pagina": 167,
+      "antes": "• VIII •\n· VIII ·\nA Aquisição de Conhecimento:\nA Aquisição de Conhecimento:\na Parte do Leitor\na Parte do Leitor\nEntrar no palácio do conhecimento pela porta principal requer gasto de tempo e de\nEntrar no palácio do conhecimento pela porta principal requer gasto de tempo e de\nformas; homens de muita pressa e pouca cerimônia contentam-se com a porta dos fundos.\nformas; homens de muita pressa e pouca",
+      "depois": "• VIII •\nA Aquisição de Conhecimento:\na Parte do Leitor\nEntrar no palácio do conhecimento pela porta principal requer gasto de tempo e de\nformas; homens de muita pressa e pouca cerimônia contentam-se com a porta dos fundos.\nSWIFT\nO conhecimento é de dois tipos. Nós mesmos conhecemos o objeto, ou sabemos onde\nencontrar informações sobre ele.\nJOHNSON\nO último capítulo se ocupou da produção de conhec"
+    },
+    {
+      "obra": "energia_ao_quadrado_pam_grout",
+      "pagina": 13,
+      "antes": "uma tachinha podia ir , não é mesmo? Procurei e procurei e procurei.\numa tachinha podia ir, não é mesmo? Procurei e procurei e procurei.\nAparentemente, aquela pequena tachinha tinha adquirido a capa da\nAparentemente, aquela pequena tachinha tinha adquirido a capa da\ninvisibilidade do Harry Potter, porque não estava em lugar nenhum.\ninvisibilidade do Harry Potter, porque não estava em lugar nenhum.",
+      "depois": "uma tachinha podia ir , não é mesmo? Procurei e procurei e procurei.\nAparentemente, aquela pequena tachinha tinha adquirido a capa da\ninvisibilidade do Harry Potter, porque não estava em lugar nenhum.\nCheguei à conclusão de que já tinha passado tempo demais\nengatinhando no tapete do meu quarto. Então enviei uma intenção para\nque ela aparecesse em 24 horas.\nNa manhã seguinte, quando acordei, a tach"
+    },
+    {
+      "obra": "gnose_philip_gardner",
+      "pagina": 26,
+      "antes": "humanidade descobriu que realmente intensifica a consciência do eu. Esse sistema\nhumanidade descobriu que realmente intensifica a consciência do eu. Esse sistema\nenvolve elementos; de alguns alcançaremos o conhecimento, mas outros não\nenvolve elementos; de alguns alcançaremos o conhecimento, mas outros não\nconseguiremos compreender. O que impede nossa compreensão dos ensinamentos\nconseguiremos com",
+      "depois": "humanidade descobriu que realmente intensifica a consciência do eu. Esse sistema\nenvolve elementos; de alguns alcançaremos o conhecimento, mas outros não\nconseguiremos compreender. O que impede nossa compreensão dos ensinamentos\norientais é simplesmente a divisão cultural entre o Ocidente cristão, ortodoxo,\ncapitalista e ambicioso, e o Oriente da auto-realização, da paciência e da\nintrospecção. A "
+    },
+    {
+      "obra": "historia_da_magia_eliphas_levi",
+      "pagina": 376,
+      "antes": "prêmio inestimável da razão que sobrevive à razão mesma; o homem\nprêmio inestimável da razão que sobrevive à razão mesma; o homem\nembriagado não se preocupa com o temor de passar por bêbado; o insensato\nembriagado não se preocupa com o temor de passar por bêbado; o insensato\ne o monomaníaco preferem a morte a confessarem seu delírio. É que,\ne o monomaníaco preferem a morte a confessarem seu delíri",
+      "depois": "prêmio inestimável da razão que sobrevive à razão mesma; o homem\nembriagado não se preocupa com o temor de passar por bêbado; o insensato\ne o monomaníaco preferem a morte a confessarem seu delírio. É que,\nsegundo a bela sentença de Cabes, que já citamos, não há para o homem\nsenão um bem desejável, é a sabedoria, que é o uso da razão e ele tem apenas\na temer uma verdadeira e suprema desgraça; é a l"
+    },
+    {
+      "obra": "jesus_o_divino_mestre_albert_paul_dahoui",
+      "pagina": 19,
+      "antes": "Mesmo depois de dois mil anos do degredo dos capelinos no planeta Terra, a\nMesmo depois de dois mil anos do degredo dos capelinos no planeta Terra, a\ncivilização ainda estava estagnada. Esta havia dado um salto inicial, mas, após\ncivilização ainda estava estagnada. Esta havia dado um salto inicial, mas, após\ncerto tempo, tornara-se novamente imobilista. Os administradores espirituais\ncerto tempo, ",
+      "depois": "Mesmo depois de dois mil anos do degredo dos capelinos no planeta Terra, a\ncivilização ainda estava estagnada. Esta havia dado um salto inicial, mas, após\ncerto tempo, tornara-se novamente imobilista. Os administradores espirituais\niniciaram, então, uma série de movimentos migratórios na Terra, com o intuito\nde\nmesclarem povos, raças e, sobretudo, culturas e tecnologias. Assim, iniciou-se,\npor\nvol"
+    },
+    {
+      "obra": "liberdade_de_pensar_estudos_a_luz_do_rito_moderno",
+      "pagina": 90,
+      "antes": "Sobre a relação do Rito Moderno com o ateísmo, falaremos\nSobre a relação do Rito Moderno com / ateismo, falaremos\nposteriormente.\nposteriormente.\nNa página 380 do mesmíssimo Boletim[104]\nNa página 380 do mesmíssimo Boletim 104) , ainda é possível\n, ainda é possível\nencontrar que:\nencontrar que:\nNenhum homem inteligente e honesto poderá dizer seriamente\nNenhum homem inteligente e honesto poderá diz",
+      "depois": "Sobre a relação do Rito Moderno com o ateísmo, falaremos\nposteriormente.\nNa página 380 do mesmíssimo Boletim[104]\nNa página 380 do mesmíssimo Boletim 104) , ainda é possível\n, ainda é possível\nencontrar que:\nNenhum homem inteligente e honesto poderá dizer seriamente\nque o Grande Oriente de França quis banir de suas Lojas a\ncrença em Deus e na imortalidade da alma, quando, ao contrário,\nem nome da "
+    },
+    {
+      "obra": "maconaria_100_instrucoes_de_aprendiz",
+      "pagina": 345,
+      "antes": "347\n347\nEsse 'exame' só pode ser dispensado se o Maçom for conhecido de algum Irmã, que se\nEsse 'exame' só pode ser dispensado se o Maçom for conhecido de algum Irmã, que se\nresponsabilize.\nresponsabilize.\n16. Nenhuma Loja pode intrometer-se em assunto que digam respeito outras, nem\n16. Nenhuma Loja pode intrometer-se em assunto que digam respeito outras, nem\nconferir Graus a Irmãos de outros Quad",
+      "depois": "347\nEsse 'exame' só pode ser dispensado se o Maçom for conhecido de algum Irmã, que se\nresponsabilize.\n16. Nenhuma Loja pode intrometer-se em assunto que digam respeito outras, nem\nconferir Graus a Irmãos de outros Quadros - E em si auto-explicativo o texto desse\n'Landmark'.\n17. Todo Maçom está sujeito às Leis e Regulamentos da Jurisdição Maçônica em que\nresidir - Mesmo não sendo integrante de qua"
+    },
+    {
+      "obra": "maconaria_perspectivas_para_o_futuro_cmsb_2020",
+      "pagina": 186,
+      "antes": "Porque quando vão à Loja, esperam lá encontrar verdadeiros Irmãos, homens de virtudes,\nPorque quando vão à Loja, esperam lá encontrar verdadeiros Irmãos, homens de virtudes,\namigos em quem podem confiar. No entanto, quando lá chegam, se deparam com alguns membros que\namigos em quem podem confiar. No entanto, quando lá chegam, se deparam com alguns membros que\nnão deveriam ter sido admitidos, os ta",
+      "depois": "Porque quando vão à Loja, esperam lá encontrar verdadeiros Irmãos, homens de virtudes,\namigos em quem podem confiar. No entanto, quando lá chegam, se deparam com alguns membros que\nnão deveriam ter sido admitidos, os tais \"profanos de avental\", que ingressaram pelos objetivos\nerrados, cuja prática de vida é condenável e foram aceitos na Ordem em decorrência de indicações\nruins e sindicâncias malfe"
+    },
+    {
+      "obra": "medico_de_homens_e_almas_taylor_caldwell",
+      "pagina": 395,
+      "antes": "um ar de respeitoso temor.\n- Conheceis, sem dúvida, a família dele, não só a mais rica de\num ar de respeitoso temor. - Conheceis, sem dúvida, a família dele, não só a mais rica de\ntoda a Judéia, mas famosa por seus médicos, advogados e eruditos. E meu amo é amigo\ntoda a Judéia, mas famosa por seus médicos, advogados e eruditos. E meu amo é amigo\ndo próprio Pôncio Pilatos. O Rei Herodes Antipas lis",
+      "depois": "um ar de respeitoso temor.\n- Conheceis, sem dúvida, a família dele, não só a mais rica de\num ar de respeitoso temor. - Conheceis, sem dúvida, a família dele, não só a mais rica de\ntoda a Judéia, mas famosa por seus médicos, advogados e eruditos. E meu amo é amigo\ndo próprio Pôncio Pilatos. O Rei Herodes Antipas lisonjeia-se de recebê-lo como hóspede.\nLucano sorriu levemente. O jovem Arieh ouvia co"
+    },
+    {
+      "obra": "o_codigo_da_biblia_michael_drosnin",
+      "pagina": 15,
+      "antes": "21 O CÓDIGO DA BÍBLIA\n21 O CÓDIGO DA BÍBLIA\nmas de teologia esotérica. Revelavam que o grande fisico\nmas de teologia esotérica. Revelavam que o grande fisico\nacreditava que, oculta na Bíblia, estava uma profecia da história\nacreditava que, oculta na Bíblia, estava uma profecia da história\nhumana. Newton, disse Keynes, estava certo de que a Bíblia, na\nhumana. Newton, disse Keynes, estava certo de q",
+      "depois": "21 O CÓDIGO DA BÍBLIA\nmas de teologia esotérica. Revelavam que o grande fisico\nacreditava que, oculta na Bíblia, estava uma profecia da história\nhumana. Newton, disse Keynes, estava certo de que a Bíblia, na\nverdade, verdade, todo o Universo, era “um criptograma criado pelo\ntodo o Universo, era \"um criptograma criado pelo\nTodo-poderoso” e queria “ler o enigma da Divindade, o enigma dos\nacontecimen"
+    },
+    {
+      "obra": "o_codigo_de_salomao_richard_d_weber",
+      "pagina": 377,
+      "antes": "— Pronto.\n— Pronto.\n- Brazi, é o Rossi. Preste atenção. Temos outro homicídio\n— Brazi, é o Rossi. Preste atenção. Temos outro homicídio\ne achamos que c um médico. Verifique o paradeiro do médico\ne achamos que c um médico. Verifique o paradeiro do médico\nprincipal do papa.\nprincipal do papa.\n- Nome?\n— Nome?\n- Dr. Cornelli.\n— Dr. Cornelli.\nUm sinal na ligação.\nUm sinal na ligação.\n— Aguarde um momen",
+      "depois": "— Pronto.\n- Brazi, é o Rossi. Preste atenção. Temos outro homicídio\ne achamos que c um médico. Verifique o paradeiro do médico\nprincipal do papa.\n- Nome?\n- Dr. Cornelli.\nUm sinal na ligação.\n— Aguarde um momento, tenho outra ligação — disse\nRossi\nDepois de alguns segundos, Rossi voltou e disse:\n— Major, vou abrir a ligação para falarmos também com\nmeu agente, Dante.\n— Entendido — disse Brazi.\nRoss"
+    },
+    {
+      "obra": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix",
+      "pagina": 152,
+      "antes": "Latim da Igreja de Roma, alguma coisinha de grego, o catalán que\nLatim da Igreja de Roma, alguma coisinha de grego, o catalán que\nse falava logo ao sul de nossa região e que por vezes\nse falava logo ao sul de nossa região e que por vezes\ninterpenetrava nossa conversa, e que era por demais semelhante\ninterpenetrava nossa conversa, e que era por demais semelhante\nàquilo que se falava em Portugal e A",
+      "depois": "Latim da Igreja de Roma, alguma coisinha de grego, o catalán que\nse falava logo ao sul de nossa região e que por vezes\ninterpenetrava nossa conversa, e que era por demais semelhante\nàquilo que se falava em Portugal e Algarves. Havia em tudo isso a\nmão silenciosa dos Templários: todos esses lugares ferviam com\nsua existência, e eles eram neles uma força cada vez maior e mais\npoderosa.\nPensei muito "
+    },
+    {
+      "obra": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix",
+      "pagina": 752,
+      "antes": "transformasse num verdadeiro lar para nossos futuros filhos. Os\ntransformasse num verdadeiro lar para nossos futuros filhos. Os\ncampos em volta estavam endurecidos pelo inverno, mas assim que\ncampos em volta estavam endurecidos pelo inverno, mas assim que\nchegasse a primavera, recomeçaríamos o trabalho de aradura e\nchegasse a primavera, recomeçaríamos o trabalho de aradura e\nplantio: nossos campon",
+      "depois": "transformasse num verdadeiro lar para nossos futuros filhos. Os\ncampos em volta estavam endurecidos pelo inverno, mas assim que\nchegasse a primavera, recomeçaríamos o trabalho de aradura e\nplantio: nossos camponeses não passavam nenhuma necessidade\npois, sendo poucos, podiam se privilegiar das medidas de trigo e\ncevada que dormiam nos celeiros sem que nossa riqueza se\nesgotasse. Além disso, havia "
+    },
+    {
+      "obra": "o_grande_livro_da_maconaria_claudio_blanc",
+      "pagina": 37,
+      "antes": "U M PA Í S UM PAÍS MAÇÔNICO\nM A Ç Ô N I C O\nEm 1730, apenas treze anos depois da fundação, em Londres,\nEm 1730, apenas treze anos depois da fundação, em Londres,\nda Grande Loja Mãe do Mundo, seu grão-mestre nomeou um\nda Grande Loja Mãe do Mundo, seu grão-mestre nomeou um\ngrão-mestre provincial para Nova York e as colônias vizinhas.\ngrão-mestre provincial para Nova York e as colônias vizinhas.\nA pa",
+      "depois": "U M PA Í S UM PAÍS MAÇÔNICO\nM A Ç Ô N I C O\nEm 1730, apenas treze anos depois da fundação, em Londres,\nda Grande Loja Mãe do Mundo, seu grão-mestre nomeou um\ngrão-mestre provincial para Nova York e as colônias vizinhas.\nA partir de então, a Maçonaria propagou-se por todas as treze\ncolônias inglesas da América. Ironicamente, foi do seio das várias\nLojas americanas que saíram muitos dos líderes do m"
+    },
+    {
+      "obra": "o_legado_dos_templarios_steve_berry",
+      "pagina": 106,
+      "antes": "DEZANOVE\nDEZANOVE\nABBAYE DES FONTAINES\nABBAYE DES FONTAINES\n14 H 00 M\n14H 00 M\nO senescal empurrou o portão de ferro para dentro e encabeçou o\nO senescal empurrou o portão de ferro para dentro e encabeçou c\ncortejo fúnebre através da antiga arcada. A entrada para a subterrânea Sala\ncortejo fúnebre através da antiga arcada. A entrada para a subterrânea Sali\ndos M estres situava-se dentro dos muros ",
+      "depois": "DEZANOVE\nABBAYE DES FONTAINES\n14 H 00 M\nO senescal empurrou o portão de ferro para dentro e encabeçou c\ncortejo fúnebre através da antiga arcada. A entrada para a subterrânea Sala\ndos Mestres situava-se dentro dos muros da abadia, no extremo de uma\nextensa passagem onde um dos mais antigos edifícios se erguia da rocha. Há\nmil e quinhentos anos, os monges começaram a ocupar as cavernas, vivendo\nem "
+    },
+    {
+      "obra": "o_livro_da_mitologia_thomas_bulfinch",
+      "pagina": 498,
+      "antes": "As sereias\nAs sereias\nA imaginação do poeta moderno Keats revela-nos os\nA imaginação do poeta moderno Keats revela-nos os\npensamentos que passaram pelo espírito das vítimas de Circe, após\npensamentos que passaram pelo espírito das vítimas de Circe, após\na sua transformação. No seu Endímion, o poeta representa um\na sua transformação. No seu Endimion, o poeta representa um\nmonarca transformado em um",
+      "depois": "As sereias\nA imaginação do poeta moderno Keats revela-nos os\npensamentos que passaram pelo espírito das vítimas de Circe, após\na sua transformação. No seu Endímion, o poeta representa um\nmonarca transformado em um elefante, dirigindo-se à feiticeira com\nlinguagem humana:\nNão vos peço minha ditosa coroa;\nNão vos peço minha falange sobre a planície,\nNão vos peço minha esposa viúva e solitária,\nNão v"
+    },
+    {
+      "obra": "o_livro_de_ouro_da_mitologia",
+      "pagina": 107,
+      "antes": "Página | 106\nPágina | 106\nVênus venda o amor.\nVênus venda o amor.\nTiciano\nTiciano\nsoberana e trata de conseguir-lhe o perdão pela modéstia e submissão, e talvez\nsoberana e trata de conseguir-lhe o perdão pela modéstia e submissão, e talvez\nela te restitua o marido que perdeste.\nela te restitua o marido que perdeste.\nPsique obedeceu à ordem de Ceres e dirigiu-se ao templo de Vênus,\nPsique obedeceu ",
+      "depois": "Página | 106\nVênus venda o amor.\nTiciano\nsoberana e trata de conseguir-lhe o perdão pela modéstia e submissão, e talvez\nela te restitua o marido que perdeste.\nPsique obedeceu à ordem de Ceres e dirigiu-se ao templo de Vênus,\ntentando fortalecer o espírito e repetindo, em voz baixa, o que iria dizer e como\ntentaria apaziguar a divindade irritada, compreendendo que o caso era difícil e\ntalvez fatal."
+    },
+    {
+      "obra": "o_livro_de_urantia_urantia_foundation",
+      "pagina": 297,
+      "antes": "(172.10) 15:6.8 Os Sóis. São as estrelas do espaço, em todos os seus vários estágios de existência.\n(172.10) 15:6.8 Os Sóis. São as estrelas do espaço, em todos os seus vários estág\nAlguns são sistemas espaciais solitários em evolução; outros são estrelas duplas, sistemas\nAlguns são sistemas espaciais solitários em evolução; outros são estrelas duplas, sistemas\nplanetários em contração ou em extin",
+      "depois": "(172.10) 15:6.8 Os Sóis. São as estrelas do espaço, em todos os seus vários estágios de existência.\n(172.10) 15:6.8 Os Sóis. São as estrelas do espaço, em todos os seus vários estág\nAlguns são sistemas espaciais solitários em evolução; outros são estrelas duplas, sistemas\nplanetários em contração ou em extinção. As estrelas do espaço existem em nada menos do\nque mil estados e estágios diferentes. "
+    },
+    {
+      "obra": "o_livro_de_urantia_urantia_foundation",
+      "pagina": 898,
+      "antes": "solidificação.\nsolidificação.\n(656.7) 57:5.11 Os núcleos de contração de gás dos outros dez planetas logo atingiram o estágio\n(656.7) 57:5.11 Os núcleos de contração de gás dos outros dez planetas logo atingiram o estágio\nde solidificação e, assim, começaram a puxar para si quantidades cada vez maiores da matéria\nde solidificação e, assim, começaram a puxar para si quantidades cada vez maiores da ",
+      "depois": "solidificação.\n(656.7) 57:5.11 Os núcleos de contração de gás dos outros dez planetas logo atingiram o estágio\nde solidificação e, assim, começaram a puxar para si quantidades cada vez maiores da matéria\nmeteórica que circulava no espaço vizinho. Os mundos desse sistema solar, de tal modo,\ntiveram uma dupla origem: núcleos de condensação de gás, mais tarde aumentados pela\ncaptação de quantidades e"
+    },
+    {
+      "obra": "o_livro_de_urantia_urantia_foundation",
+      "pagina": 1498,
+      "antes": "mente da criança. Quando a criança em crescimento não tem êxito em unificar a sua\nmente da criança. Quando a criança em crescimento não tem êxito em unificar a sua\npersonalidade, a tendência altruísta pode tornar-se tão superdesenvolvida a ponto de causar\npersonalidade, a tendência altruísta pode tornar-se tão superdesenvolvida a ponto de causar\num prejuízo sério ao bem-estar do eu. Uma consciênci",
+      "depois": "mente da criança. Quando a criança em crescimento não tem êxito em unificar a sua\npersonalidade, a tendência altruísta pode tornar-se tão superdesenvolvida a ponto de causar\num prejuízo sério ao bem-estar do eu. Uma consciência mal orientada pode tornar-se\nresponsável por muitos conflitos, preocupações, tristezas e um sem-fim de infelicidades\nresponsável por muitos conflitos, preocupações, tristez"
+    },
+    {
+      "obra": "o_livro_de_urantia_urantia_foundation",
+      "pagina": 2102,
+      "antes": "(1623.2) 144:5.52 Nos receba em Teus braços eternos.\n(1623.2) 144:5.52 Nos receba em Teus braços eternos.\n(1623.3) 144:5.53 E assim, seja feita a Tua vontade, não a nossa.\n(1623.3) 144:5.53 E assim, seja feita a Tua vontade, não a nossa.\n*****\n* * * * *\n(1623.4) 144:5.55 Glorioso Pai e gloriosa Mãe, unificados em um Progenitor único,\n(1623.4) 14445.55 Glorioso Pai e gloriosa Mãe, unificados em um ",
+      "depois": "(1623.2) 144:5.52 Nos receba em Teus braços eternos.\n(1623.3) 144:5.53 E assim, seja feita a Tua vontade, não a nossa.\n*****\n(1623.4) 144:5.55 Glorioso Pai e gloriosa Mãe, unificados em um Progenitor único,\n(1623.4) 14445.55 Glorioso Pai e gloriosa Mãe, unificados em um Progenitor único,\n(1623.5) 144:5.56 Gostaríamos de ser leais à Vossa natureza divina.\n(1623.6) 144:5.57 Que viva de novo em nós a"
+    },
+    {
+      "obra": "o_livro_secreto_da_maconaria_lourivaldo_pere",
+      "pagina": 26,
+      "antes": "7. A prerrogativa que tem o Grão-Mestre de autorização para fundar e\n7. A prerrogativa que tem o Grão-Mestre de autorização para fundar e\nmanter Lojas é outro importante Landmark. Em virtude dele, pode o\nmanter Lojas é outro importante Landmark. Em virtude dele, pode o\nGrão-Mestre conceder, a número suficiente de Mestres Maçons, o\nGrão-Mestre conceder, a número suficiente de Mestres Maçons, o\npriv",
+      "depois": "7. A prerrogativa que tem o Grão-Mestre de autorização para fundar e\nmanter Lojas é outro importante Landmark. Em virtude dele, pode o\nGrão-Mestre conceder, a número suficiente de Mestres Maçons, o\nprivilégio de se reunirem e conferirem graus.\n8. A prerrogativa do Grão-Mestre deformar Maçons, por sua deliberação,\né outro importante Landmark, que carece ser explicado, controvertida\ncomo tem sido a "
+    },
+    {
+      "obra": "o_mundo_de_sofia_jostein_gaarder",
+      "pagina": 402,
+      "antes": "— Vou pintá-lo com uma caneta de feltro... depois talvez possamos ver\n— Vou pintá-lo com uma caneta de feltro... depois talvez possamos ver\nexatamente o que tu querias dizer com “desvio”\nexatamente o que tu querias dizer com \"desvio\". Pegou numa caneta de feltro e\n. Pegou numa caneta de feltro e\npintou o berlinde de preto. Depois, fê-lo rolar de novo. Sofia podia ver\npintou o berlinde de preto. De",
+      "depois": "— Vou pintá-lo com uma caneta de feltro... depois talvez possamos ver\nexatamente o que tu querias dizer com “desvio”\nexatamente o que tu querias dizer com \"desvio\". Pegou numa caneta de feltro e\n. Pegou numa caneta de feltro e\npintou o berlinde de preto. Depois, fê-lo rolar de novo. Sofia podia ver\nexatamente o trajeto do berlinde no plano inclinado, visto que deixara um traço\nnegro.\n— Como é que "
+    },
+    {
+      "obra": "o_mundo_de_sofia_jostein_gaarder",
+      "pagina": 1007,
+      "antes": "Beijos da Hilde”\nBeijos da Hilde\"\nAlbert Knag olhou à sua volta. Estaria Hilde ali perto? Ter-lhe-ia Marit\nAlbert Knag olhou à sua volta. Estaria Hilde ali perto? Ter-lhe-ia Marit\noferecido um vôo para Copenhagen, para que o fosse receber? Era a letra de\noferecido um vôo para Copenhagen, para que o fosse receber? Era a letra de\nlilde... De repente, o observador da ONU sentiu-se observado. Parecia ",
+      "depois": "Beijos da Hilde”\nAlbert Knag olhou à sua volta. Estaria Hilde ali perto? Ter-lhe-ia Marit\noferecido um vôo para Copenhagen, para que o fosse receber? Era a letra de\nHilde... De repente, o observador da ONU sentiu-se observado. Parecia que\nalguém dirigia à distância tudo o que fazia. Sentiu-se como um boneco nas mãos\nde uma criança.\nEntrou na loja e comprou um salame dinamarquês, uma salsicha de\nco"
+    },
+    {
+      "obra": "ordem_sobre_o_caos_kennyo_ismail",
+      "pagina": 219,
+      "antes": "Se você, Senhor Iniciado, quiser ser respeitável como um Cavaleiro, e não um\nSe você, Senhor Iniciado, quiser ser respeitável como um Cavaleiro, e não um\nmero pretendente ornamental ou Cavaleiro de palha, deve exercitar-se, ser\ndiligente e fervoroso na prática das virtudes que você professou neste Grau.\nComo pode um maçom fazer voto de ser tolerante e em seguida denunciar\nalguém por suas opiniões ",
+      "depois": "Se você, Senhor Iniciado, quiser ser respeitável como um Cavaleiro, e não um\nmero pretendente ornamental ou Cavaleiro de palha, deve exercitar-se, ser\ndiligente e fervoroso na prática das virtudes que você professou neste Grau.\nComo pode um maçom fazer voto de ser tolerante e em seguida denunciar\nalguém por suas opiniões políticas? Como fazer voto de ser zeloso e constante\nno serviço da Ordem e se"
+    },
+    {
+      "obra": "os_arcanos_maiores_do_taro_g_o_mebes",
+      "pagina": 242,
+      "antes": "A criatividade da Natureza (3) e a Lei ao Karma (15), influindo sobre essa criatividade, constituem a\nA criatividade da Natureza (3) e a Lei ao Karma (15), influindo sobre essa criatividade, constituem a\ntotalidade dos perigos físicos (18).\ntotalidade dos perigos fisicos (18).\n18 = 4 + 14 e 18 = 14+4\n18 = 4 + 14 e 18 = 14 + 4\nOs processos da formação (4) e da dedução (14), determinam a constituiçã",
+      "depois": "A criatividade da Natureza (3) e a Lei ao Karma (15), influindo sobre essa criatividade, constituem a\ntotalidade dos perigos físicos (18).\n18 = 4 + 14 e 18 = 14+4\nOs processos da formação (4) e da dedução (14), determinam a constituição da Hierarquia (18).\nO princípio da autoridade (4) e a capacidade de equilibrar sua atividade e sua passividade (14), fazem\ncom que um homem se torne adversário de "
+    },
+    {
+      "obra": "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson",
+      "pagina": 170,
+      "antes": "170 Os Pilares de Tubalcaim\nCs WareS de TVWIcafnv,\nexemplo, em uma peça vitoriana, um personagem do século XVIII co-\nexemplo, em uma peça vitoriana, um personagem do século XVIII conhecido com o Capitão Calftail diz: “Vou vestir meu manto demoníaco\nnhecido como Capitão Calftail diz: \"Vou vestir meu manto demoníaco\n— quero dizer, meu temo bovino de Natal - e então andar pela flores-\n- quero dizer, ",
+      "depois": "170 Os Pilares de Tubalcaim\nCs WareS de TVWIcafnv,\nexemplo, em uma peça vitoriana, um personagem do século XVIII co-\nexemplo, em uma peça vitoriana, um personagem do século XVIII conhecido com o Capitão Calftail diz: “Vou vestir meu manto demoníaco\nnhecido como Capitão Calftail diz: \"Vou vestir meu manto demoníaco\n— quero dizer, meu temo bovino de Natal - e então andar pela flores-\n- quero dizer, "
+    },
+    {
+      "obra": "os_segredos_do_templo_de_salomao",
+      "pagina": 399,
+      "antes": "foi construída pela primeira vez por Abraão e seu filho\nfoi construída pela primeira vez por Abraão e seu filho\nIsmael, quando a sakinah rodeava o local e os instruiu\nIsmael, quando a sakinah rodeava o local e os instruiu\nsobre a construção.\nsobre a construção.\nA referência a sakinah parece ter uma relação direta com\nA referência a sakinah parece ter uma relação direta com\na shekiná, observada no ",
+      "depois": "foi construída pela primeira vez por Abraão e seu filho\nIsmael, quando a sakinah rodeava o local e os instruiu\nsobre a construção.\nA referência a sakinah parece ter uma relação direta com\na shekiná, observada no livro de Êxodo do Antigo\nTestamento, e a construção do Tabernáculo por Moisés.\nComo foi indicado anteriormente, existem pessoas que\nacreditam que a shekiná é uma referência ao planeta\nVênu"
+    },
+    {
+      "obra": "os_templarios_e_a_arca_da_alianca_graham_phillips",
+      "pagina": 187,
+      "antes": "outra ordem de cavaleiros Cruzadores, os Cavaleiros da Ordem de São João de\noutra ordem de cavaleiros Cruzadores, os Cavaleiros da Ordem de São João de\nJerusalém, que afirmavam ter descoberto esses artefatos próximo à cidade de Acre\nJerusalém, que afirmavam ter descoberto esses artefatos próximo à cidade de Acre\n(atual Akka na costa norte de Israel) e trazido-os para a Catedral de São Nicolau na\n(",
+      "depois": "outra ordem de cavaleiros Cruzadores, os Cavaleiros da Ordem de São João de\nJerusalém, que afirmavam ter descoberto esses artefatos próximo à cidade de Acre\n(atual Akka na costa norte de Israel) e trazido-os para a Catedral de São Nicolau na\nilha de Chipre. Ali, atraíram milhares de peregrinos por dois séculos - até que\nOttoman Turks dominou a catedral e a transformou em uma mesquita. A julgar pel"
+    },
+    {
+      "obra": "poesias_maconicas_vol_i",
+      "pagina": 24,
+      "antes": "POESIAS MAÇÔNICAS – VOLUME I\nPOESIAS MAÇÔNICAS - VOLUME I\nGLADISTON GERALDO BASTOS\nGLADISTON GERALDO BASTOS\nA∴R∴L∴S∴ Deus Universo e Virtude – Passos-MG\nA.:R:L:S: Deus Universo e Virtude - Passos-MG\nMEDITANDO\nMEDITANDO\nNa Sala de Reflexões\nNa Sala de Reflexões\nMeditando os ensinamentos,\nMeditando os ensinamentos,\nRevirei meus pensamentos\nRevirei meus pensamentos\nNa procura de outras razões.\nNa pro",
+      "depois": "POESIAS MAÇÔNICAS – VOLUME I\nGLADISTON GERALDO BASTOS\nA.:R:L:S: Deus Universo e Virtude - Passos-MG\nMEDITANDO\nNa Sala de Reflexões\nMeditando os ensinamentos,\nRevirei meus pensamentos\nNa procura de outras razões.\nVi que do sul ao setentrião\nExiste um medo que domina,\nPois não sabemos como termina\nNossa luta contra o vilão.\nDesde o início da vida\nDo Eden até nosso tempo,\nTivemos sempre o alento\nPra "
+    },
+    {
+      "obra": "regulador_do_reaa_grande_oriente_do_passeio_1858",
+      "pagina": 54,
+      "antes": "-51 --\n— SI -\nART,-. 7.\" Q u a n d o u m ou m a i s M a r . - , q u i z e r e m filia-\nAR, . 7.\" Quando um ou mais Mac.:. quizerem filia-\nr e m - s e em u m a L o g . - . , não por saliirem de u m a Log.-,\nrem-se em uma log.., não por sahirem de uma log.•.\nl e g a l m e n t e c o n s t i t u í d a , mas por t e r e m legalmente constituida, mas por terem sido leitos Mac..\nsido leitos Mac.-,\nc m u ",
+      "depois": "-51 --\n— SI -\nAR, . 7.\" Quando um ou mais Mac.:. quizerem filia-\nrem-se em uma log.., não por sahirem de uma log.•.\nl e g a l m e n t e c o n s t i t u í d a , mas por t e r e m legalmente constituida, mas por terem sido leitos Mac..\nsido leitos Mac.-,\nem um vale aonde não ba Corpos Maç.. e por Maç.-\nq u e tenlião poderes p a r a conferir g r . - . , que tudo devem\nque lenhão poderes para conferir"
+    }
+  ]
+}

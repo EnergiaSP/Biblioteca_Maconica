@@ -50,6 +50,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.ui.platform.testTag
+import com.renatocamargo.breviariomaconico.data.TextQuality
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.NavigateBefore
@@ -230,6 +233,7 @@ internal fun LibraryPageBlock(colors: Palette, pagina: BibliotecaPaginaLeitura, 
         if (pagina.titulo != "Página ${pagina.pagina}") {
             Text(pagina.titulo, color = colors.text, fontSize = 20.sp, fontFamily = FontFamily.Serif, fontWeight = FontWeight.Bold)
         }
+        PageQualityNotice(pagina.texto, colors)
         ReadingSelectionText(pagina.texto, pagina.rodape, highlights, settings, colors) { text ->
             prefs.addHighlight(item, text)
             highlights = prefs.highlights(item)
@@ -272,6 +276,28 @@ internal fun LibraryPageBlock(colors: Palette, pagina: BibliotecaPaginaLeitura, 
     }, dismissButton = {
         TextButton(onClick = { showHighlights = false }) { Text("Fechar") }
     })
+}
+
+/** Library pages with OCR noise tell the reader to check the original, as on iOS (qualidade_texto_v1.json). */
+@Composable
+private fun PageQualityNotice(text: String, colors: Palette) {
+    val context = LocalContext.current
+    val notice = remember(text) {
+        val config = TextQuality.loadConfig(context)
+        when (TextQuality.ratePage(text, config).level) {
+            TextQuality.Level.NOISY -> config.labels.noisyPage
+            TextQuality.Level.UNREADABLE -> config.labels.unreadablePage
+            else -> null
+        }
+    } ?: return
+    Row(
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier.fillMaxWidth().background(colors.accent.copy(alpha = 0.16f), RoundedCornerShape(8.dp))
+            .padding(10.dp).testTag("reading.quality.notice")
+    ) {
+        Icon(Icons.Default.Warning, contentDescription = null, tint = colors.text)
+        Text(notice, color = colors.text, fontSize = 14.sp)
+    }
 }
 
 @Composable

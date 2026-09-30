@@ -42,6 +42,8 @@ Seus dados ficam no aparelho, com cópia de segurança do sistema.
 - Busca mais rápida e tela inicial ajustada a textos grandes.
 - Leituras do Breviário de Rizzardo também no relógio.
 
+- Acervo sem a camada de texto duplicada (buscas contam cada ocorrência uma vez) e aviso de qualidade do texto nas páginas e obras com ruído de digitalização; o dossiê não cita frases com ruído.
+
 ## Palavras-chave (App Store, ate 100 caracteres)
 
 maçonaria,breviário,maçom,loja,estudo,leitura diária,biblioteca,ritual,filosofia,simbolismo

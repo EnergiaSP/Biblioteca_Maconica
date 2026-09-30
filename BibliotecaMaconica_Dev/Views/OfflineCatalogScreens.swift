@@ -36,6 +36,7 @@ var acervoOfflineView: some View {
                             .lineLimit(1...3)
                             .retornoExecuta($buscaAcervoOffline) { fecharTeclado() }
                             .accessibilityLabel("Buscar pelo título da obra")
+                            .accessibilityIdentifier("acervo.busca")
                             .textInputAutocapitalization(.words)
                             .autocorrectionDisabled()
                             .padding(12)
@@ -154,6 +155,13 @@ var acervoOfflineView: some View {
                 Text(estado.detalhe)
                     .font(.caption)
                     .foregroundStyle(textoSecundarioApp)
+
+                if let qualidade = estado.rotuloQualidade {
+                    Text(qualidade)
+                        .font(.caption)
+                        .foregroundStyle(textoSecundarioApp)
+                        .accessibilityIdentifier("acervo.qualidade")
+                }
 
                 if estado.desatualizado {
                     Text("Atualização disponível")

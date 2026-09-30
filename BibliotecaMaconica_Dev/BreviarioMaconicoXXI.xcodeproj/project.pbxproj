@@ -45,6 +45,9 @@
 		D92100000000000000000909 /* BuscaLocalIndice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9210000000000000000090A /* BuscaLocalIndice.swift */; };
 		D92100000000000000000907 /* AvisoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000908 /* AvisoApp.swift */; };
 		D92100000000000000000905 /* InterpretacaoAssistida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000906 /* InterpretacaoAssistida.swift */; };
+		A10000000000000000000201 /* QualidadeTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000202 /* QualidadeTexto.swift */; };
+		A10000000000000000000203 /* qualidade_texto_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000204 /* qualidade_texto_v1.json */; };
+		A10000000000000000000205 /* casos_qualidade_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000206 /* casos_qualidade_v1.json */; };
 		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
 		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
 		01000000000000000000011A /* rag_catalogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001B /* rag_catalogo.json */; };
@@ -213,6 +216,9 @@
 		D9210000000000000000090A /* BuscaLocalIndice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscaLocalIndice.swift; sourceTree = "<group>"; };
 		D92100000000000000000908 /* AvisoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisoApp.swift; sourceTree = "<group>"; };
 		D92100000000000000000906 /* InterpretacaoAssistida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpretacaoAssistida.swift; sourceTree = "<group>"; };
+		A10000000000000000000202 /* QualidadeTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualidadeTexto.swift; sourceTree = "<group>"; };
+		A10000000000000000000204 /* qualidade_texto_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = qualidade_texto_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000206 /* casos_qualidade_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_qualidade_v1.json; sourceTree = "<group>"; };
 		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
 		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		01000000000000000000001B /* rag_catalogo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rag_catalogo.json; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 				D9210000000000000000090A /* BuscaLocalIndice.swift */,
 				D92100000000000000000908 /* AvisoApp.swift */,
 				D92100000000000000000906 /* InterpretacaoAssistida.swift */,
+				A10000000000000000000202 /* QualidadeTexto.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
 				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
@@ -465,6 +472,8 @@
 				EE0000000000000000000106 /* casos_dossie_v1.json */,
 				EE0000000000000000000904 /* casos_ia_v1.json */,
 				EE0000000000000000000902 /* ia_assistida_v1.json */,
+				A10000000000000000000204 /* qualidade_texto_v1.json */,
+				A10000000000000000000206 /* casos_qualidade_v1.json */,
 				EE0000000000000000000104 /* estudo_dossie_v1.json */,
 				F72BA004B6B84748A020B300 /* progress_sync_v1.tsv */,
 				010000000000000000000013 /* PrivacyInfo.xcprivacy */,
@@ -711,6 +720,8 @@
 				EE0000000000000000000105 /* casos_dossie_v1.json in Resources */,
 				EE0000000000000000000903 /* casos_ia_v1.json in Resources */,
 				EE0000000000000000000901 /* ia_assistida_v1.json in Resources */,
+				A10000000000000000000203 /* qualidade_texto_v1.json in Resources */,
+				A10000000000000000000205 /* casos_qualidade_v1.json in Resources */,
 				EE0000000000000000000103 /* estudo_dossie_v1.json in Resources */,
 				F72BA004B6B84748A020B301 /* progress_sync_v1.tsv in Resources */,
 				010000000000000000000112 /* PrivacyInfo.xcprivacy in Resources */,
@@ -803,6 +814,7 @@
 				D92100000000000000000909 /* BuscaLocalIndice.swift in Sources */,
 				D92100000000000000000907 /* AvisoApp.swift in Sources */,
 				D92100000000000000000905 /* InterpretacaoAssistida.swift in Sources */,
+				A10000000000000000000201 /* QualidadeTexto.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
 				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,

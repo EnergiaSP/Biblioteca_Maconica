@@ -15,6 +15,8 @@ import re
 import unicodedata
 from pathlib import Path
 
+import qualidade_referencia as quality  # noqa: E402  (same folder)
+
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "Paridade/estudo_dossie_v1.json"
 CASES = ROOT / "Paridade/casos_dossie_v1.json"
@@ -180,6 +182,9 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
         distinct.append(source)
     sources = distinct
 
+    # Sentences with OCR noise are not quoted as statements (Paridade/qualidade_texto_v1.json).
+    quality_config = quality.load_config()
+    noisy = 0
     candidates = []
     occurrence_by_source = []
     starts_with_term = []
@@ -208,6 +213,9 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
             if not occurrences(normalized, term_alts):
                 continue
             if not limits["tamanhoMinimoFrase"] <= len(sentence) <= limits["tamanhoMaximoFrase"]:
+                continue
+            if quality.rate_sentence(sentence, quality_config)["nivel"] in ("ruidosa", "ilegivel"):
+                noisy += 1
                 continue
             has_definition = any(word in defining for word in lower)
             score = (3 if has_definition else 0) + (2 if source["area"] == "dicionariosMaconicos" else 0) + \
@@ -308,6 +316,7 @@ def analyze(term: str, sources: list, config: dict, today: str) -> dict:
         "resumo": [excerpt(c) for c in summary],
         "divergencias": [excerpt(c) for c in divergences],
         "metricas": {"fontes": len(sources), "obras": len(works), "ocorrencias": sum(occurrence_by_source), "duplicadas": duplicates,
+                     "frasesComRuido": noisy,
                      "porArea": [[area, count] for area, count in sorted(by_area.items(), key=lambda i: (-i[1], i[0]))]},
         "obrasCentrais": [{k: w[k] for k in ("obraId", "titulo", "ocorrencias", "fontes")} for w in central],
         "capitulosDedicados": dedicated,
@@ -338,7 +347,8 @@ def display(term: str, result: dict, sources: list, config: dict) -> dict:
         "divergencias": excerpts(result["divergencias"]),
         "metricas": [f"{metrics['fontes']} fonte(s) em {metrics['obras']} obra(s); {metrics['ocorrencias']} ocorrência(s) do tema."]
                     + ([f"Áreas: {areas}."] if areas else [])
-                    + ([f"{metrics['duplicadas']} fonte(s) com texto repetido de outra obra desconsiderada(s)."] if metrics["duplicadas"] else []),
+                    + ([f"{metrics['duplicadas']} fonte(s) com texto repetido de outra obra desconsiderada(s)."] if metrics["duplicadas"] else [])
+                    + ([f"{metrics['frasesComRuido']} frase(s) com ruído de digitalização desconsiderada(s)."] if metrics["frasesComRuido"] else []),
         "obrasCentrais": [f"{work['titulo']}: {work['ocorrencias']} ocorrência(s) em {work['fontes']} fonte(s)" for work in result["obrasCentrais"]],
         "capitulosDedicados": [cite(source_id) for source_id in result["capitulosDedicados"]],
         "mapa": [f"{topic} → {item['forma']} ({item['ocorrencias']} ocorrência(s), {item['obras']} obra(s))" for item in result["termosAssociados"]],

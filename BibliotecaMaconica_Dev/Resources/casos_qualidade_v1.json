@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia da qualidade do texto (Paridade/qualidade_texto_v1.json). Gerados por Tools/qualidade_referencia.py --atualizar; iOS e Android devem reproduzir cada resultado.",
+  "casos": [
+    {
+      "nome": "palavra M.:I.:",
+      "tipo": "token",
+      "texto": "M.:I.:",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra Ir.•",
+      "tipo": "token",
+      "texto": "Ir.•",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra Loj.'.",
+      "tipo": "token",
+      "texto": "Loj.'.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra gr.•",
+      "tipo": "token",
+      "texto": "gr.•",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 1ª",
+      "tipo": "token",
+      "texto": "1ª",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 3.°",
+      "tipo": "token",
+      "texto": "3.°",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 2.º.",
+      "tipo": "token",
+      "texto": "2.º.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 1.000",
+      "tipo": "token",
+      "texto": "1.000",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 12/05/1890",
+      "tipo": "token",
+      "texto": "12/05/1890",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra XVIII",
+      "tipo": "token",
+      "texto": "XVIII",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra CBCS",
+      "tipo": "token",
+      "texto": "CBCS",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra t.",
+      "tipo": "token",
+      "texto": "t.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra p.",
+      "tipo": "token",
+      "texto": "p.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra a",
+      "tipo": "token",
+      "texto": "a",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra é",
+      "tipo": "token",
+      "texto": "é",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra x",
+      "tipo": "token",
+      "texto": "x",
+      "esperado": {
+        "classe": "solta"
+      }
+    },
+    {
+      "nome": "palavra d'água",
+      "tipo": "token",
+      "texto": "d'água",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra sê-lhe",
+      "tipo": "token",
+      "texto": "sê-lhe",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra c0m",
+      "tipo": "token",
+      "texto": "c0m",
+      "esperado": {
+        "classe": "misto"
+      }
+    },
+    {
+      "nome": "palavra Ce^ar",
+      "tipo": "token",
+      "texto": "Ce^ar",
+      "esperado": {
+        "classe": "simbolo"
+      }
+    },
+    {
+      "nome": "palavra віруіль",
+      "tipo": "token",
+      "texto": "віруіль",
+      "esperado": {
+        "classe": "escrita"
+      }
+    },
+    {
+      "nome": "palavra fiflflflABflCfl",
+      "tipo": "token",
+      "texto": "fiflflflABflCfl",
+      "esperado": {
+        "classe": "caixa"
+      }
+    },
+    {
+      "nome": "palavra SenHor",
+      "tipo": "token",
+      "texto": "SenHor",
+      "esperado": {
+        "classe": "caixa"
+      }
+    },
+    {
+      "nome": "palavra tlrk",
+      "tipo": "token",
+      "texto": "tlrk",
+      "esperado": {
+        "classe": "semVogal"
+      }
+    },
+    {
+      "nome": "palavra TLRK",
+      "tipo": "token",
+      "texto": "TLRK",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra (caspité!!!)",
+      "tipo": "token",
+      "texto": "(caspité!!!)",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra —",
+      "tipo": "token",
+      "texto": "—",
+      "esperado": {
+        "classe": null
+      }
+    },
+    {
+      "nome": "palavra ...",
+      "tipo": "token",
+      "texto": "...",
+      "esperado": {
+        "classe": null
+      }
+    },
+    {
+      "nome": "palavra 1Rs",
+      "tipo": "token",
+      "texto": "1Rs",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 3a",
+      "tipo": "token",
+      "texto": "3a",
+      "esperado": {
+        "classe": "solta"
+      }
+    },
+    {
+      "nome": "palavra 72x#00",
+      "tipo": "token",
+      "texto": "72x#00",
+      "esperado": {
+        "classe": "simbolo"
+      }
+    },
+    {
+      "nome": "palavra “Iahweh”",
+      "tipo": "token",
+      "texto": "“Iahweh”",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra lahweh",
+      "tipo": "token",
+      "texto": "lahweh",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra [1]",
+      "tipo": "token",
+      "texto": "[1]",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra São",
+      "tipo": "token",
+      "texto": "São",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra Ordem,",
+      "tipo": "token",
+      "texto": "Ordem,",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra A.'.",
+      "tipo": "token",
+      "texto": "A.'.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra ∴",
+      "tipo": "token",
+      "texto": "∴",
+      "esperado": {
+        "classe": null
+      }
+    },
+    {
+      "nome": "palavra ª",
+      "tipo": "token",
+      "texto": "ª",
+      "esperado": {
+        "classe": "solta"
+      }
+    },
+    {
+      "nome": "palavra жа",
+      "tipo": "token",
+      "texto": "жа",
+      "esperado": {
+        "classe": "escrita"
+      }
+    },
+    {
+      "nome": "palavra 12LX9I",
+      "tipo": "token",
+      "texto": "12LX9I",
+      "esperado": {
+        "classe": "misto"
+      }
+    },
+    {
+      "nome": "palavra LL.-.",
+      "tipo": "token",
+      "texto": "LL.-.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra Constit.*.",
+      "tipo": "token",
+      "texto": "Constit.*.",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra WWW.GLESP.ORG.BR",
+      "tipo": "token",
+      "texto": "WWW.GLESP.ORG.BR",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra http://www.ugle.org.uk/",
+      "tipo": "token",
+      "texto": "http://www.ugle.org.uk/",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra שלום",
+      "tipo": "token",
+      "texto": "שלום",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra λόγος",
+      "tipo": "token",
+      "texto": "λόγος",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra gnoses116",
+      "tipo": "token",
+      "texto": "gnoses116",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "palavra 15ele",
+      "tipo": "token",
+      "texto": "15ele",
+      "esperado": {
+        "classe": "normal"
+      }
+    },
+    {
+      "nome": "pagina limpa com abreviacoes maconicas",
+      "tipo": "pagina",
+      "texto": "A Maçonaria é uma instituição essencialmente filosófica, filantrópica e progressista. Tem por princípios a liberdade, a igualdade e a fraternidade; o Ir.•. Orador lembrou, na sessão de 12/05/1890, que o 1º Vigilante e o M.:I.: da Loj.'. Lux devem zelar pela ordem dos trabalhos, conforme o art. XVIII do Regulamento.",
+      "esperado": {
+        "palavras": 50,
+        "suspeitas": 0,
+        "nivel": "legivel",
+        "motivos": {}
+      }
+    },
+    {
+      "nome": "pagina ruidosa do boletim de 1890",
+      "tipo": "pagina",
+      "texto": ", Sr*' r v t \\ 30 - ííííi o * ^est''* c,,Ja morte pranteamos e os serviços oue «quelle Benemérito prestara â causa da pátria e d Mal como homem político e maçon. Maçon. ., Esteve inspiradissiroo o nosso Ir. •. Orad. •. oup ainda nm« vez mais provou a fecundidade do seu taíento e oi bellos eaTe- ciados dotes oratórios que possue. P e Looef ?mXlfC0m;Pp8laVrar°S-RR';vIIr/- Tib»rcio e Simões ÍSSSiiSffi nL ? •rd\" Re«F*'*",
+      "esperado": {
+        "palavras": 68,
+        "suspeitas": 13,
+        "nivel": "ruidosa",
+        "motivos": {
+          "caixa": 2,
+          "misto": 1,
+          "simbolo": 4,
+          "solta": 6
+        }
+      }
+    },
+    {
+      "nome": "pagina com escrita cirilica",
+      "tipo": "pagina",
+      "texto": "-= - 2045 Ging Pes, 57:17-994 I 197 54. 84 4828 Tinge adadea.... pois de asariessa é I to sUPER de Mapesaria manato, sir ires suas nas assimmatades caias mestin Ea se wilia de fraude ancturidade e com M4ALANNiXA e 12LX9I, que nosso coração ambicio- жа, » \": 4. 'В, віруіль, 19,, ж. Ккана Хар/лахтія & 1. р. 199, 110. 154, віти лана,, 8 1.4 51. -",
+      "esperado": {
+        "palavras": 61,
+        "suspeitas": 10,
+        "nivel": "ruidosa",
+        "motivos": {
+          "caixa": 1,
+          "escrita": 7,
+          "misto": 2
+        }
+      }
+    },
+    {
+      "nome": "pagina com algumas letras soltas",
+      "tipo": "pagina",
+      "texto": "Este estudo atento entrega ao investigador os preceitos secretos que são um guia seguro para a sua evolução. O que diz Hermes a Asclépios é, sob uma outra forma, muito semelhante ao que ele diz a seu filho Tat, no Pimandro, e a fonte cita v. II, p. 43, n. 7; cf. t. I e as notas x y z w q.",
+      "esperado": {
+        "palavras": 62,
+        "suspeitas": 4,
+        "nivel": "legivel",
+        "motivos": {
+          "solta": 4
+        }
+      }
+    },
+    {
+      "nome": "pagina curta",
+      "tipo": "pagina",
+      "texto": "Capítulo II — A Loja",
+      "esperado": {
+        "palavras": 4,
+        "suspeitas": 0,
+        "nivel": "curta",
+        "motivos": {}
+      }
+    },
+    {
+      "nome": "pagina vazia",
+      "tipo": "pagina",
+      "texto": "",
+      "esperado": {
+        "palavras": 0,
+        "suspeitas": 0,
+        "nivel": "curta",
+        "motivos": {}
+      }
+    },
+    {
+      "nome": "frase limpa",
+      "tipo": "frase",
+      "texto": "A escada de Jacó simboliza a ascensão gradual do iniciado em direção à luz.",
+      "esperado": {
+        "palavras": 14,
+        "suspeitas": 0,
+        "nivel": "legivel",
+        "motivos": {}
+      }
+    },
+    {
+      "nome": "frase com ruido",
+      "tipo": "frase",
+      "texto": "Esteve inspiradissiroo o nosso Ir. •. Orad. •. oup ainda nm« vez ?mXlfC0m;Pp8 provou.",
+      "esperado": {
+        "palavras": 12,
+        "suspeitas": 1,
+        "nivel": "ruidosa",
+        "motivos": {
+          "misto": 1
+        }
+      }
+    },
+    {
+      "nome": "frase curta",
+      "tipo": "frase",
+      "texto": "A luz.",
+      "esperado": {
+        "palavras": 2,
+        "suspeitas": 0,
+        "nivel": "curta",
+        "motivos": {}
+      }
+    },
+    {
+      "nome": "obra 100 avaliadas 5 ruidosas 0 ilegiveis",
+      "tipo": "obra",
+      "avaliadas": 100,
+      "ruidosas": 5,
+      "ilegiveis": 0,
+      "esperado": {
+        "nivel": "boa"
+      }
+    },
+    {
+      "nome": "obra 100 avaliadas 6 ruidosas 0 ilegiveis",
+      "tipo": "obra",
+      "avaliadas": 100,
+      "ruidosas": 6,
+      "ilegiveis": 0,
+      "esperado": {
+        "nivel": "regular"
+      }
+    },
+    {
+      "nome": "obra 100 avaliadas 15 ruidosas 5 ilegiveis",
+      "tipo": "obra",
+      "avaliadas": 100,
+      "ruidosas": 15,
+      "ilegiveis": 5,
+      "esperado": {
+        "nivel": "regular"
+      }
+    },
+    {
+      "nome": "obra 100 avaliadas 15 ruidosas 6 ilegiveis",
+      "tipo": "obra",
+      "avaliadas": 100,
+      "ruidosas": 15,
+      "ilegiveis": 6,
+      "esperado": {
+        "nivel": "baixa"
+      }
+    },
+    {
+      "nome": "obra 0 avaliadas 0 ruidosas 0 ilegiveis",
+      "tipo": "obra",
+      "avaliadas": 0,
+      "ruidosas": 0,
+      "ilegiveis": 0,
+      "esperado": {
+        "nivel": "semAvaliacao"
+      }
+    },
+    {
+      "nome": "obra 40 avaliadas 0 ruidosas 2 ilegiveis",
+      "tipo": "obra",
+      "avaliadas": 40,
+      "ruidosas": 0,
+      "ilegiveis": 2,
+      "esperado": {
+        "nivel": "boa"
+      }
+    },
+    {
+      "nome": "pagina da biblia com versiculos",
+      "tipo": "pagina",
+      "texto": "15ele forma o coração de cada um e discerne todos os seus atos. 16Nenhum rei se salva com exército numeroso, o valente não se livra por sua grande força. 17Ilusão é o cavalo para a vitória, e todo o seu vigor não o faz escapar. 18Eis que o olho de Iahweh está sobre os que o temem, sobre os que esperam o seu amor.",
+      "esperado": {
+        "palavras": 64,
+        "suspeitas": 0,
+        "nivel": "legivel",
+        "motivos": {}
+      }
+    }
+  ]
+}
