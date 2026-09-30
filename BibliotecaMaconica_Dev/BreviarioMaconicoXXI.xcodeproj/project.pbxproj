@@ -48,6 +48,7 @@
 		A10000000000000000000201 /* QualidadeTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000202 /* QualidadeTexto.swift */; };
 		A10000000000000000000301 /* RevisaoAtiva.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000302 /* RevisaoAtiva.swift */; };
 		A10000000000000000000401 /* CadernoEstudo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000402 /* CadernoEstudo.swift */; };
+		A10000000000000000000705 /* VariantesBusca.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000706 /* VariantesBusca.swift */; };
 		A10000000000000000000605 /* TrilhasGrau.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000606 /* TrilhasGrau.swift */; };
 		A10000000000000000000507 /* PranchaDossie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000508 /* PranchaDossie.swift */; };
 		A10000000000000000000409 /* CadernoSincronizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000410 /* CadernoSincronizacao.swift */; };
@@ -55,6 +56,8 @@
 		A10000000000000000000413 /* conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000414 /* conta_propria_v1.json */; };
 		A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000416 /* casos_conta_propria_v1.json */; };
 		A10000000000000000000403 /* caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000404 /* caderno_v1.json */; };
+		A10000000000000000000703 /* casos_variantes_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000704 /* casos_variantes_v1.json */; };
+		A10000000000000000000701 /* variantes_busca_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000702 /* variantes_busca_v1.json */; };
 		A10000000000000000000603 /* casos_trilhas_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000604 /* casos_trilhas_v1.json */; };
 		A10000000000000000000601 /* trilhas_grau_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000602 /* trilhas_grau_v1.json */; };
 		A10000000000000000000505 /* obras_referencias_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000506 /* obras_referencias_v1.json */; };
@@ -240,6 +243,7 @@
 		A10000000000000000000202 /* QualidadeTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualidadeTexto.swift; sourceTree = "<group>"; };
 		A10000000000000000000302 /* RevisaoAtiva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisaoAtiva.swift; sourceTree = "<group>"; };
 		A10000000000000000000402 /* CadernoEstudo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoEstudo.swift; sourceTree = "<group>"; };
+		A10000000000000000000706 /* VariantesBusca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantesBusca.swift; sourceTree = "<group>"; };
 		A10000000000000000000606 /* TrilhasGrau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrilhasGrau.swift; sourceTree = "<group>"; };
 		A10000000000000000000508 /* PranchaDossie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PranchaDossie.swift; sourceTree = "<group>"; };
 		A10000000000000000000410 /* CadernoSincronizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoSincronizacao.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 		A10000000000000000000414 /* conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000416 /* casos_conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000404 /* caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = caderno_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000704 /* casos_variantes_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_variantes_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000702 /* variantes_busca_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variantes_busca_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000604 /* casos_trilhas_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_trilhas_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000602 /* trilhas_grau_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trilhas_grau_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000506 /* obras_referencias_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = obras_referencias_v1.json; sourceTree = "<group>"; };
@@ -478,6 +484,7 @@
 				A10000000000000000000202 /* QualidadeTexto.swift */,
 				A10000000000000000000302 /* RevisaoAtiva.swift */,
 				A10000000000000000000402 /* CadernoEstudo.swift */,
+				A10000000000000000000706 /* VariantesBusca.swift */,
 				A10000000000000000000606 /* TrilhasGrau.swift */,
 				A10000000000000000000508 /* PranchaDossie.swift */,
 				A10000000000000000000410 /* CadernoSincronizacao.swift */,
@@ -529,6 +536,8 @@
 				A10000000000000000000304 /* revisao_ativa_v1.json */,
 				A10000000000000000000306 /* casos_revisao_v1.json */,
 				A10000000000000000000404 /* caderno_v1.json */,
+				A10000000000000000000704 /* casos_variantes_v1.json */,
+				A10000000000000000000702 /* variantes_busca_v1.json */,
 				A10000000000000000000604 /* casos_trilhas_v1.json */,
 				A10000000000000000000602 /* trilhas_grau_v1.json */,
 				A10000000000000000000506 /* obras_referencias_v1.json */,
@@ -788,6 +797,8 @@
 				A10000000000000000000303 /* revisao_ativa_v1.json in Resources */,
 				A10000000000000000000305 /* casos_revisao_v1.json in Resources */,
 				A10000000000000000000403 /* caderno_v1.json in Resources */,
+				A10000000000000000000703 /* casos_variantes_v1.json in Resources */,
+				A10000000000000000000701 /* variantes_busca_v1.json in Resources */,
 				A10000000000000000000603 /* casos_trilhas_v1.json in Resources */,
 				A10000000000000000000601 /* trilhas_grau_v1.json in Resources */,
 				A10000000000000000000505 /* obras_referencias_v1.json in Resources */,
@@ -891,6 +902,7 @@
 				A10000000000000000000201 /* QualidadeTexto.swift in Sources */,
 				A10000000000000000000301 /* RevisaoAtiva.swift in Sources */,
 				A10000000000000000000401 /* CadernoEstudo.swift in Sources */,
+				A10000000000000000000705 /* VariantesBusca.swift in Sources */,
 				A10000000000000000000605 /* TrilhasGrau.swift in Sources */,
 				A10000000000000000000507 /* PranchaDossie.swift in Sources */,
 				A10000000000000000000409 /* CadernoSincronizacao.swift in Sources */,

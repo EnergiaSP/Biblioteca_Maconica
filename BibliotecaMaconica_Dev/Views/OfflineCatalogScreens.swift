@@ -369,6 +369,9 @@ var acervoOfflineView: some View {
         .onChange(of: filtroMetadadosBiblioteca) { _, _ in
             agendarBuscaBiblioteca()
         }
+        .onChange(of: buscaSingularPlural) { _, _ in
+            agendarBuscaBiblioteca()
+        }
     }
 
     var dossieEstudoView: some View {
@@ -559,7 +562,23 @@ var acervoOfflineView: some View {
     }
 
     var filtrosMetadadosBibliotecaView: some View {
-        filtrosMetadadosView($filtroMetadadosBiblioteca)
+        VStack(alignment: .leading, spacing: 12) {
+            filtrosMetadadosView($filtroMetadadosBiblioteca)
+            if let variantes = VariantesBusca.Configuracao.compartilhada {
+                Toggle(isOn: $buscaSingularPlural) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(variantes.rotulo("singularPlural"))
+                            .foregroundStyle(textoApp)
+                        Text(variantes.rotulo("descricaoSingularPlural"))
+                            .font(.caption)
+                            .foregroundStyle(textoSecundarioApp)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .tint(destaqueApp)
+                .accessibilityIdentifier("search.plural")
+            }
+        }
     }
 
     func filtrosMetadadosView(_ filtro: Binding<BibliotecaFiltroMetadados>) -> some View {

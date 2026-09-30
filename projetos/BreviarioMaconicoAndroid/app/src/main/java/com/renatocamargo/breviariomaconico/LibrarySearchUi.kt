@@ -36,6 +36,10 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
+import com.renatocamargo.breviariomaconico.data.SearchVariants
+import androidx.compose.material3.Switch
+import androidx.compose.ui.semantics.Role
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -173,6 +177,7 @@ internal fun StructuredSearchScreen(
     val scope = rememberCoroutineScope()
     var termo by session::termo
     var metadataFilter by session::metadataFilter
+    var singularPlural by remember { mutableStateOf(SearchVariants.singularPluralOn(context)) }
     var area by session::area
     var obraId by session::obraId
     var obras by remember { mutableStateOf(emptyList<com.renatocamargo.breviariomaconico.data.BibliotecaObraCatalogo>()) }
@@ -207,7 +212,9 @@ internal fun StructuredSearchScreen(
             val requestContext = currentCoroutineContext()
             try {
                 libraryQuery { catalogo.buscarConteudo(consulta, areaSelecionada, obraSelecionada,
-                    limite = 51, offset = inicio, cancelled = { !requestContext.isActive }, filtro = filtroSelecionado) }
+                    limite = 51, offset = inicio, cancelled = { !requestContext.isActive }, filtro = filtroSelecionado,
+                    // Spelling variants always; the other form (singular or plural) while the option is on.
+                    variants = SearchVariants.forSearch(context, consulta, singularPlural)) }
                     .onSuccess {
                         resultados = resultados + it.take(50)
                         temMais = it.size > 50
@@ -219,9 +226,9 @@ internal fun StructuredSearchScreen(
         }
     }
 
-    LaunchedEffect(termo, area, obraId, metadataFilter) {
+    LaunchedEffect(termo, area, obraId, metadataFilter, singularPlural) {
         // Returning from an opened result must keep the results already loaded for the same query.
-        val consulta = listOf(termo, area, obraId, metadataFilter)
+        val consulta = listOf(termo, area, obraId, metadataFilter, singularPlural)
         if (consulta == session.ultimaConsulta) return@LaunchedEffect
         session.ultimaConsulta = consulta
         consultaJob?.cancel()
@@ -283,6 +290,17 @@ internal fun StructuredSearchScreen(
                     }
                 }
                 MetadataFilterFields(colors, metadataFilter) { metadataFilter = it }
+                val variantsConfig = remember { SearchVariants.loadConfig(context) }
+                Row(Modifier.fillMaxWidth().toggleable(singularPlural, role = Role.Switch) {
+                    singularPlural = it
+                    SearchVariants.setSingularPlural(context, it)
+                }.testTag("search.plural"), verticalAlignment = Alignment.CenterVertically) {
+                    Column(Modifier.weight(1f)) {
+                        Text(variantsConfig.label("singularPlural"), color = colors.text)
+                        Text(variantsConfig.label("descricaoSingularPlural"), color = colors.secondary, fontSize = 13.sp)
+                    }
+                    Switch(checked = singularPlural, onCheckedChange = null)
+                }
                 Button(colors = libraryActionColors(colors), enabled = termo.isNotBlank() && !buscando, onClick = { pesquisar() }) {
                     Icon(Icons.Default.Search, null)
                     Spacer(Modifier.width(8.dp))

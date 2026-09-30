@@ -125,6 +125,7 @@ import com.renatocamargo.breviariomaconico.data.AppThemeMode
 import com.renatocamargo.breviariomaconico.data.BibliotecaArea
 import com.renatocamargo.breviariomaconico.data.BibliotecaBuscaResultado
 import com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository
+import com.renatocamargo.breviariomaconico.data.prepararBuscaNotasDepoisDaAbertura
 import com.renatocamargo.breviariomaconico.data.BibliotecaIndiceTermo
 import com.renatocamargo.breviariomaconico.data.BibliotecaPaginaLeitura
 import com.renatocamargo.breviariomaconico.data.BibliotecaPacoteEstado
@@ -331,7 +332,10 @@ internal fun BreviarioAndroidApp(
     }
     // The breviaries' search index is built in the background, so the first search does not wait for it.
     LaunchedEffect(repo) {
-        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { repo.indiceBusca }
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            repo.indiceBusca
+            BibliotecaCatalogRepository.get(context).prepararBuscaNotasDepoisDaAbertura()
+        }
     }
 
     LaunchedEffect(openData, openWorkId) {

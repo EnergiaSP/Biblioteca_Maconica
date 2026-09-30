@@ -170,6 +170,9 @@ internal suspend fun BibliotecaCatalogRepository.scoreStudy(workIds: Set<String>
         val file = localFile(pacote)
         if (works.isEmpty() || !file.exists()) null else Triple(pacote.titulo, file, works)
     }.distinctBy { it.second.absolutePath }
+    // Scoring every page takes seconds; the result is kept on disk while rules and files are the same.
+    val cacheKey = StudyScoreCache.key(rules, limits, jobs.map { (_, file, works) -> "${file.name}:${file.length()}:${works.sorted()}" })
+    StudyScoreCache.load(appContext, cacheKey, rules.size)?.let { return@coroutineScope it to emptyList() }
     val context = currentCoroutineContext()
     val results = jobs.map { (_, file, works) ->
         async(Dispatchers.IO) {
@@ -183,7 +186,43 @@ internal suspend fun BibliotecaCatalogRepository.scoreStudy(workIds: Set<String>
     results.forEachIndexed { index, result ->
         result.onSuccess { merged = StudyIndex.combine(merged, it, limits) }.onFailure { failures.add(jobs[index].first) }
     }
+    if (failures.isEmpty()) StudyScoreCache.store(appContext, cacheKey, merged)
     merged to failures
+}
+
+/** Collection scores of the downloaded works on disk, valid while the rules, limits and package files are unchanged. */
+internal object StudyScoreCache {
+    private const val FILE = "colecoes_pontuacao_v1.json"
+
+    fun key(rules: List<Set<String>>, limits: List<Int>, files: List<String>): String =
+        java.security.MessageDigest.getInstance("SHA-256")
+            .digest((rules.map { it.sorted() }.toString() + limits + files.sorted()).toByteArray())
+            .joinToString("") { "%02x".format(it) }
+
+    fun load(context: android.content.Context, key: String, size: Int): List<List<StudyIndex.PageScore>>? = runCatching {
+        val json = org.json.JSONObject(File(context.filesDir, FILE).readText())
+        if (json.getString("chave") != key) return null
+        val lists = json.getJSONArray("pontuacoes")
+        if (lists.length() != size) return null
+        List(lists.length()) { i ->
+            val list = lists.getJSONArray(i)
+            List(list.length()) { j ->
+                list.getJSONArray(j).let { StudyIndex.PageScore(StudyIndex.PageRef(it.getString(0), it.getInt(1)), it.getInt(2), it.getInt(3)) }
+            }
+        }
+    }.getOrNull()
+
+    fun store(context: android.content.Context, key: String, scores: List<List<StudyIndex.PageScore>>) {
+        runCatching {
+            val json = org.json.JSONObject().put("chave", key).put("pontuacoes", org.json.JSONArray(scores.map { list ->
+                org.json.JSONArray(list.map { org.json.JSONArray(listOf(it.ref.obraId, it.ref.pagina, it.topics, it.occurrences)) })
+            }))
+            val target = File(context.filesDir, FILE)
+            val temporary = File(context.filesDir, "$FILE.tmp")
+            temporary.writeText(json.toString())
+            temporary.renameTo(target)
+        }
+    }
 }
 
 private fun scorePackage(file: File, works: Set<String>, rules: List<Set<String>>, limits: List<Int>, cancelled: () -> Boolean) =

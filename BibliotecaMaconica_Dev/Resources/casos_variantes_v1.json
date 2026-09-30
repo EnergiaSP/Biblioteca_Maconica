@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia das variantes da busca (Paridade/variantes_busca_v1.json), gerados por Tools/variantes_referencia.py --atualizar. iOS e Android devem reproduzir cada resultado.",
+  "casos": [
+    {
+      "palavras": [
+        "loja"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "loja"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "loja": [
+          "lojas"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "lojas"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "lojas"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "lojas": [
+          "loja"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "irmao"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "irmao"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "irmao": [
+          "irmoes",
+          "irmaos",
+          "irmaes"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "irmaos"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "irmaos"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "irmaos": [
+          "irmao"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "macom"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "macom"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "macom": [
+          "macons"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "macons"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "macons"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "macons": [
+          "macom"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "simbolo"
+      ],
+      "singularPlural": false,
+      "esperado": {
+        "simbolo": [
+          "symbolo"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "simbolo"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "simbolo": [
+          "symbolo",
+          "simbolos",
+          "symbolos"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "jaco"
+      ],
+      "singularPlural": false,
+      "esperado": {
+        "jaco": [
+          "jacob"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "jaco"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "jaco": [
+          "jacob",
+          "jacos"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "escada",
+        "jaco"
+      ],
+      "singularPlural": false,
+      "esperado": {
+        "jaco": [
+          "jacob"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "escada",
+        "jaco"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "escada": [
+          "escadas"
+        ],
+        "jaco": [
+          "jacob",
+          "jacos"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "templario"
+      ],
+      "singularPlural": false,
+      "esperado": {
+        "templario": [
+          "templeiro"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "templario"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "templario": [
+          "templeiro",
+          "templarios",
+          "templeiros"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "luz"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "luz"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "luz": [
+          "luzes"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "luzes"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "luzes"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "luzes": [
+          "luz"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "mestre"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "mestre"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "mestre": [
+          "mestres"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "ritual"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "ritual"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "ritual": [
+          "rituais"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "rituais"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "rituais"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "rituais": [
+          "ritual"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "cabala"
+      ],
+      "singularPlural": false,
+      "esperado": {
+        "cabala": [
+          "kabbalah",
+          "cabbala",
+          "kabala",
+          "qabalah"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "cabala"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "cabala": [
+          "kabbalah",
+          "cabbala",
+          "kabala",
+          "qabalah",
+          "cabalas",
+          "cabbalas"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "pedra",
+        "bruta"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "pedra",
+        "bruta"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "pedra": [
+          "pedras"
+        ],
+        "bruta": [
+          "brutas"
+        ]
+      }
+    },
+    {
+      "palavras": [
+        "dos"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "dos"
+      ],
+      "singularPlural": true,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "virtude"
+      ],
+      "singularPlural": false,
+      "esperado": {}
+    },
+    {
+      "palavras": [
+        "virtude"
+      ],
+      "singularPlural": true,
+      "esperado": {
+        "virtude": [
+          "virtudes"
+        ]
+      }
+    }
+  ]
+}

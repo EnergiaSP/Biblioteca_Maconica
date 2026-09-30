@@ -49,6 +49,7 @@ python3 "$ROOT_DIR/Tools/qualidade_referencia.py" --check || falhar "Casos da qu
 python3 "$ROOT_DIR/Tools/revisao_referencia.py" --check || falhar "Casos da revisao ativa desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/caderno_referencia.py" --check || falhar "Casos do caderno desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/referencias_obras.py" --check || falhar "Referencias das obras desatualizadas em relacao ao catalogo."
+python3 "$ROOT_DIR/Tools/variantes_referencia.py" --check || falhar "Variantes da busca desatualizadas em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/trilhas_referencia.py" --check || falhar "Trilhas por grau desatualizadas em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/prancha_referencia.py" --check || falhar "Casos da prancha desatualizados em relacao a implementacao de referencia."
 node "$ROOT_DIR/Tools/conta_propria_referencia.mjs" --check || falhar "Casos da conta propria desatualizados em relacao a implementacao de referencia."

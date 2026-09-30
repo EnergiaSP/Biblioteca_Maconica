@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Variantes da busca, a mesma regra no iOS e no Android. As palavras chegam normalizadas (minusculas, sem acentos). grupos: grafias equivalentes; cada palavra de um grupo busca tambem as outras, na ordem do grupo. singularPlural (opcional, ligado por padrao na busca da biblioteca): palavras com pelo menos minimoLetras letras, fora de semFlexao, buscam tambem a outra forma, pelas regras em ordem; a primeira regra cujo final casa e usada, trocando o final por cada forma; as formas do dicionario tambem ganham singular e plural. Alternativas sem repetir e sem a propria palavra, no maximo maximoPorPalavra. O dossie usa so os grupos (estudo_dossie_v1.json variantes, gerado daqui).",
+  "minimoLetras": 3,
+  "maximoPorPalavra": 6,
+  "grupos": [
+    [
+      "jaco",
+      "jacob"
+    ],
+    [
+      "hiram",
+      "hirao",
+      "hiran"
+    ],
+    [
+      "salomao",
+      "salomon"
+    ],
+    [
+      "boaz",
+      "booz"
+    ],
+    [
+      "jakin",
+      "jaquim",
+      "jaquin",
+      "jachin"
+    ],
+    [
+      "tubalcaim",
+      "tubalcain"
+    ],
+    [
+      "kadosh",
+      "kadosch"
+    ],
+    [
+      "simbolo",
+      "symbolo"
+    ],
+    [
+      "simbolismo",
+      "symbolismo"
+    ],
+    [
+      "simbolico",
+      "symbolico"
+    ],
+    [
+      "filosofia",
+      "philosophia"
+    ],
+    [
+      "filosofo",
+      "philosopho"
+    ],
+    [
+      "egito",
+      "egypto"
+    ],
+    [
+      "egipcio",
+      "egypcio"
+    ],
+    [
+      "teologia",
+      "theologia"
+    ],
+    [
+      "mistica",
+      "mystica"
+    ],
+    [
+      "misterio",
+      "mysterio"
+    ],
+    [
+      "mistico",
+      "mystico"
+    ],
+    [
+      "templario",
+      "templeiro"
+    ],
+    [
+      "pitagoras",
+      "pythagoras"
+    ],
+    [
+      "cabala",
+      "kabbalah",
+      "cabbala",
+      "kabala",
+      "qabalah"
+    ],
+    [
+      "zoroastro",
+      "zaratustra"
+    ],
+    [
+      "jerusalem",
+      "hierusalem"
+    ],
+    [
+      "geometria",
+      "geometrya"
+    ],
+    [
+      "hermetismo",
+      "hermetism"
+    ]
+  ],
+  "singularPlural": [
+    {
+      "final": "oes",
+      "formas": [
+        "ao"
+      ]
+    },
+    {
+      "final": "aes",
+      "formas": [
+        "ao"
+      ]
+    },
+    {
+      "final": "aos",
+      "formas": [
+        "ao"
+      ]
+    },
+    {
+      "final": "ns",
+      "formas": [
+        "m"
+      ]
+    },
+    {
+      "final": "ais",
+      "formas": [
+        "al"
+      ]
+    },
+    {
+      "final": "eis",
+      "formas": [
+        "el"
+      ]
+    },
+    {
+      "final": "ois",
+      "formas": [
+        "ol"
+      ]
+    },
+    {
+      "final": "uis",
+      "formas": [
+        "ul"
+      ]
+    },
+    {
+      "final": "res",
+      "formas": [
+        "r"
+      ]
+    },
+    {
+      "final": "zes",
+      "formas": [
+        "z"
+      ]
+    },
+    {
+      "final": "as",
+      "formas": [
+        "a"
+      ]
+    },
+    {
+      "final": "es",
+      "formas": [
+        "e"
+      ]
+    },
+    {
+      "final": "is",
+      "formas": [
+        "i"
+      ]
+    },
+    {
+      "final": "os",
+      "formas": [
+        "o"
+      ]
+    },
+    {
+      "final": "us",
+      "formas": [
+        "u"
+      ]
+    },
+    {
+      "final": "ao",
+      "formas": [
+        "oes",
+        "aos",
+        "aes"
+      ]
+    },
+    {
+      "final": "m",
+      "formas": [
+        "ns"
+      ]
+    },
+    {
+      "final": "al",
+      "formas": [
+        "ais"
+      ]
+    },
+    {
+      "final": "el",
+      "formas": [
+        "eis"
+      ]
+    },
+    {
+      "final": "ol",
+      "formas": [
+        "ois"
+      ]
+    },
+    {
+      "final": "ul",
+      "formas": [
+        "uis"
+      ]
+    },
+    {
+      "final": "r",
+      "formas": [
+        "res"
+      ]
+    },
+    {
+      "final": "z",
+      "formas": [
+        "zes"
+      ]
+    },
+    {
+      "final": "a",
+      "formas": [
+        "as"
+      ]
+    },
+    {
+      "final": "e",
+      "formas": [
+        "es"
+      ]
+    },
+    {
+      "final": "i",
+      "formas": [
+        "is"
+      ]
+    },
+    {
+      "final": "o",
+      "formas": [
+        "os"
+      ]
+    },
+    {
+      "final": "u",
+      "formas": [
+        "us"
+      ]
+    }
+  ],
+  "rotulos": {
+    "singularPlural": "Singular e plural juntos",
+    "descricaoSingularPlural": "Busca também a outra forma: \"loja\" encontra \"lojas\", \"irmão\" encontra \"irmãos\"."
+  },
+  "semFlexao": [
+    "dos",
+    "das",
+    "nos",
+    "nas",
+    "aos",
+    "uns",
+    "mas",
+    "por",
+    "sem",
+    "com",
+    "que",
+    "seu",
+    "sua",
+    "tem",
+    "sao",
+    "era",
+    "foi",
+    "mais",
+    "pelo",
+    "pela",
+    "pelos",
+    "pelas",
+    "como",
+    "para",
+    "esta",
+    "este",
+    "isso",
+    "isto"
+  ]
+}

@@ -5,6 +5,11 @@ import java.security.MessageDigest
 import kotlinx.coroutines.CancellationException
 
 internal object NotesSearchIndex {
+    /** Identity of a package file: the cache is rebuilt when it changes. */
+    fun stamp(source: File): String = listOf(source, File(source.path + "-wal")).joinToString("|") {
+        if (it.exists()) "${it.length()}:${it.lastModified()}:${android.system.Os.stat(it.path).st_ino}" else "absent"
+    }
+
     @Synchronized
     fun search(source: File, cacheDir: File, query: String, area: BibliotecaArea?, workId: String?,
                limit: Int, excluded: Set<String> = emptySet(), cancelled: () -> Boolean = { false }): List<BibliotecaBuscaResultado> {
@@ -12,9 +17,7 @@ internal object NotesSearchIndex {
         checkCancellation()
         val directory = File(cacheDir, "RAGNotesSearchV1").apply { mkdirs() }
         val key = MessageDigest.getInstance("SHA-256").digest(source.absolutePath.toByteArray()).joinToString("") { "%02x".format(it) }
-        val stamp = listOf(source, File(source.path + "-wal")).joinToString("|") {
-            if (it.exists()) "${it.length()}:${it.lastModified()}:${android.system.Os.stat(it.path).st_ino}" else "absent"
-        }
+        val stamp = stamp(source)
         return RagSQLite.open(File(directory, "$key.sqlite").path).use { db ->
             db.execSQL("PRAGMA busy_timeout = 5000")
             db.execSQL("CREATE TABLE IF NOT EXISTS cache_meta (stamp TEXT NOT NULL)")
@@ -46,6 +49,8 @@ internal object NotesSearchIndex {
                     throw error
                 }
             }
+            // An empty query only brings the cache up to date (see BibliotecaCatalogRepository.prepararBuscaNotas).
+            if (query.isEmpty()) return@use emptyList()
             val filters = mutableListOf("notes_fts MATCH ?")
             val args = mutableListOf(query)
             if (area != null) { filters.add("area = ?"); args.add(area.raw) }
@@ -67,4 +72,28 @@ internal object NotesSearchIndex {
             }
         }
     }
+}
+
+/** Brings the footnote search caches up to date ahead of the first search (after an install or an update). */
+internal fun BibliotecaCatalogRepository.prepararBuscaNotas(cancelled: () -> Boolean = { false }) {
+    // Packages already prepared are skipped by their file identity alone, without opening any database.
+    val prepared = appContext.getSharedPreferences("notas_preparadas", android.content.Context.MODE_PRIVATE)
+    val cache = File(appContext.cacheDir, "RAGNotesSearchV1")
+    for (file in pacotes.map { localFile(it) }.filter { it.exists() }.distinctBy { it.absolutePath }) {
+        if (cancelled()) return
+        val stamp = NotesSearchIndex.stamp(file)
+        if (cache.isDirectory && prepared.getString(file.absolutePath, null) == stamp) continue
+        runCatching { NotesSearchIndex.search(file, appContext.cacheDir, "", null, null, 0, cancelled = cancelled) }
+            .onSuccess { prepared.edit().putString(file.absolutePath, stamp).apply() }
+    }
+}
+
+/**
+ * Footnote caches too, so the first library search after an install or update does not build them;
+ * a little later, so opening the app and its first screens keep the disk to themselves.
+ */
+internal suspend fun BibliotecaCatalogRepository.prepararBuscaNotasDepoisDaAbertura() {
+    kotlinx.coroutines.delay(8_000)
+    val job = kotlinx.coroutines.currentCoroutineContext()[kotlinx.coroutines.Job]
+    prepararBuscaNotas { job?.isActive == false }
 }
