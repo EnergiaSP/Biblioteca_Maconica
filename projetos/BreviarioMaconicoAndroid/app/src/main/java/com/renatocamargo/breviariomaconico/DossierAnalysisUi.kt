@@ -22,7 +22,9 @@ internal data class DossierStudy(
     /** With occurrence counts, for the drawn map. */
     val related: List<DossierAnalysis.RelatedTerm> = emptyList(),
     /** Review cards made from the analysis, stored when the dossier is saved (revisao_ativa_v1.json). */
-    val cards: List<ActiveReview.Card> = emptyList()
+    val cards: List<ActiveReview.Card> = emptyList(),
+    /** Prancha with the excerpts the dossier cites and ABNT references (prancha_v1.json). */
+    val prancha: com.renatocamargo.breviariomaconico.data.Prancha.Result? = null
 )
 
 /** The topic is studied as an expression ("Escada de Jacó"), accepting spelling variants ("Jacob"). */
@@ -43,15 +45,21 @@ internal fun analyzeDossier(
     results: List<BibliotecaBuscaResultado>,
     config: DossierAnalysis.Config,
     today: java.time.LocalDate = java.time.LocalDate.now(),
-    reviewConfig: ActiveReview.Config? = null
+    reviewConfig: ActiveReview.Config? = null,
+    pranchaConfig: com.renatocamargo.breviariomaconico.data.Prancha.Config? = null,
+    works: Map<String, com.renatocamargo.breviariomaconico.data.Prancha.Work> = emptyMap()
 ): DossierStudy {
     val sources = dossierSources(results)
     val analysis = DossierAnalysis.analyze(topic.trim(), sources, config, today)
     val cards = reviewConfig?.let {
         ActiveReview.generate(topic.trim(), analysis.definitions, analysis.questions, analysis.relatedTerms.map { term -> term.form }, sources, it)
     }.orEmpty()
+    val prancha = pranchaConfig?.let {
+        com.renatocamargo.breviariomaconico.data.Prancha.build(topic.trim(), sources, analysis.definitions, analysis.summary,
+            analysis.divergences, analysis.relatedTerms, works, it)
+    }
     return DossierStudy(DossierAnalysis.display(topic.trim(), analysis, sources, config), analysis.relatedTerms.map { it.form }, sources.size,
-        analysis.relatedTerms, cards)
+        analysis.relatedTerms, cards, prancha)
 }
 
 /** Sections shown only when the dossier has its analysis, in the same order as on iOS. */

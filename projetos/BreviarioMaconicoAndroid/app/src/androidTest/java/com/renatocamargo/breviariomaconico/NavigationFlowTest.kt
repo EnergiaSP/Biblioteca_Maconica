@@ -145,6 +145,28 @@ class NavigationFlowTest {
         }
     }
 
+    /** The prancha of a dossier shows each author side by side and the text with ABNT references, as on iOS. */
+    @Test
+    fun dossierBuildsPranchaWithReferences() {
+        compose.onNodeWithTag("tab.dossier").performClick()
+        compose.onNodeWithTag("dossier.topic").performTextReplacement("virtude")
+        compose.onNodeWithText("Gerar dossiê").performScrollTo().performClick()
+        assertDossierGenerated()
+        compose.onNodeWithTag("dossier.list").performScrollToIndex(0)
+        compose.onNodeWithTag("dossier.prancha").performScrollTo().performClick()
+        compose.onNodeWithText("Prancha: virtude").assertExists()
+        compose.onAllNodesWithTag("prancha.autor")[0].assertExists()
+        compose.onNodeWithTag("prancha").performScrollToNode(hasText("Referências"))
+        compose.onNodeWithTag("prancha").performScrollToIndex(2)
+        compose.onNodeWithTag("prancha.copiar").performClick()
+        compose.onNodeWithTag("prancha.copiar").assertTextContains("Prancha copiada.")
+        compose.onNodeWithTag("prancha").performScrollToIndex(0)
+        compose.onNodeWithTag("prancha.fechar").performClick()
+        compose.onNodeWithTag("prancha").assertDoesNotExist()
+        // Android 13+ shows its own "copied" overlay for a few seconds after copying.
+        assertNativeForeground(15_000)
+    }
+
     /** A saved dossier appears as a theme of the notebook with its interpretation; its note opens the dossier again, as on iOS. */
     @Test
     fun notebookByThemeListsSavedDossierAndOpensIt() {
@@ -264,11 +286,11 @@ class NavigationFlowTest {
         }
     }
 
-    private fun assertNativeForeground() {
+    private fun assertNativeForeground(timeoutMillis: Long = 5_000) {
         val automation = InstrumentationRegistry.getInstrumentation().uiAutomation
         val packageName = ApplicationProvider.getApplicationContext<android.content.Context>().packageName
         // Compose actions alone can pass while a system dialog obscures the app.
-        compose.waitUntil(5_000) {
+        compose.waitUntil(timeoutMillis) {
             automation.rootInActiveWindow?.packageName?.toString() == packageName
         }
     }

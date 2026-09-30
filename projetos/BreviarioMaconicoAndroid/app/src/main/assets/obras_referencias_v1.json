@@ -1,0 +1,2260 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Dados bibliograficos das obras para as referencias ABNT, gerados por Tools/referencias_obras.py a partir do catalogo e de obras_referencias_manual.json. Campo vazio: nao informado.",
+  "obras": {
+    "100_instrucoes_de_aprendiz": {
+      "titulo": "100 Instruções de Aprendiz",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "10_misterios_que_indicam_a_existencia_de_antigas_civilizacoes_avancadas": {
+      "titulo": "10 MISTÉRIOS QUE INDICAM A EXISTÊNCIA DE ANTIGAS CIVILIZAÇÕES AVANÇADAS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "200_pilulas_maconicas": {
+      "titulo": "200 Pílulas Maçônicas",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_abobada_celeste_de_um_templo_maconico_do_reaa_v1": {
+      "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_acao_secreta_da_maconaria_na_politica_mundial_jose_castellani": {
+      "titulo": "A Ação Secreta da Maçonaria na Política Mundial",
+      "autor": "José Castellani",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_arca_da_alianca": {
+      "titulo": "A Arca da Aliança",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_arvore_da_vida_israel_regardie": {
+      "titulo": "A Arvore da Vida",
+      "autor": "Israel Regardie",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_biblia_maconica_versao_portugues": {
+      "titulo": "A Bíblia Maçônica Versão Portugues",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_chave_de_salomao_greg_taylor": {
+      "titulo": "A Chave de Salomao",
+      "autor": "Greg Taylor",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_chave_de_salomao_greg_taylor_2": {
+      "titulo": "A Chave de Salomao",
+      "autor": "Greg Taylor",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_chave_dos_grandes_mistrios_eliphas_levi": {
+      "titulo": "A Chave dos Grandes Mistrios",
+      "autor": "Eliphas Levi",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_ciencia_secreta_ii": {
+      "titulo": "A Ciência Secreta II",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_ciencia_secreta_vol_1_henri_durville": {
+      "titulo": "A Ciencia Secreta Vol 1",
+      "autor": "Henri Durville",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_ciencia_secreta_vol_2_henri_durville": {
+      "titulo": "A Ciencia Secreta Vol 2",
+      "autor": "Henri Durville",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_ciencia_secreta_vol_3_henri_durville": {
+      "titulo": "A Ciencia Secreta Vol 3",
+      "autor": "Henri Durville",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_ciencia_secreta_vol_4_henri_durville": {
+      "titulo": "A Ciencia Secreta Vol 4",
+      "autor": "Henri Durville",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_conspiracao_de_1817": {
+      "titulo": "A CONSPIRAÇÃO DE 1817",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii": {
+      "titulo": "A DEMANDA DO SANTO GRAAL - MANUSCRITO DO SÉCULO XIII",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_divina_parusia_olimpio_neves_goncalves": {
+      "titulo": "A Divina Parusia",
+      "autor": "Olímpio Neves Gonçalves",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_doutrina_secreta_18_03_2013": {
+      "titulo": "A Doutrina Secreta 18 03 2013",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_doutrina_secreta_sintese": {
+      "titulo": "A Doutrina Secreta: síntese",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_escada_de_jaco": {
+      "titulo": "A ESCADA DE JACO",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_geometria_sagrada": {
+      "titulo": "A Geometria Sagrada",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_heranca_do_simbolismo_hermetico_na_maconaria_lua_wanzeller": {
+      "titulo": "A Herança do Simbolismo Hermético na Maçonaria",
+      "autor": "Luã Wanzeller",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "titulo": "A história da mitologia para quem tem pressa",
+      "autor": "Mark Daniels",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood": {
+      "titulo": "A historia da Vida e da Epoca de Jacques De Molay",
+      "autor": "H L Haywood",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_historia_dos_judeus_simon_schama": {
+      "titulo": "A História dos Judeus",
+      "autor": "Simon Schama",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_historia_dos_ritos_maconicos_praticados_no_brasil": {
+      "titulo": "A História dos Ritos Maçônicos Praticados no Brasil",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_influencia_da_biblia_na_maconaria_marcio_gomes": {
+      "titulo": "A INFLUÊNCIA DA BÍBLIA NA MAÇONARIA",
+      "autor": "Márcio Gomes",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_iniciacao_de_jesus": {
+      "titulo": "A Iniciação de Jesus",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_linhagem_do_santo_graal_laurence_gardner": {
+      "titulo": "A linhagem do Santo Graal",
+      "autor": "Laurence Gardner",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria": {
+      "titulo": "A Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_brasileira_na_decada_da_abolicao_e_da_republica": {
+      "titulo": "A Maconaria Brasileira na Decada da Abolicao e da Republica",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_durante_as_ditaduras": {
+      "titulo": "A Maçonaria Durante as Ditaduras",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_e_os_jesuitas": {
+      "titulo": "A MAÇONARIA E OS JESUÍTAS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_em_portugal": {
+      "titulo": "A MAÇONARIA EM PORTUGAL",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_invisivel_ricardo_de_la_cierva": {
+      "titulo": "A Maçonaria Invisível",
+      "autor": "Ricardo de la Cierva",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_na_historia": {
+      "titulo": "A Maçonaria na História",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_maconaria_no_centenario_1822_1922": {
+      "titulo": "A Maçonaria no Centenário 1822 - 1922",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_magia_da_maconaria_arthur_powell": {
+      "titulo": "A Magia da Maçonaria",
+      "autor": "Arthur Powell",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_mais_antiga_ata_maconica": {
+      "titulo": "A mais antiga ata maconica",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_musica_maconica_de_mozart_sca": {
+      "titulo": "A Música Maçônica de Mozart",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_noite_de_sao_bartolomeu_j_w_rochester": {
+      "titulo": "A NOITE DE SAO BARTOLOMEU",
+      "autor": "J W ROCHESTER",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_ordem_dos_pobres_cavaleiros_de_cristo_e_do_templo_de_salomao_amauri_antonio_da_costa": {
+      "titulo": "A Ordem dos Pobres Cavaleiros de Cristo e do Templo de Salomão",
+      "autor": "Amauri Antonio da Costa",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_raca_divina_o_livro_da_saga_humana_vol_i_mikael_lenyer": {
+      "titulo": "A Raça Divina - O Livro da Saga Humana - Vol I",
+      "autor": "Mikael Lenyer",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_retorica_em_aristoteles_marcos_aurelio_de_lima": {
+      "titulo": "A Retorica em Aristoteles",
+      "autor": "Marcos Aurélio de Lima",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_revelacao_dos_templarios_lynn_picknett": {
+      "titulo": "A Revelação dos Templários",
+      "autor": "Lynn Picknett",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_sabedoria_dos_mitos_gregos_ferry_luc": {
+      "titulo": "A Sabedoria dos Mitos Gregos",
+      "autor": "Ferry, Luc",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_santissima_trinosofia": {
+      "titulo": "A Santissima Trinosofia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_sintese_da_doutrina_secreta_blavatsky": {
+      "titulo": "A Sintese da Doutrina Secreta",
+      "autor": "Helena P. Blavatsky",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_sociedade_dos_templarios_lourivaldo_p_bacan": {
+      "titulo": "A Sociedade dos Templários",
+      "autor": "Lourivaldo P Baçan",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_sociedade_feudal_marc_bloch_1": {
+      "titulo": "A sociedade feudal",
+      "autor": "Marc Bloch",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan": {
+      "titulo": "A Sociedade Secreta dos Templários",
+      "autor": "Lourivaldo Perez Baçan",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_tradicao_hermetica_julius_evola": {
+      "titulo": "A Tradição Hermética",
+      "autor": "Julius Evola",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_verdade_sufocada_carlos_alberto_brilhante_ustra": {
+      "titulo": "A Verdade Sufocada",
+      "autor": "Carlos Alberto Brilhante Ustra",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_vida_de_jacques_demolay": {
+      "titulo": "A vida de Jacques Demolay",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_vida_e_os_ensinamentos_de_thoth_hermes_trismegisto": {
+      "titulo": "A Vida e os Ensinamentos de Thoth",
+      "autor": "Hermes Trismegisto",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_vida_mistica_de_jesus": {
+      "titulo": "A Vida Mística de Jesus",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "a_vida_mistica_e_oculta_de_jesus": {
+      "titulo": "A Vida Mistica e Oculta de Jesus",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "abaixo_as_verdades_sagradas_harold_bloom": {
+      "titulo": "Abaixo as Verdades Sagradas",
+      "autor": "Harold Bloom",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "abobada_celeste": {
+      "titulo": "Abóbada Celeste",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "abobada_celeste_no_templo_maconico": {
+      "titulo": "Abóbada Celeste no Templo Maçonico",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ainda_sobre_o_rito_ingles": {
+      "titulo": "Ainda sobre o Rito Ingles",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "alcorao": {
+      "titulo": "Alcorao",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "antiguos_ritos_misticos": {
+      "titulo": "Antiguos Ritos Misticos",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "aprendizado_maconico_rizzardo_da_camino": {
+      "titulo": "Aprendizado Maçônico",
+      "autor": "Rizzardo da Camino",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves": {
+      "titulo": "Aristóteles e São Tomás de Aquino (Diálogos)",
+      "autor": "Joaquim Dias Alves",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "aristoteles_em_90_minutos_paul_strathern": {
+      "titulo": "Aristoteles em 90 Minutos",
+      "autor": "Paul Strathern",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "arquetipos_do_zodiaco_kathleen_burt": {
+      "titulo": "Arquétipos do Zodíaco",
+      "autor": "Kathleen Burt",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines": {
+      "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_7_palavras": {
+      "titulo": "As 7 Palavras",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_chaves_de_enoch_2": {
+      "titulo": "As Chaves de Enoch-2",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_chaves_de_salomao": {
+      "titulo": "AS CHAVES DE SALOMÃO",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_claviculas_salomao_mathers": {
+      "titulo": "As Claviculas Salomao Mathers",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_dez_sociedades_mais_influentes_da_historia": {
+      "titulo": "AS DEZ SOCIEDADES MAIS INFLUENTES DA HISTORIA",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_doutrinas_secretas_de_jesus_h_spencer_lewis": {
+      "titulo": "AS DOUTRINAS SECRETAS DE JESUS",
+      "autor": "H Spencer Lewis",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_escolas_de_misterios_clara_codd": {
+      "titulo": "As Escolas de Mistérios",
+      "autor": "Clara Codd",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_lagrimas_do_papa": {
+      "titulo": "AS LÁGRIMAS DO PAPA",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_linguagens_da_experiencia_religiosa": {
+      "titulo": "As Linguagens da Experiencia Religiosa",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "as_origens_do_reaa_rito_escoces_antigo_e_aceito_jose_castellani": {
+      "titulo": "As Origens do REAA - Rito Escocês Antigo e Aceito",
+      "autor": "José Castellani",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "astrologia_cabalistica_rav_philip_s_berg": {
+      "titulo": "Astrologia Cabalística",
+      "autor": "Rav Philip S Berg",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ata_hermetismo_pitagorismo_e_platonismo": {
+      "titulo": "Ata Hermetismo, Pitagorismo e Platonismo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "atos_de_salomao": {
+      "titulo": "Atos de Salomão",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "biblia_de_jerusalem_editora_paulus": {
+      "titulo": "Biblia de Jerusalém - Editora Paulus",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "biblia_e_misterios": {
+      "titulo": "Biblia e Misterios",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "biblioteca_de_alexandria_derek_adie_flower": {
+      "titulo": "Biblioteca de Alexandria-Derek Adie Flower",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "boletim_gob_1890": {
+      "titulo": "Boletim GOB 1890",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "breviario_maconico_rizzardo_da_camino": {
+      "titulo": "Breviário Maçônico",
+      "autor": "Rizzardo da Camino",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "breviario_rizzardo_da_camino": {
+      "titulo": "Breviário Maçônico",
+      "autor": "Rizzardo da Camino",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "breviario_seculo_xxi": {
+      "titulo": "Breviário Maçônico",
+      "autor": "Kennyo Ismail",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "bula_clemente_xii": {
+      "titulo": "BULA CLEMENTE XII",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz": {
+      "titulo": "Cabala - A Tradição Esotérica do Ocidente",
+      "autor": "F V Lorenz",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cabala_e_a_maconaria_curso_mm_diplomados": {
+      "titulo": "Cabala e a Maçonaria - Curso MM diplomados",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cabala_mistica": {
+      "titulo": "Cabala Mistica",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cabala_para_o_estudante_michael_laitman": {
+      "titulo": "Cabala para o Estudante",
+      "autor": "Michael Laitman",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "catedrais_goticas": {
+      "titulo": "Catedrais Góticas",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cavaleiros_templarios": {
+      "titulo": "CAVALEIROS TEMPLARIOS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "charles_evaldo_boller_g01_do_templo_e_seu_teto_no_reaa": {
+      "titulo": "Charles Evaldo Boller G01 do Templo e seu Teto no REAA",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "combate_ao_clericalismo": {
+      "titulo": "COMBATE AO CLERICALISMO",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "como_as_democracias_morrem_steven_levitsky": {
+      "titulo": "Como as Democracias Morrem",
+      "autor": "Steven Levitsky",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "conspiracoes_sobre_templarios_e_macons_michel_haag": {
+      "titulo": "Conspirações sobre Templarios e Maçons-Michel Haag",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "constituicao_da_confederacao_maconaria_portugueza": {
+      "titulo": "CONSTITUIÇÃO DA CONFEDERAÇÃO MAÇONARIA PORTUGUEZA",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cores_na_maconaria": {
+      "titulo": "Cores na Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus": {
+      "titulo": "Corpus Hermeticum: a Tábua da Esmeralda",
+      "autor": "Hermes Trismegistus",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "corpus_hermeticum_versao_1": {
+      "titulo": "Corpus Hermeticum - versão 1",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "cristianismo_e_mitraismo": {
+      "titulo": "Cristianismo e Mitraísmo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "curso_de_filosofia_oculta_eliphas_levi": {
+      "titulo": "Curso de filosofia oculta",
+      "autor": "Eliphas Levi",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "de_gutenberg_a_diderot_peter_burke": {
+      "titulo": "De Gutenberg a Diderot",
+      "autor": "Peter Burke",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "de_profecia_e_inquisicao_padre_antonio_vieira": {
+      "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "de_profecia_e_inquisicao_padre_antonio_vieira_2": {
+      "titulo": "DE PROFECIA E INQUISIÇÃO Padre Antônio Vieira",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "decisoes_sabias_para_viver_os_sonhos_de_deus": {
+      "titulo": "DECISÕES SABIAS PARA VIVER OS SONHOS DE DEUS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "desaparicoes_misteriosas_o_cosmo_observa_nos": {
+      "titulo": "DESAPARIÇÕES MISTERIOSAS - O COSMO OBSERVA-NOS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "desmistificando_a_maconaria": {
+      "titulo": "Desmistificando a Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "diccionario_breve_de_la_masoneria_biblioteca_freemasonry": {
+      "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dicionario_cultural_da_biblia": {
+      "titulo": "Dicionário Cultural da Bíblia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dicionario_de_simbolos_esotericos": {
+      "titulo": "Dicionario de Símbolos Esotericos",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dicionario_maconico": {
+      "titulo": "dicionário maçônico",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dicionario_maconico_1": {
+      "titulo": "Dicionário Maçônico-1",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dicionario_maconico_completo": {
+      "titulo": "Dicionario Maconico Completo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "do_templo_aos_jesuitas_macons_e_piratas": {
+      "titulo": "DO TEMPLO AOS JESUÍTAS MAÇONS E PIRATAS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dogma_e_ritual_de_alta_magia_eliphas_levi": {
+      "titulo": "Dogma e Ritual de Alta Magia",
+      "autor": "Eliphas Levi",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dogma_ritual_alta_magia_eliphas_levi_zahed": {
+      "titulo": "dogma-ritual-alta-magia-Eliphas Levi Zahed",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "dos_faraos_a_fisica_quantica_ricardo_di_bernardi": {
+      "titulo": "Dos Faraos a Fisica Quantica",
+      "autor": "Ricardo Di Bernardi",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "eliphas_levi_dogma_e_ritual_da_alta_magia": {
+      "titulo": "eliphas levi dogma e ritual da alta magia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "enciclopedia_de_fatos_da_biblia": {
+      "titulo": "Enciclopédia de Fatos da Bíblia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "energia_ao_quadrado_pam_grout": {
+      "titulo": "Energia ao Quadrado",
+      "autor": "Pam Grout",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "escolas_do_pensamento_maconico_bondarik": {
+      "titulo": "Escolas do Pensamento Maçônico",
+      "autor": "Bondarik",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "estudos_a_simbologia_do_galo_roberto_lico": {
+      "titulo": "Estudos - A Simbologia do Galo",
+      "autor": "Roberto Lico",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "experiencias_psiquicas_alem_da_cortina_de_ferro_sheila_ostrander": {
+      "titulo": "Experiencias Psiquicas além da cortina de ferro",
+      "autor": "Sheila Ostrander",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "extraterrestres": {
+      "titulo": "Extraterrestres",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "fernando_pessoa_e_a_maconaria_roberto_aguilar_silva": {
+      "titulo": "Fernando Pessoa e a Maçonaria",
+      "autor": "Roberto Aguilar Silva",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro": {
+      "titulo": "Fibonacci - série de fibonacci e o número de ouro",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "filosofia_quantica_marcos_aurelio_de_oliveira_ramos": {
+      "titulo": "FILOSOFIA QUÂNTICA Marcos Aurélio de Oliveira Ramos",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "g1_141_as_cruzadas_os_templarios_e_a_maconaria": {
+      "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "gauderio": {
+      "titulo": "Gauderio",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "geometria_sagrada": {
+      "titulo": "Geometria Sagrada",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "geometria_sagrada_2": {
+      "titulo": "geometria sagrada",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "geometria_sagrada_nigel_pennick": {
+      "titulo": "Geometria Sagrada",
+      "autor": "Nigel Pennick",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "giordano_bruno_e_a_tradicao_hermetica_frances_a_yates": {
+      "titulo": "Giordano Bruno e a Tradicao Hermetica - Frances A Yates",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "gnose_philip_gardner": {
+      "titulo": "Gnose",
+      "autor": "Philip Gardner",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "grau_de_aprendiz_e_seus_misterios_jorge_adoum": {
+      "titulo": "Grau de aprendiz e seus mistérios-Jorge Adoum",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "guia_aprendiz_macom_ir_bruno_carraveta": {
+      "titulo": "Guia Aprendiz Maçom",
+      "autor": "Bruno Carraveta",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "guia_dos_altos_graus_jsm_ward": {
+      "titulo": "Guia dos Altos Graus",
+      "autor": "JSM Ward",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "hermes_trimegisto_charles_vega_parucker": {
+      "titulo": "Hermes Trimegisto",
+      "autor": "Charles Vega Parucker",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "hermes_trismegisto": {
+      "titulo": "Hermes Trismegisto",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "hermetismo_e_maconaria_doutrina_historia_atualidade": {
+      "titulo": "Hermetismo e Maçonaria-Doutrina História Atualidade",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "hierarquia_dos_conspiradores_o_comite_dos": {
+      "titulo": "HIERARQUIA DOS CONSPIRADORES - O COMITÊ DOS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historia_da_maconaria_aulas_1_a_12": {
+      "titulo": "HISTÓRIA DA MAÇONARIA Aulas 1 a 12",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historia_da_maconaria_das_origens_corporativas_a_maconaria_moderna": {
+      "titulo": "Historia da Maconaria - Das Origens Corporativas a Maconaria Moderna",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historia_da_magia_eliphas_levi": {
+      "titulo": "História da Magia",
+      "autor": "Eliphas Levi",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "titulo": "historia da mitologia para quem tem pressa",
+      "autor": "Mark Daniels",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historia_dos_hebreus_flavio_josefo": {
+      "titulo": "História dos Hebreus",
+      "autor": "Flávio Josefo",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historia_nat_geo_ramses_ii": {
+      "titulo": "História Nat Geo: Ramsés II",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "historias_e_misteios_dos_templarios": {
+      "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "huze": {
+      "titulo": "Huzé",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "influencias_do_antigo_egito_na_maconaria_2021": {
+      "titulo": "Influências do Antigo Egito na Maçonaria - 2021",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "interpretacao_esoterica_de_mateus_capitulos_1_a_7": {
+      "titulo": "INTERPRETACAO ESOTERICA DE MATEUS - Capitulos 1 a 7",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "introducao_a_ciencia_sagrada_modulo_iii": {
+      "titulo": "INTRODUÇÃO À CIÊNCIA SAGRADA -Módulo III",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "introducao_a_simbologia_rosacruz_amorc": {
+      "titulo": "Introducao a Simbologia-Rosacruz AMORC",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "jacques_demolay_a_vida_de_jacques_demolay": {
+      "titulo": "Jacques Demolay - A vida de Jacques Demolay",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "jesus_o_divino_mestre_albert_paul_dahoui": {
+      "titulo": "Jesus o Divino Mestre",
+      "autor": "Albert Paul Dahoui",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "landmarks": {
+      "titulo": "Landmarks",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "landmarques_vanildo_de_senna": {
+      "titulo": "Landmarques",
+      "autor": "Vanildo de Senna",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "liberdade_de_pensar_estudos_a_luz_do_rito_moderno": {
+      "titulo": "Liberdade de Pensar Estudos à Luz do Rito Moderno",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno": {
+      "titulo": "Liberdade, Igualdade e Fraternidade Estudos à Luz do Rito Moderno",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "livro_de_ouro_dos_mantras_otavio_leal": {
+      "titulo": "Livro de Ouro dos Mantras",
+      "autor": "Otávio Leal",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "livro_melquisedec": {
+      "titulo": "livro melquisedec",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "luz_martinista": {
+      "titulo": "Luz Martinista",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "lvr_quadrivium_john_martineau": {
+      "titulo": "LVR, Quadrivium, John Martineau",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_100_instrucoes_de_aprendiz": {
+      "titulo": "Maçonaria - 100 instruções de Aprendiz",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_brasileira_a_historia_ocultada": {
+      "titulo": "Maçonaria Brasileira - A história ocultada",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_completa": {
+      "titulo": "Maçonaria Completa",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_e_abolicao_em_s_paulo_renata_ribeiro_francisco": {
+      "titulo": "Maçonaria e Abolição em S Paulo",
+      "autor": "Renata Ribeiro Francisco",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_e_astrologia_jose_castellani": {
+      "titulo": "Maçonaria e Astrologia",
+      "autor": "José Castellani",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_e_expressoes_latinas": {
+      "titulo": "MAÇONARIA E EXPRESSOES LATINAS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_e_simbologia": {
+      "titulo": "Maconaria e Simbologia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_laurence_gardner_a_linhagem_do_santo_graal": {
+      "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_perspectivas_para_o_futuro_cmsb_2020": {
+      "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_pos_pandemia": {
+      "titulo": "Maconaria Pos Pandemia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_revelada_os_segredos_do_aprendiz_macom": {
+      "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "maconaria_simbolos_e_arquetipos": {
+      "titulo": "Maçonaria Símbolos e Arquétipos",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "macons_do_passado_ejvandro_buriti": {
+      "titulo": "Maçons do Passado",
+      "autor": "Ejvandro Buriti",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "macons_que_leem": {
+      "titulo": "Maçons que Leem",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "manual_do_aprendiz_macom": {
+      "titulo": "Manual do Aprendiz Maçom",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "manual_do_mestre_franco_macom_aldo_lavagnini": {
+      "titulo": "Manual do Mestre Franco Maçom Aldo Lavagnini",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "manual_pratica_ritual_2013": {
+      "titulo": "Manual Pratica Ritual 2013",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "mecanica_quantica_resumo_de_conceitos": {
+      "titulo": "Mecanica quantica - resumo de conceitos",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "medico_de_homens_e_almas_taylor_caldwell": {
+      "titulo": "Medico de Homens e Almas",
+      "autor": "Taylor Caldwell",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "mestre_cerimonias_jun_09": {
+      "titulo": "Mestre Cerimonias JUN-09",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "misterios_desvelados_saint_germain": {
+      "titulo": "Mistérios Desvelados",
+      "autor": "Saint Germain",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "moral_e_dogma": {
+      "titulo": "Moral e Dogma",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "numeros_a_decada_pitagorica": {
+      "titulo": "NÚMEROS - A-Década-Pitagórica",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "numeros_a_mistica_filosofica_dos_numeros_louis_claude_de_saint_martin": {
+      "titulo": "NÚMEROS - A Mística Filosófica dos Números",
+      "autor": "Louis Claude de Saint Martin",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_caibalion": {
+      "titulo": "O Caibalion",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_caibalion_tres_iniciados": {
+      "titulo": "O Caibalion",
+      "autor": "Tres Iniciados",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_caminho_dos_essenios_a_vida_oculta_de_jesus": {
+      "titulo": "O Caminho dos Essênios - A Vida Oculta de Jesus",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_codigo_da_biblia_michael_drosnin": {
+      "titulo": "O Código da Bíblia",
+      "autor": "Michael Drosnin",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_codigo_de_salomao_richard_d_weber": {
+      "titulo": "O Codigo de Salomao",
+      "autor": "Richard D Weber",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_conhecimento_de_deus_j_i_packer": {
+      "titulo": "O Conhecimento de Deus-J I Packer",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_erro_de_descartes_antonio_r_damasio": {
+      "titulo": "O Erro de Descartes",
+      "autor": "Antonio R Damasio",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_fim_do_templo_esquin_de_floyrac_ze_rodrix": {
+      "titulo": "O Fim do Templo - Esquin de Floyrac",
+      "autor": "Ze Rodrix",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_grande_livro_da_lei": {
+      "titulo": "O Grande Livro da Lei",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_grande_livro_da_maconaria_claudio_blanc": {
+      "titulo": "O Grande Livro da Maçonaria",
+      "autor": "Claudio Blanc",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_homem_e_seus_simbolos_carl_gustav_jung": {
+      "titulo": "O Homem e Seus Simbolos",
+      "autor": "Carl Gustav Jung",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_ideal_iniciatico_oswald_wirth": {
+      "titulo": "O Ideal Iniciático",
+      "autor": "Oswald Wirth",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_legado_dos_templarios_steve_berry": {
+      "titulo": "O Legado dos Templários",
+      "autor": "Steve Berry",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_da_mitologia_thomas_bulfinch": {
+      "titulo": "O livro da mitologia",
+      "autor": "Thomas Bulfinch",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_da_sabedoria": {
+      "titulo": "O Livro da Sabedoria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_das_religioes_jostein_gaarder": {
+      "titulo": "O Livro das Religioes",
+      "autor": "Jostein Gaarder",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_de_enoque": {
+      "titulo": "O Livro de Enoque",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_de_enoque_1": {
+      "titulo": "O Livro de Enoque (1)",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_de_ouro_da_mitologia": {
+      "titulo": "O Livro de Ouro da Mitologia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_de_urantia": {
+      "titulo": "O Livro de Urântia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_de_urantia_urantia_foundation": {
+      "titulo": "O Livro de Urantia",
+      "autor": "Urantia Foundation",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_dos_mortos_e_a_justica_divina_lucio_j_patrocinio_filho": {
+      "titulo": "O Livro dos Mortos e a Justiça Divina",
+      "autor": "Lúcio J Patrocínio Filho",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_dos_sabios_eliphas_levi": {
+      "titulo": "O Livro dos Sabios",
+      "autor": "Eliphas Levi",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_ilustrado_dos_simbolos_completo": {
+      "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_ilustrado_dos_simbolos_ii_trecho": {
+      "titulo": "O Livro Ilustrado dos Símbolos II (trecho)",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_livro_secreto_da_maconaria_lourivaldo_pere": {
+      "titulo": "O Livro Secreto da Maçonaria",
+      "autor": "Lourivaldo Pere",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_malho_e_o_cinzel": {
+      "titulo": "O malho e o cinzel",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_manuscrito_halliwell_ou_poema_regius": {
+      "titulo": "O Manuscrito Halliwell ou Poema Regius",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_mestre_dos_mestres_augusto_cury": {
+      "titulo": "O Mestre Dos Mestres",
+      "autor": "Augusto Cury",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_monge_e_o_veneravel_christian_jacq": {
+      "titulo": "O Monge e o Venerável",
+      "autor": "Christian Jacq",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_mundo_de_sofia_jostein_gaarder": {
+      "titulo": "O Mundo de Sofia",
+      "autor": "Jostein Gaarder",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_nome_de_deus_adonai_roberto_aguilar_silva": {
+      "titulo": "O Nome de Deus - Adonai",
+      "autor": "Roberto Aguilar Silva",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_poder_da_cabala": {
+      "titulo": "O Poder da Cabala",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_ponto_dentro_do_circulo_blog_sobre_maconaria_filosofia_historia_sociedade_e_cultura": {
+      "titulo": "O Ponto Dentro do Círculo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_portico_e_a_camara_do_meio": {
+      "titulo": "O Pórtico e a Câmara do Meio",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_que_e_a_maconaria": {
+      "titulo": "O que é a Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto": {
+      "titulo": "O Que Voce Precisa Saber Sobre Maconaria Elias Mansur Neto",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_reaa_origens_historicas": {
+      "titulo": "O REAA: origens históricas",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_simbolismo_hermetico_e_sua_relacao_com_a_alquimia_e_franco_maconaria_oswald_wirth": {
+      "titulo": "O Simbolismo Hermetico e sua Relacao com a Alquimia e Franco Maconaria",
+      "autor": "Oswald Wirth",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_taro_cabalistico_robert_wang": {
+      "titulo": "O Tarô Cabalístico",
+      "autor": "Robert Wang",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "o_trivium_biblioteca_freemasonry": {
+      "titulo": "O Trivium - Biblioteca Freemasonry",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ordem_sobre_o_caos_kennyo_ismail": {
+      "titulo": "Ordem sobre o Caos",
+      "autor": "Kennyo Ismail",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "origens_da_maconaria_basilio_thome_de_freitas_junior": {
+      "titulo": "Origens da Maçonaria",
+      "autor": "Basilio Thomé de Freitas Junior",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "origens_lendarias_da_maconaria_inglesa": {
+      "titulo": "Origens Lendarias da Maconaria Inglesa",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_100_maiores_misterios_do_mundo": {
+      "titulo": "OS 100 MAIORES MISTÉRIOS DO MUNDO",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_arcanos_maiores_do_taro_g_o_mebes": {
+      "titulo": "Os Arcanos Maiores do Taro-G O Mebes",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_chakras_ayrton_rodrigues": {
+      "titulo": "Os Chakras",
+      "autor": "Ayrton Rodrigues",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_filhos_do_graal": {
+      "titulo": "OS FILHOS DO GRAAL",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_grandes_iniciados_edouard_schure": {
+      "titulo": "Os Grandes Iniciados",
+      "autor": "Édouard Schuré",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_instrumentos_de_trabalho_do_aprediz": {
+      "titulo": "Os Instrumentos de Trabalho do Aprediz",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_misterios_dos_antigos_maias_samael_aun_weor": {
+      "titulo": "OS MISTÉRIOS DOS ANTIGOS MAIAS",
+      "autor": "SAMAEL AUN WEOR",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_misterios_maiores": {
+      "titulo": "Os Misterios Maiores",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_misterios_rosacruzes_max_heindel": {
+      "titulo": "Os Mistérios Rosacruzes",
+      "autor": "Max Heindel",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_misterios_rosacruzes_max_heindel_2": {
+      "titulo": "Os Misterios Rosacruzes",
+      "autor": "Max Heindel",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": {
+      "titulo": "Os pilares de Tubalcaim",
+      "autor": "Michael Howard e Nigel Jackson",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao": {
+      "titulo": "OS POBRES SOLDADOS DE JESUS CRISTO E DO TEMPLO DE SALOMÃO",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_povos_da_biblia_joseph_rhymer": {
+      "titulo": "Os Povos da Bíblia",
+      "autor": "Joseph Rhymer",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_principios_das_leis_maconicas": {
+      "titulo": "Os Principios das Leis Maçónicas",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_principios_das_leis_maconicas_vol1_albert_g_mackey": {
+      "titulo": "Os Principios das Leis Maçónicas Vol1",
+      "autor": "Albert G. Mackey",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_principios_das_leis_maconicas_vol_2_albert_g_mackey": {
+      "titulo": "Os Princípios das Leis Maçônicas Vol 2",
+      "autor": "Albert G. Mackey",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_segredos_da_mente_milionaria": {
+      "titulo": "Os Segredos da Mente Milionária",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_segredos_do_templo_de_salomao": {
+      "titulo": "Os Segredos do Templo de Salomão",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_segredos_perdidos_da_arca_sagrada_biblioteca_freemasonry": {
+      "titulo": "Os Segredos Perdidos da Arca Sagrada - Biblioteca Freemasonry",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_e_a_arca_da_alianca_graham_phillips": {
+      "titulo": "Os Templários e a Arca da Aliança",
+      "autor": "Graham Phillips",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_e_a_sinarquia_olimpio_goncalves": {
+      "titulo": "Os Templarios e a Sinarquia",
+      "autor": "Olimpio Gonçalves",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_e_o_pergaminho_de_chinon_encontrado_nos_arquivos_secretos_do_vaticano_barbara_frale": {
+      "titulo": "Os Templarios e o Pergaminho de Chinon Encontrado nos Arquivos Secretos do Vaticano",
+      "autor": "Barbara Frale",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_juan_de_garten": {
+      "titulo": "Os Templários",
+      "autor": "Juan de Garten",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_michael_lamy": {
+      "titulo": "Os Templarios",
+      "autor": "Michael Lamy",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_michael_lamy_2": {
+      "titulo": "Os Templários",
+      "autor": "Michael Lamy",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_na_formacao_de_portugal": {
+      "titulo": "OS TEMPLARIOS NA FORMAÇÃO DE PORTUGAL",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templarios_na_formacao_de_portugal_2018": {
+      "titulo": "Os Templarios na formação de Portugal - 2018",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "os_templos_de_adoracao_do_gadu_05_06_2020": {
+      "titulo": "Os Templos de Adoração do GADU - 05.06.2020",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "painel_do_grau_de_aprendiz_completo_booz": {
+      "titulo": "PAINEL DO GRAU DE APRENDIZ - COMPLETO booz",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "particulas_de_deus": {
+      "titulo": "Partículas de Deus",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "pequeno_tratado_das_grandes_virtudes": {
+      "titulo": "PEQUENO TRATADO DAS GRANDES VIRTUDES",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "pistis_sophia_traducao_do_texto_original": {
+      "titulo": "PISTIS SOPHIA -traducao do texto original",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "pitagoras_ciencia_e_magia_na_antiga_grecia": {
+      "titulo": "Pitagoras - Ciencia e Magia na Antiga Grecia",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "platao_em_90_minutos_paul_strathern": {
+      "titulo": "Platão em 90 Minutos",
+      "autor": "Paul Strathern",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "poesias_maconicas_vol_i": {
+      "titulo": "Poesias Maçônicas Vol I",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "por_dentro_do_priorado_de_siao_robert_howells": {
+      "titulo": "Por Dentro do Priorado de Sião",
+      "autor": "Robert Howells",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "potencias_e_ritos_no_brasil": {
+      "titulo": "Potencias e Ritos no Brasil",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "potencias_e_ritos_no_brasil_irmao_samer": {
+      "titulo": "Potencias e Ritos no Brasil -Irmão Samer",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "pre_historia_da_maconaria": {
+      "titulo": "Pré-História da Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "profanos_e_iniciados_huberto_rohden": {
+      "titulo": "Profanos e Iniciados",
+      "autor": "Huberto Rohden",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "projetos_secretos": {
+      "titulo": "PROJETOS SECRETOS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "proverbios_e_pensamentos": {
+      "titulo": "PROVÉRBIOS E PENSAMENTOS",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "quadrivium": {
+      "titulo": "Quadrivium",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "reaa_material_didatico_2021": {
+      "titulo": "REAA Material didático 2021",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "realidade_oculta": {
+      "titulo": "REALIDADE OCULTA",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "regulador_do_reaa_grande_oriente_do_passeio_1858": {
+      "titulo": "Regulador do REAA - Grande Oriente do Passeio - 1858",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "rer_a_joia_preciosa_da_maconaria": {
+      "titulo": "RER - A Jóia Preciosa da Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "rito_escoces_antigo_e_aceito": {
+      "titulo": "Rito+escocês+antigo+e+aceito",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "rito_escoces_antigo_e_aceito_graus_simbolicos_liturgia_ritualistica_genuinidade_enxertos_supressoes_crendices": {
+      "titulo": "Rito Escoces Antigo e Aceito Graus Simbolicos Liturgia Ritualistica Genuinidade Enxertos Supressoes Crendices",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "rito_frances_ou_moderno_historia_reflexoes_e_desenvolvimento_jose_filardo": {
+      "titulo": "Rito Francês ou Moderno História, reflexões e desenvolvimento",
+      "autor": "José Filardo",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ritos_estranhos_no_mundo_jacques_marcireau": {
+      "titulo": "RITOS ESTRANHOS NO MUNDO",
+      "autor": "JACQUES MARCIREAU",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ritos_maconicos_praticados_no_brasil_e_suas_diferencas": {
+      "titulo": "Ritos Maçônicos Praticados no Brasil e suas Diferenças",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": {
+      "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil",
+      "autor": "Fábio M Paulino",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ritual_de_emulacao_o_grau_de_mestre_macom": {
+      "titulo": "Ritual de Emulação O Grau de Mestre Maçom",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "ritual_de_emulacao_um_sistema_ritualistico_ingles": {
+      "titulo": "Ritual de Emulação - um sistema ritualistico inglês",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "salomao_o_homem_mais_rico_que_ja_existiu_steven_k_scott": {
+      "titulo": "Salomão o homem mais rico que já existiu-Steven K Scott",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sao_joao_padroeiro_da_maconaria": {
+      "titulo": "São Joao-Padroeiro da Maçonaria",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari": {
+      "titulo": "Sapiens: uma breve história da humanidade",
+      "autor": "Yuval Noah Harari",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "seitas_heresias_raimundo_de_oliveira": {
+      "titulo": "Seitas & Heresias",
+      "autor": "Raimundo de Oliveira",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "simbolismo_do_primeiro_grau_rizzardo_da_camino": {
+      "titulo": "SIMBOLISMO DO PRIMEIRO GRAU",
+      "autor": "RIZZARDO DA CAMINO",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "simbolismo_numeros_boanerges_b_castro": {
+      "titulo": "Simbolismo Numeros",
+      "autor": "Boanerges B Castro",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "simbologia_dos_numeros_no_grau_de_aprendiz_macom": {
+      "titulo": "Simbologia dos Números no Grau de Aprendiz Maçom",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sinopse_do_grau_de_aprendiz_macom_carvalho": {
+      "titulo": "Sinopse do Grau de Aprendiz Maçom",
+      "autor": "Carvalho",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sistema_golden_dawn_2_0": {
+      "titulo": "Sistema Golden Dawn 2-0",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sobre_a_luz_da_cabala": {
+      "titulo": "Sobre a Luz da Cabala",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sociedades_secretas_os_illuminati": {
+      "titulo": "SOCIEDADES SECRETAS - OS ILLUMINATI",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sociedades_secretas_philip_gardiner": {
+      "titulo": "SOCIEDADES SECRETAS",
+      "autor": "Philip Gardiner",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "sociedades_secretas_sergio_pereira_couto": {
+      "titulo": "Sociedades Secretas",
+      "autor": "Sergio Pereira Couto",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "socrates_em_90_minutos_paul_strathern": {
+      "titulo": "Sócrates em 90 Minutos",
+      "autor": "Paul Strathern",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "solticios_x_loja_de_mesa": {
+      "titulo": "Solticios x Loja de mesa",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "statuta_et_ordinamenta_societatis_magistrorum_tapia_et_lignamiis": {
+      "titulo": "statuta et ordinamenta societatis magistrorum tapia et lignamiis",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "templarios_portugal_primeira_nacao_templaria_freddy_silva": {
+      "titulo": "Templários - Portugal, primeira Nação Templária",
+      "autor": "Freddy Silva",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "timeu_a_cosmologia_de_platao_oscar_t_matsuura": {
+      "titulo": "Timeu: a cosmologia de Platão",
+      "autor": "Oscar T Matsuura",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "tiradentes_macom": {
+      "titulo": "Tiradentes Maçom",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "tratado_da_reintegracao_dos_seres_martines_pasqually": {
+      "titulo": "Tratado da reintegração dos Seres",
+      "autor": "Martines Pasqually",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "trilogia_do_templo_i_joabem_construtor_do_templo": {
+      "titulo": "Trilogia do Templo I: Joabem, construtor do Templo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "trilogia_do_templo_ii_zorobabel_reconstruindo_o_templo": {
+      "titulo": "Trilogia do Templo II - Zorobabel Reconstruindo o Templo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo": {
+      "titulo": "Trilogia do Templo III - Esquin de Floyrac - O Fim do Templo",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira": {
+      "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum",
+      "autor": "David P de Lira",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "uma_visao_global_dos_33_graus_do_reaa": {
+      "titulo": "Uma Visao Global dos 33 Graus do REAA",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "vade_mecum_honoris_labor_versao_10_mar_2018": {
+      "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "voltaire_dicionario_filosofico_ridendo_castigat_mores": {
+      "titulo": "Dicionário Filosófico",
+      "autor": "Voltaire",
+      "ano": "",
+      "editora": "Ridendo Castigat Mores",
+      "local": ""
+    },
+    "washington_secreta_dos_illuminati_e_macons": {
+      "titulo": "Washington Secreta dos Illuminati e Maçons",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "zodiaco_arquetipos_dos_zodiacos": {
+      "titulo": "Zodíaco: arquétipos dos zodíacos",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "zohar": {
+      "titulo": "Zohar",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    }
+  }
+}

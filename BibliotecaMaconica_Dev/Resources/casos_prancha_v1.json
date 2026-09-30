@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia da prancha (Paridade/prancha_v1.json), gerados por Tools/prancha_referencia.py --atualizar sobre os casos do dossie. iOS e Android devem reproduzir cada resultado.",
+  "obras": {
+    "dic": {
+      "titulo": "Dicionário de Teste",
+      "autor": "Basilio Thomé de Freitas Junior",
+      "ano": "1999",
+      "editora": "Editora Maçônica",
+      "local": "São Paulo"
+    },
+    "instrucoes": {
+      "titulo": "Instruções de Teste",
+      "autor": "Rizzardo da Camino",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "copia": {
+      "titulo": "Cópia das Instruções",
+      "autor": "Rizzardo da Camino",
+      "ano": "",
+      "editora": "Madras",
+      "local": ""
+    },
+    "breviario_x": {
+      "titulo": "Breviário de Teste",
+      "autor": "Michael Howard e Nigel Jackson",
+      "ano": "2010",
+      "editora": "",
+      "local": "Londrina"
+    },
+    "livro2": {
+      "titulo": "O Livro Divergente",
+      "autor": "",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    },
+    "obra_com_ruido": {
+      "titulo": "Boletim com ruído de OCR",
+      "autor": "Voltaire",
+      "ano": "1890",
+      "editora": "",
+      "local": ""
+    },
+    "ruido": {
+      "titulo": "A maçonaria em ruído",
+      "autor": "Ferry, Luc",
+      "ano": "",
+      "editora": "",
+      "local": ""
+    }
+  },
+  "casos": [
+    {
+      "id": "escada_de_jaco",
+      "termo": "Escada de Jacó",
+      "fontes": [
+        {
+          "id": "dic:106:dic-p106-b1",
+          "obraId": "dic",
+          "tituloObra": "Dicionário de Teste",
+          "area": "dicionariosMaconicos",
+          "pagina": 106,
+          "texto": "ESCADA DE JACÓ. A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade. Outros autores a associam ao painel do Aprendiz.",
+          "rodape": ""
+        },
+        {
+          "id": "instrucoes:84:instrucoes-p84-b1",
+          "obraId": "instrucoes",
+          "tituloObra": "Instruções de Teste",
+          "area": "bibliotecaMaconica",
+          "pagina": 84,
+          "texto": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.",
+          "rodape": ""
+        },
+        {
+          "id": "breviario_x:185:03/07",
+          "obraId": "breviario_x",
+          "tituloObra": "Breviário de Teste",
+          "area": "breviarios",
+          "pagina": 185,
+          "data": "03/07",
+          "texto": "A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo. A caridade completa a subida.",
+          "rodape": ""
+        },
+        {
+          "id": "livro2:12:livro2-p12-b1",
+          "obraId": "livro2",
+          "tituloObra": "Livro Divergente",
+          "area": "bibliotecaMaconica",
+          "pagina": 12,
+          "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó; porém o painel mostra apenas três degraus principais, ligados à esperança e à caridade.",
+          "rodape": "12 Ver também a Escada de Jacó no painel."
+        },
+        {
+          "id": "instrucoes:47:instrucoes-p47-b1",
+          "obraId": "instrucoes",
+          "tituloObra": "Instruções de Teste",
+          "area": "bibliotecaMaconica",
+          "pagina": 47,
+          "texto": "49 49 10ª INSTRUÇÃO 10ª INSTRUÇÃO ESCADA DE JACÓ ESCADA DE JACÓ VM VM Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade, sempre com o maçom em busca da luz e do aperfeiçoamento moral.",
+          "rodape": ""
+        },
+        {
+          "id": "copia:47:copia-p47-b1",
+          "obraId": "copia",
+          "tituloObra": "Cópia das Instruções",
+          "area": "bibliotecaMaconica",
+          "pagina": 47,
+          "texto": "ESCADA DE JACÓ Degrau é definido como uma superfície plana, e a escada de Jacó une a terra ao céu pelos degraus da virtude, da esperança e da caridade, sempre com o maçom em busca da luz e do aperfeiçoamento moral.",
+          "rodape": ""
+        },
+        {
+          "id": "ruido:9:ruido-p9-b1",
+          "obraId": "ruido",
+          "tituloObra": "Livro com Ruído",
+          "area": "bibliotecaMaconica",
+          "pagina": 9,
+          "texto": "3\"-)&N&+( &   Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador. 49 49 VM VM A virtude sobe pela escada de Jacó rumo ao Oriente eterno da Loja.",
+          "rodape": ""
+        },
+        {
+          "id": "ocr:12:ocr-p12-b1",
+          "obraId": "obra_com_ruido",
+          "tituloObra": "Boletim com ruído de OCR",
+          "area": "bibliotecaMaconica",
+          "pagina": 12,
+          "texto": "A escada de Jacó aparece no pa1nel d0 grau c0m s1mbolos ^est'' e Loj|a ?mXl da 0rdem, segundo o Ir.•. Orador da sessão. A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada degrau pede esforço, estudo e perseverança.",
+          "rodape": ""
+        }
+      ],
+      "dossie": {
+        "definicoes": [
+          {
+            "texto": "A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.",
+            "fonte": "dic:106:dic-p106-b1"
+          }
+        ],
+        "resumo": [
+          {
+            "texto": "A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.",
+            "fonte": "breviario_x:185:03/07"
+          },
+          {
+            "texto": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.",
+            "fonte": "instrucoes:84:instrucoes-p84-b1"
+          },
+          {
+            "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó;",
+            "fonte": "livro2:12:livro2-p12-b1"
+          },
+          {
+            "texto": "Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador.",
+            "fonte": "ruido:9:ruido-p9-b1"
+          },
+          {
+            "texto": "A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada degrau pede esforço, estudo e perseverança.",
+            "fonte": "ocr:12:ocr-p12-b1"
+          }
+        ],
+        "divergencias": [
+          {
+            "texto": "Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó;",
+            "fonte": "livro2:12:livro2-p12-b1"
+          }
+        ],
+        "termosAssociados": [
+          {
+            "termo": "caridade",
+            "forma": "caridade",
+            "ocorrencias": 6,
+            "obras": 5
+          },
+          {
+            "termo": "degrau",
+            "forma": "degrau",
+            "ocorrencias": 6,
+            "obras": 5
+          },
+          {
+            "termo": "degraus",
+            "forma": "degraus",
+            "ocorrencias": 4,
+            "obras": 4
+          },
+          {
+            "termo": "esperanca",
+            "forma": "esperança",
+            "ocorrencias": 4,
+            "obras": 4
+          },
+          {
+            "termo": "liga",
+            "forma": "liga",
+            "ocorrencias": 4,
+            "obras": 2
+          },
+          {
+            "termo": "mundo",
+            "forma": "mundo",
+            "ocorrencias": 4,
+            "obras": 1
+          },
+          {
+            "termo": "terra",
+            "forma": "terra",
+            "ocorrencias": 4,
+            "obras": 3
+          },
+          {
+            "termo": "virtude",
+            "forma": "virtude",
+            "ocorrencias": 4,
+            "obras": 3
+          },
+          {
+            "termo": "aperfeicoamento",
+            "forma": "aperfeiçoamento",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "aprendiz",
+            "forma": "aprendiz",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "grau",
+            "forma": "grau",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "macom",
+            "forma": "maçom",
+            "ocorrencias": 3,
+            "obras": 3
+          },
+          {
+            "termo": "0rdem",
+            "forma": "0rdem",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "aparece",
+            "forma": "aparece",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "busca",
+            "forma": "busca",
+            "ocorrencias": 2,
+            "obras": 2
+          }
+        ]
+      },
+      "esperado": {
+        "titulo": "Prancha: Escada de Jacó",
+        "secoes": [
+          {
+            "titulo": "Introdução",
+            "paragrafos": [
+              "Esta prancha reúne o que 6 obra(s) do acervo dizem sobre Escada de Jacó, com os trechos citados no dossiê.",
+              "Em Dicionário de Teste, lê-se: “A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.” (FREITAS JUNIOR, 1999, p. 106)."
+            ]
+          },
+          {
+            "titulo": "Desenvolvimento",
+            "paragrafos": [
+              "Luc Ferry afirma: “Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador.” (FERRY, [s. d.], p. 9).",
+              "Michael Howard e Nigel Jackson afirmam: “A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.” (HOWARD; JACKSON, 2010, p. 185).",
+              "O texto de O Livro Divergente afirma: “Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó” (O LIVRO..., [s. d.], p. 12).",
+              "Rizzardo da Camino afirma: “Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.” (CAMINO, [s. d.], p. 84).",
+              "Voltaire afirma: “A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada degrau pede esforço, estudo e perseverança.” (VOLTAIRE, 1890, p. 12)."
+            ]
+          },
+          {
+            "titulo": "Pontos divergentes",
+            "paragrafos": [
+              "Há leitura diferente em O Livro Divergente: “Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó” (O LIVRO..., [s. d.], p. 12)."
+            ]
+          },
+          {
+            "titulo": "Conclusão",
+            "paragrafos": [
+              "Os textos consultados associam Escada de Jacó a caridade, degrau e degraus.",
+              "[Escreva aqui a sua conclusão e a aplicação prática do tema.]"
+            ]
+          },
+          {
+            "titulo": "Referências",
+            "paragrafos": [
+              "CAMINO, Rizzardo da. Instruções de Teste. [S. l.: s. n.], [s. d.].",
+              "FERRY, Luc. A maçonaria em ruído. [S. l.: s. n.], [s. d.].",
+              "FREITAS JUNIOR, Basilio Thomé de. Dicionário de Teste. São Paulo: Editora Maçônica, 1999.",
+              "HOWARD, Michael; JACKSON, Nigel. Breviário de Teste. Londrina: [s. n.], 2010.",
+              "O LIVRO Divergente. [S. l.: s. n.], [s. d.].",
+              "VOLTAIRE. Boletim com ruído de OCR. [S. l.: s. n.], 1890."
+            ]
+          }
+        ],
+        "comparacao": [
+          {
+            "quem": "Basilio Thomé de Freitas Junior",
+            "obras": [
+              "Dicionário de Teste"
+            ],
+            "trechos": [
+              "“A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.” (FREITAS JUNIOR, 1999, p. 106)"
+            ]
+          },
+          {
+            "quem": "Luc Ferry",
+            "obras": [
+              "A maçonaria em ruído"
+            ],
+            "trechos": [
+              "“Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador.” (FERRY, [s. d.], p. 9)"
+            ]
+          },
+          {
+            "quem": "Michael Howard e Nigel Jackson",
+            "obras": [
+              "Breviário de Teste"
+            ],
+            "trechos": [
+              "“A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.” (HOWARD; JACKSON, 2010, p. 185)"
+            ]
+          },
+          {
+            "quem": "O texto de O Livro Divergente",
+            "obras": [
+              "O Livro Divergente"
+            ],
+            "trechos": [
+              "“Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó” (O LIVRO..., [s. d.], p. 12)"
+            ]
+          },
+          {
+            "quem": "Rizzardo da Camino",
+            "obras": [
+              "Instruções de Teste"
+            ],
+            "trechos": [
+              "“Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.” (CAMINO, [s. d.], p. 84)"
+            ]
+          },
+          {
+            "quem": "Voltaire",
+            "obras": [
+              "Boletim com ruído de OCR"
+            ],
+            "trechos": [
+              "“A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada degrau pede esforço, estudo e perseverança.” (VOLTAIRE, 1890, p. 12)"
+            ]
+          }
+        ],
+        "referencias": [
+          "CAMINO, Rizzardo da. Instruções de Teste. [S. l.: s. n.], [s. d.].",
+          "FERRY, Luc. A maçonaria em ruído. [S. l.: s. n.], [s. d.].",
+          "FREITAS JUNIOR, Basilio Thomé de. Dicionário de Teste. São Paulo: Editora Maçônica, 1999.",
+          "HOWARD, Michael; JACKSON, Nigel. Breviário de Teste. Londrina: [s. n.], 2010.",
+          "O LIVRO Divergente. [S. l.: s. n.], [s. d.].",
+          "VOLTAIRE. Boletim com ruído de OCR. [S. l.: s. n.], 1890."
+        ],
+        "texto": "Prancha: Escada de Jacó\n\nIntrodução\n\nEsta prancha reúne o que 6 obra(s) do acervo dizem sobre Escada de Jacó, com os trechos citados no dossiê.\n\nEm Dicionário de Teste, lê-se: “A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.” (FREITAS JUNIOR, 1999, p. 106).\n\nDesenvolvimento\n\nLuc Ferry afirma: “Pois então, a Escada de Jacó é uma escada que liga o mundo terrestre ao mundo do Criador.” (FERRY, [s. d.], p. 9).\n\nMichael Howard e Nigel Jackson afirmam: “A Fé representa o primeiro degrau da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.” (HOWARD; JACKSON, 2010, p. 185).\n\nO texto de O Livro Divergente afirma: “Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó” (O LIVRO..., [s. d.], p. 12).\n\nRizzardo da Camino afirma: “Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a caridade.” (CAMINO, [s. d.], p. 84).\n\nVoltaire afirma: “A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada degrau pede esforço, estudo e perseverança.” (VOLTAIRE, 1890, p. 12).\n\nPontos divergentes\n\nHá leitura diferente em O Livro Divergente: “Erroneamente, é dito que cada grau do rito representa mais um degrau da Escada de Jacó” (O LIVRO..., [s. d.], p. 12).\n\nConclusão\n\nOs textos consultados associam Escada de Jacó a caridade, degrau e degraus.\n\n[Escreva aqui a sua conclusão e a aplicação prática do tema.]\n\nReferências\n\nCAMINO, Rizzardo da. Instruções de Teste. [S. l.: s. n.], [s. d.].\n\nFERRY, Luc. A maçonaria em ruído. [S. l.: s. n.], [s. d.].\n\nFREITAS JUNIOR, Basilio Thomé de. Dicionário de Teste. São Paulo: Editora Maçônica, 1999.\n\nHOWARD, Michael; JACKSON, Nigel. Breviário de Teste. Londrina: [s. n.], 2010.\n\nO LIVRO Divergente. [S. l.: s. n.], [s. d.].\n\nVOLTAIRE. Boletim com ruído de OCR. [S. l.: s. n.], 1890.\n"
+      }
+    },
+    {
+      "id": "sem_fontes",
+      "termo": "Termo inexistente",
+      "fontes": [],
+      "dossie": {
+        "definicoes": [],
+        "resumo": [],
+        "divergencias": [],
+        "termosAssociados": []
+      },
+      "esperado": {
+        "titulo": "Prancha: Termo inexistente",
+        "secoes": [
+          {
+            "titulo": "Introdução",
+            "paragrafos": [
+              "O dossiê não tem trechos citados sobre Termo inexistente."
+            ]
+          },
+          {
+            "titulo": "Conclusão",
+            "paragrafos": [
+              "[Escreva aqui a sua conclusão e a aplicação prática do tema.]"
+            ]
+          }
+        ],
+        "comparacao": [],
+        "referencias": [],
+        "texto": "Prancha: Termo inexistente\n\nIntrodução\n\nO dossiê não tem trechos citados sobre Termo inexistente.\n\nConclusão\n\n[Escreva aqui a sua conclusão e a aplicação prática do tema.]\n"
+      }
+    }
+  ],
+  "referencias": [
+    {
+      "obra": {
+        "titulo": "Dicionário de Teste",
+        "autor": "Basilio Thomé de Freitas Junior",
+        "ano": "1999",
+        "editora": "Editora Maçônica",
+        "local": "São Paulo"
+      },
+      "referencia": "FREITAS JUNIOR, Basilio Thomé de. Dicionário de Teste. São Paulo: Editora Maçônica, 1999."
+    },
+    {
+      "obra": {
+        "titulo": "Instruções de Teste",
+        "autor": "Rizzardo da Camino",
+        "ano": "",
+        "editora": "",
+        "local": ""
+      },
+      "referencia": "CAMINO, Rizzardo da. Instruções de Teste. [S. l.: s. n.], [s. d.]."
+    },
+    {
+      "obra": {
+        "titulo": "Cópia das Instruções",
+        "autor": "Rizzardo da Camino",
+        "ano": "",
+        "editora": "Madras",
+        "local": ""
+      },
+      "referencia": "CAMINO, Rizzardo da. Cópia das Instruções. [S. l.]: Madras, [s. d.]."
+    },
+    {
+      "obra": {
+        "titulo": "Breviário de Teste",
+        "autor": "Michael Howard e Nigel Jackson",
+        "ano": "2010",
+        "editora": "",
+        "local": "Londrina"
+      },
+      "referencia": "HOWARD, Michael; JACKSON, Nigel. Breviário de Teste. Londrina: [s. n.], 2010."
+    },
+    {
+      "obra": {
+        "titulo": "O Livro Divergente",
+        "autor": "",
+        "ano": "",
+        "editora": "",
+        "local": ""
+      },
+      "referencia": "O LIVRO Divergente. [S. l.: s. n.], [s. d.]."
+    },
+    {
+      "obra": {
+        "titulo": "Boletim com ruído de OCR",
+        "autor": "Voltaire",
+        "ano": "1890",
+        "editora": "",
+        "local": ""
+      },
+      "referencia": "VOLTAIRE. Boletim com ruído de OCR. [S. l.: s. n.], 1890."
+    },
+    {
+      "obra": {
+        "titulo": "A maçonaria em ruído",
+        "autor": "Ferry, Luc",
+        "ano": "",
+        "editora": "",
+        "local": ""
+      },
+      "referencia": "FERRY, Luc. A maçonaria em ruído. [S. l.: s. n.], [s. d.]."
+    },
+    {
+      "obra": {
+        "titulo": "As 7 Palavras",
+        "autor": "",
+        "ano": "",
+        "editora": "",
+        "local": ""
+      },
+      "referencia": "AS 7 Palavras. [S. l.: s. n.], [s. d.]."
+    },
+    {
+      "obra": {
+        "titulo": "Os Princípios das Leis Maçônicas",
+        "autor": "Albert G. Mackey",
+        "ano": "2005",
+        "editora": "Trolha",
+        "local": ""
+      },
+      "referencia": "MACKEY, Albert G. Os Princípios das Leis Maçônicas. [S. l.]: Trolha, 2005."
+    }
+  ]
+}

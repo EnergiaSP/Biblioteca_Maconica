@@ -291,6 +291,31 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         apagar.tap()
     }
 
+    /// The prancha of a dossier shows each author side by side and the text with ABNT references. Same as Android.
+    func testDossierBuildsPranchaWithReferences() {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        for _ in 0..<3 where (topic.value(forKey: "hasKeyboardFocus") as? Bool) != true {
+            topic.tap()
+            _ = app.keyboards.firstMatch.waitForExistence(timeout: 2)
+        }
+        topic.typeText("virtude")
+        app.buttons["Montar dossiê"].tap()
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        let prancha = app.buttons["dossier.prancha"].firstMatch
+        for _ in 0..<6 where !prancha.isHittable { app.swipeUp(velocity: .slow) }
+        prancha.tap()
+        // The text and the side-by-side authors are checked by the reference cases; the long prancha makes
+        // text queries slow for XCUITest, so only its actions are driven here.
+        let copiar = app.buttons["prancha.copiar"]
+        XCTAssertTrue(copiar.waitForExistence(timeout: 20))
+        copiar.tap()
+        XCTAssertTrue(copiar.wait(for: \.label, toEqual: "Prancha copiada.", timeout: 10), copiar.label)
+        app.buttons["Fechar"].tap()
+        XCTAssertTrue(prancha.waitForExistence(timeout: 5))
+    }
+
     /// A saved dossier appears as a theme of the notebook; its note opens the dossier again. Same as Android.
     func testNotebookByThemeListsSavedDossierAndOpensIt() {
         navigationTab("Dossiê").tap()

@@ -48,6 +48,8 @@ python3 "$ROOT_DIR/Tools/ia_referencia.py" --check || falhar "Casos da interpret
 python3 "$ROOT_DIR/Tools/qualidade_referencia.py" --check || falhar "Casos da qualidade do texto desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/revisao_referencia.py" --check || falhar "Casos da revisao ativa desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/caderno_referencia.py" --check || falhar "Casos do caderno desatualizados em relacao a implementacao de referencia."
+python3 "$ROOT_DIR/Tools/referencias_obras.py" --check || falhar "Referencias das obras desatualizadas em relacao ao catalogo."
+python3 "$ROOT_DIR/Tools/prancha_referencia.py" --check || falhar "Casos da prancha desatualizados em relacao a implementacao de referencia."
 node "$ROOT_DIR/Tools/conta_propria_referencia.mjs" --check || falhar "Casos da conta propria desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/auditar_paridade_profunda.py" "$@" || falhar "Auditoria de conteúdo, capacidades ou liberação encontrou pendências."
 

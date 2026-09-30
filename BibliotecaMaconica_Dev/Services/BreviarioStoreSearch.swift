@@ -190,7 +190,12 @@ func buscarBiblioteca(
             cartoesRevisao: RevisaoAtiva.Configuracao.compartilhada.map {
                 RevisaoAtiva.gerar(termo: termoLimpo, definicoes: analise.definicoes, perguntas: analise.perguntas,
                                    formas: analise.termosAssociados.map(\.forma), fontes: fontes, configuracao: $0)
-            } ?? []
+            } ?? [],
+            prancha: PranchaDossie.Configuracao.compartilhada.map {
+                PranchaDossie.montar(termo: termoLimpo, fontes: fontes, definicoes: analise.definicoes, resumo: analise.resumo,
+                                     divergencias: analise.divergencias, termosAssociados: analise.termosAssociados,
+                                     obras: PranchaDossie.obrasCompartilhadas, configuracao: $0)
+            }
         )
     }
 

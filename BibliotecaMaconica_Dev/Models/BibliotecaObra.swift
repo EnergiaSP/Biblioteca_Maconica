@@ -312,6 +312,8 @@ struct BibliotecaDossieEstudo: Identifiable {
     var exibicao: DossieEstudoAnalise.Exibicao? = nil
     /// Review cards made from the analysis, stored when the dossier is saved (revisao_ativa_v1.json).
     var cartoesRevisao: [RevisaoAtiva.Cartao] = []
+    /// Prancha with the excerpts the dossier cites and ABNT references (prancha_v1.json).
+    var prancha: PranchaDossie.Prancha? = nil
 
     var id: String {
         [
