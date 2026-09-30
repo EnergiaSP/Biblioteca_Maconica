@@ -146,6 +146,20 @@ class NavigationFlowTest {
         }
     }
 
+    /** A collection is read aloud one reading after another, with its position, next and stop, as on iOS. */
+    @Test
+    fun collectionPlaysReadingsInSequence() {
+        compose.onNodeWithTag("tab.collections").performClick()
+        compose.waitUntil(30_000) { compose.onAllNodesWithTag("audio.sequence.play").fetchSemanticsNodes().isNotEmpty() }
+        compose.onAllNodesWithTag("audio.sequence.play")[0].performClick()
+        compose.onNodeWithTag("study.list").performScrollToKey("audio.sequence")
+        compose.onNodeWithTag("audio.sequence.status").assertTextContains("leitura 1 de", substring = true)
+        compose.onNodeWithTag("audio.sequence.next").performClick()
+        compose.onNodeWithTag("audio.sequence.status").assertTextContains("leitura 2 de", substring = true)
+        compose.onNodeWithTag("audio.sequence.stop").performClick()
+        compose.onNodeWithTag("audio.sequence.status").assertDoesNotExist()
+    }
+
     /** A step marked by hand counts in the progress of its degree; "Estudar no Dossiê" builds the dossier of the topic, as on iOS. */
     @Test
     fun degreeTrackCountsMarkedStepAndStudiesTopic() {

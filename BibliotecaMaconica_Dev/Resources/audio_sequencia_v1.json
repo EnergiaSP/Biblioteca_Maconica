@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Audio em sequencia (Fase 14): as leituras de uma colecao ou trilha de estudo sao lidas uma apos a outra, na ordem da tela, ate limiteLeituras. Antes de cada leitura a voz anuncia a posicao (anuncio). Pausar e continuar valem para a leitura atual; Proxima pula para a seguinte; Parar encerra a sequencia. Ao terminar, mostra fim.",
+  "limiteLeituras": 30,
+  "rotulos": {
+    "ouvir": "Ouvir em sequência",
+    "ouvindo": "Ouvindo {titulo}: leitura {n} de {total}",
+    "anuncio": "Leitura {n} de {total}.",
+    "pausar": "Pausar",
+    "continuar": "Continuar",
+    "proxima": "Próxima",
+    "parar": "Parar",
+    "fim": "Sequência concluída."
+  }
+}

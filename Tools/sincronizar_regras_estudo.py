@@ -37,7 +37,8 @@ for name in ("estudo_dossie_v1.json", "casos_dossie_v1.json", "ia_assistida_v1.j
              "caderno_v1.json", "casos_caderno_v1.json", "conta_propria_v1.json", "casos_conta_propria_v1.json",
              "prancha_v1.json", "casos_prancha_v1.json", "obras_referencias_v1.json",
              "trilhas_grau_v1.json", "casos_trilhas_v1.json",
-             "variantes_busca_v1.json", "casos_variantes_v1.json"):
+             "variantes_busca_v1.json", "casos_variantes_v1.json",
+             "audio_sequencia_v1.json"):
     shared = root / "Paridade" / name
     json.loads(shared.read_text())
     for folder in (dest.parent for dest in destinations):

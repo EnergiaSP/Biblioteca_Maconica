@@ -126,6 +126,12 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         gerarDossieEstudo(salvo: salvo)
     }
 
+    /// Reads a collection or study path aloud, one reading after another.
+    func ouvirSequencia(_ titulo: String, _ itens: [BreviarioItem]) {
+        leitorVoz.ouvirSequencia(titulo: titulo, itens: itens, genero: VozLeituraGenero(rawValue: vozLeituraGenero) ?? .feminina,
+                                 velocidade: velocidadeLeitura, limite: AudioSequencia.Configuracao.compartilhada?.limiteLeituras ?? 30)
+    }
+
     /// Studies a topic of the tracks by degree in the whole library; a study saved before keeps its dates.
     func estudarTemaNoDossie(_ tema: String) {
         temaDossie = tema

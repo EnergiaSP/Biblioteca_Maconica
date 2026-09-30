@@ -291,6 +291,22 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         apagar.tap()
     }
 
+    /// A collection is read aloud one reading after another, with its position, next and stop. Same as Android.
+    func testCollectionPlaysReadingsInSequence() {
+        navigationTab("Coleções").tap()
+        let ouvir = app.buttons.matching(identifier: "audio.sequence.play").firstMatch
+        XCTAssertTrue(ouvir.waitForExistence(timeout: 20))
+        ouvir.tap()
+        let estado = app.staticTexts["audio.sequence.status"]
+        XCTAssertTrue(estado.waitForExistence(timeout: 5))
+        XCTAssertTrue(estado.label.contains("leitura 1 de"), estado.label)
+        app.buttons["audio.sequence.next"].tap()
+        XCTAssertTrue(estado.wait(for: \.label, toEqual: estado.label.replacingOccurrences(of: "leitura 1 de", with: "leitura 2 de"),
+                                  timeout: 5), estado.label)
+        app.buttons["audio.sequence.stop"].tap()
+        XCTAssertTrue(estado.waitForNonExistence(timeout: 5))
+    }
+
     /// A step marked by hand counts in the progress of its degree; "Estudar no Dossiê" builds the dossier of the topic. Same as Android.
     func testDegreeTrackCountsMarkedStepAndStudiesTopic() {
         navigationTab("Mais").tap()

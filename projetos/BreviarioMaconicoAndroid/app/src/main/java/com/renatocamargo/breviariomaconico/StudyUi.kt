@@ -328,6 +328,7 @@ internal fun CollectionsScreen(
     val rules = content.rules
     val reflectionHistory = content.reflections
     val studyPaths = rules.paths
+    val audio = rememberAudioSequence()
     fun openReading(item: BreviarioItem) {
         if (item.data.startsWith("P")) abrirObra(item.obraId, item.pagina) else onRead(item)
     }
@@ -342,10 +343,13 @@ internal fun CollectionsScreen(
             }
             if (content.failedWorks.isNotEmpty()) Text("Não foi possível consultar algumas obras: ${content.failedWorks.joinToString(", ")}", color = colors.text)
         }
+        if (audio.title != null) item(key = "audio.sequence") { AudioSequenceBar(colors, audio) }
         rules.collections.forEach { collection ->
             item(key = "collection:${collection.id}") {
                 val matches = content.collections[collection.id].orEmpty()
-                StudyCollectionCard(collection, matches, colors, content::readingLabel, ::openReading)
+                StudyCollectionCard(collection, matches, colors, content::readingLabel, ::openReading) {
+                    AudioSequenceButton(colors, audio) { audio.play(collection.title, matches) }
+                }
             }
         }
         item {
@@ -355,7 +359,10 @@ internal fun CollectionsScreen(
             item(key = "path:${path.id}") {
                 val relatedReadings = content.paths[path.id].orEmpty()
                 PremiumCard(colors) {
-                    Text(path.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(path.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
+                        AudioSequenceButton(colors, audio) { audio.play(path.title, relatedReadings) }
+                    }
                     Text(path.subtitle, color = colors.secondary)
                     Text(path.objective, color = colors.secondary)
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {

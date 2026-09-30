@@ -500,6 +500,7 @@ struct ColecaoTematicaCard: View {
     let colecao: ColecaoTematica
     let tema: TemaLeitura
     let abrir: (BreviarioItem) -> Void
+    var ouvir: (() -> Void)?
     @State private var expandida = false
 
     var body: some View {
@@ -519,6 +520,8 @@ struct ColecaoTematicaCard: View {
                         .font(.caption)
                         .foregroundStyle(tema.textoSecundario)
                 }
+                Spacer(minLength: 0)
+                if let ouvir { BotaoOuvirSequencia(tema: tema, ouvir: ouvir) }
             }
 
             Text(colecao.subtitulo)
@@ -612,12 +615,15 @@ struct TrilhaEstudoCard: View {
     let trilha: TrilhaEstudo
     let tema: TemaLeitura
     let abrir: (BreviarioItem) -> Void
+    var ouvir: (() -> Void)?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label(trilha.titulo, systemImage: trilha.icone)
-                .font(.headline)
-                .foregroundStyle(tema.destaque)
+            HStack {
+                Label(trilha.titulo, systemImage: trilha.icone).font(.headline).foregroundStyle(tema.destaque)
+                Spacer(minLength: 0)
+                if let ouvir { BotaoOuvirSequencia(tema: tema, ouvir: ouvir) }
+            }
 
             let etiquetas = dynamicTypeSize.isAccessibilitySize
                 ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))

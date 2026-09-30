@@ -56,6 +56,7 @@
 		A10000000000000000000413 /* conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000414 /* conta_propria_v1.json */; };
 		A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000416 /* casos_conta_propria_v1.json */; };
 		A10000000000000000000403 /* caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000404 /* caderno_v1.json */; };
+		A10000000000000000000801 /* audio_sequencia_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000802 /* audio_sequencia_v1.json */; };
 		A10000000000000000000703 /* casos_variantes_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000704 /* casos_variantes_v1.json */; };
 		A10000000000000000000701 /* variantes_busca_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000702 /* variantes_busca_v1.json */; };
 		A10000000000000000000603 /* casos_trilhas_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000604 /* casos_trilhas_v1.json */; };
@@ -129,6 +130,7 @@
 		D92100000000000000000903 /* DossieSalvoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000904 /* DossieSalvoViews.swift */; };
 		A10000000000000000000307 /* RevisaoAtivaViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000308 /* RevisaoAtivaViews.swift */; };
 		A10000000000000000000407 /* CadernoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000408 /* CadernoViews.swift */; };
+		A10000000000000000000803 /* AudioSequenciaViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000804 /* AudioSequenciaViews.swift */; };
 		A10000000000000000000607 /* TrilhasGrauViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000608 /* TrilhasGrauViews.swift */; };
 		A10000000000000000000509 /* PranchaViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000510 /* PranchaViews.swift */; };
 		BCB5F1A239606A5BAFF070CA /* BreviarioStoreSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */; };
@@ -251,6 +253,7 @@
 		A10000000000000000000414 /* conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000416 /* casos_conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000404 /* caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = caderno_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000802 /* audio_sequencia_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audio_sequencia_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000704 /* casos_variantes_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_variantes_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000702 /* variantes_busca_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variantes_busca_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000604 /* casos_trilhas_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_trilhas_v1.json; sourceTree = "<group>"; };
@@ -311,6 +314,7 @@
 		D92100000000000000000904 /* DossieSalvoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieSalvoViews.swift; sourceTree = "<group>"; };
 		A10000000000000000000308 /* RevisaoAtivaViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisaoAtivaViews.swift; sourceTree = "<group>"; };
 		A10000000000000000000408 /* CadernoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoViews.swift; sourceTree = "<group>"; };
+		A10000000000000000000804 /* AudioSequenciaViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSequenciaViews.swift; sourceTree = "<group>"; };
 		A10000000000000000000608 /* TrilhasGrauViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrilhasGrauViews.swift; sourceTree = "<group>"; };
 		A10000000000000000000510 /* PranchaViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PranchaViews.swift; sourceTree = "<group>"; };
 		597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreviarioMaconicoXXITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -423,6 +427,7 @@
 				D92100000000000000000904 /* DossieSalvoViews.swift */,
 				A10000000000000000000308 /* RevisaoAtivaViews.swift */,
 				A10000000000000000000408 /* CadernoViews.swift */,
+				A10000000000000000000804 /* AudioSequenciaViews.swift */,
 				A10000000000000000000608 /* TrilhasGrauViews.swift */,
 				A10000000000000000000510 /* PranchaViews.swift */,
 				EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */,
@@ -536,6 +541,7 @@
 				A10000000000000000000304 /* revisao_ativa_v1.json */,
 				A10000000000000000000306 /* casos_revisao_v1.json */,
 				A10000000000000000000404 /* caderno_v1.json */,
+				A10000000000000000000802 /* audio_sequencia_v1.json */,
 				A10000000000000000000704 /* casos_variantes_v1.json */,
 				A10000000000000000000702 /* variantes_busca_v1.json */,
 				A10000000000000000000604 /* casos_trilhas_v1.json */,
@@ -797,6 +803,7 @@
 				A10000000000000000000303 /* revisao_ativa_v1.json in Resources */,
 				A10000000000000000000305 /* casos_revisao_v1.json in Resources */,
 				A10000000000000000000403 /* caderno_v1.json in Resources */,
+				A10000000000000000000801 /* audio_sequencia_v1.json in Resources */,
 				A10000000000000000000703 /* casos_variantes_v1.json in Resources */,
 				A10000000000000000000701 /* variantes_busca_v1.json in Resources */,
 				A10000000000000000000603 /* casos_trilhas_v1.json in Resources */,
@@ -916,6 +923,7 @@
 				D92100000000000000000903 /* DossieSalvoViews.swift in Sources */,
 				A10000000000000000000307 /* RevisaoAtivaViews.swift in Sources */,
 				A10000000000000000000407 /* CadernoViews.swift in Sources */,
+				A10000000000000000000803 /* AudioSequenciaViews.swift in Sources */,
 				A10000000000000000000607 /* TrilhasGrauViews.swift in Sources */,
 				A10000000000000000000509 /* PranchaViews.swift in Sources */,
 				A975A59E10735E631F91355E /* ReadingComponents.swift in Sources */,
