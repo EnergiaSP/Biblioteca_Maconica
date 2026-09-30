@@ -97,7 +97,7 @@ data class BibliotecaIndiceReferencia(val obraId: String, val tituloObra: String
 
 class BibliotecaCatalogRepository internal constructor(context: Context) {
     private val appFilesDir = context.applicationContext.filesDir
-    private val appContext = context.applicationContext
+    internal val appContext: android.content.Context = context.applicationContext
     private val remotePackages: List<BibliotecaPacoteCatalogo>
     val pacotes: List<BibliotecaPacoteCatalogo>
         get() = (remotePackages + importedPackages()).sortedWith(

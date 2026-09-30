@@ -125,6 +125,18 @@
       "ios": "BibliotecaMaconica_Dev/Resources/casos_trilhas_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_trilhas_v1.json",
       "mustBeIdentical": true
+    },
+    "searchVariantsRules": {
+      "canonical": "Paridade/variantes_busca_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/variantes_busca_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/variantes_busca_v1.json",
+      "mustBeIdentical": true
+    },
+    "searchVariantsCases": {
+      "canonical": "Paridade/casos_variantes_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_variantes_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_variantes_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -159,7 +171,8 @@
     "portable_study_notebook",
     "notebook_sync_own_account",
     "prancha_abnt",
-    "degree_study_tracks"
+    "degree_study_tracks",
+    "search_spelling_and_plural_variants"
   ],
   "nativeEquivalents": [
     {

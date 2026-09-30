@@ -294,6 +294,8 @@ func salvarConfiguracaoNotificacao() {
         let area = areaBuscaBiblioteca
         let obraID = obraBuscaBibliotecaID
         let filtro = filtroMetadadosBiblioteca
+        // Spelling variants always; the other form (singular or plural) while the option is on.
+        let variantes = VariantesBusca.paraBusca(termo, singularPlural: buscaSingularPlural)
 
         buscaBibliotecaTask = Task { @MainActor in
             do {
@@ -304,7 +306,8 @@ func salvarConfiguracaoNotificacao() {
                     limite: 51,
                     offset: inicio,
                     obraID: obraID,
-                    filtro: filtro
+                    filtro: filtro,
+                    variantes: variantes
                 )
 
                 guard Task.isCancelled == false else { return }

@@ -1208,6 +1208,21 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly.
+    func testSearchVariantsMatchReferenceCases() throws {
+        let configuracao = try XCTUnwrap(VariantesBusca.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_variantes_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        for caso in try XCTUnwrap(raiz["casos"] as? [[String: Any]]) {
+            let palavras = try XCTUnwrap(caso["palavras"] as? [String])
+            let plural = try XCTUnwrap(caso["singularPlural"] as? Bool)
+            XCTAssertEqual(VariantesBusca.expandir(palavras, singularPlural: plural, configuracao),
+                           try XCTUnwrap(caso["esperado"] as? [String: [String]]), "\(palavras) \(plural)")
+        }
+        // The dossier variants are generated from the same groups.
+        XCTAssertEqual(DossieEstudoAnalise.Configuracao.compartilhada?.variantes, VariantesBusca.grafias(configuracao))
+        XCTAssertEqual(VariantesBusca.paraBusca("Irmãos \"Escada de Jacó\"", singularPlural: true)["jaco"], ["jacob", "jacos"])
+    }
+
     func testDegreeTracksMatchReferenceCases() throws {
         let configuracao = try XCTUnwrap(TrilhasGrau.Configuracao.compartilhada)
         XCTAssertEqual(configuracao.graus.map(\.id), ["aprendiz", "companheiro", "mestre"])

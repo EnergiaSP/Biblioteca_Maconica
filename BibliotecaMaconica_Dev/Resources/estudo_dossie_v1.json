@@ -28,16 +28,192 @@
       "jaco"
     ],
     "hiram": [
-      "hirao"
+      "hirao",
+      "hiran"
     ],
     "hirao": [
-      "hiram"
+      "hiram",
+      "hiran"
+    ],
+    "hiran": [
+      "hiram",
+      "hirao"
     ],
     "salomao": [
       "salomon"
     ],
     "salomon": [
       "salomao"
+    ],
+    "boaz": [
+      "booz"
+    ],
+    "booz": [
+      "boaz"
+    ],
+    "jakin": [
+      "jaquim",
+      "jaquin",
+      "jachin"
+    ],
+    "jaquim": [
+      "jakin",
+      "jaquin",
+      "jachin"
+    ],
+    "jaquin": [
+      "jakin",
+      "jaquim",
+      "jachin"
+    ],
+    "jachin": [
+      "jakin",
+      "jaquim",
+      "jaquin"
+    ],
+    "tubalcaim": [
+      "tubalcain"
+    ],
+    "tubalcain": [
+      "tubalcaim"
+    ],
+    "kadosh": [
+      "kadosch"
+    ],
+    "kadosch": [
+      "kadosh"
+    ],
+    "simbolo": [
+      "symbolo"
+    ],
+    "symbolo": [
+      "simbolo"
+    ],
+    "simbolismo": [
+      "symbolismo"
+    ],
+    "symbolismo": [
+      "simbolismo"
+    ],
+    "simbolico": [
+      "symbolico"
+    ],
+    "symbolico": [
+      "simbolico"
+    ],
+    "filosofia": [
+      "philosophia"
+    ],
+    "philosophia": [
+      "filosofia"
+    ],
+    "filosofo": [
+      "philosopho"
+    ],
+    "philosopho": [
+      "filosofo"
+    ],
+    "egito": [
+      "egypto"
+    ],
+    "egypto": [
+      "egito"
+    ],
+    "egipcio": [
+      "egypcio"
+    ],
+    "egypcio": [
+      "egipcio"
+    ],
+    "teologia": [
+      "theologia"
+    ],
+    "theologia": [
+      "teologia"
+    ],
+    "mistica": [
+      "mystica"
+    ],
+    "mystica": [
+      "mistica"
+    ],
+    "misterio": [
+      "mysterio"
+    ],
+    "mysterio": [
+      "misterio"
+    ],
+    "mistico": [
+      "mystico"
+    ],
+    "mystico": [
+      "mistico"
+    ],
+    "templario": [
+      "templeiro"
+    ],
+    "templeiro": [
+      "templario"
+    ],
+    "pitagoras": [
+      "pythagoras"
+    ],
+    "pythagoras": [
+      "pitagoras"
+    ],
+    "cabala": [
+      "kabbalah",
+      "cabbala",
+      "kabala",
+      "qabalah"
+    ],
+    "kabbalah": [
+      "cabala",
+      "cabbala",
+      "kabala",
+      "qabalah"
+    ],
+    "cabbala": [
+      "cabala",
+      "kabbalah",
+      "kabala",
+      "qabalah"
+    ],
+    "kabala": [
+      "cabala",
+      "kabbalah",
+      "cabbala",
+      "qabalah"
+    ],
+    "qabalah": [
+      "cabala",
+      "kabbalah",
+      "cabbala",
+      "kabala"
+    ],
+    "zoroastro": [
+      "zaratustra"
+    ],
+    "zaratustra": [
+      "zoroastro"
+    ],
+    "jerusalem": [
+      "hierusalem"
+    ],
+    "hierusalem": [
+      "jerusalem"
+    ],
+    "geometria": [
+      "geometrya"
+    ],
+    "geometrya": [
+      "geometria"
+    ],
+    "hermetismo": [
+      "hermetism"
+    ],
+    "hermetism": [
+      "hermetismo"
     ]
   },
   "verbosDefinicao": [
