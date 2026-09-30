@@ -9,6 +9,7 @@ import com.renatocamargo.breviariomaconico.data.AssistedInterpretation
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.filled.BookmarkAdd
 import com.renatocamargo.breviariomaconico.data.SavedDossier
+import com.renatocamargo.breviariomaconico.data.Prancha
 import com.renatocamargo.breviariomaconico.data.SavedDossierStore
 import com.renatocamargo.breviariomaconico.data.StudyNotebook
 import android.Manifest
@@ -187,6 +188,7 @@ internal fun DossierScreen(
     var study by session::dossierStudy
     val dossierConfig = remember { DossierAnalysis.loadConfig(context) }
     var gerandoIa by remember { mutableStateOf(false) }
+    var showPrancha by remember { mutableStateOf(false) }
     var montando by remember { mutableStateOf(false) }
     var area by session::area
     var obraId by session::obraId
@@ -235,7 +237,7 @@ internal fun DossierScreen(
                     val todos = catalogo.buscarConteudo(dossierQuery(consulta), areaSelecionada, obraSelecionada,
                         limite = dossierConfig.limits.analyzedSources, cancelled = { !requestContext.isActive },
                         filtro = filtroSelecionado, variants = dossierConfig.variants)
-                    todos to analyzeDossier(consulta, todos, dossierConfig, base, reviewConfig)
+                    todos to analyzeDossier(consulta, todos, dossierConfig, base, reviewConfig, Prancha.loadConfig(context), Prancha.loadWorks(context))
                 }
                     .onSuccess { (todos, analise) ->
                         resultados = todos.take(dossierConfig.limits.shownSources)
@@ -321,6 +323,7 @@ internal fun DossierScreen(
         onDispose { if (montando) status = "Montagem interrompida. Toque em gerar dossiê novamente." }
     }
 
+    study?.prancha?.takeIf { showPrancha }?.let { PranchaDialog(colors, it, Prancha.loadConfig(context)) { showPrancha = false } }
     LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("dossier.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         item {
             PremiumCard(colors) {
@@ -377,6 +380,13 @@ internal fun DossierScreen(
                         Icon(Icons.Default.BookmarkAdd, null)
                         Spacer(Modifier.width(6.dp))
                         Text(if (currentSaved == null) "Salvar" else "Salvo")
+                    }
+                    study?.prancha?.takeIf { resultados.isNotEmpty() }?.let {
+                        Button(colors = libraryActionColors(colors), modifier = Modifier.testTag("dossier.prancha"), onClick = { showPrancha = true }) {
+                            Icon(Icons.Default.TextFields, null)
+                            Spacer(Modifier.width(6.dp))
+                            Text(Prancha.loadConfig(context).label("montar"))
+                        }
                     }
                     Button(colors = libraryActionColors(colors), enabled = resultados.isNotEmpty(), onClick = {
                         shareText(context, textoDossie(tema, resultados, analiseIa, resumoEscopo, study))

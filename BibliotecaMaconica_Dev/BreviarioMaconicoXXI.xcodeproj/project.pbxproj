@@ -48,11 +48,15 @@
 		A10000000000000000000201 /* QualidadeTexto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000202 /* QualidadeTexto.swift */; };
 		A10000000000000000000301 /* RevisaoAtiva.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000302 /* RevisaoAtiva.swift */; };
 		A10000000000000000000401 /* CadernoEstudo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000402 /* CadernoEstudo.swift */; };
+		A10000000000000000000507 /* PranchaDossie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000508 /* PranchaDossie.swift */; };
 		A10000000000000000000409 /* CadernoSincronizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000410 /* CadernoSincronizacao.swift */; };
 		A10000000000000000000411 /* ContaPropriaCaderno.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000412 /* ContaPropriaCaderno.swift */; };
 		A10000000000000000000413 /* conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000414 /* conta_propria_v1.json */; };
 		A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000416 /* casos_conta_propria_v1.json */; };
 		A10000000000000000000403 /* caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000404 /* caderno_v1.json */; };
+		A10000000000000000000505 /* obras_referencias_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000506 /* obras_referencias_v1.json */; };
+		A10000000000000000000503 /* casos_prancha_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000504 /* casos_prancha_v1.json */; };
+		A10000000000000000000501 /* prancha_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000502 /* prancha_v1.json */; };
 		A10000000000000000000405 /* casos_caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000406 /* casos_caderno_v1.json */; };
 		A10000000000000000000303 /* revisao_ativa_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000304 /* revisao_ativa_v1.json */; };
 		A10000000000000000000305 /* casos_revisao_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000306 /* casos_revisao_v1.json */; };
@@ -119,6 +123,7 @@
 		D92100000000000000000903 /* DossieSalvoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92100000000000000000904 /* DossieSalvoViews.swift */; };
 		A10000000000000000000307 /* RevisaoAtivaViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000308 /* RevisaoAtivaViews.swift */; };
 		A10000000000000000000407 /* CadernoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000408 /* CadernoViews.swift */; };
+		A10000000000000000000509 /* PranchaViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000510 /* PranchaViews.swift */; };
 		BCB5F1A239606A5BAFF070CA /* BreviarioStoreSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */; };
 		C54BE34F031BFF29F5598C84 /* LibraryStudyScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23035FB36A7EDD30813A7AB /* LibraryStudyScreens.swift */; };
 		CB8516DD582F9514D56FB3A1 /* OfflineCatalogScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D8050C7052A7D203C2F54 /* OfflineCatalogScreens.swift */; };
@@ -231,11 +236,15 @@
 		A10000000000000000000202 /* QualidadeTexto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualidadeTexto.swift; sourceTree = "<group>"; };
 		A10000000000000000000302 /* RevisaoAtiva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisaoAtiva.swift; sourceTree = "<group>"; };
 		A10000000000000000000402 /* CadernoEstudo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoEstudo.swift; sourceTree = "<group>"; };
+		A10000000000000000000508 /* PranchaDossie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PranchaDossie.swift; sourceTree = "<group>"; };
 		A10000000000000000000410 /* CadernoSincronizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoSincronizacao.swift; sourceTree = "<group>"; };
 		A10000000000000000000412 /* ContaPropriaCaderno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaPropriaCaderno.swift; sourceTree = "<group>"; };
 		A10000000000000000000414 /* conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000416 /* casos_conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000404 /* caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = caderno_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000506 /* obras_referencias_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = obras_referencias_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000504 /* casos_prancha_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_prancha_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000502 /* prancha_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prancha_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000406 /* casos_caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_caderno_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000304 /* revisao_ativa_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revisao_ativa_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000306 /* casos_revisao_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_revisao_v1.json; sourceTree = "<group>"; };
@@ -289,6 +298,7 @@
 		D92100000000000000000904 /* DossieSalvoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DossieSalvoViews.swift; sourceTree = "<group>"; };
 		A10000000000000000000308 /* RevisaoAtivaViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisaoAtivaViews.swift; sourceTree = "<group>"; };
 		A10000000000000000000408 /* CadernoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoViews.swift; sourceTree = "<group>"; };
+		A10000000000000000000510 /* PranchaViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PranchaViews.swift; sourceTree = "<group>"; };
 		597241A0DF7560D589A94005 /* BreviarioMaconicoXXITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreviarioMaconicoXXITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6481AD713625588538698BC3 /* BreviarioStoreSearch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BreviarioStoreSearch.swift; sourceTree = "<group>"; };
 		66C613D5FCD3144ECB98613F /* AppNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
@@ -399,6 +409,7 @@
 				D92100000000000000000904 /* DossieSalvoViews.swift */,
 				A10000000000000000000308 /* RevisaoAtivaViews.swift */,
 				A10000000000000000000408 /* CadernoViews.swift */,
+				A10000000000000000000510 /* PranchaViews.swift */,
 				EBFA44581C60123CCB3A3CB2 /* ReadingComponents.swift */,
 				3E6B82797280D4C8172EE6BE /* ExportComponents.swift */,
 				7F58884A788334FFE19142EC /* HomePresentation.swift */,
@@ -458,6 +469,7 @@
 				A10000000000000000000202 /* QualidadeTexto.swift */,
 				A10000000000000000000302 /* RevisaoAtiva.swift */,
 				A10000000000000000000402 /* CadernoEstudo.swift */,
+				A10000000000000000000508 /* PranchaDossie.swift */,
 				A10000000000000000000410 /* CadernoSincronizacao.swift */,
 				A10000000000000000000412 /* ContaPropriaCaderno.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
@@ -507,6 +519,9 @@
 				A10000000000000000000304 /* revisao_ativa_v1.json */,
 				A10000000000000000000306 /* casos_revisao_v1.json */,
 				A10000000000000000000404 /* caderno_v1.json */,
+				A10000000000000000000506 /* obras_referencias_v1.json */,
+				A10000000000000000000504 /* casos_prancha_v1.json */,
+				A10000000000000000000502 /* prancha_v1.json */,
 				A10000000000000000000406 /* casos_caderno_v1.json */,
 				A10000000000000000000414 /* conta_propria_v1.json */,
 				A10000000000000000000416 /* casos_conta_propria_v1.json */,
@@ -761,6 +776,9 @@
 				A10000000000000000000303 /* revisao_ativa_v1.json in Resources */,
 				A10000000000000000000305 /* casos_revisao_v1.json in Resources */,
 				A10000000000000000000403 /* caderno_v1.json in Resources */,
+				A10000000000000000000505 /* obras_referencias_v1.json in Resources */,
+				A10000000000000000000503 /* casos_prancha_v1.json in Resources */,
+				A10000000000000000000501 /* prancha_v1.json in Resources */,
 				A10000000000000000000405 /* casos_caderno_v1.json in Resources */,
 				A10000000000000000000413 /* conta_propria_v1.json in Resources */,
 				A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */,
@@ -859,6 +877,7 @@
 				A10000000000000000000201 /* QualidadeTexto.swift in Sources */,
 				A10000000000000000000301 /* RevisaoAtiva.swift in Sources */,
 				A10000000000000000000401 /* CadernoEstudo.swift in Sources */,
+				A10000000000000000000507 /* PranchaDossie.swift in Sources */,
 				A10000000000000000000409 /* CadernoSincronizacao.swift in Sources */,
 				A10000000000000000000411 /* ContaPropriaCaderno.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
@@ -870,6 +889,7 @@
 				D92100000000000000000903 /* DossieSalvoViews.swift in Sources */,
 				A10000000000000000000307 /* RevisaoAtivaViews.swift in Sources */,
 				A10000000000000000000407 /* CadernoViews.swift in Sources */,
+				A10000000000000000000509 /* PranchaViews.swift in Sources */,
 				A975A59E10735E631F91355E /* ReadingComponents.swift in Sources */,
 				D419AD0C6BEB3D7D853725D0 /* ExportComponents.swift in Sources */,
 				3D159078B21A249226F5A846 /* HomePresentation.swift in Sources */,

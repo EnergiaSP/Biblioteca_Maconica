@@ -486,6 +486,21 @@ var acervoOfflineView: some View {
                         .disabled(salvoAtual != nil || dossieEstudo.resultados.isEmpty)
                         .accessibilityIdentifier("dossier.save")
 
+                        if let prancha = dossieEstudo.prancha, let configuracao = PranchaDossie.Configuracao.compartilhada,
+                           !dossieEstudo.resultados.isEmpty {
+                            Button {
+                                mostrandoPrancha = true
+                            } label: {
+                                Label(configuracao.rotulo("montar"), systemImage: "doc.richtext")
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(AccessibleActionButtonStyle(tema: temaApp, prominent: false))
+                            .accessibilityIdentifier("dossier.prancha")
+                            .sheet(isPresented: $mostrandoPrancha) {
+                                PranchaView(prancha: prancha, configuracao: configuracao, tema: temaApp)
+                            }
+                        }
+
                         DossieEstudoCard(
                             dossie: dossieEstudo,
                             tema: temaApp,

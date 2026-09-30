@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Prancha montada a partir do dossie, so com os trechos ja citados nele (definicoes, resumo e divergencias). Secoes: introducao (abertura e definicoes), desenvolvimento (um paragrafo por autor com os trechos do resumo, autores com mais trechos primeiro e depois em ordem alfabetica normalizada), pontos divergentes, conclusao (tres primeiros termos associados e o espaco para a conclusao do leitor) e referencias. Comparacao lado a lado: todos os trechos citados agrupados por autor (ou pela obra, quando o autor nao e conhecido), sem repetir. Referencias ABNT (NBR 6023) das obras citadas, em ordem alfabetica normalizada: SOBRENOME, Prenome. Titulo. Local: Editora, ano. Varios autores separados por ponto e virgula; sobrenome composto com sufixo (Filho, Neto, Junior, Sobrinho) fica junto; sem autor, a entrada e pelo titulo com a primeira palavra (e o artigo inicial) em maiusculas. Sem local e editora: [S. l.: s. n.]; sem um deles: [S. l.] ou [s. n.]; sem ano: [s. d.]. Citacao no texto: (SOBRENOME, ano, p. N); sem autor, primeira palavra do titulo (com o artigo) em maiusculas seguida de reticencias. O trecho citado perde a pontuacao final solta (; , :). O nome de quem fala aparece na ordem natural (Prenome Sobrenome), varios autores unidos por virgula e \" e \", com o verbo no plural.",
+  "semLocal": "[S. l.]",
+  "semEditora": "[s. n.]",
+  "semLocalEditora": "[S. l.: s. n.]",
+  "semAno": "[s. d.]",
+  "sufixos": [
+    "filho",
+    "neto",
+    "júnior",
+    "junior",
+    "jr.",
+    "jr",
+    "sobrinho"
+  ],
+  "artigos": [
+    "a",
+    "o",
+    "as",
+    "os",
+    "um",
+    "uma"
+  ],
+  "separadoresAutores": [
+    " e ",
+    ";"
+  ],
+  "limiteTermosConclusao": 3,
+  "secoes": {
+    "introducao": "Introdução",
+    "desenvolvimento": "Desenvolvimento",
+    "divergencias": "Pontos divergentes",
+    "conclusao": "Conclusão",
+    "referencias": "Referências"
+  },
+  "textos": {
+    "titulo": "Prancha: {tema}",
+    "abertura": "Esta prancha reúne o que {n} obra(s) do acervo dizem sobre {tema}, com os trechos citados no dossiê.",
+    "semTrechos": "O dossiê não tem trechos citados sobre {tema}.",
+    "definicao": "Em {obra}, lê-se: “{trecho}” {citacao}.",
+    "trecho": "“{trecho}” {citacao}",
+    "autorAfirma": "{quem} afirma: {trechos}.",
+    "semAutor": "O texto de {obra}",
+    "divergencia": "Há leitura diferente em {obra}: “{trecho}” {citacao}.",
+    "conclusaoTermos": "Os textos consultados associam {tema} a {termos}.",
+    "conclusaoPendente": "[Escreva aqui a sua conclusão e a aplicação prática do tema.]",
+    "ultimoSeparador": " e ",
+    "autoresAfirmam": "{quem} afirmam: {trechos}."
+  },
+  "rotulos": {
+    "montar": "Montar prancha",
+    "tituloTela": "Prancha do dossiê",
+    "aviso": "A prancha usa apenas os trechos citados no dossiê, com citação e referências no padrão ABNT. Revise o texto e escreva a sua conclusão.",
+    "comparacao": "Como cada autor trata o tema",
+    "compartilhar": "Compartilhar prancha",
+    "copiar": "Copiar prancha",
+    "copiada": "Prancha copiada.",
+    "semDossie": "Monte um dossiê com fontes para gerar a prancha.",
+    "referenciasIncompletas": "Obras sem ano, editora ou local aparecem com [s. d.] e [S. l.: s. n.]; complete os dados antes de apresentar."
+  }
+}

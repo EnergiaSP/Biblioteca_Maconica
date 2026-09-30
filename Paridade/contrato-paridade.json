@@ -95,6 +95,24 @@
       "ios": "BibliotecaMaconica_Dev/Resources/casos_conta_propria_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_conta_propria_v1.json",
       "mustBeIdentical": true
+    },
+    "pranchaRules": {
+      "canonical": "Paridade/prancha_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/prancha_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/prancha_v1.json",
+      "mustBeIdentical": true
+    },
+    "pranchaCases": {
+      "canonical": "Paridade/casos_prancha_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_prancha_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_prancha_v1.json",
+      "mustBeIdentical": true
+    },
+    "workReferences": {
+      "canonical": "Paridade/obras_referencias_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/obras_referencias_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/obras_referencias_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -127,7 +145,8 @@
     "text_quality_notice",
     "active_review_flashcards_quiz",
     "portable_study_notebook",
-    "notebook_sync_own_account"
+    "notebook_sync_own_account",
+    "prancha_abnt"
   ],
   "nativeEquivalents": [
     {

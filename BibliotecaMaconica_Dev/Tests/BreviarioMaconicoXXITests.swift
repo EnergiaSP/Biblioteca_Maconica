@@ -1208,6 +1208,34 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly.
+    func testPranchaMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(PranchaDossie.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_prancha_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        func decodificar<T: Decodable>(_ tipo: T.Type, _ valor: Any?) throws -> T {
+            try JSONDecoder().decode(tipo, from: JSONSerialization.data(withJSONObject: try XCTUnwrap(valor)))
+        }
+        let obras = try decodificar([String: PranchaDossie.Obra].self, raiz["obras"])
+        for caso in try XCTUnwrap(raiz["casos"] as? [[String: Any]]) {
+            let dossie = try XCTUnwrap(caso["dossie"] as? [String: Any])
+            let prancha = PranchaDossie.montar(
+                termo: try XCTUnwrap(caso["termo"] as? String),
+                fontes: try decodificar([DossieEstudoAnalise.Fonte].self, caso["fontes"]),
+                definicoes: try decodificar([DossieEstudoAnalise.Trecho].self, dossie["definicoes"]),
+                resumo: try decodificar([DossieEstudoAnalise.Trecho].self, dossie["resumo"]),
+                divergencias: try decodificar([DossieEstudoAnalise.Trecho].self, dossie["divergencias"]),
+                termosAssociados: try decodificar([DossieEstudoAnalise.TermoAssociado].self, dossie["termosAssociados"]),
+                obras: obras, configuracao: configuracao)
+            XCTAssertEqual(prancha, try decodificar(PranchaDossie.Prancha.self, caso["esperado"]), caso["id"] as? String ?? "")
+        }
+        for caso in try XCTUnwrap(raiz["referencias"] as? [[String: Any]]) {
+            XCTAssertEqual(PranchaDossie.referencia(try decodificar(PranchaDossie.Obra.self, caso["obra"]), configuracao),
+                           caso["referencia"] as? String)
+        }
+        // Every work of the collection has its bibliographic data.
+        XCTAssertEqual(PranchaDossie.obrasCompartilhadas["breviario_seculo_xxi"]?.autor, "Kennyo Ismail")
+    }
+
     func testDossierAnalysisMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(DossieEstudoAnalise.Configuracao.compartilhada)
         let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_dossie_v1", withExtension: "json"))

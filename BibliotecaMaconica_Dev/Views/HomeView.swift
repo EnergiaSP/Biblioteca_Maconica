@@ -37,6 +37,7 @@ struct HomeView: View {
     @State var filtroMetadadosBiblioteca = BibliotecaFiltroMetadados()
     @State var buscandoBiblioteca = false
     @State var dossieEstudo: BibliotecaDossieEstudo?
+    @State var mostrandoPrancha = false
     /// Review cards due today and the review session sheet (revisao_ativa_v1.json).
     @State var cartoesParaHoje = 0
     @State var totalCartoesRevisao = 0
