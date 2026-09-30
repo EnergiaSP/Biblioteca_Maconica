@@ -46,6 +46,7 @@ python3 "$ROOT_DIR/Tools/sincronizar_regras_estudo.py" --check || falhar "Regras
 python3 "$ROOT_DIR/Tools/dossie_referencia.py" --check || falhar "Casos do dossie desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/ia_referencia.py" --check || falhar "Casos da interpretacao assistida desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/qualidade_referencia.py" --check || falhar "Casos da qualidade do texto desatualizados em relacao a implementacao de referencia."
+python3 "$ROOT_DIR/Tools/revisao_referencia.py" --check || falhar "Casos da revisao ativa desatualizados em relacao a implementacao de referencia."
 python3 "$ROOT_DIR/Tools/auditar_paridade_profunda.py" "$@" || falhar "Auditoria de conteúdo, capacidades ou liberação encontrou pendências."
 
 echo "Paridade estrutural validada para a versão $IOS_VERSION."

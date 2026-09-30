@@ -1,5 +1,7 @@
 package com.renatocamargo.breviariomaconico
 
+import com.renatocamargo.breviariomaconico.data.ReviewCardStore
+import com.renatocamargo.breviariomaconico.data.ActiveReview
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.platform.LocalFocusManager
@@ -193,6 +195,9 @@ internal fun DossierScreen(
     var analiseJob by remember { mutableStateOf<Job?>(null) }
     val studyPlan = remember(tema, resultados, study) { buildDossierStudyPlan(tema, resultados, study) }
     val savedStore = remember { SavedDossierStore(context) }
+    val reviewConfig = remember { ActiveReview.loadConfig(context) }
+    val cardStore = remember { ReviewCardStore(context) }
+    var reviewRefresh by remember { mutableIntStateOf(0) }
     var savedList by remember { mutableStateOf(savedStore.all()) }
     val currentSaved = savedList.firstOrNull { it.id == session.savedDossierId }
     val resumoEscopo = listOf(obras.firstOrNull { it.id == obraId }?.titulo ?: area?.titulo ?: "Toda a biblioteca",
@@ -229,11 +234,16 @@ internal fun DossierScreen(
                     val todos = catalogo.buscarConteudo(dossierQuery(consulta), areaSelecionada, obraSelecionada,
                         limite = dossierConfig.limits.analyzedSources, cancelled = { !requestContext.isActive },
                         filtro = filtroSelecionado, variants = dossierConfig.variants)
-                    todos to analyzeDossier(consulta, todos, dossierConfig, base)
+                    todos to analyzeDossier(consulta, todos, dossierConfig, base, reviewConfig)
                 }
                     .onSuccess { (todos, analise) ->
                         resultados = todos.take(dossierConfig.limits.shownSources)
                         study = analise
+                        // A reopened saved dossier gets the cards it does not have yet; stored ones keep their progress.
+                        if (saved != null) {
+                            cardStore.add(analise.cards, saved.id, saved.tema, java.time.LocalDate.now().toString())
+                            reviewRefresh++
+                        }
                         status = if (todos.isEmpty()) "Não encontrei base documental suficiente nas obras baixadas." else "Dossiê criado com ${todos.size} fonte(s) documentais."
                     }.onFailure {
                         resultados = emptyList()
@@ -262,7 +272,10 @@ internal fun DossierScreen(
         DossierReminders.schedule(context, saved, dossierConfig)
         savedList = savedStore.all()
         session.savedDossierId = saved.id
-        status = "Dossiê salvo. Você será lembrado de cada revisão."
+        val created = cardStore.add(study?.cards.orEmpty(), saved.id, saved.tema, java.time.LocalDate.now().toString())
+        reviewRefresh++
+        status = "Dossiê salvo. Você será lembrado de cada revisão." +
+            (if (created == 0) "" else " " + reviewConfig.label("criados", mapOf("n" to "$created")))
     }
 
     fun alternarRevisao(saved: SavedDossier, days: Int) {
@@ -275,6 +288,8 @@ internal fun DossierScreen(
     fun excluir(saved: SavedDossier) {
         DossierReminders.cancel(context, saved, dossierConfig)
         savedStore.remove(saved.id)
+        cardStore.removeDossier(saved.id)
+        reviewRefresh++
         if (session.savedDossierId == saved.id) session.savedDossierId = null
         savedList = savedStore.all()
         status = "Dossiê \"${saved.tema}\" excluído."
@@ -413,6 +428,8 @@ internal fun DossierScreen(
                 Text(status, modifier = Modifier.testTag("dossier.status"), color = colors.accent, fontWeight = FontWeight.SemiBold)
             }
         }
+        // After the form, so building a dossier stays the first action (as on iOS).
+        item(key = "review.summary") { ActiveReviewSummary(colors, cardStore, reviewConfig, reviewRefresh) { reviewRefresh++ } }
         if (savedList.isNotEmpty()) {
             item(key = "dossier.saved") {
                 SavedDossiersCard(colors, savedList, dossierConfig.review, enabled = !montando, onOpen = ::abrirSalvo, onDelete = ::excluir)

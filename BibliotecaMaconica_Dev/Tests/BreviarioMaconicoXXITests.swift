@@ -778,6 +778,46 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly.
+    /// Same cards, schedule and sessions as `Tools/revisao_referencia.py` and Android (`casos_revisao_v1.json`).
+    func testActiveReviewMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(RevisaoAtiva.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_revisao_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        func decodificar<T: Decodable>(_ tipo: T.Type, _ valor: Any?) throws -> T {
+            try JSONDecoder().decode(T.self, from: JSONSerialization.data(withJSONObject: try XCTUnwrap(valor)))
+        }
+        for caso in try XCTUnwrap(raiz["geracao"] as? [[String: Any]]) {
+            let analise = try XCTUnwrap(caso["analise"] as? [String: Any])
+            let fontes = try XCTUnwrap(caso["fontes"] as? [[String: Any]]).map {
+                DossieEstudoAnalise.Fonte(id: $0["id"] as? String ?? "", obraId: "", tituloObra: $0["tituloObra"] as? String ?? "",
+                                          area: "", pagina: $0["pagina"] as? Int ?? 0, data: $0["data"] as? String)
+            }
+            let formas = try XCTUnwrap(analise["termosAssociados"] as? [[String: Any]]).compactMap { $0["forma"] as? String }
+            let cartoes = RevisaoAtiva.gerar(termo: try XCTUnwrap(caso["tema"] as? String),
+                                             definicoes: try decodificar([DossieEstudoAnalise.Trecho].self, analise["definicoes"]),
+                                             perguntas: try decodificar([DossieEstudoAnalise.Pergunta].self, analise["perguntas"]),
+                                             formas: formas, fontes: fontes, configuracao: configuracao)
+            XCTAssertEqual(cartoes, try decodificar([RevisaoAtiva.Cartao].self, caso["esperado"]), "\(caso["id"] ?? "")")
+        }
+        for caso in try XCTUnwrap(raiz["agenda"] as? [[String: Any]]) {
+            var estado = RevisaoAtiva.novoEstado(hoje: try XCTUnwrap(caso["criadoEm"] as? String))
+            var estados: [RevisaoAtiva.Estado] = []
+            for resposta in try XCTUnwrap(caso["respostas"] as? [[String]]) {
+                estado = RevisaoAtiva.responder(estado, nota: try XCTUnwrap(RevisaoAtiva.Nota(rawValue: resposta[0])),
+                                                hoje: resposta[1], configuracao: configuracao)
+                estados.append(estado)
+            }
+            XCTAssertEqual(estados, try decodificar([RevisaoAtiva.Estado].self, caso["esperado"]), "\(caso["nome"] ?? "")")
+        }
+        for caso in try XCTUnwrap(raiz["sessoes"] as? [[String: Any]]) {
+            let cartoes = try XCTUnwrap(caso["cartoes"] as? [[String: String]]).map {
+                (id: $0["id"] ?? "", criadoEm: $0["criadoEm"] ?? "", vencimento: $0["vencimento"] ?? "")
+            }
+            XCTAssertEqual(RevisaoAtiva.sessao(cartoes, hoje: try XCTUnwrap(caso["hoje"] as? String), configuracao: configuracao),
+                           caso["esperado"] as? [String], "\(caso["nome"] ?? "")")
+        }
+    }
+
     /// Same results as `Tools/qualidade_referencia.py` and Android for every case of `casos_qualidade_v1.json`.
     func testTextQualityMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(QualidadeTexto.Configuracao.compartilhada)

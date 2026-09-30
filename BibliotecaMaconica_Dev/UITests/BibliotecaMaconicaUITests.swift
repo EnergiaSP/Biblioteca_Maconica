@@ -254,6 +254,43 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         }
     }
 
+    /// Saving a dossier creates review cards; the session shows the answer with its source and grades it,
+    /// as on Android.
+    func testSavedDossierCreatesReviewCardsAndSessionGradesThem() throws {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        let apagar = app.buttons.matching(identifier: "dossier.saved.delete").firstMatch
+        while apagar.exists { apagar.tap() }
+        let resumo = app.staticTexts["review.summary"].firstMatch
+        XCTAssertTrue(resumo.waitForExistence(timeout: 5))
+        XCTAssertFalse(resumo.label.contains("para revisar hoje"), "Deleting the saved dossiers removes their cards")
+
+        topic.tap()
+        topic.typeText("virtude")
+        app.buttons["Montar dossiê"].tap()
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        let salvar = app.buttons["dossier.save"].firstMatch
+        for _ in 0..<6 where !salvar.isHittable { app.swipeUp(velocity: .slow) }
+        salvar.tap()
+        XCTAssertTrue(app.buttons["Dossiê salvo"].waitForExistence(timeout: 5))
+        for _ in 0..<40 where !resumo.isHittable { app.swipeDown(velocity: .fast) }
+        let total = try XCTUnwrap(Int(resumo.label.prefix { $0.isNumber }), resumo.label)
+        XCTAssertGreaterThan(total, 0)
+
+        app.buttons["review.start"].tap()
+        XCTAssertTrue(app.staticTexts["review.front"].waitForExistence(timeout: 5))
+        app.buttons["review.show"].tap()
+        XCTAssertTrue(app.staticTexts["review.back"].waitForExistence(timeout: 5))
+        app.buttons["review.grade.acertei"].tap()
+        app.buttons["Fechar"].firstMatch.tap()
+        XCTAssertTrue(resumo.waitForExistence(timeout: 5))
+        XCTAssertEqual(resumo.label, "\(total - 1) cartão(ões) para revisar hoje")
+
+        for _ in 0..<40 where !apagar.isHittable { app.swipeUp(velocity: .slow) }
+        apagar.tap()
+    }
+
     /// Save, mark a review, leave, reopen from the saved list and delete, as on Android.
     func testSavedDossierKeepsReviewsReopensAndCanBeDeleted() {
         navigationTab("Dossiê").tap()

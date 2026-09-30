@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Casos de referencia da revisao ativa (Paridade/revisao_ativa_v1.json), gerados por Tools/revisao_referencia.py --atualizar a partir dos casos do dossie. iOS e Android devem reproduzir cada resultado.",
+  "geracao": [
+    {
+      "id": "escada_de_jaco",
+      "tema": "Escada de Jacó",
+      "analise": {
+        "definicoes": [
+          {
+            "texto": "A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.",
+            "fonte": "dic:106:dic-p106-b1"
+          }
+        ],
+        "perguntas": [
+          {
+            "pergunta": "A Fé representa o primeiro _____ da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.",
+            "resposta": "degrau",
+            "fonte": "breviario_x:185:03/07"
+          },
+          {
+            "pergunta": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a _____.",
+            "resposta": "caridade",
+            "fonte": "instrucoes:84:instrucoes-p84-b1"
+          },
+          {
+            "pergunta": "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó;",
+            "resposta": "degrau",
+            "fonte": "livro2:12:livro2-p12-b1"
+          },
+          {
+            "pergunta": "Pois então, a Escada de Jacó é uma escada que _____ o mundo terrestre ao mundo do Criador.",
+            "resposta": "liga",
+            "fonte": "ruido:9:ruido-p9-b1"
+          },
+          {
+            "pergunta": "A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada _____ pede esforço, estudo e perseverança.",
+            "resposta": "degrau",
+            "fonte": "ocr:12:ocr-p12-b1"
+          }
+        ],
+        "termosAssociados": [
+          {
+            "termo": "caridade",
+            "forma": "caridade",
+            "ocorrencias": 6,
+            "obras": 5
+          },
+          {
+            "termo": "degrau",
+            "forma": "degrau",
+            "ocorrencias": 6,
+            "obras": 5
+          },
+          {
+            "termo": "degraus",
+            "forma": "degraus",
+            "ocorrencias": 4,
+            "obras": 4
+          },
+          {
+            "termo": "esperanca",
+            "forma": "esperança",
+            "ocorrencias": 4,
+            "obras": 4
+          },
+          {
+            "termo": "liga",
+            "forma": "liga",
+            "ocorrencias": 4,
+            "obras": 2
+          },
+          {
+            "termo": "mundo",
+            "forma": "mundo",
+            "ocorrencias": 4,
+            "obras": 1
+          },
+          {
+            "termo": "terra",
+            "forma": "terra",
+            "ocorrencias": 4,
+            "obras": 3
+          },
+          {
+            "termo": "virtude",
+            "forma": "virtude",
+            "ocorrencias": 4,
+            "obras": 3
+          },
+          {
+            "termo": "aperfeicoamento",
+            "forma": "aperfeiçoamento",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "aprendiz",
+            "forma": "aprendiz",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "grau",
+            "forma": "grau",
+            "ocorrencias": 3,
+            "obras": 2
+          },
+          {
+            "termo": "macom",
+            "forma": "maçom",
+            "ocorrencias": 3,
+            "obras": 3
+          },
+          {
+            "termo": "0rdem",
+            "forma": "0rdem",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "aparece",
+            "forma": "aparece",
+            "ocorrencias": 2,
+            "obras": 1
+          },
+          {
+            "termo": "busca",
+            "forma": "busca",
+            "ocorrencias": 2,
+            "obras": 2
+          }
+        ]
+      },
+      "fontes": [
+        {
+          "id": "dic:106:dic-p106-b1",
+          "tituloObra": "Dicionário de Teste",
+          "pagina": 106
+        },
+        {
+          "id": "instrucoes:84:instrucoes-p84-b1",
+          "tituloObra": "Instruções de Teste",
+          "pagina": 84
+        },
+        {
+          "id": "breviario_x:185:03/07",
+          "tituloObra": "Breviário de Teste",
+          "pagina": 185,
+          "data": "03/07"
+        },
+        {
+          "id": "livro2:12:livro2-p12-b1",
+          "tituloObra": "Livro Divergente",
+          "pagina": 12
+        },
+        {
+          "id": "instrucoes:47:instrucoes-p47-b1",
+          "tituloObra": "Instruções de Teste",
+          "pagina": 47
+        },
+        {
+          "id": "copia:47:copia-p47-b1",
+          "tituloObra": "Cópia das Instruções",
+          "pagina": 47
+        },
+        {
+          "id": "ruido:9:ruido-p9-b1",
+          "tituloObra": "Livro com Ruído",
+          "pagina": 9
+        },
+        {
+          "id": "ocr:12:ocr-p12-b1",
+          "tituloObra": "Boletim com ruído de OCR",
+          "pagina": 12
+        }
+      ],
+      "esperado": [
+        {
+          "id": "99728c024de8168e",
+          "tipo": "definicao",
+          "frente": "O que é Escada de Jacó?",
+          "verso": "A Escada de Jacó é o símbolo da ascensão espiritual do maçom, com degraus que representam as virtudes teologais: fé, esperança e caridade.",
+          "fonte": "Dicionário de Teste, p. 106",
+          "alternativas": []
+        },
+        {
+          "id": "92bce6cb4295ae6c",
+          "tipo": "lacuna",
+          "frente": "A Fé representa o primeiro _____ da escada de Jacó, pois ela é a sabedoria do espírito, sem a qual o homem nada levará a termo.",
+          "verso": "degrau",
+          "fonte": "Breviário de Teste, 03/07",
+          "alternativas": [
+            "esperança",
+            "liga",
+            "caridade",
+            "degrau"
+          ]
+        },
+        {
+          "id": "b2b4647c320cd8da",
+          "tipo": "lacuna",
+          "frente": "Como a Prancheta é o traçado objetivo, o Livro da Lei é o traçado espiritual, ambos dirigidos ao aperfeiçoamento, para atingir o Topo da Escada de Jacob, após ter desbastado a aspereza do seu Eu e praticado a _____.",
+          "verso": "caridade",
+          "fonte": "Instruções de Teste, p. 84",
+          "alternativas": [
+            "caridade",
+            "esperança",
+            "liga",
+            "degrau"
+          ]
+        },
+        {
+          "id": "896f611fde5f5bb0",
+          "tipo": "lacuna",
+          "frente": "Erroneamente, é dito que cada grau do rito representa mais um _____ da Escada de Jacó;",
+          "verso": "degrau",
+          "fonte": "Livro Divergente, p. 12",
+          "alternativas": [
+            "caridade",
+            "esperança",
+            "degrau",
+            "liga"
+          ]
+        },
+        {
+          "id": "5d23b2ec75bef316",
+          "tipo": "lacuna",
+          "frente": "Pois então, a Escada de Jacó é uma escada que _____ o mundo terrestre ao mundo do Criador.",
+          "verso": "liga",
+          "fonte": "Livro com Ruído, p. 9",
+          "alternativas": [
+            "esperança",
+            "degrau",
+            "liga",
+            "caridade"
+          ]
+        },
+        {
+          "id": "8558c4d6238df537",
+          "tipo": "lacuna",
+          "frente": "A escada de Jacó liga a terra ao céu e ensina ao aprendiz que cada _____ pede esforço, estudo e perseverança.",
+          "verso": "degrau",
+          "fonte": "Boletim com ruído de OCR, p. 12",
+          "alternativas": [
+            "liga",
+            "caridade",
+            "degrau",
+            "esperança"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem_fontes",
+      "tema": "Termo inexistente",
+      "analise": {
+        "definicoes": [],
+        "perguntas": [],
+        "termosAssociados": []
+      },
+      "fontes": [],
+      "esperado": []
+    }
+  ],
+  "agenda": [
+    {
+      "nome": "acertos seguidos ate a ultima caixa",
+      "criadoEm": "2026-10-01",
+      "respostas": [
+        [
+          "acertei",
+          "2026-10-01"
+        ],
+        [
+          "acertei",
+          "2026-10-04"
+        ],
+        [
+          "acertei",
+          "2026-10-11"
+        ],
+        [
+          "acertei",
+          "2026-10-27"
+        ],
+        [
+          "acertei",
+          "2026-12-01"
+        ],
+        [
+          "acertei",
+          "2027-01-05"
+        ]
+      ],
+      "esperado": [
+        {
+          "caixa": 1,
+          "vencimento": "2026-10-04",
+          "acertos": 1,
+          "erros": 0
+        },
+        {
+          "caixa": 2,
+          "vencimento": "2026-10-11",
+          "acertos": 2,
+          "erros": 0
+        },
+        {
+          "caixa": 3,
+          "vencimento": "2026-10-27",
+          "acertos": 3,
+          "erros": 0
+        },
+        {
+          "caixa": 4,
+          "vencimento": "2026-12-01",
+          "acertos": 4,
+          "erros": 0
+        },
+        {
+          "caixa": 4,
+          "vencimento": "2027-01-05",
+          "acertos": 5,
+          "erros": 0
+        },
+        {
+          "caixa": 4,
+          "vencimento": "2027-02-09",
+          "acertos": 6,
+          "erros": 0
+        }
+      ]
+    },
+    {
+      "nome": "erro volta a primeira caixa",
+      "criadoEm": "2026-10-01",
+      "respostas": [
+        [
+          "acertei",
+          "2026-10-01"
+        ],
+        [
+          "acertei",
+          "2026-10-04"
+        ],
+        [
+          "errei",
+          "2026-10-11"
+        ],
+        [
+          "dificil",
+          "2026-10-12"
+        ],
+        [
+          "acertei",
+          "2026-10-13"
+        ]
+      ],
+      "esperado": [
+        {
+          "caixa": 1,
+          "vencimento": "2026-10-04",
+          "acertos": 1,
+          "erros": 0
+        },
+        {
+          "caixa": 2,
+          "vencimento": "2026-10-11",
+          "acertos": 2,
+          "erros": 0
+        },
+        {
+          "caixa": 0,
+          "vencimento": "2026-10-12",
+          "acertos": 2,
+          "erros": 1
+        },
+        {
+          "caixa": 0,
+          "vencimento": "2026-10-13",
+          "acertos": 2,
+          "erros": 1
+        },
+        {
+          "caixa": 1,
+          "vencimento": "2026-10-16",
+          "acertos": 3,
+          "erros": 1
+        }
+      ]
+    },
+    {
+      "nome": "dificil na caixa zero",
+      "criadoEm": "2026-10-01",
+      "respostas": [
+        [
+          "dificil",
+          "2026-10-01"
+        ],
+        [
+          "dificil",
+          "2026-10-02"
+        ]
+      ],
+      "esperado": [
+        {
+          "caixa": 0,
+          "vencimento": "2026-10-02",
+          "acertos": 0,
+          "erros": 0
+        },
+        {
+          "caixa": 0,
+          "vencimento": "2026-10-03",
+          "acertos": 0,
+          "erros": 0
+        }
+      ]
+    },
+    {
+      "nome": "virada de ano e ano bissexto",
+      "criadoEm": "2027-12-20",
+      "respostas": [
+        [
+          "acertei",
+          "2027-12-20"
+        ],
+        [
+          "acertei",
+          "2027-12-23"
+        ],
+        [
+          "acertei",
+          "2027-12-30"
+        ],
+        [
+          "acertei",
+          "2028-01-15"
+        ]
+      ],
+      "esperado": [
+        {
+          "caixa": 1,
+          "vencimento": "2027-12-23",
+          "acertos": 1,
+          "erros": 0
+        },
+        {
+          "caixa": 2,
+          "vencimento": "2027-12-30",
+          "acertos": 2,
+          "erros": 0
+        },
+        {
+          "caixa": 3,
+          "vencimento": "2028-01-15",
+          "acertos": 3,
+          "erros": 0
+        },
+        {
+          "caixa": 4,
+          "vencimento": "2028-02-19",
+          "acertos": 4,
+          "erros": 0
+        }
+      ]
+    }
+  ],
+  "sessoes": [
+    {
+      "nome": "vencidos ate hoje",
+      "cartoes": [
+        {
+          "id": "c3",
+          "criadoEm": "2026-10-02",
+          "vencimento": "2026-10-05"
+        },
+        {
+          "id": "a1",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-05"
+        },
+        {
+          "id": "b2",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-03"
+        },
+        {
+          "id": "d4",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-06"
+        },
+        {
+          "id": "a0",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-05"
+        }
+      ],
+      "hoje": "2026-10-05",
+      "esperado": [
+        "b2",
+        "a0",
+        "a1",
+        "c3"
+      ]
+    },
+    {
+      "nome": "nenhum vencido",
+      "cartoes": [
+        {
+          "id": "c3",
+          "criadoEm": "2026-10-02",
+          "vencimento": "2026-10-05"
+        },
+        {
+          "id": "a1",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-05"
+        },
+        {
+          "id": "b2",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-03"
+        },
+        {
+          "id": "d4",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-06"
+        },
+        {
+          "id": "a0",
+          "criadoEm": "2026-10-01",
+          "vencimento": "2026-10-05"
+        }
+      ],
+      "hoje": "2026-10-02",
+      "esperado": []
+    }
+  ]
+}

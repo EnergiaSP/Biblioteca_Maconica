@@ -110,6 +110,41 @@ class NavigationFlowTest {
         assertDossierGenerated()
     }
 
+    /** Saving a dossier creates review cards; the session shows the answer with its source and grades it, as on iOS. */
+    @Test
+    fun savedDossierCreatesReviewCardsAndSessionGradesThem() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = com.renatocamargo.breviariomaconico.data.SavedDossierStore(context)
+        val cards = com.renatocamargo.breviariomaconico.data.ReviewCardStore(context)
+        val before = store.all()
+        before.forEach { store.remove(it.id) }
+        cards.all().map { it.dossierId }.toSet().forEach { cards.removeDossier(it) }
+        try {
+            compose.onNodeWithTag("tab.dossier").performClick()
+            compose.onNodeWithTag("dossier.topic").performTextReplacement("virtude")
+            compose.onNodeWithText("Gerar dossiê").performScrollTo().performClick()
+            assertDossierGenerated()
+            compose.onNodeWithTag("dossier.list").performScrollToIndex(0)
+            compose.onNodeWithTag("dossier.save").performScrollTo().performClick()
+            compose.waitUntil(5_000) { cards.all().isNotEmpty() }
+            val total = cards.all().size
+            compose.onNodeWithTag("dossier.list").performScrollToKey("review.summary")
+            compose.onNodeWithTag("review.summary").assertTextContains("$total cartão(ões) para revisar hoje")
+            compose.onNodeWithTag("review.start").performClick()
+            compose.onNodeWithTag("review.front").assertIsDisplayed()
+            compose.onNodeWithTag("review.show").performClick()
+            compose.onNodeWithTag("review.back").assertIsDisplayed()
+            compose.onNodeWithTag("review.grade.acertei").performClick()
+            compose.waitUntil(5_000) { cards.all().count { it.state.box == 1 } == 1 }
+            compose.onNodeWithText("Fechar").performClick()
+            compose.onNodeWithTag("review.summary").assertTextContains("${total - 1} cartão(ões) para revisar hoje")
+        } finally {
+            store.all().forEach { store.remove(it.id) }
+            cards.all().map { it.dossierId }.toSet().forEach { cards.removeDossier(it) }
+            before.forEach { store.save(it) }
+        }
+    }
+
     /** Save, mark a review, leave, reopen from the review notification and delete, as on iOS. */
     @Test
     fun savedDossierKeepsReviewsReopensFromNotificationAndCanBeDeleted() {

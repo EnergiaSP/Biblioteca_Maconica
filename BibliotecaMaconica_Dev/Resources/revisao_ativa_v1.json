@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Revisao ativa: cartoes gerados do dossie, sempre com a fonte. Lacuna: a pergunta do dossie (frase com _____), resposta e citacao. Definicao: rotulos.definicao com o tema; verso e a frase definidora. Id do cartao: 16 primeiros hexadecimais do SHA-256 de tipo, frente, verso e fonte separados por U+001F (UTF-8). Alternativas do quiz (so lacunas): a resposta e as primeiras formas dos termos associados, sem acento e sem diferenciar maiusculas, que nao comecem outra ja escolhida nem sejam comecadas por ela (degrau e degraus contam como a mesma), ate limites.alternativas; com menos de limites.alternativasMinimas o cartao nao tem quiz. Ordem das alternativas: SHA-256 de id + U+001F + alternativa, crescente. Agenda por caixas: cartao novo na caixa 0 vence no dia em que foi criado; errei volta a caixa 0; dificil mantem a caixa; acertei sobe uma caixa (ate a ultima); o proximo vencimento e hoje + intervalos[caixa]. Sessao: cartoes vencidos ate hoje, pelo vencimento, depois pela criacao e pelo id, ate limites.cartoesPorSessao.",
+  "limites": {
+    "cartoesPorSessao": 20,
+    "alternativas": 4,
+    "alternativasMinimas": 3
+  },
+  "intervalos": [
+    1,
+    3,
+    7,
+    16,
+    35
+  ],
+  "rotulos": {
+    "titulo": "Revisão ativa",
+    "definicao": "O que é {tema}?",
+    "lacuna": "Complete a frase:",
+    "mostrarResposta": "Mostrar resposta",
+    "errei": "Errei",
+    "dificil": "Difícil",
+    "acertei": "Acertei",
+    "quiz": "Múltipla escolha",
+    "paraHoje": "{n} cartão(ões) para revisar hoje",
+    "semCartoes": "Salve um dossiê para criar cartões de revisão com as frases e as fontes dele.",
+    "concluida": "Revisão de hoje concluída. Os próximos cartões voltam no dia marcado.",
+    "criados": "{n} cartão(ões) de revisão criados a partir deste dossiê.",
+    "certa": "Correto.",
+    "errada": "A resposta é: {resposta}."
+  }
+}

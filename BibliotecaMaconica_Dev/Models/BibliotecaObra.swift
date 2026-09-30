@@ -310,6 +310,8 @@ struct BibliotecaDossieEstudo: Identifiable {
     /// AI-free analysis of all analyzed sources; `resultados` keeps only the ones shown.
     var analise: DossieEstudoAnalise.Resultado? = nil
     var exibicao: DossieEstudoAnalise.Exibicao? = nil
+    /// Review cards made from the analysis, stored when the dossier is saved (revisao_ativa_v1.json).
+    var cartoesRevisao: [RevisaoAtiva.Cartao] = []
 
     var id: String {
         [

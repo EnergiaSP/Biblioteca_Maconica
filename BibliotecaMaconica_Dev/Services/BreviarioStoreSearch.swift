@@ -186,7 +186,11 @@ func buscarBiblioteca(
             limitesDaBase: Self.limitesDaBase(resultados: todos),
             filtroMetadados: filtro,
             analise: analise,
-            exibicao: exibicao
+            exibicao: exibicao,
+            cartoesRevisao: RevisaoAtiva.Configuracao.compartilhada.map {
+                RevisaoAtiva.gerar(termo: termoLimpo, definicoes: analise.definicoes, perguntas: analise.perguntas,
+                                   formas: analise.termosAssociados.map(\.forma), fontes: fontes, configuracao: $0)
+            } ?? []
         )
     }
 

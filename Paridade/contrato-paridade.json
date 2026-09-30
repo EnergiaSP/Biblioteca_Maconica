@@ -59,6 +59,18 @@
       "ios": "BibliotecaMaconica_Dev/Resources/casos_qualidade_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_qualidade_v1.json",
       "mustBeIdentical": true
+    },
+    "activeReviewRules": {
+      "canonical": "Paridade/revisao_ativa_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/revisao_ativa_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/revisao_ativa_v1.json",
+      "mustBeIdentical": true
+    },
+    "activeReviewCases": {
+      "canonical": "Paridade/casos_revisao_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/casos_revisao_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_revisao_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -88,7 +100,8 @@
     "widget_deep_link",
     "work_request_sharing",
     "local_pdf_ocr_import",
-    "text_quality_notice"
+    "text_quality_notice",
+    "active_review_flashcards_quiz"
   ],
   "nativeEquivalents": [
     {
