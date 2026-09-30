@@ -21,7 +21,12 @@
                 <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
                 <data android:scheme="wear" android:host="*" android:pathPrefix="/reading-progress-state" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+                <data android:scheme="wear" android:host="*" android:pathPrefix="/revisao-cartoes" />
+            </intent-filter>
         </service>
+        <receiver android:name=".WearReviewReminderReceiver" android:exported="false" />
         <activity
             android:name=".WearMainActivity"
             android:exported="true"

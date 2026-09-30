@@ -56,6 +56,7 @@
 		A10000000000000000000413 /* conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000414 /* conta_propria_v1.json */; };
 		A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000416 /* casos_conta_propria_v1.json */; };
 		A10000000000000000000403 /* caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000404 /* caderno_v1.json */; };
+		A10000000000000000000901 /* relogio_revisao_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000902 /* relogio_revisao_v1.json */; };
 		A10000000000000000000801 /* audio_sequencia_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000802 /* audio_sequencia_v1.json */; };
 		A10000000000000000000703 /* casos_variantes_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000704 /* casos_variantes_v1.json */; };
 		A10000000000000000000701 /* variantes_busca_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000702 /* variantes_busca_v1.json */; };
@@ -88,6 +89,7 @@
 		030000000000000000000102 /* BreviarioSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000C /* BreviarioSnapshot.swift */; };
 		030000000000000000000103 /* breviario.json in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000008 /* breviario.json */; };
 		030000000000000000000104 /* WatchNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030000000000000000000003 /* WatchNotificationService.swift */; };
+		A10000000000000000000911 /* WatchRevisaoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000912 /* WatchRevisaoViews.swift */; };
 		030000000000000000000105 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000013 /* PrivacyInfo.xcprivacy */; };
 		030000000000000000000106 /* BreviarioWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 030000000000000000000002 /* BreviarioWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		030000000000000000000107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000000F /* Assets.xcassets */; };
@@ -253,6 +255,7 @@
 		A10000000000000000000414 /* conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000416 /* casos_conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000404 /* caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = caderno_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000902 /* relogio_revisao_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = relogio_revisao_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000802 /* audio_sequencia_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audio_sequencia_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000704 /* casos_variantes_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_variantes_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000702 /* variantes_busca_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variantes_busca_v1.json; sourceTree = "<group>"; };
@@ -283,6 +286,7 @@
 		030000000000000000000001 /* BreviarioWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreviarioWatchApp.swift; sourceTree = "<group>"; };
 		030000000000000000000002 /* BreviarioWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreviarioWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		030000000000000000000003 /* WatchNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNotificationService.swift; sourceTree = "<group>"; };
+		A10000000000000000000912 /* WatchRevisaoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRevisaoViews.swift; sourceTree = "<group>"; };
 		030000000000000000000004 /* WatchIcon-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-48.png"; sourceTree = "<group>"; };
 		030000000000000000000005 /* WatchIcon-55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-55.png"; sourceTree = "<group>"; };
 		030000000000000000000006 /* WatchIcon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icons/WatchIcon-58.png"; sourceTree = "<group>"; };
@@ -541,6 +545,7 @@
 				A10000000000000000000304 /* revisao_ativa_v1.json */,
 				A10000000000000000000306 /* casos_revisao_v1.json */,
 				A10000000000000000000404 /* caderno_v1.json */,
+				A10000000000000000000902 /* relogio_revisao_v1.json */,
 				A10000000000000000000802 /* audio_sequencia_v1.json */,
 				A10000000000000000000704 /* casos_variantes_v1.json */,
 				A10000000000000000000702 /* variantes_busca_v1.json */,
@@ -594,6 +599,7 @@
 			children = (
 				030000000000000000000001 /* BreviarioWatchApp.swift */,
 				030000000000000000000003 /* WatchNotificationService.swift */,
+				A10000000000000000000912 /* WatchRevisaoViews.swift */,
 				030000000000000000000013 /* Info.plist */,
 				030000000000000000000004 /* WatchIcon-48.png */,
 				030000000000000000000005 /* WatchIcon-55.png */,
@@ -803,6 +809,7 @@
 				A10000000000000000000303 /* revisao_ativa_v1.json in Resources */,
 				A10000000000000000000305 /* casos_revisao_v1.json in Resources */,
 				A10000000000000000000403 /* caderno_v1.json in Resources */,
+				A10000000000000000000901 /* relogio_revisao_v1.json in Resources */,
 				A10000000000000000000801 /* audio_sequencia_v1.json in Resources */,
 				A10000000000000000000703 /* casos_variantes_v1.json in Resources */,
 				A10000000000000000000701 /* variantes_busca_v1.json in Resources */,
@@ -975,6 +982,7 @@
 				030000000000000000000102 /* BreviarioSnapshot.swift in Sources */,
 				F72BA004B6B84748A020B102 /* ReadingProgressSync.swift in Sources */,
 				030000000000000000000104 /* WatchNotificationService.swift in Sources */,
+				A10000000000000000000911 /* WatchRevisaoViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1208,6 +1208,23 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly.
+    /// Messages of the review cards on the watch, the same the Android Data Layer carries (relogio_revisao_v1.json).
+    func testWatchReviewMessagesMatchSharedExamples() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "relogio_revisao_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let exemplos = try XCTUnwrap(raiz["exemplos"] as? [String: Any])
+        let baralho = try JSONDecoder().decode(BaralhoRelogio.self,
+                                               from: JSONSerialization.data(withJSONObject: try XCTUnwrap(exemplos["baralho"])))
+        XCTAssertEqual(baralho.cartoes.map(\.verso), ["degrau", "Símbolo da imortalidade."])
+        XCTAssertEqual(BaralhoRelogio.parse(baralho.message), baralho, "Sent and read back unchanged")
+        XCTAssertEqual(baralho.rotulo("pendentes", ["n": "2"]), "2 cartão(ões) para hoje")
+        for caso in try XCTUnwrap(exemplos["respostas"] as? [[String: Any]]) {
+            let mensagem = try XCTUnwrap(caso["mensagem"] as? [String: Any])
+            XCTAssertEqual(RespostaRelogio.parse(mensagem) != nil, caso["valida"] as? Bool, "\(mensagem)")
+        }
+        XCTAssertEqual(RevisaoRelogio.compartilhada?.limiteCartoes, raiz["limiteCartoes"] as? Int)
+    }
+
     func testSearchVariantsMatchReferenceCases() throws {
         let configuracao = try XCTUnwrap(VariantesBusca.Configuracao.compartilhada)
         let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_variantes_v1", withExtension: "json"))

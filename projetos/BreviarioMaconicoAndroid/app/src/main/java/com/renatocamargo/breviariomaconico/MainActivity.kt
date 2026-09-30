@@ -159,6 +159,7 @@ class MainActivity : ComponentActivity() {
     override fun onResume() {
         super.onResume()
         lifecycleScope.launch { com.renatocamargo.breviariomaconico.data.NotebookSync.syncIfChosen(this@MainActivity) }
+        ReviewWatchSync.sendDeck(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

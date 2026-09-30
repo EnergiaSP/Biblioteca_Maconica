@@ -179,6 +179,7 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
                     Text(if (read) "Lido ✓" else "Marcar", fontSize = 11.sp, textAlign = TextAlign.Center)
                 }
             }
+            WearReviewSection()
             Text("Notificações", color = Color.LightGray, fontSize = 11.sp)
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 Button(onClick = {

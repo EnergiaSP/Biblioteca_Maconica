@@ -6,6 +6,7 @@ extension HomeView {
         let store = CartoesRevisaoStore()
         totalCartoesRevisao = store.todos().count
         cartoesParaHoje = store.sessao(hoje: DossieSalvo.data(Date()), configuracao: configuracao).count
+        PhoneWatchProgressSync.shared.enviarRevisao()
     }
 
     /// Entry of the Dossier screen: cards due today, as on Android.

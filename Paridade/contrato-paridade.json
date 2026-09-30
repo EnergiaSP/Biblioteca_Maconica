@@ -143,6 +143,12 @@
       "ios": "BibliotecaMaconica_Dev/Resources/audio_sequencia_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/audio_sequencia_v1.json",
       "mustBeIdentical": true
+    },
+    "watchReviewRules": {
+      "canonical": "Paridade/relogio_revisao_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/relogio_revisao_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/relogio_revisao_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -179,7 +185,8 @@
     "prancha_abnt",
     "degree_study_tracks",
     "search_spelling_and_plural_variants",
-    "audio_reading_sequences"
+    "audio_reading_sequences",
+    "watch_review_cards"
   ],
   "nativeEquivalents": [
     {
