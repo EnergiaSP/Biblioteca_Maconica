@@ -532,21 +532,24 @@ struct ColecaoTematicaCard: View {
                 .fixedSize(horizontal: false, vertical: true)
 
             if colecao.topicos.isEmpty == false {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 6) {
-                        ForEach(colecao.topicos, id: \.self) { topico in
-                            Text(topico)
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                .fixedSize(horizontal: true, vertical: true)
-                                .foregroundStyle(tema == .escuro ? .white : .black)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 5)
-                                .background(tema.destaque.opacity(tema == .escuro ? 0.28 : 0.18))
-                                .clipShape(Capsule())
-                        }
+                // Wraps like Android's FlowRow: every topic stays visible (a horizontal carousel hid
+                // the last ones past the card edge), and the row is one accessibility element.
+                FluxoDeChips(espaco: 6) {
+                    ForEach(colecao.topicos, id: \.self) { topico in
+                        Text(topico)
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .fixedSize(horizontal: true, vertical: true)
+                            .foregroundStyle(tema == .escuro ? .white : .black)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 5)
+                            .background(tema.destaque.opacity(tema == .escuro ? 0.28 : 0.18))
+                            .clipShape(Capsule())
                     }
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Tópicos: " + colecao.topicos.joined(separator: ", "))
+                .accessibilityIdentifier("study.topics.\(colecao.id)")
             }
 
             ForEach(expandida ? colecao.itens : Array(colecao.itens.prefix(3)), id: \.chavePersistencia) { item in

@@ -333,9 +333,11 @@ extension HomeView {
                         .foregroundStyle(textoApp)
 
                     LazyVGrid(
+                        // 320 pt keeps reading titles whole next to their dates: iPad portrait gets
+                        // two columns (three cramped titles such as "PARAMEN-TOS" at 230 pt).
                         columns: dynamicTypeSize.isAccessibilitySize
                             ? [GridItem(.flexible())]
-                            : [GridItem(.adaptive(minimum: 230), spacing: 12)],
+                            : [GridItem(.adaptive(minimum: 320), spacing: 12)],
                         spacing: 12
                     ) {
                         ForEach(colecoesTematicas) { colecao in

@@ -1,7 +1,7 @@
 # Biblioteca Maconica
 
 Repositorio privado dos projetos atuais iOS e Android da Biblioteca Maconica.
-Versao de desenvolvimento: 1.0.15. Este envio nao publica aplicativos nas lojas.
+Versao de desenvolvimento: 1.0.16. Este envio nao publica aplicativos nas lojas.
 
 ## Organizacao
 

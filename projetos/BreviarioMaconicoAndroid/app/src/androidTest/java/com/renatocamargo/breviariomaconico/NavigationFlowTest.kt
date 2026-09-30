@@ -247,7 +247,8 @@ class NavigationFlowTest {
         compose.onNodeWithTag("tab.collections").performClick()
         compose.waitUntil(20_000) { compose.onAllNodesWithTag("study.expand.virtudes").fetchSemanticsNodes().isNotEmpty() }
         compose.onNodeWithText("Aperfeiçoamento moral e conduta").assertIsDisplayed()
-        compose.onNodeWithText("Prudência").assertExists()
+        compose.onNode(androidx.compose.ui.test.hasTestTag("study.topics.virtudes")
+            and androidx.compose.ui.test.hasContentDescription("Prudência", substring = true)).assertExists()
         compose.onAllNodesWithTag("study.reading.virtudes").assertCountEquals(3)
         compose.onNodeWithTag("study.expand.virtudes").performScrollTo().performClick()
         val context = ApplicationProvider.getApplicationContext<android.content.Context>()

@@ -1,6 +1,12 @@
 import SwiftUI
 import UIKit
 
+/// The size chosen in the app is the base and grows with the system text size, as `sp` does on
+/// Android: a reader who raises the text size in iOS settings gets a larger reading text too.
+func fonteNoTamanhoDoSistema(_ font: UIFont) -> UIFont {
+    UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+}
+
 struct JustifiedTextView: View {
     let texto: String
     let font: UIFont
@@ -12,8 +18,11 @@ struct JustifiedTextView: View {
     var aoSelecionarTexto: ((String) -> Void)?
     var aoDestacarTexto: ((String) -> Void)?
     @State private var altura: CGFloat = 1
+    // Read so the text is rebuilt when the system text size changes.
+    @Environment(\.dynamicTypeSize) private var tamanhoDinamico
 
     var body: some View {
+        let font = fonteNoTamanhoDoSistema(self.font)
         JustifiedTextUIView(
             texto: texto,
             font: font,
@@ -341,6 +350,9 @@ struct JustifiedEditableTextView: UIViewRepresentable {
     let backgroundColor: UIColor
     var rotuloAcessibilidade: String? = nil
     var identificadorAcessibilidade: String? = nil
+    @Environment(\.dynamicTypeSize) private var tamanhoDinamico
+
+    private var fonteEscalada: UIFont { fonteNoTamanhoDoSistema(font) }
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -388,7 +400,7 @@ struct JustifiedEditableTextView: UIViewRepresentable {
 
     private var assinaturaFormato: String {
         [
-            "\(font.fontName)-\(font.pointSize)",
+            "\(fonteEscalada.fontName)-\(fonteEscalada.pointSize)",
             "\(color.hash)",
             "\(lineSpacing)",
             "\(backgroundColor.hash)"
@@ -402,7 +414,7 @@ struct JustifiedEditableTextView: UIViewRepresentable {
         paragraphStyle.paragraphSpacing = 10
 
         return [
-            .font: font,
+            .font: fonteEscalada,
             .foregroundColor: color,
             .paragraphStyle: paragraphStyle
         ]
