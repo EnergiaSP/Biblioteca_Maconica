@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Cartoes de revisao no relogio (Fase 14). O celular envia ao relogio os cartoes da sessao de hoje (os mesmos da Revisao ativa, ate limiteCartoes), com os rotulos: {hoje, total, cartoes:[{id, frente, verso, fonte}], rotulos}. O relogio mostra a frente, a resposta ao toque e as tres notas; cada nota volta ao celular como {id, nota (errei, dificil ou acertei), eventoID} e o celular aplica a mesma regra de revisao espacada e envia a sessao atualizada. Sem conexao, as notas ficam na fila e sao entregues depois; uma nota repetida (mesmo eventoID) e ignorada. No iOS vai pelo WatchConnectivity (contexto da aplicacao e userInfo); no Android pela Data Layer do Wear OS.",
+  "limiteCartoes": 20,
+  "rotulos": {
+    "titulo": "Revisão",
+    "pendentes": "{n} cartão(ões) para hoje",
+    "vazio": "Nenhum cartão para revisar hoje.",
+    "mostrar": "Mostrar resposta",
+    "errei": "Errei",
+    "dificil": "Difícil",
+    "acertei": "Acertei",
+    "fonte": "Fonte: {fonte}",
+    "abrir": "Revisar cartões"
+  },
+  "exemplos": {
+    "baralho": {
+      "hoje": "2026-09-30",
+      "total": 2,
+      "cartoes": [
+        {
+          "id": "c1a2",
+          "frente": "A Fé representa o primeiro _____ da escada de Jacó.",
+          "verso": "degrau",
+          "fonte": "Breviário Maçônico, 03/07"
+        },
+        {
+          "id": "d9e8",
+          "frente": "Definição de acácia",
+          "verso": "Símbolo da imortalidade.",
+          "fonte": "Dicionário, p. 12"
+        }
+      ],
+      "rotulos": {
+        "titulo": "Revisão",
+        "pendentes": "{n} cartão(ões) para hoje",
+        "vazio": "Nenhum cartão para revisar hoje.",
+        "mostrar": "Mostrar resposta",
+        "errei": "Errei",
+        "dificil": "Difícil",
+        "acertei": "Acertei",
+        "fonte": "Fonte: {fonte}",
+        "abrir": "Revisar cartões"
+      }
+    },
+    "respostas": [
+      {
+        "mensagem": {
+          "tipo": "respostaRevisao",
+          "id": "c1a2",
+          "nota": "acertei",
+          "eventoID": "e1"
+        },
+        "valida": true
+      },
+      {
+        "mensagem": {
+          "tipo": "respostaRevisao",
+          "id": "c1a2",
+          "nota": "talvez",
+          "eventoID": "e2"
+        },
+        "valida": false
+      },
+      {
+        "mensagem": {
+          "tipo": "respostaRevisao",
+          "id": "c1a2",
+          "nota": "errei",
+          "eventoID": ""
+        },
+        "valida": false
+      },
+      {
+        "mensagem": {
+          "tipo": "progresso",
+          "id": "c1a2",
+          "nota": "errei",
+          "eventoID": "e3"
+        },
+        "valida": false
+      }
+    ]
+  }
+}

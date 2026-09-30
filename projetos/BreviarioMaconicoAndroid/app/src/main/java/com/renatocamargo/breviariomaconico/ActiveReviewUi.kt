@@ -60,6 +60,7 @@ internal fun ActiveReviewSummary(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun ActiveReviewSession(colors: Palette, store: ReviewCardStore, config: ActiveReview.Config, onClose: () -> Unit) {
+    val context = androidx.compose.ui.platform.LocalContext.current
     val today = remember { LocalDate.now().toString() }
     val queue = remember { store.session(today, config) }
     var index by remember { mutableIntStateOf(0) }
@@ -68,6 +69,7 @@ internal fun ActiveReviewSession(colors: Palette, store: ReviewCardStore, config
     var chosen by remember { mutableStateOf<String?>(null) }
     fun grade(grade: ActiveReview.Grade) {
         store.answer(queue[index].card.id, grade, today, config)
+        ReviewWatchSync.sendDeck(context)
         index++
         showingAnswer = false
         chosen = null

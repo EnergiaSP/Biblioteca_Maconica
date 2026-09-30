@@ -291,6 +291,22 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         apagar.tap()
     }
 
+    /// A collection is read aloud one reading after another, with its position, next and stop. Same as Android.
+    func testCollectionPlaysReadingsInSequence() {
+        navigationTab("Coleções").tap()
+        let ouvir = app.buttons.matching(identifier: "audio.sequence.play").firstMatch
+        XCTAssertTrue(ouvir.waitForExistence(timeout: 20))
+        ouvir.tap()
+        let estado = app.staticTexts["audio.sequence.status"]
+        XCTAssertTrue(estado.waitForExistence(timeout: 5))
+        XCTAssertTrue(estado.label.contains("leitura 1 de"), estado.label)
+        app.buttons["audio.sequence.next"].tap()
+        XCTAssertTrue(estado.wait(for: \.label, toEqual: estado.label.replacingOccurrences(of: "leitura 1 de", with: "leitura 2 de"),
+                                  timeout: 5), estado.label)
+        app.buttons["audio.sequence.stop"].tap()
+        XCTAssertTrue(estado.waitForNonExistence(timeout: 5))
+    }
+
     /// A step marked by hand counts in the progress of its degree; "Estudar no Dossiê" builds the dossier of the topic. Same as Android.
     func testDegreeTrackCountsMarkedStepAndStudiesTopic() {
         navigationTab("Mais").tap()
@@ -300,8 +316,9 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         trilhas.tap()
         let progresso = app.staticTexts["trilha.aprendiz.progresso"]
         XCTAssertTrue(progresso.waitForExistence(timeout: 5))
+        app.buttons["trilha.aprendiz.etapas"].tap()
         let marcar = app.buttons["trilha.etapa.aprendiz_iniciacao.marcar"]
-        if marcar.label == "Desmarcar" { marcar.tap() }
+        if marcar.label.hasPrefix("Desmarcar") { marcar.tap() }
         XCTAssertEqual(progresso.label, "0 de 10 etapas (0%)")
         marcar.tap()
         XCTAssertTrue(progresso.wait(for: \.label, toEqual: "1 de 10 etapas (10%)", timeout: 5), progresso.label)
@@ -693,6 +710,24 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         app.buttons["Configurações"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Configurações"].waitForExistence(timeout: 5))
         try auditAccessibility()
+    }
+
+    /// The screens of Phases 10 to 12 are audited too, as on Android (AccessibilityAuditTest).
+    @MainActor
+    func testFullAccessibilityDegreeTracksAndNotebook() throws {
+        for tela in ["Trilhas por grau", "Caderno de estudo"] {
+            // Reopened between screens, so the Mais tab starts on its menu.
+            app.terminate()
+            app.launch()
+            XCTAssertTrue(app.staticTexts["Biblioteca Maçônica"].waitForExistence(timeout: 12))
+            navigationTab("Mais").tap()
+            let botao = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", tela)).firstMatch
+            XCTAssertTrue(botao.waitForExistence(timeout: 5))
+            for _ in 0..<4 where !botao.isHittable { app.swipeUp(velocity: .slow) }
+            botao.tap()
+            XCTAssertTrue(app.staticTexts[tela].firstMatch.waitForExistence(timeout: 10))
+            try auditAccessibility()
+        }
     }
 
     @MainActor

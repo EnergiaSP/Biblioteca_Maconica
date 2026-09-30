@@ -327,6 +327,8 @@ extension HomeView {
                             .foregroundStyle(textoSecundarioApp)
                     }
 
+                    BarraSequenciaAudio(leitorVoz: leitorVoz, tema: temaApp)
+
                     Text("Temas")
                         .font(.title3)
                         .fontWeight(.semibold)
@@ -341,9 +343,8 @@ extension HomeView {
                         spacing: 12
                     ) {
                         ForEach(colecoesTematicas) { colecao in
-                            ColecaoTematicaCard(colecao: colecao, tema: temaApp) { item in
-                                abrirItemEstudo(item)
-                            }
+                            ColecaoTematicaCard(colecao: colecao, tema: temaApp, abrir: { abrirItemEstudo($0) },
+                                                ouvir: { ouvirSequencia(colecao.titulo, colecao.itens) })
                         }
                     }
 
@@ -360,9 +361,8 @@ extension HomeView {
                     }
 
                     ForEach(trilhasDeEstudo) { trilha in
-                        TrilhaEstudoCard(trilha: trilha, tema: temaApp) { item in
-                            abrirItemEstudo(item)
-                        }
+                        TrilhaEstudoCard(trilha: trilha, tema: temaApp, abrir: { abrirItemEstudo($0) },
+                                         ouvir: { ouvirSequencia(trilha.titulo, trilha.itens) })
                     }
 
                     if historicoReflexoes.isEmpty == false {

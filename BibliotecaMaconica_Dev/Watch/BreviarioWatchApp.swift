@@ -45,6 +45,8 @@ struct BreviarioWatchHomeView: View {
                         Label("Abrir leitura", systemImage: "book")
                     }
 
+                    WatchRevisaoEntrada()
+
                     notificacoes
 
                     if let mensagem {
@@ -73,6 +75,7 @@ struct BreviarioWatchHomeView: View {
                     guard obraID == leitura.obraID, data == leitura.data else { return }
                     lido = estado
                 }
+                WatchPhoneProgressSync.shared.observarRevisao()
                 lido = WatchProgressService.estaLido(leitura.data, obraID: leitura.obraID)
             }
             .onChange(of: scenePhase) { _, phase in
@@ -249,5 +252,14 @@ final class WatchPhoneProgressSync: Sendable {
 
     func enviar(obraID: String, data: String, lido: Bool) {
         transport.enviar(obraID: obraID, data: data, lido: lido)
+    }
+
+    /// Today's review session arrives from the iPhone; each grade goes back to it.
+    @MainActor func observarRevisao() {
+        transport.observarRevisao(baralho: { WatchRevisaoStore.shared.receber($0) })
+    }
+
+    func responder(id: String, nota: String) {
+        transport.enviarResposta(RespostaRelogio(id: id, nota: nota, eventoID: UUID().uuidString))
     }
 }

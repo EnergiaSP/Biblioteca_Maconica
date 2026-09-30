@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "descricao": "Trilhas de estudo por grau. Cada etapa e um tema estudado no Dossie; conta como estudada quando ha um dossie salvo com o mesmo tema (sem diferenciar maiusculas, acentos e espacos) ou quando o leitor a marca. Percentual: etapas estudadas x 100 / total, arredondado para baixo. Marco: o ultimo de marcos cujo minimo de etapas (percentual do total, arredondado para cima, pelo menos 1) foi atingido. Proxima: a primeira etapa ainda nao estudada, na ordem da trilha. Obras sugeridas: obras do catalogo (sem duplicatas) cujo titulo ou assuntos, normalizados, casam com o padrao do grau, em ordem alfabetica normalizada. Sem restricao: as tres trilhas ficam visiveis para todos.",
+  "descricao": "Trilhas de estudo por grau. Cada etapa e um tema estudado no Dossie; conta como estudada quando ha um dossie salvo com o mesmo tema (sem diferenciar maiusculas, acentos e espacos) ou quando o leitor a marca. Percentual: etapas estudadas x 100 / total, arredondado para baixo. Marco: o ultimo de marcos cujo minimo de etapas (percentual do total, arredondado para cima, pelo menos 1) foi atingido. Proxima: a primeira etapa ainda nao estudada, na ordem da trilha. Obras sugeridas: obras do catalogo (sem duplicatas) cujo titulo ou assuntos, normalizados, casam com o padrao do grau, em ordem alfabetica normalizada. Sem restricao: as tres trilhas ficam visiveis para todos. Na tela, cada grau mostra a proxima etapa e as demais ficam em Ver todas as etapas.",
   "marcos": [
     {
       "percentual": 0,
@@ -26,7 +26,9 @@
     "desmarcar": "Desmarcar",
     "estudada": "Estudada",
     "obras": "Obras sugeridas do acervo",
-    "semObras": "Nenhuma obra do acervo trata só deste grau; os dossiês consultam toda a biblioteca."
+    "semObras": "Nenhuma obra do acervo trata só deste grau; os dossiês consultam toda a biblioteca.",
+    "verEtapas": "Ver todas as etapas ({n})",
+    "ocultarEtapas": "Mostrar só a próxima etapa"
   },
   "graus": [
     {

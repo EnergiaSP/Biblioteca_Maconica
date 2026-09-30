@@ -1,5 +1,7 @@
 package com.renatocamargo.breviariomaconico
 
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -37,12 +39,16 @@ internal fun StudyCollectionCard(
     matches: List<BreviarioItem>,
     colors: Palette,
     readingLabel: (BreviarioItem) -> String,
-    onRead: (BreviarioItem) -> Unit
+    onRead: (BreviarioItem) -> Unit,
+    trailing: @Composable () -> Unit = {}
 ) {
     var expanded by rememberSaveable(collection.id) { mutableStateOf(false) }
     PremiumCard(colors) {
-        Text(collection.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold,
-            modifier = Modifier.semantics { heading() })
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(collection.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold,
+                modifier = Modifier.weight(1f).semantics { heading() })
+            trailing()
+        }
         Text("${matches.size} ${if (matches.size == 1) "leitura" else "leituras"}", color = colors.secondary)
         Text(collection.subtitle, color = colors.secondary)
         Text(collection.detail, color = colors.secondary)

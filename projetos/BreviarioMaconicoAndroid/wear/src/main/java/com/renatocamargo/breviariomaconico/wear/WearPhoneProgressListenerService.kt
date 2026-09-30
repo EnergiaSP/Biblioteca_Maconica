@@ -18,6 +18,14 @@ class WearPhoneProgressListenerService : WearableListenerService() {
     override fun onDataChanged(events: DataEventBuffer) {
         events.filter { it.type == DataEvent.TYPE_CHANGED && it.dataItem.uri.path?.startsWith("${ProgressTransport.DATA_PATH}/") == true }
             .forEach { apply(runCatching { ProgressTransport.parse(DataMapItem.fromDataItem(it.dataItem).dataMap) }.getOrNull()) }
+        // Today's review session from the phone.
+        events.filter { it.type == DataEvent.TYPE_CHANGED && it.dataItem.uri.path == com.renatocamargo.breviariomaconico.progress.ReviewTransport.DECK_PATH }
+            .forEach { event ->
+                runCatching {
+                    com.renatocamargo.breviariomaconico.progress.ReviewTransport.parseDeck(
+                        JSONObject(DataMapItem.fromDataItem(event.dataItem).dataMap.getString("baralho").orEmpty()))
+                }.getOrNull()?.let { WearReviewStore.receive(applicationContext, it) }
+            }
     }
 
     private fun apply(event: ProgressVersion?) = ProgressTransport.receive(applicationContext, event) {

@@ -11,6 +11,7 @@ struct TrilhasGrauView: View {
     @State private var marcadas = TrilhasGrau.marcadas()
     @State private var temasSalvos: [String] = []
     @State private var nomes: [String: String] = [:]
+    @State private var abertos: Set<String> = []
 
     var body: some View {
         let progresso = TrilhasGrau.progresso(configuracao, temasSalvos: temasSalvos, marcadas: marcadas)
@@ -66,9 +67,20 @@ struct TrilhasGrauView: View {
                     .map { configuracao.rotulo("proxima", ["tema": $0.tema]) } ?? configuracao.rotulo("concluida"))
                 .font(.callout)
                 .foregroundStyle(tema.textoSecundario)
-            ForEach(grau.etapas) { etapa in
+            // The next step is shown; the whole track opens on request.
+            let aberto = abertos.contains(grau.id)
+            ForEach(grau.etapas.filter { aberto || $0.id == andamento.proxima }) { etapa in
                 etapaView(etapa, feita: andamento.concluidas.contains(etapa.id))
             }
+            Button {
+                if aberto { abertos.remove(grau.id) } else { abertos.insert(grau.id) }
+            } label: {
+                Text(aberto ? configuracao.rotulo("ocultarEtapas") : configuracao.rotulo("verEtapas", ["n": "\(grau.etapas.count)"]))
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
+            }
+            .tint(tema.destaque)
+            .accessibilityIdentifier("trilha.\(grau.id).etapas")
             Text(configuracao.rotulo("obras"))
                 .font(.headline)
                 .foregroundStyle(tema.textoPrincipal)
@@ -79,10 +91,14 @@ struct TrilhasGrauView: View {
                     .fixedSize(horizontal: false, vertical: true)
             } else {
                 ForEach(grau.obrasSugeridas, id: \.self) { obra in
-                    Button(nomes[obra] ?? obra) { abrirObra(obra) }
-                        .font(.callout)
-                        .multilineTextAlignment(.leading)
-                        .tint(tema.destaque)
+                    Button { abrirObra(obra) } label: {
+                        Text(nomes[obra] ?? obra)
+                            .font(.callout)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                            .contentShape(Rectangle())
+                    }
+                    .tint(tema.destaque)
                 }
             }
         }
@@ -107,6 +123,7 @@ struct TrilhasGrauView: View {
                 Button(configuracao.rotulo("estudar")) { estudar(etapa.tema) }
                     .buttonStyle(.bordered)
                     .tint(tema.destaque)
+                    .accessibilityLabel("\(configuracao.rotulo("estudar")): \(etapa.tema)")
                     .accessibilityIdentifier("trilha.etapa.\(etapa.id).estudar")
                 Button(configuracao.rotulo(marcadas.contains(etapa.id) ? "desmarcar" : "marcar")) {
                     TrilhasGrau.alternar(etapa.id)
@@ -114,6 +131,7 @@ struct TrilhasGrauView: View {
                 }
                 .buttonStyle(.bordered)
                 .tint(tema.textoSecundario)
+                .accessibilityLabel("\(configuracao.rotulo(marcadas.contains(etapa.id) ? "desmarcar" : "marcar")): \(etapa.tema)")
                 .accessibilityIdentifier("trilha.etapa.\(etapa.id).marcar")
             }
         }

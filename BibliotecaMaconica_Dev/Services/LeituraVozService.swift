@@ -41,9 +41,23 @@ final class LeituraVozService: NSObject, ObservableObject, AVSpeechSynthesizerDe
 
     @Published private(set) var estaLendo = false
     @Published private(set) var estaPausado = false
+    /// Readings of a collection or study path read one after another (audio_sequencia_v1.json).
+    @Published private(set) var sequencia: Sequencia?
+
+    struct Sequencia: Equatable {
+        let titulo: String
+        let itens: [BreviarioItem]
+        var posicao: Int
+
+        static func == (lhs: Sequencia, rhs: Sequencia) -> Bool {
+            lhs.titulo == rhs.titulo && lhs.posicao == rhs.posicao && lhs.itens.map(\.id) == rhs.itens.map(\.id)
+        }
+    }
 
     private let sintetizador = AVSpeechSynthesizer()
     private var itemAtualID: Int?
+    private var vozSequencia: (genero: VozLeituraGenero, velocidade: Double)?
+    private var utteranceAtual: AVSpeechUtterance?
 
     override init() {
         super.init()
@@ -72,6 +86,7 @@ final class LeituraVozService: NSObject, ObservableObject, AVSpeechSynthesizerDe
         itemAtualID = item.id
 
         let utterance = AVSpeechUtterance(string: textoParaLeitura(item))
+        utteranceAtual = utterance
         utterance.voice = vozPreferida(genero: genero)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate * Float(velocidade)
         utterance.pitchMultiplier = 1.04
@@ -106,6 +121,8 @@ final class LeituraVozService: NSObject, ObservableObject, AVSpeechSynthesizerDe
     }
 
     func parar() {
+        sequencia = nil
+        vozSequencia = nil
         guard sintetizador.isSpeaking || estaLendo else {
             return
         }
@@ -118,11 +135,67 @@ final class LeituraVozService: NSObject, ObservableObject, AVSpeechSynthesizerDe
     }
 
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        finalizar()
+        let terminada = ObjectIdentifier(utterance)
+        DispatchQueue.main.async {
+            let atualEhEsta = self.utteranceAtual.map(ObjectIdentifier.init) == terminada
+            // In a sequence, the next reading starts when this one ends.
+            if atualEhEsta, let atual = self.sequencia, atual.posicao + 1 < atual.itens.count {
+                self.lerDaSequencia(atual.posicao + 1)
+            } else {
+                if atualEhEsta { self.sequencia = nil }
+                self.finalizar()
+            }
+        }
+    }
+
+    // MARK: - Sequência
+
+    /// Reads the readings in order, announcing the position of each one.
+    func ouvirSequencia(titulo: String, itens: [BreviarioItem], genero: VozLeituraGenero, velocidade: Double, limite: Int) {
+        let lista = Array(itens.prefix(limite))
+        guard !lista.isEmpty else { return }
+        parar()
+        vozSequencia = (genero, velocidade)
+        sequencia = Sequencia(titulo: titulo, itens: lista, posicao: 0)
+        lerDaSequencia(0)
+    }
+
+    func proximaDaSequencia() {
+        guard let atual = sequencia, atual.posicao + 1 < atual.itens.count else { parar(); return }
+        lerDaSequencia(atual.posicao + 1)
+    }
+
+    private func lerDaSequencia(_ posicao: Int) {
+        guard var atual = sequencia, let voz = vozSequencia, atual.itens.indices.contains(posicao) else { return }
+        atual.posicao = posicao
+        let item = atual.itens[posicao]
+        // The announcement comes from the shared rule, as on Android.
+        let anuncio = AudioSequencia.Configuracao.compartilhada?.rotulo("anuncio", ["n": "\(posicao + 1)", "total": "\(atual.itens.count)"]) ?? ""
+        let salva = atual
+        sintetizador.stopSpeaking(at: .immediate)
+        sequencia = salva
+        vozSequencia = voz
+        itemAtualID = item.id
+        let utterance = AVSpeechUtterance(string: anuncio + " " + textoParaLeitura(item))
+        utterance.voice = vozPreferida(genero: voz.genero)
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * Float(voz.velocidade)
+        utterance.pitchMultiplier = 1.04
+        utterance.preUtteranceDelay = 0.3
+        utterance.postUtteranceDelay = 0.4
+        utteranceAtual = utterance
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
+        try? AVAudioSession.sharedInstance().setActive(true)
+        estaLendo = true
+        estaPausado = false
+        sintetizador.speak(utterance)
     }
 
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        finalizar()
+        // Skipping to the next reading cancels the current one; only the reading still current ends the reading state.
+        let cancelada = ObjectIdentifier(utterance)
+        DispatchQueue.main.async {
+            if self.utteranceAtual.map(ObjectIdentifier.init) == cancelada { self.finalizar() }
+        }
     }
 
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
@@ -138,12 +211,10 @@ final class LeituraVozService: NSObject, ObservableObject, AVSpeechSynthesizerDe
     }
 
     private func finalizar() {
-        DispatchQueue.main.async {
-            self.estaLendo = false
-            self.estaPausado = false
-            self.itemAtualID = nil
-            try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-        }
+        estaLendo = false
+        estaPausado = false
+        itemAtualID = nil
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 
     private func textoParaLeitura(_ item: BreviarioItem) -> String {

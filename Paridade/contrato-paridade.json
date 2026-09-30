@@ -137,6 +137,18 @@
       "ios": "BibliotecaMaconica_Dev/Resources/casos_variantes_v1.json",
       "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/casos_variantes_v1.json",
       "mustBeIdentical": true
+    },
+    "audioSequenceRules": {
+      "canonical": "Paridade/audio_sequencia_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/audio_sequencia_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/audio_sequencia_v1.json",
+      "mustBeIdentical": true
+    },
+    "watchReviewRules": {
+      "canonical": "Paridade/relogio_revisao_v1.json",
+      "ios": "BibliotecaMaconica_Dev/Resources/relogio_revisao_v1.json",
+      "android": "projetos/BreviarioMaconicoAndroid/app/src/main/assets/relogio_revisao_v1.json",
+      "mustBeIdentical": true
     }
   },
   "commonCapabilities": [
@@ -172,7 +184,9 @@
     "notebook_sync_own_account",
     "prancha_abnt",
     "degree_study_tracks",
-    "search_spelling_and_plural_variants"
+    "search_spelling_and_plural_variants",
+    "audio_reading_sequences",
+    "watch_review_cards"
   ],
   "nativeEquivalents": [
     {
