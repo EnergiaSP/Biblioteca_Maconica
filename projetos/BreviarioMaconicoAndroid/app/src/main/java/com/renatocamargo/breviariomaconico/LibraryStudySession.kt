@@ -24,5 +24,7 @@ internal class LibraryStudySession(statusInicial: String, termoInicial: String =
     /** Saved dossier shown now, and one waiting to be opened (from a review notification). */
     var savedDossierId by mutableStateOf<String?>(null)
     var pendingSavedDossierId by mutableStateOf<String?>(null)
+    /** Topic to study now in the whole library (from the tracks by degree). */
+    var pendingTopic by mutableStateOf<String?>(null)
     var ultimaConsulta: List<Any?>? = null
 }

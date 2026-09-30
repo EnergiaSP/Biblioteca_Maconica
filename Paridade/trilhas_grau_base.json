@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Trilhas de estudo por grau. Cada etapa e um tema estudado no Dossie; conta como estudada quando ha um dossie salvo com o mesmo tema (sem diferenciar maiusculas, acentos e espacos) ou quando o leitor a marca. Percentual: etapas estudadas x 100 / total, arredondado para baixo. Marco: o ultimo de marcos cujo minimo de etapas (percentual do total, arredondado para cima, pelo menos 1) foi atingido. Proxima: a primeira etapa ainda nao estudada, na ordem da trilha. Obras sugeridas: obras do catalogo (sem duplicatas) cujo titulo ou assuntos, normalizados, casam com o padrao do grau, em ordem alfabetica normalizada. Sem restricao: as tres trilhas ficam visiveis para todos.",
+  "marcos": [
+    {
+      "percentual": 0,
+      "rotulo": "Primeira etapa estudada"
+    },
+    {
+      "percentual": 50,
+      "rotulo": "Metade da trilha"
+    },
+    {
+      "percentual": 100,
+      "rotulo": "Trilha concluída"
+    }
+  ],
+  "rotulos": {
+    "titulo": "Trilhas por grau",
+    "descricao": "Estude os temas de cada grau no Dossiê. A etapa fica estudada quando você salva o dossiê do tema ou a marca aqui.",
+    "progresso": "{feitas} de {total} etapas ({percentual}%)",
+    "proxima": "Próxima etapa: {tema}",
+    "concluida": "Todas as etapas estudadas.",
+    "estudar": "Estudar no Dossiê",
+    "marcar": "Marcar como estudada",
+    "desmarcar": "Desmarcar",
+    "estudada": "Estudada",
+    "obras": "Obras sugeridas do acervo",
+    "semObras": "Nenhuma obra do acervo trata só deste grau; os dossiês consultam toda a biblioteca."
+  },
+  "graus": [
+    {
+      "id": "aprendiz",
+      "nome": "Aprendiz",
+      "descricao": "O primeiro grau: o trabalho sobre si mesmo, os instrumentos e os símbolos da Loja.",
+      "padraoObras": "aprendiz|primeiro grau|1o grau|grau 1\\b",
+      "etapas": [
+        {
+          "id": "aprendiz_iniciacao",
+          "tema": "Iniciação",
+          "descricao": "O sentido da iniciação e do nascimento para uma nova vida."
+        },
+        {
+          "id": "aprendiz_pedra_bruta",
+          "tema": "Pedra bruta",
+          "descricao": "O trabalho de desbastar as próprias imperfeições."
+        },
+        {
+          "id": "aprendiz_maco_cinzel",
+          "tema": "Maço e cinzel",
+          "descricao": "A vontade e o discernimento no trabalho do Aprendiz."
+        },
+        {
+          "id": "aprendiz_regua",
+          "tema": "Régua de 24 polegadas",
+          "descricao": "O uso do tempo e a medida do dever."
+        },
+        {
+          "id": "aprendiz_colunas",
+          "tema": "Colunas",
+          "descricao": "As colunas do Templo e o equilíbrio."
+        },
+        {
+          "id": "aprendiz_pavimento",
+          "tema": "Pavimento mosaico",
+          "descricao": "A dualidade e a harmonia dos contrários."
+        },
+        {
+          "id": "aprendiz_luzes",
+          "tema": "Três grandes luzes",
+          "descricao": "O Livro da Lei, o esquadro e o compasso."
+        },
+        {
+          "id": "aprendiz_avental",
+          "tema": "Avental",
+          "descricao": "O trabalho e a pureza do avental."
+        },
+        {
+          "id": "aprendiz_escada",
+          "tema": "Escada de Jacó",
+          "descricao": "A ascensão pelas virtudes."
+        },
+        {
+          "id": "aprendiz_silencio",
+          "tema": "Silêncio",
+          "descricao": "A disciplina do silêncio e a escuta."
+        }
+      ]
+    },
+    {
+      "id": "companheiro",
+      "nome": "Companheiro",
+      "descricao": "O segundo grau: o conhecimento, as artes liberais e o trabalho com o próximo.",
+      "padraoObras": "companheiro|segundo grau|2o grau|grau 2\\b",
+      "etapas": [
+        {
+          "id": "companheiro_pedra_cubica",
+          "tema": "Pedra cúbica",
+          "descricao": "A pedra já trabalhada, pronta para a construção."
+        },
+        {
+          "id": "companheiro_nivel_prumo",
+          "tema": "Nível e prumo",
+          "descricao": "A igualdade e a retidão."
+        },
+        {
+          "id": "companheiro_estrela",
+          "tema": "Estrela flamejante",
+          "descricao": "A luz do conhecimento."
+        },
+        {
+          "id": "companheiro_letra_g",
+          "tema": "Letra G",
+          "descricao": "Geometria, Deus e a gnose."
+        },
+        {
+          "id": "companheiro_sentidos",
+          "tema": "Cinco sentidos",
+          "descricao": "A percepção como caminho do saber."
+        },
+        {
+          "id": "companheiro_artes",
+          "tema": "Sete artes liberais",
+          "descricao": "Gramática, retórica, lógica, aritmética, geometria, música e astronomia."
+        },
+        {
+          "id": "companheiro_escada_caracol",
+          "tema": "Escada em caracol",
+          "descricao": "A subida gradual ao conhecimento."
+        },
+        {
+          "id": "companheiro_geometria",
+          "tema": "Geometria",
+          "descricao": "A ciência da medida e da construção."
+        },
+        {
+          "id": "companheiro_trabalho",
+          "tema": "Trabalho",
+          "descricao": "O trabalho como virtude e dever."
+        }
+      ]
+    },
+    {
+      "id": "mestre",
+      "nome": "Mestre",
+      "descricao": "O terceiro grau: a lenda de Hiram, a morte simbólica e a perseverança.",
+      "padraoObras": "mestre maco|grau de mestre|terceiro grau|3o grau|grau 3\\b",
+      "etapas": [
+        {
+          "id": "mestre_hiram",
+          "tema": "Lenda de Hiram",
+          "descricao": "A lenda central do grau de Mestre."
+        },
+        {
+          "id": "mestre_acacia",
+          "tema": "Acácia",
+          "descricao": "A imortalidade e a esperança."
+        },
+        {
+          "id": "mestre_camara_meio",
+          "tema": "Câmara do meio",
+          "descricao": "O lugar do Mestre e do seu aperfeiçoamento."
+        },
+        {
+          "id": "mestre_palavra_perdida",
+          "tema": "Palavra perdida",
+          "descricao": "A busca da verdade que se perdeu."
+        },
+        {
+          "id": "mestre_pontos_perfeicao",
+          "tema": "Cinco pontos de perfeição",
+          "descricao": "A fraternidade entre os Mestres."
+        },
+        {
+          "id": "mestre_compasso",
+          "tema": "Compasso",
+          "descricao": "O espírito acima da matéria."
+        },
+        {
+          "id": "mestre_prancheta",
+          "tema": "Prancheta",
+          "descricao": "O plano da obra e o dever de ensinar."
+        },
+        {
+          "id": "mestre_morte",
+          "tema": "Morte e ressurreição",
+          "descricao": "A morte simbólica e o renascimento."
+        }
+      ]
+    }
+  ]
+}

@@ -126,6 +126,23 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         gerarDossieEstudo(salvo: salvo)
     }
 
+    /// Studies a topic of the tracks by degree in the whole library; a study saved before keeps its dates.
+    func estudarTemaNoDossie(_ tema: String) {
+        temaDossie = tema
+        escopoDossie = .appTodo
+        filtroDossie = BibliotecaFiltroMetadados()
+        navigation.selectedTab = AppNavigationController.Tab.dossie.rawValue
+        gerarDossieEstudo(salvo: DossiesSalvosStore().buscar(chave: chaveDossieAtual()))
+    }
+
+    func abrirObraDaTrilha(_ id: String) {
+        guard let obra = store.obras.first(where: { $0.id == id }) else {
+            mensagemErro = "Baixe a obra no Acervo antes de abrir."
+            return
+        }
+        abrirObra(obra)
+    }
+
     /// Titles of the breviaries and of every work in the library catalog, by id.
     func titulosObras() -> [String: String] {
         var titulos = Dictionary(((try? BibliotecaRAGCatalogService())?.obras() ?? []).map { ($0.id, $0.titulo) },

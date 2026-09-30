@@ -1208,6 +1208,20 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI-free dossier must reproduce the golden cases of Tools/dossie_referencia.py exactly.
+    func testDegreeTracksMatchReferenceCases() throws {
+        let configuracao = try XCTUnwrap(TrilhasGrau.Configuracao.compartilhada)
+        XCTAssertEqual(configuracao.graus.map(\.id), ["aprendiz", "companheiro", "mestre"])
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_trilhas_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        for caso in try XCTUnwrap(raiz["casos"] as? [[String: Any]]) {
+            let esperado = try JSONDecoder().decode([TrilhasGrau.Progresso].self,
+                                                    from: JSONSerialization.data(withJSONObject: try XCTUnwrap(caso["esperado"])))
+            let obtido = TrilhasGrau.progresso(configuracao, temasSalvos: try XCTUnwrap(caso["temasSalvos"] as? [String]),
+                                               marcadas: Set(try XCTUnwrap(caso["marcadas"] as? [String])))
+            XCTAssertEqual(obtido, esperado, caso["nome"] as? String ?? "")
+        }
+    }
+
     func testPranchaMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(PranchaDossie.Configuracao.compartilhada)
         let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_prancha_v1", withExtension: "json"))

@@ -208,6 +208,7 @@ internal enum class Screen(val title: String) {
     OfficialSources("Fontes oficiais"),
     RequestWork("Solicitar obra"),
     Notebook("Caderno de estudo"),
+    Tracks("Trilhas por grau"),
     ReadingAI("IA da leitura"),
     Export("Exportar"),
     Settings("Configurações"),
@@ -574,6 +575,12 @@ internal fun BreviarioAndroidApp(
                                 note.obraId != null && note.data != null -> repo.porObraEData(note.obraId, note.data)?.let(::goReader)
                             }
                         }
+                        Screen.Tracks -> DegreeTracksScreen(colors, titles = {
+                            BibliotecaCatalogRepository.get(context).obrasDisponiveis().associate { it.id to it.titulo }
+                        }, onStudy = { topic ->
+                            dossieSession.pendingTopic = topic
+                            navigation.show(Screen.Dossier)
+                        }, onOpenWork = { abrirObraBiblioteca(it) })
                     }
                 }
             }

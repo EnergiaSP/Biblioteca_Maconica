@@ -35,6 +35,7 @@ enum TelaMais: String {
     case fontesOficiais
     case solicitarObra
     case caderno
+    case trilhas
     case ia
     case estatisticas
     case configuracoes

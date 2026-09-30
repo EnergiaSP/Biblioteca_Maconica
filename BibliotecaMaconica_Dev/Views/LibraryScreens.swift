@@ -431,6 +431,11 @@ extension HomeView {
                 solicitarObraView
             case .caderno:
                 CadernoEstudoView(tema: temaApp, titulos: { titulosObras() }, abrir: { abrirURLBreviario($0) })
+            case .trilhas:
+                if let configuracao = TrilhasGrau.Configuracao.compartilhada {
+                    TrilhasGrauView(tema: temaApp, configuracao: configuracao, titulos: { titulosObras() },
+                                    estudar: { estudarTemaNoDossie($0) }, abrirObra: { abrirObraDaTrilha($0) })
+                }
             case .ia:
                 iaLeitura
             case .estatisticas:
@@ -484,6 +489,15 @@ extension HomeView {
                             cor: .blue
                         ) {
                             telaMais = .acervoOffline
+                        }
+
+                        acaoHome(
+                            titulo: "Trilhas por grau",
+                            subtitulo: "Aprendiz, Companheiro e Mestre: etapas, progresso e obras",
+                            icone: "stairs",
+                            cor: .indigo
+                        ) {
+                            telaMais = .trilhas
                         }
 
                         acaoHome(

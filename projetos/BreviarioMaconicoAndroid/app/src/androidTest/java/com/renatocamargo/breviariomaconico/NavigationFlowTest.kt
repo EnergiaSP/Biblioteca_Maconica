@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.assertTextContains
+import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.assertIsOff
 import androidx.compose.ui.test.assertIsOn
 import androidx.compose.ui.test.assertIsNotEnabled
@@ -143,6 +144,28 @@ class NavigationFlowTest {
             cards.all().map { it.dossierId }.toSet().forEach { cards.removeDossier(it) }
             before.forEach { store.save(it) }
         }
+    }
+
+    /** A step marked by hand counts in the progress of its degree; "Estudar no Dossiê" builds the dossier of the topic, as on iOS. */
+    @Test
+    fun degreeTrackCountsMarkedStepAndStudiesTopic() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        if ("aprendiz_iniciacao" in com.renatocamargo.breviariomaconico.data.DegreeTracks.marked(context)) {
+            com.renatocamargo.breviariomaconico.data.DegreeTracks.toggle(context, "aprendiz_iniciacao")
+        }
+        compose.onNodeWithTag("tab.more").performClick()
+        compose.onNodeWithText("Trilhas por grau").performScrollTo().performClick()
+        compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("0 de 10 etapas (0%)")
+        compose.onNodeWithTag("trilha.etapa.aprendiz_iniciacao.marcar").performScrollTo().performClick()
+        compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("1 de 10 etapas (10%)")
+        compose.onNodeWithTag("trilha.aprendiz.marco").assertExists()
+        compose.onNodeWithTag("trilha.etapa.aprendiz_iniciacao.marcar").performScrollTo().performClick()
+        compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("0 de 10 etapas (0%)")
+        compose.onNodeWithTag("trilha.etapa.aprendiz_pedra_bruta.estudar").performScrollTo().performClick()
+        compose.waitUntil(30_000) {
+            compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
+        }
+        compose.onNodeWithTag("dossier.topic").assertTextContains("Pedra bruta")
     }
 
     /** The prancha of a dossier shows each author side by side and the text with ABNT references, as on iOS. */
