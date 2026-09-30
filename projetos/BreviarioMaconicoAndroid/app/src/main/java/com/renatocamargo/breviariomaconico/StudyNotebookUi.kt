@@ -44,6 +44,7 @@ import java.time.LocalDate
  * Study notebook: what is kept on this device, export and import of the portable file, and the sync
  * options. Same sections and messages as iOS `CadernoEstudoView`.
  */
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
 internal fun StudyNotebookScreen(colors: Palette) {
     val context = LocalContext.current
@@ -60,7 +61,11 @@ internal fun StudyNotebookScreen(colors: Palette) {
     var lastSync by remember { mutableStateOf(NotebookSync.lastSync(context)) }
     // Options offered on this device: Google Drive here, iCloud on iPhone and iPad; the own account when published.
     val options = listOf(NotebookSync.Option.NONE, NotebookSync.Option.GOOGLE) +
-        (if (OwnAccountNotebook.provider(context) == null) emptyList() else listOf(NotebookSync.Option.OWN_ACCOUNT))
+        (if (OwnAccountNotebook.available(context)) listOf(NotebookSync.Option.OWN_ACCOUNT) else emptyList())
+    val account = remember { OwnAccountNotebook.loadConfig(context) }
+    var code by remember { mutableStateOf(OwnAccountNotebook.storedCode(context)) }
+    var typedCode by remember { mutableStateOf("") }
+    var showCode by remember { mutableStateOf(false) }
     fun optionName(value: NotebookSync.Option) = when (value) {
         NotebookSync.Option.NONE -> config.label("opcaoNenhuma")
         NotebookSync.Option.GOOGLE -> config.label("opcaoGoogle")
@@ -150,7 +155,49 @@ internal fun StudyNotebookScreen(colors: Palette) {
                         }
                     }
                 }
-                if (option != NotebookSync.Option.NONE) {
+                if (option == NotebookSync.Option.OWN_ACCOUNT) {
+                    val current = code
+                    if (current != null) {
+                        Text(account.label("codigo"), color = colors.secondary)
+                        Text(if (showCode) current else "••••-".repeat(7) + "••••", color = colors.text,
+                            fontFamily = androidx.compose.ui.text.font.FontFamily.Monospace, modifier = Modifier.testTag("notebook.account.code"))
+                        Text(account.label("avisoCodigo"), color = colors.secondary, fontSize = 13.sp)
+                        androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            OutlinedButton(onClick = { showCode = !showCode }) { Text(account.label("mostrar"), color = colors.text) }
+                            OutlinedButton(onClick = {
+                                val clipboard = context.getSystemService(android.content.ClipboardManager::class.java)
+                                clipboard?.setPrimaryClip(android.content.ClipData.newPlainText(account.label("codigo"), current))
+                            }) { Text(account.label("copiar"), color = colors.text) }
+                            OutlinedButton(onClick = { OwnAccountNotebook.storeCode(context, null); code = null; showCode = false }) {
+                                Text(account.label("sair"), color = colors.text)
+                            }
+                        }
+                    } else {
+                        Button(colors = libraryActionColors(colors), modifier = Modifier.testTag("notebook.account.create"), onClick = {
+                            val created = OwnAccountNotebook.newCode(account)
+                            OwnAccountNotebook.storeCode(context, created)
+                            code = created
+                            showCode = true
+                            syncNow()
+                        }) { Text(account.label("criar")) }
+                        androidx.compose.material3.OutlinedTextField(value = typedCode, onValueChange = { typedCode = it },
+                            label = { Text(account.label("codigo")) }, singleLine = true,
+                            modifier = Modifier.fillMaxWidth().testTag("notebook.account.input"))
+                        OutlinedButton(enabled = typedCode.isNotBlank(), modifier = Modifier.testTag("notebook.account.enter"), onClick = {
+                            val normalized = OwnAccountNotebook.normalize(typedCode, account)
+                            if (normalized == null) {
+                                message = account.label("codigoInvalido")
+                            } else {
+                                val grouped = OwnAccountNotebook.group(normalized, account)
+                                OwnAccountNotebook.storeCode(context, grouped)
+                                code = grouped
+                                typedCode = ""
+                                syncNow()
+                            }
+                        }) { Text(account.label("entrar"), color = colors.text) }
+                    }
+                }
+                if (option != NotebookSync.Option.NONE && (option != NotebookSync.Option.OWN_ACCOUNT || code != null)) {
                     Button(colors = libraryActionColors(colors), enabled = !syncing, modifier = Modifier.testTag("notebook.sync.now"),
                         onClick = { syncNow() }) { Text(if (syncing) "Sincronizando..." else config.label("sincronizar")) }
                     lastSync?.let { millis ->

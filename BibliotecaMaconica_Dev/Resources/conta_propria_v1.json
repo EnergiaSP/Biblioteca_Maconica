@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Conta propria do caderno: codigo de sincronizacao sem e-mail nem senha, e o caderno cifrado no aparelho. Codigo: bytesCodigo bytes aleatorios em base32 (alfabeto, sem preenchimento), em grupos de tamanhoGrupo separados por hifen. Codigo normalizado: maiusculas, sem hifens e espacos; so e aceito com o tamanho exato e letras do alfabeto. Do codigo normalizado: conta = 32 primeiros hexadecimais do SHA-256 de prefixoConta + codigo; credencial = SHA-256 hexadecimal de prefixoCredencial + codigo; chave = SHA-256 (32 bytes) de prefixoChave + codigo (UTF-8). Arquivo no servidor: nonce de 12 bytes, texto cifrado e etiqueta de 16 bytes (AES-256-GCM, nessa ordem), com o caderno em JSON (UTF-8). O servidor guarda so o arquivo cifrado e o SHA-256 da credencial; GET e PUT em /v1/caderno/{conta} com Authorization: Bearer {credencial}; PUT com If-Match (ou If-None-Match: * no primeiro envio) nao sobrescreve o envio de outro aparelho.",
+  "alfabeto": "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
+  "bytesCodigo": 20,
+  "tamanhoGrupo": 4,
+  "prefixoConta": "conta:",
+  "prefixoCredencial": "credencial:",
+  "prefixoChave": "chave:",
+  "tamanhoMaximoBytes": 5000000,
+  "servidor": "",
+  "rotulos": {
+    "titulo": "Conta própria",
+    "criar": "Criar conta própria",
+    "entrar": "Entrar com código",
+    "codigo": "Código de sincronização",
+    "avisoCodigo": "Guarde este código: é a única forma de acessar o seu caderno em outro aparelho. Ele não fica com ninguém além de você.",
+    "codigoInvalido": "Código inválido. Confira os 32 caracteres.",
+    "sair": "Sair desta conta neste aparelho",
+    "mostrar": "Mostrar código",
+    "copiar": "Copiar código",
+    "conflito": "Outro aparelho sincronizou ao mesmo tempo. Toque em Sincronizar agora de novo.",
+    "semServidor": "O servidor da conta própria ainda não foi publicado.",
+    "semRede": "Sem conexão com o servidor. O caderno continua no aparelho."
+  }
+}

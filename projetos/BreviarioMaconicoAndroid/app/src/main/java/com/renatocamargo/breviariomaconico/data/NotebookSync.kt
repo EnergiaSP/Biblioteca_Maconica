@@ -145,7 +145,153 @@ internal class GoogleDriveNotebook(private val context: Context) : NotebookProvi
     }
 }
 
-/** The app's own account (end-to-end encrypted notebook on the app's server); offered once published. */
+/**
+ * The app's own account: a sync code without e-mail or password; the notebook is encrypted on the device
+ * and the server keeps only the encrypted file. Mirrors `Tools/conta_propria_referencia.mjs`;
+ * `casos_conta_propria_v1.json` holds the golden cases both apps reproduce.
+ */
 internal object OwnAccountNotebook {
-    fun provider(context: Context): NotebookProvider? = null
+    data class Config(
+        val alphabet: String, val codeBytes: Int, val groupSize: Int, val accountPrefix: String, val credentialPrefix: String,
+        val keyPrefix: String, val maxBytes: Int, val server: String, val labels: Map<String, String>
+    ) {
+        fun label(key: String) = labels[key] ?: key
+    }
+    data class Derivation(val account: String, val credential: String, val key: ByteArray)
+
+    @Volatile private var cached: Config? = null
+
+    fun loadConfig(context: Context): Config = cached ?: parse(
+        context.assets.open("conta_propria_v1.json").bufferedReader().use { JSONObject(it.readText()) }
+    ).also { cached = it }
+
+    fun parse(json: JSONObject): Config {
+        require(json.getInt("schemaVersion") == 1)
+        val labels = json.getJSONObject("rotulos")
+        return Config(json.getString("alfabeto"), json.getInt("bytesCodigo"), json.getInt("tamanhoGrupo"), json.getString("prefixoConta"),
+            json.getString("prefixoCredencial"), json.getString("prefixoChave"), json.getInt("tamanhoMaximoBytes"), json.getString("servidor"),
+            labels.keys().asSequence().associateWith { labels.getString(it) })
+    }
+
+    fun format(bytes: ByteArray, config: Config): String {
+        val out = StringBuilder()
+        var bits = 0
+        var value = 0
+        for (byte in bytes) {
+            value = ((value shl 8) or (byte.toInt() and 0xFF)) and 0xFFFF
+            bits += 8
+            while (bits >= 5) {
+                out.append(config.alphabet[(value shr (bits - 5)) and 31])
+                bits -= 5
+            }
+        }
+        if (bits > 0) out.append(config.alphabet[(value shl (5 - bits)) and 31])
+        return group(out.toString(), config)
+    }
+
+    /** "ABCDEFGH..." as "ABCD-EFGH-...". */
+    fun group(code: String, config: Config) = code.chunked(config.groupSize).joinToString("-")
+
+    fun newCode(config: Config): String = format(ByteArray(config.codeBytes).also { java.security.SecureRandom().nextBytes(it) }, config)
+
+    /** Upper case, without hyphens and spaces; null unless it has the exact length and only alphabet letters. */
+    fun normalize(code: String, config: Config): String? {
+        val clean = code.uppercase().filter { it != '-' && !it.isWhitespace() }
+        val length = (config.codeBytes * 8 + 4) / 5
+        return clean.takeIf { it.length == length && it.all { c -> c in config.alphabet } }
+    }
+
+    private fun sha(text: String) = java.security.MessageDigest.getInstance("SHA-256").digest(text.toByteArray(Charsets.UTF_8))
+    private fun hex(bytes: ByteArray) = bytes.joinToString("") { "%02x".format(it) }
+
+    fun derive(code: String, config: Config) = Derivation(hex(sha(config.accountPrefix + code)).take(32),
+        hex(sha(config.credentialPrefix + code)), sha(config.keyPrefix + code))
+
+    /** nonce (12 bytes) + ciphertext + tag (16 bytes), AES-256-GCM. */
+    fun encrypt(data: ByteArray, key: ByteArray, nonce: ByteArray = ByteArray(12).also { java.security.SecureRandom().nextBytes(it) }): ByteArray {
+        val cipher = javax.crypto.Cipher.getInstance("AES/GCM/NoPadding")
+        cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, javax.crypto.spec.SecretKeySpec(key, "AES"), javax.crypto.spec.GCMParameterSpec(128, nonce))
+        return nonce + cipher.doFinal(data)
+    }
+
+    fun decrypt(combined: ByteArray, key: ByteArray): ByteArray {
+        val cipher = javax.crypto.Cipher.getInstance("AES/GCM/NoPadding")
+        cipher.init(javax.crypto.Cipher.DECRYPT_MODE, javax.crypto.spec.SecretKeySpec(key, "AES"),
+            javax.crypto.spec.GCMParameterSpec(128, combined, 0, 12))
+        return cipher.doFinal(combined, 12, combined.size - 12)
+    }
+
+    /** The published server, or a local one for tests (`servidorTeste` in caderno_sync). */
+    fun server(context: Context): String =
+        context.applicationContext.getSharedPreferences("caderno_sync", Context.MODE_PRIVATE).getString("servidorTeste", null)
+            ?: loadConfig(context).server
+
+    /** The option is offered once the server is published. */
+    fun available(context: Context) = server(context).isNotEmpty()
+
+    fun storedCode(context: Context): String? = SecureKeyStore(context).loadNotebookCode().ifBlank { null }
+    fun storeCode(context: Context, code: String?) = SecureKeyStore(context).saveNotebookCode(code.orEmpty())
+
+    fun provider(context: Context): NotebookProvider? {
+        val config = loadConfig(context)
+        val code = storedCode(context)?.let { normalize(it, config) } ?: return null
+        return if (available(context)) OwnAccountProvider(server(context), derive(code, config), config) else null
+    }
+}
+
+/** Reads and writes the encrypted notebook; the version read is sent back, so an upload never replaces one made in between. */
+internal class OwnAccountProvider(
+    server: String, private val derivation: OwnAccountNotebook.Derivation, private val config: OwnAccountNotebook.Config
+) : NotebookProvider {
+    override val option = NotebookSync.Option.OWN_ACCOUNT
+    private val url = "${server.trim('/')}/v1/caderno/${derivation.account}"
+    private var version: String? = null
+
+    private suspend fun send(method: String, body: ByteArray? = null, headers: Map<String, String> = emptyMap()): Pair<Int, ByteArray> =
+        withContext(Dispatchers.IO) {
+            try {
+                val connection = URL(url).openConnection() as HttpURLConnection
+                try {
+                    connection.requestMethod = method
+                    connection.useCaches = false
+                    connection.connectTimeout = 15_000
+                    connection.readTimeout = 30_000
+                    connection.setRequestProperty("Authorization", "Bearer ${derivation.credential}")
+                    headers.forEach { (name, value) -> connection.setRequestProperty(name, value) }
+                    if (body != null) {
+                        connection.doOutput = true
+                        connection.setRequestProperty("Content-Type", "application/octet-stream")
+                        connection.outputStream.use { it.write(body) }
+                    }
+                    val code = connection.responseCode
+                    if (code == 200 || code == 204) connection.getHeaderField("ETag")?.let { version = it }
+                    val stream = if (code in 200..299) connection.inputStream else connection.errorStream
+                    code to (stream?.use { it.readBytes() } ?: ByteArray(0))
+                } finally {
+                    connection.disconnect()
+                }
+            } catch (error: IOException) {
+                throw IOException(config.label("semRede"), error)
+            }
+        }
+
+    override suspend fun read(): String? {
+        val (code, body) = send("GET")
+        return when (code) {
+            404 -> { version = null; null }
+            200 -> String(OwnAccountNotebook.decrypt(body, derivation.key), Charsets.UTF_8)
+            else -> throw IOException(config.label("semRede"))
+        }
+    }
+
+    override suspend fun write(text: String) {
+        val current = version
+        val (code, _) = send("PUT", OwnAccountNotebook.encrypt(text.toByteArray(Charsets.UTF_8), derivation.key),
+            if (current != null) mapOf("If-Match" to current) else mapOf("If-None-Match" to "*"))
+        when (code) {
+            204 -> Unit
+            412 -> throw IOException(config.label("conflito"))
+            else -> throw IOException(config.label("semRede"))
+        }
+    }
 }

@@ -49,6 +49,9 @@
 		A10000000000000000000301 /* RevisaoAtiva.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000302 /* RevisaoAtiva.swift */; };
 		A10000000000000000000401 /* CadernoEstudo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000402 /* CadernoEstudo.swift */; };
 		A10000000000000000000409 /* CadernoSincronizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000410 /* CadernoSincronizacao.swift */; };
+		A10000000000000000000411 /* ContaPropriaCaderno.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000412 /* ContaPropriaCaderno.swift */; };
+		A10000000000000000000413 /* conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000414 /* conta_propria_v1.json */; };
+		A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000416 /* casos_conta_propria_v1.json */; };
 		A10000000000000000000403 /* caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000404 /* caderno_v1.json */; };
 		A10000000000000000000405 /* casos_caderno_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000406 /* casos_caderno_v1.json */; };
 		A10000000000000000000303 /* revisao_ativa_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000304 /* revisao_ativa_v1.json */; };
@@ -229,6 +232,9 @@
 		A10000000000000000000302 /* RevisaoAtiva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisaoAtiva.swift; sourceTree = "<group>"; };
 		A10000000000000000000402 /* CadernoEstudo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoEstudo.swift; sourceTree = "<group>"; };
 		A10000000000000000000410 /* CadernoSincronizacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadernoSincronizacao.swift; sourceTree = "<group>"; };
+		A10000000000000000000412 /* ContaPropriaCaderno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaPropriaCaderno.swift; sourceTree = "<group>"; };
+		A10000000000000000000414 /* conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = conta_propria_v1.json; sourceTree = "<group>"; };
+		A10000000000000000000416 /* casos_conta_propria_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_conta_propria_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000404 /* caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = caderno_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000406 /* casos_caderno_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_caderno_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000304 /* revisao_ativa_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = revisao_ativa_v1.json; sourceTree = "<group>"; };
@@ -453,6 +459,7 @@
 				A10000000000000000000302 /* RevisaoAtiva.swift */,
 				A10000000000000000000402 /* CadernoEstudo.swift */,
 				A10000000000000000000410 /* CadernoSincronizacao.swift */,
+				A10000000000000000000412 /* ContaPropriaCaderno.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
 				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
@@ -501,6 +508,8 @@
 				A10000000000000000000306 /* casos_revisao_v1.json */,
 				A10000000000000000000404 /* caderno_v1.json */,
 				A10000000000000000000406 /* casos_caderno_v1.json */,
+				A10000000000000000000414 /* conta_propria_v1.json */,
+				A10000000000000000000416 /* casos_conta_propria_v1.json */,
 				EE0000000000000000000104 /* estudo_dossie_v1.json */,
 				F72BA004B6B84748A020B300 /* progress_sync_v1.tsv */,
 				010000000000000000000013 /* PrivacyInfo.xcprivacy */,
@@ -753,6 +762,8 @@
 				A10000000000000000000305 /* casos_revisao_v1.json in Resources */,
 				A10000000000000000000403 /* caderno_v1.json in Resources */,
 				A10000000000000000000405 /* casos_caderno_v1.json in Resources */,
+				A10000000000000000000413 /* conta_propria_v1.json in Resources */,
+				A10000000000000000000415 /* casos_conta_propria_v1.json in Resources */,
 				EE0000000000000000000103 /* estudo_dossie_v1.json in Resources */,
 				F72BA004B6B84748A020B301 /* progress_sync_v1.tsv in Resources */,
 				010000000000000000000112 /* PrivacyInfo.xcprivacy in Resources */,
@@ -849,6 +860,7 @@
 				A10000000000000000000301 /* RevisaoAtiva.swift in Sources */,
 				A10000000000000000000401 /* CadernoEstudo.swift in Sources */,
 				A10000000000000000000409 /* CadernoSincronizacao.swift in Sources */,
+				A10000000000000000000411 /* ContaPropriaCaderno.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
 				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,

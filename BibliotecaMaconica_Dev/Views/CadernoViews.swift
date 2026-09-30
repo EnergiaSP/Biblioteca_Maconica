@@ -29,11 +29,15 @@ struct CadernoEstudoView: View {
     @State private var opcao = CadernoSincronizacao.opcaoEscolhida
     @State private var sincronizando = false
     @State private var ultima = CadernoSincronizacao.ultimaSincronizacao
+    @State private var codigo = ContaPropriaCaderno.codigoGuardado
+    @State private var codigoDigitado = ""
+    @State private var mostrandoCodigo = false
+    private let conta = ContaPropriaCaderno.Configuracao.compartilhada
     private let configuracao = CadernoEstudo.Configuracao.compartilhada
 
     /// Options offered on this device: iCloud here, Google Drive on Android; the own account when published.
     private var opcoes: [CadernoSincronizacao.Opcao] {
-        [.nenhuma, .icloud] + (ContaPropriaCaderno.provedor() == nil ? [] : [.contaPropria])
+        [.nenhuma, .icloud] + (ContaPropriaCaderno.disponivel ? [.contaPropria] : [])
     }
 
     private func nome(_ opcao: CadernoSincronizacao.Opcao) -> String {
@@ -126,7 +130,10 @@ struct CadernoEstudoView: View {
                 CadernoSincronizacao.opcaoEscolhida = nova
                 if nova != .nenhuma { sincronizar() }
             }
-            if opcao != .nenhuma {
+            if opcao == .contaPropria {
+                contaPropria
+            }
+            if opcao != .nenhuma && (opcao != .contaPropria || codigo != nil) {
                 Button(sincronizando ? "Sincronizando..." : rotulo("sincronizar")) { sincronizar() }
                     .buttonStyle(AccessibleActionButtonStyle(tema: tema))
                     .disabled(sincronizando)
@@ -142,6 +149,75 @@ struct CadernoEstudoView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(tema.painel)
         .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+
+    /// Sync code of the own account: create one, enter the one of another device, show, copy or leave.
+    @ViewBuilder
+    private var contaPropria: some View {
+        if let codigo, let conta {
+            Text(conta.rotulo("codigo"))
+                .font(.subheadline)
+                .foregroundStyle(tema.textoSecundario)
+            Text(mostrandoCodigo ? codigo : String(repeating: "••••-", count: 7) + "••••")
+                .font(.body.monospaced())
+                .foregroundStyle(tema.textoPrincipal)
+                .textSelection(.enabled)
+                .accessibilityIdentifier("notebook.account.code")
+            Text(conta.rotulo("avisoCodigo"))
+                .font(.caption)
+                .foregroundStyle(tema.textoSecundario)
+                .fixedSize(horizontal: false, vertical: true)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) { botoesConta(codigo, conta) }
+                VStack(alignment: .leading, spacing: 8) { botoesConta(codigo, conta) }
+            }
+        } else if let conta {
+            Button(conta.rotulo("criar")) {
+                let novo = ContaPropriaCaderno.novoCodigo(conta)
+                ContaPropriaCaderno.guardarCodigo(novo)
+                codigo = novo
+                mostrandoCodigo = true
+                sincronizar()
+            }
+            .buttonStyle(AccessibleActionButtonStyle(tema: tema))
+            .accessibilityIdentifier("notebook.account.create")
+            TextField(conta.rotulo("codigo"), text: $codigoDigitado)
+                .textInputAutocapitalization(.characters)
+                .autocorrectionDisabled()
+                .font(.body.monospaced())
+                .padding(10)
+                .background(tema.textoSecundario.opacity(0.12))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .accessibilityIdentifier("notebook.account.input")
+            Button(conta.rotulo("entrar")) {
+                guard let normalizado = ContaPropriaCaderno.normalizar(codigoDigitado, conta) else {
+                    mensagem = conta.rotulo("codigoInvalido")
+                    return
+                }
+                let formatado = ContaPropriaCaderno.agrupar(normalizado, conta)
+                ContaPropriaCaderno.guardarCodigo(formatado)
+                codigo = formatado
+                codigoDigitado = ""
+                sincronizar()
+            }
+            .buttonStyle(AccessibleActionButtonStyle(tema: tema, prominent: false))
+            .disabled(codigoDigitado.isEmpty)
+            .accessibilityIdentifier("notebook.account.enter")
+        }
+    }
+
+    @ViewBuilder
+    private func botoesConta(_ codigo: String, _ conta: ContaPropriaCaderno.Configuracao) -> some View {
+        Button(conta.rotulo("mostrar")) { mostrandoCodigo.toggle() }
+            .buttonStyle(AccessibleActionButtonStyle(tema: tema, prominent: false))
+        Button(conta.rotulo("copiar")) { UIPasteboard.general.string = codigo }
+            .buttonStyle(AccessibleActionButtonStyle(tema: tema, prominent: false))
+        Button(conta.rotulo("sair")) {
+            ContaPropriaCaderno.guardarCodigo(nil)
+            self.codigo = nil
+            mostrandoCodigo = false
+        }
+        .buttonStyle(AccessibleActionButtonStyle(tema: tema, prominent: false))
     }
 
     private func sincronizar() {

@@ -124,9 +124,3 @@ struct ProvedorICloud: ProvedorCaderno {
         }.value
     }
 }
-
-/// The app's own account (end-to-end encrypted notebook on the app's server). Available once the
-/// server is published; until then the option is not offered.
-enum ContaPropriaCaderno {
-    static func provedor() -> ProvedorCaderno? { nil }
-}

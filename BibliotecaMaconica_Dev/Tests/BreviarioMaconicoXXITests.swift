@@ -778,6 +778,93 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     /// The AI prompt, the answer filter and the displayed text match Tools/ia_referencia.py exactly.
+    /// Same codes, derivations and encrypted bytes as `Tools/conta_propria_referencia.mjs` and Android.
+    func testOwnAccountMatchesReferenceCases() throws {
+        let c = try XCTUnwrap(ContaPropriaCaderno.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_conta_propria_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        func bytes(_ hex: String) -> Data {
+            Data(stride(from: 0, to: hex.count, by: 2).map { UInt8(hex.dropFirst($0).prefix(2), radix: 16)! })
+        }
+        func hex(_ dados: Data) -> String { dados.map { String(format: "%02x", $0) }.joined() }
+        for caso in try XCTUnwrap(raiz["formatacao"] as? [[String: String]]) {
+            XCTAssertEqual(ContaPropriaCaderno.formatar(bytes(caso["bytes"]!), c), caso["codigo"])
+        }
+        for caso in try XCTUnwrap(raiz["normalizacao"] as? [[String: Any]]) {
+            XCTAssertEqual(ContaPropriaCaderno.normalizar(caso["entrada"] as? String ?? "", c), caso["esperado"] as? String,
+                           "\(caso["entrada"] ?? "")")
+        }
+        for caso in try XCTUnwrap(raiz["derivacao"] as? [[String: String]]) {
+            let derivacao = ContaPropriaCaderno.derivar(caso["codigo"]!, c)
+            XCTAssertEqual(derivacao.conta, caso["conta"])
+            XCTAssertEqual(derivacao.credencial, caso["credencial"])
+            XCTAssertEqual(hex(derivacao.chave), caso["chave"])
+        }
+        for caso in try XCTUnwrap(raiz["cifragem"] as? [[String: String]]) {
+            let chave = bytes(caso["chave"]!)
+            let cifrado = try ContaPropriaCaderno.cifrar(Data(caso["texto"]!.utf8), chave: chave, nonce: bytes(caso["nonce"]!))
+            XCTAssertEqual(hex(cifrado), caso["cifrado"], caso["nome"]!)
+            XCTAssertEqual(String(decoding: try ContaPropriaCaderno.decifrar(bytes(caso["cifrado"]!), chave: chave), as: UTF8.self),
+                           caso["texto"], caso["nome"]!)
+        }
+    }
+
+    /// Real sync through the own-account server (local `wrangler dev`): the notebook is encrypted, sent and
+    /// read back; an upload over a version already replaced by another device is refused.
+    /// Opt-in: TEST_RUNNER_CONTA_PROPRIA_SERVIDOR=http://127.0.0.1:8787 xcodebuild test ...
+    @MainActor
+    func testOwnAccountSyncThroughServer() async throws {
+        guard let servidor = ProcessInfo.processInfo.environment["CONTA_PROPRIA_SERVIDOR"] else {
+            throw XCTSkip("Set TEST_RUNNER_CONTA_PROPRIA_SERVIDOR to the local server (wrangler dev)")
+        }
+        let c = try XCTUnwrap(ContaPropriaCaderno.Configuracao.compartilhada)
+        let caderno = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let derivacao = ContaPropriaCaderno.derivar(try XCTUnwrap(ContaPropriaCaderno.normalizar(ContaPropriaCaderno.novoCodigo(c), c)), c)
+        let aparelho = ProvedorContaPropria(servidor: servidor, derivacao: derivacao, configuracao: c)
+        let mesclado = try await CadernoSincronizacao.sincronizar(com: aparelho, configuracao: caderno)
+        defer { UserDefaults.standard.removeObject(forKey: "sincronizacaoCadernoEm") }
+
+        let outro = ProvedorContaPropria(servidor: servidor, derivacao: derivacao, configuracao: c)
+        let leitura = try await outro.ler()
+        let lido = try XCTUnwrap(leitura)
+        XCTAssertEqual(CadernoEstudo.decodificar(lido, configuracao: caderno), mesclado)
+
+        // Both devices read the same version; the first upload wins and the second one is refused.
+        let terceiro = ProvedorContaPropria(servidor: servidor, derivacao: derivacao, configuracao: c)
+        _ = try await terceiro.ler()
+        try await outro.gravar(lido)
+        do {
+            try await terceiro.gravar(lido)
+            XCTFail("An upload over a replaced version must be refused")
+        } catch {
+            XCTAssertEqual(error.localizedDescription, c.rotulo("conflito"))
+        }
+    }
+
+    /// iPhone and Android with the same sync code exchange notes through the own-account server. Opt-in:
+    /// TEST_RUNNER_CONTA_PROPRIA_SERVIDOR, TEST_RUNNER_CONTA_PROPRIA_CODIGO and, on the run after the
+    /// Android one, TEST_RUNNER_CONTA_PROPRIA_ESPERAR_ANDROID=1.
+    @MainActor
+    func testOwnAccountCrossPlatformExchange() async throws {
+        let ambiente = ProcessInfo.processInfo.environment
+        guard let servidor = ambiente["CONTA_PROPRIA_SERVIDOR"], let codigo = ambiente["CONTA_PROPRIA_CODIGO"] else {
+            throw XCTSkip("Set TEST_RUNNER_CONTA_PROPRIA_SERVIDOR and TEST_RUNNER_CONTA_PROPRIA_CODIGO")
+        }
+        let c = try XCTUnwrap(ContaPropriaCaderno.Configuracao.compartilhada)
+        let caderno = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let provedor = ProvedorContaPropria(servidor: servidor, derivacao: ContaPropriaCaderno.derivar(try XCTUnwrap(
+            ContaPropriaCaderno.normalizar(codigo, c)), c), configuracao: c)
+        CommentsService.salvar(comentario: "Anotação feita no iPhone.", para: "01/01", obraID: "teste_cruzado_ios")
+        let mesclado = try await CadernoSincronizacao.sincronizar(com: provedor, configuracao: caderno)
+        if ambiente["CONTA_PROPRIA_ESPERAR_ANDROID"] == "1" {
+            XCTAssertEqual(mesclado.leituras.first { $0.obraId == "teste_cruzado_android" }?.comentario, "Anotação feita no Android.")
+            XCTAssertEqual(CommentsService.carregar(data: "01/01", obraID: "teste_cruzado_android"), "Anotação feita no Android.")
+            for chave in UserDefaults.standard.dictionaryRepresentation().keys where chave.contains("teste_cruzado") {
+                UserDefaults.standard.removeObject(forKey: chave)
+            }
+        }
+    }
+
     /// Same merges and file checks as `Tools/caderno_referencia.py` and Android (`casos_caderno_v1.json`).
     func testStudyNotebookMatchesReferenceCases() throws {
         let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
