@@ -561,7 +561,19 @@ internal fun BreviarioAndroidApp(
                             }
                         )
                         Screen.More -> MoreScreen(colors, navigation::show)
-                        Screen.Notebook -> StudyNotebookScreen(colors)
+                        Screen.Notebook -> StudyNotebookScreen(colors, titles = {
+                            BibliotecaCatalogRepository.get(context).obrasDisponiveis().associate { it.id to it.titulo }
+                        }) { note ->
+                            val page = note.data?.let { Regex("P(\\d+)").matchEntire(it) }?.groupValues?.get(1)?.toInt()
+                            when {
+                                note.dossierId != null -> {
+                                    dossieSession.pendingSavedDossierId = note.dossierId
+                                    navigation.show(Screen.Dossier)
+                                }
+                                page != null && note.obraId != null -> abrirObraBiblioteca(note.obraId, page)
+                                note.obraId != null && note.data != null -> repo.porObraEData(note.obraId, note.data)?.let(::goReader)
+                            }
+                        }
                     }
                 }
             }

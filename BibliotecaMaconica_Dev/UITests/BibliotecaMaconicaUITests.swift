@@ -291,6 +291,48 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         apagar.tap()
     }
 
+    /// A saved dossier appears as a theme of the notebook; its note opens the dossier again. Same as Android.
+    func testNotebookByThemeListsSavedDossierAndOpensIt() {
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        let apagar = app.buttons.matching(identifier: "dossier.saved.delete").firstMatch
+        while apagar.exists { apagar.tap() }
+        topic.tap()
+        topic.typeText("virtude")
+        app.buttons["Montar dossiê"].tap()
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+        let salvar = app.buttons["dossier.save"].firstMatch
+        for _ in 0..<6 where !salvar.isHittable { app.swipeUp(velocity: .slow) }
+        salvar.tap()
+        XCTAssertTrue(app.buttons["Dossiê salvo"].waitForExistence(timeout: 5))
+
+        // The saved dossier stays after the app is reopened, which also leaves the dossier field and its keyboard.
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(app.staticTexts["Biblioteca Maçônica"].waitForExistence(timeout: 12))
+        navigationTab("Mais").tap()
+        XCTAssertTrue(app.navigationBars["Recursos avançados"].waitForExistence(timeout: 5))
+        let caderno = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Caderno de estudo")).firstMatch
+        XCTAssertTrue(caderno.waitForExistence(timeout: 5))
+        for _ in 0..<4 where !caderno.isHittable { app.swipeUp(velocity: .slow) }
+        caderno.tap()
+        let tema = app.buttons["notebook.theme.virtude"]
+        XCTAssertTrue(tema.waitForExistence(timeout: 10))
+        tema.tap()
+        let busca = app.textFields["notebook.theme.search"]
+        XCTAssertEqual(busca.value as? String, "virtude")
+        let nota = app.buttons.matching(identifier: "notebook.note").firstMatch
+        XCTAssertTrue(nota.waitForExistence(timeout: 5))
+        XCTAssertTrue(nota.label.hasPrefix("Dossiê — virtude"), nota.label)
+        nota.tap()
+        XCTAssertTrue(app.navigationBars["Dossiê"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 20))
+
+        for _ in 0..<40 where !apagar.isHittable { app.swipeUp(velocity: .slow) }
+        apagar.tap()
+    }
+
     /// Save, mark a review, leave, reopen from the saved list and delete, as on Android.
     func testSavedDossierKeepsReviewsReopensAndCanBeDeleted() {
         navigationTab("Dossiê").tap()

@@ -885,6 +885,27 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         }
     }
 
+    func testStudyNotebookByThemeMatchesReferenceCases() throws {
+        let configuracao = try XCTUnwrap(CadernoEstudo.Configuracao.compartilhada)
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_caderno_v1", withExtension: "json"))
+        let raiz = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let porTema = try XCTUnwrap(raiz["porTema"] as? [String: Any])
+        func decodificar<T: Decodable>(_ tipo: T.Type, _ valor: Any?) throws -> T {
+            try JSONDecoder().decode(tipo, from: JSONSerialization.data(withJSONObject: try XCTUnwrap(valor), options: .fragmentsAllowed))
+        }
+        let caderno = try decodificar(CadernoEstudo.Caderno.self, porTema["caderno"])
+        let titulos = try decodificar([String: String].self, porTema["titulos"])
+        let anotacoes = CadernoEstudo.anotacoes(caderno, titulos: titulos, configuracao: configuracao)
+        XCTAssertEqual(CadernoEstudo.temas(caderno, anotacoes: anotacoes), try decodificar([CadernoEstudo.Tema].self, porTema["temas"]))
+        for busca in try XCTUnwrap(porTema["buscas"] as? [[String: Any]]) {
+            let consulta = try XCTUnwrap(busca["consulta"] as? String)
+            let encontradas = CadernoEstudo.buscar(anotacoes, consulta: consulta)
+            XCTAssertEqual(encontradas, try decodificar([CadernoEstudo.Anotacao].self, busca["encontradas"]), consulta)
+            XCTAssertEqual(CadernoEstudo.exportar(encontradas, consulta: consulta, configuracao: configuracao),
+                           busca["exportacao"] as? String, consulta)
+        }
+    }
+
     /// The file written by each app opens in the other: this app writes the reference notebook to
     /// Documents/caderno-ios.json and reads Documents/caderno-android.json when it was copied there.
     func testStudyNotebookFilesCrossPlatform() throws {

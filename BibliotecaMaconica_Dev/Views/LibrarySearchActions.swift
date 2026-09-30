@@ -126,6 +126,14 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         gerarDossieEstudo(salvo: salvo)
     }
 
+    /// Titles of the breviaries and of every work in the library catalog, by id.
+    func titulosObras() -> [String: String] {
+        var titulos = Dictionary(((try? BibliotecaRAGCatalogService())?.obras() ?? []).map { ($0.id, $0.titulo) },
+                                 uniquingKeysWith: { primeiro, _ in primeiro })
+        store.obras.forEach { titulos[$0.id] = $0.titulo }
+        return titulos
+    }
+
     func abrirDossieSalvo(id: String) {
         dossiesSalvos = DossiesSalvosStore().todos()
         guard let salvo = dossiesSalvos.first(where: { $0.id == id }) else {

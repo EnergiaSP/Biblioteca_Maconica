@@ -12,7 +12,12 @@ import argparse
 import copy
 import datetime
 import json
+import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dossie_referencia import fold, words  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "Paridade/caderno_v1.json"
@@ -139,6 +144,77 @@ def merge(local: dict, imported: dict, today: str, config: dict) -> dict:
                       "cartoes": list(cards.values())}, config)
 
 
+# Caderno por tema
+
+def date_order(data) -> int:
+    """Pages by number ("P12"), dates dd/MM by month and day; anything else first."""
+    if data is None:
+        return 0
+    page = re.fullmatch(r"P(\d+)", data)
+    if page:
+        return int(page.group(1))
+    day = re.fullmatch(r"(\d{2})/(\d{2})", data)
+    return int(day.group(2)) * 100 + int(day.group(1)) if day else 0
+
+
+def origin(obra_id: str, data: str, titles: dict, rule: dict) -> str:
+    page = re.fullmatch(r"P(\d+)", data)
+    reference = rule["referenciaPagina"].replace("{pagina}", page.group(1)) if page else data
+    return f"{titles.get(obra_id, obra_id)}, {reference}"
+
+
+def entries(notebook: dict, titles: dict, config: dict) -> list:
+    """Every note of the notebook, in the order of the rule."""
+    rule = config["porTema"]
+    result = []
+    for dossier in notebook["dossies"]:
+        text = (dossier.get("interpretacao") or {}).get("texto", "")
+        result.append({"tipo": "dossie", "origem": rule["origemDossie"].replace("{tema}", dossier["tema"]), "texto": text,
+                       "obraId": dossier.get("obraId"), "data": None, "dossieId": dossier["id"], "_ordem": 0})
+    for reading in notebook["leituras"]:
+        where = origin(reading["obraId"], reading["data"], titles, rule)
+        base = {"origem": where, "obraId": reading["obraId"], "data": reading["data"], "dossieId": None}
+        for index, highlight in enumerate(reading["destaques"]):
+            result.append({**base, "tipo": "destaque", "texto": highlight["texto"], "_ordem": index})
+        for kind, field in (("reflexao", "reflexao"), ("comentario", "comentario")):
+            if reading[field].strip():
+                result.append({**base, "tipo": kind, "texto": reading[field], "_ordem": 0})
+    types = rule["ordemTipos"]
+    result.sort(key=lambda e: (types.index(e["tipo"]), fold(e["origem"]), date_order(e["data"]), e["_ordem"]))
+    for entry in result:
+        entry["rotulo"] = rule["tipos"][entry["tipo"]]
+        del entry["_ordem"]
+    return result
+
+
+def matches(entry: dict, query_words: list) -> bool:
+    found = words(entry["texto"] + " " + entry["origem"])[2]
+    return all(any(word.startswith(q) for word in found) for q in query_words)
+
+
+def search(all_entries: list, query: str) -> list:
+    query_words = words(query)[2]
+    return [e for e in all_entries if matches(e, query_words)]
+
+
+def themes(notebook: dict, all_entries: list) -> list:
+    names = {}
+    for dossier in notebook["dossies"]:
+        names.setdefault(fold(dossier["tema"].strip()), dossier["tema"].strip())
+    ordered = sorted(names.items(), key=lambda item: (item[0], item[1]))
+    return [{"tema": name, "quantidade": len(search(all_entries, name))} for _, name in ordered]
+
+
+def export(found: list, query: str, config: dict) -> str:
+    rule = config["porTema"]
+    title = query.strip() or rule["rotulos"]["todas"]
+    blocks = [rule["cabecalhoExportacao"].replace("{tema}", title)]
+    for entry in found:
+        head = f"{entry['rotulo']} — {entry['origem']}"
+        blocks.append(head + ("\n" + entry["texto"].strip() if entry["texto"].strip() else ""))
+    return "\n\n".join(blocks) + "\n"
+
+
 def reading(obra, data, **fields):
     base = {"obraId": obra, "data": data, "comentario": "", "reflexao": "", "favorita": False, "lida": False,
             "destaques": [], "edicao": None}
@@ -192,7 +268,18 @@ def build_cases(config: dict) -> dict:
         ("outro formato", {"formato": "backup", "versao": 1}),
         ("sem versao", {"formato": config["formato"]}),
     ]]
+    notebook = merge(local, imported, "2026-10-10", config)
+    titles = {k: "Breviário Maçônico do Século XXI", r: "Breviário Maçônico", "livro_acacia": "O Livro da Acácia"}
+    notebook["leituras"].append({**reading("livro_acacia", "P12", comentario="A acácia lembra a imortalidade.",
+                                          reflexao="Acácia e esperança: ver o grau de Mestre."),
+                                 "destaques": [{"id": "z1", "texto": "o ramo de acácia", "criadoEm": 2000}]})
+    notebook["leituras"].append(reading("livro_acacia", "P3", comentario="Introdução sobre símbolos vegetais."))
+    notebook = canonical(notebook, config)
+    all_entries = entries(notebook, titles, config)
+    by_theme = [{"consulta": q, "encontradas": search(all_entries, q), "exportacao": export(search(all_entries, q), q, config)}
+                for q in ("", "acácia", "ACACIA esper", "escada", "Breviário 03", "p. 12", "inexistente")]
     return {"schemaVersion": 1,
+            "porTema": {"caderno": notebook, "titulos": titles, "temas": themes(notebook, all_entries), "buscas": by_theme},
             "descricao": "Casos de referencia do caderno portatil (Paridade/caderno_v1.json), gerados por "
                          "Tools/caderno_referencia.py --atualizar. iOS e Android devem reproduzir cada mesclagem.",
             "mesclagens": merges, "validacao": validity}

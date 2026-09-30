@@ -22,5 +22,34 @@
     "semICloud": "Entre na sua conta do iCloud nos Ajustes do aparelho para sincronizar.",
     "semGoogle": "Entre com uma conta Google para sincronizar pelo Google Drive.",
     "remotoIlegivel": "O caderno na nuvem é de uma versão mais nova do app e não foi alterado. Atualize o app neste aparelho."
+  },
+  "porTema": {
+    "descricao": "Caderno por tema: as anotacoes do caderno (dossies salvos com a interpretacao, marcadores, reflexoes e comentarios) numa lista so. A busca normaliza maiusculas e acentos; cada palavra buscada deve comecar uma palavra do texto ou da origem (titulo da obra, referencia ou tema do dossie). Busca vazia mostra tudo. Ordem: tipo (ordemTipos), depois origem, depois data (paginas pelo numero, datas dd/MM por mes e dia) e a ordem de criacao dos marcadores. Temas: os temas dos dossies salvos, sem repetir, em ordem alfabetica normalizada, com a quantidade de anotacoes que a busca pelo tema encontra.",
+    "ordemTipos": [
+      "dossie",
+      "destaque",
+      "reflexao",
+      "comentario"
+    ],
+    "tipos": {
+      "dossie": "Dossiê",
+      "destaque": "Marcador",
+      "reflexao": "Reflexão",
+      "comentario": "Comentário"
+    },
+    "referenciaPagina": "p. {pagina}",
+    "origemDossie": "{tema}",
+    "cabecalhoExportacao": "Caderno de estudo — {tema}",
+    "rotulos": {
+      "titulo": "Caderno por tema",
+      "descricao": "Suas anotações reunidas: dossiês, marcadores, reflexões e comentários de todas as obras.",
+      "buscar": "Buscar nas minhas anotações",
+      "temas": "Temas dos seus dossiês",
+      "todas": "todas as anotações",
+      "quantidade": "{n} anotação(ões)",
+      "vazio": "Nenhuma anotação encontrada.",
+      "exportar": "Exportar estas anotações",
+      "abrir": "Abrir"
+    }
   }
 }

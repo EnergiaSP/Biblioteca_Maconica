@@ -229,6 +229,10 @@ internal fun LibraryPageBlock(colors: Palette, pagina: BibliotecaPaginaLeitura, 
     val item = remember(pagina) { BreviarioItem(pagina.pagina, "P${pagina.pagina}", pagina.titulo, pagina.autor.orEmpty(), pagina.texto, pagina.rodape, pagina.pagina, pagina.obraId) }
     var highlights by remember(item.chavePersistencia) { mutableStateOf(prefs.highlights(item)) }
     var showHighlights by remember { mutableStateOf(false) }
+    // Reflection and comment of the page, as on iOS; they go to the study notebook like the breviaries'.
+    var reflection by remember(item.chavePersistencia) { mutableStateOf(prefs.reflection(item)) }
+    var comment by remember(item.chavePersistencia) { mutableStateOf(prefs.comment(item)) }
+    var editingNotes by remember { mutableStateOf(false) }
     Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
         if (pagina.titulo != "Página ${pagina.pagina}") {
             Text(pagina.titulo, color = colors.text, fontSize = 20.sp, fontFamily = FontFamily.Serif, fontWeight = FontWeight.Bold)
@@ -254,9 +258,39 @@ internal fun LibraryPageBlock(colors: Palette, pagina: BibliotecaPaginaLeitura, 
             )
         }
         Text("Página ${pagina.pagina}", color = colors.secondary, fontSize = 12.sp, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.End)
-        if (highlights.isNotEmpty()) {
-            TextButton(onClick = { showHighlights = true }) { Text("Marcadores (${highlights.size})") }
+        if (reflection.isNotBlank()) Text("Reflexão: $reflection", color = colors.secondary, fontSize = 14.sp)
+        if (comment.isNotBlank()) Text("Comentário: $comment", color = colors.secondary, fontSize = 14.sp)
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            TextButton(onClick = { editingNotes = true }, modifier = Modifier.testTag("library.page.notes")) {
+                Text(if (reflection.isBlank() && comment.isBlank()) "Anotar página" else "Editar anotações")
+            }
+            if (highlights.isNotEmpty()) {
+                TextButton(onClick = { showHighlights = true }) { Text("Marcadores (${highlights.size})") }
+            }
         }
+    }
+    if (editingNotes) {
+        var draftReflection by remember { mutableStateOf(reflection) }
+        var draftComment by remember { mutableStateOf(comment) }
+        AlertDialog(onDismissRequest = { editingNotes = false }, title = { Text("Anotações da página ${pagina.pagina}") }, text = {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                OutlinedTextField(draftReflection, { draftReflection = it }, label = { Text("Minha reflexão") }, minLines = 3,
+                    modifier = Modifier.fillMaxWidth().testTag("library.page.reflection"))
+                OutlinedTextField(draftComment, { draftComment = it }, label = { Text("Comentário") }, minLines = 3,
+                    modifier = Modifier.fillMaxWidth().testTag("library.page.comment"))
+            }
+        }, confirmButton = {
+            TextButton(onClick = {
+                prefs.saveReflection(item, draftReflection)
+                prefs.saveComment(item, draftComment)
+                reflection = draftReflection
+                comment = draftComment
+                editingNotes = false
+                onSaved("Anotações salvas.")
+            }, modifier = Modifier.testTag("library.page.notes.save")) { Text("Salvar") }
+        }, dismissButton = {
+            TextButton(onClick = { editingNotes = false }) { Text("Cancelar") }
+        })
     }
     if (showHighlights) AlertDialog(onDismissRequest = { showHighlights = false }, title = { Text("Marcadores") }, text = {
         LazyColumn {

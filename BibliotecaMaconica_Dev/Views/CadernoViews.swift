@@ -21,6 +21,10 @@ struct CadernoArquivo: FileDocument {
 /// options. Same sections and messages as Android `StudyNotebookScreen`.
 struct CadernoEstudoView: View {
     let tema: TemaLeitura
+    /// Work titles by id, for where each note comes from.
+    var titulos: () -> [String: String] = { [:] }
+    /// Opens a reading or a saved dossier (breviario:// link).
+    var abrir: (URL) -> Void = { _ in }
     @State private var resumo = (leituras: 0, dossies: 0, cartoes: 0)
     @State private var arquivo: CadernoArquivo?
     @State private var exportando = false
@@ -67,6 +71,10 @@ struct CadernoEstudoView: View {
                     .foregroundStyle(tema.textoSecundario)
                     .fixedSize(horizontal: false, vertical: true)
                     .accessibilityIdentifier("notebook.summary")
+
+                if let configuracao {
+                    CadernoPorTemaView(tema: tema, configuracao: configuracao, titulos: titulos, abrir: abrir)
+                }
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Levar para outro aparelho")
@@ -268,5 +276,121 @@ struct CadernoEstudoView: View {
         CadernoEstudo.aplicar(mesclado)
         atualizarResumo()
         mensagem = rotulo("importado", contagens(mesclado))
+    }
+}
+
+/// Every note of the notebook in one list, searchable, grouped by the themes of the saved dossiers.
+struct CadernoPorTemaView: View {
+    let tema: TemaLeitura
+    let configuracao: CadernoEstudo.Configuracao
+    let titulos: () -> [String: String]
+    let abrir: (URL) -> Void
+    @State private var consulta = ""
+    @State private var anotacoes: [CadernoEstudo.Anotacao] = []
+    @State private var temas: [CadernoEstudo.Tema] = []
+    @State private var limite = 30
+
+    private var regra: CadernoEstudo.RegraPorTema { configuracao.porTema }
+    private var encontradas: [CadernoEstudo.Anotacao] { CadernoEstudo.buscar(anotacoes, consulta: consulta) }
+
+    var body: some View {
+        let encontradas = encontradas
+        VStack(alignment: .leading, spacing: 10) {
+            Text(regra.rotulo("titulo"))
+                .font(.headline)
+                .foregroundStyle(tema.textoPrincipal)
+            Text(regra.rotulo("descricao"))
+                .font(.subheadline)
+                .foregroundStyle(tema.textoSecundario)
+                .fixedSize(horizontal: false, vertical: true)
+            TextField(regra.rotulo("buscar"), text: $consulta)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled()
+                .accessibilityIdentifier("notebook.theme.search")
+            if !temas.isEmpty {
+                Text(regra.rotulo("temas"))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(tema.textoPrincipal)
+                FluxoDeChips(espaco: 8) {
+                    ForEach(temas) { item in
+                        Button("\(item.tema) (\(item.quantidade))") { consulta = item.tema; limite = 30 }
+                            .buttonStyle(.bordered)
+                            .tint(tema.destaque)
+                            .accessibilityIdentifier("notebook.theme.\(item.tema)")
+                    }
+                }
+            }
+            Text(regra.rotulo("quantidade", ["n": "\(encontradas.count)"]))
+                .font(.caption)
+                .foregroundStyle(tema.textoSecundario)
+                .accessibilityIdentifier("notebook.theme.count")
+            if encontradas.isEmpty {
+                Text(regra.rotulo("vazio")).foregroundStyle(tema.textoSecundario)
+            } else {
+                ShareLink(item: CadernoEstudo.exportar(encontradas, consulta: consulta, configuracao: configuracao)) {
+                    Label(regra.rotulo("exportar"), systemImage: "square.and.arrow.up")
+                }
+                .accessibilityIdentifier("notebook.theme.export")
+                ForEach(encontradas.prefix(limite)) { anotacao in
+                    anotacaoView(anotacao)
+                }
+                if encontradas.count > limite {
+                    Button("Mostrar mais") { limite += 30 }
+                        .accessibilityIdentifier("notebook.theme.more")
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(tema.painel)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .onAppear { carregar() }
+    }
+
+    private func anotacaoView(_ anotacao: CadernoEstudo.Anotacao) -> some View {
+        Button {
+            if let url = link(anotacao) { abrir(url) }
+        } label: {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("\(anotacao.rotulo) — \(anotacao.origem)")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(tema.destaque)
+                if !anotacao.texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    Text(anotacao.texto)
+                        .font(.callout)
+                        .foregroundStyle(tema.textoPrincipal)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(8)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(10)
+            .background(tema.background.opacity(0.4))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        .buttonStyle(.plain)
+        .accessibilityHint(regra.rotulo("abrir"))
+        .accessibilityIdentifier("notebook.note")
+    }
+
+    private func link(_ anotacao: CadernoEstudo.Anotacao) -> URL? {
+        var componentes = URLComponents()
+        componentes.scheme = "breviario"
+        if let dossie = anotacao.dossieId {
+            componentes.host = "dossie"
+            componentes.queryItems = [URLQueryItem(name: "id", value: dossie)]
+        } else if let obra = anotacao.obraId, let data = anotacao.data {
+            componentes.host = "leitura"
+            componentes.queryItems = [URLQueryItem(name: "obra", value: obra), URLQueryItem(name: "data", value: data.replacingOccurrences(of: "/", with: "-"))]
+        } else {
+            return nil
+        }
+        return componentes.url
+    }
+
+    private func carregar() {
+        let caderno = CadernoEstudo.coletar(configuracao: configuracao)
+        anotacoes = CadernoEstudo.anotacoes(caderno, titulos: titulos(), configuracao: configuracao)
+        temas = CadernoEstudo.temas(caderno, anotacoes: anotacoes)
     }
 }

@@ -430,7 +430,7 @@ extension HomeView {
             case .solicitarObra:
                 solicitarObraView
             case .caderno:
-                CadernoEstudoView(tema: temaApp)
+                CadernoEstudoView(tema: temaApp, titulos: { titulosObras() }, abrir: { abrirURLBreviario($0) })
             case .ia:
                 iaLeitura
             case .estatisticas:
@@ -488,7 +488,7 @@ extension HomeView {
 
                         acaoHome(
                             titulo: "Caderno de estudo",
-                            subtitulo: "Exportar, importar e sincronizar anotações",
+                            subtitulo: "Anotações por tema, exportar, importar e sincronizar",
                             icone: "book.closed",
                             cor: .brown
                         ) {

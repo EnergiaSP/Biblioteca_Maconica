@@ -10,6 +10,7 @@ enum CadernoEstudo {
         let versao: Int
         let marcadorImportacao: String
         let rotulos: [String: String]
+        let porTema: RegraPorTema
 
         static let compartilhada: Configuracao? = {
             guard let url = Bundle.main.url(forResource: "caderno_v1", withExtension: "json"),
@@ -317,5 +318,117 @@ extension CadernoEstudo {
         CartoesRevisaoStore().substituir(caderno.cartoes.map {
             CartoesRevisaoStore.Registro(cartao: $0.cartao, dossieId: $0.dossieId, tema: $0.tema, criadoEm: $0.criadoEm, estado: $0.estado)
         })
+    }
+}
+
+// MARK: - Caderno por tema
+
+extension CadernoEstudo {
+    struct RegraPorTema: Decodable {
+        let ordemTipos: [String]
+        let tipos: [String: String]
+        let referenciaPagina: String
+        let origemDossie: String
+        let cabecalhoExportacao: String
+        let rotulos: [String: String]
+
+        func rotulo(_ chave: String, _ valores: [String: String] = [:]) -> String {
+            valores.reduce(rotulos[chave] ?? chave) { $0.replacingOccurrences(of: "{\($1.key)}", with: $1.value) }
+        }
+    }
+
+    /// One note of the notebook: a saved dossier (with its interpretation), a highlight, a reflection or a comment.
+    struct Anotacao: Decodable, Equatable, Identifiable {
+        let tipo: String
+        let rotulo: String
+        let origem: String
+        let texto: String
+        let obraId: String?
+        let data: String?
+        let dossieId: String?
+
+        var id: String { [tipo, obraId ?? "", data ?? "", dossieId ?? "", texto].joined(separator: "\u{1F}") }
+    }
+
+    struct Tema: Decodable, Equatable, Identifiable {
+        let tema: String
+        let quantidade: Int
+        var id: String { tema }
+    }
+
+    /// Pages by number ("P12"), dates dd/MM by month and day; anything else first.
+    static func ordemData(_ data: String?) -> Int {
+        guard let data else { return 0 }
+        if data.hasPrefix("P"), let pagina = Int(data.dropFirst()), data.dropFirst().allSatisfy(\.isASCII) { return pagina }
+        let partes = data.split(separator: "/", omittingEmptySubsequences: false)
+        guard partes.count == 2, partes.allSatisfy({ $0.count == 2 && $0.allSatisfy(\.isASCII) }),
+              let dia = Int(partes[0]), let mes = Int(partes[1]) else { return 0 }
+        return mes * 100 + dia
+    }
+
+    static func origem(obraId: String, data: String, titulos: [String: String], regra: RegraPorTema) -> String {
+        let pagina = data.hasPrefix("P") && data.count > 1 && data.dropFirst().allSatisfy { $0.isASCII && $0.isNumber }
+        let referencia = pagina ? regra.referenciaPagina.replacingOccurrences(of: "{pagina}", with: String(data.dropFirst())) : data
+        return "\(titulos[obraId] ?? obraId), \(referencia)"
+    }
+
+    /// Every note of the notebook, in the order of the rule. Same as `entries` in the reference.
+    static func anotacoes(_ caderno: Caderno, titulos: [String: String], configuracao: Configuracao) -> [Anotacao] {
+        let regra = configuracao.porTema
+        var itens: [(anotacao: Anotacao, ordem: Int)] = []
+        func rotulo(_ tipo: String) -> String { regra.tipos[tipo] ?? tipo }
+        for dossie in caderno.dossies {
+            itens.append((Anotacao(tipo: "dossie", rotulo: rotulo("dossie"),
+                                   origem: regra.origemDossie.replacingOccurrences(of: "{tema}", with: dossie.tema),
+                                   texto: dossie.interpretacao?.texto ?? "", obraId: dossie.obraId, data: nil, dossieId: dossie.id), 0))
+        }
+        for leitura in caderno.leituras {
+            let onde = origem(obraId: leitura.obraId, data: leitura.data, titulos: titulos, regra: regra)
+            func nova(_ tipo: String, _ texto: String) -> Anotacao {
+                Anotacao(tipo: tipo, rotulo: rotulo(tipo), origem: onde, texto: texto, obraId: leitura.obraId, data: leitura.data, dossieId: nil)
+            }
+            for (indice, destaque) in leitura.destaques.enumerated() { itens.append((nova("destaque", destaque.texto), indice)) }
+            if !leitura.reflexao.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { itens.append((nova("reflexao", leitura.reflexao), 0)) }
+            if !leitura.comentario.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { itens.append((nova("comentario", leitura.comentario), 0)) }
+        }
+        func chave(_ item: (anotacao: Anotacao, ordem: Int)) -> (Int, String, Int, Int) {
+            (regra.ordemTipos.firstIndex(of: item.anotacao.tipo) ?? regra.ordemTipos.count,
+             DossieEstudoAnalise.dobrar(item.anotacao.origem), ordemData(item.anotacao.data), item.ordem)
+        }
+        return itens.enumerated().sorted { a, b in
+            let (ka, kb) = (chave(a.element), chave(b.element))
+            if ka != kb { return ka < kb }
+            return a.offset < b.offset
+        }.map(\.element.anotacao)
+    }
+
+    /// Each word searched must start a word of the note's text or origin (case and accents ignored).
+    static func buscar(_ anotacoes: [Anotacao], consulta: String) -> [Anotacao] {
+        let procuradas = DossieEstudoAnalise.palavras(consulta).normalizadas
+        return anotacoes.filter { anotacao in
+            let palavras = DossieEstudoAnalise.palavras(anotacao.texto + " " + anotacao.origem).normalizadas
+            return procuradas.allSatisfy { procurada in palavras.contains { $0.hasPrefix(procurada) } }
+        }
+    }
+
+    static func temas(_ caderno: Caderno, anotacoes: [Anotacao]) -> [Tema] {
+        var nomes: [String: String] = [:]
+        for dossie in caderno.dossies {
+            let tema = dossie.tema.trimmingCharacters(in: .whitespacesAndNewlines)
+            if nomes[DossieEstudoAnalise.dobrar(tema)] == nil { nomes[DossieEstudoAnalise.dobrar(tema)] = tema }
+        }
+        return nomes.sorted { ($0.key, $0.value) < ($1.key, $1.value) }
+            .map { Tema(tema: $0.value, quantidade: buscar(anotacoes, consulta: $0.value).count) }
+    }
+
+    static func exportar(_ encontradas: [Anotacao], consulta: String, configuracao: Configuracao) -> String {
+        let regra = configuracao.porTema
+        let titulo = consulta.trimmingCharacters(in: .whitespacesAndNewlines)
+        var blocos = [regra.cabecalhoExportacao.replacingOccurrences(of: "{tema}", with: titulo.isEmpty ? regra.rotulo("todas") : titulo)]
+        for anotacao in encontradas {
+            let texto = anotacao.texto.trimmingCharacters(in: .whitespacesAndNewlines)
+            blocos.append("\(anotacao.rotulo) — \(anotacao.origem)" + (texto.isEmpty ? "" : "\n" + texto))
+        }
+        return blocos.joined(separator: "\n\n") + "\n"
     }
 }

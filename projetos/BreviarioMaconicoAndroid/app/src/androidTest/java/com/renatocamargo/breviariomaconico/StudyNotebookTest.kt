@@ -3,6 +3,7 @@ package com.renatocamargo.breviariomaconico
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.renatocamargo.breviariomaconico.data.StudyNotebook
+import com.renatocamargo.breviariomaconico.data.StudyNotebookThemes
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -31,6 +32,32 @@ class StudyNotebookTest {
         for (index in 0 until checks.length()) {
             val case = checks.getJSONObject(index)
             assertEquals(case.getString("nome"), case.getBoolean("valido"), StudyNotebook.valid(case.getJSONObject("caderno"), config))
+        }
+    }
+
+    @Test
+    fun studyNotebookByThemeMatchesReferenceCases() {
+        val themes = StudyNotebookThemes
+        val rule = themes.loadRule(context)
+        val root = JSONObject(context.assets.open("casos_caderno_v1.json").bufferedReader().use { it.readText() }).getJSONObject("porTema")
+        val notebook = StudyNotebook.fromJson(root.getJSONObject("caderno"))
+        val titlesJson = root.getJSONObject("titulos")
+        val titles = titlesJson.keys().asSequence().associateWith { titlesJson.getString(it) }
+        fun optional(json: JSONObject, key: String) = if (json.isNull(key)) null else json.getString(key)
+        fun note(json: JSONObject) = StudyNotebookThemes.Note(json.getString("tipo"), json.getString("rotulo"), json.getString("origem"),
+            json.getString("texto"), optional(json, "obraId"), optional(json, "data"), optional(json, "dossieId"))
+        val notes = themes.notes(notebook, titles, rule)
+        val expectedThemes = root.getJSONArray("temas")
+        assertEquals(List(expectedThemes.length()) { expectedThemes.getJSONObject(it).let { t -> StudyNotebookThemes.Theme(t.getString("tema"), t.getInt("quantidade")) } },
+            themes.themes(notebook, notes))
+        val searches = root.getJSONArray("buscas")
+        for (index in 0 until searches.length()) {
+            val case = searches.getJSONObject(index)
+            val query = case.getString("consulta")
+            val found = themes.search(notes, query)
+            val expected = case.getJSONArray("encontradas")
+            assertEquals(query, List(expected.length()) { note(expected.getJSONObject(it)) }, found)
+            assertEquals(query, case.getString("exportacao"), themes.export(found, query, rule))
         }
     }
 

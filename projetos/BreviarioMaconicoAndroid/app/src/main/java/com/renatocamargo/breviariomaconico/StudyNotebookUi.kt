@@ -46,7 +46,11 @@ import java.time.LocalDate
  */
 @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
-internal fun StudyNotebookScreen(colors: Palette) {
+internal fun StudyNotebookScreen(
+    colors: Palette,
+    titles: () -> Map<String, String> = { emptyMap() },
+    onOpen: (com.renatocamargo.breviariomaconico.data.StudyNotebookThemes.Note) -> Unit = {}
+) {
     val context = LocalContext.current
     val config = remember { StudyNotebook.loadConfig(context) }
     var refresh by remember { mutableIntStateOf(0) }
@@ -125,6 +129,7 @@ internal fun StudyNotebookScreen(colors: Palette) {
             Text("Neste aparelho: ${summary.readings.size} leitura(s) com anotações, ${summary.dossiers.size} dossiê(s) salvo(s) " +
                 "e ${summary.cards.size} cartão(ões) de revisão.", color = colors.secondary, modifier = Modifier.testTag("notebook.summary"))
         }
+        item(key = "notebook.themes") { NotebookThemesCard(colors, refresh, titles, onOpen) }
         item {
             PremiumCard(colors) {
                 Text("Levar para outro aparelho", color = colors.text, fontWeight = FontWeight.Bold, fontSize = 18.sp)
