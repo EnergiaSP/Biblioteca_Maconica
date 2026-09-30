@@ -22,6 +22,8 @@ struct DossieSalvo: Codable, Identifiable, Equatable {
     /// yyyy-MM-dd
     let criadoEm: String
     var revisoesConcluidas: [Int] = []
+    /// The AI interpretation generated for this dossier, kept with it.
+    var interpretacao: CadernoEstudo.Interpretacao?
 
     /// Identifies the same study (topic and scope), ignoring case and surrounding spaces.
     var chave: String { Self.chave(tema: tema, area: area, obraId: obraId, autor: autor, assunto: assunto) }

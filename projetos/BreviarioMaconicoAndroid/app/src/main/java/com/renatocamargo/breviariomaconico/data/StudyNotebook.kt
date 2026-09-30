@@ -22,9 +22,22 @@ internal object StudyNotebook {
     ) {
         val hasContent get() = comment.isNotBlank() || reflection.isNotBlank() || favorite || read || highlights.isNotEmpty() || edit != null
     }
+    /** The AI interpretation saved with a dossier; [generatedAt] in milliseconds since 1970. */
+    data class Interpretation(val text: String, val generatedAt: Long) {
+        fun toJson(): JSONObject = JSONObject().put("texto", text).put("geradaEm", generatedAt)
+
+        companion object {
+            /** The interpretation shown, when it is new for the saved dossier. */
+            fun toKeep(text: String, current: Interpretation?): Interpretation? =
+                if (text.isBlank() || text == current?.text) null else Interpretation(text, System.currentTimeMillis())
+
+            fun fromJson(json: JSONObject?) =
+                json?.let { Interpretation(it.optString("texto"), it.optLong("geradaEm")) }?.takeIf { it.text.isNotBlank() }
+        }
+    }
     data class Dossier(
         val id: String, val tema: String, val area: String?, val obraId: String?, val autor: String, val assunto: String,
-        val criadoEm: String, val reviews: List<Int>
+        val criadoEm: String, val reviews: List<Int>, val interpretation: Interpretation? = null
     ) {
         val key get() = listOf(tema, area.orEmpty(), obraId.orEmpty(), autor, assunto).joinToString("|") { it.trim().lowercase() }
     }
@@ -53,7 +66,7 @@ internal object StudyNotebook {
     fun canonical(notebook: Notebook): Notebook = Notebook(
         notebook.readings.map { reading -> reading.copy(highlights = reading.highlights.sortedWith(compareBy({ it.createdAt }, { it.text }))) }
             .filter { it.hasContent }.sortedWith(compareBy({ it.obraId }, { it.data })),
-        notebook.dossiers.map { it.copy(reviews = it.reviews.toSortedSet().toList()) }
+        notebook.dossiers.map { it.copy(reviews = it.reviews.toSortedSet().toList(), interpretation = it.interpretation?.takeIf { i -> i.text.isNotBlank() }) }
             .sortedWith(compareBy({ it.criadoEm }, { it.tema }, { it.id })),
         notebook.cards.sortedBy { it.card.id }
     )
@@ -97,7 +110,10 @@ internal object StudyNotebook {
             } else {
                 remap[dossier.id] = mine.id
                 dossiers[dossier.key] = mine.copy(criadoEm = minOf(mine.criadoEm, dossier.criadoEm),
-                    reviews = (mine.reviews + dossier.reviews).toSortedSet().toList())
+                    reviews = (mine.reviews + dossier.reviews).toSortedSet().toList(),
+                    // The most recent interpretation is kept; on a tie, the local one.
+                    interpretation = dossier.interpretation?.takeIf { it.generatedAt > (mine.interpretation?.generatedAt ?: Long.MIN_VALUE) }
+                        ?: mine.interpretation)
             }
         }
         val cards = LinkedHashMap(local.cards.associateBy { it.card.id })
@@ -130,6 +146,7 @@ internal object StudyNotebook {
             .put("dossies", JSONArray(n.dossiers.map { d ->
                 JSONObject().put("id", d.id).put("tema", d.tema).put("area", d.area ?: JSONObject.NULL).put("obraId", d.obraId ?: JSONObject.NULL)
                     .put("autor", d.autor).put("assunto", d.assunto).put("criadoEm", d.criadoEm).put("revisoesConcluidas", JSONArray(d.reviews))
+                    .put("interpretacao", d.interpretation?.toJson() ?: JSONObject.NULL)
             }))
             .put("cartoes", JSONArray(n.cards.map { c ->
                 JSONObject().put("cartao", JSONObject().put("id", c.card.id).put("tipo", c.card.kind).put("frente", c.card.front)
@@ -155,7 +172,8 @@ internal object StudyNotebook {
             json.optJSONArray("dossies").items { d ->
                 Dossier(d.getString("id"), d.getString("tema"), d.nullableString("area"), d.nullableString("obraId"),
                     d.optString("autor"), d.optString("assunto"), d.getString("criadoEm"),
-                    d.optJSONArray("revisoesConcluidas").let { a -> if (a == null) emptyList() else List(a.length()) { a.getInt(it) } })
+                    d.optJSONArray("revisoesConcluidas").let { a -> if (a == null) emptyList() else List(a.length()) { a.getInt(it) } },
+                    Interpretation.fromJson(d.optJSONObject("interpretacao")))
             },
             json.optJSONArray("cartoes").items { c ->
                 val card = c.getJSONObject("cartao")
@@ -206,7 +224,7 @@ internal object StudyNotebook {
         }
         return canonical(Notebook(
             readings.values.toList(),
-            SavedDossierStore(context).all().map { Dossier(it.id, it.tema, it.area, it.obraId, it.autor, it.assunto, it.criadoEm, it.revisoesConcluidas) },
+            SavedDossierStore(context).all().map { Dossier(it.id, it.tema, it.area, it.obraId, it.autor, it.assunto, it.criadoEm, it.revisoesConcluidas, it.interpretacao) },
             ReviewCardStore(context).all().map { Card(it.card, it.dossierId, it.topic, it.created, it.state) }
         ))
     }
@@ -220,7 +238,7 @@ internal object StudyNotebook {
                 reading.edit?.let { BreviarioTextEdit(it.title, it.text, it.footnote) })
         }
         val dossiers = SavedDossierStore(context)
-        notebook.dossiers.forEach { dossiers.save(SavedDossier(it.id, it.tema, it.area, it.obraId, it.autor, it.assunto, it.criadoEm, it.reviews)) }
+        notebook.dossiers.forEach { dossiers.save(SavedDossier(it.id, it.tema, it.area, it.obraId, it.autor, it.assunto, it.criadoEm, it.reviews, it.interpretation)) }
         ReviewCardStore(context).replaceAll(notebook.cards.map { ReviewCardStore.Entry(it.card, it.dossierId, it.topic, it.created, it.state) })
     }
 }

@@ -56,6 +56,13 @@ enum CadernoEstudo {
         }
     }
 
+    /// The AI interpretation saved with a dossier.
+    struct Interpretacao: Codable, Equatable {
+        let texto: String
+        /// Milliseconds since 1970.
+        let geradaEm: Int64
+    }
+
     struct Dossie: Codable, Equatable {
         let id: String
         let tema: String
@@ -65,6 +72,7 @@ enum CadernoEstudo {
         let assunto: String
         var criadoEm: String
         var revisoesConcluidas: [Int]
+        var interpretacao: Interpretacao?
 
         var chave: String {
             [tema, area ?? "", obraId ?? "", autor, assunto]
@@ -111,6 +119,7 @@ enum CadernoEstudo {
         resultado.dossies = caderno.dossies.map { dossie in
             var copia = dossie
             copia.revisoesConcluidas = Array(Set(dossie.revisoesConcluidas)).sorted()
+            if copia.interpretacao?.texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true { copia.interpretacao = nil }
             return copia
         }.sorted { ($0.criadoEm, $0.tema, $0.id) < ($1.criadoEm, $1.tema, $1.id) }
         resultado.cartoes = caderno.cartoes.sorted { $0.cartao.id < $1.cartao.id }
@@ -157,6 +166,10 @@ enum CadernoEstudo {
                 remapeados[dossie.id] = meu.id
                 meu.criadoEm = min(meu.criadoEm, dossie.criadoEm)
                 meu.revisoesConcluidas = Array(Set(meu.revisoesConcluidas).union(dossie.revisoesConcluidas)).sorted()
+                // The most recent interpretation is kept; on a tie, the local one.
+                if let dela = dossie.interpretacao, dela.geradaEm > (meu.interpretacao?.geradaEm ?? Int64.min) {
+                    meu.interpretacao = dela
+                }
                 dossies[dossie.chave] = meu
             } else {
                 dossies[dossie.chave] = dossie
@@ -258,7 +271,7 @@ extension CadernoEstudo {
         caderno.leituras = Array(leituras.values)
         caderno.dossies = DossiesSalvosStore(defaults: defaults).todos().map {
             Dossie(id: $0.id, tema: $0.tema, area: $0.area, obraId: $0.obraId, autor: $0.autor, assunto: $0.assunto,
-                   criadoEm: $0.criadoEm, revisoesConcluidas: $0.revisoesConcluidas)
+                   criadoEm: $0.criadoEm, revisoesConcluidas: $0.revisoesConcluidas, interpretacao: $0.interpretacao)
         }
         caderno.cartoes = CartoesRevisaoStore(defaults: defaults).todos().map {
             Cartao(cartao: $0.cartao, dossieId: $0.dossieId, tema: $0.tema, criadoEm: $0.criadoEm, estado: $0.estado)
@@ -299,7 +312,7 @@ extension CadernoEstudo {
         for dossie in caderno.dossies {
             dossies.salvar(DossieSalvo(id: dossie.id, tema: dossie.tema, area: dossie.area, obraId: dossie.obraId,
                                        autor: dossie.autor, assunto: dossie.assunto, criadoEm: dossie.criadoEm,
-                                       revisoesConcluidas: dossie.revisoesConcluidas))
+                                       revisoesConcluidas: dossie.revisoesConcluidas, interpretacao: dossie.interpretacao))
         }
         CartoesRevisaoStore().substituir(caderno.cartoes.map {
             CartoesRevisaoStore.Registro(cartao: $0.cartao, dossieId: $0.dossieId, tema: $0.tema, criadoEm: $0.criadoEm, estado: $0.estado)

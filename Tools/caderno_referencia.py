@@ -27,6 +27,13 @@ def empty(config: dict) -> dict:
     return {"formato": config["formato"], "versao": config["versao"], "leituras": [], "dossies": [], "cartoes": []}
 
 
+def interpretation(value):
+    """The AI interpretation saved with a dossier: its text and when it was made (ms since 1970)."""
+    if not value or not (value.get("texto") or "").strip():
+        return None
+    return {"texto": value["texto"], "geradaEm": int(value["geradaEm"])}
+
+
 def study_key(dossier: dict) -> str:
     return "|".join((dossier.get(field) or "").strip().lower() for field in ("tema", "area", "obraId", "autor", "assunto"))
 
@@ -52,7 +59,8 @@ def canonical(notebook: dict, config: dict) -> dict:
     readings.sort(key=lambda r: (r["obraId"], r["data"]))
     dossiers = sorted(({"id": d["id"], "tema": d["tema"], "area": d.get("area"), "obraId": d.get("obraId"),
                         "autor": d.get("autor") or "", "assunto": d.get("assunto") or "", "criadoEm": d["criadoEm"],
-                        "revisoesConcluidas": sorted(set(d.get("revisoesConcluidas", [])))}
+                        "revisoesConcluidas": sorted(set(d.get("revisoesConcluidas", []))),
+                        "interpretacao": interpretation(d.get("interpretacao"))}
                        for d in notebook.get("dossies", [])), key=lambda d: (d["criadoEm"], d["tema"], d["id"]))
     cards = sorted(({"cartao": {k: c["cartao"][k] for k in ("id", "tipo", "frente", "verso", "fonte", "alternativas")},
                      "dossieId": c["dossieId"], "tema": c["tema"], "criadoEm": c["criadoEm"],
@@ -105,6 +113,10 @@ def merge(local: dict, imported: dict, today: str, config: dict) -> dict:
             remap[dossier["id"]] = mine["id"]
             mine["criadoEm"] = min(mine["criadoEm"], dossier["criadoEm"])
             mine["revisoesConcluidas"] = sorted(set(mine["revisoesConcluidas"]) | set(dossier["revisoesConcluidas"]))
+            # The most recent interpretation is kept; on a tie, the local one.
+            theirs = dossier["interpretacao"]
+            if theirs and (not mine["interpretacao"] or theirs["geradaEm"] > mine["interpretacao"]["geradaEm"]):
+                mine["interpretacao"] = copy.deepcopy(theirs)
         else:
             dossiers[key] = copy.deepcopy(dossier)
 
@@ -151,7 +163,8 @@ def build_cases(config: dict) -> dict:
         reading(k, "04/07", comentario="Esperança e perseverança.", reflexao="Estudar o painel."),
         reading(r, "12/08", lida=True, edicao={"titulo": "Título local", "texto": "Texto local", "rodape": ""}),
         reading(r, "13/08"),
-    ], "dossies": [dossier("local-1", "2026-10-02", [0])], "cartoes": [card("c1", "local-1", 1, 1, 0), card("c2", "local-1", 0, 0, 0)]}
+    ], "dossies": [{**dossier("local-1", "2026-10-02", [0]),
+                    "interpretacao": {"texto": "A escada liga a terra ao céu [1].", "geradaEm": 5000}}], "cartoes": [card("c1", "local-1", 1, 1, 0), card("c2", "local-1", 0, 0, 0)]}
     imported = {"leituras": [
         reading(k, "03/07", comentario="A fé é o primeiro degrau.", lida=True,
                 destaques=[{"id": "b1", "texto": "primeiro degrau ", "criadoEm": 900},
@@ -159,12 +172,16 @@ def build_cases(config: dict) -> dict:
         reading(k, "04/07", comentario="Esperança e perseverança no estudo.", reflexao="Rever os símbolos."),
         reading(r, "12/08", favorita=True, edicao={"titulo": "Título importado", "texto": "Texto importado", "rodape": "n"}),
         reading(r, "20/08", comentario="Nova anotação do outro aparelho."),
-    ], "dossies": [dossier("outro-9", "2026-09-30", [3]), {**dossier("outro-7", "2026-10-03", []), "tema": "Acácia"}],
+    ], "dossies": [{**dossier("outro-9", "2026-09-30", [3]),
+                    "interpretacao": {"texto": "Os degraus são as virtudes [2].", "geradaEm": 7000}},
+                   {**dossier("outro-7", "2026-10-03", []), "tema": "Acácia",
+                    "interpretacao": {"texto": "  ", "geradaEm": 8000}}],
        "cartoes": [card("c1", "outro-9", 0, 1, 1, "2026-09-30"), card("c2", "outro-9", 2, 2, 0), card("c3", "outro-7", 0, 0, 0)]}
     cases = [
         ("importar em aparelho vazio", {"leituras": [], "dossies": [], "cartoes": []}, imported),
         ("mesclar com o caderno local", local, imported),
         ("importar o proprio caderno nao muda nada", local, local),
+        ("a interpretacao mais recente fica", imported, local),
         ("arquivo vazio nao muda nada", local, {"leituras": [], "dossies": [], "cartoes": []}),
     ]
     merges = [{"nome": name, "hoje": "2026-10-10", "local": canonical(a, config), "importado": canonical(b, config),

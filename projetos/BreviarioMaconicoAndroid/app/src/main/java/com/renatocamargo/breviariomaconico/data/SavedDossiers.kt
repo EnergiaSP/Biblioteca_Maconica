@@ -19,7 +19,9 @@ internal data class SavedDossier(
     val assunto: String,
     /** yyyy-MM-dd */
     val criadoEm: String,
-    val revisoesConcluidas: List<Int> = emptyList()
+    val revisoesConcluidas: List<Int> = emptyList(),
+    /** The AI interpretation generated for this dossier, kept with it. */
+    val interpretacao: StudyNotebook.Interpretation? = null
 ) {
     enum class Status { FEITA, ATRASADA, HOJE, PROXIMA }
     data class Review(val days: Int, val task: String, val date: LocalDate, val status: Status)
@@ -51,6 +53,7 @@ internal data class SavedDossier(
         .put("id", id).put("tema", tema).put("area", area ?: JSONObject.NULL).put("obraId", obraId ?: JSONObject.NULL)
         .put("autor", autor).put("assunto", assunto).put("criadoEm", criadoEm)
         .put("revisoesConcluidas", JSONArray(revisoesConcluidas))
+        .put("interpretacao", interpretacao?.toJson() ?: JSONObject.NULL)
 
     companion object {
         fun chave(tema: String, area: String?, obraId: String?, autor: String, assunto: String): String =
@@ -64,7 +67,8 @@ internal data class SavedDossier(
             autor = json.optString("autor"),
             assunto = json.optString("assunto"),
             criadoEm = json.getString("criadoEm"),
-            revisoesConcluidas = json.optJSONArray("revisoesConcluidas")?.let { a -> List(a.length()) { a.getInt(it) } }.orEmpty()
+            revisoesConcluidas = json.optJSONArray("revisoesConcluidas")?.let { a -> List(a.length()) { a.getInt(it) } }.orEmpty(),
+            interpretacao = StudyNotebook.Interpretation.fromJson(json.optJSONObject("interpretacao"))
         )
     }
 }

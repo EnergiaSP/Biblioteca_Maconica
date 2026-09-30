@@ -10,6 +10,7 @@ import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.filled.BookmarkAdd
 import com.renatocamargo.breviariomaconico.data.SavedDossier
 import com.renatocamargo.breviariomaconico.data.SavedDossierStore
+import com.renatocamargo.breviariomaconico.data.StudyNotebook
 import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -239,6 +240,8 @@ internal fun DossierScreen(
                     .onSuccess { (todos, analise) ->
                         resultados = todos.take(dossierConfig.limits.shownSources)
                         study = analise
+                        // A saved dossier shows the interpretation generated for it before.
+                        analiseIa = saved?.let { savedStore.find(it.id)?.interpretacao?.text }.orEmpty()
                         // A reopened saved dossier gets the cards it does not have yet; stored ones keep their progress.
                         if (saved != null) {
                             cardStore.add(analise.cards, saved.id, saved.tema, java.time.LocalDate.now().toString())
@@ -266,8 +269,9 @@ internal fun DossierScreen(
 
     fun salvar() {
         val chave = SavedDossier.chave(tema, area?.raw, obraId, metadataFilter.autor, metadataFilter.assunto)
-        val saved = savedStore.findByKey(chave) ?: SavedDossier(java.util.UUID.randomUUID().toString(), tema.trim(), area?.raw,
+        val found = savedStore.findByKey(chave) ?: SavedDossier(java.util.UUID.randomUUID().toString(), tema.trim(), area?.raw,
             obraId, metadataFilter.autor.trim(), metadataFilter.assunto.trim(), java.time.LocalDate.now().toString())
+        val saved = StudyNotebook.Interpretation.toKeep(analiseIa, found.interpretacao)?.let { found.copy(interpretacao = it) } ?: found
         savedStore.save(saved)
         DossierReminders.schedule(context, saved, dossierConfig)
         savedList = savedStore.all()
@@ -276,6 +280,15 @@ internal fun DossierScreen(
         reviewRefresh++
         status = "Dossiê salvo. Você será lembrado de cada revisão." +
             (if (created == 0) "" else " " + reviewConfig.label("criados", mapOf("n" to "$created")))
+    }
+
+    /** Keeps the interpretation just generated with the dossier, when it is saved. */
+    fun guardarInterpretacao(texto: String): Boolean {
+        val saved = session.savedDossierId?.let { savedStore.find(it) } ?: return false
+        val interpretation = StudyNotebook.Interpretation.toKeep(texto, saved.interpretacao) ?: return false
+        savedStore.save(saved.copy(interpretacao = interpretation))
+        savedList = savedStore.all()
+        return true
     }
 
     fun alternarRevisao(saved: SavedDossier, days: Int) {
@@ -406,7 +419,9 @@ internal fun DossierScreen(
                         resultado.onSuccess { texto ->
                             if (tema == consulta && resultados == fontes) {
                                 analiseIa = texto
-                                Toast.makeText(context, if (texto.isEmpty()) iaConfig.labels.nothingKept else "Interpretação assistida gerada.",
+                                val guardada = guardarInterpretacao(texto)
+                                Toast.makeText(context, if (texto.isEmpty()) iaConfig.labels.nothingKept
+                                    else if (guardada) "Interpretação assistida gerada e guardada no dossiê salvo." else "Interpretação assistida gerada.",
                                     Toast.LENGTH_LONG).show()
                             }
                         }.onFailure { erro ->
@@ -445,6 +460,9 @@ internal fun DossierScreen(
                 PremiumCard(colors) {
                     // The text starts with its own title ("Interpretação assistida por IA") and notice.
                     SelectionContainer { Text(analiseIa, color = colors.secondary, lineHeight = 21.sp, modifier = Modifier.testTag("dossier.ai")) }
+                    Text(if (currentSaved == null) "Salve o dossiê para guardar esta interpretação no caderno de estudo."
+                        else "Guardada com o dossiê salvo; entra no caderno de estudo e na sincronização.",
+                        color = colors.secondary, fontSize = 13.sp, modifier = Modifier.testTag("dossier.ai.saved"))
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         Button(colors = libraryActionColors(colors), onClick = { copyText(context, analiseIa) }) {
                             Icon(Icons.Default.ContentCopy, null)

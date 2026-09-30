@@ -640,6 +640,14 @@ var acervoOfflineView: some View {
                     )
                     .frame(minHeight: 220)
 
+                    Text(dossieSalvoID == nil
+                         ? "Salve o dossiê para guardar esta interpretação no caderno de estudo."
+                         : "Guardada com o dossiê salvo; entra no caderno de estudo e na sincronização.")
+                        .font(.caption)
+                        .foregroundStyle(textoSecundarioApp)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityIdentifier("dossier.ai.saved")
+
                     Button {
                         UIPasteboard.general.string = analiseDossieIA
                         mensagemErro = "Interpretação assistida copiada."

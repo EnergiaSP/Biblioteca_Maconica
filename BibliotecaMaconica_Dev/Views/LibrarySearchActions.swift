@@ -37,7 +37,8 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
                 guard Task.isCancelled == false else { return }
 
                 dossieEstudo = dossie
-                analiseDossieIA = ""
+                // A saved dossier shows the interpretation generated for it before.
+                analiseDossieIA = salvo.flatMap { DossiesSalvosStore().buscar(id: $0.id)?.interpretacao?.texto } ?? ""
                 gerandoDossieEstudo = false
                 dossieTask = nil
                 // A reopened saved dossier gets the cards it does not have yet; stored ones keep their progress.
@@ -136,7 +137,7 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
 
     func salvarDossieEstudo() {
         let store = DossiesSalvosStore()
-        let salvo = store.buscar(chave: chaveDossieAtual()) ?? DossieSalvo(
+        var salvo = store.buscar(chave: chaveDossieAtual()) ?? DossieSalvo(
             id: UUID().uuidString,
             tema: temaDossie.trimmingCharacters(in: .whitespacesAndNewlines),
             area: escopoDossie == .area ? areaDossie.rawValue : nil,
@@ -145,6 +146,9 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
             assunto: filtroDossie.assunto.trimmingCharacters(in: .whitespacesAndNewlines),
             criadoEm: DossieSalvo.data(Date())
         )
+        if let interpretacao = Self.interpretacaoParaGuardar(analiseDossieIA, atual: salvo.interpretacao) {
+            salvo.interpretacao = interpretacao
+        }
         store.salvar(salvo)
         NotificationService.agendarRevisoesDossie(salvo)
         dossiesSalvos = store.todos()
@@ -154,6 +158,23 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         atualizarRevisaoAtiva()
         let cartoes = criados == 0 ? "" : " " + (RevisaoAtiva.Configuracao.compartilhada?.rotulo("criados", ["n": "\(criados)"]) ?? "")
         mensagemErro = "Dossiê salvo. Você será lembrado de cada revisão." + cartoes
+    }
+
+    /// The interpretation shown, when it is new for the saved dossier.
+    nonisolated static func interpretacaoParaGuardar(_ texto: String, atual: CadernoEstudo.Interpretacao?) -> CadernoEstudo.Interpretacao? {
+        guard !texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, texto != atual?.texto else { return nil }
+        return CadernoEstudo.Interpretacao(texto: texto, geradaEm: Int64(Date().timeIntervalSince1970 * 1000))
+    }
+
+    /// Keeps the interpretation just generated with the dossier, when it is saved.
+    func guardarInterpretacaoNoDossieSalvo(_ texto: String) -> Bool {
+        let store = DossiesSalvosStore()
+        guard let id = dossieSalvoID, var salvo = store.buscar(id: id),
+              let interpretacao = Self.interpretacaoParaGuardar(texto, atual: salvo.interpretacao) else { return false }
+        salvo.interpretacao = interpretacao
+        store.salvar(salvo)
+        dossiesSalvos = store.todos()
+        return true
     }
 
     func alternarRevisaoDossie(_ salvo: DossieSalvo, dias: Int) {
@@ -230,7 +251,9 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
                         return
                     }
                     analiseDossieIA = exibicao
-                    mensagemErro = exibicao.isEmpty ? configuracao.rotulos.semFontes : "Interpretação assistida gerada."
+                    let guardada = guardarInterpretacaoNoDossieSalvo(exibicao)
+                    mensagemErro = exibicao.isEmpty ? configuracao.rotulos.semFontes
+                        : guardada ? "Interpretação assistida gerada e guardada no dossiê salvo." : "Interpretação assistida gerada."
                     gerandoAnaliseDossieIA = false
                 }
             } catch {
