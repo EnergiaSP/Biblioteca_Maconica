@@ -125,7 +125,7 @@ import com.renatocamargo.breviariomaconico.data.AppThemeMode
 import com.renatocamargo.breviariomaconico.data.BibliotecaArea
 import com.renatocamargo.breviariomaconico.data.BibliotecaBuscaResultado
 import com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository
-import com.renatocamargo.breviariomaconico.data.prepararBuscaNotas
+import com.renatocamargo.breviariomaconico.data.prepararBuscaNotasDepoisDaAbertura
 import com.renatocamargo.breviariomaconico.data.BibliotecaIndiceTermo
 import com.renatocamargo.breviariomaconico.data.BibliotecaPaginaLeitura
 import com.renatocamargo.breviariomaconico.data.BibliotecaPacoteEstado
@@ -334,11 +334,7 @@ internal fun BreviarioAndroidApp(
     LaunchedEffect(repo) {
         kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
             repo.indiceBusca
-            // Footnote caches too, so the first library search after an install or update does not build them;
-            // a little later, so opening the app and its first screens keep the disk to themselves.
-            kotlinx.coroutines.delay(8_000)
-            val job = kotlinx.coroutines.currentCoroutineContext()[kotlinx.coroutines.Job]
-            BibliotecaCatalogRepository.get(context).prepararBuscaNotas { job?.isActive == false }
+            BibliotecaCatalogRepository.get(context).prepararBuscaNotasDepoisDaAbertura()
         }
     }
 

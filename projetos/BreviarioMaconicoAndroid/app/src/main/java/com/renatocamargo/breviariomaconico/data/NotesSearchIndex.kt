@@ -87,3 +87,13 @@ internal fun BibliotecaCatalogRepository.prepararBuscaNotas(cancelled: () -> Boo
             .onSuccess { prepared.edit().putString(file.absolutePath, stamp).apply() }
     }
 }
+
+/**
+ * Footnote caches too, so the first library search after an install or update does not build them;
+ * a little later, so opening the app and its first screens keep the disk to themselves.
+ */
+internal suspend fun BibliotecaCatalogRepository.prepararBuscaNotasDepoisDaAbertura() {
+    kotlinx.coroutines.delay(8_000)
+    val job = kotlinx.coroutines.currentCoroutineContext()[kotlinx.coroutines.Job]
+    prepararBuscaNotas { job?.isActive == false }
+}
