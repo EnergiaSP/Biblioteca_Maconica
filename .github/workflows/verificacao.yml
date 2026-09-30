@@ -39,6 +39,9 @@ jobs:
           distribution: temurin
           java-version: "17"
       - uses: android-actions/setup-android@v3
+        with:
+          # The default list asks for the old "tools" package, no longer in the SDK repository.
+          packages: platform-tools
       - name: Plataforma e ferramentas do SDK
         run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
       - uses: gradle/actions/setup-gradle@v4
