@@ -2059,7 +2059,8 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A vida de Jacques Demolay"
+          "titulo": "A vida de Jacques Demolay",
+          "duplicataDe": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood"
         }
       ],
       "sha256": "17c2b1fc813440d1e759f17b868472696938614a962a9155469020820f243a0e",
@@ -6149,7 +6150,7 @@
             "Estudo"
           ],
           "autor": null,
-          "duplicataDe": "a_vida_de_jacques_demolay",
+          "duplicataDe": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
           "id": "jacques_demolay_a_vida_de_jacques_demolay",
           "notas": 2,
           "paginas": 72,
@@ -6589,7 +6590,8 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria - 100 instruções de Aprendiz"
+          "titulo": "Maçonaria - 100 instruções de Aprendiz",
+          "duplicataDe": "100_instrucoes_de_aprendiz"
         }
       ],
       "sha256": "552efa7d8e3f9ec47dcd64dca3a6516518b4a8c15b7bc45491f7be6c84a76cdd",
@@ -8384,7 +8386,8 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho"
+          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho",
+          "duplicataDe": "o_livro_ilustrado_dos_simbolos_completo"
         }
       ],
       "sha256": "d7044630a69b81d09e2d67c44b6e780fbd65eae438b2dd2a61644c788693cf13",
