@@ -61,5 +61,5 @@ Sem ficha catalográfica no PDF, ano, editora e local continuam `[s. d.]` e `[S.
   - A troca é feita na montagem das fontes, nas duas plataformas. Os pacotes do R2 não mudam.
 
 ## Também
-- **Breviário de Rizzardo:** 54 tis deixados pela digitalização corrigidos de forma conservadora (`Tools/corrigir_til_rizzardo.py`, relatório `correcao_til_rizzardo_v1.json`). Os 134 restantes ficam para o OCR novo, com o PDF original.
+- **Breviário de Rizzardo:** 54 tis deixados pela digitalização corrigidos de forma conservadora (`Tools/corrigir_til_rizzardo.py`, relatório `correcao_til_rizzardo_v1.json`). Depois, o OCR novo do PDF original refez as 362 leituras e eliminou todos os "~" (ver `RELATORIO_OCR_2026-10-01.md`).
 - **Wear OS:** margem proporcional nas telas redondas.
