@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "descricao": "Qualidade do texto do acervo RAG pela regra Paridade/qualidade_texto_v1.json.",
   "paginas": {
-    "avaliadas": 59835,
-    "ruidosas": 189,
-    "ilegiveis": 63
+    "avaliadas": 59978,
+    "ruidosas": 179,
+    "ilegiveis": 65
   },
   "obrasPorNivel": {
     "baixa": 1,
@@ -12,12 +12,12 @@
     "regular": 6
   },
   "motivos": {
-    "solta": 43833,
-    "simbolo": 43098,
-    "caixa": 4960,
-    "misto": 2594,
-    "escrita": 1287,
-    "semVogal": 339
+    "simbolo": 43299,
+    "solta": 42251,
+    "caixa": 4893,
+    "misto": 2491,
+    "escrita": 1225,
+    "semVogal": 329
   },
   "obrasComMaisRuido": [
     {
@@ -154,6 +154,13 @@
       "nivel": "boa"
     },
     {
+      "obra": "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino",
+      "avaliadas": 205,
+      "ruidosas": 4,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
       "obra": "a_maconaria_durante_as_ditaduras",
       "avaliadas": 131,
       "ruidosas": 2,
@@ -172,20 +179,6 @@
       "avaliadas": 340,
       "ruidosas": 7,
       "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino",
-      "avaliadas": 204,
-      "ruidosas": 4,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira",
-      "avaliadas": 357,
-      "ruidosas": 6,
-      "ilegiveis": 1,
       "nivel": "boa"
     },
     {
@@ -217,6 +210,13 @@
       "nivel": "boa"
     },
     {
+      "obra": "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira",
+      "avaliadas": 357,
+      "ruidosas": 5,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
       "obra": "pistis_sophia_traducao_do_texto_original",
       "avaliadas": 180,
       "ruidosas": 2,
@@ -241,20 +241,6 @@
       "obra": "atos_de_salomao",
       "avaliadas": 127,
       "ruidosas": 2,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "de_gutenberg_a_diderot_peter_burke",
-      "avaliadas": 260,
-      "ruidosas": 4,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "o_taro_cabalistico_robert_wang",
-      "avaliadas": 326,
-      "ruidosas": 5,
       "ilegiveis": 0,
       "nivel": "boa"
     },
@@ -296,6 +282,20 @@
     {
       "obra": "moral_e_dogma",
       "avaliadas": 76,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "guia_aprendiz_macom_ir_bruno_carraveta",
+      "avaliadas": 154,
+      "ruidosas": 2,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "realidade_oculta",
+      "avaliadas": 78,
       "ruidosas": 1,
       "ilegiveis": 0,
       "nivel": "boa"

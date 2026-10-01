@@ -1,0 +1,772 @@
+{
+  "descricao": "Notas de rodapé do Breviário de Kennyo Ismail relidas de novo OCR do PDF original (Tools/refazer_rodape_kennyo.py).",
+  "trocadas": 88,
+  "mantidas": [
+    {
+      "data": "24/01",
+      "motivo": "semelhança 0.74"
+    },
+    {
+      "data": "29/01",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "07/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "10/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "13/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "15/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "16/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "18/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "24/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "25/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "26/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "27/02",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "06/03",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "10/03",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "15/03",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "30/03",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "02/04",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "11/04",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "14/04",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "26/04",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "05/05",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "20/05",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "25/05",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "30/05",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "01/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "02/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "05/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "07/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "09/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "13/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "15/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "24/06",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "05/07",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "18/07",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "20/07",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "22/07",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "31/07",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "01/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "04/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "06/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "11/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "15/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "16/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "20/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "21/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "25/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "31/08",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "01/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "02/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "04/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "09/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "11/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "14/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "16/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "19/09",
+      "motivo": "semelhança 0.70"
+    },
+    {
+      "data": "20/09",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "05/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "06/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "10/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "12/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "16/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "17/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "19/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "29/10",
+      "motivo": "semelhança 0.26"
+    },
+    {
+      "data": "31/10",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "06/11",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "11/11",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "15/11",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "30/11",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "03/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "08/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "09/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "10/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "12/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "14/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "17/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "18/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "20/12",
+      "motivo": "semelhança 0.54"
+    },
+    {
+      "data": "23/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "25/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    },
+    {
+      "data": "31/12",
+      "motivo": "notas não encontradas por inteiro no OCR"
+    }
+  ],
+  "notas": [
+    {
+      "data": "25/01",
+      "antes": "1) Grande Oriente Provincial de São Paulo (1833), obediência, subordinada\n\n101 PIRES, J. S. Rituais Maçônicos Brasileiras Londrina: A Trolha, 1996. 102 ISMAIL, K. Maçonaria brasileira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021. 103 ISMAIL, Kennyo. Ordem sobre o caos. Brasília: No Esquadro, 2020. 104 PROBER, Kurt. Maçonaria paulista em eterna convulsão In: A Bigoma, N. 184, Nov-1999. 105 SCHULER SOBRINHO, Octacilia. Uma luz na História: a formação e o sentido da COMAB. Florianópolis: Editora Cultural O Prumo, 1998. 106 GOB-SP. Site oficial: https://gobsp.org.br/ 31",
+      "depois": "1) Grande Oriente Provincial de São Paulo (1833), obediência, subordinada 101 PIRES, J. S. Rituais Maçônicos Brasileiras Londrina: A Trolha, 1996. 102 ISMAIL, K. Maçonaria brasileira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021. 103 ISMAIL, Kennyo. Ordem sobre o caos. Brasília: No Esquadro, 2020. 104 PROBER, Kurt. Maçonaria paulista em eterna convulsão In: A Bigoma, N. 184, Nov-1999. 105 SCHULER SOBRINHO, Octacilia. Uma luz na História: a formação e o sentido da COMAB. Florianópolis: Editora Cultural O Prumo, 1998. 106 GOB-SP. Site oficial: https://gobsp.org.br/ 31"
+    },
+    {
+      "data": "26/01",
+      "antes": "107 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 108 FREEMASONS NSW & ACT. Site oficial: https://masons.au/ 109 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 81. 110 FREEMASONS SOUTH AUSTRALIA & NT. Site oficial: www.joinfreemasonry.com.au/ I11 FREEMASONS VICTORIA. Site oficial: https://www.freemasonsvic.net.au/ 112 FREEMASONS TASMANIA. Site oficial: https://freemasonstasmania.org/ 113 FREEMASONS WESTERN AUSTRALIA. Site oficial: https://freemasonswa.org.au/ 114 FREEMASONS QUEENSLAND. Site oficial: https://uglq.org.au/ 115 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 1920, p. 109. 116 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 2020, p. 127, 32",
+      "depois": "107 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 108 FREEMASONS NSW & ACT. Site oficial: https://masons.au/ 109 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 81. 110 FREEMASONS SOUTH AUSTRALIA & NT. Site oficial: www.joinfreemasonry.com.au/ 111 FREEMASONS VICTORIA. Site oficial: https://www.freemasonsvic.net.au/ 112 FREEMASONS TASMANIA. Site oficial: https://freemasonstasmania.org/ 113 FREEMASONS WESTERN AUSTRALIA. Site oficial: https://freemasonswa.org.au/ 114 FREEMASONS QUEENSLAND. Site oficial: https://uglq.org.au/ 115 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 1920, p. 109. 116 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 2020, p. 127, 32"
+    },
+    {
+      "data": "01/02",
+      "antes": "133 CARR, H. O Ofício do Maçom. São Paulo: Madras, 2012, p. 47. 14 DERMOTT, L. Ahiman Rezon: A Constituição dos Maçons Antigos. 2° edição. Trad. Kennyo Ismail Brasília: No Esquadro, 2024, p. 61. 135 Idem, Ibraem. 136 Idem, p. 137. 137 ]dem, p. 60. 138 CARR, H. O Ofício do Maçom. São Paulo: Madras, 2012, p. 51. 38",
+      "depois": "133 CARR, H. O Ofício do Maçom. São Paulo: Madras, 2012, p. 47. 14 DERMOTT, L. Ahiman Rezon: A Constituição dos Maçons Antigos. 2° edição. Trad. Kennyo Ismail Brasília: No Esquadro, 2024, p. 61. 135 Idem, Ibidem. 136 Idem, p. 137. 137 ]dem, p. 60. 138 CARR, H. O Ofício do Maçom. São Paulo: Madras, 2012, p. 51. 38"
+    },
+    {
+      "data": "02/02",
+      "antes": "139 BEHRING, M. Ritual do Grau de Aprendiz-Maçom. Rio de Janeiro: Delta, 1928, p. 92. 140 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 661. 141 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kixdred Scemes. New York and London: The Masonic History Company, 1914, p. 521. 142 ISMAIL, K. Debatendo tabus maçônicos. Londrina: A Trolha, 2016, p. 119. 39",
+      "depois": "139 BEHRING, M. Ritual do Grau de Aprendiz-Maçom. Rio de Janeiro: Delta, 1928, p. 92. 140 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 661. 141 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Scenes. New York and London: The Masonic History Company, 1914, p. 521. 142 ISMAIL, K. Debatendo tabus maçônicos. Londrina: A Trolha, 2016, p. 119. 39"
+    },
+    {
+      "data": "06/02",
+      "antes": "153 SEMADENI, M. E. V. Las obediencias masónicas del Rito de York como centros de acción política, México, 1825-1830. Revista LiminuR. Estadios soviales y bamanistios, año 7, vol. VII, n. 2, diciembre de 2009, p. 41-55. . 15+ HENDERSON, K.; POPE, T. Maçonaria U'nirersal As Amiricas São Paulo: Madras, 2001. 155 Gran Logia Valle de México. Site offcial: https://www.mrgdm.org/ 1S6 COGMNA. 2004 Conunision Rpart. Disponied en: hips// masxarnngitin.org/ nporsgftecommnision/ 157 CGL.RM. Site oficial: https://ogrm.com.mex/ 43",
+      "depois": "153 SEMADENI, M. E. V. Las obediencias masónicas del Rito de York como centros de acción política, México, 1825-1830. Revista LiminaR. Estadios sociales y bamanistios, año 7, vol. VII, n. 2, diciembre de 2009, p. 41-55. . 15+ HENDERSON, K.; POPE, T. Maçonaria Universal: As Amiricas São Paulo: Madras, 2001. 155 Gran Logia Valle de México. Site offcial: https://www.mrgdm.org/ 156 COGMNA. 2004 Conunision Rpart. Disponied en: hips// masxarnngitin.org/ nporsgftecommnision/ 157 CGL.RM. Site oficial: https://ogrm.com.mex/ 43"
+    },
+    {
+      "data": "14/02",
+      "antes": "190 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences New York & London: The Masonic History Company; 1914. 191 COIL, H. W.; BROWN, W. M. Coil's Masonic Encyclopedia. New York: Macoy, 1961. 192 SIMON, J. REAA: Ritel des trois premiers digrés selon les anciens cabiers - 5829. Bonneuil-en-Valois: Éditions de La Hutte, 2013. 103 ISMAIL, K. Onlem sobre o caos Brasília: No Esquadro, 2020. 51",
+      "depois": "190 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences New York & London: The Masonic History Company; 1914. 191 COIL, H. W.; BROWN, W. M. Coil's Masonic Encyclopedia. New York: Macoy, 1961. 192 SIMON, J. REAA: Ritel des trois premiers degrés selon les anciens cabiers - 5829. Bonneuil-en-Valois: Éditions de La Hutte, 2013. 103 ISMAIL, K. Ondem sobre o caos Brasília: No Esquadro, 2020. 51"
+    },
+    {
+      "data": "17/02",
+      "antes": "203 BLUMENTHAL, M. Antigos Textos Maçônicos e Rosacruzes, São Paulo: Isis, 2006, p. 155. 204 Gênesis 4:20. 205 BLUMENTHAL, M. Antigos Textos Maçônicos e Rosacruzes. São Paulo: Isis, 2006, p. 157, 206 ANDERSON, J. A Consstituição de Anderson (1723). Brasília: No Esquadro, 2023, p. 24. 207 DERMOTT, L. Ahiman Rezon. Trad. Kennyo Ismail, Londrina: A Trolha, 2016, p. 99. 208 I Reis 7:14 e 2 Crônicas 2:13. 54",
+      "depois": "203 BLUMENTHAL, M. Antigos Textos Maçônicos e Rosacruzes, São Paulo: Isis, 2006, p. 155. 204 Gênesis 4:20. 205 BLUMENTHAL, M. Antigos Textos Maçônicos e Rosacruzes. São Paulo: Isis, 2006, p. 157, 206 ANDERSON, J. A Constituição de Anderson (1723). Brasília: No Esquadro, 2023, p. 24. 207 DERMOTT, L. Ahiman Rezon. Trad. Kennyo Ismail, Londrina: A Trolha, 2016, p. 99. 208 1 Reis 7:14 e 2 Crônicas 2:13. 54"
+    },
+    {
+      "data": "19/02",
+      "antes": "213 COIL, I.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 457. 214 MACKEY, A.G. An Encyclopedia of Freemasonry and its Kindred Sciences New York & London: The Masonic History Company, 1914, p. 534. 215 BARRON, E. J. Orator and Experts in English I odges. AQC, Vol. 12, 1899, p. 105. 216 Disponível em: https://yorkshirenerfreemasons.org.uk/resources/ provincial-orator 56",
+      "depois": "213 COIL, I.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 457. 214 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences New York & London: The Masonic History Company, 1914, p. 534. 215 BARRON, E. J. Orator and Experts in English I odges. AQC, Vol. 12, 1899, p. 105. 216 Disponível em: https://yorkshirenerfreemasons.org.uk/resources/ provincial-orator 56"
+    },
+    {
+      "data": "20/02",
+      "antes": "217 COOPER, R. The Red Triangle: A History of Ardi-Masonry. London: Lewis Masonic, 2011. 218 Idem, Ibidem. 219 KARG, B.; YOUNG,J. K. O Làro Campleto dos Maçons. São Paulo: Madras, 2012. 220 ISMAIL, K. Maçonaria Brasileinu: a histiria axitada - VoL I. Brasília: No Esquadro, 2021. 221 HODAPP, C. Maçonaria para leiga:. Rio de Janeiro: Alta Books, 2015, p. 81.",
+      "depois": "217 COOPER, R. The Red Triangle: A History of Ardi-Masonry. London: Lewis Masonic, 2011. 218 Idem, Ibidem. 219 KARG, B.; YOUNG, J. K. O Làro Campleto dos Maçons. São Paulo: Madras, 2012. 220 ISMAIL, K. Maçonaria Brasileira: a histiria axitada - VoL I. Brasília: No Esquadro, 2021. 221 HODAPP, C. Maçonaria para leiga:. Rio de Janeiro: Alta Books, 2015, p. 81. 57"
+    },
+    {
+      "data": "28/02",
+      "antes": "248 BARR.J. Why the World Was Created in 4004 BC: Archbishop Ussher and Biblical Chronology. Bulletin of the John Rylands University, 1985, vol. 67, 002, pp. 575-608. 249 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Macoy, 1961, p 112 250 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences. New York and London: The Masonic History Company, 1914, p. 129. 251 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Macoy, 1961, p. 113. 252 Idem, Ibidem. 65",
+      "depois": "248 BARR, J. Why the World Was Created in 4004 BC: Archbishop Ussher and Biblical Chronology. Bulletin of the John Rylands University, 1985, vol. 67, 002, pp. 575-608. 249 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Macoy, 1961, p 112 250 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences. New York and London: The Masonic History Company, 1914, p. 129. 251 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Macoy, 1961, p. 113. 252 Idem, Ibidem. 65"
+    },
+    {
+      "data": "02/03",
+      "antes": "258 COIL, H.; BROWN, W. Coil's .Masonic Encyclopedia New York: Macoy, 1961, p. 551-552. 259 COIL; BROWN, qp. aiє, p. 547-548. 260 NOVARINO, M. Fondo massonico in lingna italana. Torino: Quaderni del CRSL-M, 2017. 67",
+      "depois": "258 COIL, H.; BROWN, W. Coil's .Masonic Encyclopedia New York: Macoy, 1961, p. 551-552. 259 COIL; BROWN, qp. aiє, p. 547-548. 260 NOVARINO, M. Fondo massonico in lingua italiana. Torino: Quaderni del CRSL-M, 2017. 67"
+    },
+    {
+      "data": "03/03",
+      "antes": "261 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences. New York and London: The Masonic History Company, 1914, p. 784. 262 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 578. 263 Idem, Ibidem, p. 661-662 264 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janeiro: Delta, 1928, p. 94. 265 Ritual de Companheiro de Oficio - Rito de York. Brasília: No Esquadro, 2023, p. 99, 266 MACKEY, op. ct., p. 800. 68",
+      "depois": "261 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences. New York and London: The Masonic History Company, 1914, p. 784. 262 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 578. 263 Idem, Ibidem, p. 661-662 264 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janeiro: Delta, 1928, p. 94. 265 Ritual de Companheiro de Oficio - Rito de York. Brasília: No Esquadro, 2023, p. 99, 266 MACKEY, op. cit., p. 800. 68"
+    },
+    {
+      "data": "08/03",
+      "antes": "280 SOUSA, M. S. O. A América Latina de Pemambuco à Gră-Colômbia: O General Abreu e Lima e a Questão Nacional. Aruis do XXZX Simpario Naconal de História. Brasília, Julho-2017. 2HI ISMAIL, K. História da Maonaria brazicina pare ainitas. Londrina: A Trolha, 2017, p. 54-56. 73",
+      "depois": "280 SOUSA, M. S. O. A América Latina de Pemambuco à Gră-Colômbia: O General Abreu e Lima e a Questão Nacional. Anais do XXX Simpario Naconal de História. Brasília, Julho-2017. 2HI ISMAIL, K. História da Maonaria brazicina pare ainitas. Londrina: A Trolha, 2017, p. 54-56. 73"
+    },
+    {
+      "data": "09/03",
+      "antes": "282 GOB. A Concepção do Grande Arquiteto do Universo no Rito Francês ou Moderno. Boletim do GOB, Ano 86, N. 3, março de 1961, p. 68-79. 283 GOB. Sob. Ass. Fed. Leg. Boletim do GOB. Ano 86, Ns. 10-12, out-dez 1961, p. 67-68. 284 GOB. Conselbo Federal da Ordem. Boletim do GOB. Ano 88, Ns. 9 a 10, set-out 1963, p.19. 285 GOB. Rito Moderno: Decisão sobre o uso da Bíblia. Boletim do GOB. Ano 98, Ns. 8-9, ago-set 1969, р. 61-63. 74",
+      "depois": "282 GOB. A Concepção do Grande Arquiteto do Universo no Rito Francês ou Moderno. Boletim do GOB, Ano 86, N. 3, março de 1961, p. 68-79. 283 GOB. Sob. Ass. Fed. Leg. Boletim do GOB. Ano 86, Ns. 10-12, out-dez 1961, p. 67-68. 284 GOB. Conselho Federal da Ordem. Boletim do GOB. Ano 88, Ns. 9 a 10, set-out 1963, p.19. 285 GOB. Rito Moderno: Decisão sobre o uso da Bíblia. Boletim do GOB. Ano 98, Ns. 8-9, ago-set 1969, р. 61-63. 74"
+    },
+    {
+      "data": "12/03",
+      "antes": "293 ISMAIL, Kennyo. Ondem sobre o caos. Brasília: No Esquadro, 2020. 24 ISMAIL, K. Sobre as Altos Graas do REAA. In: Bibla Sagrada - Ed. Maçônica. Brasília: No Esquadro, 2022 77",
+      "depois": "293 ISMAIL, Kennyo. Ondem sobre o caos. Brasília: No Esquadro, 2020. 24 ISMAIL, K. Sobre as Altos Graus do REAA. In: Biblia Sagrada - Ed. Maçônica. Brasília: No Esquadro, 2022 77"
+    },
+    {
+      "data": "14/03",
+      "antes": "298 GRAND LODGE OF GEORGIA. Site oficial: https://glgeorgia.ge/ 299 UNITED GRAND LODGE OF GEORGIA. Site oficial: https://www.ug/g.ge/ 300 COGMNA. Report of the Commission on Information for Recognition. February 18, 2020. 301 COGMNA. Report of the Commission on Information for Recognition. February 22, 2022. 302 COGMNA. Report of the Commission on Information for Recognition. February, 2023 303 COGMNA. Report of the Commision on Information for Recognition. March, 2024. 79",
+      "depois": "298 GRAND LODGE OF GEORGIA. Site oficial: https://glgeorgia.ge/ 299 UNITED GRAND LODGE OF GEORGIA. Site oficial: https://www.ug/g.ge/ 300 COGMNA. Report of the Commission on Information for Recognition. February 18, 2020. 301 COGMNA. Report of the Commission on Information for Recognition. February 22, 2022. 302 COGMNA. Report of the Commission on Information for Recognition. February, 2023 303 COGMNA. Report of the Commission on Information for Recognition. March, 2024. 79"
+    },
+    {
+      "data": "24/03",
+      "antes": "332 ISMAIL, K. Os 33 primeiros Supremos Conselhos do mundo. Revista CéoM1, Vol. 7, n.1, jul/dez, 2020, p. 49-56. 3\" GRAN LOGIA DEL PERO. Histora. Disponível em: https://gperu.org.pe/ história 34 HENDERSON, K.; POPE, T. Maçonaria Universal: As Americas. São Paulo: Madras, 2001. 89",
+      "depois": "332 ISMAIL, K. Os 33 primeiros Supremos Conselhos do mundo. Revista CoM, Vol. 7, n.1, jul/dez, 2020, p. 49-56. 3\" GRAN LOGIA DEL PERO. Histora. Disponível em: https://gperu.org.pe/ história 34 HENDERSON, K.; POPE, T. Maçonaria Universal: As Americas. São Paulo: Madras, 2001. 89"
+    },
+    {
+      "data": "31/03",
+      "antes": "354 FERREIRA, J; DELGADO, L. A. N. (Org.) O Brasi/ Republicano: o tempo da experiência democrática. 5ª ed., Vol. 3. Rio de Janeiro: Civilização Brasileira, 2013. 355 FERREIRA, J. João Goulart, 3ª ed. Rio de Janeiro: Civilização Brasileira, 2011. 356 ISMAIL, K. Maçonara brasilerra: a bıstórta ocultada, Vol. I. Brasília: No Esquadro, 2021, p. 173. 357 GOB. A Nação. Boletim Oticial. Ano 89, Números. 4 a 6, abril a junho de 1964, p. 25-26. 358 GOB. Atos. Boletim Ofiial. Ano 98, Números 1 a 3, janeiro a março de 1969, p. 18-21. 359 GOB. Posição da Maçonaria Frente à Atual Conjuntura Nacional. Boletim Oficial. Ano 98, N. 4-6, abril a junho de 1969, p. 78-79. 96",
+      "depois": "354 FERREIRA, J; DELGADO, L. A. N. (Org.) O Brasi/ Republicano: o tempo da experiência democrática. 5ª ed., Vol. 3. Rio de Janeiro: Civilização Brasileira, 2013. 355 FERREIRA, J. João Goulart, 3ª ed. Rio de Janeiro: Civilização Brasileira, 2011. 356 ISMAIL, K. Maçonara brasileira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021, p. 173. 357 GOB. A Nação. Boletim Oticial. Ano 89, Números. 4 a 6, abril a junho de 1964, p. 25-26. 358 GOB. Atos. Boletim Oficial. Ano 98, Números 1 a 3, janeiro a março de 1969, p. 18-21. 359 GOB. Posição da Maçonaria Frente à Atual Conjuntura Nacional. Boletim Oficial. Ano 98, N. 4-6, abril a junho de 1969, p. 78-79. 96"
+    },
+    {
+      "data": "03/04",
+      "antes": "367 STEINER, R. Cbristian Rasicrucianism and Modern Initiation. Great Barrington, MA: Anthroposophic Press, 2000. 68 YATES, F. A. The Rosicrucian Enäightenment. Londres: Routledge, 1972 69 WESTCOTT. W. W. The Rosicrucians, Past and Present, at Home and Abroad. Pomerov. WA: Healt Research, 1966. 30 HOUR, E. .T Maies The Caudifi braser to Potimtin Lenong oia sngcad Order- 187-1923 London: The Aquarian Press, 1985. 372 ISMAIL, K. A TRADIÇÃO ROSACRUCIANA E SUAS ORDENS: Um levantamento histórico. CerM, Vol 3, n. 1, Brasília: jan/jun, 2015, p. 29-37. 99",
+      "depois": "367 STEINER, R. Cristian Rasicrucianism and Modern Initiation. Great Barrington, MA: Anthroposophic Press, 2000. 368 YATES, F. A. The Rosicrucian Enlightenment. Londres: Routledge, 1972 369 WESTCOTT. W. W. The Rosicrucians, Past and Present, at Home and Abroad. Pomerov. WA: Healt Research, 1966. 30 HOUR, E. .T Maies The Caudifi braser to Potimtin Lenong oia sngcad Order- 187-1923 London: The Aquarian Press, 1985. 372 ISMAIL, K. A TRADIÇÃO ROSACRUCIANA E SUAS ORDENS: Um levantamento histórico. CerM, Vol 3, n. 1, Brasília: jan/jun, 2015, p. 29-37. 99"
+    },
+    {
+      "data": "04/04",
+      "antes": "373 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janeiro: Delta, 1928, p. 97-98. 374 STEWART, I. Number Symbolism. In: Encyclopaedia Britannica. Disponível em: https://www.britannica.com/topic/number-symbolism/Pythagoreanism 375 BÍBLIA SAGRADA, KJV - Edição Maçônica. Brasília: No Esquadro, 2022, p. 699. 376 Idem, Ibidem, p. 705. 377 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 228. 378 Idem, Ibidem, p. 663. 379 QUATUOR CORONATI LODGE. Site oficial: https://www.quatuorcoronati.com/ 380 BLUMENTHAI, M. Antigos Textos Maçônicos e Rosacruzes, São Paulo: Isis, 2006, p. 190. 100",
+      "depois": "373 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janeiro: Delta, 1928, p. 97-98. 374 STEWART, I. Number Symbolism. In: Encyclopaedia Britannica. Disponível em: https://www.britannica.com/topic/number-symbolism/Pythagoreanism 375 BÍBLIA SAGRADA, KJV - Edição Maçônica. Brasília: No Esquadro, 2022, p. 699. 376 Idem, Ibidem, p. 705. 377 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 228. 378 Idem, Ibidem, p. 663. 379 QUATUOR CORONATI LODGE. Site oficial: https://www.quatuorcoronati.com/ 380 BLUMENTHAL, M. Antigos Textos Maçônicos e Rosacruzes, São Paulo: Isis, 2006, p. 190. 100"
+    },
+    {
+      "data": "05/04",
+      "antes": "381 HODAPP, C. Freemasons for Dummies. 3d Ed. Hoboken, NJ: John Wiley & Sons, 2022, p. 248. 382 KNIGHTS OF ST. ANDREW INFO. Site oficial: www.knightsofstandrew.info/history/ 381 SUPREME COUNCIL 33° SJ, USA. Knights of St Andrev. Disponível em: https://scottisbrite.org/general-membership-information/chapter-ralloy-lubs-organizations/knights-st-andrew/ 101",
+      "depois": "381 HODAPP, C. Freemasons for Dummies. 3d Ed. Hoboken, NJ: John Wiley & Sons, 2022, p. 248. 382 KNIGHTS OF ST. ANDREW INFO. Site oficial: www.knightsofstandrew.info/history/ 381 SUPREME COUNCIL 33° SJ, USA. Knights of St Andrew. Disponível em: https://scottisbrite.org/general-membership-information/chapter-ralloy-lubs-organizations/knights-st-andrew/ 101"
+    },
+    {
+      "data": "06/04",
+      "antes": "384 SGLRSM. Site oficial: https://sg/rsm.sm/ 385 COGMNA. Reports of the Commission on Information for Recognition - 2004-2019. Disponível em: https://masonicrecognition.orgreports-of-the-commission/ 386 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 387 IVANA. La massomafia dello Stretto. Disponível em: www.isiciliani.it/la-massomafia-dello-stretto/ 388 GLRRSM. Crajt Freemasonry in the Republic of San Marino. Disponível em: https://wwww.rgle.org.uk/MHC_San_Marino.htm 102",
+      "depois": "384 SGLRSM. Site oficial: https://sg/rsm.sm/ 385 COGMNA. Reports of the Commission on Information for Recognition - 2004-2019. Disponível em: https://masonicrecognition.orgreports-of-the-commission/ 386 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 387 IVANA. La massomafia dello Stretto. Disponível em: www.isiciliani.it/la-massomafia-dello-stretto/ 388 GLRRSM. Craft Freemasonry in the Republic of San Marino. Disponível em: https://wwww.rgle.org.uk/MHC_San_Marino.htm 102"
+    },
+    {
+      "data": "07/04",
+      "antes": "389 VARGAS, N. S. Aspectos históricos da Alquimia Junguiana, V. 35-2, 2017, p. 69-76. 390 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences. New York and London: The Masonic History Company, 1914, p. 44. 391 FLAMMEL, N. Flammel's Book. Trad. Eirenaeus Orandus. Londres: T.S., 1624. 392 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 25. 393 SANCHEZ, R. M. The True Masomic Eyperience. Stourbridge: RMS Publishing, 2017. 103",
+      "depois": "389 VARGAS, N. S. Aspectos históricos da Alquimia Junguiana, V. 35-2, 2017, p. 69-76. 390 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Sciences. New York and London: The Masonic History Company, 1914, p. 44. 391 FLAMMEL, N. Flammel's Book. Trad. Eirenaeus Orandus. Londres: T.S., 1624. 392 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 25. 393 SANCHEZ, R. M. The True Masomic Experience. Stourbridge: RMS Publishing, 2017. 103"
+    },
+    {
+      "data": "15/04",
+      "antes": "417 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 314. +18 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 103. *19 Ritual de Aprendiz Admitido - Rito de York. Brasília: No Esquadro, 2023, p. 122. 120 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 314. 421 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 250. 111",
+      "depois": "417 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 314. +18 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 103. 419 Ritual de Aprendiz Admitido - Rito de York. Brasília: No Esquadro, 2023, p. 122. 120 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 314. 421 PIKE, A. Moral e Dogma. Brasília: No Esquadro, 2023, p. 250. 111"
+    },
+    {
+      "data": "16/04",
+      "antes": "422 FREIMAURER-WIKI. Bosnien und Herzegowina. Disponível em: https://www.freimaurer-wiki.de/index.php/ Bosnien_und_Herzegowina 423 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2, Melbourne: Global Masonic Publications, 2000. 424 HODAPP, C. Wbo can best work and best agree? Apparently not in Sarajevo. Disponível em: https://freemason.sfordummies.blogspot.com/2016/07/who-can-best-work-and-best-agree.html 112",
+      "depois": "422 FREIMAURER-WIKI. Bosnien und Herzegowina. Disponível em: https://www.freimaurer-wiki.de/index.php/ Bosnien_und_Herzegowina 423 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2, Melbourne: Global Masonic Publications, 2000. 424 HODAPP, C. Who can best work and best agree? Apparently not in Sarajevo. Disponível em: https://freemason.sfordummies.blogspot.com/2016/07/who-can-best-work-and-best-agree.html 112"
+    },
+    {
+      "data": "17/04",
+      "antes": "425 BENIMELI, J. A. F.; CAPRILE, G.; ALBERTON V. Maçonaria e Igreja Católica: ontem, boje e amanbã. São Paulo: Paulus, 2010. 426 KINNEY, J. O Mito Maçônico. Rio de Janeiro: Record, 2010, p. 32. 427 HODAPP, C. Maçonaria para leigos. Rio de Janeiro: Alta Books, 2015. 113",
+      "depois": "425 BENIMELI, J. A. F.; CAPRILE, G.; ALBERTON V. Maçonaria e Igreja Católica: ontem, boje e amanhã. São Paulo: Paulus, 2010. 426 KINNEY, J. O Mito Maçônico. Rio de Janeiro: Record, 2010, p. 32. 427 HODAPP, C. Maçonaria para leigos. Rio de Janeiro: Alta Books, 2015. 113"
+    },
+    {
+      "data": "21/04",
+      "antes": "437 DOS SANTOS, J. F. Memórias do Distrito de Diamantino da Comarca de Serro Frio. Rio de Janeiro: Typ. Americana, 1868. 438 LINHARES, M. A Maçonaria e a Questão Religiosa do Segundo Império. Coleção Ruy Santos. Brasília: Senado Federal, 1998. 439 LIMA JUNIOR, A. História da Inconfidência de Minas Gerais. Belo Horizonte: Imprensa Oficial, 40 ALBUQUERQUE, T. Libertadores da América. São Paulo: Ed. O Malhete, 1959, p. 275. 41 DA SILVA, C. E. L. Morte de Tiradentes tem contestação. Folba de S. Paulo. São Paulo, 21 abr. 1999. +2 CASTELLANI, J. Os Maçons na Independência do Brasil. Londrina: A Trolha, 1993, p. 25. 43 PROBER, K. Catálogo dos Selos dos Maçons Brusileiros. Rio de Janeiro, 1984. 1# MORAES, M. A. Tiradentes, Maçom iniciado? CeoM, Vol. 2, N. 2, 2014, p.89-95. 117",
+      "depois": "437 DOS SANTOS, J. F. Memórias do Distrito de Diamantino da Comarca de Serro Frio. Rio de Janeiro: Typ. Americana, 1868. 438 LINHARES, M. A Maçonaria e a Questão Religiosa do Segundo Império. Coleção Ruy Santos. Brasília: Senado Federal, 1998. 439 LIMA JUNIOR, A. História da Inconfidência de Minas Gerais. Belo Horizonte: Imprensa Oficial, 40 ALBUQUERQUE, T. Libertadores da América. São Paulo: Ed. O Malhete, 1959, p. 275. 41 DA SILVA, C. E. L. Morte de Tiradentes tem contestação. Folba de S. Paulo. São Paulo, 21 abr. 1999. +2 CASTELLANI, J. Os Maçons na Independência do Brasil. Londrina: A Trolha, 1993, p. 25. 43 PROBER, K. Catálogo dos Selos dos Maçons Brasileiros. Rio de Janeiro, 1984. 1# MORAES, M. A. Tiradentes, Maçom iniciado? CeoM, Vol. 2, N. 2, 2014, p.89-95. 117"
+    },
+    {
+      "data": "24/04",
+      "antes": "451 AFuAMvD. Site oficial: https://www.freimaurerei.de/ 452 A GLIFvD é adepta do Rito Sueco. Site oficial: https:// www.freimaurerorden.de/ 453 GNMI3WK. Site oficial: https://3wk.org/ 454 ACGL. Site oficial: https://acgl.online/ 455 Originalmente, uma GL, Distrital da GL.UI, foi emancipada em 1980. Adota o Emulação. 4S6 BERNHEIM, A. United Grand Lodge and United Grand Lodges of Germany, 1946-1961, AQC, Volume 127, 2014, p. 61-104. 120",
+      "depois": "451 AFuAMvD. Site oficial: https://www.freimaurerei.de/ 452 A GLIFvD é adepta do Rito Sueco. Site oficial: https:// www.freimaurerorden.de/ 453 GNMI3WK. Site oficial: https://3wk.org/ 454 ACGL. Site oficial: https://acgl.online/ 455 Originalmente, uma GL, Distrital da GL.UI, foi emancipada em 1980. Adota o Emulação. 456 BERNHEIM, A. United Grand Lodge and United Grand Lodges of Germany, 1946-1961, AQC, Volume 127, 2014, p. 61-104. 120"
+    },
+    {
+      "data": "27/04",
+      "antes": "466 DISTRICT GRAND LODGE OF SIERRA LEONE & GAMBIA (E.C.). Site oficial: https://www.dglsagec.org/ 467 DISTRICT GRAND LODGE OF SIERRA LEONE & GAMBIA (S.C.). Site oficial: https://dglodge-sc-s/g.org/ 468 GRANDE LOJA DA IRLANDA. Amnual Report 2019. Disponível em: https:// /freemason.ie/ wp-content/aploads/2020/04/Grand-Lodge-Anmual-Report-2019.pdf 123",
+      "depois": "466 DISTRICT GRAND LODGE OF SIERRA LEONE & GAMBIA (E.C.). Site oficial: https://www.dglsagec.org/ 467 DISTRICT GRAND LODGE OF SIERRA LEONE & GAMBIA (S.C.). Site oficial: https://dglodge-sc-s/g.org/ 468 GRANDE LOJA DA IRLANDA. Anual Report 2019. Disponível em: https:// /freemason.ie/ wp-content/aploads/2020/04/Grand-Lodge-Anmual-Report-2019.pdf 123"
+    },
+    {
+      "data": "28/04",
+      "antes": "470 STEVENSON, D. As origens da Maçonaria: O século da Escócia (1 590-1710), São Paulo: Madras, 2009. 471 COOPER, R. D. Revelando o códizo da Maçonaria. São Paulo: Madras, 2009, 124",
+      "depois": "470 STEVENSON, D. As origens da Maçonaria: O século da Escócia (1 590-1710), São Paulo: Madras, 2009. 471 COOPER, R. D. Revelando o código da Maçonaria. São Paulo: Madras, 2009, 124"
+    },
+    {
+      "data": "29/04",
+      "antes": "472 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 82. 473 GRANDE LOJA DA NOVA ZELÂNDIA. Site oficial: https://freemasonsnz.org/ 474 HENDERSON, K.; POPE, T. Frecmasomry U'nivrsal, Vol. 2. Melbourne: Global Masonic Publications, 2000. +75 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 2020, p. 339. 476 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 1920, p. 117. 125",
+      "depois": "472 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 82. 473 GRANDE LOJA DA NOVA ZELÂNDIA. Site oficial: https://freemasonsnz.org/ 474 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 475 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 2020, p. 339. 476 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 1920, p. 117. 125"
+    },
+    {
+      "data": "04/05",
+      "antes": "487 GIVAN, P.J. The oldest masonic chapel in the world. Disponível em: https://www.lck.2.co.uk/about-the-chapel-of-st-Jobm 488 ROYAL ORDER OF SCOTLAND. Site oficial: https://www.royalorderscotland.org/ 489 ROYAL ORDER OF SCOTLAND - USA. Site oficial: https://roosusa.org/ 490 Primeiro trecho de Lucas 2:14. 130",
+      "depois": "487 GIVAN, P. J. The oldest masonic chapel in the world. Disponível em: https://www.lck.2.co.uk/about-the-chapel-of-st-Jobm 488 ROYAL ORDER OF SCOTLAND. Site oficial: https://www.royalorderscotland.org/ 489 ROYAL ORDER OF SCOTLAND - USA. Site oficial: https://roosusa.org/ 490 Primeiro trecho de Lucas 2:14. 130"
+    },
+    {
+      "data": "09/05",
+      "antes": "508 WEST LANCASHIRE FREEMASONS. New Initiates Guide to Freemasonry. Disponível em: https://www.westlancsfreemasons.org.uk/wp-content/xploads/2020/02/Initiates-suide.pdf 509 GRAND LODGE OF NEBRASKA. Continnous Floor Work Manwal. Lincoln, 2020. se Masnic Acry Co mpaie di , pr zmasiny and ie Kinded Ssimes. New York and London: SII EXÉRCITO BRASILEIRO. Manual de Campanha: ORDEM UNID.A. 4° ed. Brasília: Ministério da Defesa, 2019. 135",
+      "depois": "508 WEST LANCASHIRE FREEMASONS. New Initiates Guide to Freemasonry. Disponível em: https://www.westlancsfreemasons.org.uk/wp-content/xploads/2020/02/Initiates-suide.pdf 509 GRAND LODGE OF NEBRASKA. Continnous Floor Work Manual. Lincoln, 2020. se Masnic Acry Co mpaie di , pr zmasiny and ie Kinded Sciences. New York and London: The Masonic History Company, 1914, p. 237. SII EXÉRCITO BRASILEIRO. Manual de Campanha: ORDEM UNID.A. 4° ed. Brasília: Ministério da Defesa, 2019. 135"
+    },
+    {
+      "data": "12/05",
+      "antes": "517 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 518 \"Zora\" significa \"Alvorada\" em sérvio. 519 \"Luła Mikrokozma\" significa \"Raio do Microcosmo\" e é o nome de um poema de 1845 do Príncipe-Bispo Pedro II, que governou Montenegro, de 1830 a 1851.\n\n• COGNRA. Rpab or te Oommisin o Crlorma ion boal. eropit m20m2019 Disponível em:\nhttps://masonicrecognition.org/reports-of-the-commission/ 138",
+      "depois": "517 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 518 \"Zora\" significa \"Alvorada\" em sérvio. 519 \"Luła Mikrokozma\" significa \"Raio do Microcosmo\" e é o nome de um poema de 1845 do Príncipe-Bispo Pedro II, que governou Montenegro, de 1830 a 1851. • 2004-2019, Disponível em: https://masonicrecognition.org/reports-of-the-commission/ 138"
+    },
+    {
+      "data": "15/05",
+      "antes": "527 GRAND COLLEGE - KTP- UK. Site oficial: bttp://knighttemplarpriests.com/ 528 GRAND COLLEGE - KTP- USA. Site oficial: https://braletp.org/ 141",
+      "depois": "527 GRAND COLLEGE - KTP- UK. Site oficial: bttp://knighttemplarpriests.com/ 528 GRAND COLLEGE - KTP- - USA. Site oficial: https://braletp.org/ 141"
+    },
+    {
+      "data": "21/05",
+      "antes": "542 CARR, T. The Ritual of the Openatie Fnee Masons. Ann Arbor: The Tyler, 1911. 543 HAMILLJ. The Cnaft: A History of English Freemasonry. Londres: Crucuble, 1986, p. 23. 147",
+      "depois": "542 CARR, T. The Ritual of the Operative Free Masons. Ann Arbor: The Tyler, 1911. 543 HAMILLJ. The Cnaft: A History of English Freemasonry. Londres: Crucuble, 1986, p. 23. 147"
+    },
+    {
+      "data": "23/05",
+      "antes": "547 TROLHA, X. Simbolos Maçônicos e ouas origens - Volume II. Londrina: A Trolha, 1997. 548 CARR, H. O Oficio do Maçom. São Paulo: Madras, 2012, p. 398. 149",
+      "depois": "547 TROLHA, X. Simbolos Maçônicos e suas origens - Volume II. Londrina: A Trolha, 1997. 548 CARR, H. O Oficio do Maçom. São Paulo: Madras, 2012, p. 398. 149"
+    },
+    {
+      "data": "26/05",
+      "antes": "557 COIL, H. W.; BROWN, W. M. Coil's Masonic Encyclopedia, New York: Macoy, 1961, p. 49. 558 SONGHURST, W. J-Quatuor Coronatorum Antigrapha, Vol. VII, Londres: 1890, p. IX. 559 EDWARDS, L. Anderson's Book of Constitutions of 1738. AQC, Vol. XLVI, 1993, p. 363. 560 PRESCOTT, A.; SOMMERS, S. M. 1717 and all that. Circulation Paper, 2016, p. 15. 561 ISMAIL, K. Quem foi James Anderson. In: ANDERSON, J. A Constituição de Anderson - edição comemorativa de 300 anos. Trad & Ed. Kennyo Ismail. Brasília; No Esquadro, 2023. 152",
+      "depois": "557 COIL, H. W.; BROWN, W. M. Coil's Masonic Encyclopedia, New York: Macoy, 1961, p. 49. 558 SONGHURST, W. J. Quatuor Coronatorum Antigrapha, Vol. VII, Londres: 1890, p. IX. 559 EDWARDS, L. Anderson's Book of Constitutions of 1738. AQC, Vol. XLVI, 1993, p. 363. 560 PRESCOTT, A.; SOMMERS, S. M. 1717 and all that. Circulation Paper, 2016, p. 15. 561 ISMAIL, K. Quem foi James Anderson. In: ANDERSON, J. A Constituição de Anderson - edição comemorativa de 300 anos. Trad & Ed. Kennyo Ismail. Brasília; No Esquadro, 2023. 152"
+    },
+    {
+      "data": "27/05",
+      "antes": "563 ISMAIL, K. Maçonaria Brasileira: a história ocaltada. Vol. I. Brasília: No Esquadro, 2021, p. 162- 164. 564 SOBRINHO, O. S. Uma Luz na História: o sentido e a formação da COMLAB. Florianópolis: Ed. O PRUMO, 1998. 565 Op. cit., p. 227-238. 153",
+      "depois": "563 ISMAIL, K. Maçonaria Brasileira: a história ocultada. Vol. I. Brasília: No Esquadro, 2021, p. 162- 164. 564 SOBRINHO, O. S. Uma Luz na História: o sentido e a formação da COM AB. Florianópolis: Ed. O PRUMO, 1998. 565 Op. cit., p. 227-238. 153"
+    },
+    {
+      "data": "29/05",
+      "antes": "569 CHAVES, M. M. Jasé Castellani: uma coletinea da rede mundial. Brasília: ed. do autor, 2014. 570 PROBER, K. A Bigorna. N. 184, Rio de Janeiro: Novembro de 1999, p. 15. 571 Idem, Ibidem, p. 24. 572 Idem, Ibidem, p. 39. 155",
+      "depois": "569 CHAVES, M. M. Jasé Castellani: uma coletânea da rede mundial. Brasília: ed. do autor, 2014. 570 PROBER, K. A Bigorna. N. 184, Rio de Janeiro: Novembro de 1999, p. 15. 571 Idem, Ibidem, p. 24. 572 Idem, Ibidem, p. 39. 155"
+    },
+    {
+      "data": "08/06",
+      "antes": "606 DE ANDRADE, A. V. O Evangelbo e a Maçonaria: una paneria que deu certo no Brasil. Contagem: Lithera Maciel, 2004. 607 ISMAIL, K. Maçonaria brasileira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021. 608 SCHULER SOBRINHO, O. Uma luz na Históriz: a formação e o sentido da COMAB. Florianópolis: O Prumo, 1998. 609 GUABIROBA, V. Discurso. Diário do Congresso Nacional, Seção I. Ano 38, N. 138,\n\n22/10/1983, p. 11379.\n\n610 DE ANDRADE, op. ait, p. 20. 165",
+      "depois": "606 DE ANDRADE, A. V. O Evangelbo e a Maçonaria: una paneria que deu certo no Brasil. Contagem: Lithera Maciel, 2004. 607 ISMAIL, K. Maçonaria brasileira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021. 608 SCHULER SOBRINHO, O. Uma luz na História: a formação e o sentido da COMAB. Florianópolis: O Prumo, 1998. 609 GUABIROBA, V. Discurso. Diário do Congresso Nacional, Seção I. Ano 38, N. 138, 22/10/1983, p. 11379. 610 DE ANDRADE, op. ait, p. 20. 165"
+    },
+    {
+      "data": "14/06",
+      "antes": "632 RANDALL, R.E. History, Disponível em: https://amaruntb.org/about-us/ history/ 633 SUPREME COUNCIL- ORDER OF THE AMARANTH. Site oficial: amarantb.org/ 634 HODAPP, C. Freemasons for Dummies. 3nd Ed. Hoboken, NJ: John Wiley & Sons, 2022 635 AMERICAN DIABETES ASSOCIATION. Amaranth Diabetes Foundation. Disponível em: https://diabetes.org/researcb/amarantb-diabetes-foundation 171",
+      "depois": "632 RANDALL, R. E. History, Disponível em: https://amaruntb.org/about-us/ history/ 633 SUPREME COUNCIL- - ORDER OF THE AMARANTH. Site oficial: amarantb.org/ 634 HODAPP, C. Freemasons for Dummies. 3nd Ed. Hoboken, NJ: John Wiley & Sons, 2022 635 AMERICAN DIABETES ASSOCIATION. Amaranth Diabetes Foundation. Disponível em: https://diabetes.org/researcb/amarantb-diabetes-foundation 171"
+    },
+    {
+      "data": "22/06",
+      "antes": "665 KNOOP, D. The Genesis of Freemussonry. Manchester. Manchester University Press, 1947. 179",
+      "depois": "665 KNOOP, D. The Genesis of Freemasonry. Manchester. Manchester University Press, 1947. 179"
+    },
+    {
+      "data": "27/06",
+      "antes": "682 HARGETT Jr., D. L.J. Raymond Shute Jr.: Great American Masonic Innovator. Transactions of A. Douglas Smith, Jr. Lodge of Research #1949, Vol. 6, March, 2007. 683 MCLEOD, W. The Socety of Blue Friars (masonic authors). Disponível em: https://www.musite.org/sbflinformation.html 184",
+      "depois": "682 HARGETT Jr., D. L. J. Raymond Shute Jr.: Great American Masonic Innovator. Transactions of A. Douglas Smith, Jr. Lodge of Research #1949, Vol. 6, March, 2007. 683 MCLEOD, W. The Socety of Blue Friars (masonic authors). Disponível em: https://www.musite.org/sbflinformation.html 184"
+    },
+    {
+      "data": "09/07",
+      "antes": "725 GRANDE LOJA DA ARGENTINA. Site oficial: https://www.masoneria-argentina.org.ar/ 726 Gran Logia de la Argentina. Fundación de la Gran Logia. Disponível em: https://www.masoneria-argentina.org.ar/que-es-la-masoneria/fundacion-de-la-gran-logia/ 727 Supremo Consejo Grado 33 Argentina. Historia. Disponível em: scg33argentina.org/historia/ 728 HENDERSON, K; POPE, T. Maçonaria Universal: As Américas. São Paulo: Madras, 2001. 129 La Nacion. Disponível em: https://www.lanacion.com.ar/ lifestyle/ recibimos-1500-solicitudes-al-mes-la-masoneria-argentina-repleta-de-jovenes-y-con-el-quintuple-de-nid16052022/ 730 HENDERSON; POPE, op. cit., p. 247. 731 Em 10/2023, a Grande Loja da Argentina retirou seu reconhecimento de 9 Grandes Lojas brasileiras: PB, SE, BA, PE, PI, AL, CE, RN e RO. 196",
+      "depois": "725 GRANDE LOJA DA ARGENTINA. Site oficial: https://www.masoneria-argentina.org.ar/ 726 Gran Logia de la Argentina. Fundación de la Gran Logia. Disponível em: https://www.masoneria-argentina.org.ar/que-es-la-masoneria/fundacion-de-la-gran-logia/ 727 Supremo Consejo Grado 33 Argentina. Historia. Disponível em: scg33argentina.org/historia/ 728 HENDERSON, K; POPE, T. Maçonaria Universal: As Américas. São Paulo: Madras, 2001. 129 La Nacion. Disponível em: https://www.lanacion.com.ar/ / lifestyle/ recibimos-1500-solicitudes-al-mes-la-masoneria-argentina-repleta-de-jovenes-y-con-el-quintuple-de-nid16052022/ 730 HENDERSON; POPE, op. cit., p. 247. 731 Em 10/2023, a Grande Loja da Argentina retirou seu reconhecimento de 9 Grandes Lojas brasileiras: PB, SE, BA, PE, PI, AL, CE, RN e RO. 196"
+    },
+    {
+      "data": "13/07",
+      "antes": "741 DUMONT, P. Freemasonry in Turkey: a by-product of Western penetration. European Review, Vol. 13, N. 3,July 2005, pp. 481-493. 742 LAYIKTEZ, C. The History of Freemasonry in Turkey. In: Internet Lodge. Disponível em: https://internet.lodge.org.uk/index.php/research 743 ARSLAN, O.; OZEN,C The rebirth of the Ottoman Committee of Union and Progress in Macedonia through the Italian Freemasonry. Oriente Moderno, Ano 24 (85), Nr. 1 (2005), pp. 93-115. 74 HENDERSON, K. W.; POPE, A. R. F. Freemasonry Universal, Vol. II. Victoria: Global Masonic Publications, 2000. 200",
+      "depois": "741 DUMONT, P. Freemasonry in Turkey: a by-product of Western penetration. European Review, Vol. 13, N. 3,July 2005, pp. 481-493. 742 LAYIKTEZ, C. The History of Freemasonry in Turkey. In: Internet Lodge. Disponível em: https://internet.lodge.org.uk/index.php/research 743 ARSLAN, O.; OZEN, C. The rebirth of the Ottoman Committee of Union and Progress in Macedonia through the Italian Freemasonry. Oriente Moderno, Ano 24 (85), Nr. 1 (2005), pp. 93-115. 74 HENDERSON, K. W.; POPE, A. R. F. Freemasonry Universal, Vol. II. Victoria: Global Masonic Publications, 2000. 200"
+    },
+    {
+      "data": "14/07",
+      "antes": "745 DE BARROS, F. B. Primórdios das Sociedades Secretas na Bahia. In: Annaes do Arquivo Público da Babia, Vol. XV. Salvador: Imprensa Oficial do Estado da Bahia, 1928. 746 MAGALHÃES, P. A. I. A Cabala Maçônica do Brasil o primeiro Grande Oriente Brasileiro. Revista do LAHGP, Recife, n. 70, 2017, p. 73-137. 747 MOREL, M.; SOUZA, F.J. O. O poder da Maçonaria: a história de uma sociedade secreta no Brasil. Rio de Janeiro: Nova Fronteira, 2008. 748 ISMAIL, K. História da Maçonaria brusileina para adultos. Londrina: A Trolha, 2017. 201",
+      "depois": "745 DE BARROS, F. B. Primórdios das Sociedades Secretas na Bahia. In: Annaes do Arquivo Público da Bahia, Vol. XV. Salvador: Imprensa Oficial do Estado da Bahia, 1928. 746 MAGALHÃES, P. A. I. A Cabala Maçônica do Brasil o primeiro Grande Oriente Brasileiro. Revista do LAHGP, Recife, n. 70, 2017, p. 73-137. 747 MOREL, M.; SOUZA, F. J. O. O poder da Maçonaria: a história de uma sociedade secreta no Brasil. Rio de Janeiro: Nova Fronteira, 2008. 748 ISMAIL, K. História da Maçonaria brusileina para adultos. Londrina: A Trolha, 2017. 201"
+    },
+    {
+      "data": "15/07",
+      "antes": "750 MOTA, D.; DE SOUSA, J. P.; CHAVES FILHO, C. G. A PESQUISA SOBRE 'MAÇONARIAS' EM QUESTAO: Uma década de produção na revista Ciência & Maçonaria (2013-2022). C6rM, Vol. 10, n.1, Brasília: jul/dez, 2023, p. 7-18, 202",
+      "depois": "750 MOTA, D.; DE SOUSA, J. P.; CHAVES FILHO, C. G. A PESQUISA SOBRE 'MAÇONARIAS' EM QUESTAO: Uma década de produção na revista Ciência & Maçonaria (2013-2022). CoM, Vol. 10, n.1, Brasília: jul/dez, 2023, p. 7-18, 202"
+    },
+    {
+      "data": "16/07",
+      "antes": "753 FAULKS, M. UM PALÁCIO MAÇÔNICO: A.Maçomaria e a Arte da Memória. Brasília: No Esquadro, 2025. 754 JAMES, R. E. Studying Masonic Philasopby tbroug Memoniing Degree Ritual. Disponível em: https://scottishrite.org/blog/about/media-publications/jounal/article/studying-masonic-philosophy-through-memorizing-degree-ritual/ 203",
+      "depois": "753 FAULKS, M. UM PALÁCIO MAÇÔNICO: A Maçonaria e a Arte da Memória. Brasília: No Esquadro, 2025. 754 JAMES, R. E. Studying Masonic Philasopby through Memoniing Degree Ritual. Disponível em: https://scottishrite.org/blog/about/media-publications/jounal/article/studying-masonic-philosophy-through-memorizing-degree-ritual/ 203"
+    },
+    {
+      "data": "24/07",
+      "antes": "783 LANDAIS, N. Grand dictionnaire général et grammatical des dichionnaires français. Paris: Didier, 1855, р. 169. 211",
+      "depois": "783 LANDAIS, N. Grand dictionnaire général et grammatical des dictionnaires français. Paris: Didier, 1855, р. 169. 211"
+    },
+    {
+      "data": "02/08",
+      "antes": "806 YATES, F. A. The Rosicrucian Enlightenment. Londres: Routledge, 1972. 8M SIGNIER, J.E.; THOMAZO, R. Sociedades Secretas. São Paulo: Larousse, 2011. BIo COIL, H.; BROWN, W. Coils Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 576. BIl ISMAIL, K. The Rosicrucian Tradition and its Orders. The Joumal of The Masonic Society, Fall 2013, р. 23-28. 220",
+      "depois": "806 YATES, F. A. The Rosicrucian Enlightenment. Londres: Routledge, 1972. 8M SIGNIER, J.E.; THOMAZO, R. Sociedades Secretas. São Paulo: Larousse, 2011. 810 COIL, H.; BROWN, W. Coils Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 576. BIl ISMAIL, K. The Rosicrucian Tradition and its Orders. The Joumal of The Masonic Society, Fall 2013, р. 23-28. 220"
+    },
+    {
+      "data": "03/08",
+      "antes": "812 WIDOW'S SONS INTERNATIONAL Site oficial: https://widowssonsinternational.com/ B13 HODAPP, C. Freemasons for Dummies. 3nd Edition. Hoboken, NJ: John Wiley & Sons, 2022, р. 277-218, 814 HODAPP, C. GM of Georgia Issues Edict Banning Widows Sons Motonyde Riders. Disponível em: https://freemasonsfordummies.blogspot.com/2022/01/gm-of-georgia-iswes-edict-banning.html BIS BODES DO ASFALTO MOTOCLUBE. Site oficial: https://wwww.bodesdoasfalto.org.br/ 816 CAVALEIROS DE AÇO. Site oficial: https://cavaleirosdeac.org.br/ dejault.asp 221",
+      "depois": "812 WIDOW'S SONS INTERNATIONAL Site oficial: https://widowssonsinternational.com/ 813 HODAPP, C. Freemasons for Dummies. 3nd Edition. Hoboken, NJ: John Wiley & Sons, 2022, р. 277-218, 814 HODAPP, C. GM of Georgia Issues Edict Banning Widows Sons Motonyde Riders. Disponível em: https://freemasonsfordummies.blogspot.com/2022/01/gm-of-georgia-iswes-edict-banning.html BIS BODES DO ASFALTO MOTOCLUBE. Site oficial: https://wwww.bodesdoasfalto.org.br/ 816 CAVALEIROS DE AÇO. Site oficial: https://cavaleirosdeac.org.br/ dejault.asp 221"
+    },
+    {
+      "data": "05/08",
+      "antes": "822 LORENZ, E. N. Deterministic nonperiodic flow: Journal of the Atmapberic Saiences, n. 20, 1993, p. 130- 141. 823 HARRIS, R. B. Eleven Gentlemen of Charleston. Washington, DC: Supreme Council, SJ, USA, 1959. 824 SIMON, J. REAA: Rituel des trois premiers degrés selon les anciens cabiers - 5829. Bonneuil-en-Valois: Editions de la Hutte, 2013. 223",
+      "depois": "822 LORENZ, E. N. Deterministic nonperiodic flow: Journal of the Atmapberic Sciences, n. 20, 1993, p. 130- 141. 823 HARRIS, R. B. Eleven Gentlemen of Charleston. Washington, DC: Supreme Council, SJ, USA, 1959. 824 SIMON, J. REAA: Rituel des trois premiers degrés selon les anciens cabiers - 5829. Bonneuil-en-Valois: Editions de la Hutte, 2013. 223"
+    },
+    {
+      "data": "09/08",
+      "antes": "840 DERMOTT, L. Ahiman Rezon: A Constituição dos Maçons Antigos. 2ª edição. Trad. Kennyo Ismail. Brasília: No Esquadro, 2024, p. 12. 841 BÍBLIA SAGRADA, KJV - Edição Maçônica. Brasdia: No Esquadro, 2022, p. 391. 842 Idem, p. 340. 843 DERMOTT, op. aż, p. 13. 227",
+      "depois": "840 DERMOTT, L. Ahiman Rezon: A Constituição dos Maçons Antigos. 2ª edição. Trad. Kennyo Ismail. Brasília: No Esquadro, 2024, p. 12. 841 BÍBLIA SAGRADA, KJV - Edição Maçônica. Brasilia: No Esquadro, 2022, p. 391. 842 Idem, p. 340. 843 DERMOTT, op. at, p. 13. 227"
+    },
+    {
+      "data": "12/08",
+      "antes": "849 DE FIGUEIREDO, J. G. Diconário de Maçonaria: seus mistérios, seus ritos, sua filosofia, sua história. 13° ed. São Paulo: Pensamento, 2004, p. 514. BSO DA CAMINO, R Introdução à Maçonaria, Volume III. São Paulo: Aurora, 2004. BSI RAGON, J. M. Ortodoxia Maçônica: A Maçonaria Oaulta e a Iniáação Hermética. São Paulo: Madras, 2006, p. 60. 230",
+      "depois": "849 DE FIGUEIREDO, J. G. Diconário de Maçonaria: seus mistérios, seus ritos, sua filosofia, sua história. 13° ed. São Paulo: Pensamento, 2004, p. 514. 850 DA CAMINO, R Introdução à Maçonaria, Volume III. São Paulo: Aurora, 2004. BSI RAGON, J. M. Ortodoxia Maçônica: A Maçonaria Oculta e a Iniáação Hermética. São Paulo: Madras, 2006, p. 60. 230"
+    },
+    {
+      "data": "19/08",
+      "antes": "871 PIKE, A. Moral e Dogma. Trad. Kennyo Ismail. Brasília: No Esquadro, p. 162 872 WEBB, T. S. O Monitor dos Franco-Maçons. Trad. Edgard da Costa Freitas Neto. Salvador: Curtipiu, 2017, p. 62. 873 HODAPP, C. Freemasons for Dummies. 3rd Edition. Hoboken, NJ: John Wiley & Sons, 2022, р. 253. 874 UGL.E. The Masonic Chantable Foundation. Disponível em: https://www.uzle.org.u/k/discover-freemasonry / service / masonic-charitable-foundation 875 HODAPP, op. cit., p. 227. 876 SCOTTISH RITE - SJ. Scottisb Rite Foundation. Disponível em: https://scottisbrite.org/giving/joundations/scottisb-rite-foxndation/ 877 SCOTTISH RITE - NMJ. Charitie. Disponível em: btp.s://scottsbritenmj.org/ cbarities 237",
+      "depois": "871 PIKE, A. Moral e Dogma. Trad. Kennyo Ismail. Brasília: No Esquadro, p. 162 872 WEBB, T. S. O Monitor dos Franco-Maçons. Trad. Edgard da Costa Freitas Neto. Salvador: Curtipiu, 2017, p. 62. 873 HODAPP, C. Freemasons for Dummies. 3rd Edition. Hoboken, NJ: John Wiley & Sons, 2022, р. 253. 874 UGL.E. The Masonic Chantable Foundation. Disponível em: https://www.uzle.org.u/k/discover-freemasonry / service / masonic-charitable-foundation 875 HODAPP, op. cit., p. 227. 876 SCOTTISH RITE - SJ. Scottisb Rite Foundation. Disponível em: https://scottisbrite.org/giving/joundations/scottisb-rite-foxndation/ 877 SCOTTISH RITE - NMJ. Charites. Disponível em: btp.s://scottsbritenmj.org/ cbarities 237"
+    },
+    {
+      "data": "22/08",
+      "antes": "893 ISMAIL, K. Maçonaria brasilira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021. 240",
+      "depois": "893 ISMAIL, K. Maçonaria brasileira: a história ocultada, Vol. I. Brasília: No Esquadro, 2021. 240"
+    },
+    {
+      "data": "23/08",
+      "antes": "824 GREGORIO, C. Entendendo o Rito Escocês Antigo e Adeito: Grau de Aprendio Maçom. Rio de Janeiro: Ed. do autor, 2023. 895 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janeiro: Delta, 1928, p. 13. 8%6 Idem, p. 15. 897 WIRTH, O. Le livre du Maitre. Paris: Dervy, 1974. 898 BEHRING, M. Ritual do Grau de Mestro-Maçon. Rio de Janeiro: Delta, 1928, p. 55-61. 899 PIKE, A. Moral e Dogma. Trad. Kennyo Ismail. Brasília: No Esquadro, p. 228-229. 20 WIRTH, O. Le Livre de L'Apprenti. Paris: Aux Éditions Rhéa, 1894. 241",
+      "depois": "824 GREGORIO, C. Entendendo o Rito Escocês Antigo e Aceito: Grau de Aprendio Maçom. Rio de Janeiro: Ed. do autor, 2023. 895 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janeiro: Delta, 1928, p. 13. 8%6 Idem, p. 15. 897 WIRTH, O. Le livre du Maitre. Paris: Dervy, 1974. 898 BEHRING, M. Ritual do Grau de Mestre-Maçon. Rio de Janeiro: Delta, 1928, p. 55-61. 899 PIKE, A. Moral e Dogma. Trad. Kennyo Ismail. Brasília: No Esquadro, p. 228-229. 20 WIRTH, O. Le Livre de L'Apprenti. Paris: Aux Éditions Rhéa, 1894. 241"
+    },
+    {
+      "data": "26/08",
+      "antes": "909 Idem, Ibiaem. 910 Idem, Ibidem. 9I OLIVER, G. The Book of the Lodge or Ofice's Manual. London: R. Spencer, 1849, p. 47, 244",
+      "depois": "909 Idem, Ibidem. 910 Idem, Ibidem. 91 OLIVER, G. The Book of the Lodge or Officer's Manual. London: R. Spencer, 1849, p. 47, 244"
+    },
+    {
+      "data": "27/08",
+      "antes": "912 COIL, H., BROWN, W. Coil's Masonic Encyclopedia New York: Ed. Macoy, 1961, p. 451. 93 MACKEY, A. G. An Encyclopedia of Fneemasonry and its Kindred Saences. New York and London: The Masonic History Company, 1914, p. 520. 214 Oswald Wirth foi e autor de diversos livros sobre Maçonaria e Ocultismo durante a 2ª metade do Séc. XIX e a 1\" do Séc. XX. 915 PIKE, A. Moral e Dogma. Brasíliaa: No Esquadro, 2023, p. 657-672. 245",
+      "depois": "912 COIL, H., BROWN, W. Coil's Masonic Encyclopedia New York: Ed. Macoy, 1961, p. 451. 93 MACKEY, A. G. An Encyclopedia of Freemasonry and its Kindred Saences. New York and London: The Masonic History Company, 1914, p. 520. 214 Oswald Wirth foi e autor de diversos livros sobre Maçonaria e Ocultismo durante a 2ª metade do Séc. XIX e a 1\" do Séc. XX. 915 PIKE, A. Moral e Dogma. Brasíliaa: No Esquadro, 2023, p. 657-672. 245"
+    },
+    {
+      "data": "28/08",
+      "antes": "916 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 122. 9I7 COOPER, R. I.. D. Revelando o Código da Maçonaria: a verdade sobre a Chave de Salomão e a Irmandade. São Paulo: Madras, 2009, p. 208, 918 DA CAMINO, R. Breviário Maçônico, 6* Edição. São Paulo: Madras, 2014. 246",
+      "depois": "916 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 122. 917 COOPER, R. I.. D. Revelando o Código da Maçonaria: a verdade sobre a Chave de Salomão e a Irmandade. São Paulo: Madras, 2009, p. 208, 918 DA CAMINO, R. Breviário Maçônico, 6* Edição. São Paulo: Madras, 2014. 246"
+    },
+    {
+      "data": "12/09",
+      "antes": "968 GOB. Boletim do Grande Oriente do Brasi. Ano 85, N. 2, fevereiro de 1960, p. 3-9 969 GOB. Boletim do Grande Oriente do Brasil. Ano 85, N. 11-12, nov-dez, 1960, p. 5-7. 9ro GOB. Boletim do Grande Oriente do Brusi. Ano 87, N. 8-11, ago-nov, 1962, p. 24-30. 261",
+      "depois": "968 GOB. Boletim do Grande Oriente do Brasi. Ano 85, N. 2, fevereiro de 1960, p. 3-9 969 GOB. Boletim do Grande Oriente do Brasil. Ano 85, N. 11-12, nov-dez, 1960, p. 5-7. 9ro GOB. Boletim do Grande Oriente do Brasil Ano 87, N. 8-11, ago-nov, 1962, p. 24-30. 261"
+    },
+    {
+      "data": "15/09",
+      "antes": "978 COGMNA. Reports of the Commission on Information for Recognition - 2004-2019, Disponíyel em: https://masonicrecognition.org/reports-of-the-commission/ 979 GLSDC. Site oficial: https://www.grandelogesowverainedaciacameroun.org/ 980 GLFC. Site ofcial: https://gffcam.org/ 264",
+      "depois": "978 COGMNA. Reports of the Commission on Information for Recognition - 2004-2019, Disponível em: https://masonicrecognition.org/reports-of-the-commission/ 979 GLSDC. Site oficial: https://www.grandelogesowverainedaciacameroun.org/ 980 GLFC. Site ofcial: https://gffcam.org/ 264"
+    },
+    {
+      "data": "27/09",
+      "antes": "1020 ISMAIL, K. Debatendo tabus maçônicos. Londrina: A Trolha, 2016. 1021 MCLUHAN, M. O meio é a Mensagem. In: Os Meios de Comunicação como Eixtensões do Homem. São Paulo: Cultrix, 1969. 276",
+      "depois": "1020 ISMAIL, K. Debatendo tabus maçônicos. Londrina: A Trolha, 2016. 1021 MCLUHAN, M. O meio é a Mensagem. In: Os Meios de Comunicação como Extensões do Homem. São Paulo: Cultrix, 1969. 276"
+    },
+    {
+      "data": "03/10",
+      "antes": "1039 PHILAEsetSite oncpps:paetes.myshoptty.com/ 1040 FREIMAURER-WIKI. Phualethes Soaety. Disponível em: https://www.freimaurer-wiki.de/ index.php/ En:Philalethes_Socety IO PHILALETHES. History. Disponível em: https://philalethes.myshopify.com/pages/history 282",
+      "depois": "1039 PHILAEsetSite oncpps:paetes.myshoptty.com/ 1040 FREIMAURER-WIKI. Philalethes Society, Disponível em: https://www.freimaurer-wiki.de/ index.php/ En:Philalethes_Socety IO PHILALETHES. History. Disponível em: https://philalethes.myshopify.com/pages/history 282"
+    },
+    {
+      "data": "04/10",
+      "antes": "1042 CARVALHO, F. A. Maçom com X: Xioo Trolba por Xico Trolba. Londrina: A Trolha, 2004. 1043 Dados obtidos por busca em: https://www.ponteira.com.br/ 1044 A TROLHA. Site oficial: https://www.atrolba.com.br/ 283",
+      "depois": "1042 CARVALHO, F. A. Maçom com X: Xico Trolba por Xico Trolba. Londrina: A Trolha, 2004. 1043 Dados obtidos por busca em: https://www.ponteira.com.br/ 1044 A TROLHA. Site oficial: https://www.atrolba.com.br/ 283"
+    },
+    {
+      "data": "08/10",
+      "antes": "1056 DISTRICT GRAND LODGE OF CYPRUS. Site oficial: https://gprus-freemasons.org.g/ 1057 GRANDLODGE OF CYPRUS.Site oficial: https://megalistoatiskyprow.com/ 1058 GRAND LODGE OF CYPRUS. History of the Grand Lodge of Cyprus. Disponível em: https://megalistoatiskyprou.com/grand-lodge-of-oprus/ 1059 DGLC. Zenon 18 Lodge No. 9818. Disponível em: https://gprus-freemasons.org.gv/dglc/lodges/zenon18-lodge-no-9818/ 287",
+      "depois": "1056 DISTRICT GRAND LODGE OF CYPRUS. Site oficial: https://gprus-freemasons.org.g/ 1057 GRANDLODGE OF CYPRUS. Site oficial: https://megalistoatiskyprow.com/ 1058 GRAND LODGE OF CYPRUS. History of the Grand Lodge of Cyprus. Disponível em: https://megalistoatiskyprou.com/grand-lodge-of-oprus/ 1059 DGLC. Zenon 18 Lodge No. 9818. Disponível em: https://gprus-freemasons.org.gv/dglc/lodges/zenon18-lodge-no-9818/ 287"
+    },
+    {
+      "data": "11/10",
+      "antes": "1068 NORTH CAROLINA FREEMASONS. Petitioners qualifications, Disponível em: http://www.grandloage-nc.orgthemasoniolode/petitioners-qualifications 1009 GRAND LODGE OF KENTUCKY. Joining the masons. Disponível em: https://grandlodzeojkentucky.org/home-basic/about/joining-the-masons/ 1070 Disponívelem: http://www.mainemason.org/becomeone/ 1071 GRAND LODGE OF MASSACHUSETTS. The Constitutions of the Most Worshipful Grand Lodze of Massachusells and General Regulations for the Government of the Cruft under its Jurisdiction, Adopted Anno Iuas 5843. Disponível em: http://masonicgenealogy.com/MediaWiki/ index.php?title=MassachusettsGC 1843 290",
+      "depois": "1068 NORTH CAROLINA FREEMASONS. Petitioners qualifications, Disponível em: http://www.grandloage-nc.orgthemasoniolode/petitioners-qualifications 1009 GRAND LODGE OF KENTUCKY. Joining the masons. Disponível em: https://grandlodzeojkentucky.org/home-basic/about/joining-the-masons/ 1070 Disponívelem: http://www.mainemason.org/becomeone/ 1071 GRAND LODGE OF MASSACHUSETTS. The Constitutions of the Most Worshipful Grand Lodze of Massachusetts and General Regulations for the Government of the Craft under its Jurisdiction, Adopted Anno Luas 5843. Disponível em: http://masonicgenealogy.com/MediaWiki/ index.php?title=MassachusettsGC 1843 290"
+    },
+    {
+      "data": "18/10",
+      "antes": "1093 OLAK, P. A.; NASCIMENTO, D. T. Contebitidade para entidades sem fins lucrativos. São Paulo: Atlas, 2006. 1024 Disponível em: http://www.planalto.gov.br/aivil_03/kis/2002/ 110406oompilada.btm 1095 Você pode pesquisar por CNAEs no CONCLA-IBGE: https://concla.ibge.gov.br/ 1096 ISMAİL, K. O Liero do V enenive Mestre. Londrina: A Trolha, 2018, p. 41. 297",
+      "depois": "1093 OLAK, P. A.; NASCIMENTO, D. T. Contabilidade para entidades sem fins lucrativos. São Paulo: Atlas, 2006. 1024 Disponível em: http://www.planalto.gov.br/aivil_03/kis/2002/ 110406oompilada.btm 1095 Você pode pesquisar por CNAEs no CONCLA-IBGE: https://concla.ibge.gov.br/ 1096 ISMAİL, K. O Livro do Venenivel Mestre. Londrina: A Trolha, 2018, p. 41. 297"
+    },
+    {
+      "data": "21/10",
+      "antes": "110 GAITÁN, C. U. Masones y sociedad en Guatemala, 1871-1903. REHMI.AC+, vol. 15, n. 1, enero-junio 2023, p. 172-184. IOS GRAN LOGIA DE GUATEMALA. Site oficial: https:// lagranlogiadegwatemala.com 106 GRAN LOGIA DE GUATEMALA. Historial de la Gran Logia de Gwatemala. Disponível em https://lagranlogiadeguatemala.com/quienes-somos/historial-de-la-gran-logia/ 300",
+      "depois": "110 GAITÁN, C. U. Masones y sociedad en Guatemala, 1871-1903. REHMI.AC+, vol. 15, n. 1, enero-junio 2023, p. 172-184. IOS GRAN LOGIA DE GUATEMALA. Site oficial: https:// lagranlogiadegwatemala.com 106 GRAN LOGIA DE GUATEMALA. Historial de la Gran Logia de Guatemala. Disponível em https://lagranlogiadeguatemala.com/quienes-somos/historial-de-la-gran-logia/ 300"
+    },
+    {
+      "data": "23/10",
+      "antes": "1110 THE SUPREME SHRINE. About, Disponível em: https://supremesbrine.org/about/ II PHOENIX MASONRY. Wbite Shrine of Jerusalem Jewel. Disponível em: https://www.phoenixmasonry.org/masonicmuseum/White_Shrine_o/_Jerusalem_Jewel.htm II2 HODAPP, C. Frecmasons for Dummies. 3rd Edition. Hoboken, NJ: John Wiley & Sons, 2022, р. 268-269. I THE SUPREME SHRINE. Site oficial: https://supremesbrine.org/ 302",
+      "depois": "1110 THE SUPREME SHRINE. About, Disponível em: https://supremesbrine.org/about/ II PHOENIX MASONRY. Wbite Shrine of Jerusalem Jewel. Disponível em: https://www.phoenixmasonry.org/masonicmuseum/White_Shrine_o/_Jerusalem_Jewel.htm 112 HODAPP, C. Freemasons for Dummies. 3rd Edition. Hoboken, NJ: John Wiley & Sons, 2022, р. 268-269. I THE SUPREME SHRINE. Site oficial: https://supremesbrine.org/ 302"
+    },
+    {
+      "data": "26/10",
+      "antes": "1118 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 82. 1119 CARPENTER, A. John Theophilus Desaguliers ANatural Philosopher, Engineer and Freemason in Newtonian England. Londres: Continuum, 2011. Celebrin tOR CORONa ooc r. Drup / mie o 12a ce aiteoned / plirios-s religion/the-duke-of-lorraine/ 121 GRANDE LOIA DA AUSTRIA. Disponível em: https://freimaurerei.a 122 HENDERSON, K.: POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 305",
+      "depois": "1118 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 82. 1119 CARPENTER, A. John Theophilus Desaguliers ANatural Philosopher, Engineer and Freemason in Newtonian England. Londres: Continuum, 2011. CelebrAn tOR COROa Doc / mie o 12a ce aiteoned / plirios-s religion/the-duke-of-lorraine/ 121 GRANDE LOIA DA AUSTRIA. Disponível em: https://freimaurerei.a 122 HENDERSON, K.: POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 305"
+    },
+    {
+      "data": "27/10",
+      "antes": "1123 DERMOTT, L. Ahiman Rezon: A Constituição dos Maçons Antigos. 2° edição. Trad. Kennyo Ismail Brasília: No Esquadro, 2024. 1124 BROAD, J. A Woman's Influence? John Locke and Damaris Masham on Moral Accountability. Joural of the History of Ideas, Vol. 67, No. 3, 2006, p. 489-510. 306",
+      "depois": "1123 DERMOTT, L. Ahiman Rezon: A Constituição dos Maçons Antigos. 2° edição. Trad. Kennyo Ismail Brasília: No Esquadro, 2024. 1124 BROAD, J. A Woman's Influence? John Locke and Damaris Masham on Moral Accountability. Journal of the History of Ideas, Vol. 67, No. 3, 2006, p. 489-510. 306"
+    },
+    {
+      "data": "02/11",
+      "antes": "1139 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia, New York: Macoy, 1961, p. 17. 1140 TAIGA, C. M. Freemasonry in Nigeria, Disponível em: http://www.dgljamaica.com/page75.html 141 GRANDE LOJA DA NIGERIA. Site oficial: https://grandlodgeofnigeria.com/ 1142 DISTRICT GRAND LODGE OF NIGERIA (SC). Disponível em: https://www.grandlodgescotland.com/structure/district-grand-lodges/district-grand-lodge-of-nigeria/ 1143 DISTRICT GRAND LODGE OF NIGERIA (EC). Disponível em: https://districtgrandlodgeofnigeria.com/ 312",
+      "depois": "1139 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia, New York: Macoy, 1961, p. 17. 1140 TAIGA, C. M. Freemasonry in Nigeria, Disponível em: http://www.dgljamaica.com/page75.html 1141 GRANDE LOJA DA NIGERIA. Site oficial: https://grandlodgeofnigeria.com/ 1142 DISTRICT GRAND LODGE OF NIGERIA (SC). Disponível em: https://www.grandlodgescotland.com/structure/district-grand-lodges/district-grand-lodge-of-nigeria/ 1143 DISTRICT GRAND LODGE OF NIGERIA (EC). Disponível em: https://districtgrandlodgeofnigeria.com/ 312"
+    },
+    {
+      "data": "09/11",
+      "antes": "1168 SCF. Ordo ab Cbao, Número 30 (p. 147) e Número 39-40 (p. 151), 1994. 1169 ISMAIL, K. Ordem sobre o caos. Brasília: No Esquadro, 2020. 319",
+      "depois": "1168 SCF. Ordo ab Chao, Número 30 (p. 147) e Número 39-40 (p. 151), 1994. 1169 ISMAIL, K. Ordem sobre o caos. Brasília: No Esquadro, 2020. 319"
+    },
+    {
+      "data": "12/11",
+      "antes": "1178 COGMNA. Reports of the Commission on Information for Rerognition - 2004-2019. Disponível em: https://masomicrecognition.org/reports-of-the-commission/ 117 KRAVCHENKO, S.; MOLDABEKOV, V. Grand Lodge of Kazakhstan - Presentation, January, 2025. 322",
+      "depois": "1178 COGMNA. Reports of the Commission on Information for Recognition - 2004-2019. Disponível em: https://masomicrecognition.org/reports-of-the-commission/ 117 KRAVCHENKO, S.; MOLDABEKOV, V. Grand Lodge of Kazakhstan - Presentation, January, 2025. 322"
+    },
+    {
+      "data": "13/11",
+      "antes": "1180 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janciro: Delta, 1928, p. 79. 1181 Idem, p. 72. 1182 Idem, p. 73. 118 PRICHARD, S. Maçonaria Dissecada. Trad. Xico Trolha Londrina: A Trolha, 2002 1184 PRESTON, W. apud CARR, H. O Ofico do Mupom. São Paulo: Nadras, 2012, p. 377. 1185 MACKEY, A. G. A Lexicon of Freemasonry. London: Richard Grifin & Ca, 1860, p. 144. 323",
+      "depois": "1180 BEHRING, M. Ritual do Grau de Aprendiz-Maçon. Rio de Janciro: Delta, 1928, p. 79. 1181 Idem, p. 72. 1182 Idem, p. 73. 118 PRICHARD, S. Maçonaria Dissecada. Trad. Xico Trolha Londrina: A Trolha, 2002 1184 PRESTON, W. apud CARR, H. O Ofico do Maçom. São Paulo: Nadras, 2012, p. 377. 1185 MACKEY, A. G. A Lexicon of Freemasonry. London: Richard Grifin & Ca, 1860, p. 144. 323"
+    },
+    {
+      "data": "14/11",
+      "antes": "1186 HODAPP, C. Freemasons for Dummies. Hoboken, NJ: Wiley Publishing Inc., 2005. 1187DE HOYOS, A. Scottish Rite Ritual, Monitor and Guide. 2d ed. Washington: Supreme Council, 33°, S.J., 2009. 1188DUMENIL, Lynn. Freemasonry and American Culture, 1880-1930, Princeton, NJ: Princeton University Press, 1984. 11890DONNEl,F.H.E.Puosopy d th Dram in Freemasonry. Te New Age Magazine, N.4(5), 1906, p. 475-476. 1190KNOX, William. What Excuse?The New Age Magazine, N.7, 1907, p. 253-254. 1191CLAWSON, M. A. Masculinity, Consumption and the Transformation of Scottish Rite Freemasonry in the Turn-of-the-Century U.S. Gender & History, V.19 N.1, 2007, pp. 101-121, 1192SARGENT, E. W. Detail and the Drama of the Degree, The New Age Magazine, N.7, 1907, p. 175-177. 1193AMES, K. L. Theatre of the Fratermity:Staging the Ritual Space of the Scottish Rite of Freemasonry, Jackson, Mississippi: University Press of Mississippi, 1996. 324",
+      "depois": "1186 HODAPP, C. Freemasons for Dummies. Hoboken, NJ: Wiley Publishing Inc., 2005. 1187DE HOYOS, A. Scottish Rite Ritual, Monitor and Guide. 2d ed. Washington: Supreme Council, 33°, S.J., 2009. 1188DUMENIL, Lynn. Freemasonry and American Culture, 1880-1930, Princeton, NJ: Princeton University Press, 1984. 11890 DONNELL, E. H. E. Philosophy and the Drama in Freemasonry. Te New Age Magazine, N.4(5), 1906, p. 475-476. 1190KNOX, William. What Excuse? The New Age Magazine, N.7, 1907, p. 253-254. 1191CLAWSON, M. A. Masculinity, Consumption and the Transformation of Scottish Rite Freemasonry in the Turn-of-the-Century U.S. Gender & History, V.19 N.1, 2007, pp. 101-121, 1192SARGENT, E. W. Detail and the Drama of the Degree, The New Age Magazine, N.7, 1907, p. 175-177. 1193AMES, K. L. Theatre of the Fratermity:Staging the Ritual Space of the Scottish Rite of Freemasonry, Jackson, Mississippi: University Press of Mississippi, 1996. 324"
+    },
+    {
+      "data": "17/11",
+      "antes": "1198 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 653. 119 MACKEY, A. G. An Encyclopedia of Fnemasonry and its Kindred Scencs. New York and London: The Masonic History Company, 1914, p. 783. 1200 Site oficial: https://www.theosociel.org/ 1201 SIGNIER, J.F: THOMAZO, R. Saciedades Seretas. São Paulo: Larousse, 2011. 1202 BLAVATSKY, H. P. Glossário Teosófio, 4' ed. São Paulo: Ground, 2000, p. 162. 327",
+      "depois": "1198 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 653. 119 MACKEY, A. G. An Encyclopedia of Fnemasonry and its Kindred Scientes. New York and London: The Masonic History Company, 1914, p. 783. 1200 Site oficial: https://www.theosociel.org/ 1201 SIGNIER, J.F: THOMAZO, R. Saciedades Seretas. São Paulo: Larousse, 2011. 1202 BLAVATSKY, H. P. Glossário Teosófio, 4' ed. São Paulo: Ground, 2000, p. 162. 327"
+    },
+    {
+      "data": "18/11",
+      "antes": "1203 BRITANNICA. Malla. Disponível em: hutps://www.britamnica.com/place/Malta 134 MAJTÉNYI, G. A Construção da Europa: H istória, Memóriu e Mito da Europeismo ao longo de 1000 anos. Sintra: Grafisol, 2021. 1305 SGL.oM. Site oficial: https://sglom.eu/ 328",
+      "depois": "1203 BRITANNICA. Malla. Disponível em: hutps://www.britamnica.com/place/Malta 134 MAJTÉNYI, G. A Construção da Europa: História, Memória e Mito da Europeismo ao longo de 1000 anos. Sintra: Grafisol, 2021. 1305 SGL.oM. Site oficial: https://sglom.eu/ 328"
+    },
+    {
+      "data": "22/11",
+      "antes": "1215 FIGUIE, G.; SAYEGH, R; JAOUDE, R. A. Freemasonry in Lebanon: an overview. Archaeology &r History in the Lebanon. Vol. 25, Winter 2007, p. 4-33. 1216 DA SILVA, A. A. L. (Org.) Nossas Lojas, nosso orgulho: A história das Lojas da GLMDF. Brasília: No Esquadro, 2021. 1211 ZELDIS, L. Les premières loges de Palestine et leurs relations avec la Franc-maçonnerie égyptienne. Cahiers de la Méditerranée, Vol. 72, 2006, p. 307-320, 1218 DISTRICT GRAND LODGE OF SYRIA-LEBANON (New York), Site oficial: https://wymasons.org/district-grand-lodge-of-syria-lebanon/ 1219 DISTRICT GRAND LODGE OF IFBANON (Scotland). Site oficial: https://dgllorng/ 1220 GRANDE LOJA DO LIBANO. Site oficial: https://grandlodyeoflebanon.org/ 332",
+      "depois": "1215 FIGUIE, G.; SAYEGH, R; JAOUDE, R. A. Freemasonry in Lebanon: an overview. Archaeology &r History in the Lebanon. Vol. 25, Winter 2007, p. 4-33. 1216 DA SILVA, A. A. L. (Org.) Nossas Lojas, nosso orgulho: A história das Lojas da GLMDF. Brasília: No Esquadro, 2021. 1211 ZELDIS, L. Les premières loges de Palestine et leurs relations avec la Franc-maçonnerie égyptienne. Cahiers de la Méditerranée, Vol. 72, 2006, p. 307-320, 1218 DISTRICT GRAND LODGE OF SYRIA-LEBANON (New York), Site oficial: https://wymasons.org/district-grand-lodge-of-syria-lebanon/ 1219 DISTRICT GRAND LODGE OF LEBANON (Scotland). Site oficial: https://dgllorng/ 1220 GRANDE LOJA DO LIBANO. Site oficial: https://grandlodyeoflebanon.org/ 332"
+    },
+    {
+      "data": "24/11",
+      "antes": "1224 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 74-75. 1225 HARLAND-JACOBS, J. Builders of Empire: Freemasonry and British Imperialism: 1717-1927. Chapel Hill, NC: University of North Carolina Press, 2007. 1226 PRESCOTT, A.A History of British Freemasonry: 1425-2000. Sheffield: Centre for Research into Freemasonry and Fraternalism, 2007. 122 FOUCAULT, M. Viziar e Punir, Petrópolis: Editora Vozes, 2004. 1228 FREITAS NETO, E. C. Redes de Sociabilidade, Redes de Poder: Maçonaria e Diplomacia Track 2 na África Francófona. Dissentação (Mestrado em Relações Internacionais). UFBA. Salvador, 197 p., 2019, 1229 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2, Melbourne: Global Masonic Publications, 2000. 1230 GRANDE LOJA DA INDIA. Site oficial: https://grandlodgeofjindia.in/ 334",
+      "depois": "1224 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Ed. Macoy, 1961, p. 74-75. 1225 HARLAND-JACOBS, J. Builders of Empire: Freemasonry and British Imperialism: 1717-1927. Chapel Hill, NC: University of North Carolina Press, 2007. 1226 PRESCOTT, A.A History of British Freemasonry: 1425-2000. Sheffield: Centre for Research into Freemasonry and Fraternalism, 2007. 122 FOUCAULT, M. Vigiar e Punir, Petrópolis: Editora Vozes, 2004. 1228 FREITAS NETO, E. C. Redes de Sociabilidade, Redes de Poder: Maçonaria e Diplomacia Track 2 na África Francófona. Dissertação (Mestrado em Relações Internacionais). UFBA. Salvador, 197 p., 2019, 1229 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2, Melbourne: Global Masonic Publications, 2000. 1230 GRANDE LOJA DA INDIA. Site oficial: https://grandlodgeofjindia.in/ 334"
+    },
+    {
+      "data": "27/11",
+      "antes": "1239 ORTEGARAY, A. C. Historia de la Masonería Simbolica de Nicarazua. 2* Ed., mayo de 2010. Disponível em: http.s://www.granlogiudenicaragua.org.ui/upp-content/ uploads/2020/06/HISTORIA-DE-L.A-MASONER%C3%SDA-SZMB%C3%93LICA-DE-NICARAGUA.pdf 120 GRAN LOGIA SIMBÓLICA DE NICARAGUA. Site oficial: granlogiadenicaragua.org.ni/ 337",
+      "depois": "1239 ORTEGARAY, A. C. Historia de la Masonería Simbolica de Nicaragua. 2* Ed., mayo de 2010. Disponível em: http.s://www.granlogiudenicaragua.org.ui/upp-content/ uploads/2020/06/HISTORIA-DE-L.A-MASONER%C3%SDA-SZMB%C3%93LICA-DE-NICARAGUA.pdf 120 GRAN LOGIA SIMBÓLICA DE NICARAGUA. Site oficial: granlogiadenicaragua.org.ni/ 337"
+    },
+    {
+      "data": "28/11",
+      "antes": "1241 THE ROYAL SOCIETY. Site oficial: https://royalsociety.org/ 1242 Disponível em: https://wwww.1723 constitutions.com/the-royal-society/ 1243 JACOB, M. C. The Radical Enlightnment: Pantheists, Freemasons and Republicns, London: Cornerstone, 1981, p. 112-113. 1244 MELTON, J. V. H. The Rise of the Public in Enlightenment Europe, Cambridge: Cambridge University Press, 2001, p. 252-272. 1245 DANIELS, S.; ELLIOTT, P. The \"school of true, useful and universal science'? Freemasonry, natural philosophy and scientific culture in eighteenth-century England. BJHS 39(2), Junho de 2006, p. 207-229. 1246 Disponível em: orlandomasons.orgwp-content/uploads/2013/08/royal-societyfreemasons.pdf 338",
+      "depois": "1241 THE ROYAL SOCIETY. Site oficial: https://royalsociety.org/ 1242 Disponível em: https://wwww.1723 constitutions.com/the-royal-society/ 1243 JACOB, M. C. The Radical Enlightenment: Pantheists, Freemasons and Republicans, London: Cornerstone, 1981, p. 112-113. 1244 MELTON, J. V. H. The Rise of the Public in Enlightenment Europe, Cambridge: Cambridge University Press, 2001, p. 252-272. 1245 DANIELS, S.; ELLIOTT, P. The \"school of true, useful and universal science'? Freemasonry, natural philosophy and scientific culture in eighteenth-century England. BJHS 39(2), Junho de 2006, p. 207-229. 1246 Disponível em: orlandomasons.orgwp-content/uploads/2013/08/royal-societyfreemasons.pdf 338"
+    },
+    {
+      "data": "05/12",
+      "antes": "1269 GRANDE LOJA DE CUBA. Site oficial: https://granlogiacuba.org/ 1270 GRAN LOGIA DE CUBA. Historia. Disponível em: granlogiacuba.org/ história-masonica-cubana/ 1271 HENDERSON, K.; POPE, T. Maçonaria Universal. São Paulo: Madras, 2001, p. 305. 1272 GI.C,Academia de Altos Estudios Masónicas Disponível em: granlagiaabazorg/ ucudemio-de altos estudios-masonicos/ 1273 Idem, Biblioteca Masónica. Disponível em: gnanlogiacuba.org/biblioteca-masonica/ 1274 Idem, Museo Masónico, Disponível em: granlogiacuba.org/ museo-masonico/ 1275 Idem, Hogar Nacional Masónico. Disponível em: granlogiacuba.org/bogar-nacional-masonico-llanso/ 345",
+      "depois": "1269 GRANDE LOJA DE CUBA. Site oficial: https://granlogiacuba.org/ 1270 GRAN LOGIA DE CUBA. Historia. Disponível em: granlogiacuba.org/ história-masonica-cubana/ 1271 HENDERSON, K.; POPE, T. Maçonaria Universal. São Paulo: Madras, 2001, p. 305. 1272 GI.C, Academia de Altos Estudios Masónicas Disponível em: granlagiaabazorg/ ucudemio-de altos estudios-masonicos/ 1273 Idem, Biblioteca Masónica. Disponível em: gnanlogiacuba.org/biblioteca-masonica/ 1274 Idem, Museo Masónico, Disponível em: granlogiacuba.org/ museo-masonico/ 1275 Idem, Hogar Nacional Masónico. Disponível em: granlogiacuba.org/bogar-nacional-masonico-llanso/ 345"
+    },
+    {
+      "data": "06/12",
+      "antes": "1276 GRANDE LOJA DA FINLÂNDIA. Site ofcial: https://vapaamuurarit.fi/ 127 COIl, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 246-247, 1278 HOLM, N. G. Freemasonry and Its Social Position in Finland. Scripta Instituti Donneriani Aboensis, N. 20, 2008, p. 68-77. 1279 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 128o Distrito finlandês na Suécia. Disponível em: htts://www.friaochantagnamurare.se/ 346",
+      "depois": "1276 GRANDE LOJA DA FINLÂNDIA. Site ofcial: https://vapaamuurarit.fi/ 127 COIl, H.; BROWN, W. Coil's Masonic Encyclopedia. New York: Macoy, 1961, p. 246-247, 1278 HOLM, N. G. Freemasonry and Its Social Position in Finland. Scripta Instituti Donneriani Aboensis, N. 20, 2008, p. 68-77. 1279 HENDERSON, K.; POPE, T. Freemasonry Universal, Vol. 2. Melbourne: Global Masonic Publications, 2000. 1280 Distrito finlandês na Suécia. Disponível em: htts://www.friaochantagnamurare.se/ 346"
+    },
+    {
+      "data": "07/12",
+      "antes": "1281 VALDÉS, R. Origen, miembros y primeras acciones de la masoneria en El Sahrador (1871- 1872). REHMLAC, Vol. 1, N. 1, Mai-Nov 2009, p. 157-171. 1282 GL.CR. Historia de la Masoneria en Costa Rica. Disponível em: https://www.granlogia.cr/ história-de-la-masoneria-en-costa-rica/ 1283 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Ed. Macoy, 1961, p. 149. 1284 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 2020, p. 233. 1285 REHMLAC. Site oficial: https://reistasuor.ac.cr/index.pbp/rebmlac/index 347",
+      "depois": "1281 VALDÉS, R. Origen, miembros y primeras acciones de la masoneria en El Salvador (1871-1872). REHMLAC, Vol. 1, N. 1, Mai-Nov 2009, p. 157-171. 1282 GL.CR. Historia de la Masoneria en Costa Rica. Disponível em: https://www.granlogia.cr/ história-de-la-masoneria-en-costa-rica/ 1283 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Ed. Macoy, 1961, p. 149. 1284 LIST OF LODGES. Bloomington: Pantagraph Printing & Stationery Co., 2020, p. 233. 1285 REHMLAC. Site oficial: https://reistasuor.ac.cr/index.pbp/rebmlac/index 347"
+    },
+    {
+      "data": "11/12",
+      "antes": "1293 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Ed. Macoy, 1961, p. 684. 1294 Idem, Ibidem, p. 685. 1295 HENDERSÓN, K.; POPE, T. Macnaria Universak: As Americas. São Paulo: Madras, 2001. 351",
+      "depois": "1293 COIL, H.; BROWN, W. Coil's Masonic Encyclopedia New York: Ed. Macoy, 1961, p. 684. 1294 Idem, Ibidem, p. 685. 1295 HENDERSÓN, K.; POPE, T. Maconaria Universak: As Americas. São Paulo: Madras, 2001. 351"
+    }
+  ]
+}

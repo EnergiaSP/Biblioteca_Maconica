@@ -152,7 +152,7 @@
           "titulo": "Voltaire Dicionário Filosófico - Ridendo Castigat Mores"
         }
       ],
-      "sha256": "15e6c51bd2118c659fe3cdfd7ed8b9ad3ab4c1d095d8f48812d33ca8c790d9d9",
+      "sha256": "99be242f1edbbbb8f719b8263f2f5e36706cb02cbe36da986d893381b48ea6f0",
       "tamanhoBytes": 17874944,
       "titulo": "Dicionários Maçônicos",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/rag_dicionariosMaconicos.sqlite"
@@ -560,10 +560,10 @@
           "titulo": "A Chave dos Grandes Mistrios - Eliphas Levi"
         }
       ],
-      "sha256": "5d5a9163aa1cee5c684454c993fce5cb39db01192ce6320bb2364c0baef6144d",
+      "sha256": "f6b0073052b9aad11c6c239fcf5a9af4d20f3f53b7b180d0020209345128cb51",
       "tamanhoBytes": 2523136,
       "titulo": "A Chave dos Grandes Mistrios - Eliphas Levi",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_chave_dos_grandes_mistrios_eliphas_levi.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_chave_dos_grandes_mistrios_eliphas_levi.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -844,7 +844,7 @@
       "estatisticas": {
         "blocosFTS": 83,
         "imagens": 84,
-        "notas": 3,
+        "notas": 0,
         "obras": 1,
         "paginas": 84,
         "paragrafos": 83
@@ -872,10 +872,10 @@
           "titulo": "A história da mitologia para quem tem pressa - Mark Daniels"
         }
       ],
-      "sha256": "b424fa2456937e9b8b3f582774dea3ff2ce4bdd5de0bd983fd873530bb5ef315",
-      "tamanhoBytes": 1097728,
+      "sha256": "e3eee783c97702721119bae949204995279d63a30b9b695872a0a7c046dd1cb6",
+      "tamanhoBytes": 1155072,
       "titulo": "A história da mitologia para quem tem pressa - Mark Daniels",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -883,7 +883,7 @@
       "estatisticas": {
         "blocosFTS": 621,
         "imagens": 623,
-        "notas": 42,
+        "notas": 38,
         "obras": 1,
         "paginas": 623,
         "paragrafos": 621
@@ -903,7 +903,7 @@
           "paginas": 623,
           "paragrafos": 621,
           "qualidadeTexto": {
-            "avaliadas": 587,
+            "avaliadas": 590,
             "ilegiveis": 0,
             "ruidosas": 3
           },
@@ -911,10 +911,10 @@
           "titulo": "A História dos Judeus - Simon Schama"
         }
       ],
-      "sha256": "842970fed8804c1f56734ea990275733db08551e399afe8fdd405d443b7c3665",
-      "tamanhoBytes": 9158656,
+      "sha256": "ff748c35a5f507260ec67a82139a93dbee7ee6feb3c19bd48bf81e91193b294b",
+      "tamanhoBytes": 8577024,
       "titulo": "A História dos Judeus - Simon Schama",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_historia_dos_judeus_simon_schama.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_historia_dos_judeus_simon_schama.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -950,10 +950,10 @@
           "titulo": "A História dos Ritos Maçônicos Praticados no Brasil"
         }
       ],
-      "sha256": "058985abc6be492913c432a205941de1418b516e4f819f16839ab151ba76358e",
-      "tamanhoBytes": 2682880,
+      "sha256": "7446a752135f6d1fe7d08e1bf564e07f6bfaabb367943ff0bf589458b7475880",
+      "tamanhoBytes": 2699264,
       "titulo": "A História dos Ritos Maçônicos Praticados no Brasil",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_historia_dos_ritos_maconicos_praticados_no_brasil.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_historia_dos_ritos_maconicos_praticados_no_brasil.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -1702,7 +1702,7 @@
       "estatisticas": {
         "blocosFTS": 464,
         "imagens": 465,
-        "notas": 44,
+        "notas": 45,
         "obras": 1,
         "paginas": 465,
         "paragrafos": 464
@@ -1730,10 +1730,10 @@
           "titulo": "A Sintese da Doutrina Secreta - Blavatsky"
         }
       ],
-      "sha256": "377257f22e4ac769b2af85e446df7d535ba3008de048f2a42f9e94fc63760360",
-      "tamanhoBytes": 7966720,
+      "sha256": "6306a037150a5678f54a300e51a2f1bc458847fca99aecd25b502dec5dba0cec",
+      "tamanhoBytes": 7958528,
       "titulo": "A Sintese da Doutrina Secreta - Blavatsky",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_sintese_da_doutrina_secreta_blavatsky.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_sintese_da_doutrina_secreta_blavatsky.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -1780,7 +1780,7 @@
       "estatisticas": {
         "blocosFTS": 2426,
         "imagens": 2432,
-        "notas": 99,
+        "notas": 96,
         "obras": 1,
         "paginas": 2432,
         "paragrafos": 2426
@@ -1800,18 +1800,18 @@
           "paginas": 2432,
           "paragrafos": 2426,
           "qualidadeTexto": {
-            "avaliadas": 2154,
+            "avaliadas": 2155,
             "ilegiveis": 0,
-            "ruidosas": 10
+            "ruidosas": 6
           },
           "tipo": "livro",
           "titulo": "A sociedade feudal - Marc Bloch-1"
         }
       ],
-      "sha256": "06e81d49e34233b52d5faa53cf998fd151cb5e8889f24a11f5186656aa893f36",
-      "tamanhoBytes": 10379264,
+      "sha256": "0fbd19786d4c3cbe04b9e1b7627d0f321f6d700c52f81fa1415fe70f98ff5101",
+      "tamanhoBytes": 8765440,
       "titulo": "A sociedade feudal - Marc Bloch-1",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_sociedade_feudal_marc_bloch_1.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_sociedade_feudal_marc_bloch_1.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2014,7 +2014,7 @@
       "estatisticas": {
         "blocosFTS": 858,
         "imagens": 858,
-        "notas": 719,
+        "notas": 654,
         "obras": 1,
         "paginas": 858,
         "paragrafos": 858
@@ -2042,10 +2042,10 @@
           "titulo": "A-Vida-Mistica-e-Oculta-de-Jesus"
         }
       ],
-      "sha256": "5825cd23598ec712d6d3cb4fab3fcd5ad9f1476065cf14e040a5ac31cc2fff47",
-      "tamanhoBytes": 7864320,
+      "sha256": "cd30daf382b8be6e67748e7ef2fa3146b3fede41612e2be59e20ce4ac755d5f0",
+      "tamanhoBytes": 7925760,
       "titulo": "A-Vida-Mistica-e-Oculta-de-Jesus",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_vida_mistica_e_oculta_de_jesus.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_vida_mistica_e_oculta_de_jesus.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2159,10 +2159,10 @@
           "titulo": "A_Ciencia_Secreta_Vol_2 - Henri_Durville"
         }
       ],
-      "sha256": "05f413f800489f90e318bf34f2d20b2290fd0e99b8bfe561fd933bd728ad2fab",
-      "tamanhoBytes": 3162112,
+      "sha256": "2a1b7663d5dcab430b1eac803946fc9f55a274ee2638bd92f79e7d52b2e1823a",
+      "tamanhoBytes": 3174400,
       "titulo": "A_Ciencia_Secreta_Vol_2 - Henri_Durville",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_ciencia_secreta_vol_2_henri_durville.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_ciencia_secreta_vol_2_henri_durville.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2170,7 +2170,7 @@
       "estatisticas": {
         "blocosFTS": 278,
         "imagens": 278,
-        "notas": 12,
+        "notas": 16,
         "obras": 1,
         "paginas": 278,
         "paragrafos": 278
@@ -2198,10 +2198,10 @@
           "titulo": "A_Ciencia_Secreta_Vol_3 - Henri_Durville"
         }
       ],
-      "sha256": "66fb7d410560084c5f8f74ee27513deba149e9d29f8ac1f055f9fc9285fb4e3f",
-      "tamanhoBytes": 2863104,
+      "sha256": "009a66391071db10a82e0c80c649a644da2c61a3ae6ea95bdf7b82c0fc308e2b",
+      "tamanhoBytes": 2383872,
       "titulo": "A_Ciencia_Secreta_Vol_3 - Henri_Durville",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_ciencia_secreta_vol_3_henri_durville.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_a_ciencia_secreta_vol_3_henri_durville.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2638,7 +2638,7 @@
       "estatisticas": {
         "blocosFTS": 444,
         "imagens": 479,
-        "notas": 12,
+        "notas": 10,
         "obras": 1,
         "paginas": 479,
         "paragrafos": 444
@@ -2666,10 +2666,10 @@
           "titulo": "Arquétipos do Zodíaco – Kathleen Burt"
         }
       ],
-      "sha256": "d55589210712df349699528bb0e34677bfd23880c24c2973d62b53212c2424dc",
-      "tamanhoBytes": 7712768,
+      "sha256": "a105fc1567e2f4f12c29df08d4283d7f0113a4f39bfcd59f25199e78ef608092",
+      "tamanhoBytes": 7073792,
       "titulo": "Arquétipos do Zodíaco – Kathleen Burt",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_arquetipos_do_zodiaco_kathleen_burt.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_arquetipos_do_zodiaco_kathleen_burt.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2677,7 +2677,7 @@
       "estatisticas": {
         "blocosFTS": 132,
         "imagens": 134,
-        "notas": 26,
+        "notas": 24,
         "obras": 1,
         "paginas": 134,
         "paragrafos": 132
@@ -2705,10 +2705,10 @@
           "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES"
         }
       ],
-      "sha256": "488c9a6cf1ca31d1f73471988e0bd25674797d675d984605da6d6cc66f23553f",
-      "tamanhoBytes": 2252800,
+      "sha256": "e90cd7224d29d8660cb056b1ce0df7ae2e54e3c85b7e54b2e75bd49d43863c12",
+      "tamanhoBytes": 2269184,
       "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2716,7 +2716,7 @@
       "estatisticas": {
         "blocosFTS": 655,
         "imagens": 656,
-        "notas": 28,
+        "notas": 27,
         "obras": 1,
         "paginas": 656,
         "paragrafos": 655
@@ -2744,10 +2744,10 @@
           "titulo": "As Chaves de Enoch-2"
         }
       ],
-      "sha256": "c130a3babb439bc472137a2c23b57b90b6f3a115be148b726288a956820eb9f6",
-      "tamanhoBytes": 7376896,
+      "sha256": "080710b57a156246fd65d04b9f1d360549f180a093a10b11c6beb864f44c80cc",
+      "tamanhoBytes": 7434240,
       "titulo": "As Chaves de Enoch-2",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_chaves_de_enoch_2.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_as_chaves_de_enoch_2.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2900,10 +2900,10 @@
           "titulo": "As Escolas de Mistérios - Clara Codd"
         }
       ],
-      "sha256": "7a0ee17c1646a87f5736b07145df30a5be66a936619fa9ee12d1f5f65f3a3980",
-      "tamanhoBytes": 2527232,
+      "sha256": "3b0485ae1ad89685568e41476ed725cc1e6359215f1249990b81aa396aa82d6b",
+      "tamanhoBytes": 2154496,
       "titulo": "As Escolas de Mistérios - Clara Codd",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_escolas_de_misterios_clara_codd.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_as_escolas_de_misterios_clara_codd.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2911,7 +2911,7 @@
       "estatisticas": {
         "blocosFTS": 304,
         "imagens": 309,
-        "notas": 5,
+        "notas": 3,
         "obras": 1,
         "paginas": 309,
         "paragrafos": 304
@@ -2939,10 +2939,10 @@
           "titulo": "AS LÁGRIMAS DO PAPA"
         }
       ],
-      "sha256": "c0b4e3e6fa6b0d5dabf1950f88e0835f3037ab5dea1a1e3f6258935fae55b154",
-      "tamanhoBytes": 4632576,
+      "sha256": "a9e8e3e4fd60a6464d219af7fe9a52541dcb6e15ef46e5e427a00124e2f808dc",
+      "tamanhoBytes": 4558848,
       "titulo": "AS LÁGRIMAS DO PAPA",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_lagrimas_do_papa.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_as_lagrimas_do_papa.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2950,7 +2950,7 @@
       "estatisticas": {
         "blocosFTS": 516,
         "imagens": 526,
-        "notas": 325,
+        "notas": 306,
         "obras": 1,
         "paginas": 526,
         "paragrafos": 516
@@ -2970,7 +2970,7 @@
           "paginas": 526,
           "paragrafos": 516,
           "qualidadeTexto": {
-            "avaliadas": 478,
+            "avaliadas": 498,
             "ilegiveis": 0,
             "ruidosas": 1
           },
@@ -2978,10 +2978,10 @@
           "titulo": "As Linguagens da Experiencia Religiosa"
         }
       ],
-      "sha256": "d9355e2f712bf08cfd43dfb459ac91458ffd508d97b542a87ed93006d9234e89",
-      "tamanhoBytes": 6291456,
+      "sha256": "d54c7b8693369d785f789892550518757a6421ebbb8be7e617758a5b7d91452c",
+      "tamanhoBytes": 5468160,
       "titulo": "As Linguagens da Experiencia Religiosa",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_linguagens_da_experiencia_religiosa.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_as_linguagens_da_experiencia_religiosa.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3184,7 +3184,7 @@
       "estatisticas": {
         "blocosFTS": 2276,
         "imagens": 2276,
-        "notas": 405,
+        "notas": 403,
         "obras": 1,
         "paginas": 2276,
         "paragrafos": 2276
@@ -3212,10 +3212,10 @@
           "titulo": "Biblia de Jerusalém - Editora Paulus"
         }
       ],
-      "sha256": "640c4b8326794d2fbabe0b5df8fd8d45ab55721114d1df1fc57ac1fe5d628227",
-      "tamanhoBytes": 33751040,
+      "sha256": "6062062f831170c45633cd668bbe1149872b857f86fae88c6ca73de55f2e7ec6",
+      "tamanhoBytes": 33710080,
       "titulo": "Biblia de Jerusalém - Editora Paulus",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_biblia_de_jerusalem_editora_paulus.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_biblia_de_jerusalem_editora_paulus.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3418,7 +3418,7 @@
       "estatisticas": {
         "blocosFTS": 92,
         "imagens": 92,
-        "notas": 61,
+        "notas": 60,
         "obras": 1,
         "paginas": 92,
         "paragrafos": 92
@@ -3446,10 +3446,10 @@
           "titulo": "Cabala - A Tradição Esotérica do Ocidente - F V Lorenz"
         }
       ],
-      "sha256": "cfb31c12ba49d5eb79df2381cb574e27c1e6df580abc49311c000e680a8e5459",
-      "tamanhoBytes": 856064,
+      "sha256": "d9d72897f9d238e742488d4f771be0b9720364b593cac3ba798adf608a6dd36b",
+      "tamanhoBytes": 860160,
       "titulo": "Cabala - A Tradição Esotérica do Ocidente - F V Lorenz",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3535,7 +3535,7 @@
       "estatisticas": {
         "blocosFTS": 867,
         "imagens": 867,
-        "notas": 36,
+        "notas": 35,
         "obras": 1,
         "paginas": 867,
         "paragrafos": 867
@@ -3563,10 +3563,10 @@
           "titulo": "Cabala para o Estudante - Michael Laitman"
         }
       ],
-      "sha256": "cd15f1b2f064da2b47623b45581a2cc961d165f7f74f14ce7e8dcee981823346",
-      "tamanhoBytes": 11075584,
+      "sha256": "d4d656c7922481f2541f318623f104c9cb539c0dbf423d2555a17d1808740bfc",
+      "tamanhoBytes": 11083776,
       "titulo": "Cabala para o Estudante - Michael Laitman",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cabala_para_o_estudante_michael_laitman.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_cabala_para_o_estudante_michael_laitman.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3730,7 +3730,7 @@
       "estatisticas": {
         "blocosFTS": 364,
         "imagens": 364,
-        "notas": 93,
+        "notas": 96,
         "obras": 1,
         "paginas": 364,
         "paragrafos": 364
@@ -3758,10 +3758,10 @@
           "titulo": "Como as Democracias Morrem - Steven Levitsky"
         }
       ],
-      "sha256": "ae98e6d09df52b5cdaf3a5abb03db61d75d693861a10fcef4ec5590fae10090c",
-      "tamanhoBytes": 4599808,
+      "sha256": "44b7b09e5f031b7901609960bb9f4fc5b09728e33432a102ca540f5086d1203a",
+      "tamanhoBytes": 4460544,
       "titulo": "Como as Democracias Morrem - Steven Levitsky",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_como_as_democracias_morrem_steven_levitsky.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_como_as_democracias_morrem_steven_levitsky.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3886,7 +3886,7 @@
       "estatisticas": {
         "blocosFTS": 130,
         "imagens": 130,
-        "notas": 401,
+        "notas": 353,
         "obras": 1,
         "paginas": 130,
         "paragrafos": 130
@@ -3908,16 +3908,16 @@
           "qualidadeTexto": {
             "avaliadas": 127,
             "ilegiveis": 0,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Cristianismo e Mitraísmo"
         }
       ],
-      "sha256": "9067eda1cd50759500cd0cf54c209e775d8d66a74008d8b5b38761fe1690b7ac",
-      "tamanhoBytes": 1769472,
+      "sha256": "ce82365500bf44febcd7dc3c063184b5dc6fb83c822e56dbd387d8385bc26895",
+      "tamanhoBytes": 1454080,
       "titulo": "Cristianismo e Mitraísmo",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cristianismo_e_mitraismo.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_cristianismo_e_mitraismo.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3964,7 +3964,7 @@
       "estatisticas": {
         "blocosFTS": 265,
         "imagens": 265,
-        "notas": 38,
+        "notas": 29,
         "obras": 1,
         "paginas": 265,
         "paragrafos": 265
@@ -3986,16 +3986,16 @@
           "qualidadeTexto": {
             "avaliadas": 260,
             "ilegiveis": 0,
-            "ruidosas": 4
+            "ruidosas": 3
           },
           "tipo": "livro",
           "titulo": "De Gutenberg a Diderot - Peter Burke"
         }
       ],
-      "sha256": "d061eb618f5659116002f54c4e8bb67fd4d4b56c3bc1c31d5bd4ac518e6ba7bb",
-      "tamanhoBytes": 3956736,
+      "sha256": "6303b32bdde18f6c31dc5305a2b059617c5bb64dc205f1ad184d398a05673653",
+      "tamanhoBytes": 4030464,
       "titulo": "De Gutenberg a Diderot - Peter Burke",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_de_gutenberg_a_diderot_peter_burke.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_de_gutenberg_a_diderot_peter_burke.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4265,10 +4265,10 @@
           "titulo": "Dogma e Ritual de Alta Magia - Eliphas Levi"
         }
       ],
-      "sha256": "7151f503be12e65bd7a35e0ebdc38a48151ef6c2df6700a49ca38d71b35dbdec",
-      "tamanhoBytes": 4796416,
+      "sha256": "85cb224106f0a1ddd403d2759702a9f9c3c8922aceba5aa4d962162423e5440f",
+      "tamanhoBytes": 4812800,
       "titulo": "Dogma e Ritual de Alta Magia - Eliphas Levi",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_dogma_e_ritual_de_alta_magia_eliphas_levi.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_dogma_e_ritual_de_alta_magia_eliphas_levi.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4354,7 +4354,7 @@
       "estatisticas": {
         "blocosFTS": 950,
         "imagens": 950,
-        "notas": 192,
+        "notas": 176,
         "obras": 1,
         "paginas": 950,
         "paragrafos": 950
@@ -4382,10 +4382,10 @@
           "titulo": "Enciclopédia de Fatos da Bíblia"
         }
       ],
-      "sha256": "b0cc73639b2d92cdaa73bd42a09d40a7f2208a3326f41ec7cde926deae88a6c2",
-      "tamanhoBytes": 14086144,
+      "sha256": "32e5285b3cd4cff0b33f38b65fc09b579a41486b1f8e9560bdc13f8a5f089031",
+      "tamanhoBytes": 13930496,
       "titulo": "Enciclopédia de Fatos da Bíblia",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_enciclopedia_de_fatos_da_biblia.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_enciclopedia_de_fatos_da_biblia.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4538,10 +4538,10 @@
           "titulo": "Experiencias Psiquicas além da cortina de ferro - Sheila Ostrander"
         }
       ],
-      "sha256": "a30b783cc476568512f24a3c866fb8859846670a05544406dd61e86b09314e2a",
+      "sha256": "8f3b7529fa3187f7d9ff00a0d2d4d9d600842387a4f38507da56822e455989c0",
       "tamanhoBytes": 5738496,
       "titulo": "Experiencias Psiquicas além da cortina de ferro - Sheila Ostrander",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_experiencias_psiquicas_alem_da_cortina_de_ferro_sheila_ostrander.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_experiencias_psiquicas_alem_da_cortina_de_ferro_sheila_ostrander.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4744,7 +4744,7 @@
       "estatisticas": {
         "blocosFTS": 185,
         "imagens": 185,
-        "notas": 1,
+        "notas": 2,
         "obras": 1,
         "paginas": 185,
         "paragrafos": 185
@@ -4772,10 +4772,10 @@
           "titulo": "Geometria Sagrada - Nigel Pennick"
         }
       ],
-      "sha256": "ad88eb2e2811ea465a71943fd59b21590fe4d512dc558fd6af16cb05b825ec0b",
-      "tamanhoBytes": 2080768,
+      "sha256": "615190f28d4cb8b84934af6bda3863c81e207e5981cb1c6f4ff0ab4bec4e26c8",
+      "tamanhoBytes": 2109440,
       "titulo": "Geometria Sagrada - Nigel Pennick",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_geometria_sagrada_nigel_pennick.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_geometria_sagrada_nigel_pennick.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4811,10 +4811,10 @@
           "titulo": "geometria-sagrada"
         }
       ],
-      "sha256": "d92a4ad9deb6b2d01ac502fec3a1b21aebb632066032774bedb5546815352264",
-      "tamanhoBytes": 1093632,
+      "sha256": "a55b9cade837b73e754a9ccc0f1eca6c67e3dc81ac28cdc69f82ee068215e3f3",
+      "tamanhoBytes": 1138688,
       "titulo": "geometria-sagrada",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_geometria_sagrada_2.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_geometria_sagrada_2.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5232,7 +5232,7 @@
           "paginas": 159,
           "paragrafos": 158,
           "qualidadeTexto": {
-            "avaliadas": 128,
+            "avaliadas": 142,
             "ilegiveis": 0,
             "ruidosas": 0
           },
@@ -5240,10 +5240,10 @@
           "titulo": "historia_da_mitologia_para_quem_tem_pressa - Mark Daniels"
         }
       ],
-      "sha256": "27fd3394e2863d960b1a3824803b3bd5d5e069abcd17c2d792ef5e2c5a9b2420",
-      "tamanhoBytes": 1118208,
+      "sha256": "e3171f9871e2435dfe2f5ca739c2780dea4712ccf29a64dc0cce3b8b2bdb0fd5",
+      "tamanhoBytes": 1122304,
       "titulo": "historia_da_mitologia_para_quem_tem_pressa - Mark Daniels",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historia_da_mitologia_para_quem_tem_pressa_mark_daniels.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_historia_da_mitologia_para_quem_tem_pressa_mark_daniels.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5407,7 +5407,7 @@
       "estatisticas": {
         "blocosFTS": 96,
         "imagens": 96,
-        "notas": 97,
+        "notas": 96,
         "obras": 1,
         "paginas": 96,
         "paragrafos": 96
@@ -5435,10 +5435,10 @@
           "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS"
         }
       ],
-      "sha256": "a2860d4c472fed8e8710511a24bec371e01cf4eea864057ade2e034834e377d9",
-      "tamanhoBytes": 1417216,
+      "sha256": "99ac8626f5a76d498e20424c2c3cc8977f638a8077c2dac3829441720a8f8649",
+      "tamanhoBytes": 1421312,
       "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historias_e_misteios_dos_templarios.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_historias_e_misteios_dos_templarios.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5680,7 +5680,7 @@
       "estatisticas": {
         "blocosFTS": 41,
         "imagens": 41,
-        "notas": 1,
+        "notas": 3,
         "obras": 1,
         "paginas": 41,
         "paragrafos": 41
@@ -5708,10 +5708,10 @@
           "titulo": "Landmarques - Vanildo de Senna"
         }
       ],
-      "sha256": "9322ecd7de8acb217b4aa20829b54306137fbd2a3375fc74a75e2806a2ae1ab3",
-      "tamanhoBytes": 757760,
+      "sha256": "4ca26e42cb7cdcab7fdf43301a87ac281e4946b142c12625ccd85c98fe3bdb51",
+      "tamanhoBytes": 761856,
       "titulo": "Landmarques - Vanildo de Senna",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_landmarques_vanildo_de_senna.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_landmarques_vanildo_de_senna.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5747,10 +5747,10 @@
           "titulo": "Liberdade de Pensar  Estudos à Luz do Rito Moderno"
         }
       ],
-      "sha256": "038957b28767d6052b870ea5a927af8d5da89ef55746d8a9627f81102f0bd370",
-      "tamanhoBytes": 1892352,
+      "sha256": "bbbda286ffbe3d8f16838f3cca6769f3ee2e85bab3f048d981260f3e9db55f73",
+      "tamanhoBytes": 1617920,
       "titulo": "Liberdade de Pensar  Estudos à Luz do Rito Moderno",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_liberdade_de_pensar_estudos_a_luz_do_rito_moderno.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_liberdade_de_pensar_estudos_a_luz_do_rito_moderno.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5786,10 +5786,10 @@
           "titulo": "Liberdade, Igualdade e Fraternidade  Estudos à Luz do Rito Moderno"
         }
       ],
-      "sha256": "5af8f04596b61c814c02c75336644cea81837714081d36e391df4db376dbc532",
-      "tamanhoBytes": 1183744,
+      "sha256": "7ba9d91b02c002c3aa081e26a4df1afd44160fd9acbb80ec87e0b05bf7ec84eb",
+      "tamanhoBytes": 1204224,
       "titulo": "Liberdade, Igualdade e Fraternidade  Estudos à Luz do Rito Moderno",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5825,10 +5825,10 @@
           "titulo": "Livro de Ouro dos Mantras - Otávio Leal"
         }
       ],
-      "sha256": "99bf636ce61c5bff5e2c5f6fbda8e96b4d6369b0f7391406511a0e081f35873a",
-      "tamanhoBytes": 1331200,
+      "sha256": "bb005e5646909f30b89407a14b8625aea6cb0ad3040f8bb59adc9e9a967b5eea",
+      "tamanhoBytes": 1318912,
       "titulo": "Livro de Ouro dos Mantras - Otávio Leal",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_livro_de_ouro_dos_mantras_otavio_leal.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_livro_de_ouro_dos_mantras_otavio_leal.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5953,7 +5953,7 @@
       "estatisticas": {
         "blocosFTS": 180,
         "imagens": 186,
-        "notas": 53,
+        "notas": 55,
         "obras": 1,
         "paginas": 186,
         "paragrafos": 180
@@ -5981,10 +5981,10 @@
           "titulo": "Maconaria Pos Pandemia"
         }
       ],
-      "sha256": "698f788f81521003f44d1fc0ec68fc2153693b1b0d3d50b1c1295d9076464145",
-      "tamanhoBytes": 2273280,
+      "sha256": "a55377145d180db867caeb6698efb99f18541478dae7ab47f8cdb6891c735e94",
+      "tamanhoBytes": 2289664,
       "titulo": "Maconaria Pos Pandemia",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_pos_pandemia.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_maconaria_pos_pandemia.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6031,7 +6031,7 @@
       "estatisticas": {
         "blocosFTS": 250,
         "imagens": 251,
-        "notas": 22,
+        "notas": 21,
         "obras": 1,
         "paginas": 251,
         "paragrafos": 250
@@ -6059,10 +6059,10 @@
           "titulo": "Maçonaria Brasileira - A história ocultada"
         }
       ],
-      "sha256": "02a76e25e686765dc1bb5ca1d2b834f17830b5ed046e801fd53545da761e54a5",
-      "tamanhoBytes": 4145152,
+      "sha256": "2413db81220c1fdd65713916854b3fd523b8511523baac29e01ea3e1dbe904e1",
+      "tamanhoBytes": 3563520,
       "titulo": "Maçonaria Brasileira - A história ocultada",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_brasileira_a_historia_ocultada.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_maconaria_brasileira_a_historia_ocultada.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6226,7 +6226,7 @@
       "estatisticas": {
         "blocosFTS": 217,
         "imagens": 218,
-        "notas": 221,
+        "notas": 212,
         "obras": 1,
         "paginas": 218,
         "paragrafos": 217
@@ -6254,10 +6254,10 @@
           "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020"
         }
       ],
-      "sha256": "b8f14393de20d4a7060e01e34d092588d7f69128309aff52fd2232041abae8db",
-      "tamanhoBytes": 3862528,
+      "sha256": "a14fc9b522c68683b9c1201928899e27d36a8da9c55be2edfeac211412db16df",
+      "tamanhoBytes": 3878912,
       "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_perspectivas_para_o_futuro_cmsb_2020.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_maconaria_perspectivas_para_o_futuro_cmsb_2020.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6917,10 +6917,10 @@
           "titulo": "O Codigo de Salomao - Richard D Weber"
         }
       ],
-      "sha256": "7233da9e0750ade93b150df1a9c273480908134dfa1cae161c9bd37d2167fe25",
-      "tamanhoBytes": 4440064,
+      "sha256": "9fbb1fbbcef941d715348adf0751c3c56419a9f9bbf637be26ffaa3e144bbdc8",
+      "tamanhoBytes": 4456448,
       "titulo": "O Codigo de Salomao - Richard D Weber",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_codigo_de_salomao_richard_d_weber.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_codigo_de_salomao_richard_d_weber.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6995,10 +6995,10 @@
           "titulo": "O Código da Bíblia - Michael Drosnin"
         }
       ],
-      "sha256": "922f3e0593239d22e9966eaf8b46f2024d8e77432d35006e892f08df9f3942b8",
-      "tamanhoBytes": 2473984,
+      "sha256": "f579b02537a54537219b2f4e3e249320775aa21e85cc5b7327c82c1c75a46e53",
+      "tamanhoBytes": 2433024,
       "titulo": "O Código da Bíblia - Michael Drosnin",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_codigo_da_biblia_michael_drosnin.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_codigo_da_biblia_michael_drosnin.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7006,7 +7006,7 @@
       "estatisticas": {
         "blocosFTS": 303,
         "imagens": 303,
-        "notas": 19,
+        "notas": 12,
         "obras": 1,
         "paginas": 303,
         "paragrafos": 303
@@ -7028,16 +7028,16 @@
           "qualidadeTexto": {
             "avaliadas": 292,
             "ilegiveis": 0,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "O Erro de Descartes - Antonio R Damasio"
         }
       ],
-      "sha256": "acf5e5e2e7070d9413a21d57cb31f53574f5b3db3f754ec4b39d12a2d0c3f5d5",
-      "tamanhoBytes": 3993600,
+      "sha256": "3040bb7d1f05fa45d509bb1001fd2ad7d0335e67735144737ca1e5f333af3deb",
+      "tamanhoBytes": 4014080,
       "titulo": "O Erro de Descartes - Antonio R Damasio",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_erro_de_descartes_antonio_r_damasio.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_erro_de_descartes_antonio_r_damasio.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7084,7 +7084,7 @@
       "estatisticas": {
         "blocosFTS": 442,
         "imagens": 457,
-        "notas": 469,
+        "notas": 383,
         "obras": 1,
         "paginas": 457,
         "paragrafos": 442
@@ -7112,10 +7112,10 @@
           "titulo": "O Grande Livro da Lei"
         }
       ],
-      "sha256": "69c5a1c078e5719efce2292d96ddb47631da792f9074491089b94275483aa10b",
-      "tamanhoBytes": 7725056,
+      "sha256": "46a93958113c66ed3cbc7f04946a73ad27116784d2c022f3005bbc755564e1fd",
+      "tamanhoBytes": 7450624,
       "titulo": "O Grande Livro da Lei",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_grande_livro_da_lei.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_grande_livro_da_lei.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7268,10 +7268,10 @@
           "titulo": "O Legado dos Templários - Steve Berry"
         }
       ],
-      "sha256": "794ed02b7ef287c07aec3895ad0a2707c7f6e70c27809abb692b6fd3aa14765f",
-      "tamanhoBytes": 5361664,
+      "sha256": "de0f7c1ddbcddc8a4d6547b1e64c3d0b3b8dd304cffd8a67c010a0cbda80a002",
+      "tamanhoBytes": 5369856,
       "titulo": "O Legado dos Templários - Steve Berry",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_legado_dos_templarios_steve_berry.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_legado_dos_templarios_steve_berry.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7474,7 +7474,7 @@
       "estatisticas": {
         "blocosFTS": 419,
         "imagens": 419,
-        "notas": 56,
+        "notas": 58,
         "obras": 1,
         "paginas": 419,
         "paragrafos": 419
@@ -7494,18 +7494,18 @@
           "paginas": 419,
           "paragrafos": 419,
           "qualidadeTexto": {
-            "avaliadas": 397,
-            "ilegiveis": 0,
+            "avaliadas": 398,
+            "ilegiveis": 1,
             "ruidosas": 2
           },
           "tipo": "livro",
           "titulo": "O Livro de Ouro da Mitologia"
         }
       ],
-      "sha256": "71ecab3b6efb62162da53726cec899a0049331028d09f16f0067a022cd9b5efb",
-      "tamanhoBytes": 4710400,
+      "sha256": "230f0b69664878ada35699e7d55830dcca512076aefb3082648954b6a3d91799",
+      "tamanhoBytes": 4632576,
       "titulo": "O Livro de Ouro da Mitologia",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_de_ouro_da_mitologia.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_livro_de_ouro_da_mitologia.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7541,10 +7541,10 @@
           "titulo": "O Livro de Urantia - Urantia Foundation"
         }
       ],
-      "sha256": "fcd8bbc65fd3461abd1bb7ba549d99b786980093236911e8cdc67fdda5f952b5",
-      "tamanhoBytes": 44691456,
+      "sha256": "947f46657c29b18869d5be830ba150a10d6ee647879ad8df552ef3c1b81619e7",
+      "tamanhoBytes": 42618880,
       "titulo": "O Livro de Urantia - Urantia Foundation",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_de_urantia_urantia_foundation.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_livro_de_urantia_urantia_foundation.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7630,7 +7630,7 @@
       "estatisticas": {
         "blocosFTS": 128,
         "imagens": 129,
-        "notas": 4,
+        "notas": 1,
         "obras": 1,
         "paginas": 129,
         "paragrafos": 128
@@ -7658,10 +7658,10 @@
           "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)"
         }
       ],
-      "sha256": "2ecd44b1bbbed268fc2a5269cb4de01e03e4055f367f9470f51b10783ded43a7",
-      "tamanhoBytes": 2109440,
+      "sha256": "416592cfbf5e4058b4ca1c70b61b974bab641589874effcc5ca16c57a4372311",
+      "tamanhoBytes": 2285568,
       "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7853,10 +7853,10 @@
           "titulo": "O Mundo de Sofia - Jostein Gaarder"
         }
       ],
-      "sha256": "4dde5f5e4956ca87e6e3c15ba8ca9aa0f9e43839a1e9b88fbc6fc62422bd45d2",
-      "tamanhoBytes": 6041600,
+      "sha256": "ee8aa713a167a44ce55f4732a70644cd979e1b6fd56c62c99e81f3fc6c1a9158",
+      "tamanhoBytes": 6103040,
       "titulo": "O Mundo de Sofia - Jostein Gaarder",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_mundo_de_sofia_jostein_gaarder.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_mundo_de_sofia_jostein_gaarder.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8009,10 +8009,10 @@
           "titulo": "O Pórtico e a Câmara do Meio"
         }
       ],
-      "sha256": "88f40fecb111de4065ee0f01468d7f3862b13a8e817fe42ee54f2943427f3ed8",
+      "sha256": "18266e750fbc9e14f320d41eca687a4aa28426a41c14a3d76da9bbb0ed0c65e5",
       "tamanhoBytes": 2441216,
       "titulo": "O Pórtico e a Câmara do Meio",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_portico_e_a_camara_do_meio.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_portico_e_a_camara_do_meio.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8165,10 +8165,10 @@
           "titulo": "O Trivium - Biblioteca Freemasonry "
         }
       ],
-      "sha256": "92135196a1a1dc6e41baef60327a89b38d12efb58722ef8e54ac95e35f8959b3",
+      "sha256": "bcaf90a3487e3857c5df718468f9ae2c342ff7f75462fb09a74eeacb75c6abe6",
       "tamanhoBytes": 4493312,
       "titulo": "O Trivium - Biblioteca Freemasonry ",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_trivium_biblioteca_freemasonry.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_trivium_biblioteca_freemasonry.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8243,10 +8243,10 @@
           "titulo": "O-Que-Voce-Precisa-Saber-Sobre-Maconaria-Elias-Mansur-Neto"
         }
       ],
-      "sha256": "2a3979a163672f082c7991d608b17c8ec05345c88011f1d00752379970199834",
-      "tamanhoBytes": 1204224,
+      "sha256": "5bbcb94fd6b3be8c6e9fd99c898b3bc65a37b2424009c599f3bad9de4d0b5fec",
+      "tamanhoBytes": 1155072,
       "titulo": "O-Que-Voce-Precisa-Saber-Sobre-Maconaria-Elias-Mansur-Neto",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8254,7 +8254,7 @@
       "estatisticas": {
         "blocosFTS": 330,
         "imagens": 330,
-        "notas": 52,
+        "notas": 44,
         "obras": 1,
         "paginas": 330,
         "paragrafos": 330
@@ -8276,16 +8276,16 @@
           "qualidadeTexto": {
             "avaliadas": 326,
             "ilegiveis": 0,
-            "ruidosas": 5
+            "ruidosas": 4
           },
           "tipo": "livro",
           "titulo": "O-Taro-Cabalistico - Robert Wang"
         }
       ],
-      "sha256": "ff938c96cf691c167c93649f5cd4c771cfd5f2c25cb365746ad96487d194d659",
-      "tamanhoBytes": 4739072,
+      "sha256": "dc108164af160ccaabf7459a2ff3011a70d27a3777893c6439c22f52f4ca21ba",
+      "tamanhoBytes": 4845568,
       "titulo": "O-Taro-Cabalistico - Robert Wang",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_taro_cabalistico_robert_wang.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_taro_cabalistico_robert_wang.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8293,7 +8293,7 @@
       "estatisticas": {
         "blocosFTS": 284,
         "imagens": 291,
-        "notas": 4,
+        "notas": 5,
         "obras": 1,
         "paginas": 291,
         "paragrafos": 284
@@ -8321,10 +8321,10 @@
           "titulo": "Ordem sobre o Caos - Kennyo Ismail"
         }
       ],
-      "sha256": "cfed570672a9b88428d06da00d90accb87d713529d8970e5683ef2931837cd1f",
-      "tamanhoBytes": 3645440,
+      "sha256": "223516d70bb1edd4dfa78268cbc56a4ca689e3e704fc996cc33cbb853b0e9e4b",
+      "tamanhoBytes": 3121152,
       "titulo": "Ordem sobre o Caos - Kennyo Ismail",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ordem_sobre_o_caos_kennyo_ismail.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_ordem_sobre_o_caos_kennyo_ismail.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8449,7 +8449,7 @@
       "estatisticas": {
         "blocosFTS": 256,
         "imagens": 278,
-        "notas": 44,
+        "notas": 41,
         "obras": 1,
         "paginas": 278,
         "paragrafos": 256
@@ -8477,10 +8477,10 @@
           "titulo": "Os Arcanos Maiores do Taro-G O Mebes"
         }
       ],
-      "sha256": "6a170656d7f0925a5375b8f3ece4c9e5a37546e80fbc30a00cab241e826b575c",
-      "tamanhoBytes": 4284416,
+      "sha256": "d218bf55829f5b8a21e733670c8956bf5788d505b669462f59d9de9fa9de8e57",
+      "tamanhoBytes": 4349952,
       "titulo": "Os Arcanos Maiores do Taro-G O Mebes",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_arcanos_maiores_do_taro_g_o_mebes.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_arcanos_maiores_do_taro_g_o_mebes.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8711,10 +8711,10 @@
           "titulo": "Os pilares de Tubalcaim - Michael Howard e Nigel Jackson"
         }
       ],
-      "sha256": "08d79ed2f02492c29e01b26ebc04e359c4d42a2e2450756558fc1b649527f3ca",
-      "tamanhoBytes": 4100096,
+      "sha256": "7c7286b813569d2ca45ef84413f4700db290b6b2c836ee49c366496c3b57a845",
+      "tamanhoBytes": 4116480,
       "titulo": "Os pilares de Tubalcaim - Michael Howard e Nigel Jackson",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8761,7 +8761,7 @@
       "estatisticas": {
         "blocosFTS": 112,
         "imagens": 114,
-        "notas": 9,
+        "notas": 8,
         "obras": 1,
         "paginas": 114,
         "paragrafos": 112
@@ -8781,7 +8781,7 @@
           "paginas": 114,
           "paragrafos": 112,
           "qualidadeTexto": {
-            "avaliadas": 98,
+            "avaliadas": 101,
             "ilegiveis": 0,
             "ruidosas": 0
           },
@@ -8789,10 +8789,10 @@
           "titulo": "Os Povos da Bíblia - Joseph Rhymer"
         }
       ],
-      "sha256": "8df0c423a90373db5af81af54e3743db500ed51e8084954864d09c8627984c02",
-      "tamanhoBytes": 1286144,
+      "sha256": "383bfbc41d98c7ae0809923359505b820a32a8ffc65d82724b5f1624cc839c91",
+      "tamanhoBytes": 1335296,
       "titulo": "Os Povos da Bíblia - Joseph Rhymer",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_povos_da_biblia_joseph_rhymer.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_povos_da_biblia_joseph_rhymer.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8878,7 +8878,7 @@
       "estatisticas": {
         "blocosFTS": 528,
         "imagens": 528,
-        "notas": 49,
+        "notas": 47,
         "obras": 1,
         "paginas": 528,
         "paragrafos": 528
@@ -8900,16 +8900,16 @@
           "qualidadeTexto": {
             "avaliadas": 526,
             "ilegiveis": 0,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Os Segredos do Templo de Salomão"
         }
       ],
-      "sha256": "2e457033710800b504e452c3c33123dd0e092a540a7b93bc3b20ab156ec5edb4",
-      "tamanhoBytes": 4177920,
+      "sha256": "e80c32de9f496b2a101828631a777b308ace5d8e935d8774aceba7a909a4db52",
+      "tamanhoBytes": 4227072,
       "titulo": "Os Segredos do Templo de Salomão",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_segredos_do_templo_de_salomao.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_segredos_do_templo_de_salomao.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8945,10 +8945,10 @@
           "titulo": "Os Segredos Perdidos da Arca Sagrada - Biblioteca Freemasonry "
         }
       ],
-      "sha256": "b2bd289be255d0cb5db694721be6e9e59ff40947f2808d9ac64f7d2e3a38d9dd",
-      "tamanhoBytes": 4026368,
+      "sha256": "0ccb87ff98794a367cc0618e430c020e18669c701bc0bb35cd57b01a03461607",
+      "tamanhoBytes": 4063232,
       "titulo": "Os Segredos Perdidos da Arca Sagrada - Biblioteca Freemasonry ",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_segredos_perdidos_da_arca_sagrada_biblioteca_freemasonry.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_segredos_perdidos_da_arca_sagrada_biblioteca_freemasonry.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8984,10 +8984,10 @@
           "titulo": "Os Templarios - Michael Lamy"
         }
       ],
-      "sha256": "08e23260b5b61c54f20013893a3a0f32cd727ecd301d7a801a10689405ff4b75",
-      "tamanhoBytes": 3633152,
+      "sha256": "bdd3bf08b6ea1497f9eed4f42446219bc21a5604efc2c40b9376622bb7f99d35",
+      "tamanhoBytes": 3653632,
       "titulo": "Os Templarios - Michael Lamy",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_michael_lamy.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_templarios_michael_lamy.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -9190,7 +9190,7 @@
       "estatisticas": {
         "blocosFTS": 319,
         "imagens": 319,
-        "notas": 24,
+        "notas": 25,
         "obras": 1,
         "paginas": 319,
         "paragrafos": 319
@@ -9218,10 +9218,10 @@
           "titulo": "Os Templários e a Arca da Aliança - Graham Phillips"
         }
       ],
-      "sha256": "941b15a3fc02f630fb8c2e6f6ff0c2d3ff8decd75253d2a701a9260587e54d21",
-      "tamanhoBytes": 3682304,
+      "sha256": "d74b65d6fe8009418a92f125523ccec792f09a007eaa797544a40cd95c58044a",
+      "tamanhoBytes": 3698688,
       "titulo": "Os Templários e a Arca da Aliança - Graham Phillips",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_e_a_arca_da_alianca_graham_phillips.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_os_templarios_e_a_arca_da_alianca_graham_phillips.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -9658,7 +9658,7 @@
       "estatisticas": {
         "blocosFTS": 338,
         "imagens": 338,
-        "notas": 16,
+        "notas": 13,
         "obras": 1,
         "paginas": 338,
         "paragrafos": 338
@@ -9686,10 +9686,10 @@
           "titulo": "Por Dentro do Priorado de Sião - Robert Howells"
         }
       ],
-      "sha256": "10d6560edaa4c0e204d1dd8ce366c67aebfd4702c79e0226065e4e36535d7082",
-      "tamanhoBytes": 4698112,
+      "sha256": "868f7b4db86fd6327d8a086104308f22a9e398e7269b20baf1384bedb96310df",
+      "tamanhoBytes": 4689920,
       "titulo": "Por Dentro do Priorado de Sião - Robert Howells",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_por_dentro_do_priorado_de_siao_robert_howells.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_por_dentro_do_priorado_de_siao_robert_howells.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -9920,10 +9920,10 @@
           "titulo": "PROVÉRBIOS E PENSAMENTOS"
         }
       ],
-      "sha256": "ba513d4944ed03a52b45bbdebc620759326a3964ad5fd7a8b7274e544752a165",
+      "sha256": "f2615568865ca59d3816b158d29fdac45c0cba884f384e3e0bc68ef739682ac4",
       "tamanhoBytes": 1789952,
       "titulo": "PROVÉRBIOS E PENSAMENTOS",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_proverbios_e_pensamentos.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_proverbios_e_pensamentos.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10310,10 +10310,10 @@
           "titulo": "Ritual de Emulação  O Grau de Mestre Maçom"
         }
       ],
-      "sha256": "3c2f3609ffaf14914cd8d9656e6338accac0d077054acc59148d2be0e4f7f196",
-      "tamanhoBytes": 2002944,
+      "sha256": "c1738a3f28ec1550dede4175f08fdf0f12345a504404b98526603d5ca88a9f30",
+      "tamanhoBytes": 1765376,
       "titulo": "Ritual de Emulação  O Grau de Mestre Maçom",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ritual_de_emulacao_o_grau_de_mestre_macom.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_ritual_de_emulacao_o_grau_de_mestre_macom.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10341,18 +10341,18 @@
           "paginas": 218,
           "paragrafos": 216,
           "qualidadeTexto": {
-            "avaliadas": 204,
-            "ilegiveis": 0,
+            "avaliadas": 205,
+            "ilegiveis": 1,
             "ruidosas": 4
           },
           "tipo": "livro",
           "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil - Fábio M Paulino"
         }
       ],
-      "sha256": "5795ac32d21d13bfdfddf678c02850d968792d1d658c68a4b79274c4e3260bf8",
-      "tamanhoBytes": 2797568,
+      "sha256": "02004482b88b9da11ec9590048bbe6580218e50e1b509adc8363172fb18f1e58",
+      "tamanhoBytes": 2715648,
       "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil - Fábio M Paulino",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10438,7 +10438,7 @@
       "estatisticas": {
         "blocosFTS": 516,
         "imagens": 516,
-        "notas": 68,
+        "notas": 78,
         "obras": 1,
         "paginas": 516,
         "paragrafos": 516
@@ -10466,10 +10466,10 @@
           "titulo": "Sapiens-Uma Breve História da Humanidade - Yuval Noah Harari"
         }
       ],
-      "sha256": "743e6411bbd5d21f3542d23d8a822445769f15a56c24eb28403a7948138f83f2",
-      "tamanhoBytes": 6930432,
+      "sha256": "5d11843406e04839d1c8bcf2614546208d0fedab890d16ca5cce10fa0b66f9cc",
+      "tamanhoBytes": 6950912,
       "titulo": "Sapiens-Uma Breve História da Humanidade - Yuval Noah Harari",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10544,10 +10544,10 @@
           "titulo": "Seitas & Heresias - Raimundo de Oliveira"
         }
       ],
-      "sha256": "197be810c18e07a5e00c373709af4a8bc3f824a03f55dabb7242313268bf6620",
+      "sha256": "fa489a9ff3719776f4153b82f9b91b0a8cee9023e6e02cbbcbb572fd02f1272e",
       "tamanhoBytes": 2437120,
       "titulo": "Seitas & Heresias - Raimundo de Oliveira",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_seitas_heresias_raimundo_de_oliveira.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_seitas_heresias_raimundo_de_oliveira.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -11140,7 +11140,7 @@
       "estatisticas": {
         "blocosFTS": 412,
         "imagens": 413,
-        "notas": 69,
+        "notas": 65,
         "obras": 1,
         "paginas": 413,
         "paragrafos": 412
@@ -11168,10 +11168,10 @@
           "titulo": "Tratado da reintegração dos Seres - Martines Pasqually"
         }
       ],
-      "sha256": "42e381f7a75a0692b7cd7075de26b7ad00b5cda3276ec5be7ecd3987962e7529",
-      "tamanhoBytes": 5332992,
+      "sha256": "2e888009ca4efc30df4d37bfbe8c5ca3fe80e03dc448f28249d8dc696abaf898",
+      "tamanhoBytes": 4968448,
       "titulo": "Tratado da reintegração dos Seres - Martines Pasqually",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_tratado_da_reintegracao_dos_seres_martines_pasqually.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_tratado_da_reintegracao_dos_seres_martines_pasqually.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -11257,7 +11257,7 @@
       "estatisticas": {
         "blocosFTS": 362,
         "imagens": 363,
-        "notas": 1001,
+        "notas": 966,
         "obras": 1,
         "paginas": 363,
         "paragrafos": 362
@@ -11279,16 +11279,16 @@
           "qualidadeTexto": {
             "avaliadas": 357,
             "ilegiveis": 1,
-            "ruidosas": 6
+            "ruidosas": 5
           },
           "tipo": "livro",
           "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum - David P de Lira"
         }
       ],
-      "sha256": "9182a0871ccb135c2a1e4a68c655ba0bfe954a8b2b35329198a0ff86af73fe79",
-      "tamanhoBytes": 6574080,
+      "sha256": "211058d50cc0adae94f9c127d9605ea36dbd66606b36b8d43df784f9e5d850a9",
+      "tamanhoBytes": 6684672,
       "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum - David P de Lira",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -11363,10 +11363,10 @@
           "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)"
         }
       ],
-      "sha256": "1eed4de22b7847d3f982ef2fc71dcd12b2a02169fd5de72a97dcc66ca5e28dc5",
-      "tamanhoBytes": 2957312,
+      "sha256": "bfa83a4b22295645c5671fc60acb5425a6844675f72733bf5c079beebd4ca387",
+      "tamanhoBytes": 2945024,
       "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_vade_mecum_honoris_labor_versao_10_mar_2018.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_vade_mecum_honoris_labor_versao_10_mar_2018.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -11413,7 +11413,7 @@
       "estatisticas": {
         "blocosFTS": 617,
         "imagens": 618,
-        "notas": 16,
+        "notas": 13,
         "obras": 1,
         "paginas": 618,
         "paragrafos": 617
@@ -11433,7 +11433,7 @@
           "paginas": 618,
           "paragrafos": 617,
           "qualidadeTexto": {
-            "avaliadas": 478,
+            "avaliadas": 578,
             "ilegiveis": 1,
             "ruidosas": 4
           },
@@ -11441,20 +11441,20 @@
           "titulo": "Zohar"
         }
       ],
-      "sha256": "f9cf73ad981540b188e1454bc6ad2600174ef749ba2821384549596f8cab4f24",
-      "tamanhoBytes": 7311360,
+      "sha256": "216d21b8bcd2aa81ce76f65b33bec417d211525b7618675b07e5e237bd416382",
+      "tamanhoBytes": 7901184,
       "titulo": "Zohar",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_zohar.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_zohar.sqlite"
     }
   ],
   "totais": {
     "blocosFTS": 62599,
-    "notas": 14063,
+    "notas": 13746,
     "obras": 296,
     "pacotes": 291,
     "paginas": 62989,
     "paragrafos": 62599,
-    "tamanhoBytes": 791117824
+    "tamanhoBytes": 783089664
   },
   "versaoFormato": 1
 }
