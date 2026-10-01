@@ -29,7 +29,8 @@ class DataIntegrityTest {
     @Test
     fun librarySearchMatchesReadingTextNotWorkMetadata() {
         val catalog = BibliotecaCatalogRepository.get(ApplicationProvider.getApplicationContext())
-        for ((term, expected) in listOf("filosofia" to 20, "ética" to 4)) {
+        // 21 since the reading of 02/04 ("Stolkin") came from the printed page: its notes cite "sua filosofia".
+        for ((term, expected) in listOf("filosofia" to 21, "ética" to 4)) {
             val results = catalog.buscarConteudo(term, obraId = ObraId.BREVIARIO_SECULO_XXI, limite = 500)
             assertEquals(term, expected, results.size)
             assertTrue(term, results.all { it.ranking < 0 })

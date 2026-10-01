@@ -727,7 +727,8 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     @MainActor
     func testLibrarySearchMatchesReadingTextNotWorkMetadata() async throws {
         let store = BreviarioStore()
-        for (termo, esperado) in [("filosofia", 20), ("ética", 4)] {
+        // 21 since the reading of 02/04 ("Stolkin") came from the printed page: its notes cite "sua filosofia".
+        for (termo, esperado) in [("filosofia", 21), ("ética", 4)] {
             let resultados = try await store.buscarBiblioteca(termo: termo, escopo: .obraAtual, area: nil,
                                                                 limite: 500, obraID: ObraID.breviarioSeculoXXI)
             XCTAssertEqual(resultados.count, esperado, termo)

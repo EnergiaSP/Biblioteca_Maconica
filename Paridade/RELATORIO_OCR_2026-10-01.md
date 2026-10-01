@@ -86,6 +86,6 @@ O que sobra:
 - "O Livro Ilustrado dos Símbolos II (trecho)";
 - duas versões de "A Vida de Jacques DeMolay".
 
-## Pendências
-- **Envio ao R2 (aguarda confirmação):** os 30 pacotes novos precisam ser enviados antes de publicar o app com este catálogo, com `BibliotecaMaconica_Dev/Tools/publicar_rag_r2_wrangler.sh`. O script envia só o que falta, para o endereço de cada pacote no catálogo, e confere pelo ETag.
-- **Breviário de Kennyo Ismail, 02/04:** a leitura não existe no PDF, porque a página 94 do arquivo repete a 93. Para corrigir, é preciso uma foto ou digitalização da p. 98 do livro.
+## Concluído depois
+- **R2:** os 30 pacotes refeitos foram publicados em `rag/v5/` no bucket `biblioteca-maconica` (`publicar_rag_r2_wrangler.sh`), cada um conferido pelo ETag. Os 285 de `rag/v4/` já estavam publicados e não mudaram. Três pacotes baixados da URL pública foram conferidos pelo SHA-256 do catálogo.
+- **Breviário de Kennyo Ismail, 02/04:** a leitura "Stolkin" (p. 98, com as notas 363 a 366) foi transcrita da foto da página impressa, com o OCR do Vision conferido contra a imagem. Ela substitui o aviso de "texto duplicado no PDF OCR".
