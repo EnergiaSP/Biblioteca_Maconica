@@ -47,12 +47,12 @@
       "area": "dicionariosMaconicos",
       "arquivo": "rag_dicionariosMaconicos.sqlite",
       "estatisticas": {
-        "blocosFTS": 1433,
-        "imagens": 1433,
-        "notas": 36,
-        "obras": 6,
-        "paginas": 1433,
-        "paragrafos": 1433
+        "blocosFTS": 1384,
+        "imagens": 1384,
+        "notas": 17,
+        "obras": 5,
+        "paginas": 1384,
+        "paragrafos": 1384
       },
       "nivel": "area",
       "obras": [
@@ -139,25 +139,6 @@
             "Conceitos"
           ],
           "autor": null,
-          "id": "dicionario_maconico",
-          "notas": 2,
-          "paginas": 49,
-          "paragrafos": 49,
-          "qualidadeTexto": {
-            "avaliadas": 49,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "dicionario",
-          "titulo": "dicionário_maçônico"
-        },
-        {
-          "assuntos": [
-            "Verbetes",
-            "Terminologia",
-            "Conceitos"
-          ],
-          "autor": null,
           "id": "voltaire_dicionario_filosofico_ridendo_castigat_mores",
           "notas": 1,
           "paginas": 459,
@@ -171,10 +152,10 @@
           "titulo": "Voltaire Dicionário Filosófico - Ridendo Castigat Mores"
         }
       ],
-      "sha256": "aa37870076c5516105983a6c8b76b5a245f0ddd783efb4c25bd1e60f901166cc",
-      "tamanhoBytes": 16150528,
+      "sha256": "15e6c51bd2118c659fe3cdfd7ed8b9ad3ab4c1d095d8f48812d33ca8c790d9d9",
+      "tamanhoBytes": 17874944,
       "titulo": "Dicionários Maçônicos",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/rag_dicionariosMaconicos.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/rag_dicionariosMaconicos.sqlite"
     },
     {
       "area": "judiciarioMaconico",
@@ -586,45 +567,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_a_ciencia_secreta_ii.sqlite",
-      "estatisticas": {
-        "blocosFTS": 369,
-        "imagens": 369,
-        "notas": 13,
-        "obras": 1,
-        "paginas": 369,
-        "paragrafos": 369
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "a_ciencia_secreta_ii",
-          "notas": 13,
-          "paginas": 369,
-          "paragrafos": 369,
-          "qualidadeTexto": {
-            "avaliadas": 362,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "A Ciência Secreta II"
-        }
-      ],
-      "sha256": "667ca669ed0b152cb128ed72bd56e000b0722410b10d9dc2f8fefc529b4b967f",
-      "tamanhoBytes": 3051520,
-      "titulo": "A Ciência Secreta II",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_ciencia_secreta_ii.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_a_conspiracao_de_1817.sqlite",
       "estatisticas": {
         "blocosFTS": 362,
@@ -739,45 +681,6 @@
       "tamanhoBytes": 593920,
       "titulo": "A Divina Parusia - Olímpio Neves Gonçalves",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_divina_parusia_olimpio_neves_goncalves.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_a_doutrina_secreta_sintese.sqlite",
-      "estatisticas": {
-        "blocosFTS": 463,
-        "imagens": 464,
-        "notas": 44,
-        "obras": 1,
-        "paginas": 464,
-        "paragrafos": 463
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "a_doutrina_secreta_sintese",
-          "notas": 44,
-          "paginas": 464,
-          "paragrafos": 463,
-          "qualidadeTexto": {
-            "avaliadas": 461,
-            "ilegiveis": 0,
-            "ruidosas": 1
-          },
-          "tipo": "livro",
-          "titulo": "A Doutrina Secreta - Síntese"
-        }
-      ],
-      "sha256": "7c8de12d5ad34a97248df638259cf1b2dbb7fdbcf225446e7b384c637b4122d2",
-      "tamanhoBytes": 7884800,
-      "titulo": "A Doutrina Secreta - Síntese",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_doutrina_secreta_sintese.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -1912,46 +1815,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan.sqlite",
-      "estatisticas": {
-        "blocosFTS": 96,
-        "imagens": 96,
-        "notas": 0,
-        "obras": 1,
-        "paginas": 96,
-        "paragrafos": 96
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "a_sociedade_dos_templarios_lourivaldo_p_bacan",
-          "id": "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan",
-          "notas": 0,
-          "paginas": 96,
-          "paragrafos": 96,
-          "qualidadeTexto": {
-            "avaliadas": 83,
-            "ilegiveis": 1,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan"
-        }
-      ],
-      "sha256": "c4affac94e7a1d3b849633fe4764b03aed34bce46225f07908947d4cd4a49f09",
-      "tamanhoBytes": 1310720,
-      "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_a_tradicao_hermetica_julius_evola.sqlite",
       "estatisticas": {
         "blocosFTS": 129,
@@ -2027,46 +1890,6 @@
       "tamanhoBytes": 7909376,
       "titulo": "A Verdade Sufocada – Carlos Alberto Brilhante Ustra",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_verdade_sufocada_carlos_alberto_brilhante_ustra.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_a_vida_de_jacques_demolay.sqlite",
-      "estatisticas": {
-        "blocosFTS": 71,
-        "imagens": 72,
-        "notas": 2,
-        "obras": 1,
-        "paginas": 72,
-        "paragrafos": 71
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
-          "id": "a_vida_de_jacques_demolay",
-          "notas": 2,
-          "paginas": 72,
-          "paragrafos": 71,
-          "qualidadeTexto": {
-            "avaliadas": 67,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "A vida de Jacques Demolay"
-        }
-      ],
-      "sha256": "17c2b1fc813440d1e759f17b868472696938614a962a9155469020820f243a0e",
-      "tamanhoBytes": 634880,
-      "titulo": "A vida de Jacques Demolay",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_vida_de_jacques_demolay.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2265,46 +2088,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_a_chave_de_salomao_greg_taylor_2.sqlite",
-      "estatisticas": {
-        "blocosFTS": 167,
-        "imagens": 168,
-        "notas": 4,
-        "obras": 1,
-        "paginas": 168,
-        "paragrafos": 167
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "a_chave_de_salomao_greg_taylor",
-          "id": "a_chave_de_salomao_greg_taylor_2",
-          "notas": 4,
-          "paginas": 168,
-          "paragrafos": 167,
-          "qualidadeTexto": {
-            "avaliadas": 159,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "A_Chave_de_Salomao - Greg_Taylor"
-        }
-      ],
-      "sha256": "66efc57e665ababac95e18ad9ff34242ef7522d646a5b9b2d66d377f5c7bf15b",
-      "tamanhoBytes": 1994752,
-      "titulo": "A_Chave_de_Salomao - Greg_Taylor",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_chave_de_salomao_greg_taylor_2.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_a_ciencia_secreta_vol_1_henri_durville.sqlite",
       "estatisticas": {
         "blocosFTS": 295,
@@ -2363,7 +2146,6 @@
             "Estudo"
           ],
           "autor": null,
-          "duplicataDe": "a_ciencia_secreta_ii",
           "id": "a_ciencia_secreta_vol_2_henri_durville",
           "notas": 13,
           "paginas": 369,
@@ -2615,46 +2397,6 @@
       "tamanhoBytes": 163840,
       "titulo": "Abóbada Celeste",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_abobada_celeste.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_abobada_celeste_no_templo_maconico.sqlite",
-      "estatisticas": {
-        "blocosFTS": 46,
-        "imagens": 46,
-        "notas": 0,
-        "obras": 1,
-        "paginas": 46,
-        "paragrafos": 46
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "abobada_celeste",
-          "id": "abobada_celeste_no_templo_maconico",
-          "notas": 0,
-          "paginas": 46,
-          "paragrafos": 46,
-          "qualidadeTexto": {
-            "avaliadas": 21,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Abóbada_Celeste_no_Templo_Maçonico"
-        }
-      ],
-      "sha256": "4818088434b45cd6c9e400f3ac9bb6620d866946befa1055390c850b6f7188b3",
-      "tamanhoBytes": 167936,
-      "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_abobada_celeste_no_templo_maconico.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3045,46 +2787,6 @@
       "tamanhoBytes": 3985408,
       "titulo": "AS CHAVES DE SALOMÃO",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_as_chaves_de_salomao.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_as_claviculas_salomao_mathers.sqlite",
-      "estatisticas": {
-        "blocosFTS": 454,
-        "imagens": 454,
-        "notas": 496,
-        "obras": 1,
-        "paginas": 454,
-        "paragrafos": 454
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "as_chaves_de_salomao",
-          "id": "as_claviculas_salomao_mathers",
-          "notas": 766,
-          "paginas": 454,
-          "paragrafos": 454,
-          "qualidadeTexto": {
-            "avaliadas": 393,
-            "ilegiveis": 1,
-            "ruidosas": 5
-          },
-          "tipo": "livro",
-          "titulo": "As Claviculas Salomao Mathers"
-        }
-      ],
-      "sha256": "bb03dddc040c5728d4fec8ed2068ff51a5fac33db97de4673279aa031400ba7b",
-      "tamanhoBytes": 4100096,
-      "titulo": "As Claviculas Salomao Mathers",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_as_claviculas_salomao_mathers.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4141,45 +3843,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_corpus_hermeticum_versao_1.sqlite",
-      "estatisticas": {
-        "blocosFTS": 124,
-        "imagens": 124,
-        "notas": 64,
-        "obras": 1,
-        "paginas": 124,
-        "paragrafos": 124
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "corpus_hermeticum_versao_1",
-          "notas": 64,
-          "paginas": 124,
-          "paragrafos": 124,
-          "qualidadeTexto": {
-            "avaliadas": 120,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Corpus Hermeticum - versão 1"
-        }
-      ],
-      "sha256": "d3e6c931a7faf0e628a74b55c5b623e28066a1bfe45b7a0a717d33c67219e03a",
-      "tamanhoBytes": 1843200,
-      "titulo": "Corpus Hermeticum - versão 1",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_corpus_hermeticum_versao_1.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus.sqlite",
       "estatisticas": {
         "blocosFTS": 109,
@@ -4372,46 +4035,6 @@
       "tamanhoBytes": 4395008,
       "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_de_profecia_e_inquisicao_padre_antonio_vieira.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_de_profecia_e_inquisicao_padre_antonio_vieira_2.sqlite",
-      "estatisticas": {
-        "blocosFTS": 308,
-        "imagens": 310,
-        "notas": 1,
-        "obras": 1,
-        "paginas": 310,
-        "paragrafos": 308
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "de_profecia_e_inquisicao_padre_antonio_vieira",
-          "id": "de_profecia_e_inquisicao_padre_antonio_vieira_2",
-          "notas": 1,
-          "paginas": 310,
-          "paragrafos": 308,
-          "qualidadeTexto": {
-            "avaliadas": 307,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira"
-        }
-      ],
-      "sha256": "e59d4ffe49e987e62448fe97287bf778b15088d49f10b4d241332a5e2ddd221f",
-      "tamanhoBytes": 4399104,
-      "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_de_profecia_e_inquisicao_padre_antonio_vieira_2.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4724,45 +4347,6 @@
       "tamanhoBytes": 765952,
       "titulo": "Dos_Faraos_a_Fisica_Quantica - Ricardo_Di_Bernardi",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_dos_faraos_a_fisica_quantica_ricardo_di_bernardi.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_eliphas_levi_dogma_e_ritual_da_alta_magia.sqlite",
-      "estatisticas": {
-        "blocosFTS": 212,
-        "imagens": 212,
-        "notas": 41,
-        "obras": 1,
-        "paginas": 212,
-        "paragrafos": 212
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "eliphas_levi_dogma_e_ritual_da_alta_magia",
-          "notas": 41,
-          "paginas": 212,
-          "paragrafos": 212,
-          "qualidadeTexto": {
-            "avaliadas": 212,
-            "ilegiveis": 0,
-            "ruidosas": 1
-          },
-          "tipo": "livro",
-          "titulo": "eliphas-levi-dogma-e-ritual-da-alta-magia"
-        }
-      ],
-      "sha256": "2d53f931b502374be1e61ba3c2f54dfab773e0556aae8594a7e475ee4ada06f7",
-      "tamanhoBytes": 3678208,
-      "titulo": "eliphas-levi-dogma-e-ritual-da-alta-magia",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_eliphas_levi_dogma_e_ritual_da_alta_magia.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5117,45 +4701,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_g1_141_as_cruzadas_os_templarios_e_a_maconaria.sqlite",
-      "estatisticas": {
-        "blocosFTS": 19,
-        "imagens": 19,
-        "notas": 0,
-        "obras": 1,
-        "paginas": 19,
-        "paragrafos": 19
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "g1_141_as_cruzadas_os_templarios_e_a_maconaria",
-          "notas": 0,
-          "paginas": 19,
-          "paragrafos": 19,
-          "qualidadeTexto": {
-            "avaliadas": 18,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria"
-        }
-      ],
-      "sha256": "84b123b940a993a60f18af22dd0fb4c48e9f851a80ab875a48626af0551fbefc",
-      "tamanhoBytes": 380928,
-      "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_g1_141_as_cruzadas_os_templarios_e_a_maconaria.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_gauderio.sqlite",
       "estatisticas": {
         "blocosFTS": 10,
@@ -5192,46 +4737,6 @@
       "tamanhoBytes": 196608,
       "titulo": "Gauderio",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_gauderio.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_geometria_sagrada.sqlite",
-      "estatisticas": {
-        "blocosFTS": 55,
-        "imagens": 59,
-        "notas": 17,
-        "obras": 1,
-        "paginas": 59,
-        "paragrafos": 55
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "geometria_sagrada",
-          "notas": 20,
-          "paginas": 59,
-          "paragrafos": 56,
-          "qualidadeTexto": {
-            "avaliadas": 48,
-            "ilegiveis": 0,
-            "ruidosas": 3
-          },
-          "tipo": "livro",
-          "titulo": "Geometria Sagrada",
-          "duplicataDe": "a_geometria_sagrada"
-        }
-      ],
-      "sha256": "64adca65b8013d6f2d79b92f18f5f8b40b4612cf01c6b168f5ad642fa138eb5c",
-      "tamanhoBytes": 286720,
-      "titulo": "Geometria Sagrada",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_geometria_sagrada.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6132,46 +5637,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_jacques_demolay_a_vida_de_jacques_demolay.sqlite",
-      "estatisticas": {
-        "blocosFTS": 71,
-        "imagens": 72,
-        "notas": 2,
-        "obras": 1,
-        "paginas": 72,
-        "paragrafos": 71
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
-          "id": "jacques_demolay_a_vida_de_jacques_demolay",
-          "notas": 2,
-          "paginas": 72,
-          "paragrafos": 71,
-          "qualidadeTexto": {
-            "avaliadas": 67,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Jacques Demolay - A vida de Jacques Demolay"
-        }
-      ],
-      "sha256": "a171dc626b84e1df47dd4c4d0b78a4f4868bed6762d00a99f62396d9fbd202e6",
-      "tamanhoBytes": 667648,
-      "titulo": "Jacques Demolay - A vida de Jacques Demolay",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_jacques_demolay_a_vida_de_jacques_demolay.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_jesus_o_divino_mestre_albert_paul_dahoui.sqlite",
       "estatisticas": {
         "blocosFTS": 496,
@@ -6559,86 +6024,6 @@
       "tamanhoBytes": 1892352,
       "titulo": "Maconaria_e_Simbologia",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_maconaria_e_simbologia.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_maconaria_100_instrucoes_de_aprendiz.sqlite",
-      "estatisticas": {
-        "blocosFTS": 362,
-        "imagens": 363,
-        "notas": 22,
-        "obras": 1,
-        "paginas": 363,
-        "paragrafos": 362
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "100_instrucoes_de_aprendiz",
-          "id": "maconaria_100_instrucoes_de_aprendiz",
-          "notas": 22,
-          "paginas": 363,
-          "paragrafos": 362,
-          "qualidadeTexto": {
-            "avaliadas": 355,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Maçonaria - 100 instruções de Aprendiz"
-        }
-      ],
-      "sha256": "552efa7d8e3f9ec47dcd64dca3a6516518b4a8c15b7bc45491f7be6c84a76cdd",
-      "tamanhoBytes": 4456448,
-      "titulo": "Maçonaria - 100 instruções de Aprendiz",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_100_instrucoes_de_aprendiz.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_maconaria_laurence_gardner_a_linhagem_do_santo_graal.sqlite",
-      "estatisticas": {
-        "blocosFTS": 178,
-        "imagens": 178,
-        "notas": 3,
-        "obras": 1,
-        "paginas": 178,
-        "paragrafos": 178
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "a_linhagem_do_santo_graal_laurence_gardner",
-          "id": "maconaria_laurence_gardner_a_linhagem_do_santo_graal",
-          "notas": 3,
-          "paginas": 178,
-          "paragrafos": 178,
-          "qualidadeTexto": {
-            "avaliadas": 175,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL"
-        }
-      ],
-      "sha256": "2d6ecb366edbfcddd1eb7df3481991431b59627fe6350ff746ba00209d643f64",
-      "tamanhoBytes": 3448832,
-      "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_laurence_gardner_a_linhagem_do_santo_graal.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7422,45 +6807,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_o_caibalion.sqlite",
-      "estatisticas": {
-        "blocosFTS": 118,
-        "imagens": 118,
-        "notas": 0,
-        "obras": 1,
-        "paginas": 118,
-        "paragrafos": 118
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "o_caibalion",
-          "notas": 0,
-          "paginas": 118,
-          "paragrafos": 118,
-          "qualidadeTexto": {
-            "avaliadas": 116,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "O Caibalion"
-        }
-      ],
-      "sha256": "3910206b0edfcd70b47a44b87b3991ab569ad61fdb151dd6b69a537ce60c9671",
-      "tamanhoBytes": 974848,
-      "titulo": "O Caibalion",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_caibalion.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_o_caibalion_tres_iniciados.sqlite",
       "estatisticas": {
         "blocosFTS": 86,
@@ -8202,45 +7548,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_o_livro_de_urantia.sqlite",
-      "estatisticas": {
-        "blocosFTS": 1844,
-        "imagens": 1906,
-        "notas": 8,
-        "obras": 1,
-        "paginas": 1906,
-        "paragrafos": 1844
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "o_livro_de_urantia",
-          "notas": 8,
-          "paginas": 1906,
-          "paragrafos": 1844,
-          "qualidadeTexto": {
-            "avaliadas": 1831,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "O Livro de Urântia"
-        }
-      ],
-      "sha256": "afd4ed82179a59651408d057cf3145cc623f2d7c10f708c07729e9e85d6dbd34",
-      "tamanhoBytes": 32751616,
-      "titulo": "O Livro de Urântia",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_de_urantia.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_o_livro_dos_mortos_e_a_justica_divina_lucio_j_patrocinio_filho.sqlite",
       "estatisticas": {
         "blocosFTS": 11,
@@ -8355,46 +7662,6 @@
       "tamanhoBytes": 2109440,
       "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_ii_trecho.sqlite",
-      "estatisticas": {
-        "blocosFTS": 35,
-        "imagens": 35,
-        "notas": 0,
-        "obras": 1,
-        "paginas": 35,
-        "paragrafos": 35
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "o_livro_ilustrado_dos_simbolos_completo",
-          "id": "o_livro_ilustrado_dos_simbolos_ii_trecho",
-          "notas": 0,
-          "paginas": 35,
-          "paragrafos": 35,
-          "qualidadeTexto": {
-            "avaliadas": 35,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho"
-        }
-      ],
-      "sha256": "d7044630a69b81d09e2d67c44b6e780fbd65eae438b2dd2a61644c788693cf13",
-      "tamanhoBytes": 675840,
-      "titulo": "O Livro Ilustrado dos Símbolos II - Trecho",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_ii_trecho.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -9412,45 +8679,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_os_misterios_rosacruzes_max_heindel.sqlite",
-      "estatisticas": {
-        "blocosFTS": 60,
-        "imagens": 60,
-        "notas": 0,
-        "obras": 1,
-        "paginas": 60,
-        "paragrafos": 60
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "id": "os_misterios_rosacruzes_max_heindel",
-          "notas": 0,
-          "paginas": 60,
-          "paragrafos": 60,
-          "qualidadeTexto": {
-            "avaliadas": 60,
-            "ilegiveis": 0,
-            "ruidosas": 1
-          },
-          "tipo": "livro",
-          "titulo": "Os Mistérios Rosacruzes - Max Heindel"
-        }
-      ],
-      "sha256": "876f6eb2903a3fe9dc94aa0bec691fa859a9a7c9d47702375489f0b89cc2e55d",
-      "tamanhoBytes": 1204224,
-      "titulo": "Os Mistérios Rosacruzes - Max Heindel",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_misterios_rosacruzes_max_heindel.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson.sqlite",
       "estatisticas": {
         "blocosFTS": 285,
@@ -9604,46 +8832,6 @@
       "tamanhoBytes": 1114112,
       "titulo": "Os Principios das Leis Maçónicas ",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_principios_das_leis_maconicas.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_os_principios_das_leis_maconicas_vol1_albert_g_mackey.sqlite",
-      "estatisticas": {
-        "blocosFTS": 88,
-        "imagens": 95,
-        "notas": 48,
-        "obras": 1,
-        "paginas": 95,
-        "paragrafos": 88
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "os_principios_das_leis_maconicas",
-          "id": "os_principios_das_leis_maconicas_vol1_albert_g_mackey",
-          "notas": 48,
-          "paginas": 95,
-          "paragrafos": 88,
-          "qualidadeTexto": {
-            "avaliadas": 87,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey"
-        }
-      ],
-      "sha256": "7474d18cc7397d27058fae07a81df7645afc3fe2ddad885cf0d9083683b01962",
-      "tamanhoBytes": 1183744,
-      "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_principios_das_leis_maconicas_vol1_albert_g_mackey.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10073,46 +9261,6 @@
       "tamanhoBytes": 331776,
       "titulo": "Os Templos de Adoração do GADU - 05.06.2020",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templos_de_adoracao_do_gadu_05_06_2020.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_os_templarios_michael_lamy_2.sqlite",
-      "estatisticas": {
-        "blocosFTS": 225,
-        "imagens": 225,
-        "notas": 1,
-        "obras": 1,
-        "paginas": 225,
-        "paragrafos": 225
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "os_templarios_michael_lamy",
-          "id": "os_templarios_michael_lamy_2",
-          "notas": 1,
-          "paginas": 225,
-          "paragrafos": 225,
-          "qualidadeTexto": {
-            "avaliadas": 225,
-            "ilegiveis": 0,
-            "ruidosas": 2
-          },
-          "tipo": "livro",
-          "titulo": "Os-Templarios - Michael-Lamy"
-        }
-      ],
-      "sha256": "86060129908852f27516119d44d6a2c057d01b2b80c17dd1d0123b3af8075850",
-      "tamanhoBytes": 3653632,
-      "titulo": "Os-Templarios - Michael-Lamy",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_michael_lamy_2.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10776,46 +9924,6 @@
       "tamanhoBytes": 1789952,
       "titulo": "PROVÉRBIOS E PENSAMENTOS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_proverbios_e_pensamentos.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_quadrivium.sqlite",
-      "estatisticas": {
-        "blocosFTS": 32,
-        "imagens": 34,
-        "notas": 11,
-        "obras": 1,
-        "paginas": 34,
-        "paragrafos": 32
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "lvr_quadrivium_john_martineau",
-          "id": "quadrivium",
-          "notas": 11,
-          "paginas": 34,
-          "paragrafos": 32,
-          "qualidadeTexto": {
-            "avaliadas": 19,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Quadrivium"
-        }
-      ],
-      "sha256": "0fe5c58284bc7e9724eaa12b7e8e8debb3b21a4123e1f7f3a065684d1b3255ea",
-      "tamanhoBytes": 278528,
-      "titulo": "Quadrivium",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_quadrivium.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -12145,46 +11253,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo.sqlite",
-      "estatisticas": {
-        "blocosFTS": 888,
-        "imagens": 888,
-        "notas": 3,
-        "obras": 1,
-        "paginas": 888,
-        "paragrafos": 888
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix",
-          "id": "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo",
-          "notas": 3,
-          "paginas": 888,
-          "paragrafos": 888,
-          "qualidadeTexto": {
-            "avaliadas": 886,
-            "ilegiveis": 0,
-            "ruidosas": 1
-          },
-          "tipo": "livro",
-          "titulo": "Trilogia do Templo III - Esquin de Floyrac - O Fim do Templo"
-        }
-      ],
-      "sha256": "b7b9f9219a3b0b98bc670d06055d4e903a1a16987283b8d6c27ee698b79d5a98",
-      "tamanhoBytes": 8728576,
-      "titulo": "Trilogia do Templo III - Esquin de Floyrac - O Fim do Templo",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira.sqlite",
       "estatisticas": {
         "blocosFTS": 362,
@@ -12341,46 +11409,6 @@
     },
     {
       "area": "bibliotecaMaconica",
-      "arquivo": "bibliotecaMaconica/rag_zodiaco_arquetipos_dos_zodiacos.sqlite",
-      "estatisticas": {
-        "blocosFTS": 444,
-        "imagens": 479,
-        "notas": 12,
-        "obras": 1,
-        "paginas": 479,
-        "paragrafos": 444
-      },
-      "nivel": "obra",
-      "obras": [
-        {
-          "assuntos": [
-            "História",
-            "Filosofia",
-            "Simbologia",
-            "Estudo"
-          ],
-          "autor": null,
-          "duplicataDe": "arquetipos_do_zodiaco_kathleen_burt",
-          "id": "zodiaco_arquetipos_dos_zodiacos",
-          "notas": 12,
-          "paginas": 479,
-          "paragrafos": 444,
-          "qualidadeTexto": {
-            "avaliadas": 440,
-            "ilegiveis": 0,
-            "ruidosas": 0
-          },
-          "tipo": "livro",
-          "titulo": "Zodiaco - Arquetipos dos Zodíacos"
-        }
-      ],
-      "sha256": "450ee605b41a171068d0f6a528ff1288db246be9178d126c1de5f42f62880dc1",
-      "tamanhoBytes": 7684096,
-      "titulo": "Zodiaco - Arquetipos dos Zodíacos",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_zodiaco_arquetipos_dos_zodiacos.sqlite"
-    },
-    {
-      "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_zohar.sqlite",
       "estatisticas": {
         "blocosFTS": 617,
@@ -12420,13 +11448,13 @@
     }
   ],
   "totais": {
-    "blocosFTS": 69371,
-    "notas": 15584,
-    "obras": 321,
-    "pacotes": 315,
-    "paginas": 69884,
-    "paragrafos": 69371,
-    "tamanhoBytes": 1049149440
+    "blocosFTS": 62599,
+    "notas": 14063,
+    "obras": 296,
+    "pacotes": 291,
+    "paginas": 62989,
+    "paragrafos": 62599,
+    "tamanhoBytes": 791117824
   },
   "versaoFormato": 1
 }

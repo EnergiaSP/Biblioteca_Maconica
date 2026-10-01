@@ -94,6 +94,8 @@ internal fun BibliotecaCatalogRepository.prepararBuscaNotas(cancelled: () -> Boo
  */
 internal suspend fun BibliotecaCatalogRepository.prepararBuscaNotasDepoisDaAbertura() {
     kotlinx.coroutines.delay(8_000)
+    // Packages left out of the catalog (works removed as copies of others) do not keep taking space.
+    runCatching { removerPacotesForaDoCatalogo() }
     val job = kotlinx.coroutines.currentCoroutineContext()[kotlinx.coroutines.Job]
     prepararBuscaNotas { job?.isActive == false }
 }

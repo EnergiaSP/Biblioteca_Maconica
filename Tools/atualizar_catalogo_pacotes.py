@@ -39,6 +39,18 @@ def counts(path: Path) -> dict:
     return result
 
 
+def recount(catalog: dict) -> None:
+    """Totals of the catalog from its packages (works may have left it)."""
+    totals = catalog.setdefault("totais", {})
+    stats = [p.get("estatisticas", {}) for p in catalog["pacotes"]]
+    for key in ("blocosFTS", "notas", "paginas", "paragrafos"):
+        if key in totals:
+            totals[key] = sum(s.get(key, 0) for s in stats)
+    totals["obras"] = sum(len(p["obras"]) for p in catalog["pacotes"])
+    totals["pacotes"] = len(catalog["pacotes"])
+    totals["tamanhoBytes"] = sum(p["tamanhoBytes"] for p in catalog["pacotes"])
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--novos", type=Path, required=True)
@@ -72,6 +84,7 @@ def main() -> None:
         if current.exists() and not backup.exists():
             shutil.copy2(current, backup)
         shutil.copy2(new_files[name], current)
+    recount(catalog)
     text = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
     for path in CATALOGS:
         path.write_text(text, encoding="utf-8")

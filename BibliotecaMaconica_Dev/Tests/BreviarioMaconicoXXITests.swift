@@ -1535,6 +1535,17 @@ final class BreviarioMaconicoXXITests: XCTestCase {
                        "Em 01/06/2026, texto ⁵⁷⁸ e outro⁵⁷⁹. Total 1234; 12/578 não é chamada.")
     }
 
+    /// Same cases as Android (`PackageCleanupTest`).
+    func testPackagesLeftOutOfTheCatalogAreRemovedButNotImports() {
+        let catalogo: Set<String> = ["rag_breviarios.sqlite", "bibliotecaMaconica/rag_a.sqlite"]
+        let arquivos = ["rag_breviarios.sqlite", "rag_breviarios.sqlite.sha256",
+                        "bibliotecaMaconica/rag_a.sqlite", "bibliotecaMaconica/rag_a.sqlite.sha256",
+                        "bibliotecaMaconica/rag_copia.sqlite", "bibliotecaMaconica/rag_copia.sqlite.sha256",
+                        "imported_minha_obra_1.sqlite", "imported_minha_obra_1_images/page_1.jpg", "imported_works.json"]
+        XCTAssertEqual(BibliotecaOfflinePackageService.arquivosForaDoCatalogo(arquivos, catalogo: catalogo),
+                       ["bibliotecaMaconica/rag_copia.sqlite", "bibliotecaMaconica/rag_copia.sqlite.sha256"])
+    }
+
     func testSamePDFIsRecognizedAsAlreadyImported() throws {
         let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".pdf")
         defer { try? FileManager.default.removeItem(at: url) }

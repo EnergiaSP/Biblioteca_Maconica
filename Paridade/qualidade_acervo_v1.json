@@ -2,22 +2,22 @@
   "schemaVersion": 1,
   "descricao": "Qualidade do texto do acervo RAG pela regra Paridade/qualidade_texto_v1.json.",
   "paginas": {
-    "avaliadas": 66431,
-    "ruidosas": 203,
-    "ilegiveis": 65
+    "avaliadas": 59835,
+    "ruidosas": 189,
+    "ilegiveis": 63
   },
   "obrasPorNivel": {
     "baixa": 1,
-    "boa": 313,
-    "regular": 7
+    "boa": 289,
+    "regular": 6
   },
   "motivos": {
-    "simbolo": 47461,
-    "solta": 45809,
-    "caixa": 5341,
-    "misto": 2648,
-    "escrita": 1357,
-    "semVogal": 352
+    "solta": 43833,
+    "simbolo": 43098,
+    "caixa": 4960,
+    "misto": 2594,
+    "escrita": 1287,
+    "semVogal": 339
   },
   "obrasComMaisRuido": [
     {
@@ -66,13 +66,6 @@
       "obra": "painel_do_grau_de_aprendiz_completo_booz",
       "avaliadas": 28,
       "ruidosas": 2,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "geometria_sagrada",
-      "avaliadas": 48,
-      "ruidosas": 3,
       "ilegiveis": 0,
       "nivel": "regular"
     },
@@ -224,13 +217,6 @@
       "nivel": "boa"
     },
     {
-      "obra": "os_misterios_rosacruzes_max_heindel",
-      "avaliadas": 60,
-      "ruidosas": 1,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
       "obra": "pistis_sophia_traducao_do_texto_original",
       "avaliadas": 180,
       "ruidosas": 2,
@@ -280,13 +266,6 @@
       "nivel": "boa"
     },
     {
-      "obra": "as_claviculas_salomao_mathers",
-      "avaliadas": 393,
-      "ruidosas": 5,
-      "ilegiveis": 1,
-      "nivel": "boa"
-    },
-    {
       "obra": "a_chave_dos_grandes_mistrios_eliphas_levi",
       "avaliadas": 268,
       "ruidosas": 3,
@@ -298,6 +277,27 @@
       "avaliadas": 70,
       "ruidosas": 0,
       "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "socrates_em_90_minutos_paul_strathern",
+      "avaliadas": 71,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "timeu_a_cosmologia_de_platao_oscar_t_matsuura",
+      "avaliadas": 143,
+      "ruidosas": 2,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "moral_e_dogma",
+      "avaliadas": 76,
+      "ruidosas": 1,
+      "ilegiveis": 0,
       "nivel": "boa"
     }
   ]

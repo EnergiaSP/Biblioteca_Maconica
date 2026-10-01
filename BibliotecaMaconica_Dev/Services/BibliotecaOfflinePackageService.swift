@@ -204,6 +204,31 @@ final class BibliotecaOfflinePackageService {
         return digest.map { String(format: "%02x", $0) }.joined()
     }
 
+    /// Same rule as Android (`arquivosForaDoCatalogo`): a downloaded package (`.sqlite`) or its version
+    /// marker (`.sqlite.sha256`) whose path is no longer in the catalog (a work removed as a copy of another,
+    /// a package moved to another file) is deleted, so it does not take space. Works the user imported
+    /// (`imported_*`), their manifest and folders are never touched.
+    static func arquivosForaDoCatalogo(_ relativos: [String], catalogo: Set<String>) -> [String] {
+        relativos.filter { caminho in
+            let nome = caminho.split(separator: "/").last.map(String.init) ?? caminho
+            let pacote = caminho.hasSuffix(".sha256") ? String(caminho.dropLast(".sha256".count)) : caminho
+            return !nome.hasPrefix("imported_") && pacote.hasSuffix(".sqlite") && !catalogo.contains(pacote)
+        }
+    }
+
+    /// Deletes the packages left out of the catalog; returns how many files were removed.
+    @discardableResult
+    func removerPacotesForaDoCatalogo() -> Int {
+        let raiz = BibliotecaRAGCatalogService.raizPacotesLocal(fileManager: fileManager)
+        guard let itens = fileManager.enumerator(at: raiz, includingPropertiesForKeys: [.isRegularFileKey]) else { return 0 }
+        let prefixo = raiz.standardizedFileURL.path + "/"
+        let relativos = itens.compactMap { $0 as? URL }
+            .filter { (try? $0.resourceValues(forKeys: [.isRegularFileKey]).isRegularFile) == true }
+            .map { $0.standardizedFileURL.path.replacingOccurrences(of: prefixo, with: "") }
+        return Self.arquivosForaDoCatalogo(relativos, catalogo: catalogo.arquivosDoCatalogo)
+            .filter { (try? fileManager.removeItem(at: raiz.appendingPathComponent($0))) != nil }.count
+    }
+
     private static func urlLocal(arquivo: String, fileManager: FileManager) -> URL {
         BibliotecaRAGCatalogService.raizPacotesLocal(fileManager: fileManager)
             .appendingPathComponent(arquivo)

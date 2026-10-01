@@ -2,16 +2,8 @@
   "schemaVersion": 1,
   "descricao": "Correcoes feitas a mao dos dados bibliograficos (titulo, autor, ano, editora, local). Vazio: nao informado. Local, editora e ano vieram das fichas catalograficas das primeiras paginas de cada obra (revisadas uma a uma; citacoes de outros livros foram descartadas).",
   "obras": {
-    "a_doutrina_secreta_sintese": {
-      "titulo": "A Doutrina Secreta: síntese",
-      "autor": ""
-    },
     "historia_nat_geo_ramses_ii": {
       "titulo": "História Nat Geo: Ramsés II",
-      "autor": ""
-    },
-    "o_livro_ilustrado_dos_simbolos_ii_trecho": {
-      "titulo": "O Livro Ilustrado dos Símbolos II (trecho)",
       "autor": ""
     },
     "o_ponto_dentro_do_circulo_blog_sobre_maconaria_filosofia_historia_sociedade_e_cultura": {
@@ -20,10 +12,6 @@
     },
     "o_reaa_origens_historicas": {
       "titulo": "O REAA: origens históricas",
-      "autor": ""
-    },
-    "zodiaco_arquetipos_dos_zodiacos": {
-      "titulo": "Zodíaco: arquétipos dos zodíacos",
       "autor": ""
     },
     "trilogia_do_templo_i_joabem_construtor_do_templo": {
@@ -40,20 +28,11 @@
       "editora": "Universo dos Livros",
       "ano": "2009"
     },
-    "os_principios_das_leis_maconicas_vol1_albert_g_mackey": {
-      "autor": "Albert G. Mackey",
-      "local": "São Paulo",
-      "editora": "Universo dos Livros",
-      "ano": "2009"
-    },
     "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus": {
       "titulo": "Corpus Hermeticum: a Tábua da Esmeralda"
     },
     "o_taro_cabalistico_robert_wang": {
       "titulo": "O Tarô Cabalístico"
-    },
-    "os_templarios_michael_lamy_2": {
-      "titulo": "Os Templários"
     },
     "sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari": {
       "titulo": "Sapiens: uma breve história da humanidade"
@@ -89,11 +68,6 @@
       "autor": "Kennyo Ismail"
     },
     "a_chave_de_salomao_greg_taylor": {
-      "local": "Rio de Janeiro",
-      "editora": "Record",
-      "ano": "2006"
-    },
-    "a_chave_de_salomao_greg_taylor_2": {
       "local": "Rio de Janeiro",
       "editora": "Record",
       "ano": "2006"
@@ -253,10 +227,6 @@
       "ano": "1991"
     },
     "100_instrucoes_de_aprendiz": {
-      "editora": "Madras",
-      "ano": "2008"
-    },
-    "maconaria_100_instrucoes_de_aprendiz": {
       "editora": "Madras",
       "ano": "2008"
     },
