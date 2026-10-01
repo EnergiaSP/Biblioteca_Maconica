@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "descricao": "Trilhas de estudo por grau. Cada etapa e um tema estudado no Dossie; conta como estudada quando ha um dossie salvo com o mesmo tema (sem diferenciar maiusculas, acentos e espacos) ou quando o leitor a marca. Percentual: etapas estudadas x 100 / total, arredondado para baixo. Marco: o ultimo de marcos cujo minimo de etapas (percentual do total, arredondado para cima, pelo menos 1) foi atingido. Proxima: a primeira etapa ainda nao estudada, na ordem da trilha. Obras sugeridas: obras do catalogo (sem duplicatas) cujo titulo ou assuntos, normalizados, casam com o padrao do grau, em ordem alfabetica normalizada. Sem restricao: as tres trilhas ficam visiveis para todos. Na tela, cada grau mostra a proxima etapa e as demais ficam em Ver todas as etapas.",
+  "descricao": "Trilhas de estudo por grau. Cada etapa e um tema estudado no Dossie; conta como estudada quando ha um dossie salvo com o mesmo tema (sem diferenciar maiusculas, acentos e espacos) ou quando o leitor a marca. Percentual: etapas estudadas x 100 / total, arredondado para baixo. Marco: o ultimo de marcos cujo minimo de etapas (percentual do total, arredondado para cima, pelo menos 1) foi atingido. Proxima: a primeira etapa ainda nao estudada, na ordem da trilha. Obras sugeridas: obras do catalogo (sem duplicatas) cujo titulo ou assuntos, normalizados, casam com o padrao do grau, mais as obrasExtras escolhidas pelos temas do grau (geometria e artes liberais para Companheiro; Templo de Salomao e Camara do Meio para Mestre), em ordem alfabetica normalizada. Sem restricao: as tres trilhas ficam visiveis para todos. Na tela, cada grau mostra a proxima etapa e as demais ficam em Ver todas as etapas.",
   "marcos": [
     {
       "percentual": 0,
@@ -152,7 +152,16 @@
           "descricao": "O trabalho como virtude e dever."
         }
       ],
-      "obrasSugeridas": []
+      "obrasSugeridas": [
+        "a_geometria_sagrada",
+        "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro",
+        "geometria_sagrada_nigel_pennick",
+        "lvr_quadrivium_john_martineau",
+        "numeros_a_decada_pitagorica",
+        "o_trivium_biblioteca_freemasonry",
+        "pitagoras_ciencia_e_magia_na_antiga_grecia",
+        "simbolismo_numeros_boanerges_b_castro"
+      ]
     },
     {
       "id": "mestre",
@@ -201,6 +210,10 @@
         }
       ],
       "obrasSugeridas": [
+        "manual_do_mestre_franco_macom_aldo_lavagnini",
+        "o_portico_e_a_camara_do_meio",
+        "origens_lendarias_da_maconaria_inglesa",
+        "os_segredos_do_templo_de_salomao",
         "ritual_de_emulacao_o_grau_de_mestre_macom"
       ]
     }

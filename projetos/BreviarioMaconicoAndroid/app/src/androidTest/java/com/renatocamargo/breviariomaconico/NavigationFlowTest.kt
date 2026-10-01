@@ -164,12 +164,20 @@ class NavigationFlowTest {
     @Test
     fun degreeTrackCountsMarkedStepAndStudiesTopic() {
         val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        // Saved dossiers count as studied steps; the test starts without them.
+        val saved = com.renatocamargo.breviariomaconico.data.SavedDossierStore(context)
+        val before = saved.all()
+        before.forEach { saved.remove(it.id) }
+        try {
         if ("aprendiz_iniciacao" in com.renatocamargo.breviariomaconico.data.DegreeTracks.marked(context)) {
             com.renatocamargo.breviariomaconico.data.DegreeTracks.toggle(context, "aprendiz_iniciacao")
         }
         compose.onNodeWithTag("tab.more").performClick()
         compose.onNodeWithText("Trilhas por grau").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("0 de 10 etapas (0%)")
+        // Suggested works by title, not by id.
+        compose.onNodeWithTag("tracks.list").performScrollToNode(hasText("100 Instruções de Aprendiz"))
+        compose.onNodeWithTag("tracks.list").performScrollToIndex(0)
         compose.onNodeWithTag("trilha.aprendiz.etapas").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.etapa.aprendiz_iniciacao.marcar").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("1 de 10 etapas (10%)")
@@ -181,6 +189,29 @@ class NavigationFlowTest {
             compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
         }
         compose.onNodeWithTag("dossier.topic").assertTextContains("Pedra bruta")
+        } finally {
+            saved.all().forEach { saved.remove(it.id) }
+            before.forEach { saved.save(it) }
+        }
+    }
+
+    /** After a new topic is built, the prancha is the one of the new topic, never of the previous dossier. */
+    @Test
+    fun pranchaFollowsTheLastBuiltTopic() {
+        compose.onNodeWithTag("tab.dossier").performClick()
+        for (topic in listOf("Escada de Jacó", "Acácia")) {
+            compose.onNodeWithTag("dossier.topic").performTextReplacement(topic)
+            compose.onNodeWithTag("dossier.topic").performImeAction()
+            compose.waitUntil(60_000) {
+                compose.onAllNodesWithText("Dossiê criado com", substring = true).fetchSemanticsNodes().isNotEmpty()
+            }
+            compose.onNodeWithTag("dossier.list").performScrollToIndex(0)
+            compose.onNodeWithTag("dossier.prancha").performScrollTo().performClick()
+            // The prancha list composes only what is on screen: its title is brought into view first.
+            compose.onNodeWithTag("prancha").performScrollToNode(hasText("Prancha: $topic"))
+            compose.onNodeWithTag("prancha").performScrollToIndex(0)
+            compose.onNodeWithTag("prancha.fechar").performClick()
+        }
     }
 
     /** The prancha of a dossier shows each author side by side and the text with ABNT references, as on iOS. */

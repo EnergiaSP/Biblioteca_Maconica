@@ -1,0 +1,1135 @@
+{
+  "descricao": "Correcao do til deixado pela digitalizacao no Breviario de Rizzardo (Tools/corrigir_til_rizzardo.py). Corrigidas: so quando uma unica letra forma palavra conhecida. Mantidas: ambiguas ou desconhecidas, a corrigir com o PDF original.",
+  "corrigidas": [
+    {
+      "data": "05/01",
+      "campo": "texto",
+      "palavra": "escri~o",
+      "correcao": "escrito"
+    },
+    {
+      "data": "19/01",
+      "campo": "texto",
+      "palavra": "temper~nça",
+      "correcao": "temperança"
+    },
+    {
+      "data": "28/01",
+      "campo": "texto",
+      "palavra": "trat~mento",
+      "correcao": "tratamento"
+    },
+    {
+      "data": "29/01",
+      "campo": "texto",
+      "palavra": "pre~e",
+      "correcao": "prece"
+    },
+    {
+      "data": "31/01",
+      "campo": "texto",
+      "palavra": "pers~guir",
+      "correcao": "perseguir"
+    },
+    {
+      "data": "08/02",
+      "campo": "texto",
+      "palavra": "ar~ística",
+      "correcao": "artística"
+    },
+    {
+      "data": "14/02",
+      "campo": "texto",
+      "palavra": "se~pre",
+      "correcao": "sempre"
+    },
+    {
+      "data": "14/02",
+      "campo": "texto",
+      "palavra": "vestido~",
+      "correcao": "vestidos"
+    },
+    {
+      "data": "18/02",
+      "campo": "texto",
+      "palavra": "cen~ura",
+      "correcao": "censura"
+    },
+    {
+      "data": "28/02",
+      "campo": "texto",
+      "palavra": "entrela~ados",
+      "correcao": "entrelaçados"
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "element~",
+      "correcao": "elemento"
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "co~um",
+      "correcao": "comum"
+    },
+    {
+      "data": "07/03",
+      "campo": "texto",
+      "palavra": "a~enizar",
+      "correcao": "amenizar"
+    },
+    {
+      "data": "08/03",
+      "campo": "texto",
+      "palavra": "ambi~nte",
+      "correcao": "ambiente"
+    },
+    {
+      "data": "22/03",
+      "campo": "texto",
+      "palavra": "Al~xis",
+      "correcao": "Alexis"
+    },
+    {
+      "data": "23/03",
+      "campo": "texto",
+      "palavra": "frequ~ntemente",
+      "correcao": "frequentemente"
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "constit~í",
+      "correcao": "constituí"
+    },
+    {
+      "data": "30/03",
+      "campo": "texto",
+      "palavra": "adolesc~ntes",
+      "correcao": "adolescentes"
+    },
+    {
+      "data": "23/04",
+      "campo": "texto",
+      "palavra": "~gregorien",
+      "correcao": "egregorien"
+    },
+    {
+      "data": "25/04",
+      "campo": "texto",
+      "palavra": "trabalh~s",
+      "correcao": "trabalhos"
+    },
+    {
+      "data": "03/05",
+      "campo": "texto",
+      "palavra": "~vitar",
+      "correcao": "evitar"
+    },
+    {
+      "data": "07/06",
+      "campo": "texto",
+      "palavra": "arrepe~dera",
+      "correcao": "arrependera"
+    },
+    {
+      "data": "09/06",
+      "campo": "texto",
+      "palavra": "bebida~",
+      "correcao": "bebidas"
+    },
+    {
+      "data": "14/06",
+      "campo": "texto",
+      "palavra": "admiraçã~",
+      "correcao": "admiração"
+    },
+    {
+      "data": "17/06",
+      "campo": "texto",
+      "palavra": "fo~ma",
+      "correcao": "forma"
+    },
+    {
+      "data": "18/06",
+      "campo": "texto",
+      "palavra": "~spira",
+      "correcao": "aspira"
+    },
+    {
+      "data": "05/07",
+      "campo": "texto",
+      "palavra": "intere~se",
+      "correcao": "interesse"
+    },
+    {
+      "data": "05/07",
+      "campo": "texto",
+      "palavra": "envi~e",
+      "correcao": "envide"
+    },
+    {
+      "data": "09/07",
+      "campo": "texto",
+      "palavra": "desinteres~ado",
+      "correcao": "desinteressado"
+    },
+    {
+      "data": "12/07",
+      "campo": "texto",
+      "palavra": "satis~ação",
+      "correcao": "satisfação"
+    },
+    {
+      "data": "14/07",
+      "campo": "texto",
+      "palavra": "algun~",
+      "correcao": "alguns"
+    },
+    {
+      "data": "18/07",
+      "campo": "texto",
+      "palavra": "p~rtence",
+      "correcao": "pertence"
+    },
+    {
+      "data": "01/08",
+      "campo": "texto",
+      "palavra": "g~ato",
+      "correcao": "grato"
+    },
+    {
+      "data": "06/08",
+      "campo": "texto",
+      "palavra": "discurso~",
+      "correcao": "discursos"
+    },
+    {
+      "data": "09/08",
+      "campo": "texto",
+      "palavra": "~açonaria",
+      "correcao": "maçonaria"
+    },
+    {
+      "data": "12/08",
+      "campo": "texto",
+      "palavra": "pod~r",
+      "correcao": "poder"
+    },
+    {
+      "data": "14/08",
+      "campo": "texto",
+      "palavra": "~estre",
+      "correcao": "mestre"
+    },
+    {
+      "data": "15/08",
+      "campo": "texto",
+      "palavra": "Cerim~nias",
+      "correcao": "Cerimônias"
+    },
+    {
+      "data": "19/08",
+      "campo": "texto",
+      "palavra": "trilogi~",
+      "correcao": "trilogia"
+    },
+    {
+      "data": "20/08",
+      "campo": "texto",
+      "palavra": "div~rsos",
+      "correcao": "diversos"
+    },
+    {
+      "data": "27/08",
+      "campo": "texto",
+      "palavra": "Neófito~",
+      "correcao": "Neófitos"
+    },
+    {
+      "data": "04/09",
+      "campo": "texto",
+      "palavra": "~deal",
+      "correcao": "ideal"
+    },
+    {
+      "data": "06/09",
+      "campo": "texto",
+      "palavra": "T~ata",
+      "correcao": "Trata"
+    },
+    {
+      "data": "14/09",
+      "campo": "texto",
+      "palavra": "beijo~",
+      "correcao": "beijos"
+    },
+    {
+      "data": "20/09",
+      "campo": "texto",
+      "palavra": "Pal~vra",
+      "correcao": "Palavra"
+    },
+    {
+      "data": "23/09",
+      "campo": "texto",
+      "palavra": "instrumento~",
+      "correcao": "instrumentos"
+    },
+    {
+      "data": "30/09",
+      "campo": "texto",
+      "palavra": "P~rdoar",
+      "correcao": "Perdoar"
+    },
+    {
+      "data": "30/09",
+      "campo": "texto",
+      "palavra": "e~quecer",
+      "correcao": "esquecer"
+    },
+    {
+      "data": "13/10",
+      "campo": "texto",
+      "palavra": "pos~ui",
+      "correcao": "possui"
+    },
+    {
+      "data": "18/10",
+      "campo": "texto",
+      "palavra": "~ssim",
+      "correcao": "assim"
+    },
+    {
+      "data": "19/10",
+      "campo": "texto",
+      "palavra": "mecâni~a",
+      "correcao": "mecânica"
+    },
+    {
+      "data": "26/10",
+      "campo": "texto",
+      "palavra": "mesmo~",
+      "correcao": "mesmos"
+    },
+    {
+      "data": "15/11",
+      "campo": "texto",
+      "palavra": "atitu~es",
+      "correcao": "atitudes"
+    },
+    {
+      "data": "23/11",
+      "campo": "texto",
+      "palavra": "~oderna",
+      "correcao": "moderna"
+    }
+  ],
+  "mantidas": [
+    {
+      "data": "01/01",
+      "campo": "texto",
+      "palavra": "medita~",
+      "correcao": null
+    },
+    {
+      "data": "03/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "05/01",
+      "campo": "texto",
+      "palavra": "todos~",
+      "correcao": null
+    },
+    {
+      "data": "11/01",
+      "campo": "texto",
+      "palavra": "n~",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "~om",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "13/01",
+      "campo": "texto",
+      "palavra": "to~",
+      "correcao": null
+    },
+    {
+      "data": "31/01",
+      "campo": "texto",
+      "palavra": "n~c",
+      "correcao": null
+    },
+    {
+      "data": "31/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "31/01",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "31/01",
+      "campo": "texto",
+      "palavra": "~o",
+      "correcao": null
+    },
+    {
+      "data": "31/01",
+      "campo": "texto",
+      "palavra": "complement~",
+      "correcao": null
+    },
+    {
+      "data": "08/02",
+      "campo": "texto",
+      "palavra": "m~",
+      "correcao": null
+    },
+    {
+      "data": "10/02",
+      "campo": "texto",
+      "palavra": "~um",
+      "correcao": null
+    },
+    {
+      "data": "10/02",
+      "campo": "texto",
+      "palavra": "judid~",
+      "correcao": null
+    },
+    {
+      "data": "10/02",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "14/02",
+      "campo": "texto",
+      "palavra": "vantagem~",
+      "correcao": null
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "c~i",
+      "correcao": null
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "02/03",
+      "campo": "texto",
+      "palavra": "~m",
+      "correcao": null
+    },
+    {
+      "data": "04/03",
+      "campo": "texto",
+      "palavra": "pass~",
+      "correcao": null
+    },
+    {
+      "data": "04/03",
+      "campo": "texto",
+      "palavra": "~os",
+      "correcao": null
+    },
+    {
+      "data": "16/03",
+      "campo": "texto",
+      "palavra": "mim~",
+      "correcao": null
+    },
+    {
+      "data": "18/03",
+      "campo": "texto",
+      "palavra": "t~to",
+      "correcao": null
+    },
+    {
+      "data": "20/03",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "Cad~",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "Onent~s",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "~a",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "~a",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "~onico",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "~sicas",
+      "correcao": null
+    },
+    {
+      "data": "24/03",
+      "campo": "texto",
+      "palavra": "d~",
+      "correcao": null
+    },
+    {
+      "data": "28/03",
+      "campo": "texto",
+      "palavra": "P~",
+      "correcao": null
+    },
+    {
+      "data": "03/04",
+      "campo": "texto",
+      "palavra": "a~tô",
+      "correcao": null
+    },
+    {
+      "data": "17/04",
+      "campo": "titulo",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "17/04",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "24/04",
+      "campo": "titulo",
+      "palavra": "ELIMINAÇA~",
+      "correcao": null
+    },
+    {
+      "data": "25/04",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "28/04",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "01/05",
+      "campo": "texto",
+      "palavra": "Jacó~",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "maçônic~",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "filoso~a",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "roo~",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "qu~s",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "as~",
+      "correcao": null
+    },
+    {
+      "data": "13/05",
+      "campo": "texto",
+      "palavra": "~tos",
+      "correcao": null
+    },
+    {
+      "data": "07/06",
+      "campo": "texto",
+      "palavra": "rei~",
+      "correcao": null
+    },
+    {
+      "data": "14/06",
+      "campo": "texto",
+      "palavra": "poderes~",
+      "correcao": null
+    },
+    {
+      "data": "16/06",
+      "campo": "texto",
+      "palavra": "t~l",
+      "correcao": null
+    },
+    {
+      "data": "21/06",
+      "campo": "texto",
+      "palavra": "se~s",
+      "correcao": null
+    },
+    {
+      "data": "22/06",
+      "campo": "texto",
+      "palavra": "l~entam",
+      "correcao": null
+    },
+    {
+      "data": "26/06",
+      "campo": "texto",
+      "palavra": "hosp~ais",
+      "correcao": null
+    },
+    {
+      "data": "02/07",
+      "campo": "texto",
+      "palavra": "com~",
+      "correcao": null
+    },
+    {
+      "data": "12/07",
+      "campo": "texto",
+      "palavra": "castigo~",
+      "correcao": null
+    },
+    {
+      "data": "25/07",
+      "campo": "texto",
+      "palavra": "Ofu~rod",
+      "correcao": null
+    },
+    {
+      "data": "25/07",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "25/07",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "03/08",
+      "campo": "texto",
+      "palavra": "i~",
+      "correcao": null
+    },
+    {
+      "data": "07/08",
+      "campo": "texto",
+      "palavra": "segurança~",
+      "correcao": null
+    },
+    {
+      "data": "22/08",
+      "campo": "texto",
+      "palavra": "El~",
+      "correcao": null
+    },
+    {
+      "data": "23/08",
+      "campo": "texto",
+      "palavra": "com~",
+      "correcao": null
+    },
+    {
+      "data": "06/09",
+      "campo": "texto",
+      "palavra": "~qui",
+      "correcao": null
+    },
+    {
+      "data": "06/09",
+      "campo": "texto",
+      "palavra": "p~a",
+      "correcao": null
+    },
+    {
+      "data": "08/09",
+      "campo": "titulo",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "11/09",
+      "campo": "texto",
+      "palavra": "desencarnação~",
+      "correcao": null
+    },
+    {
+      "data": "18/09",
+      "campo": "texto",
+      "palavra": "enrolado~",
+      "correcao": null
+    },
+    {
+      "data": "25/09",
+      "campo": "texto",
+      "palavra": "signi~cando",
+      "correcao": null
+    },
+    {
+      "data": "26/09",
+      "campo": "texto",
+      "palavra": "~ábitat",
+      "correcao": null
+    },
+    {
+      "data": "06/10",
+      "campo": "texto",
+      "palavra": "psicológic~",
+      "correcao": null
+    },
+    {
+      "data": "06/10",
+      "campo": "texto",
+      "palavra": "esotér~c",
+      "correcao": null
+    },
+    {
+      "data": "06/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "y~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "rnr~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~J",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~r",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~f",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~y",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~d",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "n~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~r",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "li~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~d",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "r~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~tc",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "id~r",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "Í~ie",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "10/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "18/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "18/10",
+      "campo": "texto",
+      "palavra": "i~",
+      "correcao": null
+    },
+    {
+      "data": "22/10",
+      "campo": "texto",
+      "palavra": "outros~",
+      "correcao": null
+    },
+    {
+      "data": "24/10",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "28/10",
+      "campo": "texto",
+      "palavra": "esper~",
+      "correcao": null
+    },
+    {
+      "data": "02/11",
+      "campo": "texto",
+      "palavra": "us~",
+      "correcao": null
+    },
+    {
+      "data": "07/12",
+      "campo": "texto",
+      "palavra": "tatuar~",
+      "correcao": null
+    },
+    {
+      "data": "07/12",
+      "campo": "texto",
+      "palavra": "ve~",
+      "correcao": null
+    },
+    {
+      "data": "07/12",
+      "campo": "texto",
+      "palavra": "pas~",
+      "correcao": null
+    },
+    {
+      "data": "07/12",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    },
+    {
+      "data": "07/12",
+      "campo": "texto",
+      "palavra": "~os",
+      "correcao": null
+    },
+    {
+      "data": "31/12",
+      "campo": "texto",
+      "palavra": "~",
+      "correcao": null
+    }
+  ]
+}

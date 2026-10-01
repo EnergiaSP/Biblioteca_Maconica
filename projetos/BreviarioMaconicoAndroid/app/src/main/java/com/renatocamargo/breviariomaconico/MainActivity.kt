@@ -568,7 +568,7 @@ internal fun BreviarioAndroidApp(
                         )
                         Screen.More -> MoreScreen(colors, navigation::show)
                         Screen.Notebook -> StudyNotebookScreen(colors, titles = {
-                            BibliotecaCatalogRepository.get(context).obrasDisponiveis().associate { it.id to it.titulo }
+                            BibliotecaCatalogRepository.get(context).titulosDoCatalogo()
                         }) { note ->
                             val page = note.data?.let { Regex("P(\\d+)").matchEntire(it) }?.groupValues?.get(1)?.toInt()
                             when {
@@ -581,7 +581,7 @@ internal fun BreviarioAndroidApp(
                             }
                         }
                         Screen.Tracks -> DegreeTracksScreen(colors, titles = {
-                            BibliotecaCatalogRepository.get(context).obrasDisponiveis().associate { it.id to it.titulo }
+                            BibliotecaCatalogRepository.get(context).titulosDoCatalogo()
                         }, onStudy = { topic ->
                             dossieSession.pendingTopic = topic
                             navigation.show(Screen.Dossier)

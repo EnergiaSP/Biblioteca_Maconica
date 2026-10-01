@@ -1,62 +1,136 @@
-# Textos de publicacao nas lojas (rascunho)
+# Textos de publicacao nas lojas
 
-Rascunho para App Store Connect e Google Play Console. A publicacao so acontece depois da Fase 14 concluida e pelas contas do responsavel nas lojas.
+Textos para App Store Connect e Google Play Console, versão 1.0.16 (Fases 7 a 14). A publicação acontece pelas contas do responsável nas lojas.
 
-Identificadores: iOS `com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado` (app, widget e Apple Watch); Android e Wear OS `com.renatocamargo.breviariomaconico` (versionCode 16).
+Identificadores: iOS `com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado` (app, widget e Apple Watch), versão 1.0.16 (build 2); Android e Wear OS `com.renatocamargo.breviariomaconico`, versão 1.0.16 (versionCode 16).
 
-## Nome e subtitulo
+Os limites de caracteres de cada campo são conferidos por `Tools/verificar_textos_lojas.py`.
 
-- Nome: Biblioteca Maçônica
-- Subtitulo (App Store, ate 30): Breviário, acervo e estudo
-- Descricao curta (Google Play, ate 80): Breviários diários, acervo maçônico offline e dossiês de estudo com fontes.
+## Nome e subtítulo
 
-## Descricao
+<!-- campo: nome | limite: 30 -->
+Biblioteca Maçônica
+<!-- fim -->
 
-Biblioteca Maçônica reúne leitura diária e estudo em um só lugar.
+<!-- campo: subtitulo | limite: 30 -->
+Breviário, acervo e estudo
+<!-- fim -->
 
-Leitura diária
+<!-- campo: descricaoCurta | limite: 80 -->
+Breviários diários, acervo offline, dossiês, prancha e trilhas de estudo.
+<!-- fim -->
+
+## Descrição
+
+<!-- campo: descricao | limite: 4000 -->
+Biblioteca Maçônica reúne a leitura diária e o estudo maçônico em um só lugar, com cada informação ligada à obra e à página de onde veio.
+
+LEITURA DIÁRIA
 • Breviário Maçônico do Século XXI e Breviário de Rizzardo da Camino, com a leitura de cada dia.
-• Marque como lida, favorite, anote reflexões e comentários.
+• Marque como lida, favorite, faça marcadores e anote reflexões e comentários.
+• Ouça a leitura em voz alta ou uma coleção inteira em sequência.
 • Widget na tela inicial e leitura no relógio (Apple Watch e Wear OS).
 
-Acervo para estudo
-• Centenas de obras organizadas por área, baixadas uma a uma ou todas de uma vez, para leitura sem internet.
-• Busca no acervo inteiro, com trecho e página de cada resultado.
-• Coleções de estudo por tema.
+ACERVO PARA ESTUDO
+• Centenas de obras organizadas por área, baixadas uma a uma ou todas de uma vez, para ler sem internet.
+• Busca no acervo inteiro, com trecho e página de cada resultado, grafias equivalentes (Jacó e Jacob, Hiram e Hirão) e, se quiser, singular e plural juntos.
+• Aviso de qualidade nas páginas com ruído de digitalização.
+• Coleções e trilhas de estudo por tema.
 
-Dossiê de estudo
-• Escolha um tema e o app monta um dossiê só com trechos do acervo, cada um com obra e página.
-• Salve dossiês, receba lembretes de revisão, compartilhe ou gere PDF.
+DOSSIÊ E PRANCHA
+• Escolha um tema e o app monta um dossiê só com trechos do acervo: definição, resumo, pontos divergentes, mapa do tema e perguntas.
+• Salve o dossiê e receba lembretes de revisão espaçada.
+• Monte a prancha a partir do dossiê: introdução, desenvolvimento por autor, conclusão e referências no padrão ABNT, com citação em cada trecho.
+• Compare lado a lado como cada autor trata o tema.
 
-Interpretação assistida (opcional)
+REVISÃO ATIVA
+• Cartões e perguntas criados a partir dos seus dossiês, com revisão espaçada.
+• Revise os cartões também no relógio.
+
+TRILHAS POR GRAU
+• Trilhas de Aprendiz, Companheiro e Mestre, com etapas, progresso e obras sugeridas do acervo.
+
+CADERNO DE ESTUDO
+• Todas as suas anotações num só lugar: dossiês, marcadores, reflexões e comentários, com busca e organizadas por tema.
+• Exporte e importe o caderno entre iPhone, iPad e Android sem perder nada: anotações diferentes ficam as duas.
+• Sincronize pelo iCloud (iPhone e iPad) ou pelo Google Drive (Android).
+
+INTERPRETAÇÃO ASSISTIDA (OPCIONAL)
 • Com sua própria chave de IA, peça uma interpretação do dossiê.
 • A IA recebe somente os trechos do dossiê; frases sem fonte são removidas e cada frase indica o trecho em que se apoia.
+• A interpretação fica guardada com o dossiê.
 
-Seus dados ficam no aparelho, com cópia de segurança do sistema.
+ACESSIBILIDADE
+• Textos que acompanham o tamanho de letra do sistema, leitores de tela e contraste verificados em todas as telas principais.
 
-## Novidades (base 1.0.16; completar com as Fases 8 a 14)
+Seus dados ficam no aparelho, com cópia de segurança do sistema. Nada é enviado ao desenvolvedor.
+<!-- fim -->
 
-- Acervo com texto revisado: palavras partidas pela digitalização foram corrigidas; os pacotes instalados mostram "Atualização disponível".
-- Dossiê de estudo: salvar, reabrir, lembretes de revisão, compartilhar e PDF.
-- Interpretação assistida por IA com fonte em cada frase.
-- Busca mais rápida e tela inicial ajustada a textos grandes.
-- Leituras do Breviário de Rizzardo também no relógio.
+## Novidades da versão 1.0.16
 
-- Acervo sem a camada de texto duplicada (buscas contam cada ocorrência uma vez) e aviso de qualidade do texto nas páginas e obras com ruído de digitalização; o dossiê não cita frases com ruído.
+App Store (até 4000 caracteres):
 
-## Palavras-chave (App Store, ate 100 caracteres)
+<!-- campo: novidadesAppStore | limite: 4000 -->
+• Caderno de estudo: todas as anotações num só lugar, com busca e por tema; exportar, importar e sincronizar pelo iCloud.
+• Prancha a partir do dossiê, com citações e referências no padrão ABNT e comparação entre autores.
+• Trilhas de Aprendiz, Companheiro e Mestre, com progresso e obras sugeridas.
+• Revisão ativa: cartões e perguntas com revisão espaçada, também no Apple Watch.
+• Ouça uma coleção ou trilha inteira em sequência.
+• Busca com grafias equivalentes e, se quiser, singular e plural juntos.
+• Acervo com texto revisado e aviso de qualidade nas páginas com ruído de digitalização.
+• A interpretação assistida por IA fica guardada com o dossiê.
+• Melhorias de acessibilidade em todas as telas.
+<!-- fim -->
 
-maçonaria,breviário,maçom,loja,estudo,leitura diária,biblioteca,ritual,filosofia,simbolismo
+Google Play (até 500 caracteres):
+
+<!-- campo: novidadesGooglePlay | limite: 500 -->
+• Caderno de estudo com busca, por tema, exportação e Google Drive
+• Prancha do dossiê com referências ABNT
+• Trilhas de Aprendiz, Companheiro e Mestre
+• Revisão ativa com cartões, também no Wear OS
+• Ouça coleções e trilhas em sequência
+• Busca com grafias equivalentes e singular/plural
+• Acervo revisado e aviso de qualidade do texto
+• Acessibilidade verificada nas telas principais
+<!-- fim -->
+
+## Palavras-chave (App Store)
+
+<!-- campo: palavrasChave | limite: 100 -->
+maçonaria,breviário,maçom,loja,estudo,prancha,acervo,ritual,filosofia,simbolismo,aprendiz,mestre
+<!-- fim -->
 
 ## Categorias
 
-- App Store: Livros (secundaria: Educação)
+- App Store: Livros (secundária: Educação)
 - Google Play: Livros e referências
 
-## Pendencias antes de enviar
+## Privacidade e segurança de dados
 
-- [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsavel).
+- O desenvolvedor não coleta dados. Anotações, dossiês, cartões e progresso ficam no aparelho e na cópia de segurança do sistema.
+- Sincronização do caderno, quando o usuário escolhe:
+  - iCloud Drive (pasta do app na conta do usuário);
+  - Google Drive (pasta privada do app na conta do usuário).
+- A opção "Conta própria" (caderno cifrado no aparelho, guardado num servidor que não consegue lê-lo) só aparece depois que o servidor for publicado. Quando aparecer, o formulário de segurança de dados deve declarar o armazenamento de um arquivo cifrado, sem identificação pessoal.
+- Interpretação assistida: a chave de IA fica no aparelho, e o texto do dossiê vai ao provedor de IA somente quando o usuário pede a interpretação.
+- Classificação etária: livre (sem conteúdo gerado por outros usuários, sem compras, sem anúncios).
+
+## Capturas de tela
+
+Geradas por `Tools/gerar_capturas_lojas.sh` em `Publicacao/capturas/` (fora do Git):
+
+- iPhone 6,9";
+- iPad 13";
+- Apple Watch;
+- telefone Android;
+- Wear OS.
+
+Telas: Início, leitura diária, Coleções, Dossiê, Prancha, Trilhas por grau, Caderno de estudo e Acervo.
+
+## Pendências antes de enviar
+
+- [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
 - [ ] Arquivo iOS pelo Xcode (Product > Archive) com a conta de desenvolvedor.
-- [ ] Capturas de tela reais (iPhone 6,9", iPad 13", Apple Watch, telefone Android, Wear OS).
-- [ ] Classificacao etaria e formulario de seguranca de dados (Google Play) / privacidade (App Store): sem coleta pelo desenvolvedor; a chave de IA opcional fica no aparelho e o texto do dossie vai ao provedor de IA somente quando o usuario pede a interpretacao.
-- [ ] URL da politica de privacidade.
+- [ ] URL da política de privacidade.
+- [ ] Revisão final dos textos pelo responsável.

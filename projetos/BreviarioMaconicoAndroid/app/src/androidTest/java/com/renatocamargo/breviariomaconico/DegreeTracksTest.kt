@@ -33,4 +33,12 @@ class DegreeTracksTest {
                 DegreeTracks.progress(config, strings(case.getJSONArray("temasSalvos")), strings(case.getJSONArray("marcadas")).toSet()))
         }
     }
+
+    /** The suggested works are shown by title, so every one of them is in the catalog titles. */
+    @Test
+    fun suggestedWorksHaveCatalogTitles() {
+        val titles = com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository.get(context).titulosDoCatalogo()
+        val missing = DegreeTracks.loadConfig(context).degrees.flatMap { it.suggestedWorks }.filter { it !in titles }
+        assertEquals("Sem título: $missing (${titles.size} títulos)", emptyList<String>(), missing)
+    }
 }

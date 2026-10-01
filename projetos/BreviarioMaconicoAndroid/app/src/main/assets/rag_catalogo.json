@@ -73,7 +73,7 @@
             "ruidosas": 0
           },
           "tipo": "dicionario",
-          "titulo": "Dicionario de Símbolos Esotericos"
+          "titulo": "Dicionario de Símbolos Esotericos"
         },
         {
           "assuntos": [
@@ -111,7 +111,7 @@
             "ruidosas": 0
           },
           "tipo": "dicionario",
-          "titulo": "Dicionário Cultural da Bíblia"
+          "titulo": "Dicionário Cultural da Bíblia"
         },
         {
           "assuntos": [
@@ -130,7 +130,7 @@
             "ruidosas": 0
           },
           "tipo": "dicionario",
-          "titulo": "Dicionário Maçônico-1"
+          "titulo": "Dicionário Maçônico-1"
         },
         {
           "assuntos": [
@@ -149,7 +149,7 @@
             "ruidosas": 0
           },
           "tipo": "dicionario",
-          "titulo": "dicionário_maçônico"
+          "titulo": "dicionário_maçônico"
         },
         {
           "assuntos": [
@@ -168,7 +168,7 @@
             "ruidosas": 0
           },
           "tipo": "dicionario",
-          "titulo": "Voltaire Dicionário Filosófico - Ridendo Castigat Mores"
+          "titulo": "Voltaire Dicionário Filosófico - Ridendo Castigat Mores"
         }
       ],
       "sha256": "890bbf0e1be426f471777e606eda04269d7caf038f5402b07753cb64088e1ef7",
@@ -206,7 +206,7 @@
             "ruidosas": 3
           },
           "tipo": "judiciario",
-          "titulo": "CONSTITUIÇÃO DA CONFEDERAÇÃO MAÇONARIA PORTUGUEZA"
+          "titulo": "CONSTITUIÇÃO DA CONFEDERAÇÃO MAÇONARIA PORTUGUEZA"
         },
         {
           "assuntos": [
@@ -264,12 +264,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "10 MISTÉRIOS QUE INDICAM A EXISTÊNCIA DE ANTIGAS CIVILIZAÇÕES AVANÇADAS"
+          "titulo": "10 MISTÉRIOS QUE INDICAM A EXISTÊNCIA DE ANTIGAS CIVILIZAÇÕES AVANÇADAS"
         }
       ],
       "sha256": "e750af82e91412ca13b4936f8b960a01ab448130ef19ca58a89790f0468220f8",
       "tamanhoBytes": 151552,
-      "titulo": "10 MISTÉRIOS QUE INDICAM A EXISTÊNCIA DE ANTIGAS CIVILIZAÇÕES AVANÇADAS",
+      "titulo": "10 MISTÉRIOS QUE INDICAM A EXISTÊNCIA DE ANTIGAS CIVILIZAÇÕES AVANÇADAS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_10_misterios_que_indicam_a_existencia_de_antigas_civilizacoes_avancadas.sqlite"
     },
     {
@@ -303,12 +303,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "100 Instruções de Aprendiz"
+          "titulo": "100 Instruções de Aprendiz"
         }
       ],
       "sha256": "8d8f26c8e87bddab8ee540c0ad1480391cecad5b090de2577f2e225522664013",
       "tamanhoBytes": 4390912,
-      "titulo": "100 Instruções de Aprendiz",
+      "titulo": "100 Instruções de Aprendiz",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_100_instrucoes_de_aprendiz.sqlite"
     },
     {
@@ -342,12 +342,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "200 Pílulas Maçônicas"
+          "titulo": "200 Pílulas Maçônicas"
         }
       ],
       "sha256": "ebfd170d38ae86d03a80ec0382ff76077cefb39b7fd58321783b25e37a877e06",
       "tamanhoBytes": 2875392,
-      "titulo": "200 Pílulas Maçônicas",
+      "titulo": "200 Pílulas Maçônicas",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_200_pilulas_maconicas.sqlite"
     },
     {
@@ -381,12 +381,12 @@
             "ruidosas": 5
           },
           "tipo": "livro",
-          "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)"
+          "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)"
         }
       ],
       "sha256": "842aa199dd940c8bd8a5d25a797c6fbd07d48d7724c5c0d66d0180c245f58b99",
       "tamanhoBytes": 290816,
-      "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)",
+      "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_abobada_celeste_de_um_templo_maconico_do_reaa_v1.sqlite"
     },
     {
@@ -420,12 +420,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Ação Secreta da Maçonaria na Política Mundial - José Castellani"
+          "titulo": "A Ação Secreta da Maçonaria na Política Mundial - José Castellani"
         }
       ],
       "sha256": "d925881e3dd63006c6a963cc540a05e874496e69bfbf6139780216e431cc0660",
       "tamanhoBytes": 3375104,
-      "titulo": "A Ação Secreta da Maçonaria na Política Mundial - José Castellani",
+      "titulo": "A Ação Secreta da Maçonaria na Política Mundial - José Castellani",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_acao_secreta_da_maconaria_na_politica_mundial_jose_castellani.sqlite"
     },
     {
@@ -459,12 +459,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Arca da Aliança"
+          "titulo": "A Arca da Aliança"
         }
       ],
       "sha256": "4f3af305f6770d39ec8422b1235948b9284ebac05ab2749506076cf200be8cd1",
       "tamanhoBytes": 1236992,
-      "titulo": "A Arca da Aliança",
+      "titulo": "A Arca da Aliança",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_arca_da_alianca.sqlite"
     },
     {
@@ -498,12 +498,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Bíblia Maçônica Versão Portugues"
+          "titulo": "A Bíblia Maçônica Versão Portugues"
         }
       ],
       "sha256": "9a9d3a253fc62db0d38d71fffdf92b89878bb1aca012d164b60a69980273e00d",
       "tamanhoBytes": 503808,
-      "titulo": "A Bíblia Maçônica Versão Portugues",
+      "titulo": "A Bíblia Maçônica Versão Portugues",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_biblia_maconica_versao_portugues.sqlite"
     },
     {
@@ -615,12 +615,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Ciência Secreta II"
+          "titulo": "A Ciência Secreta II"
         }
       ],
       "sha256": "667ca669ed0b152cb128ed72bd56e000b0722410b10d9dc2f8fefc529b4b967f",
       "tamanhoBytes": 3051520,
-      "titulo": "A Ciência Secreta II",
+      "titulo": "A Ciência Secreta II",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_ciencia_secreta_ii.sqlite"
     },
     {
@@ -654,12 +654,12 @@
             "ruidosas": 3
           },
           "tipo": "livro",
-          "titulo": "A CONSPIRAÇÃO DE 1817"
+          "titulo": "A CONSPIRAÇÃO DE 1817"
         }
       ],
       "sha256": "b2ab4a26e28e1a227dc1f5b054dcdb85d3a8220dadb546ccfb0eb86ce0563b7d",
       "tamanhoBytes": 3182592,
-      "titulo": "A CONSPIRAÇÃO DE 1817",
+      "titulo": "A CONSPIRAÇÃO DE 1817",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_conspiracao_de_1817.sqlite"
     },
     {
@@ -693,12 +693,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A DEMANDA DO SANTO GRAAL - MANUSCRITO DO SÉCULO XIII"
+          "titulo": "A DEMANDA DO SANTO GRAAL - MANUSCRITO DO SÉCULO XIII"
         }
       ],
       "sha256": "d1d12643d10d4019c554c8fcd06d7e4ba5f9ac30c1b44141b51e4b28908dcd0e",
       "tamanhoBytes": 6434816,
-      "titulo": "A DEMANDA DO SANTO GRAAL - MANUSCRITO DO SÉCULO XIII",
+      "titulo": "A DEMANDA DO SANTO GRAAL - MANUSCRITO DO SÉCULO XIII",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_demanda_do_santo_graal_manuscrito_do_seculo_xiii.sqlite"
     },
     {
@@ -732,12 +732,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Divina Parusia - Olímpio Neves Gonçalves"
+          "titulo": "A Divina Parusia - Olímpio Neves Gonçalves"
         }
       ],
       "sha256": "4557d1fed2349558735254013ac71c49d6f1f6171f5880c2bd76338aa530f475",
       "tamanhoBytes": 593920,
-      "titulo": "A Divina Parusia - Olímpio Neves Gonçalves",
+      "titulo": "A Divina Parusia - Olímpio Neves Gonçalves",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_divina_parusia_olimpio_neves_goncalves.sqlite"
     },
     {
@@ -771,12 +771,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "A Doutrina Secreta - Síntese"
+          "titulo": "A Doutrina Secreta - Síntese"
         }
       ],
       "sha256": "7c8de12d5ad34a97248df638259cf1b2dbb7fdbcf225446e7b384c637b4122d2",
       "tamanhoBytes": 7884800,
-      "titulo": "A Doutrina Secreta - Síntese",
+      "titulo": "A Doutrina Secreta - Síntese",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_doutrina_secreta_sintese.sqlite"
     },
     {
@@ -888,12 +888,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Herança do Simbolismo Hermético na Maçonaria - Luã Wanzeller"
+          "titulo": "A Herança do Simbolismo Hermético na Maçonaria - Luã Wanzeller"
         }
       ],
       "sha256": "bf0b7474565b9d049e5a615107ec18728d4194c30157719f6630364142018f47",
       "tamanhoBytes": 204800,
-      "titulo": "A Herança do Simbolismo Hermético na Maçonaria - Luã Wanzeller",
+      "titulo": "A Herança do Simbolismo Hermético na Maçonaria - Luã Wanzeller",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_heranca_do_simbolismo_hermetico_na_maconaria_lua_wanzeller.sqlite"
     },
     {
@@ -966,12 +966,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A história da mitologia para quem tem pressa - Mark Daniels"
+          "titulo": "A história da mitologia para quem tem pressa - Mark Daniels"
         }
       ],
       "sha256": "b424fa2456937e9b8b3f582774dea3ff2ce4bdd5de0bd983fd873530bb5ef315",
       "tamanhoBytes": 1097728,
-      "titulo": "A história da mitologia para quem tem pressa - Mark Daniels",
+      "titulo": "A história da mitologia para quem tem pressa - Mark Daniels",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels.sqlite"
     },
     {
@@ -1005,12 +1005,12 @@
             "ruidosas": 3
           },
           "tipo": "livro",
-          "titulo": "A História dos Judeus - Simon Schama"
+          "titulo": "A História dos Judeus - Simon Schama"
         }
       ],
       "sha256": "842970fed8804c1f56734ea990275733db08551e399afe8fdd405d443b7c3665",
       "tamanhoBytes": 9158656,
-      "titulo": "A História dos Judeus - Simon Schama",
+      "titulo": "A História dos Judeus - Simon Schama",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_historia_dos_judeus_simon_schama.sqlite"
     },
     {
@@ -1044,12 +1044,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "A História dos Ritos Maçônicos Praticados no Brasil"
+          "titulo": "A História dos Ritos Maçônicos Praticados no Brasil"
         }
       ],
       "sha256": "058985abc6be492913c432a205941de1418b516e4f819f16839ab151ba76358e",
       "tamanhoBytes": 2682880,
-      "titulo": "A História dos Ritos Maçônicos Praticados no Brasil",
+      "titulo": "A História dos Ritos Maçônicos Praticados no Brasil",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_historia_dos_ritos_maconicos_praticados_no_brasil.sqlite"
     },
     {
@@ -1083,12 +1083,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A INFLUÊNCIA DA BÍBLIA NA MAÇONARIA - Márcio Gomes"
+          "titulo": "A INFLUÊNCIA DA BÍBLIA NA MAÇONARIA - Márcio Gomes"
         }
       ],
       "sha256": "384bcc37b36bf79fec4c6b3b79e31f504ed472fe00cc4f9721e55fc3fde7293d",
       "tamanhoBytes": 196608,
-      "titulo": "A INFLUÊNCIA DA BÍBLIA NA MAÇONARIA - Márcio Gomes",
+      "titulo": "A INFLUÊNCIA DA BÍBLIA NA MAÇONARIA - Márcio Gomes",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_influencia_da_biblia_na_maconaria_marcio_gomes.sqlite"
     },
     {
@@ -1122,12 +1122,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Iniciação de Jesus"
+          "titulo": "A Iniciação de Jesus"
         }
       ],
       "sha256": "fd1dc852a7afc7fba7e1735b27316c0a73f1d61937204b82978c8e28e9a28038",
       "tamanhoBytes": 499712,
-      "titulo": "A Iniciação de Jesus",
+      "titulo": "A Iniciação de Jesus",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_iniciacao_de_jesus.sqlite"
     },
     {
@@ -1278,12 +1278,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Maçonaria"
+          "titulo": "A Maçonaria"
         }
       ],
       "sha256": "a0092e377900d6cbe13a539a0d60fa4bef5a51d9ebc85909cf1f8103883e56ef",
       "tamanhoBytes": 884736,
-      "titulo": "A Maçonaria",
+      "titulo": "A Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria.sqlite"
     },
     {
@@ -1317,12 +1317,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "A Maçonaria Durante as Ditaduras"
+          "titulo": "A Maçonaria Durante as Ditaduras"
         }
       ],
       "sha256": "ad8524d1630fe3070cc56b8aa573000320d0d2843766e5eba854d4bc5c1c4651",
       "tamanhoBytes": 1593344,
-      "titulo": "A Maçonaria Durante as Ditaduras",
+      "titulo": "A Maçonaria Durante as Ditaduras",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria_durante_as_ditaduras.sqlite"
     },
     {
@@ -1356,12 +1356,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "A MAÇONARIA E OS JESUÍTAS"
+          "titulo": "A MAÇONARIA E OS JESUÍTAS"
         }
       ],
       "sha256": "2531ced90a5dacd1ef93a0f2df2127d19d5a2b39a7dac1afe60fb424a09a3c7b",
       "tamanhoBytes": 1978368,
-      "titulo": "A MAÇONARIA E OS JESUÍTAS",
+      "titulo": "A MAÇONARIA E OS JESUÍTAS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria_e_os_jesuitas.sqlite"
     },
     {
@@ -1395,12 +1395,12 @@
             "ruidosas": 16
           },
           "tipo": "livro",
-          "titulo": "A MAÇONARIA EM PORTUGAL"
+          "titulo": "A MAÇONARIA EM PORTUGAL"
         }
       ],
       "sha256": "0b6317667e9c1718cf632c4d15b12b27459fe34098c9a747f93253b24308742d",
       "tamanhoBytes": 1875968,
-      "titulo": "A MAÇONARIA EM PORTUGAL",
+      "titulo": "A MAÇONARIA EM PORTUGAL",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria_em_portugal.sqlite"
     },
     {
@@ -1434,12 +1434,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Maçonaria na História"
+          "titulo": "A Maçonaria na História"
         }
       ],
       "sha256": "b6c218c126fb57575835f3f10cb6df34e32eff3a9cfa1329db4cbc100aa2cbb7",
       "tamanhoBytes": 1703936,
-      "titulo": "A Maçonaria na História",
+      "titulo": "A Maçonaria na História",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria_na_historia.sqlite"
     },
     {
@@ -1473,12 +1473,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "A Maçonaria no Centenário 1822 - 1922"
+          "titulo": "A Maçonaria no Centenário 1822 - 1922"
         }
       ],
       "sha256": "6dc48608bf3e4d7573f7bff32f75e00a4acc1c3e0a67595b2ba0522a8b649aed",
       "tamanhoBytes": 2957312,
-      "titulo": "A Maçonaria no Centenário 1822 - 1922",
+      "titulo": "A Maçonaria no Centenário 1822 - 1922",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria_no_centenario_1822_1922.sqlite"
     },
     {
@@ -1512,12 +1512,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Música Maçônica de Mozart - SCA"
+          "titulo": "A Música Maçônica de Mozart - SCA"
         }
       ],
       "sha256": "d5bd7eccf2dcd8c88ba9eec3202f5c79535d1d3eda760dfe2d16edc440d94aad",
       "tamanhoBytes": 454656,
-      "titulo": "A Música Maçônica de Mozart - SCA",
+      "titulo": "A Música Maçônica de Mozart - SCA",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_musica_maconica_de_mozart_sca.sqlite"
     },
     {
@@ -1590,12 +1590,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Ordem dos Pobres Cavaleiros de Cristo e do Templo de Salomão - Amauri Antonio da Costa"
+          "titulo": "A Ordem dos Pobres Cavaleiros de Cristo e do Templo de Salomão - Amauri Antonio da Costa"
         }
       ],
       "sha256": "4869b5df5bd4703fa7f4e2cdbf0ae330e0ffe127df62ee65c9b656f6c1359377",
       "tamanhoBytes": 233472,
-      "titulo": "A Ordem dos Pobres Cavaleiros de Cristo e do Templo de Salomão - Amauri Antonio da Costa",
+      "titulo": "A Ordem dos Pobres Cavaleiros de Cristo e do Templo de Salomão - Amauri Antonio da Costa",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_ordem_dos_pobres_cavaleiros_de_cristo_e_do_templo_de_salomao_amauri_antonio_da_costa.sqlite"
     },
     {
@@ -1629,12 +1629,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Raça Divina - O Livro da Saga Humana - Vol I - Mikael Lenyer"
+          "titulo": "A Raça Divina - O Livro da Saga Humana - Vol I - Mikael Lenyer"
         }
       ],
       "sha256": "01dbca9dc7cc47125c7c950256981d0b913691052d9dc91e717512760b4aeb06",
       "tamanhoBytes": 5029888,
-      "titulo": "A Raça Divina - O Livro da Saga Humana - Vol I - Mikael Lenyer",
+      "titulo": "A Raça Divina - O Livro da Saga Humana - Vol I - Mikael Lenyer",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_raca_divina_o_livro_da_saga_humana_vol_i_mikael_lenyer.sqlite"
     },
     {
@@ -1668,12 +1668,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Retorica em Aristoteles - Marcos Aurélio de Lima"
+          "titulo": "A Retorica em Aristoteles - Marcos Aurélio de Lima"
         }
       ],
       "sha256": "a4d0ffe0d44e51c7773f04d632cdd90328d3d08d2bb05a3c06a756fa389a830b",
       "tamanhoBytes": 2396160,
-      "titulo": "A Retorica em Aristoteles - Marcos Aurélio de Lima",
+      "titulo": "A Retorica em Aristoteles - Marcos Aurélio de Lima",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_retorica_em_aristoteles_marcos_aurelio_de_lima.sqlite"
     },
     {
@@ -1707,12 +1707,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Revelação dos Templários - Lynn Picknett"
+          "titulo": "A Revelação dos Templários - Lynn Picknett"
         }
       ],
       "sha256": "ae7c07caf2516d81fb7c70732f3a5f75b7adea8618832b6f29e0c2256846732d",
       "tamanhoBytes": 5279744,
-      "titulo": "A Revelação dos Templários - Lynn Picknett",
+      "titulo": "A Revelação dos Templários - Lynn Picknett",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_revelacao_dos_templarios_lynn_picknett.sqlite"
     },
     {
@@ -1863,12 +1863,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan"
+          "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan"
         }
       ],
       "sha256": "29153a8f4f58824e6854c72562d123cfe90692fec725c0c92d46278f492c35eb",
       "tamanhoBytes": 1294336,
-      "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan",
+      "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_sociedade_dos_templarios_lourivaldo_p_bacan.sqlite"
     },
     {
@@ -1942,12 +1942,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan"
+          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan"
         }
       ],
       "sha256": "c4affac94e7a1d3b849633fe4764b03aed34bce46225f07908947d4cd4a49f09",
       "tamanhoBytes": 1310720,
-      "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
+      "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan.sqlite"
     },
     {
@@ -1981,12 +1981,12 @@
             "ruidosas": 39
           },
           "tipo": "livro",
-          "titulo": "A Tradição Hermética - Julius Evola"
+          "titulo": "A Tradição Hermética - Julius Evola"
         }
       ],
       "sha256": "cba6b8ce064d3143eec884915b9dc3a247668cc8773c2e1e271ca7da2e6c2d45",
       "tamanhoBytes": 2994176,
-      "titulo": "A Tradição Hermética - Julius Evola",
+      "titulo": "A Tradição Hermética - Julius Evola",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_tradicao_hermetica_julius_evola.sqlite"
     },
     {
@@ -2137,12 +2137,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A Vida Mística de Jesus"
+          "titulo": "A Vida Mística de Jesus"
         }
       ],
       "sha256": "6923886342bd65f8a8662bc1c02127701a1c51ecd3708b0d09d0080419013fc0",
       "tamanhoBytes": 2203648,
-      "titulo": "A Vida Mística de Jesus",
+      "titulo": "A Vida Mística de Jesus",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_vida_mistica_de_jesus.sqlite"
     },
     {
@@ -2529,12 +2529,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A_Magia_da_Maçonaria-Arthur_Powell"
+          "titulo": "A_Magia_da_Maçonaria-Arthur_Powell"
         }
       ],
       "sha256": "6d359c17722f3a52369b2a55f653e755be41625597efccebdf6b21e3a1ce872d",
       "tamanhoBytes": 1654784,
-      "titulo": "A_Magia_da_Maçonaria-Arthur_Powell",
+      "titulo": "A_Magia_da_Maçonaria-Arthur_Powell",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_magia_da_maconaria_arthur_powell.sqlite"
     },
     {
@@ -2607,12 +2607,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Abóbada Celeste"
+          "titulo": "Abóbada Celeste"
         }
       ],
       "sha256": "d147ab6fc91b5a5ae6dc7e760867c1066cc32b8bab514ba108f49f9228b77375",
       "tamanhoBytes": 163840,
-      "titulo": "Abóbada Celeste",
+      "titulo": "Abóbada Celeste",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_abobada_celeste.sqlite"
     },
     {
@@ -2647,12 +2647,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Abóbada_Celeste_no_Templo_Maçonico"
+          "titulo": "Abóbada_Celeste_no_Templo_Maçonico"
         }
       ],
       "sha256": "4818088434b45cd6c9e400f3ac9bb6620d866946befa1055390c850b6f7188b3",
       "tamanhoBytes": 167936,
-      "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
+      "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_abobada_celeste_no_templo_maconico.sqlite"
     },
     {
@@ -2803,12 +2803,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Aprendizado Maçônico - Rizzardo da Camino"
+          "titulo": "Aprendizado Maçônico - Rizzardo da Camino"
         }
       ],
       "sha256": "eadd9ddaf50da4abfb44c4c8c620e0437721261689a6eecec8b68f1f5b967696",
       "tamanhoBytes": 2379776,
-      "titulo": "Aprendizado Maçônico - Rizzardo da Camino",
+      "titulo": "Aprendizado Maçônico - Rizzardo da Camino",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_aprendizado_maconico_rizzardo_da_camino.sqlite"
     },
     {
@@ -2881,12 +2881,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Aristóteles e São Tomás de Aquino (Diálogos) - Joaquim Dias Alves"
+          "titulo": "Aristóteles e São Tomás de Aquino (Diálogos) - Joaquim Dias Alves"
         }
       ],
       "sha256": "c140dd26253f9ffef7e829a640d238609ade3f973fe9b0aa24fe2fcc78c08d70",
       "tamanhoBytes": 348160,
-      "titulo": "Aristóteles e São Tomás de Aquino (Diálogos) - Joaquim Dias Alves",
+      "titulo": "Aristóteles e São Tomás de Aquino (Diálogos) - Joaquim Dias Alves",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves.sqlite"
     },
     {
@@ -2920,12 +2920,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Arquétipos do Zodíaco – Kathleen Burt"
+          "titulo": "Arquétipos do Zodíaco – Kathleen Burt"
         }
       ],
       "sha256": "d55589210712df349699528bb0e34677bfd23880c24c2973d62b53212c2424dc",
       "tamanhoBytes": 7712768,
-      "titulo": "Arquétipos do Zodíaco – Kathleen Burt",
+      "titulo": "Arquétipos do Zodíaco – Kathleen Burt",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_arquetipos_do_zodiaco_kathleen_burt.sqlite"
     },
     {
@@ -2959,12 +2959,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES"
+          "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES"
         }
       ],
       "sha256": "488c9a6cf1ca31d1f73471988e0bd25674797d675d984605da6d6cc66f23553f",
       "tamanhoBytes": 2252800,
-      "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES",
+      "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines.sqlite"
     },
     {
@@ -3037,12 +3037,12 @@
             "ruidosas": 18
           },
           "tipo": "livro",
-          "titulo": "AS CHAVES DE SALOMÃO"
+          "titulo": "AS CHAVES DE SALOMÃO"
         }
       ],
       "sha256": "59240c3a0e98d5543fca32754fb8a4c9f04d3608598c583138571fd480a7828a",
       "tamanhoBytes": 4231168,
-      "titulo": "AS CHAVES DE SALOMÃO",
+      "titulo": "AS CHAVES DE SALOMÃO",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_chaves_de_salomao.sqlite"
     },
     {
@@ -3194,12 +3194,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "As Escolas de Mistérios - Clara Codd"
+          "titulo": "As Escolas de Mistérios - Clara Codd"
         }
       ],
       "sha256": "7a0ee17c1646a87f5736b07145df30a5be66a936619fa9ee12d1f5f65f3a3980",
       "tamanhoBytes": 2527232,
-      "titulo": "As Escolas de Mistérios - Clara Codd",
+      "titulo": "As Escolas de Mistérios - Clara Codd",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_escolas_de_misterios_clara_codd.sqlite"
     },
     {
@@ -3233,12 +3233,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "AS LÁGRIMAS DO PAPA"
+          "titulo": "AS LÁGRIMAS DO PAPA"
         }
       ],
       "sha256": "c0b4e3e6fa6b0d5dabf1950f88e0835f3037ab5dea1a1e3f6258935fae55b154",
       "tamanhoBytes": 4632576,
-      "titulo": "AS LÁGRIMAS DO PAPA",
+      "titulo": "AS LÁGRIMAS DO PAPA",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_lagrimas_do_papa.sqlite"
     },
     {
@@ -3311,12 +3311,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "As Origens do REAA - Rito Escocês Antigo e Aceito - José Castellani"
+          "titulo": "As Origens do REAA - Rito Escocês Antigo e Aceito - José Castellani"
         }
       ],
       "sha256": "98c592855967c4836db5983763d6b780d44de206dc5b2b51bbf4152c454f7223",
       "tamanhoBytes": 172032,
-      "titulo": "As Origens do REAA - Rito Escocês Antigo e Aceito - José Castellani",
+      "titulo": "As Origens do REAA - Rito Escocês Antigo e Aceito - José Castellani",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_origens_do_reaa_rito_escoces_antigo_e_aceito_jose_castellani.sqlite"
     },
     {
@@ -3389,12 +3389,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Astrologia Cabalística - Rav Philip S Berg"
+          "titulo": "Astrologia Cabalística - Rav Philip S Berg"
         }
       ],
       "sha256": "c8de55ecd1d01a9cbc660e54df420197675b519bfc5213a1f38dbb4aa7a2a73a",
       "tamanhoBytes": 1409024,
-      "titulo": "Astrologia Cabalística - Rav Philip S Berg",
+      "titulo": "Astrologia Cabalística - Rav Philip S Berg",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_astrologia_cabalistica_rav_philip_s_berg.sqlite"
     },
     {
@@ -3467,12 +3467,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "Atos de Salomão"
+          "titulo": "Atos de Salomão"
         }
       ],
       "sha256": "81a707a4b0e8631dc6ee59a4e8d3baf0d15ebe864bf14efeee16dbfb013ce721",
       "tamanhoBytes": 643072,
-      "titulo": "Atos de Salomão",
+      "titulo": "Atos de Salomão",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_atos_de_salomao.sqlite"
     },
     {
@@ -3506,12 +3506,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Biblia de Jerusalém - Editora Paulus"
+          "titulo": "Biblia de Jerusalém - Editora Paulus"
         }
       ],
       "sha256": "640c4b8326794d2fbabe0b5df8fd8d45ab55721114d1df1fc57ac1fe5d628227",
       "tamanhoBytes": 33751040,
-      "titulo": "Biblia de Jerusalém - Editora Paulus",
+      "titulo": "Biblia de Jerusalém - Editora Paulus",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_biblia_de_jerusalem_editora_paulus.sqlite"
     },
     {
@@ -3662,12 +3662,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Breviário Maçônico - Rizzardo da Camino"
+          "titulo": "Breviário Maçônico - Rizzardo da Camino"
         }
       ],
       "sha256": "19979885d395bdd1abdf4b484992c2961d4a283d5886b78168be7dc89457ffc9",
       "tamanhoBytes": 1556480,
-      "titulo": "Breviário Maçônico - Rizzardo da Camino",
+      "titulo": "Breviário Maçônico - Rizzardo da Camino",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_breviario_maconico_rizzardo_da_camino.sqlite"
     },
     {
@@ -3740,12 +3740,12 @@
             "ruidosas": 4
           },
           "tipo": "livro",
-          "titulo": "Cabala - A Tradição Esotérica do Ocidente - F V Lorenz"
+          "titulo": "Cabala - A Tradição Esotérica do Ocidente - F V Lorenz"
         }
       ],
       "sha256": "cfb31c12ba49d5eb79df2381cb574e27c1e6df580abc49311c000e680a8e5459",
       "tamanhoBytes": 856064,
-      "titulo": "Cabala - A Tradição Esotérica do Ocidente - F V Lorenz",
+      "titulo": "Cabala - A Tradição Esotérica do Ocidente - F V Lorenz",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz.sqlite"
     },
     {
@@ -3779,12 +3779,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Cabala e a Maçonaria - Curso MM diplomados"
+          "titulo": "Cabala e a Maçonaria - Curso MM diplomados"
         }
       ],
       "sha256": "1855a6be8790330265853da8950615ab7f48dd951b1c22b4f1998be46fc21f76",
       "tamanhoBytes": 335872,
-      "titulo": "Cabala e a Maçonaria - Curso MM diplomados",
+      "titulo": "Cabala e a Maçonaria - Curso MM diplomados",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cabala_e_a_maconaria_curso_mm_diplomados.sqlite"
     },
     {
@@ -3896,12 +3896,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Catedrais Góticas"
+          "titulo": "Catedrais Góticas"
         }
       ],
       "sha256": "b6871dfd6d1859e41c61ca8989116d3f00197fb628fd8bc7967f915f635b25ca",
       "tamanhoBytes": 258048,
-      "titulo": "Catedrais Góticas",
+      "titulo": "Catedrais Góticas",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_catedrais_goticas.sqlite"
     },
     {
@@ -4091,12 +4091,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Conspirações sobre Templarios e Maçons-Michel Haag"
+          "titulo": "Conspirações sobre Templarios e Maçons-Michel Haag"
         }
       ],
       "sha256": "c3a8419dedaeebdc001ea587451fb35c899f93f9ca993a7e0c36c4d77416b17e",
       "tamanhoBytes": 565248,
-      "titulo": "Conspirações sobre Templarios e Maçons-Michel Haag",
+      "titulo": "Conspirações sobre Templarios e Maçons-Michel Haag",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_conspiracoes_sobre_templarios_e_macons_michel_haag.sqlite"
     },
     {
@@ -4130,12 +4130,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Cores na Maçonaria"
+          "titulo": "Cores na Maçonaria"
         }
       ],
       "sha256": "c638b0e8f3f59e1a131d735d461ac2967d97d40b250613c9bfafcff0bc54cf7a",
       "tamanhoBytes": 270336,
-      "titulo": "Cores na Maçonaria",
+      "titulo": "Cores na Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cores_na_maconaria.sqlite"
     },
     {
@@ -4169,12 +4169,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Corpus Hermeticum - versão 1"
+          "titulo": "Corpus Hermeticum - versão 1"
         }
       ],
       "sha256": "d3e6c931a7faf0e628a74b55c5b623e28066a1bfe45b7a0a717d33c67219e03a",
       "tamanhoBytes": 1843200,
-      "titulo": "Corpus Hermeticum - versão 1",
+      "titulo": "Corpus Hermeticum - versão 1",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_corpus_hermeticum_versao_1.sqlite"
     },
     {
@@ -4247,12 +4247,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Cristianismo e Mitraísmo"
+          "titulo": "Cristianismo e Mitraísmo"
         }
       ],
       "sha256": "9067eda1cd50759500cd0cf54c209e775d8d66a74008d8b5b38761fe1690b7ac",
       "tamanhoBytes": 1769472,
-      "titulo": "Cristianismo e Mitraísmo",
+      "titulo": "Cristianismo e Mitraísmo",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cristianismo_e_mitraismo.sqlite"
     },
     {
@@ -4364,12 +4364,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "De Profecia e Inquisição-Padre Antônio Vieira"
+          "titulo": "De Profecia e Inquisição-Padre Antônio Vieira"
         }
       ],
       "sha256": "780286517169631bb30c1913261a5ff2590d958323ea73f7c6909ed15c8c0e59",
       "tamanhoBytes": 4395008,
-      "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
+      "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_de_profecia_e_inquisicao_padre_antonio_vieira.sqlite"
     },
     {
@@ -4404,12 +4404,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira"
+          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira"
         }
       ],
       "sha256": "e59d4ffe49e987e62448fe97287bf778b15088d49f10b4d241332a5e2ddd221f",
       "tamanhoBytes": 4399104,
-      "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
+      "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_de_profecia_e_inquisicao_padre_antonio_vieira_2.sqlite"
     },
     {
@@ -4443,12 +4443,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "DECISÕES SABIAS PARA VIVER OS SONHOS DE DEUS"
+          "titulo": "DECISÕES SABIAS PARA VIVER OS SONHOS DE DEUS"
         }
       ],
       "sha256": "a3ad0dff5fe3553769fc14d553c953dad513f07fd6bad609dc88a07062fbbd00",
       "tamanhoBytes": 475136,
-      "titulo": "DECISÕES SABIAS PARA VIVER OS SONHOS DE DEUS",
+      "titulo": "DECISÕES SABIAS PARA VIVER OS SONHOS DE DEUS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_decisoes_sabias_para_viver_os_sonhos_de_deus.sqlite"
     },
     {
@@ -4482,12 +4482,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "DESAPARIÇÕES MISTERIOSAS - O COSMO OBSERVA-NOS"
+          "titulo": "DESAPARIÇÕES MISTERIOSAS - O COSMO OBSERVA-NOS"
         }
       ],
       "sha256": "dd50374b248c311ae8717fffc37e7a065440767a704756dadc53e26ea0e1d3f6",
       "tamanhoBytes": 3567616,
-      "titulo": "DESAPARIÇÕES MISTERIOSAS - O COSMO OBSERVA-NOS",
+      "titulo": "DESAPARIÇÕES MISTERIOSAS - O COSMO OBSERVA-NOS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_desaparicoes_misteriosas_o_cosmo_observa_nos.sqlite"
     },
     {
@@ -4521,12 +4521,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Desmistificando a Maçonaria"
+          "titulo": "Desmistificando a Maçonaria"
         }
       ],
       "sha256": "c712997dd4aab9bf99568b9c0e1eec337ef9e96cc9bfd08c87b855cb5a5d7df1",
       "tamanhoBytes": 1695744,
-      "titulo": "Desmistificando a Maçonaria",
+      "titulo": "Desmistificando a Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_desmistificando_a_maconaria.sqlite"
     },
     {
@@ -4560,12 +4560,12 @@
             "ruidosas": 4
           },
           "tipo": "livro",
-          "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry"
+          "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry"
         }
       ],
       "sha256": "6815655432ee28e939a4c5c7d27e0b3af9d6175a24cb79a8ace11ad1610e5e8c",
       "tamanhoBytes": 573440,
-      "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry",
+      "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_diccionario_breve_de_la_masoneria_biblioteca_freemasonry.sqlite"
     },
     {
@@ -4599,12 +4599,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "DO  TEMPLO  AOS  JESUÍTAS  MAÇONS  E  PIRATAS"
+          "titulo": "DO  TEMPLO  AOS  JESUÍTAS  MAÇONS  E  PIRATAS"
         }
       ],
       "sha256": "46c02cbd85be699b9ad391b872e21e24e97ea2c197eae69ea6b9949f5ed8cc7c",
       "tamanhoBytes": 430080,
-      "titulo": "DO  TEMPLO  AOS  JESUÍTAS  MAÇONS  E  PIRATAS",
+      "titulo": "DO  TEMPLO  AOS  JESUÍTAS  MAÇONS  E  PIRATAS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_do_templo_aos_jesuitas_macons_e_piratas.sqlite"
     },
     {
@@ -4794,12 +4794,12 @@
             "ruidosas": 3
           },
           "tipo": "livro",
-          "titulo": "Enciclopédia de Fatos da Bíblia"
+          "titulo": "Enciclopédia de Fatos da Bíblia"
         }
       ],
       "sha256": "b0cc73639b2d92cdaa73bd42a09d40a7f2208a3326f41ec7cde926deae88a6c2",
       "tamanhoBytes": 14086144,
-      "titulo": "Enciclopédia de Fatos da Bíblia",
+      "titulo": "Enciclopédia de Fatos da Bíblia",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_enciclopedia_de_fatos_da_biblia.sqlite"
     },
     {
@@ -4872,12 +4872,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Escolas do Pensamento Maçônico - Bondarik"
+          "titulo": "Escolas do Pensamento Maçônico - Bondarik"
         }
       ],
       "sha256": "0ecd3a54237f1836515374552691a24348c4640d43fa8230a9dff87b3d4d7080",
       "tamanhoBytes": 376832,
-      "titulo": "Escolas do Pensamento Maçônico - Bondarik",
+      "titulo": "Escolas do Pensamento Maçônico - Bondarik",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_escolas_do_pensamento_maconico_bondarik.sqlite"
     },
     {
@@ -4950,12 +4950,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Experiencias Psiquicas além da cortina de ferro - Sheila Ostrander"
+          "titulo": "Experiencias Psiquicas além da cortina de ferro - Sheila Ostrander"
         }
       ],
       "sha256": "a30b783cc476568512f24a3c866fb8859846670a05544406dd61e86b09314e2a",
       "tamanhoBytes": 5738496,
-      "titulo": "Experiencias Psiquicas além da cortina de ferro - Sheila Ostrander",
+      "titulo": "Experiencias Psiquicas além da cortina de ferro - Sheila Ostrander",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_experiencias_psiquicas_alem_da_cortina_de_ferro_sheila_ostrander.sqlite"
     },
     {
@@ -5028,12 +5028,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Fernando Pessoa e a Maçonaria - Roberto Aguilar Silva"
+          "titulo": "Fernando Pessoa e a Maçonaria - Roberto Aguilar Silva"
         }
       ],
       "sha256": "d75f3c9fb67786ea57e85d74ed6659565be5bb4ec5ab1bc22c30ebac49dc099c",
       "tamanhoBytes": 290816,
-      "titulo": "Fernando Pessoa e a Maçonaria - Roberto Aguilar Silva",
+      "titulo": "Fernando Pessoa e a Maçonaria - Roberto Aguilar Silva",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_fernando_pessoa_e_a_maconaria_roberto_aguilar_silva.sqlite"
     },
     {
@@ -5067,12 +5067,12 @@
             "ruidosas": 14
           },
           "tipo": "livro",
-          "titulo": "Fibonacci - série de fibonacci e o número de ouro"
+          "titulo": "Fibonacci - série de fibonacci e o número de ouro"
         }
       ],
       "sha256": "c69305abb8e27910e460add5df935cb94a078ad1dd793c3946954fc7cac9b5dc",
       "tamanhoBytes": 651264,
-      "titulo": "Fibonacci - série de fibonacci e o número de ouro",
+      "titulo": "Fibonacci - série de fibonacci e o número de ouro",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_fibonacci_serie_de_fibonacci_e_o_numero_de_ouro.sqlite"
     },
     {
@@ -5106,12 +5106,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "FILOSOFIA-QUÂNTICA-Marcos-Aurélio-de-Oliveira-Ramos"
+          "titulo": "FILOSOFIA-QUÂNTICA-Marcos-Aurélio-de-Oliveira-Ramos"
         }
       ],
       "sha256": "08d3c95a44f8db3bda326511e52104c8317689f5ff4ba03d94069b6f00b56dc4",
       "tamanhoBytes": 1732608,
-      "titulo": "FILOSOFIA-QUÂNTICA-Marcos-Aurélio-de-Oliveira-Ramos",
+      "titulo": "FILOSOFIA-QUÂNTICA-Marcos-Aurélio-de-Oliveira-Ramos",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_filosofia_quantica_marcos_aurelio_de_oliveira_ramos.sqlite"
     },
     {
@@ -5145,12 +5145,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria"
+          "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria"
         }
       ],
       "sha256": "84b123b940a993a60f18af22dd0fb4c48e9f851a80ab875a48626af0551fbefc",
       "tamanhoBytes": 380928,
-      "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria",
+      "titulo": "G1-141- As Cruzadas os Templários e a Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_g1_141_as_cruzadas_os_templarios_e_a_maconaria.sqlite"
     },
     {
@@ -5418,12 +5418,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Grau de aprendiz e seus mistérios-Jorge Adoum"
+          "titulo": "Grau de aprendiz e seus mistérios-Jorge Adoum"
         }
       ],
       "sha256": "d91841dd7f97378eaa37473030528c388852854a83dc1819fe81f40f6390691b",
       "tamanhoBytes": 1622016,
-      "titulo": "Grau de aprendiz e seus mistérios-Jorge Adoum",
+      "titulo": "Grau de aprendiz e seus mistérios-Jorge Adoum",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_grau_de_aprendiz_e_seus_misterios_jorge_adoum.sqlite"
     },
     {
@@ -5496,12 +5496,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "Guia_Aprendiz_Maçom_-_Ir_Bruno_Carraveta"
+          "titulo": "Guia_Aprendiz_Maçom_-_Ir_Bruno_Carraveta"
         }
       ],
       "sha256": "033c18f1ed4f774fffcc40ac66646ea78acadd08ce4f924171daea891b729f4f",
       "tamanhoBytes": 1646592,
-      "titulo": "Guia_Aprendiz_Maçom_-_Ir_Bruno_Carraveta",
+      "titulo": "Guia_Aprendiz_Maçom_-_Ir_Bruno_Carraveta",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_guia_aprendiz_macom_ir_bruno_carraveta.sqlite"
     },
     {
@@ -5613,12 +5613,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Hermetismo e Maçonaria-Doutrina História Atualidade"
+          "titulo": "Hermetismo e Maçonaria-Doutrina História Atualidade"
         }
       ],
       "sha256": "dee79fadfcb41ad6e669e8664ad029ac07aab5263463b5e7a761b142f69b1bb1",
       "tamanhoBytes": 1269760,
-      "titulo": "Hermetismo e Maçonaria-Doutrina História Atualidade",
+      "titulo": "Hermetismo e Maçonaria-Doutrina História Atualidade",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_hermetismo_e_maconaria_doutrina_historia_atualidade.sqlite"
     },
     {
@@ -5652,12 +5652,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "HIERARQUIA DOS CONSPIRADORES - O COMITÊ DOS"
+          "titulo": "HIERARQUIA DOS CONSPIRADORES - O COMITÊ DOS"
         }
       ],
       "sha256": "0424279535a6d835f1cafe6193d9b1bc7ec7cba0fe6ae82d6adf3727bec82e43",
       "tamanhoBytes": 450560,
-      "titulo": "HIERARQUIA DOS CONSPIRADORES - O COMITÊ DOS",
+      "titulo": "HIERARQUIA DOS CONSPIRADORES - O COMITÊ DOS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_hierarquia_dos_conspiradores_o_comite_dos.sqlite"
     },
     {
@@ -5769,12 +5769,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "HISTÓRIA DA MAÇONARIA Aulas 1 a 12"
+          "titulo": "HISTÓRIA DA MAÇONARIA Aulas 1 a 12"
         }
       ],
       "sha256": "eb397ad808af8a2b84952ba4c1a9eb22c84976f7ff66ae07bf409c934af0734c",
       "tamanhoBytes": 2744320,
-      "titulo": "HISTÓRIA DA MAÇONARIA Aulas 1 a 12",
+      "titulo": "HISTÓRIA DA MAÇONARIA Aulas 1 a 12",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historia_da_maconaria_aulas_1_a_12.sqlite"
     },
     {
@@ -5808,12 +5808,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "História da Magia - Eliphas Levi"
+          "titulo": "História da Magia - Eliphas Levi"
         }
       ],
       "sha256": "1076d57292e2426024d40a04288821730029ce49dc847699725a06c504967f02",
       "tamanhoBytes": 5427200,
-      "titulo": "História da Magia - Eliphas Levi",
+      "titulo": "História da Magia - Eliphas Levi",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historia_da_magia_eliphas_levi.sqlite"
     },
     {
@@ -5847,12 +5847,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "História dos Hebreus - Flávio Josefo"
+          "titulo": "História dos Hebreus - Flávio Josefo"
         }
       ],
       "sha256": "5f4133bcd9e5e4d176f6e02889a551262bb35639c7d516ac20e4f7505825cc71",
       "tamanhoBytes": 23838720,
-      "titulo": "História dos Hebreus - Flávio Josefo",
+      "titulo": "História dos Hebreus - Flávio Josefo",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historia_dos_hebreus_flavio_josefo.sqlite"
     },
     {
@@ -5886,12 +5886,12 @@
             "ruidosas": 8
           },
           "tipo": "livro",
-          "titulo": "História Nat Geo - Ramsés II"
+          "titulo": "História Nat Geo - Ramsés II"
         }
       ],
       "sha256": "2be4fab8f041039f3fdaa73fcc31d6017914ebff8bd09f19a36895f0cbd3808b",
       "tamanhoBytes": 393216,
-      "titulo": "História Nat Geo - Ramsés II",
+      "titulo": "História Nat Geo - Ramsés II",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historia_nat_geo_ramses_ii.sqlite"
     },
     {
@@ -5925,12 +5925,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS"
+          "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS"
         }
       ],
       "sha256": "a2860d4c472fed8e8710511a24bec371e01cf4eea864057ade2e034834e377d9",
       "tamanhoBytes": 1417216,
-      "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS",
+      "titulo": "HISTÓRIAS E MISTÉIOS DOS TEMPLARIOS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historias_e_misteios_dos_templarios.sqlite"
     },
     {
@@ -5964,12 +5964,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Huzé"
+          "titulo": "Huzé"
         }
       ],
       "sha256": "ef5fc7cddbbb2a096d0dd9e70796551f0f8ca5212d2940e68d699875c9db25fd",
       "tamanhoBytes": 131072,
-      "titulo": "Huzé",
+      "titulo": "Huzé",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_huze.sqlite"
     },
     {
@@ -6003,12 +6003,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Influências do Antigo Egito na Maçonaria - 2021"
+          "titulo": "Influências do Antigo Egito na Maçonaria - 2021"
         }
       ],
       "sha256": "fb53c4039c71a5c7094f47b7235b3806f4c4a0a1b74a13f46184e643448bc5b3",
       "tamanhoBytes": 212992,
-      "titulo": "Influências do Antigo Egito na Maçonaria - 2021",
+      "titulo": "Influências do Antigo Egito na Maçonaria - 2021",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_influencias_do_antigo_egito_na_maconaria_2021.sqlite"
     },
     {
@@ -6120,12 +6120,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "INTRODUÇÃO À CIÊNCIA SAGRADA -Módulo III"
+          "titulo": "INTRODUÇÃO À CIÊNCIA SAGRADA -Módulo III"
         }
       ],
       "sha256": "1c0f36d2e94f0f1fb3e25fb81da5ab9c96c683c6f89ef42756cdaaa571837388",
       "tamanhoBytes": 2023424,
-      "titulo": "INTRODUÇÃO À CIÊNCIA SAGRADA -Módulo III",
+      "titulo": "INTRODUÇÃO À CIÊNCIA SAGRADA -Módulo III",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_introducao_a_ciencia_sagrada_modulo_iii.sqlite"
     },
     {
@@ -6277,12 +6277,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Liberdade de Pensar  Estudos à Luz do Rito Moderno"
+          "titulo": "Liberdade de Pensar  Estudos à Luz do Rito Moderno"
         }
       ],
       "sha256": "038957b28767d6052b870ea5a927af8d5da89ef55746d8a9627f81102f0bd370",
       "tamanhoBytes": 1892352,
-      "titulo": "Liberdade de Pensar  Estudos à Luz do Rito Moderno",
+      "titulo": "Liberdade de Pensar  Estudos à Luz do Rito Moderno",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_liberdade_de_pensar_estudos_a_luz_do_rito_moderno.sqlite"
     },
     {
@@ -6316,12 +6316,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Liberdade, Igualdade e Fraternidade  Estudos à Luz do Rito Moderno"
+          "titulo": "Liberdade, Igualdade e Fraternidade  Estudos à Luz do Rito Moderno"
         }
       ],
       "sha256": "5af8f04596b61c814c02c75336644cea81837714081d36e391df4db376dbc532",
       "tamanhoBytes": 1183744,
-      "titulo": "Liberdade, Igualdade e Fraternidade  Estudos à Luz do Rito Moderno",
+      "titulo": "Liberdade, Igualdade e Fraternidade  Estudos à Luz do Rito Moderno",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno.sqlite"
     },
     {
@@ -6355,12 +6355,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Livro de Ouro dos Mantras - Otávio Leal"
+          "titulo": "Livro de Ouro dos Mantras - Otávio Leal"
         }
       ],
       "sha256": "99bf636ce61c5bff5e2c5f6fbda8e96b4d6369b0f7391406511a0e081f35873a",
       "tamanhoBytes": 1331200,
-      "titulo": "Livro de Ouro dos Mantras - Otávio Leal",
+      "titulo": "Livro de Ouro dos Mantras - Otávio Leal",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_livro_de_ouro_dos_mantras_otavio_leal.sqlite"
     },
     {
@@ -6589,12 +6589,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria - 100 instruções de Aprendiz"
+          "titulo": "Maçonaria - 100 instruções de Aprendiz"
         }
       ],
       "sha256": "552efa7d8e3f9ec47dcd64dca3a6516518b4a8c15b7bc45491f7be6c84a76cdd",
       "tamanhoBytes": 4456448,
-      "titulo": "Maçonaria - 100 instruções de Aprendiz",
+      "titulo": "Maçonaria - 100 instruções de Aprendiz",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_100_instrucoes_de_aprendiz.sqlite"
     },
     {
@@ -6629,12 +6629,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL"
+          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL"
         }
       ],
       "sha256": "2d6ecb366edbfcddd1eb7df3481991431b59627fe6350ff746ba00209d643f64",
       "tamanhoBytes": 3448832,
-      "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
+      "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_laurence_gardner_a_linhagem_do_santo_graal.sqlite"
     },
     {
@@ -6668,12 +6668,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria Brasileira - A história ocultada"
+          "titulo": "Maçonaria Brasileira - A história ocultada"
         }
       ],
       "sha256": "02a76e25e686765dc1bb5ca1d2b834f17830b5ed046e801fd53545da761e54a5",
       "tamanhoBytes": 4145152,
-      "titulo": "Maçonaria Brasileira - A história ocultada",
+      "titulo": "Maçonaria Brasileira - A história ocultada",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_brasileira_a_historia_ocultada.sqlite"
     },
     {
@@ -6707,12 +6707,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Maçonaria Completa"
+          "titulo": "Maçonaria Completa"
         }
       ],
       "sha256": "1d7d4291c6ba5035739d139cb5234003ae0d56f5d4466d5710b32cd56409d9f0",
       "tamanhoBytes": 1507328,
-      "titulo": "Maçonaria Completa",
+      "titulo": "Maçonaria Completa",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_completa.sqlite"
     },
     {
@@ -6746,12 +6746,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "MAÇONARIA E  EXPRESSOES LATINAS"
+          "titulo": "MAÇONARIA E  EXPRESSOES LATINAS"
         }
       ],
       "sha256": "7ac5dfca821b7b8c7a6c5859d9a895d6c237ebc047581254f113674424c9b233",
       "tamanhoBytes": 368640,
-      "titulo": "MAÇONARIA E  EXPRESSOES LATINAS",
+      "titulo": "MAÇONARIA E  EXPRESSOES LATINAS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_e_expressoes_latinas.sqlite"
     },
     {
@@ -6785,12 +6785,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria e Abolição em S Paulo - Renata Ribeiro Francisco"
+          "titulo": "Maçonaria e Abolição em S Paulo - Renata Ribeiro Francisco"
         }
       ],
       "sha256": "b7b57e0ad9874b34a64b5c67538d6a211809764790a05b33867f562ba9b0fda6",
       "tamanhoBytes": 4059136,
-      "titulo": "Maçonaria e Abolição em S Paulo - Renata Ribeiro Francisco",
+      "titulo": "Maçonaria e Abolição em S Paulo - Renata Ribeiro Francisco",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_e_abolicao_em_s_paulo_renata_ribeiro_francisco.sqlite"
     },
     {
@@ -6824,12 +6824,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria e Astrologia - José Castellani"
+          "titulo": "Maçonaria e Astrologia - José Castellani"
         }
       ],
       "sha256": "b417172376af8dfd6da2cec696bb1a56e58a8bdcb4dceda35c8a345f12d7a288",
       "tamanhoBytes": 2359296,
-      "titulo": "Maçonaria e Astrologia - José Castellani",
+      "titulo": "Maçonaria e Astrologia - José Castellani",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_e_astrologia_jose_castellani.sqlite"
     },
     {
@@ -6863,12 +6863,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020"
+          "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020"
         }
       ],
       "sha256": "b8f14393de20d4a7060e01e34d092588d7f69128309aff52fd2232041abae8db",
       "tamanhoBytes": 3862528,
-      "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020",
+      "titulo": "Maçonaria Perspectivas para o Futuro - CMSB 2020",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_perspectivas_para_o_futuro_cmsb_2020.sqlite"
     },
     {
@@ -6902,12 +6902,12 @@
             "ruidosas": 101
           },
           "tipo": "livro",
-          "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom"
+          "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom"
         }
       ],
       "sha256": "ff8d99391c0f695796ceff28a393628eb8ec761c2a8613b11232034565c660ed",
       "tamanhoBytes": 9015296,
-      "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom",
+      "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_revelada_os_segredos_do_aprendiz_macom.sqlite"
     },
     {
@@ -6941,12 +6941,12 @@
             "ruidosas": 3
           },
           "tipo": "livro",
-          "titulo": "Maçonaria Símbolos e Arquétipos"
+          "titulo": "Maçonaria Símbolos e Arquétipos"
         }
       ],
       "sha256": "a59022f090385735b3a34f966999690d012255154dbdfb579670c225125fe3dd",
       "tamanhoBytes": 454656,
-      "titulo": "Maçonaria Símbolos e Arquétipos",
+      "titulo": "Maçonaria Símbolos e Arquétipos",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_simbolos_e_arquetipos.sqlite"
     },
     {
@@ -6980,12 +6980,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "Maçons do Passado - Ejvandro Buriti"
+          "titulo": "Maçons do Passado - Ejvandro Buriti"
         }
       ],
       "sha256": "337d53111fe142dc8a904ee4c971978ac25c1b6b0167fe58c8cc4ce4493acb03",
       "tamanhoBytes": 1257472,
-      "titulo": "Maçons do Passado - Ejvandro Buriti",
+      "titulo": "Maçons do Passado - Ejvandro Buriti",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_macons_do_passado_ejvandro_buriti.sqlite"
     },
     {
@@ -7019,12 +7019,12 @@
             "ruidosas": 10
           },
           "tipo": "livro",
-          "titulo": "Maçons que Leem"
+          "titulo": "Maçons que Leem"
         }
       ],
       "sha256": "24d27f8d7bee51fd8f58c5d52ac451cd795ef733038df16f28855ca190cf6250",
       "tamanhoBytes": 172032,
-      "titulo": "Maçons que Leem",
+      "titulo": "Maçons que Leem",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_macons_que_leem.sqlite"
     },
     {
@@ -7058,12 +7058,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Manual do Aprendiz Maçom"
+          "titulo": "Manual do Aprendiz Maçom"
         }
       ],
       "sha256": "ead68d192d9203dc6531a0e04283c937b8921f2307e8009247948d18f328a938",
       "tamanhoBytes": 1937408,
-      "titulo": "Manual do Aprendiz Maçom",
+      "titulo": "Manual do Aprendiz Maçom",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_manual_do_aprendiz_macom.sqlite"
     },
     {
@@ -7097,12 +7097,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Manual do Mestre Franco Maçom Aldo  Lavagnini"
+          "titulo": "Manual do Mestre Franco Maçom Aldo  Lavagnini"
         }
       ],
       "sha256": "4000818b097274ef79a719cfa3372a9bfd8e06d48dca25b498aa26ddc2fb9d24",
       "tamanhoBytes": 1830912,
-      "titulo": "Manual do Mestre Franco Maçom Aldo  Lavagnini",
+      "titulo": "Manual do Mestre Franco Maçom Aldo  Lavagnini",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_manual_do_mestre_franco_macom_aldo_lavagnini.sqlite"
     },
     {
@@ -7292,12 +7292,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Mistérios Desvelados - Saint Germain"
+          "titulo": "Mistérios Desvelados - Saint Germain"
         }
       ],
       "sha256": "d739eb9e1f99fd12423b572183565970ddbdf9d161f510437287b5e53ab9e907",
       "tamanhoBytes": 1994752,
-      "titulo": "Mistérios Desvelados - Saint Germain",
+      "titulo": "Mistérios Desvelados - Saint Germain",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_misterios_desvelados_saint_germain.sqlite"
     },
     {
@@ -7370,12 +7370,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "NÚMEROS - A Mística Filosófica dos Números - Louis Claude de Saint-Martin"
+          "titulo": "NÚMEROS - A Mística Filosófica dos Números - Louis Claude de Saint-Martin"
         }
       ],
       "sha256": "78995c7fdba9dbb9cab732d76f4b2ce90250e11e4bd3b2fd6fc006840a5288bc",
       "tamanhoBytes": 376832,
-      "titulo": "NÚMEROS - A Mística Filosófica dos Números - Louis Claude de Saint-Martin",
+      "titulo": "NÚMEROS - A Mística Filosófica dos Números - Louis Claude de Saint-Martin",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_numeros_a_mistica_filosofica_dos_numeros_louis_claude_de_saint_martin.sqlite"
     },
     {
@@ -7409,12 +7409,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "NÚMEROS - A-Década-Pitagórica"
+          "titulo": "NÚMEROS - A-Década-Pitagórica"
         }
       ],
       "sha256": "887eef9087698377ca332836a1cc5469a3a28f191f594142be8066d858ecd0f0",
       "tamanhoBytes": 237568,
-      "titulo": "NÚMEROS - A-Década-Pitagórica",
+      "titulo": "NÚMEROS - A-Década-Pitagórica",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_numeros_a_decada_pitagorica.sqlite"
     },
     {
@@ -7526,12 +7526,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Caminho dos Essênios - A Vida Oculta de Jesus"
+          "titulo": "O Caminho dos Essênios - A Vida Oculta de Jesus"
         }
       ],
       "sha256": "aa04f2c359d79eda6ce26adeaaf4a225ed355bb5fd87696e7b8af592ca19a50e",
       "tamanhoBytes": 4788224,
-      "titulo": "O Caminho dos Essênios - A Vida Oculta de Jesus",
+      "titulo": "O Caminho dos Essênios - A Vida Oculta de Jesus",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_caminho_dos_essenios_a_vida_oculta_de_jesus.sqlite"
     },
     {
@@ -7643,12 +7643,12 @@
             "ruidosas": 6
           },
           "tipo": "livro",
-          "titulo": "O Código da Bíblia - Michael Drosnin"
+          "titulo": "O Código da Bíblia - Michael Drosnin"
         }
       ],
       "sha256": "922f3e0593239d22e9966eaf8b46f2024d8e77432d35006e892f08df9f3942b8",
       "tamanhoBytes": 2473984,
-      "titulo": "O Código da Bíblia - Michael Drosnin",
+      "titulo": "O Código da Bíblia - Michael Drosnin",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_codigo_da_biblia_michael_drosnin.sqlite"
     },
     {
@@ -7799,12 +7799,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Grande Livro da Maçonaria - Claudio Blanc"
+          "titulo": "O Grande Livro da Maçonaria - Claudio Blanc"
         }
       ],
       "sha256": "f6449b80435cc2690ba6688fe2ee2c5f5371a7a8573d588490074649034ea687",
       "tamanhoBytes": 2727936,
-      "titulo": "O Grande Livro da Maçonaria - Claudio Blanc",
+      "titulo": "O Grande Livro da Maçonaria - Claudio Blanc",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_grande_livro_da_maconaria_claudio_blanc.sqlite"
     },
     {
@@ -7877,12 +7877,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Ideal Iniciático - Oswald Wirth"
+          "titulo": "O Ideal Iniciático - Oswald Wirth"
         }
       ],
       "sha256": "956880e6be8ff2240dc4d2d69204967edb33b41b51344dd7d333979c0d22c048",
       "tamanhoBytes": 937984,
-      "titulo": "O Ideal Iniciático - Oswald Wirth",
+      "titulo": "O Ideal Iniciático - Oswald Wirth",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_ideal_iniciatico_oswald_wirth.sqlite"
     },
     {
@@ -7916,12 +7916,12 @@
             "ruidosas": 4
           },
           "tipo": "livro",
-          "titulo": "O Legado dos Templários - Steve Berry"
+          "titulo": "O Legado dos Templários - Steve Berry"
         }
       ],
       "sha256": "794ed02b7ef287c07aec3895ad0a2707c7f6e70c27809abb692b6fd3aa14765f",
       "tamanhoBytes": 5361664,
-      "titulo": "O Legado dos Templários - Steve Berry",
+      "titulo": "O Legado dos Templários - Steve Berry",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_legado_dos_templarios_steve_berry.sqlite"
     },
     {
@@ -8228,12 +8228,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Livro de Urântia"
+          "titulo": "O Livro de Urântia"
         }
       ],
       "sha256": "afd4ed82179a59651408d057cf3145cc623f2d7c10f708c07729e9e85d6dbd34",
       "tamanhoBytes": 32751616,
-      "titulo": "O Livro de Urântia",
+      "titulo": "O Livro de Urântia",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_de_urantia.sqlite"
     },
     {
@@ -8267,12 +8267,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Livro dos Mortos e a Justiça Divina - Lúcio J Patrocínio Filho"
+          "titulo": "O Livro dos Mortos e a Justiça Divina - Lúcio J Patrocínio Filho"
         }
       ],
       "sha256": "3bc08a874f814b4ebffdcc674e3fc244203a3ec4973959a174c5daeab0870eb6",
       "tamanhoBytes": 323584,
-      "titulo": "O Livro dos Mortos e a Justiça Divina - Lúcio J Patrocínio Filho",
+      "titulo": "O Livro dos Mortos e a Justiça Divina - Lúcio J Patrocínio Filho",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_dos_mortos_e_a_justica_divina_lucio_j_patrocinio_filho.sqlite"
     },
     {
@@ -8384,12 +8384,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho"
+          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho"
         }
       ],
       "sha256": "d7044630a69b81d09e2d67c44b6e780fbd65eae438b2dd2a61644c788693cf13",
       "tamanhoBytes": 675840,
-      "titulo": "O Livro Ilustrado dos Símbolos II - Trecho",
+      "titulo": "O Livro Ilustrado dos Símbolos II - Trecho",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_ii_trecho.sqlite"
     },
     {
@@ -8423,12 +8423,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Livro Secreto da Maçonaria - Lourivaldo Pere"
+          "titulo": "O Livro Secreto da Maçonaria - Lourivaldo Pere"
         }
       ],
       "sha256": "1fcab0ad8db3b1cd250f6185593a1492b650082150c90c132789d1ba5254317a",
       "tamanhoBytes": 1400832,
-      "titulo": "O Livro Secreto da Maçonaria - Lourivaldo Pere",
+      "titulo": "O Livro Secreto da Maçonaria - Lourivaldo Pere",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_livro_secreto_da_maconaria_lourivaldo_pere.sqlite"
     },
     {
@@ -8540,12 +8540,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Monge e o Venerável - Christian Jacq"
+          "titulo": "O Monge e o Venerável - Christian Jacq"
         }
       ],
       "sha256": "44860124f90408d4bbfdc781f4ce42f4983697b613527e432fdca9403716daa8",
       "tamanhoBytes": 2347008,
-      "titulo": "O Monge e o Venerável - Christian Jacq",
+      "titulo": "O Monge e o Venerável - Christian Jacq",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_monge_e_o_veneravel_christian_jacq.sqlite"
     },
     {
@@ -8696,12 +8696,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Ponto Dentro do Círculo – Blog sobre Maçonaria, Filosofia, História, Sociedade e Cultura"
+          "titulo": "O Ponto Dentro do Círculo – Blog sobre Maçonaria, Filosofia, História, Sociedade e Cultura"
         }
       ],
       "sha256": "767cf7ed1a90dbd3cda402b766a2bac9c73af53547b43f8b4289e6516aff93b7",
       "tamanhoBytes": 184320,
-      "titulo": "O Ponto Dentro do Círculo – Blog sobre Maçonaria, Filosofia, História, Sociedade e Cultura",
+      "titulo": "O Ponto Dentro do Círculo – Blog sobre Maçonaria, Filosofia, História, Sociedade e Cultura",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_ponto_dentro_do_circulo_blog_sobre_maconaria_filosofia_historia_sociedade_e_cultura.sqlite"
     },
     {
@@ -8735,12 +8735,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Pórtico e a Câmara do Meio"
+          "titulo": "O Pórtico e a Câmara do Meio"
         }
       ],
       "sha256": "88f40fecb111de4065ee0f01468d7f3862b13a8e817fe42ee54f2943427f3ed8",
       "tamanhoBytes": 2441216,
-      "titulo": "O Pórtico e a Câmara do Meio",
+      "titulo": "O Pórtico e a Câmara do Meio",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_portico_e_a_camara_do_meio.sqlite"
     },
     {
@@ -8774,12 +8774,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O que é a Maçonaria"
+          "titulo": "O que é a Maçonaria"
         }
       ],
       "sha256": "9e7ac03c8ddb6b71e88e9a40bb36ebdfb5d1744faa847c9046cdcd5f6126b5c0",
       "tamanhoBytes": 167936,
-      "titulo": "O que é a Maçonaria",
+      "titulo": "O que é a Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_que_e_a_maconaria.sqlite"
     },
     {
@@ -8813,12 +8813,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O REAA - Origens Históricas"
+          "titulo": "O REAA - Origens Históricas"
         }
       ],
       "sha256": "a4734ef0d67f4c8c360bfb86278e9068ac695bc92ea5b39102bcc500d1b85aa8",
       "tamanhoBytes": 233472,
-      "titulo": "O REAA - Origens Históricas",
+      "titulo": "O REAA - Origens Históricas",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_reaa_origens_historicas.sqlite"
     },
     {
@@ -9086,12 +9086,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Origens da Maçonaria - Basilio Thomé de Freitas Junior"
+          "titulo": "Origens da Maçonaria - Basilio Thomé de Freitas Junior"
         }
       ],
       "sha256": "1fe708f169169589f3e83bc11cd472b2cd1efab8bb7983e476b7776b80883a88",
       "tamanhoBytes": 294912,
-      "titulo": "Origens da Maçonaria - Basilio Thomé de Freitas Junior",
+      "titulo": "Origens da Maçonaria - Basilio Thomé de Freitas Junior",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_origens_da_maconaria_basilio_thome_de_freitas_junior.sqlite"
     },
     {
@@ -9164,12 +9164,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "OS 100 MAIORES MISTÉRIOS DO MUNDO"
+          "titulo": "OS 100 MAIORES MISTÉRIOS DO MUNDO"
         }
       ],
       "sha256": "cd567439af8cfad761d092c203797bbe59174c237ddddc5e8536bde9768754a8",
       "tamanhoBytes": 4141056,
-      "titulo": "OS 100 MAIORES MISTÉRIOS DO MUNDO",
+      "titulo": "OS 100 MAIORES MISTÉRIOS DO MUNDO",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_100_maiores_misterios_do_mundo.sqlite"
     },
     {
@@ -9320,12 +9320,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Grandes Iniciados - Édouard Schuré"
+          "titulo": "Os Grandes Iniciados - Édouard Schuré"
         }
       ],
       "sha256": "4cfbf48326684f9b318706200318c89f9e9ddb4df0cf039b8fb39311a146df5d",
       "tamanhoBytes": 6213632,
-      "titulo": "Os Grandes Iniciados - Édouard Schuré",
+      "titulo": "Os Grandes Iniciados - Édouard Schuré",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_grandes_iniciados_edouard_schure.sqlite"
     },
     {
@@ -9398,12 +9398,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "OS MISTÉRIOS DOS ANTIGOS MAIAS - SAMAEL AUN WEOR"
+          "titulo": "OS MISTÉRIOS DOS ANTIGOS MAIAS - SAMAEL AUN WEOR"
         }
       ],
       "sha256": "121ca9172803fbdbab9bb3cd50bc77c0658e6e05ba07eaa6200259d16c851546",
       "tamanhoBytes": 1122304,
-      "titulo": "OS MISTÉRIOS DOS ANTIGOS MAIAS - SAMAEL AUN WEOR",
+      "titulo": "OS MISTÉRIOS DOS ANTIGOS MAIAS - SAMAEL AUN WEOR",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_misterios_dos_antigos_maias_samael_aun_weor.sqlite"
     },
     {
@@ -9437,12 +9437,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Os Mistérios Rosacruzes - Max Heindel"
+          "titulo": "Os Mistérios Rosacruzes - Max Heindel"
         }
       ],
       "sha256": "876f6eb2903a3fe9dc94aa0bec691fa859a9a7c9d47702375489f0b89cc2e55d",
       "tamanhoBytes": 1204224,
-      "titulo": "Os Mistérios Rosacruzes - Max Heindel",
+      "titulo": "Os Mistérios Rosacruzes - Max Heindel",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_misterios_rosacruzes_max_heindel.sqlite"
     },
     {
@@ -9515,12 +9515,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "OS POBRES SOLDADOS DE JESUS CRISTO E DO TEMPLO DE SALOMÃO"
+          "titulo": "OS POBRES SOLDADOS DE JESUS CRISTO E DO TEMPLO DE SALOMÃO"
         }
       ],
       "sha256": "03e65cc8d39e74473083016fbb5680833ab28f585f50a83cef6eeb4fa2ca21db",
       "tamanhoBytes": 376832,
-      "titulo": "OS POBRES SOLDADOS DE JESUS CRISTO E DO TEMPLO DE SALOMÃO",
+      "titulo": "OS POBRES SOLDADOS DE JESUS CRISTO E DO TEMPLO DE SALOMÃO",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao.sqlite"
     },
     {
@@ -9554,12 +9554,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Povos da Bíblia - Joseph Rhymer"
+          "titulo": "Os Povos da Bíblia - Joseph Rhymer"
         }
       ],
       "sha256": "8df0c423a90373db5af81af54e3743db500ed51e8084954864d09c8627984c02",
       "tamanhoBytes": 1286144,
-      "titulo": "Os Povos da Bíblia - Joseph Rhymer",
+      "titulo": "Os Povos da Bíblia - Joseph Rhymer",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_povos_da_biblia_joseph_rhymer.sqlite"
     },
     {
@@ -9593,12 +9593,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Principios das Leis Maçónicas "
+          "titulo": "Os Principios das Leis Maçónicas "
         }
       ],
       "sha256": "c5feb2c32e01943adfd5d3858029d9e8b2254f7406b8311f4a101e06e4ffc6f7",
       "tamanhoBytes": 1114112,
-      "titulo": "Os Principios das Leis Maçónicas ",
+      "titulo": "Os Principios das Leis Maçónicas ",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_principios_das_leis_maconicas.sqlite"
     },
     {
@@ -9633,12 +9633,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey"
+          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey"
         }
       ],
       "sha256": "7474d18cc7397d27058fae07a81df7645afc3fe2ddad885cf0d9083683b01962",
       "tamanhoBytes": 1183744,
-      "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
+      "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_principios_das_leis_maconicas_vol1_albert_g_mackey.sqlite"
     },
     {
@@ -9672,12 +9672,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Princípios das Leis Maçônicas Vol 2 - Albert G.Mackey"
+          "titulo": "Os Princípios das Leis Maçônicas Vol 2 - Albert G.Mackey"
         }
       ],
       "sha256": "debaeb9a8bf14ea398c3c5313014b58af76158b1af8565be463ec36f82123a21",
       "tamanhoBytes": 1544192,
-      "titulo": "Os Princípios das Leis Maçônicas Vol 2 - Albert G.Mackey",
+      "titulo": "Os Princípios das Leis Maçônicas Vol 2 - Albert G.Mackey",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_principios_das_leis_maconicas_vol_2_albert_g_mackey.sqlite"
     },
     {
@@ -9711,12 +9711,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Os Segredos do Templo de Salomão"
+          "titulo": "Os Segredos do Templo de Salomão"
         }
       ],
       "sha256": "2e457033710800b504e452c3c33123dd0e092a540a7b93bc3b20ab156ec5edb4",
       "tamanhoBytes": 4177920,
-      "titulo": "Os Segredos do Templo de Salomão",
+      "titulo": "Os Segredos do Templo de Salomão",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_segredos_do_templo_de_salomao.sqlite"
     },
     {
@@ -9828,12 +9828,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Templarios e a Sinarquia - Olimpio Gonçalves"
+          "titulo": "Os Templarios e a Sinarquia - Olimpio Gonçalves"
         }
       ],
       "sha256": "aa17622718a89b25fcd95d54a76b73f7f036eea49c742bd431fc800f952f7a98",
       "tamanhoBytes": 471040,
-      "titulo": "Os Templarios e a Sinarquia - Olimpio Gonçalves",
+      "titulo": "Os Templarios e a Sinarquia - Olimpio Gonçalves",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_e_a_sinarquia_olimpio_goncalves.sqlite"
     },
     {
@@ -9906,12 +9906,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "OS TEMPLARIOS NA FORMAÇÃO DE PORTUGAL"
+          "titulo": "OS TEMPLARIOS NA FORMAÇÃO DE PORTUGAL"
         }
       ],
       "sha256": "7a315c886459046f9abaa813409f2e66e931b648d88040c0c3fdcffd02871879",
       "tamanhoBytes": 532480,
-      "titulo": "OS TEMPLARIOS NA FORMAÇÃO DE PORTUGAL",
+      "titulo": "OS TEMPLARIOS NA FORMAÇÃO DE PORTUGAL",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_na_formacao_de_portugal.sqlite"
     },
     {
@@ -9945,12 +9945,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Templarios na formação de Portugal - 2018"
+          "titulo": "Os Templarios na formação de Portugal - 2018"
         }
       ],
       "sha256": "11faaac717cd0d1b96e11dbe5a2efb50a57c7794b2e720ac4880d359b8eb0baa",
       "tamanhoBytes": 282624,
-      "titulo": "Os Templarios na formação de Portugal - 2018",
+      "titulo": "Os Templarios na formação de Portugal - 2018",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_na_formacao_de_portugal_2018.sqlite"
     },
     {
@@ -9984,12 +9984,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Templários - Juan de Garten"
+          "titulo": "Os Templários - Juan de Garten"
         }
       ],
       "sha256": "8867152c99ea83f4e9ce3aff650758abd3c41e01f850ec21003956c2b65812a5",
       "tamanhoBytes": 868352,
-      "titulo": "Os Templários - Juan de Garten",
+      "titulo": "Os Templários - Juan de Garten",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_juan_de_garten.sqlite"
     },
     {
@@ -10023,12 +10023,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Templários e a Arca da Aliança - Graham Phillips"
+          "titulo": "Os Templários e a Arca da Aliança - Graham Phillips"
         }
       ],
       "sha256": "941b15a3fc02f630fb8c2e6f6ff0c2d3ff8decd75253d2a701a9260587e54d21",
       "tamanhoBytes": 3682304,
-      "titulo": "Os Templários e a Arca da Aliança - Graham Phillips",
+      "titulo": "Os Templários e a Arca da Aliança - Graham Phillips",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templarios_e_a_arca_da_alianca_graham_phillips.sqlite"
     },
     {
@@ -10062,12 +10062,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Os Templos de Adoração do GADU - 05.06.2020"
+          "titulo": "Os Templos de Adoração do GADU - 05.06.2020"
         }
       ],
       "sha256": "ecfcb6c15f48da239ee19ba527f6c08905e190c38e05c26acd3148f87283b2bd",
       "tamanhoBytes": 331776,
-      "titulo": "Os Templos de Adoração do GADU - 05.06.2020",
+      "titulo": "Os Templos de Adoração do GADU - 05.06.2020",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_templos_de_adoracao_do_gadu_05_06_2020.sqlite"
     },
     {
@@ -10219,12 +10219,12 @@
             "ruidosas": 42
           },
           "tipo": "livro",
-          "titulo": "Os_Segredos_da_Mente_Milionária"
+          "titulo": "Os_Segredos_da_Mente_Milionária"
         }
       ],
       "sha256": "8f29305c80ba7b5f357c392ed23d1a37a0fbb5947aad6e6f1f47bfbf7e1c525a",
       "tamanhoBytes": 1835008,
-      "titulo": "Os_Segredos_da_Mente_Milionária",
+      "titulo": "Os_Segredos_da_Mente_Milionária",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_segredos_da_mente_milionaria.sqlite"
     },
     {
@@ -10297,12 +10297,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Partículas de Deus"
+          "titulo": "Partículas de Deus"
         }
       ],
       "sha256": "e95d906b030ac6fa176c007ae380d872f2ae211021bedafdbf95bed60f123ce3",
       "tamanhoBytes": 872448,
-      "titulo": "Partículas de Deus",
+      "titulo": "Partículas de Deus",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_particulas_de_deus.sqlite"
     },
     {
@@ -10453,12 +10453,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Platão em 90 Minutos - Paul Strathern"
+          "titulo": "Platão em 90 Minutos - Paul Strathern"
         }
       ],
       "sha256": "e08cd626832e7ae247c17ad32a2b439f7a6bbca0b7b8b9b5284575ca32f94490",
       "tamanhoBytes": 462848,
-      "titulo": "Platão em 90 Minutos - Paul Strathern",
+      "titulo": "Platão em 90 Minutos - Paul Strathern",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_platao_em_90_minutos_paul_strathern.sqlite"
     },
     {
@@ -10492,12 +10492,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Poesias Maçônicas Vol I"
+          "titulo": "Poesias Maçônicas Vol I"
         }
       ],
       "sha256": "8ab208bbd66cfece11b03e2dd5407ed5d429bc0563cecb906e61b9ef005ed863",
       "tamanhoBytes": 425984,
-      "titulo": "Poesias Maçônicas Vol I",
+      "titulo": "Poesias Maçônicas Vol I",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_poesias_maconicas_vol_i.sqlite"
     },
     {
@@ -10531,12 +10531,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Por Dentro do Priorado de Sião - Robert Howells"
+          "titulo": "Por Dentro do Priorado de Sião - Robert Howells"
         }
       ],
       "sha256": "10d6560edaa4c0e204d1dd8ce366c67aebfd4702c79e0226065e4e36535d7082",
       "tamanhoBytes": 4698112,
-      "titulo": "Por Dentro do Priorado de Sião - Robert Howells",
+      "titulo": "Por Dentro do Priorado de Sião - Robert Howells",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_por_dentro_do_priorado_de_siao_robert_howells.sqlite"
     },
     {
@@ -10609,12 +10609,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Potencias e Ritos no Brasil -Irmão Samer"
+          "titulo": "Potencias e Ritos no Brasil -Irmão Samer"
         }
       ],
       "sha256": "899013135f9c6d8425919785b196ec995ebf5c53a218892f90c8b12161482f7d",
       "tamanhoBytes": 278528,
-      "titulo": "Potencias e Ritos no Brasil -Irmão Samer",
+      "titulo": "Potencias e Ritos no Brasil -Irmão Samer",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_potencias_e_ritos_no_brasil_irmao_samer.sqlite"
     },
     {
@@ -10648,12 +10648,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Pré-História da Maçonaria"
+          "titulo": "Pré-História da Maçonaria"
         }
       ],
       "sha256": "2b1a16005194d2fab3a5c3a02cfd6f1318b2c1de241c7cb7b64ebe56c00a5e8f",
       "tamanhoBytes": 192512,
-      "titulo": "Pré-História da Maçonaria",
+      "titulo": "Pré-História da Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_pre_historia_da_maconaria.sqlite"
     },
     {
@@ -10765,12 +10765,12 @@
             "ruidosas": 7
           },
           "tipo": "livro",
-          "titulo": "PROVÉRBIOS E PENSAMENTOS"
+          "titulo": "PROVÉRBIOS E PENSAMENTOS"
         }
       ],
       "sha256": "ba513d4944ed03a52b45bbdebc620759326a3964ad5fd7a8b7274e544752a165",
       "tamanhoBytes": 1789952,
-      "titulo": "PROVÉRBIOS E PENSAMENTOS",
+      "titulo": "PROVÉRBIOS E PENSAMENTOS",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_proverbios_e_pensamentos.sqlite"
     },
     {
@@ -10844,12 +10844,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "REAA Material didático 2021"
+          "titulo": "REAA Material didático 2021"
         }
       ],
       "sha256": "bd47d048db4f0d2fbfec7d0e35de453ab984f6607ccbb0571e7676eafe82cd1c",
       "tamanhoBytes": 282624,
-      "titulo": "REAA Material didático 2021",
+      "titulo": "REAA Material didático 2021",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_reaa_material_didatico_2021.sqlite"
     },
     {
@@ -10961,12 +10961,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "RER -  A Jóia Preciosa da Maçonaria"
+          "titulo": "RER -  A Jóia Preciosa da Maçonaria"
         }
       ],
       "sha256": "287691e489b692f1d42c6f9dfbe0e20e86d5245f9eebf1b519116e252112306c",
       "tamanhoBytes": 192512,
-      "titulo": "RER -  A Jóia Preciosa da Maçonaria",
+      "titulo": "RER -  A Jóia Preciosa da Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_rer_a_joia_preciosa_da_maconaria.sqlite"
     },
     {
@@ -11000,12 +11000,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Rito Francês ou Moderno História, reflexões e desenvolvimento - José Filardo"
+          "titulo": "Rito Francês ou Moderno História, reflexões e desenvolvimento - José Filardo"
         }
       ],
       "sha256": "e9d3a24390ef06a3b4fea48b7a56a03dce4c7bea123e6efdc240f50fa7450eb6",
       "tamanhoBytes": 4239360,
-      "titulo": "Rito Francês ou Moderno História, reflexões e desenvolvimento - José Filardo",
+      "titulo": "Rito Francês ou Moderno História, reflexões e desenvolvimento - José Filardo",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_rito_frances_ou_moderno_historia_reflexoes_e_desenvolvimento_jose_filardo.sqlite"
     },
     {
@@ -11039,12 +11039,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Rito+escocês+antigo+e+aceito"
+          "titulo": "Rito+escocês+antigo+e+aceito"
         }
       ],
       "sha256": "e3e83c8f1010a73d6853dc0399dc7bd69a1cb7af0f9d1c189f7a7bdcc71017a6",
       "tamanhoBytes": 3235840,
-      "titulo": "Rito+escocês+antigo+e+aceito",
+      "titulo": "Rito+escocês+antigo+e+aceito",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_rito_escoces_antigo_e_aceito.sqlite"
     },
     {
@@ -11156,12 +11156,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Ritos Maçônicos Praticados no Brasil e suas Diferenças"
+          "titulo": "Ritos Maçônicos Praticados no Brasil e suas Diferenças"
         }
       ],
       "sha256": "66f66f6c55f9837e61eeb326c8498c2dd59fa7b4c1b95771d2ec47ed1d254b8d",
       "tamanhoBytes": 208896,
-      "titulo": "Ritos Maçônicos Praticados no Brasil e suas Diferenças",
+      "titulo": "Ritos Maçônicos Praticados no Brasil e suas Diferenças",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ritos_maconicos_praticados_no_brasil_e_suas_diferencas.sqlite"
     },
     {
@@ -11195,12 +11195,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Ritual de Emulação  O Grau de Mestre Maçom"
+          "titulo": "Ritual de Emulação  O Grau de Mestre Maçom"
         }
       ],
       "sha256": "3c2f3609ffaf14914cd8d9656e6338accac0d077054acc59148d2be0e4f7f196",
       "tamanhoBytes": 2002944,
-      "titulo": "Ritual de Emulação  O Grau de Mestre Maçom",
+      "titulo": "Ritual de Emulação  O Grau de Mestre Maçom",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ritual_de_emulacao_o_grau_de_mestre_macom.sqlite"
     },
     {
@@ -11234,12 +11234,12 @@
             "ruidosas": 4
           },
           "tipo": "livro",
-          "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil - Fábio M Paulino"
+          "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil - Fábio M Paulino"
         }
       ],
       "sha256": "5795ac32d21d13bfdfddf678c02850d968792d1d658c68a4b79274c4e3260bf8",
       "tamanhoBytes": 2797568,
-      "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil - Fábio M Paulino",
+      "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil - Fábio M Paulino",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino.sqlite"
     },
     {
@@ -11273,12 +11273,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Ritual de Emulação - um sistema ritualistico inglês"
+          "titulo": "Ritual de Emulação - um sistema ritualistico inglês"
         }
       ],
       "sha256": "d4064b5fa88f697683410b5b1c7161474043ad6a6290f65dd2aaa5affa8d3115",
       "tamanhoBytes": 151552,
-      "titulo": "Ritual de Emulação - um sistema ritualistico inglês",
+      "titulo": "Ritual de Emulação - um sistema ritualistico inglês",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_ritual_de_emulacao_um_sistema_ritualistico_ingles.sqlite"
     },
     {
@@ -11312,12 +11312,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Salomão o homem mais rico que já existiu-Steven K Scott"
+          "titulo": "Salomão o homem mais rico que já existiu-Steven K Scott"
         }
       ],
       "sha256": "2c335ad34803b3751336c5b7592a69bab6e0a6edd90c574c5e8cab0c63115d54",
       "tamanhoBytes": 2023424,
-      "titulo": "Salomão o homem mais rico que já existiu-Steven K Scott",
+      "titulo": "Salomão o homem mais rico que já existiu-Steven K Scott",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_salomao_o_homem_mais_rico_que_ja_existiu_steven_k_scott.sqlite"
     },
     {
@@ -11351,12 +11351,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Sapiens-Uma Breve História da Humanidade - Yuval Noah Harari"
+          "titulo": "Sapiens-Uma Breve História da Humanidade - Yuval Noah Harari"
         }
       ],
       "sha256": "743e6411bbd5d21f3542d23d8a822445769f15a56c24eb28403a7948138f83f2",
       "tamanhoBytes": 6930432,
-      "titulo": "Sapiens-Uma Breve História da Humanidade - Yuval Noah Harari",
+      "titulo": "Sapiens-Uma Breve História da Humanidade - Yuval Noah Harari",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari.sqlite"
     },
     {
@@ -11390,12 +11390,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "São Joao-Padroeiro da Maçonaria"
+          "titulo": "São Joao-Padroeiro da Maçonaria"
         }
       ],
       "sha256": "fc2f673a8787dce3bff546700977c07fdf4b1eb42edf8fe8e82e2551e98fea4c",
       "tamanhoBytes": 135168,
-      "titulo": "São Joao-Padroeiro da Maçonaria",
+      "titulo": "São Joao-Padroeiro da Maçonaria",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_sao_joao_padroeiro_da_maconaria.sqlite"
     },
     {
@@ -11546,12 +11546,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Simbologia dos Números no Grau de Aprendiz Maçom"
+          "titulo": "Simbologia dos Números no Grau de Aprendiz Maçom"
         }
       ],
       "sha256": "3452676166055ea871eabe906b8fbac20f3aaef2d921306a6214958ab93a3589",
       "tamanhoBytes": 180224,
-      "titulo": "Simbologia dos Números no Grau de Aprendiz Maçom",
+      "titulo": "Simbologia dos Números no Grau de Aprendiz Maçom",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_simbologia_dos_numeros_no_grau_de_aprendiz_macom.sqlite"
     },
     {
@@ -11585,12 +11585,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Sinopse do Grau de Aprendiz Maçom - Carvalho"
+          "titulo": "Sinopse do Grau de Aprendiz Maçom - Carvalho"
         }
       ],
       "sha256": "ea3d525f0fef960d279a52782e468d98d3e43ab130fffa5142021c3e2db459bc",
       "tamanhoBytes": 2125824,
-      "titulo": "Sinopse do Grau de Aprendiz Maçom - Carvalho",
+      "titulo": "Sinopse do Grau de Aprendiz Maçom - Carvalho",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_sinopse_do_grau_de_aprendiz_macom_carvalho.sqlite"
     },
     {
@@ -11858,12 +11858,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Sócrates em 90 Minutos - Paul Strathern"
+          "titulo": "Sócrates em 90 Minutos - Paul Strathern"
         }
       ],
       "sha256": "3418b07488e242303893f9eb5e6d69e429dc021bf9736a90b651dc80db3e11b2",
       "tamanhoBytes": 430080,
-      "titulo": "Sócrates em 90 Minutos - Paul Strathern",
+      "titulo": "Sócrates em 90 Minutos - Paul Strathern",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_socrates_em_90_minutos_paul_strathern.sqlite"
     },
     {
@@ -11936,12 +11936,12 @@
             "ruidosas": 1
           },
           "tipo": "livro",
-          "titulo": "Templários - Portugal, primeira Nação Templária - Freddy Silva"
+          "titulo": "Templários - Portugal, primeira Nação Templária - Freddy Silva"
         }
       ],
       "sha256": "b56e13d2b675992d457e0e7661b403b42b10515fa86139d850daa996fdfb00aa",
       "tamanhoBytes": 4247552,
-      "titulo": "Templários - Portugal, primeira Nação Templária - Freddy Silva",
+      "titulo": "Templários - Portugal, primeira Nação Templária - Freddy Silva",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_templarios_portugal_primeira_nacao_templaria_freddy_silva.sqlite"
     },
     {
@@ -11975,12 +11975,12 @@
             "ruidosas": 2
           },
           "tipo": "livro",
-          "titulo": "Timeu-a Cosmologia de Platão - Oscar T Matsuura"
+          "titulo": "Timeu-a Cosmologia de Platão - Oscar T Matsuura"
         }
       ],
       "sha256": "752dc409eca2e11f033970adb4ed5733b285e2eaa80297bad79d08db4760e9b7",
       "tamanhoBytes": 1806336,
-      "titulo": "Timeu-a Cosmologia de Platão - Oscar T Matsuura",
+      "titulo": "Timeu-a Cosmologia de Platão - Oscar T Matsuura",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_timeu_a_cosmologia_de_platao_oscar_t_matsuura.sqlite"
     },
     {
@@ -12014,12 +12014,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Tiradentes Maçom"
+          "titulo": "Tiradentes Maçom"
         }
       ],
       "sha256": "1c24ffd80f5f08735ef740e481bb1acfbea42e4d5cabd757076e3df94ff41377",
       "tamanhoBytes": 237568,
-      "titulo": "Tiradentes Maçom",
+      "titulo": "Tiradentes Maçom",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_tiradentes_macom.sqlite"
     },
     {
@@ -12053,12 +12053,12 @@
             "ruidosas": 3
           },
           "tipo": "livro",
-          "titulo": "Tratado da reintegração dos Seres - Martines Pasqually"
+          "titulo": "Tratado da reintegração dos Seres - Martines Pasqually"
         }
       ],
       "sha256": "42e381f7a75a0692b7cd7075de26b7ad00b5cda3276ec5be7ecd3987962e7529",
       "tamanhoBytes": 5332992,
-      "titulo": "Tratado da reintegração dos Seres - Martines Pasqually",
+      "titulo": "Tratado da reintegração dos Seres - Martines Pasqually",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_tratado_da_reintegracao_dos_seres_martines_pasqually.sqlite"
     },
     {
@@ -12210,12 +12210,12 @@
             "ruidosas": 6
           },
           "tipo": "livro",
-          "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum - David P de Lira"
+          "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum - David P de Lira"
         }
       ],
       "sha256": "9182a0871ccb135c2a1e4a68c655ba0bfe954a8b2b35329198a0ff86af73fe79",
       "tamanhoBytes": 6574080,
-      "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum - David P de Lira",
+      "titulo": "Uma Introdução ao Hermetismo e ao Corpus Hermeticum - David P de Lira",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira.sqlite"
     },
     {
@@ -12288,12 +12288,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)"
+          "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)"
         }
       ],
       "sha256": "1eed4de22b7847d3f982ef2fc71dcd12b2a02169fd5de72a97dcc66ca5e28dc5",
       "tamanhoBytes": 2957312,
-      "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)",
+      "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_vade_mecum_honoris_labor_versao_10_mar_2018.sqlite"
     },
     {
@@ -12327,12 +12327,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Washington Secreta dos Illuminati e Maçons"
+          "titulo": "Washington Secreta dos Illuminati e Maçons"
         }
       ],
       "sha256": "62c366866ae834ba0ce608b48ebc8bf11d475a0a72ac8009518311c2d0ae192d",
       "tamanhoBytes": 491520,
-      "titulo": "Washington Secreta dos Illuminati e Maçons",
+      "titulo": "Washington Secreta dos Illuminati e Maçons",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_washington_secreta_dos_illuminati_e_macons.sqlite"
     },
     {
@@ -12367,12 +12367,12 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Zodiaco - Arquetipos dos Zodíacos"
+          "titulo": "Zodiaco - Arquetipos dos Zodíacos"
         }
       ],
       "sha256": "450ee605b41a171068d0f6a528ff1288db246be9178d126c1de5f42f62880dc1",
       "tamanhoBytes": 7684096,
-      "titulo": "Zodiaco - Arquetipos dos Zodíacos",
+      "titulo": "Zodiaco - Arquetipos dos Zodíacos",
       "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_zodiaco_arquetipos_dos_zodiacos.sqlite"
     },
     {

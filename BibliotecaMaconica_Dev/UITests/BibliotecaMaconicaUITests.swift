@@ -330,6 +330,90 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 30))
     }
 
+    /// Store screenshots (Paridade/PUBLICACAO_LOJAS.md), only when asked:
+    /// `TEST_RUNNER_CAPTURAS=1 xcodebuild test ...` (Tools/gerar_capturas_lojas.sh).
+    @MainActor
+    func testStoreScreenshots() throws {
+        try XCTSkipUnless(ProcessInfo.processInfo.environment["CAPTURAS"] == "1", "Only for the store screenshots")
+        func capturar(_ nome: String) {
+            sleep(2)
+            let anexo = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+            anexo.name = "loja-\(nome)"
+            anexo.lifetime = .keepAlways
+            add(anexo)
+        }
+        func reabrir() {
+            app.terminate()
+            app.launch()
+            XCTAssertTrue(app.staticTexts["Biblioteca Maçônica"].waitForExistence(timeout: 12))
+        }
+        func abrirNoMais(_ tela: String, aguardar marca: XCUIElement) {
+            reabrir()
+            navigationTab("Mais").tap()
+            let botao = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", tela)).firstMatch
+            XCTAssertTrue(botao.waitForExistence(timeout: 5))
+            for _ in 0..<4 where !botao.isHittable { app.swipeUp(velocity: .slow) }
+            botao.tap()
+            XCTAssertTrue(marca.waitForExistence(timeout: 20), tela)
+        }
+        capturar("01-inicio")
+
+        app.buttons["Abrir leitura diária de Breviário Maçônico - Kennyo Ismail"].tap()
+        XCTAssertTrue(app.buttons["Tela cheia"].firstMatch.waitForExistence(timeout: 8))
+        capturar("02-leitura")
+
+        reabrir()
+        navigationTab("Coleções").tap()
+        XCTAssertTrue(app.buttons["Ver todas as leituras"].firstMatch.waitForExistence(timeout: 30))
+        // The collections are shown when every work is scored, not while they load.
+        _ = app.staticTexts["Preparando coleções"].waitForNonExistence(timeout: 120)
+        capturar("03-colecoes")
+
+        reabrir()
+        navigationTab("Dossiê").tap()
+        let topic = app.descendants(matching: .any).matching(identifier: "dossier.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        let apagar = app.buttons.matching(identifier: "dossier.saved.delete").firstMatch
+        while apagar.exists { apagar.tap() }
+        for _ in 0..<3 where (topic.value(forKey: "hasKeyboardFocus") as? Bool) != true {
+            topic.tap()
+            _ = app.keyboards.firstMatch.waitForExistence(timeout: 2)
+        }
+        topic.typeText("Acácia\n")
+        XCTAssertTrue(app.otherElements["dossier.results"].firstMatch.waitForExistence(timeout: 30))
+        let salvar = app.buttons["dossier.save"].firstMatch
+        for _ in 0..<6 where !salvar.isHittable { app.swipeUp(velocity: .slow) }
+        salvar.tap()
+        // The analysis of the dossier (definition, summary with sources) fills the screen.
+        let definicao = app.staticTexts["Definição"].firstMatch
+        for _ in 0..<6 where !definicao.isHittable { app.swipeUp(velocity: .slow) }
+        app.swipeUp(velocity: .slow)
+        capturar("04-dossie")
+        let prancha = app.buttons["dossier.prancha"].firstMatch
+        let copiarPrancha = app.buttons["prancha.copiar"]
+        // The floating tab bar covers the bottom of the screen: the button is brought to the middle first.
+        for _ in 0..<4 where !copiarPrancha.exists {
+            for _ in 0..<6 where !prancha.isHittable || prancha.frame.maxY > app.frame.height * 0.75 {
+                app.swipeDown(velocity: .slow)
+            }
+            prancha.tap()
+            _ = copiarPrancha.waitForExistence(timeout: 10)
+        }
+        XCTAssertTrue(copiarPrancha.exists)
+        capturar("05-prancha")
+
+        abrirNoMais("Trilhas por grau", aguardar: app.staticTexts["trilha.aprendiz.progresso"])
+        capturar("06-trilhas")
+
+        abrirNoMais("Caderno de estudo", aguardar: app.descendants(matching: .any)["notebook.theme.search"])
+        capturar("07-caderno")
+
+        reabrir()
+        navigationTab("Acervo").tap()
+        sleep(3)
+        capturar("08-acervo")
+    }
+
     /// The prancha of a dossier shows each author side by side and the text with ABNT references. Same as Android.
     func testDossierBuildsPranchaWithReferences() {
         navigationTab("Dossiê").tap()

@@ -3,20 +3,35 @@
   "product": "Biblioteca Maçônica",
   "policy": "Uma alteração comum somente é considerada concluída após implementação e validação em iOS e Android.",
   "functionalAudit": {
-    "date": "2026-09-22",
-    "status": "pending",
-    "report": "Paridade/RELATORIO_FILTROS_ACESSIBILIDADE_2026-09-22.md",
-    "openGaps": [
+    "date": "2026-09-30",
+    "status": "verified",
+    "report": "Paridade/RELATORIO_AUDITORIA_LIBERACAO_2026-09-30.md",
+    "openGaps": [],
+    "closedGaps": [
       "full_screen_reading_and_highlights",
       "search_scopes_and_index_coverage",
       "study_paths_and_thematic_collection_rules",
       "export_formatting_and_selection",
       "local_pdf_fidelity_and_original_preservation",
-      "automatic_restore_on_real_devices",
-      "watch_widget_notifications_end_to_end",
-      "grounded_ai_citations_and_retrieval_evaluation",
-      "performance_full_catalog_real_devices",
       "accessibility_and_responsive_device_matrix"
+    ],
+    "deviceChecks": [
+      {
+        "id": "automatic_restore_on_real_devices",
+        "verificar": "Reinstalar o app num iPhone e num Android reais com cópia de segurança e conferir que anotações, dossiês, cartões e progresso voltam."
+      },
+      {
+        "id": "watch_widget_notifications_end_to_end",
+        "verificar": "Com iPhone + Apple Watch e Android + Wear OS pareados: leitura marcada, cartões de revisão e notas entre celular e relógio, widget e notificações."
+      },
+      {
+        "id": "grounded_ai_citations_and_retrieval_evaluation",
+        "verificar": "Gerar uma interpretação com uma chave real do Gemini e conferir que cada frase cita um trecho do dossiê."
+      },
+      {
+        "id": "performance_full_catalog_real_devices",
+        "verificar": "No moto g84 e num iPhone com o acervo completo: busca de termo comum, primeira montagem das coleções e primeiro dossiê depois de reiniciar."
+      }
     ]
   },
   "sharedSources": {

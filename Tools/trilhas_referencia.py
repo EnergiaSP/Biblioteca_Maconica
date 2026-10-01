@@ -38,9 +38,10 @@ def build_rule() -> dict:
     rule["graus"] = []
     for degree in base["graus"]:
         pattern = re.compile(degree["padraoObras"])
-        suggested = sorted((wid for wid, _, text in works if pattern.search(fold(text))),
+        extras = set(degree.get("obrasExtras", []))
+        suggested = sorted((wid for wid, _, text in works if pattern.search(fold(text)) or wid in extras),
                            key=lambda wid: (fold(next(t for i, t, _ in works if i == wid)), wid))
-        rule["graus"].append({**{k: v for k, v in degree.items() if k != "padraoObras"}, "obrasSugeridas": suggested})
+        rule["graus"].append({**{k: v for k, v in degree.items() if k not in ("padraoObras", "obrasExtras")}, "obrasSugeridas": suggested})
     return rule
 
 

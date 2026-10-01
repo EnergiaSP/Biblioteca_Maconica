@@ -429,6 +429,10 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
             .flatMap { it.obras }
             .sortedBy { normalized(it.titulo) }
 
+    /** Titles of every work in the catalog, installed or not, and of the breviaries; the cleaned reference title and author when known. */
+    fun titulosDoCatalogo(): Map<String, String> = (pacotes.flatMap { it.obras } + obrasBreviariosIntegrados).associate { it.id to it.titulo } +
+        Prancha.loadWorks(appContext).filterValues { it.titulo.isNotBlank() }.mapValues { (_, w) -> listOf(w.titulo, w.autor).filter(String::isNotBlank).joinToString(" — ") }
+
     fun obrasDisponiveis(area: BibliotecaArea? = null): List<BibliotecaObraCatalogo> =
         (obrasInstaladas(area) + if (area == null || area == BibliotecaArea.Breviarios)
             obrasBreviariosIntegrados
