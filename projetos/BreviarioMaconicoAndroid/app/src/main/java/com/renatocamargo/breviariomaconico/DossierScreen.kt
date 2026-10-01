@@ -430,7 +430,7 @@ internal fun DossierScreen(
                     analiseJob = scope.launch {
                         try {
                         val resultado = libraryQuery {
-                                val sources = dossierSources(fontes)
+                                val sources = dossierSources(fontes, Prancha.loadWorks(context))
                                 val resposta = GeminiService.gerarTexto(promptAnaliseDossie(context, consulta, fontes, prefs.officialSources()), settings.geminiApiKey)
                                 // Only sentences citing the dossier excerpts are kept; the rest is removed, not shown.
                                 val filtered = AssistedInterpretation.filter(resposta, sources, iaConfig)

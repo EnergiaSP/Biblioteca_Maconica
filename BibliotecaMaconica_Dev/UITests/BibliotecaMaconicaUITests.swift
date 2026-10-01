@@ -387,7 +387,10 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         // The analysis of the dossier (definition, summary with sources) fills the screen.
         let definicao = app.staticTexts["Definição"].firstMatch
         for _ in 0..<6 where !definicao.isHittable { app.swipeUp(velocity: .slow) }
-        app.swipeUp(velocity: .slow)
+        // The heading is dragged just below the navigation bar; holding at the end avoids momentum.
+        let topo = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0)).withOffset(CGVector(dx: 0, dy: 150))
+        definicao.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            .press(forDuration: 0.2, thenDragTo: topo, withVelocity: .slow, thenHoldForDuration: 0.5)
         capturar("04-dossie")
         let prancha = app.buttons["dossier.prancha"].firstMatch
         let copiarPrancha = app.buttons["prancha.copiar"]

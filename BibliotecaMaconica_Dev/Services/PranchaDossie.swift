@@ -51,6 +51,13 @@ enum PranchaDossie {
         return arquivo.obras
     }()
 
+    /// Cleaned reference title and author of a work ("Aprendizado Maçônico — Rizzardo da Camino"),
+    /// or [padrao] (the file name kept in the package) when the work has no reference.
+    static func tituloExibicao(_ obraId: String, padrao: String) -> String {
+        guard let obra = obrasCompartilhadas[obraId], !obra.titulo.isEmpty else { return padrao }
+        return [obra.titulo, obra.autor].filter { !$0.isEmpty }.joined(separator: " — ")
+    }
+
     struct Secao: Codable, Equatable {
         let titulo: String
         let paragrafos: [String]

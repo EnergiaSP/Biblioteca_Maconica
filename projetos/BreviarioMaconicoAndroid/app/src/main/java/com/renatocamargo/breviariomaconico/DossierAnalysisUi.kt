@@ -33,9 +33,16 @@ internal fun dossierQuery(topic: String): String {
     return if ('"' in clean || ' ' !in clean) clean else "\"$clean\""
 }
 
-/** Sources of the dossier analysis and of the AI prompt ([F1] is the first result shown). */
-internal fun dossierSources(results: List<BibliotecaBuscaResultado>): List<DossierAnalysis.Source> = results.map {
-    DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId, it.tituloObra, it.area.raw,
+/**
+ * Sources of the dossier analysis and of the AI prompt ([F1] is the first result shown).
+ * The work is cited by its cleaned reference title and author ([works]), not the file name kept in the package.
+ */
+internal fun dossierSources(
+    results: List<BibliotecaBuscaResultado>,
+    works: Map<String, com.renatocamargo.breviariomaconico.data.Prancha.Work> = emptyMap()
+): List<DossierAnalysis.Source> = results.map {
+    DossierAnalysis.Source("${it.obraId}:${it.pagina}:${it.blocoId ?: it.data}", it.obraId,
+        com.renatocamargo.breviariomaconico.data.Prancha.displayTitle(works, it.obraId, it.tituloObra), it.area.raw,
         it.pagina, it.data, it.trecho, it.rodape)
 }
 
@@ -49,7 +56,7 @@ internal fun analyzeDossier(
     pranchaConfig: com.renatocamargo.breviariomaconico.data.Prancha.Config? = null,
     works: Map<String, com.renatocamargo.breviariomaconico.data.Prancha.Work> = emptyMap()
 ): DossierStudy {
-    val sources = dossierSources(results)
+    val sources = dossierSources(results, works)
     val analysis = DossierAnalysis.analyze(topic.trim(), sources, config, today)
     val cards = reviewConfig?.let {
         ActiveReview.generate(topic.trim(), analysis.definitions, analysis.questions, analysis.relatedTerms.map { term -> term.form }, sources, it)

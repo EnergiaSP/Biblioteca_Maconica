@@ -5,6 +5,7 @@
 # testStoreScreenshots, whose attachments are exported here.
 #
 #   bash Tools/gerar_capturas_lojas.sh
+#   SOMENTE=iphone-6.9 bash Tools/gerar_capturas_lojas.sh   # one device only
 set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PROJECT="$ROOT_DIR/BibliotecaMaconica_Dev/BreviarioMaconicoXXI.xcodeproj"
@@ -40,6 +41,7 @@ XCTESTRUN="$(find "$DERIVED/Build/Products" -name '*.xctestrun' | head -1)"
 
 for entry in "${DEVICES[@]}"; do
   name="${entry%%|*}"; udid="${entry##*|}"
+  [[ -z "${SOMENTE:-}" || "$SOMENTE" == "$name" ]] || continue
   [[ -n "$udid" ]] || { echo "Simulador não encontrado: $name" >&2; exit 1; }
   echo "== $name ($udid)"
   xcrun simctl boot "$udid" 2>/dev/null || true

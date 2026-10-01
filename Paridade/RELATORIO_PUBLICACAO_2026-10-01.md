@@ -56,6 +56,9 @@ Sem ficha catalográfica no PDF, ano, editora e local continuam `[s. d.]` e `[S.
 - **Total por grau:** Aprendiz 10 etapas e 11 obras; Companheiro 9 etapas e 8 obras; Mestre 8 etapas e 5 obras.
 - As trilhas e o caderno mostram o título limpo da referência com o autor (por exemplo, "Aprendizado Maçônico — Rizzardo da Camino"), no lugar do nome do arquivo. Isso vale para iOS e Android.
 - Teste Android `suggestedWorksHaveCatalogTitles`: toda obra sugerida tem título.
+- O dossiê, a prancha e o prompt da IA citam as obras da mesma forma ("Dicionário Maçônico Completo, p. 6").
+  - Antes saía o nome do arquivo guardado no pacote ("Dicionario Maconico Completo").
+  - A troca é feita na montagem das fontes, nas duas plataformas. Os pacotes do R2 não mudam.
 
 ## Também
 - **Breviário de Rizzardo:** 54 tis deixados pela digitalização corrigidos de forma conservadora (`Tools/corrigir_til_rizzardo.py`, relatório `correcao_til_rizzardo_v1.json`). Os 134 restantes ficam para o OCR novo, com o PDF original.

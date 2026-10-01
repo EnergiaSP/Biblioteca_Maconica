@@ -223,7 +223,7 @@ struct DossieEstudoCard: View {
                     textoVazio("Nenhuma obra encontrada para este tema.")
                 } else {
                     ForEach(dossie.obrasEnvolvidas) { obra in
-                        Text("• \(obra.titulo)")
+                        Text("• \(PranchaDossie.tituloExibicao(obra.id, padrao: obra.titulo))")
                             .font(.callout)
                             .foregroundStyle(tema.textoPrincipal)
                     }

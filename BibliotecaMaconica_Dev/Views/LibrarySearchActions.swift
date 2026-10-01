@@ -155,10 +155,7 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
                                  uniquingKeysWith: { primeiro, _ in primeiro })
         store.obras.forEach { titulos[$0.id] = $0.titulo }
         // Cleaned reference title (accents restored) and author, when known.
-        for (id, obra) in PranchaDossie.obrasCompartilhadas where !obra.titulo.isEmpty {
-            titulos[id] = [obra.titulo, obra.autor].filter { !$0.isEmpty }.joined(separator: " — ")
-        }
-        return titulos
+        return titulos.reduce(into: [:]) { $0[$1.key] = PranchaDossie.tituloExibicao($1.key, padrao: $1.value) }
     }
 
     func abrirDossieSalvo(id: String) {
