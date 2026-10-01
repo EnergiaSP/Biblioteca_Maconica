@@ -1,6 +1,6 @@
 {
   "obras": 321,
-  "duplicadas": 16,
+  "duplicadas": 17,
   "grupos": [
     {
       "mantida": {
@@ -41,6 +41,20 @@
           "id": "a_ciencia_secreta_vol_2_henri_durville",
           "titulo": "A_Ciencia_Secreta_Vol_2 - Henri_Durville",
           "paginas": 369
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "a_geometria_sagrada",
+        "titulo": "A Geometria Sagrada",
+        "paginas": 59
+      },
+      "duplicadas": [
+        {
+          "id": "geometria_sagrada",
+          "titulo": "Geometria Sagrada",
+          "paginas": 59
         }
       ]
     },

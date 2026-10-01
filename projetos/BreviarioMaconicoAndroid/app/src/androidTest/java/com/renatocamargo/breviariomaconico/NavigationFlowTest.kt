@@ -618,7 +618,8 @@ class NavigationFlowTest {
     fun acervoShowsTextQualityOfEachWork() {
         compose.onNodeWithTag("tab.acervo").performClick()
         compose.onNodeWithTag("acervo.area.bibliotecaMaconica").performClick()
-        compose.onNodeWithTag("acervo.busca").performTextInput("Boletim GOB")
+        // Mostly star maps and diagrams: still rated low after the OCR was redone (Paridade/RELATORIO_OCR_2026-10-01.md).
+        compose.onNodeWithTag("acervo.busca").performTextInput("Celeste de um Templo")
         compose.waitUntil(10_000) {
             compose.onAllNodesWithText("Texto com muito ruído").fetchSemanticsNodes().isNotEmpty()
         }

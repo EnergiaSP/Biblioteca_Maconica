@@ -1056,7 +1056,8 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             busca.tap()
             _ = app.keyboards.firstMatch.waitForExistence(timeout: 2)
         }
-        busca.typeText("Boletim GOB")
+        // Mostly star maps and diagrams: still rated low after the OCR was redone (Paridade/RELATORIO_OCR_2026-10-01.md).
+        busca.typeText("Celeste de um Templo")
         XCTAssertTrue(app.staticTexts["Texto com muito ruído"].firstMatch.waitForExistence(timeout: 10))
     }
 }

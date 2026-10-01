@@ -164,17 +164,17 @@
           "paragrafos": 459,
           "qualidadeTexto": {
             "avaliadas": 451,
-            "ilegiveis": 451,
+            "ilegiveis": 3,
             "ruidosas": 0
           },
           "tipo": "dicionario",
           "titulo": "Voltaire Dicionário Filosófico - Ridendo Castigat Mores"
         }
       ],
-      "sha256": "890bbf0e1be426f471777e606eda04269d7caf038f5402b07753cb64088e1ef7",
-      "tamanhoBytes": 20824064,
+      "sha256": "aa37870076c5516105983a6c8b76b5a245f0ddd783efb4c25bd1e60f901166cc",
+      "tamanhoBytes": 16150528,
       "titulo": "Dicionários Maçônicos",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/rag_dicionariosMaconicos.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/rag_dicionariosMaconicos.sqlite"
     },
     {
       "area": "judiciarioMaconico",
@@ -182,7 +182,7 @@
       "estatisticas": {
         "blocosFTS": 56,
         "imagens": 61,
-        "notas": 5,
+        "notas": 2,
         "obras": 2,
         "paginas": 61,
         "paragrafos": 56
@@ -202,8 +202,8 @@
           "paragrafos": 39,
           "qualidadeTexto": {
             "avaliadas": 31,
-            "ilegiveis": 2,
-            "ruidosas": 3
+            "ilegiveis": 0,
+            "ruidosas": 0
           },
           "tipo": "judiciario",
           "titulo": "CONSTITUIÇÃO DA CONFEDERAÇÃO MAÇONARIA PORTUGUEZA"
@@ -228,10 +228,10 @@
           "titulo": "Landmarks"
         }
       ],
-      "sha256": "9bb9de6c6e530b0c57eb427aecd1e1fcaf5fd984b74192e2a67a9ccda8d5148c",
-      "tamanhoBytes": 512000,
+      "sha256": "9be9512575b5aa6f46fc5e014ccd5e966f35c509af6c5ac67940d89cadf5c445",
+      "tamanhoBytes": 548864,
       "titulo": "Judiciário Maçônico",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/rag_judiciarioMaconico.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/rag_judiciarioMaconico.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -378,16 +378,16 @@
           "qualidadeTexto": {
             "avaliadas": 54,
             "ilegiveis": 21,
-            "ruidosas": 5
+            "ruidosas": 1
           },
           "tipo": "livro",
           "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)"
         }
       ],
-      "sha256": "842aa199dd940c8bd8a5d25a797c6fbd07d48d7724c5c0d66d0180c245f58b99",
-      "tamanhoBytes": 290816,
+      "sha256": "7407043e56fbdf2c8951a51028cebd3088d21517fb664283ebb1d2d056ba476a",
+      "tamanhoBytes": 303104,
       "titulo": "A Abóbada Celeste de um Templo Maçônico do REAA (V1)",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_abobada_celeste_de_um_templo_maconico_do_reaa_v1.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_a_abobada_celeste_de_um_templo_maconico_do_reaa_v1.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -822,12 +822,12 @@
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_a_geometria_sagrada.sqlite",
       "estatisticas": {
-        "blocosFTS": 56,
+        "blocosFTS": 55,
         "imagens": 59,
-        "notas": 23,
+        "notas": 14,
         "obras": 1,
         "paginas": 59,
-        "paragrafos": 56
+        "paragrafos": 55
       },
       "nivel": "obra",
       "obras": [
@@ -852,10 +852,10 @@
           "titulo": "A Geometria Sagrada"
         }
       ],
-      "sha256": "9061b26b685fae140f4c5d433c29debe9ea16d7a0644116a73c7b33a28b2d4bc",
-      "tamanhoBytes": 278528,
+      "sha256": "9e972e8bfda584e08cc3c64079743f8eee07145963a00a53ddb10264645b06f7",
+      "tamanhoBytes": 266240,
       "titulo": "A Geometria Sagrada",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_geometria_sagrada.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_a_geometria_sagrada.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -1370,7 +1370,7 @@
       "estatisticas": {
         "blocosFTS": 150,
         "imagens": 152,
-        "notas": 7,
+        "notas": 13,
         "obras": 1,
         "paginas": 152,
         "paragrafos": 150
@@ -1391,17 +1391,17 @@
           "paragrafos": 150,
           "qualidadeTexto": {
             "avaliadas": 145,
-            "ilegiveis": 1,
-            "ruidosas": 16
+            "ilegiveis": 0,
+            "ruidosas": 4
           },
           "tipo": "livro",
           "titulo": "A MAÇONARIA EM PORTUGAL"
         }
       ],
-      "sha256": "0b6317667e9c1718cf632c4d15b12b27459fe34098c9a747f93253b24308742d",
-      "tamanhoBytes": 1875968,
+      "sha256": "3e475dfeaf440b80db80418f33284a8fb5a40876e158f642ca58f4a8f781b3b3",
+      "tamanhoBytes": 1773568,
       "titulo": "A MAÇONARIA EM PORTUGAL",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_maconaria_em_portugal.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_a_maconaria_em_portugal.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -1956,7 +1956,7 @@
       "estatisticas": {
         "blocosFTS": 129,
         "imagens": 129,
-        "notas": 36,
+        "notas": 6,
         "obras": 1,
         "paginas": 129,
         "paragrafos": 129
@@ -1978,16 +1978,16 @@
           "qualidadeTexto": {
             "avaliadas": 126,
             "ilegiveis": 0,
-            "ruidosas": 39
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "A Tradição Hermética - Julius Evola"
         }
       ],
-      "sha256": "cba6b8ce064d3143eec884915b9dc3a247668cc8773c2e1e271ca7da2e6c2d45",
-      "tamanhoBytes": 2994176,
+      "sha256": "eeb60499bc760bca9691f35c2813b7a6479505a4aaef3e0b85f7b9a1fafbab2a",
+      "tamanhoBytes": 2809856,
       "titulo": "A Tradição Hermética - Julius Evola",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_tradicao_hermetica_julius_evola.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_a_tradicao_hermetica_julius_evola.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -2049,6 +2049,7 @@
             "Estudo"
           ],
           "autor": null,
+          "duplicataDe": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
           "id": "a_vida_de_jacques_demolay",
           "notas": 2,
           "paginas": 72,
@@ -2059,8 +2060,7 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "A vida de Jacques Demolay",
-          "duplicataDe": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood"
+          "titulo": "A vida de Jacques Demolay"
         }
       ],
       "sha256": "17c2b1fc813440d1e759f17b868472696938614a962a9155469020820f243a0e",
@@ -2174,16 +2174,16 @@
           "qualidadeTexto": {
             "avaliadas": 5,
             "ilegiveis": 0,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "A-mais-antiga-ata-maconica"
         }
       ],
-      "sha256": "264b78d15cdae23f96a9113bedeb07a5398fe603d9f5a95e90da206c34f28f35",
-      "tamanhoBytes": 131072,
+      "sha256": "717296055adbf7f4a9e009bd29d71be7cf877b17db3fcfc29a7c47f3f97d5b0b",
+      "tamanhoBytes": 139264,
       "titulo": "A-mais-antiga-ata-maconica",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_a_mais_antiga_ata_maconica.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_a_mais_antiga_ata_maconica.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3013,7 +3013,7 @@
       "estatisticas": {
         "blocosFTS": 454,
         "imagens": 454,
-        "notas": 766,
+        "notas": 496,
         "obras": 1,
         "paginas": 454,
         "paragrafos": 454
@@ -3034,17 +3034,17 @@
           "paragrafos": 454,
           "qualidadeTexto": {
             "avaliadas": 393,
-            "ilegiveis": 5,
-            "ruidosas": 18
+            "ilegiveis": 1,
+            "ruidosas": 5
           },
           "tipo": "livro",
           "titulo": "AS CHAVES DE SALOMÃO"
         }
       ],
-      "sha256": "59240c3a0e98d5543fca32754fb8a4c9f04d3608598c583138571fd480a7828a",
-      "tamanhoBytes": 4231168,
+      "sha256": "3ff6f3a23db331a79566ebe49add0b9de7374a997aa4fc3ebb13c883abaed265",
+      "tamanhoBytes": 3985408,
       "titulo": "AS CHAVES DE SALOMÃO",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_chaves_de_salomao.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_as_chaves_de_salomao.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3052,7 +3052,7 @@
       "estatisticas": {
         "blocosFTS": 454,
         "imagens": 454,
-        "notas": 766,
+        "notas": 496,
         "obras": 1,
         "paginas": 454,
         "paragrafos": 454
@@ -3074,17 +3074,17 @@
           "paragrafos": 454,
           "qualidadeTexto": {
             "avaliadas": 393,
-            "ilegiveis": 5,
-            "ruidosas": 18
+            "ilegiveis": 1,
+            "ruidosas": 5
           },
           "tipo": "livro",
           "titulo": "As Claviculas Salomao Mathers"
         }
       ],
-      "sha256": "8af3a03e9913496fad6875bd066d2eed3bb66a0e826a9fdbfb3be4dacce463d6",
-      "tamanhoBytes": 4354048,
+      "sha256": "bb03dddc040c5728d4fec8ed2068ff51a5fac33db97de4673279aa031400ba7b",
+      "tamanhoBytes": 4100096,
       "titulo": "As Claviculas Salomao Mathers",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_as_claviculas_salomao_mathers.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_as_claviculas_salomao_mathers.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3599,7 +3599,7 @@
       "estatisticas": {
         "blocosFTS": 33,
         "imagens": 33,
-        "notas": 4,
+        "notas": 2,
         "obras": 1,
         "paginas": 33,
         "paragrafos": 33
@@ -3620,17 +3620,17 @@
           "paragrafos": 33,
           "qualidadeTexto": {
             "avaliadas": 33,
-            "ilegiveis": 6,
-            "ruidosas": 4
+            "ilegiveis": 0,
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Boletim GOB 1890"
         }
       ],
-      "sha256": "fc2818f6fe9219b57659934e1385ba654e8995b46300cac9bc21efcbaf8782d1",
-      "tamanhoBytes": 425984,
+      "sha256": "8bd01b33d0c8130933c81e7b1a63efdee285f3883ec1131f7f3574c691b76e14",
+      "tamanhoBytes": 430080,
       "titulo": "Boletim GOB 1890",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_boletim_gob_1890.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_boletim_gob_1890.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -3987,12 +3987,12 @@
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_combate_ao_clericalismo.sqlite",
       "estatisticas": {
-        "blocosFTS": 30,
+        "blocosFTS": 29,
         "imagens": 38,
-        "notas": 3,
+        "notas": 4,
         "obras": 1,
         "paginas": 38,
-        "paragrafos": 30
+        "paragrafos": 29
       },
       "nivel": "obra",
       "obras": [
@@ -4011,16 +4011,16 @@
           "qualidadeTexto": {
             "avaliadas": 24,
             "ilegiveis": 2,
-            "ruidosas": 2
+            "ruidosas": 1
           },
           "tipo": "livro",
           "titulo": "COMBATE AO CLERICALISMO"
         }
       ],
-      "sha256": "493a6002d62352f69ad62f087d67618c1ff17e8120fdfcdc6c3101513df81dd2",
-      "tamanhoBytes": 593920,
+      "sha256": "a4be701841f1ddb05a28fbd32972fc65942338cc0eb1c2f9c2804204a0f7ea02",
+      "tamanhoBytes": 602112,
       "titulo": "COMBATE AO CLERICALISMO",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_combate_ao_clericalismo.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_combate_ao_clericalismo.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4128,16 +4128,16 @@
           "qualidadeTexto": {
             "avaliadas": 17,
             "ilegiveis": 0,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Cores na Maçonaria"
         }
       ],
-      "sha256": "c638b0e8f3f59e1a131d735d461ac2967d97d40b250613c9bfafcff0bc54cf7a",
+      "sha256": "3f2ae32f384c87e2a1f30de88a3b16b0cd439f17eb12e93000275ddc927c9945",
       "tamanhoBytes": 270336,
       "titulo": "Cores na Maçonaria",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_cores_na_maconaria.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_cores_na_maconaria.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4534,12 +4534,12 @@
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_diccionario_breve_de_la_masoneria_biblioteca_freemasonry.sqlite",
       "estatisticas": {
-        "blocosFTS": 82,
+        "blocosFTS": 84,
         "imagens": 88,
-        "notas": 7,
+        "notas": 2,
         "obras": 1,
         "paginas": 88,
-        "paragrafos": 82
+        "paragrafos": 84
       },
       "nivel": "obra",
       "obras": [
@@ -4557,17 +4557,17 @@
           "paragrafos": 82,
           "qualidadeTexto": {
             "avaliadas": 81,
-            "ilegiveis": 3,
-            "ruidosas": 4
+            "ilegiveis": 0,
+            "ruidosas": 2
           },
           "tipo": "livro",
           "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry"
         }
       ],
-      "sha256": "6815655432ee28e939a4c5c7d27e0b3af9d6175a24cb79a8ace11ad1610e5e8c",
-      "tamanhoBytes": 573440,
+      "sha256": "391caaa6d8d5825f0cdedc8116c376543c1806c8d331cb0e3e3ee445a7a36a3b",
+      "tamanhoBytes": 593920,
       "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_diccionario_breve_de_la_masoneria_biblioteca_freemasonry.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_diccionario_breve_de_la_masoneria_biblioteca_freemasonry.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -4846,12 +4846,12 @@
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_escolas_do_pensamento_maconico_bondarik.sqlite",
       "estatisticas": {
-        "blocosFTS": 86,
+        "blocosFTS": 89,
         "imagens": 110,
-        "notas": 11,
+        "notas": 7,
         "obras": 1,
         "paginas": 110,
-        "paragrafos": 86
+        "paragrafos": 89
       },
       "nivel": "obra",
       "obras": [
@@ -4868,18 +4868,18 @@
           "paginas": 110,
           "paragrafos": 86,
           "qualidadeTexto": {
-            "avaliadas": 42,
+            "avaliadas": 43,
             "ilegiveis": 2,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Escolas do Pensamento Maçônico - Bondarik"
         }
       ],
-      "sha256": "0ecd3a54237f1836515374552691a24348c4640d43fa8230a9dff87b3d4d7080",
-      "tamanhoBytes": 376832,
+      "sha256": "cf6843e4e7f1ef7843c3dd8c8b33ef5187b81cfd4ae6c9b9c956ddfe41195cb9",
+      "tamanhoBytes": 405504,
       "titulo": "Escolas do Pensamento Maçônico - Bondarik",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_escolas_do_pensamento_maconico_bondarik.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_escolas_do_pensamento_maconico_bondarik.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5004,7 +5004,7 @@
       "estatisticas": {
         "blocosFTS": 17,
         "imagens": 17,
-        "notas": 11,
+        "notas": 5,
         "obras": 1,
         "paginas": 17,
         "paragrafos": 17
@@ -5026,27 +5026,27 @@
           "qualidadeTexto": {
             "avaliadas": 16,
             "ilegiveis": 0,
-            "ruidosas": 1
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Fernando Pessoa e a Maçonaria - Roberto Aguilar Silva"
         }
       ],
-      "sha256": "d75f3c9fb67786ea57e85d74ed6659565be5bb4ec5ab1bc22c30ebac49dc099c",
-      "tamanhoBytes": 290816,
+      "sha256": "3ea4f61a80131274fa8a4740539909e3e7b312eda27f16d5fa8873a7d3895fa2",
+      "tamanhoBytes": 286720,
       "titulo": "Fernando Pessoa e a Maçonaria - Roberto Aguilar Silva",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_fernando_pessoa_e_a_maconaria_roberto_aguilar_silva.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_fernando_pessoa_e_a_maconaria_roberto_aguilar_silva.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_fibonacci_serie_de_fibonacci_e_o_numero_de_ouro.sqlite",
       "estatisticas": {
-        "blocosFTS": 86,
+        "blocosFTS": 87,
         "imagens": 87,
-        "notas": 125,
+        "notas": 87,
         "obras": 1,
         "paginas": 87,
-        "paragrafos": 86
+        "paragrafos": 87
       },
       "nivel": "obra",
       "obras": [
@@ -5063,18 +5063,18 @@
           "paginas": 87,
           "paragrafos": 86,
           "qualidadeTexto": {
-            "avaliadas": 81,
-            "ilegiveis": 1,
-            "ruidosas": 14
+            "avaliadas": 82,
+            "ilegiveis": 2,
+            "ruidosas": 13
           },
           "tipo": "livro",
           "titulo": "Fibonacci - série de fibonacci e o número de ouro"
         }
       ],
-      "sha256": "c69305abb8e27910e460add5df935cb94a078ad1dd793c3946954fc7cac9b5dc",
-      "tamanhoBytes": 651264,
+      "sha256": "c04d4161d027347bb7761920919d9cb8b6e3eae13b100b991a083fa114928abc",
+      "tamanhoBytes": 561152,
       "titulo": "Fibonacci - série de fibonacci e o número de ouro",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_fibonacci_serie_de_fibonacci_e_o_numero_de_ouro.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_fibonacci_serie_de_fibonacci_e_o_numero_de_ouro.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5197,12 +5197,12 @@
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_geometria_sagrada.sqlite",
       "estatisticas": {
-        "blocosFTS": 56,
+        "blocosFTS": 55,
         "imagens": 59,
-        "notas": 20,
+        "notas": 17,
         "obras": 1,
         "paginas": 59,
-        "paragrafos": 56
+        "paragrafos": 55
       },
       "nivel": "obra",
       "obras": [
@@ -5219,18 +5219,19 @@
           "paginas": 59,
           "paragrafos": 56,
           "qualidadeTexto": {
-            "avaliadas": 47,
+            "avaliadas": 48,
             "ilegiveis": 0,
             "ruidosas": 3
           },
           "tipo": "livro",
-          "titulo": "Geometria Sagrada"
+          "titulo": "Geometria Sagrada",
+          "duplicataDe": "a_geometria_sagrada"
         }
       ],
-      "sha256": "7891017af85e722306f066cd110b9fcf600934a9fb39c8710785824786713859",
-      "tamanhoBytes": 278528,
+      "sha256": "64adca65b8013d6f2d79b92f18f5f8b40b4612cf01c6b168f5ad642fa138eb5c",
+      "tamanhoBytes": 286720,
       "titulo": "Geometria Sagrada",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_geometria_sagrada.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_geometria_sagrada.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -5860,12 +5861,12 @@
       "area": "bibliotecaMaconica",
       "arquivo": "bibliotecaMaconica/rag_historia_nat_geo_ramses_ii.sqlite",
       "estatisticas": {
-        "blocosFTS": 57,
+        "blocosFTS": 60,
         "imagens": 60,
-        "notas": 8,
+        "notas": 26,
         "obras": 1,
         "paginas": 60,
-        "paragrafos": 57
+        "paragrafos": 60
       },
       "nivel": "obra",
       "obras": [
@@ -5882,18 +5883,18 @@
           "paginas": 60,
           "paragrafos": 57,
           "qualidadeTexto": {
-            "avaliadas": 55,
+            "avaliadas": 60,
             "ilegiveis": 0,
-            "ruidosas": 8
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "História Nat Geo - Ramsés II"
         }
       ],
-      "sha256": "2be4fab8f041039f3fdaa73fcc31d6017914ebff8bd09f19a36895f0cbd3808b",
-      "tamanhoBytes": 393216,
+      "sha256": "0fe8d71e2814b5e29da65b7011ba4ba5250e4acb9a5d81062d4f0101b8ff11ea",
+      "tamanhoBytes": 1220608,
       "titulo": "História Nat Geo - Ramsés II",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_historia_nat_geo_ramses_ii.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_historia_nat_geo_ramses_ii.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6526,7 +6527,7 @@
       "estatisticas": {
         "blocosFTS": 171,
         "imagens": 174,
-        "notas": 42,
+        "notas": 4,
         "obras": 1,
         "paginas": 174,
         "paragrafos": 171
@@ -6546,18 +6547,18 @@
           "paginas": 174,
           "paragrafos": 171,
           "qualidadeTexto": {
-            "avaliadas": 170,
+            "avaliadas": 171,
             "ilegiveis": 2,
-            "ruidosas": 7
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Maconaria_e_Simbologia"
         }
       ],
-      "sha256": "a155e87adf4a281970391746744a557917d05d3f2345288988f3b6110bcacb77",
-      "tamanhoBytes": 1978368,
+      "sha256": "a5c9b60d3d5f2a625d5be875fc3e64116981e5b1904b04b1bfe70ce0a8d065fa",
+      "tamanhoBytes": 1892352,
       "titulo": "Maconaria_e_Simbologia",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_e_simbologia.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_maconaria_e_simbologia.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -6580,6 +6581,7 @@
             "Estudo"
           ],
           "autor": null,
+          "duplicataDe": "100_instrucoes_de_aprendiz",
           "id": "maconaria_100_instrucoes_de_aprendiz",
           "notas": 22,
           "paginas": 363,
@@ -6590,8 +6592,7 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "Maçonaria - 100 instruções de Aprendiz",
-          "duplicataDe": "100_instrucoes_de_aprendiz"
+          "titulo": "Maçonaria - 100 instruções de Aprendiz"
         }
       ],
       "sha256": "552efa7d8e3f9ec47dcd64dca3a6516518b4a8c15b7bc45491f7be6c84a76cdd",
@@ -6879,7 +6880,7 @@
       "estatisticas": {
         "blocosFTS": 341,
         "imagens": 341,
-        "notas": 6,
+        "notas": 3,
         "obras": 1,
         "paginas": 341,
         "paragrafos": 341
@@ -6900,17 +6901,17 @@
           "paragrafos": 341,
           "qualidadeTexto": {
             "avaliadas": 336,
-            "ilegiveis": 2,
-            "ruidosas": 101
+            "ilegiveis": 0,
+            "ruidosas": 1
           },
           "tipo": "livro",
           "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom"
         }
       ],
-      "sha256": "ff8d99391c0f695796ceff28a393628eb8ec761c2a8613b11232034565c660ed",
-      "tamanhoBytes": 9015296,
+      "sha256": "34ad335119a1012b01fa91d9cb7224b4ba85e8e1bf86a300aa8c33427ac66175",
+      "tamanhoBytes": 4304896,
       "titulo": "Maçonaria Revelada - Os Segredos do Aprendiz Maçom",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_maconaria_revelada_os_segredos_do_aprendiz_macom.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_maconaria_revelada_os_segredos_do_aprendiz_macom.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7017,17 +7018,17 @@
           "paragrafos": 29,
           "qualidadeTexto": {
             "avaliadas": 28,
-            "ilegiveis": 13,
-            "ruidosas": 10
+            "ilegiveis": 0,
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Maçons que Leem"
         }
       ],
-      "sha256": "24d27f8d7bee51fd8f58c5d52ac451cd795ef733038df16f28855ca190cf6250",
-      "tamanhoBytes": 172032,
+      "sha256": "d9f05a5c5fd5fa4d674b0e480c62837932e4c716cf54f56eccbbb5d71d6add0e",
+      "tamanhoBytes": 176128,
       "titulo": "Maçons que Leem",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_macons_que_leem.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_macons_que_leem.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7152,7 +7153,7 @@
       "estatisticas": {
         "blocosFTS": 108,
         "imagens": 108,
-        "notas": 2,
+        "notas": 1,
         "obras": 1,
         "paginas": 108,
         "paragrafos": 108
@@ -7174,16 +7175,16 @@
           "qualidadeTexto": {
             "avaliadas": 107,
             "ilegiveis": 0,
-            "ruidosas": 9
+            "ruidosas": 1
           },
           "tipo": "livro",
           "titulo": "Mecanica_quantica - resumo_de_conceitos"
         }
       ],
-      "sha256": "18005fea86bb1565ff9443f5f5fe3ef4962a2d41fcb7aad35da51265d5c37d65",
-      "tamanhoBytes": 1650688,
+      "sha256": "82b166111e9b572f1e634f2c9ab9e01ae02fc2f91c87ef489425cd5ea31734be",
+      "tamanhoBytes": 1847296,
       "titulo": "Mecanica_quantica - resumo_de_conceitos",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_mecanica_quantica_resumo_de_conceitos.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_mecanica_quantica_resumo_de_conceitos.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -7251,17 +7252,17 @@
           "paragrafos": 33,
           "qualidadeTexto": {
             "avaliadas": 31,
-            "ilegiveis": 1,
-            "ruidosas": 25
+            "ilegiveis": 0,
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Mestre_Cerimonias_JUN-09"
         }
       ],
-      "sha256": "706d7863419e61b0116b09ff8b2a50da40fd756af419a8ad8c99b70250ced08e",
-      "tamanhoBytes": 507904,
+      "sha256": "5d24c6025e81e610ca7f20c25cfd397db6b2f450dd0e5e19f40ed2baf8ca87ff",
+      "tamanhoBytes": 475136,
       "titulo": "Mestre_Cerimonias_JUN-09",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_mestre_cerimonias_jun_09.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_mestre_cerimonias_jun_09.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -8376,6 +8377,7 @@
             "Estudo"
           ],
           "autor": null,
+          "duplicataDe": "o_livro_ilustrado_dos_simbolos_completo",
           "id": "o_livro_ilustrado_dos_simbolos_ii_trecho",
           "notas": 0,
           "paginas": 35,
@@ -8386,8 +8388,7 @@
             "ruidosas": 0
           },
           "tipo": "livro",
-          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho",
-          "duplicataDe": "o_livro_ilustrado_dos_simbolos_completo"
+          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho"
         }
       ],
       "sha256": "d7044630a69b81d09e2d67c44b6e780fbd65eae438b2dd2a61644c788693cf13",
@@ -8596,7 +8597,7 @@
       "estatisticas": {
         "blocosFTS": 12,
         "imagens": 12,
-        "notas": 2,
+        "notas": 1,
         "obras": 1,
         "paginas": 12,
         "paragrafos": 12
@@ -8624,10 +8625,10 @@
           "titulo": "O Nome de Deus - Adonai - Roberto Aguilar Silva"
         }
       ],
-      "sha256": "e2dd9b68a4fdc184d892fa47d1fa07c6e74adfdada0d55206e600c7e30972869",
-      "tamanhoBytes": 311296,
+      "sha256": "4473bbc7351a9cb77ed6129aedc69497fcbc320aac6f91b5700d44caad90c91d",
+      "tamanhoBytes": 348160,
       "titulo": "O Nome de Deus - Adonai - Roberto Aguilar Silva",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_o_nome_de_deus_adonai_roberto_aguilar_silva.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_o_nome_de_deus_adonai_roberto_aguilar_silva.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -9092,10 +9093,10 @@
           "titulo": "Origens da Maçonaria - Basilio Thomé de Freitas Junior"
         }
       ],
-      "sha256": "1fe708f169169589f3e83bc11cd472b2cd1efab8bb7983e476b7776b80883a88",
-      "tamanhoBytes": 294912,
+      "sha256": "534d715225c0b76f3f503d992f7fbe392a9c54a1cca50b40db98aceadac0e3c5",
+      "tamanhoBytes": 376832,
       "titulo": "Origens da Maçonaria - Basilio Thomé de Freitas Junior",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_origens_da_maconaria_basilio_thome_de_freitas_junior.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_origens_da_maconaria_basilio_thome_de_freitas_junior.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10197,7 +10198,7 @@
       "estatisticas": {
         "blocosFTS": 112,
         "imagens": 112,
-        "notas": 5,
+        "notas": 3,
         "obras": 1,
         "paginas": 112,
         "paragrafos": 112
@@ -10219,16 +10220,16 @@
           "qualidadeTexto": {
             "avaliadas": 112,
             "ilegiveis": 0,
-            "ruidosas": 42
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Os_Segredos_da_Mente_Milionária"
         }
       ],
-      "sha256": "8f29305c80ba7b5f357c392ed23d1a37a0fbb5947aad6e6f1f47bfbf7e1c525a",
-      "tamanhoBytes": 1835008,
+      "sha256": "155009a6b95e920f643bf2aeb2248fbc13a5d624d058a4dcde65ebefa3b1741f",
+      "tamanhoBytes": 1843200,
       "titulo": "Os_Segredos_da_Mente_Milionária",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_os_segredos_da_mente_milionaria.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_os_segredos_da_mente_milionaria.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10236,7 +10237,7 @@
       "estatisticas": {
         "blocosFTS": 34,
         "imagens": 34,
-        "notas": 3,
+        "notas": 1,
         "obras": 1,
         "paginas": 34,
         "paragrafos": 34
@@ -10258,16 +10259,16 @@
           "qualidadeTexto": {
             "avaliadas": 28,
             "ilegiveis": 0,
-            "ruidosas": 3
+            "ruidosas": 2
           },
           "tipo": "livro",
           "titulo": "PAINEL_DO_GRAU_DE_APRENDIZ__-_COMPLETO  booz"
         }
       ],
-      "sha256": "c3e7d218e488c9d9dc120e8ebd7f476fc6868fd935fe52afec982405f1c748d8",
-      "tamanhoBytes": 233472,
+      "sha256": "2d0a3bcf33f7cfd8f91e261aaf8ec6691f04420ced34122cd291ebc1a4f476d9",
+      "tamanhoBytes": 221184,
       "titulo": "PAINEL_DO_GRAU_DE_APRENDIZ__-_COMPLETO  booz",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_painel_do_grau_de_aprendiz_completo_booz.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_painel_do_grau_de_aprendiz_completo_booz.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10353,7 +10354,7 @@
       "estatisticas": {
         "blocosFTS": 182,
         "imagens": 182,
-        "notas": 318,
+        "notas": 272,
         "obras": 1,
         "paginas": 182,
         "paragrafos": 182
@@ -10374,17 +10375,17 @@
           "paragrafos": 182,
           "qualidadeTexto": {
             "avaliadas": 180,
-            "ilegiveis": 9,
-            "ruidosas": 8
+            "ilegiveis": 1,
+            "ruidosas": 2
           },
           "tipo": "livro",
           "titulo": "PISTIS SOPHIA -traducao_do_texto_original"
         }
       ],
-      "sha256": "0720ef342cdda76f0a539b0dce32448ac31d8efb6614240111851fa28917a4bb",
-      "tamanhoBytes": 3608576,
+      "sha256": "0c62096419eec4d5008975f4cb8910f6fa5d558fab210b27329f21df503c84b4",
+      "tamanhoBytes": 3883008,
       "titulo": "PISTIS SOPHIA -traducao_do_texto_original",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_pistis_sophia_traducao_do_texto_original.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_pistis_sophia_traducao_do_texto_original.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -10900,7 +10901,7 @@
       "estatisticas": {
         "blocosFTS": 60,
         "imagens": 60,
-        "notas": 5,
+        "notas": 10,
         "obras": 1,
         "paginas": 60,
         "paragrafos": 60
@@ -10921,17 +10922,17 @@
           "paragrafos": 60,
           "qualidadeTexto": {
             "avaliadas": 58,
-            "ilegiveis": 39,
-            "ruidosas": 15
+            "ilegiveis": 0,
+            "ruidosas": 0
           },
           "tipo": "livro",
           "titulo": "Regulador do REAA - Grande Oriente do Passeio - 1858"
         }
       ],
-      "sha256": "9d1df4c3733ecedcd0695b47b8bdbe8c76aa4bb0ff48e8af7a23d99bc8670100",
-      "tamanhoBytes": 1163264,
+      "sha256": "237d73ff0b918a6a7641df075248014cdabb442411a621597e94c53a8ef6568d",
+      "tamanhoBytes": 765952,
       "titulo": "Regulador do REAA - Grande Oriente do Passeio - 1858",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_regulador_do_reaa_grande_oriente_do_passeio_1858.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_regulador_do_reaa_grande_oriente_do_passeio_1858.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -11602,7 +11603,7 @@
       "estatisticas": {
         "blocosFTS": 113,
         "imagens": 113,
-        "notas": 26,
+        "notas": 19,
         "obras": 1,
         "paginas": 113,
         "paragrafos": 113
@@ -11623,17 +11624,17 @@
           "paragrafos": 113,
           "qualidadeTexto": {
             "avaliadas": 112,
-            "ilegiveis": 1,
-            "ruidosas": 5
+            "ilegiveis": 0,
+            "ruidosas": 4
           },
           "tipo": "livro",
           "titulo": "Sistema Golden Dawn 2-0"
         }
       ],
-      "sha256": "ac06a90ebec1cfb9095366e3330d2ca159d81d874ddaf37f2ef34a1862ccbd4c",
-      "tamanhoBytes": 2244608,
+      "sha256": "69e808969f52f743a983a915bbe253abf5ad8b52641c993b6af6e0c4831ff6da",
+      "tamanhoBytes": 2056192,
       "titulo": "Sistema Golden Dawn 2-0",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v4/bibliotecaMaconica/rag_sistema_golden_dawn_2_0.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v5/bibliotecaMaconica/rag_sistema_golden_dawn_2_0.sqlite"
     },
     {
       "area": "bibliotecaMaconica",

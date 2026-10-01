@@ -3,8 +3,8 @@
 #
 # Uso: Tools/publicar_rag_r2_wrangler.sh [bucket]
 #
-# - Le a versao (rag/vN) do baseURL de Resources/rag_catalogo.json; a versao
-#   anterior continua publicada para os apps ja instalados.
+# - Cada pacote vai para o endereco do seu "url" no catalogo (rag/vN/...): pacotes
+#   refeitos usam uma versao nova e os que ja estao em uso nunca sao sobrescritos.
 # - Envia cada pacote de ImportacaoLivrosPDF_OCR/_relatorios/RAGPackages e
 #   confere pela URL publica (ETag = MD5 do arquivo). Pode ser executado de
 #   novo: o que ja esta publicado e igual e pulado.
@@ -44,21 +44,24 @@ echo "Pacotes locais conferidos com o catalogo."
 
 ARQUIVOS=()
 while IFS= read -r linha; do ARQUIVOS+=("$linha"); done < <(
-  python3 -c 'import json,sys; [print(p["arquivo"]) for p in json.load(open(sys.argv[1]))["pacotes"]]' "$CATALOG"
+  python3 -c 'import json,sys; [print(p["arquivo"] + "\t" + p["url"]) for p in json.load(open(sys.argv[1]))["pacotes"]]' "$CATALOG"
 )
 TOTAL=${#ARQUIVOS[@]}
 N=0
-for arquivo in "${ARQUIVOS[@]}"; do
+for linha in "${ARQUIVOS[@]}"; do
   N=$((N + 1))
+  arquivo="${linha%%$'\t'*}"
+  url="${linha#*$'\t'}"
+  chave="${url#https://*/}"
+  [[ "$chave" == rag/v* ]] || { echo "url inesperada: $url"; exit 1; }
   local_file="$PACKAGES/$arquivo"
   md5="$(md5 -q "$local_file")"
-  url="$BASE_URL/$arquivo"
   if publicado "$url" "$md5"; then
     echo "$N/$TOTAL ja publicado: $arquivo"
     continue
   fi
-  echo "$N/$TOTAL enviando: $arquivo"
-  $WRANGLER r2 object put "$BUCKET/$PREFIX/$arquivo" --file "$local_file" \
+  echo "$N/$TOTAL enviando: $chave"
+  $WRANGLER r2 object put "$BUCKET/$chave" --file "$local_file" \
     --content-type application/vnd.sqlite3 --remote >/dev/null
   publicado "$url" "$md5" || { echo "Falha ao conferir $url"; exit 1; }
 done
