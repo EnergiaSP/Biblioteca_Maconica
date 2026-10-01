@@ -53,7 +53,7 @@ Sem ficha catalográfica no PDF, ano, editora e local continuam `[s. d.]` e `[S.
 ## 12. Trilhas por grau
 - **Companheiro** ganhou 8 obras: geometria sagrada, quadrivium, trivium, números e Pitágoras.
 - **Mestre** ganhou mais 4 obras: Lavagnini, Câmara do Meio, Templo de Salomão e lendas da Maçonaria inglesa.
-- **Total por grau:** Aprendiz 10 etapas e 11 obras; Companheiro 9 etapas e 8 obras; Mestre 8 etapas e 5 obras.
+- **Total por grau:** Aprendiz 10 etapas e 10 obras (a cópia de "100 Instruções de Aprendiz" saiu); Companheiro 9 etapas e 8 obras; Mestre 8 etapas e 5 obras.
 - As trilhas e o caderno mostram o título limpo da referência com o autor (por exemplo, "Aprendizado Maçônico — Rizzardo da Camino"), no lugar do nome do arquivo. Isso vale para iOS e Android.
 - Teste Android `suggestedWorksHaveCatalogTitles`: toda obra sugerida tem título.
 - O dossiê, a prancha e o prompt da IA citam as obras da mesma forma ("Dicionário Maçônico Completo, p. 6").
