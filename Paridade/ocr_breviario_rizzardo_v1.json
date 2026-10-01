@@ -1,0 +1,3627 @@
+{
+  "descricao": "Leituras do Breviário de Rizzardo refeitas com novo OCR do PDF original (Tools/refazer_breviario_rizzardo.py). Mantidas: título, qualidade ou tamanho não conferem.",
+  "trocadas": 362,
+  "mantidas": [],
+  "leituras": [
+    {
+      "data": "01/01",
+      "titulo": "ABOBODA CELESTE",
+      "tituloNovo": "ABÓBODA CELESTE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "O teto de cada Loja possui uma abóboda refletindo todo o firmamento; obviamente, essa abóboda é simbólica e nos iriduz a",
+      "inicioDepois": "O teto de cada Loja possui uma abóboda refletindo todo o firmamento; obviamente, essa abóboda é simbólica e nos induz a "
+    },
+    {
+      "data": "02/01",
+      "titulo": "ABOI BODASAGRADA",
+      "tituloNovo": "ABÓBODA SAGRADA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Quando em meditação fechamos os olhos e \"chamamos\" junto a nós, dentro de nós, o Firmamento. Nele, de imediato nos encon",
+      "inicioDepois": "Quando em meditação fechamos os olhos e \"chamamos\" junto a nós, dentro de nós, o Firmamento. Nele, de imediato nos encon"
+    },
+    {
+      "data": "03/01",
+      "titulo": "ABOBODA DE AÇO",
+      "tituloNovo": "ABÓBODA DE AÇO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A espada faz parte dos objetos usados pelos maçons, consti tuindo-se em símbolo que contém vários significados, como a j",
+      "inicioDepois": "A espada faz parte dos objetos usados pelos maçons, constituindo-se em símbolo que contém vários significados, como a ju"
+    },
+    {
+      "data": "04/01",
+      "titulo": "A BOLSA DE BENEFICENCIA",
+      "tituloNovo": "A BOLSA DE BENEFICÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A segunda bolsa é conduzida pelo hospitaleiro, que também faz o giro obedecendo à hierarquia funcional; oferece a bolsa ",
+      "inicioDepois": "A segunda bolsa é conduzida pelo hospitaleiro, que também faz o giro obedecendo à hierarquia funcional; oferece a bolsa "
+    },
+    {
+      "data": "05/01",
+      "titulo": "A BOLSA DE PROPOSIÇÕES E INFORMAÇOES",
+      "tituloNovo": "A BOLSA DE PROPOSIÇÕES E INFORMAÇÕES",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "O Mestre de Cerimônias, \"girando\" pela Loja, oferece uma bolsa aos presentes, obedecendo à hierarquia funcional, recolhe",
+      "inicioDepois": "O Mestre de Cerimônias, \"girando\" pela Loja, oferece uma bolsa aos presentes, obedecendo à hierarquia funcional, recolhe"
+    },
+    {
+      "data": "06/01",
+      "titulo": "ABRAÇO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Entre os maçons, quando do encontro, além do aperto de mão caloroso, há o fraternal tríplice abraço. Porque chamaria mui",
+      "inicioDepois": "Entre os maçons, quando do encontro, além do aperto de mão caloroso, há o fraternal tríplice abraço. Porque chamaria mui"
+    },
+    {
+      "data": "07/01",
+      "titulo": "AACACIA",
+      "tituloNovo": "A ACÁCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Entre nós, existem para mais de 300 espécies de acácias que se encontram nos bosques e nas cidades, nos jardins e nas fl",
+      "inicioDepois": "Entre nós, existem para mais de 300 espécies de acácias que se encontram nos bosques e nas cidades, nos jardins e nas fl"
+    },
+    {
+      "data": "08/01",
+      "titulo": "ADORMECER",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "«Estar adormecido\" significa o maçom afastado de sua Loja. Cremos, porém, que esse «adormecer\" tem várias nuances, como ",
+      "inicioDepois": "\"Estar adormecido\" significa o maçom afastado de sua Loja. Cremos, porém, que esse \"adormecer\" tem várias nuances, como "
+    },
+    {
+      "data": "09/01",
+      "titulo": "ADORNOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O símbolo, em si, também pode ser considerado um adorno;_ porém, especificamente, considera-se adorno o objeto que é usa",
+      "inicioDepois": "O símbolo, em si, também pode ser considerado um adorno; porém, especificamente, considera-se adorno o objeto que é usad"
+    },
+    {
+      "data": "10/01",
+      "titulo": "O FOGO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O fogo é a prova mais difícil que um candidato enfrenta du rante a sua Iniciação. Símbolo de purificação, oposto ao da á",
+      "inicioDepois": "O fogo é a prova mais difícil que um candidato enfrenta durante a sua Iniciação. Símbolo de purificação, oposto ao da ág"
+    },
+    {
+      "data": "11/01",
+      "titulo": "AAGUA",
+      "tituloNovo": "A ÁGUA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A água, o dissolvente universal, é um dos minerais mais vul gares encontrados em toda a parte. No passado, as famílias s",
+      "inicioDepois": "A água, o dissolvente universal, é um dos minerais mais vulgares encontrados em toda a parte. No passado, as famílias su"
+    },
+    {
+      "data": "12/01",
+      "titulo": "AGUIA",
+      "tituloNovo": "ÁGUIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A águia é o símbolo do maçom que olha na luz astral e nela enxerga a sombra do passado, do presente e do que está por vi",
+      "inicioDepois": "A águia é o símbolo do maçom que olha na luz astral e nela enxerga a sombra do passado, do presente e do que está por vi"
+    },
+    {
+      "data": "13/01",
+      "titulo": "OAR",
+      "tituloNovo": "O AR",
+      "antes": "ilegivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Na Iniciação, o candidato foi submetido à prova do ar, que é q u u e m é d um os d e o le s m el e e n m to e s n t d o ",
+      "inicioDepois": "Na Iniciação, o candidato foi submetido à prova do ar, que é um dos elementos da Natureza de maior grandeza, uma vez que"
+    },
+    {
+      "data": "14/01",
+      "titulo": "AJOELHAR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Consigna o dicionário: 'J\\to de pôr-se de joelhos, com a finalidade de orar, adorar, reverenciar, com humildade, submiss",
+      "inicioDepois": "Consigna o dicionário: \"Ato de pôr-se de joelhos, com a finalidade de orar, adorar, reverenciar, com humildade, submissã"
+    },
+    {
+      "data": "15/01",
+      "titulo": "Akasha",
+      "tituloNovo": "AKASHA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O significado de Akasha em sânscrito é: firmamento; o Cos mos invisível. Akascha, ou simplesmente Akasha, é o deus invis",
+      "inicioDepois": "O significado de Akasha em sânscrito é: firmamento; o Cosmos invisível. Akascha, ou simplesmente Akasha, é o deus invisí"
+    },
+    {
+      "data": "16/01",
+      "titulo": "A ALAVANCA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A alavanca é um símbolo que expressa a força; seu formato, de per si, sugere essa força; basta-lhe um ponto de apoio par",
+      "inicioDepois": "A alavanca é um símbolo que expressa a força; seu formato, de per si, sugere essa força; basta-lhe um ponto de apoio par"
+    },
+    {
+      "data": "17/01",
+      "titulo": "AALEGORIA",
+      "tituloNovo": "A ALEGORIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "\"Exposição de um pensamento sob forma figurada\"; palavra de origem latina, que por sua vez é derivado do grego; raiz da ",
+      "inicioDepois": "\"Exposição de um pensamento sob forma figurada\"; palavra de origem latina, que por sua vez é derivado do grego; raiz da "
+    },
+    {
+      "data": "18/01",
+      "titulo": "ALFA E OMEGA",
+      "tituloNovo": "ALFA E ÔMEGA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Primeira e última letras do alfabeto grego; simbolizam o princípio e o fim; representam o próprio Deus que, como justo e",
+      "inicioDepois": "Primeira e última letras do alfabeto grego; simbolizam o princípio e o fim; representam o próprio Deus que, como justo e"
+    },
+    {
+      "data": "19/01",
+      "titulo": "A ALQUIMIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Houve época longínqua em que a Maçonaria dedicava-se ao estudo e à prática alquímica. A alquimia é a expressão externa d",
+      "inicioDepois": "Houve época longínqua em que a Maçonaria dedicava-se ao estudo e à prática alquímica. A alquimia é a expressão externa d"
+    },
+    {
+      "data": "20/01",
+      "titulo": "A ALMA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Certos pensadores e religiosos confundem alma com espírito; trata-se de um assunto de alguma profundidade, uma vez que c",
+      "inicioDepois": "Certos pensadores e religiosos confundem alma com espírito; trata-se de um assunto de alguma profundidade, uma vez que c"
+    },
+    {
+      "data": "21/01",
+      "titulo": "O ALTAR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Altar é um móvel colocado em local elevado, sendo suporte de algo sagrado, permitindo a presença do ser humano aos seu",
+      "inicioDepois": "O Altar é um móvel colocado em local elevado, sendo suporte de algo sagrado, permitindo a presença do ser humano aos seu"
+    },
+    {
+      "data": "22/01",
+      "titulo": "A AMBIÇÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo é frequentemente mal empregado; sua raiz é latina, significando: \"andar de um lado para outro': ou seja, esta",
+      "inicioDepois": "O vocábulo é frequentemente mal empregado; sua raiz é latina, significando: \"andar de um lado para outro\", ou seja, esta"
+    },
+    {
+      "data": "23/01",
+      "titulo": "ANUNCIOS",
+      "tituloNovo": "ANÚNCIOS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Durante as sessões maçônicas, sejam econômicas ou exclusivamente litúrgicas ou iniciáticas, nenhum assunto poderá seguir",
+      "inicioDepois": "Durante as sessões maçônicas, sejam econômicas ou exclusivamente litúrgicas ou iniciáticas, nenhum assunto poderá seguir"
+    },
+    {
+      "data": "24/01",
+      "titulo": "AANOIA",
+      "tituloNovo": "A ANOIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Significa, em grego, ignorância, ou o \"não conhecimento': Uma das missões da Maçonaria é o combate à ignorância, que é c",
+      "inicioDepois": "Significa, em grego, ignorância, ou o \"não conhecimento\". Uma das missões da Maçonaria é o combate à ignorância, que é c"
+    },
+    {
+      "data": "25/01",
+      "titulo": "OS ANJOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "São, propriamente, seres alados, cujo mistério ainda não nos foi revelado, mas que pertencem à mitologia hebraica e são ",
+      "inicioDepois": "São, propriamente, seres alados, cujo mistério ainda não nos foi revelado, mas que pertencem à mitologia hebraica e são "
+    },
+    {
+      "data": "26/01",
+      "titulo": "OANGULO",
+      "tituloNovo": "O ÂNGULO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Além do ponto e da linha reta, que são as expressões mais sim ples da geometria, segue-se o ângulo, que é a figura geomé",
+      "inicioDepois": "Além do ponto e da linha reta, que são as expressões mais simples da geometria, segue-se o ângulo, que é a figura geomét"
+    },
+    {
+      "data": "27/01",
+      "titulo": "AANCORA",
+      "tituloNovo": "A ÂNCORA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Embora a Maçonaria não possua símbolos ligados à Marinha, a âncora, por tradição antiga, tem liames maçônicos. Trata-se ",
+      "inicioDepois": "Embora a Maçonaria não possua símbolos ligados à Marinha, a âncora, por tradição antiga, tem liames maçônicos. Trata-se "
+    },
+    {
+      "data": "28/01",
+      "titulo": "A AMIZADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": ". De origem latina, amicitia, com o significado de afeição, ternura e estima. Sua raiz provém de \"amor\". Na Maçonaria, o",
+      "inicioDepois": "De origem latina, amicitia, com o significado de afeição, ternura e estima. Sua raiz provém de \"amor\". Na Maçonaria, o t"
+    },
+    {
+      "data": "29/01",
+      "titulo": "OAMEM",
+      "tituloNovo": "O AMÉM",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a palavra procedente do hebraico que conclui uma prece, com o significado de afirmação e louvor; é sinônimo da express",
+      "inicioDepois": "É a palavra procedente do hebraico que conclui uma prece, com o significado de afirmação e louvor; é sinônimo da express"
+    },
+    {
+      "data": "30/01",
+      "titulo": "OALTRUISMO",
+      "tituloNovo": "O ALTRUÍSMO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Termo aplicado por Augusto Comte, fundador do positivis mo, para expressar o sentimento de \"dação': fundamento do amor f",
+      "inicioDepois": "Termo aplicado por Augusto Comte, fundador do positivismo, para expressar o sentimento de \"dação\", fundamento do amor fr"
+    },
+    {
+      "data": "31/01",
+      "titulo": "O APRENDIZ ·",
+      "tituloNovo": "O APRENDIZ",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Maçonicamente, intitulava-se de Aprendiz aquele que preten dia ingressar nos mistérios da construção. Hoje, Aprendiz é a",
+      "inicioDepois": "Maçonicamente, intitulava-se de Aprendiz aquele que pretendia ingressar nos mistérios da construção. Hoje, Aprendiz é a "
+    },
+    {
+      "data": "01/02",
+      "titulo": "AARCA",
+      "tituloNovo": "A ARCA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Arca significa \"depósito': mas de elementos especiais e secre tos; maçonicamente, é um recipiente onde são guardados os ",
+      "inicioDepois": "Arca significa \"depósito\", mas de elementos especiais e secretos; maçonicamente, é um recipiente onde são guardados os p"
+    },
+    {
+      "data": "02/02",
+      "titulo": "ARQUE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Raiz de uma palavra grega, arkhe, que significa \"o princípio': Cada ser da Natureza e do próprio homem possui um \"princí",
+      "inicioDepois": "Raiz de uma palavra grega, arkhè, que significa \"o princípio\". Cada ser da Natureza e do próprio homem possui um \"princí"
+    },
+    {
+      "data": "03/02",
+      "titulo": "ARQUETIPO",
+      "tituloNovo": "ARQUÉTIPO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do grego: \"forma primordial': isto é, um modelo vindo do princípio criado; o arquétipo do homem é considerado Adão Kad m",
+      "inicioDepois": "Do grego: \"forma primordial\", isto é, um modelo vindo do princípio criado; o arquétipo do homem é considerado Adão Kadmo"
+    },
+    {
+      "data": "04/02",
+      "titulo": "ARTE REAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Esse termo é empregado em Maçonaria, abusiva e inadequa damente. Origina-se das constituições de Anderson, que em 1723 o",
+      "inicioDepois": "Esse termo é empregado em Maçonaria, abusiva e inadequadamente. Origina-se das constituições de Anderson, que em 1723 o "
+    },
+    {
+      "data": "05/02",
+      "titulo": "ASSIDUIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim: ''assiduus\", significando \"aquele que permanece ao lado: A assiduidade constitui uma das virtudes do maçom; nã",
+      "inicioDepois": "Do latim: \"assiduus\", significando \"aquele que permanece ao lado\". A assiduidade constitui uma das virtudes do maçom; nã"
+    },
+    {
+      "data": "06/02",
+      "titulo": "ASSISTENCIA",
+      "tituloNovo": "ASSISTÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A decantada «mútua assistência\" entre os maçons têm sido criticada porque lhe são dados limites. O maçom necessitado dev",
+      "inicioDepois": "A decantada \"mútua assistência\" entre os maçons têm sido criticada porque lhe são dados limites. O maçom necessitado dev"
+    },
+    {
+      "data": "07/02",
+      "titulo": "O ASTRAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O astral é um plano cósmico entre a Terra e o limiar do que é celestial. Mundo invisível, onde se movimentariam as almas",
+      "inicioDepois": "O astral é um plano cósmico entre a Terra e o limiar do que é celestial. Mundo invisível, onde se movimentariam as almas"
+    },
+    {
+      "data": "08/02",
+      "titulo": "ASTROLOGIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "É a ciência dos astros; desenvolveu-se entre os caldeus e sua origem é ignorada, mas sempre existiu; pelo menos, os escr",
+      "inicioDepois": "É a ciência dos astros; desenvolveu-se entre os caldeus e sua origem é ignorada, mas sempre existiu; pelo menos, os escr"
+    },
+    {
+      "data": "09/02",
+      "titulo": "OATRIO",
+      "tituloNovo": "O ÁTRIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O átrio é a antecâmara do templo, e para lá da sala dos passos perdidos é que o Mestre de Cerimônias conduz os Irmãos co",
+      "inicioDepois": "O átrio é a antecâmara do templo, e para lá da sala dos passos perdidos é que o Mestre de Cerimônias conduz os Irmãos co"
+    },
+    {
+      "data": "10/02",
+      "titulo": "AUM",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Vocábulo hindu pelo qual se designa a divindade. Seu está na sua vocalização, que produz um som prolongado, co-·fosse um",
+      "inicioDepois": "Vocábulo hindu pelo qual se designa a divindade. Seu valor está na sua vocalização, que produz um som prolongado, como s"
+    },
+    {
+      "data": "11/02",
+      "titulo": "AUMENTO DE SALARIO",
+      "tituloNovo": "AUMENTO DE SALÁRIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Diz-se aumento de salário a passagem de um grau para outro, tanto no simbolismo como nos corpos filosóficos .. Contudo, ",
+      "inicioDepois": "Diz-se aumento de salário a passagem de um grau para outro, tanto no simbolismo como nos corpos filosóficos. Contudo, po"
+    },
+    {
+      "data": "12/02",
+      "titulo": "AUSENCIA",
+      "tituloNovo": "AUSÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O maçom jamais estará \"ausente,, aos trabalhos, mesmo que se encontre fora e longe da Loja, pois está ligado permanentem",
+      "inicioDepois": "O maçom jamais estará \"ausente\" aos trabalhos, mesmo que se encontre fora e longe da Loja, pois está ligado permanenteme"
+    },
+    {
+      "data": "14/02",
+      "titulo": "OAVENTAL",
+      "tituloNovo": "O AVENTAL",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Aparentemente, o uso de um avental sugere protéção, uma vez que cobre partes do baixo-ventre, onde se situa o órgão repr",
+      "inicioDepois": "Aparentemente, o uso de um avental sugere proteção, uma vez que cobre partes do baixo-ventre, onde se situa o órgão repr"
+    },
+    {
+      "data": "15/02",
+      "titulo": "ABALANÇA",
+      "tituloNovo": "A BALANÇA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Balança corresponde a libra em latim; signo do zodíaco, é formado por oito estrelas. Originou-se pela igualdade do equin",
+      "inicioDepois": "Balança corresponde a libra em latim; signo do zodíaco, é formado por oito estrelas. Originou-se pela igualdade do equin"
+    },
+    {
+      "data": "16/02",
+      "titulo": "OBALANDRAU",
+      "tituloNovo": "O BALANDRAU",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O uso do balandrau em Loja maçônica continua gerando dúvi das, uma vez que a tradição silencia a respeito, mas hoje é us",
+      "inicioDepois": "O uso do balandrau em Loja maçônica continua gerando dúvidas, uma vez que a tradição silencia a respeito, mas hoje é usa"
+    },
+    {
+      "data": "17/02",
+      "titulo": "O BARRO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Barro é formado com o pó da terra e água que originou o corpo humano no simbolismo da criação universal. À terra e à á",
+      "inicioDepois": "O Barro é formado com o pó da terra e água que originou o corpo humano no simbolismo da criação universal. À terra e à á"
+    },
+    {
+      "data": "18/02",
+      "titulo": "OSBASTOES",
+      "tituloNovo": "OS BASTÕES",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O surgimento dos Bastões na Maçonaria, usados pelo Mestre de Cerimônias e os Diáconos ocorreu na Maçonaria Inglesa, do T",
+      "inicioDepois": "O surgimento dos Bastões na Maçonaria, usados pelo Mestre de Cerimônias e os Diáconos ocorreu na Maçonaria Inglesa, do T"
+    },
+    {
+      "data": "19/02",
+      "titulo": "ABATERIA",
+      "tituloNovo": "A BATERIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em linguagem maçônica, Bateria significa \"aplauso,, e \"ordena mento,,; os aplausos são feitos pelo bater das mãos; os qu",
+      "inicioDepois": "Em linguagem maçônica, Bateria significa \"aplauso\" e \"ordenamento\"; os aplausos são feitos pelo bater das mãos; os que e"
+    },
+    {
+      "data": "21/02",
+      "titulo": "A BELEZA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Sabedoria, força e beleza constituem a saudação feita na cor respondência maçônica, usando-se a abreviatura: SFB. É o no",
+      "inicioDepois": "Sabedoria, força e beleza constituem a saudação feita na correspondência maçônica, usando-se a abreviatura: SFB. É o nom"
+    },
+    {
+      "data": "22/02",
+      "titulo": "A BENEFICENCIA",
+      "tituloNovo": "A BENEFICÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em toda reunião maçônica é cultivada a beneficência, não tanto como ato caritativo mas sobretudo para manter a tradição ",
+      "inicioDepois": "Em toda reunião maçônica é cultivada a beneficência, não tanto como ato caritativo mas sobretudo para manter a tradição "
+    },
+    {
+      "data": "23/02",
+      "titulo": "ABIBLIA",
+      "tituloNovo": "A BÍBLIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Para a Maçonaria cristã, o seu livro sagrado é a Bíblia; o vocábulo tem origem grega, significando \"os livros,,; dessa p",
+      "inicioDepois": "Para a Maçonaria cristã, o seu livro sagrado é a Bíblia; o vocábulo tem origem grega, significando \"os livros\"; dessa pa"
+    },
+    {
+      "data": "24/02",
+      "titulo": "BOM PASTOR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Maçonaria usa essas palavras para variadas funções; o bom pastor é o nome dado a Jesus e se origina de uma das suas ma",
+      "inicioDepois": "A Maçonaria usa essas palavras para variadas funções; o bom pastor é o nome dado a Jesus e se origina de uma das suas ma"
+    },
+    {
+      "data": "25/02",
+      "titulo": "BOM-1",
+      "tituloNovo": "BOM-I",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É palavra derivada de BEM, que tem vários significados, como a parte positiva de um comportamento; a dádiva ou benesse; ",
+      "inicioDepois": "É palavra derivada de BEM, que tem vários significados, como a parte positiva de um comportamento; a dádiva ou benesse; "
+    },
+    {
+      "data": "26/02",
+      "titulo": "BOM-II",
+      "tituloNovo": "BOM - II",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O bem nem sempre é demonstrável; ele pode existir sem que seja percebido; nem todo gesto bom reflete bondade; o déspota ",
+      "inicioDepois": "O bem nem sempre é demonstrável; ele pode existir sem que seja percebido; nem todo gesto bom reflete bondade; o déspota "
+    },
+    {
+      "data": "27/02",
+      "titulo": "O BURIL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Para desbastar a pedra bruta usamos o escopro; para burilá-la usamos o buril que é um instrumento mais delicado, e mais ",
+      "inicioDepois": "Para desbastar a pedra bruta usamos o escopro; para burilá-la usamos o buril que é um instrumento mais delicado, e mais "
+    },
+    {
+      "data": "28/02",
+      "titulo": "A CADEIA DE UNIÃO -1",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É formada na Loja, colocando-se os maçons ao redor do Altar, entrelaçados pelas mãos e unidos pelos pés e pelas mentes. ",
+      "inicioDepois": "É formada na Loja, colocando-se os maçons ao redor do Altar, entrelaçados pelas mãos e unidos pelos pés e pelas mentes. "
+    },
+    {
+      "data": "01/03",
+      "titulo": "A CADEIA DE UNIAO - II",
+      "tituloNovo": "A CADEIA DE UNIÃO - II",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Sendo a mente a irradiadora de energias, forma-se dentro da Cadeia de União um aglomerado de forças que, sob o comando d",
+      "inicioDepois": "Sendo a mente a irradiadora de energias, forma-se dentro da Cadeia de União um aglomerado de forças que, sob o comando d"
+    },
+    {
+      "data": "02/03",
+      "titulo": "O CALICE",
+      "tituloNovo": "O CÁLICE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "O c~i~~ ~-~m elemento comum a todas as religiões que pos suem atos 1n1c1aticos em sua hturg1a. O cálice, a taça, o Graal",
+      "inicioDepois": "O cálice é um elemento comum a todas as religiões que possuem atos iniciáticos em sua liturgia. O cálice, a taça, o Graa"
+    },
+    {
+      "data": "03/03",
+      "titulo": "A CALUNIA",
+      "tituloNovo": "A CALÚNIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Um dos graves defeitos do ser humano é caluniar. A calúnia consiste em atribuir a alguém fato definido como crime, ating",
+      "inicioDepois": "Um dos graves defeitos do ser humano é caluniar. A calúnia consiste em atribuir a alguém fato definido como crime, ating"
+    },
+    {
+      "data": "04/03",
+      "titulo": "ACAMARA DAS REFLEXOES",
+      "tituloNovo": "A CÂMARA DAS REFLEXÕES",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A Câmara das Reflexões constitui o lugar ultra sigiloso de uma Loja, onde o Iniciado só penetra uma única vez em sua vid",
+      "inicioDepois": "A Câmara das Reflexões constitui o lugar ultra sigiloso de uma Loja, onde o Iniciado só penetra uma única vez em sua vid"
+    },
+    {
+      "data": "05/03",
+      "titulo": "O CAOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo caos é de origem grega e significa \"desordem e confusão universal\". Quando Deus se dispôs a construir o mundo",
+      "inicioDepois": "O vocábulo caos é de origem grega e significa \"desordem e confusão universal\". Quando Deus se dispôs a construir o mundo"
+    },
+    {
+      "data": "06/03",
+      "titulo": "CARGOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Dentro de uma Loja maçônica inexistem cargos maiores ou cargos menores; todos são importantes. Todos são cargos honorífi",
+      "inicioDepois": "Dentro de uma Loja maçônica inexistem cargos maiores ou cargos menores; todos são importantes. Todos são cargos honorífi"
+    },
+    {
+      "data": "07/03",
+      "titulo": "A CARIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Para que u1n maçom revele seu caráter caritativo, faz-se necessá rio despertar nele o sentimento de altruísmo e solidari",
+      "inicioDepois": "Para que um maçom revele seu caráter caritativo, faz-se necessário despertar nele o sentimento de altruísmo e solidaried"
+    },
+    {
+      "data": "08/03",
+      "titulo": "CARISMA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do grego Kháris, com o significado de alguém possuidor de um dom. É a qualidade que uma pessoa tem de atrair sobre si a ",
+      "inicioDepois": "Do grego Kháris, com o significado de alguém possuidor de um dom. É a qualidade que uma pessoa tem de atrair sobre si a "
+    },
+    {
+      "data": "09/03",
+      "titulo": "O CASAMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de uma cerimônia universal e de tradição milenar; propriamente, inexiste na liturgia maçônica. O maçom que casa",
+      "inicioDepois": "Trata-se de uma cerimônia universal e de tradição milenar; propriamente, inexiste na liturgia maçônica. O maçom que casa"
+    },
+    {
+      "data": "10/03",
+      "titulo": "CAVERNA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A caverna foi o primeiro abrigo que o homem encontrou para refugiar-se das intempéries e dos inimigos naturais, as feras",
+      "inicioDepois": "A caverna foi o primeiro abrigo que o homem encontrou para refugiar-se das intempéries e dos inimigos naturais, as feras"
+    },
+    {
+      "data": "11/03",
+      "titulo": "CENSURA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Sendo a tolerância um dos fundamentais princípios da Ma çonaria , só em casos extremos e por motivos relevantes que não ",
+      "inicioDepois": "Sendo a tolerância um dos fundamentais princípios da Maçonaria, só em casos extremos e por motivos relevantes que não po"
+    },
+    {
+      "data": "12/03",
+      "titulo": "O CENTRO DA LOJA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Loja maçônica tem a forma de um quadrilátero; portanto, desenhadas as suas diagonais, na inserção das linhas surge um ",
+      "inicioDepois": "A Loja maçônica tem a forma de um quadrilátero; portanto, desenhadas as suas diagonais, na inserção das linhas surge um "
+    },
+    {
+      "data": "13/03",
+      "titulo": "CERIMONIA",
+      "tituloNovo": "CERIMÔNIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A cerimônia exige certas normas a serem observadas, o que lhe empresta respeito, emoção e seriedade; um cerimonial não é",
+      "inicioDepois": "A cerimônia exige certas normas a serem observadas, o que lhe empresta respeito, emoção e seriedade; um cerimonial não é"
+    },
+    {
+      "data": "14/03",
+      "titulo": "A CHAMADA RITUAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É assim denominado o ato de bater à porta do templo; cada grau possui golpes distintos para identificação. Aqui chamamos",
+      "inicioDepois": "É assim denominado o ato de bater à porta do templo; cada grau possui golpes distintos para identificação. Aqui chamamos"
+    },
+    {
+      "data": "15/03",
+      "titulo": "CHAVE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Esse objeto implica a existência de uma «fechadura\"; o engenho é de antiga construção, e uma lenda em torno da Arca da A",
+      "inicioDepois": "Esse objeto implica a existência de uma \"fechadura\"; o engenho é de antiga construção, e uma lenda em torno da Arca da A"
+    },
+    {
+      "data": "16/03",
+      "titulo": "CHRISTOS'",
+      "tituloNovo": "'CHRISTÓS'",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Trata-se de uma palavra grega que significa \"ungido': Os cristãos o adotaram após a morte de Jesus, significando em hebr",
+      "inicioDepois": "Trata-se de uma palavra grega que significa \"ungido\". Os cristãos o adotaram após a morte de Jesus, significando em hebr"
+    },
+    {
+      "data": "17/03",
+      "titulo": "CIVISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O civismo é o respeito à pátria, nela compreendida a autoridade que a administra. Os maçons «juram\" fidelidade à pátria ",
+      "inicioDepois": "O civismo é o respeito à pátria, nela compreendida a autoridade que a administra. Os maçons \"juram\" fidelidade à pátria "
+    },
+    {
+      "data": "18/03",
+      "titulo": "O COMPASSO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A régua das 24 polegadas, o Prumo, o Nível, o esquadro e o compasso são os instrumentos simbólicos que o maçom deve apre",
+      "inicioDepois": "A régua das 24 polegadas, o Prumo, o Nível, o esquadro e o compasso são os instrumentos simbólicos que o maçom deve apre"
+    },
+    {
+      "data": "19/03",
+      "titulo": "O COMPORTAMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O comportamento é um reflexo da personalidade e, obvia mente, pode ser, por meio do conhecimento {instrução), alterado; ",
+      "inicioDepois": "O comportamento é um reflexo da personalidade e, obviamente, pode ser, por meio do conhecimento (instrução), alterado; a"
+    },
+    {
+      "data": "20/03",
+      "titulo": "A CONCENTRAÇÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "É a fixação de todas as forças mentais, dirigidas para determinado ponto. · Em Maçonaria, inexistem atos de concentração",
+      "inicioDepois": "É a fixação de todas as forças mentais, dirigidas para determinado ponto. Em Maçonaria, inexistem atos de concentração, "
+    },
+    {
+      "data": "21/03",
+      "titulo": "A CONSAGRAÇAO",
+      "tituloNovo": "A CONSAGRAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo significa tornar sagrado um templo, isto é, habi litá-lo para receber os adeptos com a finalidade de honrar e",
+      "inicioDepois": "O vocábulo significa tornar sagrado um templo, isto é, habilitá-lo para receber os adeptos com a finalidade de honrar e "
+    },
+    {
+      "data": "22/03",
+      "titulo": "A CONSCIENCIA",
+      "tituloNovo": "A CONSCIÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O homem apresenta,grosso modo, três momentos: a consciên cia, a subconsciência e a hiperconsciência. Esses momentos pode",
+      "inicioDepois": "O homem apresenta, grosso modo, três momentos: a consciência, a subconsciência e a hiperconsciência. Esses momentos pode"
+    },
+    {
+      "data": "23/03",
+      "titulo": "CONSENTIMENTO UNANIME",
+      "tituloNovo": "CONSENTIMENTO UNÂNIME",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Consentir significa aprovar, pern1itir, concordar; nos pri mórdios da Maçonaria moderna, muito antes de 1723, o candidat",
+      "inicioDepois": "Consentir significa aprovar, permitir, concordar; nos primórdios da Maçonaria moderna, muito antes de 1723, o candidato "
+    },
+    {
+      "data": "24/03",
+      "titulo": "CONSTITUIÇÕES",
+      "tituloNovo": null,
+      "antes": "ruidosa",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "para qu S e ã o h a a j s a l e o is r d m em aio n re o s c d a e o t s o . d o agrupamento organizado e . . ' ssenaais",
+      "inicioDepois": "São as leis maiores de todo agrupamento organizado, essenciais para que haja ordem no caos. Cada potência maçônica isola"
+    },
+    {
+      "data": "25/03",
+      "titulo": "CONSTRUÇÃO DO TEMPLO DESALOMAO",
+      "tituloNovo": "CONSTRUÇÃO DO TEMPLO DE SALOMÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Essa expressão é usada de modo simbólico e diz respeito ao trajeto que o Aprendiz deve percorrer até conseguir colocar-s",
+      "inicioDepois": "Essa expressão é usada de modo simbólico e diz respeito ao trajeto que o Aprendiz deve percorrer até conseguir colocar-s"
+    },
+    {
+      "data": "26/03",
+      "titulo": "CONTEMPLAÇA ,,,J O",
+      "tituloNovo": "CONTEMPLAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo sugere a caminhada em direção de um templo; trata-se de uma postura estática que precede o ingresso pela medi",
+      "inicioDepois": "O vocábulo sugere a caminhada em direção de um templo; trata-se de uma postura estática que precede o ingresso pela medi"
+    },
+    {
+      "data": "27/03",
+      "titulo": "OCORAÇAO",
+      "tituloNovo": "O CORAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Esse órgão sempre foi considerado o \"centro vital\" do orgaru• smo; C(a mar com o coração> > e, a expressão poef ti• ca. ",
+      "inicioDepois": "Esse órgão sempre foi considerado o \"centro vital\" do organismo; \"amar com o coração\" é a expressão poética. Maçonicamen"
+    },
+    {
+      "data": "28/03",
+      "titulo": "A CORAGEM",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A coragem deriva do vocábulo «coração': significando a dis posição anímica para enfrentar o perigo. O ato de coragem sur",
+      "inicioDepois": "A coragem deriva do vocábulo \"coração'\", significando a disposição anímica para enfrentar o perigo. O ato de coragem sur"
+    },
+    {
+      "data": "29/03",
+      "titulo": "O CORDEIRO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A raiz da palavra cordeiro continua sendo a mesma do coração; o cordeiro é o carneiro ou a ovelha recém-nascidos, cujo p",
+      "inicioDepois": "A raiz da palavra cordeiro continua sendo a mesma do coração; o cordeiro é o carneiro ou a ovelha recém-nascidos, cujo p"
+    },
+    {
+      "data": "30/03",
+      "titulo": "A COROA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Coroa é um adorno cujo nome provém da mesma raiz da pa lavra \"corno,, (os cornos na cabeça de Moisés); o adorno usado pe",
+      "inicioDepois": "Coroa é um adorno cujo nome provém da mesma raiz da palavra \"corno\" (os cornos na cabeça de Moisés); o adorno usado pela"
+    },
+    {
+      "data": "31/03",
+      "titulo": "A CRENÇA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A crença reflete uma convicção em alguma coisa esotérica, mística ou religiosa. Sendo uma ação empírica, ela é produto d",
+      "inicioDepois": "A crença reflete uma convicção em alguma coisa esotérica, mística ou religiosa. Sendo uma ação empírica, ela é produto d"
+    },
+    {
+      "data": "01/04",
+      "titulo": "O CRISTIANISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Apesar de os evangelhos, os Atos dos apóstolos, as cartas apos tolares e o apocalipse não mencionarem o vocábulo \"religi",
+      "inicioDepois": "Apesar de os evangelhos, os Atos dos apóstolos, as cartas apostolares e o apocalipse não mencionarem o vocábulo \"religiã"
+    },
+    {
+      "data": "02/04",
+      "titulo": "ACRUZ",
+      "tituloNovo": "A CRUZ",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em todos os povos, a cruz é símbolo de veneração, mesmo abstraindo-se o significado de sacrifício por ter sido usada par",
+      "inicioDepois": "Em todos os povos, a cruz é símbolo de veneração, mesmo abstraindo-se o significado de sacrifício por ter sido usada par"
+    },
+    {
+      "data": "03/04",
+      "titulo": "OCULTO",
+      "tituloNovo": "O CULTO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Culto significa adoração, homenagem, veneração à divindade; é o ato de \"cultivae: ou seja, o cuidado para com os que se ",
+      "inicioDepois": "Culto significa adoração, homenagem, veneração à divindade; é o ato de \"cultivar\", ou seja, o cuidado para com os que se"
+    },
+    {
+      "data": "04/04",
+      "titulo": "A CULTURA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo deriva de \"culto': mas no sentido de enriquecimen to da mente, pelo estudo e pelas práticas escolares e unive",
+      "inicioDepois": "O vocábulo deriva de \"culto\", mas no sentido de enriquecimento da mente, pelo estudo e pelas práticas escolares e univer"
+    },
+    {
+      "data": "05/04",
+      "titulo": "DEBHIR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Essa palavra é referida no Primeiro Livro dos reis e pode traduzir-se como \"lugar muito santo': que passou em latim como",
+      "inicioDepois": "Essa palavra é referida no Primeiro Livro dos reis e pode traduzir-se como \"lugar muito santo\", que passou em latim como"
+    },
+    {
+      "data": "06/04",
+      "titulo": "DEBATES",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em Maçonaria, são comuns os «debates\" programados ou permitidos quando, em Loja, surge a oportunidade de esclarecer um t",
+      "inicioDepois": "Em Maçonaria, são comuns os \"debates\" programados ou permitidos quando, em Loja, surge a oportunidade de esclarecer um t"
+    },
+    {
+      "data": "07/04",
+      "titulo": "A DEFESA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O defensor é um cargo transitório, nomeado quando surgir a necessidade de processar algum irmão faltoso. O defensor pode",
+      "inicioDepois": "O defensor é um cargo transitório, nomeado quando surgir a necessidade de processar algum irmão faltoso. O defensor pode"
+    },
+    {
+      "data": "08/04",
+      "titulo": "A MAÇONARIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Definir Maçonaria é tarefa ingente, uma vez que a instituição define-se no dia a dia, dentro e fora das Lojas. A definiç",
+      "inicioDepois": "Definir Maçonaria é tarefa ingente, uma vez que a instituição define-se no dia a dia, dentro e fora das Lojas. A definiç"
+    },
+    {
+      "data": "09/04",
+      "titulo": "DECADENCIA",
+      "tituloNovo": "DECADÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Diz-se estar uma Loja em decadência quando os valores filo sóficos e administrativos são destruídos. Uma Loja passará a ",
+      "inicioDepois": "Diz-se estar uma Loja em decadência quando os valores filosóficos e administrativos são destruídos. Uma Loja passará a t"
+    },
+    {
+      "data": "10/04",
+      "titulo": "O DEFUMADOR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "No livro do Êxodo, capítulo 30:34 a 38, encontramos a fórmula de um \"defumador,,: porções de igual peso de estoraque (be",
+      "inicioDepois": "No livro do Exodo, capítulo 30:34 a 38, encontramos a fórmula de um \"defumador\": porções de igual peso de estoraque (ben"
+    },
+    {
+      "data": "11/04",
+      "titulo": "DEGRAU",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Degrau é um elemento para subir ou descer de um plano; diz-se para os que galgam posições que subiram um ou mais degraus",
+      "inicioDepois": "Degrau é um elemento para subir ou descer de um plano; diz-se para os que galgam posições que subiram um ou mais degraus"
+    },
+    {
+      "data": "12/04",
+      "titulo": "O DELTA LUMINOSO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Sob o dossel e às costas do Venerável Mestre, quando em seu trono, vemos o Delta Luminoso, polígono geométrico que lembr",
+      "inicioDepois": "Sob o dossel e às costas do Venerável Mestre, quando em seu trono, vemos o Delta Luminoso, polígono geométrico que lembr"
+    },
+    {
+      "data": "13/04",
+      "titulo": "DESBASTAR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Desbastar a pedra bruta significa transformar uma pedra \"de alicerce\" informe, dando-lhe forma adequada para o seu aprov",
+      "inicioDepois": "Desbastar a pedra bruta significa transformar uma pedra \"de alicerce\" informe, dando-lhe forma adequada para o seu aprov"
+    },
+    {
+      "data": "14/04",
+      "titulo": "O DESTINO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O destino sempre foi uma preocupação dos homens; na mitologia era um deus, filho do Caos e da Noite - portanto, um press",
+      "inicioDepois": "O destino sempre foi uma preocupação dos homens; na mitologia era um deus, filho do Caos e da Noite - portanto, um press"
+    },
+    {
+      "data": "15/04",
+      "titulo": "O DEVER ·",
+      "tituloNovo": "O DEVER",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O dever é uma obrigação que é observada como princípio; existem múltiplos deveres a serem observados pelos homens, sendo",
+      "inicioDepois": "O dever é uma obrigação que é observada como princípio; existem múltiplos deveres a serem observados pelos homens, sendo"
+    },
+    {
+      "data": "16/04",
+      "titulo": "O DIABO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Diabo é um misterioso \"ser»; o fanatismo impõe a crença de que é um ser palpável, inimigo de Deus. No entanto, significa",
+      "inicioDepois": "Diabo é um misterioso \"ser\" ; o fanatismo impõe a crença de que é um ser palpável, inimigo de Deus. No entanto, signific"
+    },
+    {
+      "data": "17/04",
+      "titulo": "DIMENSA ~ O",
+      "tituloNovo": "DIMENSÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Dimensão é medida; diz-se que a dimensão de uma Loja é composta de três partes: altura, comprimento e largura. Diz-se, t",
+      "inicioDepois": "Dimensão é medida; diz-se que a dimensão de uma Loja é composta de três partes: altura, comprimento e largura. Diz-se, t"
+    },
+    {
+      "data": "18/04",
+      "titulo": "O DOIS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Dois, esse número possui mil e uma interpretações; do ponto de vista numerológico, não passa do segundo algarismo da esc",
+      "inicioDepois": "Dois, esse número possui mil e uma interpretações; do ponto de vista numerológico, não passa do segundo algarismo da esc"
+    },
+    {
+      "data": "19/04",
+      "titulo": "ODOMINIO",
+      "tituloNovo": "O DOMÍNIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Uma das finalidades da Maçonaria é ensinar o maçom a do minar as suas paixões e e1noções. Enquanto em Loja, o \"sinal gut",
+      "inicioDepois": "Uma das finalidades da Maçonaria é ensinar o maçom a dominar as suas paixões e emoções. Enquanto em Loja, o \"sinal gutur"
+    },
+    {
+      "data": "20/04",
+      "titulo": "O DONATIVO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O dar-se a si mesmo constitui um ato virtuoso; quando em Loja o maçom coloca no «tronco de beneficêncià' o seu óbulo não",
+      "inicioDepois": "O dar-se a si mesmo constitui um ato virtuoso; quando em Loja o maçom coloca no \"tronco de beneficência\" o seu óbulo não"
+    },
+    {
+      "data": "21/04",
+      "titulo": "A DOUTRINA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Maçonaria, em certo sentido (c omo sendo escola) é deno minada de doutrina (d o latim docere). Doutrinar significa inc",
+      "inicioDepois": "A Maçonaria, em certo sentido (como sendo escola) é denominada de doutrina (do latim docere). Doutrinar significa incuti"
+    },
+    {
+      "data": "22/04",
+      "titulo": "OEGO",
+      "tituloNovo": "O EGO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Profunda é a diferença entre eu e ego, pois enquanto o ego significa a pessoa humana vivente, o \"eu\" é a parte divina de",
+      "inicioDepois": "Profunda é a diferença entre eu e ego, pois enquanto o ego significa a pessoa humana vivente, o \"eu\" é a parte divina de"
+    },
+    {
+      "data": "23/04",
+      "titulo": "AEGREGORA",
+      "tituloNovo": "A EGRÉGORA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Deriva do g_rego egregorien com o significado de \"vigiar': · A Maçonaria aceita a presença da Egrégora em suas sessões l",
+      "inicioDepois": "Deriva do grego egregorien com o significado de \"vigiar\". A Maçonaria aceita a presença da Egrégora em suas sessões litú"
+    },
+    {
+      "data": "24/04",
+      "titulo": "A ELIMINAÇA~ O",
+      "tituloNovo": "A ELIMINAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A eliminação é um ato de banimento definitivo da Ordem Maçônica, após um julgamento previsto pelos códigos e constituiçã",
+      "inicioDepois": "A eliminação é um ato de banimento definitivo da Ordem Maçônica, após um julgamento previsto pelos códigos e constituiçã"
+    },
+    {
+      "data": "25/04",
+      "titulo": "O ENCERRAMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Os trabalhos maçônicos encerram-se de forma ritualística· o início dos trabalhos exige atos litúrgicos precisos, uma vez",
+      "inicioDepois": "Os trabalhos maçônicos encerram-se de forma ritualística; o início dos trabalhos exige atos litúrgicos precisos, uma vez"
+    },
+    {
+      "data": "26/04",
+      "titulo": "A ENFERMIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Todo ser humano passa pela enfermidade e, sendo maçom, conta com o apoio da Fraternidade; um membro frágil deve ser am p",
+      "inicioDepois": "Todo ser humano passa pela enfermidade e, sendo maçom, conta com o apoio da Fraternidade; um membro frágil deve ser ampa"
+    },
+    {
+      "data": "27/04",
+      "titulo": "ENIGMA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Para uma compreensão mais clara e simples do que possa ser um enigma, basta contemplarmos, no Cairo, Egito, a esfinge qu",
+      "inicioDepois": "Para uma compreensão mais clara e simples do que possa ser um enigma, basta contemplarmos, no Cairo, Egito, a esfinge qu"
+    },
+    {
+      "data": "28/04",
+      "titulo": "O ENTABLAMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A colocação das derradeiras pedras que sobressaem ao alto das paredes de uma obra de alvenaria, seja edifício ou qualque",
+      "inicioDepois": "A colocação das derradeiras pedras que sobressaem ao alto das paredes de uma obra de alvenaria, seja edifício ou qualque"
+    },
+    {
+      "data": "29/04",
+      "titulo": "ERA MAÇONICA",
+      "tituloNovo": "ERA MAÇÔNICA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de uma determinação simbólica do surgimento da Maçonaria; como inexiste data conhecida do início da Instituição",
+      "inicioDepois": "Trata-se de uma determinação simbólica do surgimento da Maçonaria; como inexiste data conhecida do início da Instituição"
+    },
+    {
+      "data": "30/04",
+      "titulo": "ESCADA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de um símbolo maçônico significando \"ascenção\"; uma escada é formada por duas hastes verticais dividida em hast",
+      "inicioDepois": "Trata-se de um símbolo maçônico significando \"ascenção\"; uma escada é formada por duas hastes verticais dividida em hast"
+    },
+    {
+      "data": "01/05",
+      "titulo": "A ESCADA DE JACO",
+      "tituloNovo": "A ESCADA DE JACÓ",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Jacó, a personagem bíblica, certa noite, quando se encontrava em busca de uma terra onde pudesse viver em paz, fora do a",
+      "inicioDepois": "Jacó, a personagem bíblica, certa noite, quando se encontrava em busca de uma terra onde pudesse viver em paz, fora do a"
+    },
+    {
+      "data": "02/05",
+      "titulo": "ESCOLA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim e grego: schola. Diz-se que a Maçonaria também é escola, pois ela \"ensinà', com disciplina e regras rígidas, o ",
+      "inicioDepois": "Do latim e grego: schola. Diz-se que a Maçonaria também é escola, pois ela \"ensina\", com disciplina e regras rígidas, o "
+    },
+    {
+      "data": "03/05",
+      "titulo": "A ESCRAVIDÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A escravidão constitui um «estado de consciência,,; as paixões e as emoções conduzem à escravidão. Hoje em dia não exist",
+      "inicioDepois": "A escravidão constitui um \"estado de consciência\"; as paixões e as emoções conduzem à escravidão. Hoje em dia não existe"
+    },
+    {
+      "data": "04/05",
+      "titulo": "AS ESCRITURAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "As escrituras são sagradas ou profanas; as sagradas são cons tituídas dos livros religiosos de todos os povos. Em uma Lo",
+      "inicioDepois": "As escrituras são sagradas ou profanas; as sagradas são constituídas dos livros religiosos de todos os povos. Em uma Loj"
+    },
+    {
+      "data": "05/05",
+      "titulo": "O ESCRUTINIO",
+      "tituloNovo": "O ESCRUTÍNIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Seguindo a tradição da cavalaria, dos séculos passados, a admissão de um novo membro ao grupo é feita por intermédio do ",
+      "inicioDepois": "Seguindo a tradição da cavalaria, dos séculos passados, a admissão de um novo membro ao grupo é feita por intermédio do "
+    },
+    {
+      "data": "06/05",
+      "titulo": "AESCURIDAO",
+      "tituloNovo": "A ESCURIDÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Constitui o símbolo do \"nada': da \"ausência': da \"ignorância,, e da falta de luz. A escuridão relativa (pois a absoluta ",
+      "inicioDepois": "Constitui o símbolo do \"nada\", da \"ausência\", da \"ignorância\" e da falta de luz. A escuridão relativa (pois a absoluta s"
+    },
+    {
+      "data": "07/05",
+      "titulo": "ESOTERICO",
+      "tituloNovo": "ESOTÉRICO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O termo esotérico, em Maçonaria, apresenta outro sentido, diverso do filosófico. Vocábulo de procedência grega (esoterik",
+      "inicioDepois": "O termo esotérico, em Maçonaria, apresenta outro sentido, diverso do filosófico. Vocábulo de procedência grega (esoterik"
+    },
+    {
+      "data": "08/05",
+      "titulo": "A ESPADA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A espada é um instrumento usado pelos maçons; embora com o aspecto de uma arma, o principal meio de defesa dos antigos c",
+      "inicioDepois": "A espada é um instrumento usado pelos maçons; embora com o aspecto de uma arma, o principal meio de defesa dos antigos c"
+    },
+    {
+      "data": "09/05",
+      "titulo": "A ESPECULAÇAO",
+      "tituloNovo": "A ESPECULAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim speculum, espelho. O espelho é um laminado que pode apresentar-se como um plano vítreo, metálico, plástico, líq",
+      "inicioDepois": "Do latim speculum, espelho. O espelho é um laminado que pode apresentar-se como um plano vítreo, metálico, plástico, líq"
+    },
+    {
+      "data": "10/05",
+      "titulo": "AESPERANÇA",
+      "tituloNovo": "A ESPERANÇA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A esperança não é uma virtude, como erradamente alguns au tores referem; ela é um «instinto''; surge com o nascimento do",
+      "inicioDepois": "A esperança não é uma virtude, como erradamente alguns autores referem; ela é um \"instinto\"; surge com o nascimento do h"
+    },
+    {
+      "data": "11/05",
+      "titulo": "A ESPIGA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Qualquer vegetal, para se reproduzir, emite sementes e o fará por meio de uma espiga, que tem vários formatos, sendo o m",
+      "inicioDepois": "Qualquer vegetal, para se reproduzir, emite sementes e o fará por meio de uma espiga, que tem vários formatos, sendo o m"
+    },
+    {
+      "data": "12/05",
+      "titulo": "OESPIRITO",
+      "tituloNovo": "O ESPÍRITO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Espírito é a presença, no ser humano, da divindade; para o cristão é a presença de Jesus, o Cristo, em nós. Maçonicament",
+      "inicioDepois": "Espírito é a presença, no ser humano, da divindade; para o cristão é a presença de Jesus, o Cristo, em nós. Maçonicament"
+    },
+    {
+      "data": "13/05",
+      "titulo": "A ESPIRITUALIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Condição de quem pende, filosoficamente, para os conceitos relacionados ao espírito. Diz-se um homem espiritual aquele q",
+      "inicioDepois": "Condição de quem pende, filosoficamente, para os conceitos relacionados ao espírito. Diz-se um homem espiritual aquele q"
+    },
+    {
+      "data": "14/05",
+      "titulo": "A ESQUADRIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Esquadria decorre do uso correto do esquadro, que é um instrumento de construção. Quando o maçom assume em Loja a post",
+      "inicioDepois": "A Esquadria decorre do uso correto do esquadro, que é um instrumento de construção. Quando o maçom assume em Loja a post"
+    },
+    {
+      "data": "15/05",
+      "titulo": "O ESQUADRO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Somente quem souber esquadrejar poderá transformar a pedra bruta em pedra angular e devidamente desbastada, visando - em",
+      "inicioDepois": "Somente quem souber esquadrejar poderá transformar a pedra bruta em pedra angular e devidamente desbastada, visando - em"
+    },
+    {
+      "data": "16/05",
+      "titulo": "A ESTABILIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O que é estável é imutável; o triângulo e o quadrado, dentro do conceito geométrico, são figuras que representam a estab",
+      "inicioDepois": "O que é estável é imutável; o triângulo e o quadrado, dentro do conceito geométrico, são figuras que representam a estab"
+    },
+    {
+      "data": "17/05",
+      "titulo": "ESTAR A COBERTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "\"Estar a coberto\" significa estar protegido; em Loja significa que o Grande Arquiteto do Universo está presente e só ele",
+      "inicioDepois": "\"Estar a coberto\" significa estar protegido; em Loja significa que o Grande Arquiteto do Universo está presente e só ele"
+    },
+    {
+      "data": "18/05",
+      "titulo": "A ESTRELA FLAMIGERA",
+      "tituloNovo": "A ESTRELA FLAMÍGERA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Ela está situada sobre o trono do Segundo Vigilante e represen ta a sublimidade da luz, uma vez que sua luminosidade é d",
+      "inicioDepois": "Ela está situada sobre o trono do Segundo Vigilante e representa a sublimidade da luz, uma vez que sua luminosidade é de"
+    },
+    {
+      "data": "19/05",
+      "titulo": "O ESTUDO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Estudar exige certo esforço, continuidade e memorização; todos nós estamos aptos ao estudo. O vocábulo é de origem latin",
+      "inicioDepois": "Estudar exige certo esforço, continuidade e memorização; todos nós estamos aptos ao estudo. O vocábulo é de origem latin"
+    },
+    {
+      "data": "20/05",
+      "titulo": "A EVOLUÇÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É propriedade e tendência de todo ser, humano ou não, por um princípio universal estabelecido na criação. A ciência evol",
+      "inicioDepois": "É propriedade e tendência de todo ser, humano ou não, por um princípio universal estabelecido na criação. A ciência evol"
+    },
+    {
+      "data": "21/05",
+      "titulo": "OEXTASE",
+      "tituloNovo": "O ÊXTASE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Encontrar-se em êxtase significa estar em estado de consciên cia totalmente isolado das ações do mundo exterior. Os sant",
+      "inicioDepois": "Encontrar-se em êxtase significa estar em estado de consciência totalmente isolado das ações do mundo exterior. Os santo"
+    },
+    {
+      "data": "22/05",
+      "titulo": "FAMILIA",
+      "tituloNovo": "FAMÍLIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A família maçônica abrange os maçons e seus familiares. Estar em família corresponde a, dentro do templo, com a Loja fun",
+      "inicioDepois": "A família maçônica abrange os maçons e seus familiares. Estar em família corresponde a, dentro do templo, com a Loja fun"
+    },
+    {
+      "data": "23/05",
+      "titulo": "FANATISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A palavra tem origem latina,fanum significando Templo. Assim, o adepto de uma religião, doutrina, seita ou mesmo a Maçon",
+      "inicioDepois": "A palavra tem origem latina, fanum significando Templo. Assim, o adepto de uma religião, doutrina, seita ou mesmo a Maço"
+    },
+    {
+      "data": "24/05",
+      "titulo": "A FATALIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Diz-se fatalidade a consequência de um ato; fatal é sinônimo de conclusão, de terminal e de encerramento. A fatalidade t",
+      "inicioDepois": "Diz-se fatalidade a consequência de um ato; fatal é sinônimo de conclusão, de terminal e de encerramento. A fatalidade t"
+    },
+    {
+      "data": "25/05",
+      "titulo": "A FELICIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O homem tem uma única preocupação: a de ser feliz. De con formidade com a classe social a que pertence, a felicidade apr",
+      "inicioDepois": "O homem tem uma única preocupação: a de ser feliz. De conformidade com a classe social a que pertence, a felicidade apre"
+    },
+    {
+      "data": "26/05",
+      "titulo": "A FERRAMENTA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Cada profissão possui a sua ferramenta específica. No aprendiza do maçônico, é necessário o uso simbólico de ferramentas",
+      "inicioDepois": "Cada profissão possui a sua ferramenta específica. No aprendizado maçônico, é necessário o uso simbólico de ferramentas."
+    },
+    {
+      "data": "27/05",
+      "titulo": "A FILANTROPIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A origem do vocábulo é grega: philos e anthropos, que pode ser traduzida por \"amor ao homem': no sentido de amparo. A re",
+      "inicioDepois": "A origem do vocábulo é grega: philos e anthropos, que pode ser traduzida por \"amor ao homem\", no sentido de amparo. A re"
+    },
+    {
+      "data": "28/05",
+      "titulo": "OS FILHOS DA LUZ",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Os maçons são conhecidos como \"os Filhos da Luz,,. A denomi nação não é pretensiosa, pois a Luz simboliza a \"iluminação ",
+      "inicioDepois": "Os maçons são conhecidos como \"os Filhos da Luz\". A denominação não é pretensiosa, pois a Luz simboliza a \"iluminação da"
+    },
+    {
+      "data": "29/05",
+      "titulo": "FILOSOFIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Filosofia é o estudo da vida; pode ser ciência, fé, religião ou simplesmente a mente ou a razão em função. Toda arte e t",
+      "inicioDepois": "Filosofia é o estudo da vida; pode ser ciência, fé, religião ou simplesmente a mente ou a razão em função. Toda arte e t"
+    },
+    {
+      "data": "30/05",
+      "titulo": "FIO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de uma expressão que significa o \"mínimo: \"Estar por um fio,, significa estar no limite; o fio que compõe o Pru",
+      "inicioDepois": "Trata-se de uma expressão que significa o \"mínimo. \"Estar por um flo\" significa estar no limite; o fio que compõe o Prum"
+    },
+    {
+      "data": "31/05",
+      "titulo": "AS FLECHAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Maçonicamente, assim são designadas as ordens que devem ser cumpridas de imediato. - As ordens emanadas dos superiores h",
+      "inicioDepois": "Maçonicamente, assim são designadas as ordens que devem ser cumpridas de imediato. As ordens emanadas dos superiores hie"
+    },
+    {
+      "data": "01/06",
+      "titulo": "A FOICE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "E símbolo de colheita; trata-se de um instrumento de corte de origem milenar, em forma de meia-lua, colocado na extremid",
+      "inicioDepois": "E símbolo de colheita; trata-se de um instrumento de corte de origem milenar, em forma de meia-lua, colocado na extremid"
+    },
+    {
+      "data": "02/06",
+      "titulo": "AFORTALEZA",
+      "tituloNovo": "A FORTALEZA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de um atributo divino; uma virtude; uma demonstra ção de personalidade; o melhor exemplo que poderíamos apresen",
+      "inicioDepois": "Trata-se de um atributo divino; uma virtude; uma demonstração de personalidade; o melhor exemplo que poderíamos apresent"
+    },
+    {
+      "data": "03/06",
+      "titulo": "A FRATERNIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim frater, irmão; Fraternidade é uma associação fraterna usada para demonstrar que todos os homens podem conviver ",
+      "inicioDepois": "Do latim frater, irmão; Fraternidade é uma associação fraterna usada para demonstrar que todos os homens podem conviver "
+    },
+    {
+      "data": "04/06",
+      "titulo": "A FUMIGAÇAO (O INCENSO)",
+      "tituloNovo": "A FUMIGAÇÃO (O INCENSO)",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Fumigação ou incensamento é uma prática que vem do pas sado; de conformidade com o material empregado, as fumigações pro",
+      "inicioDepois": "Fumigação ou incensamento é uma prática que vem do passado; de conformidade com o material empregado, as fumigações prod"
+    },
+    {
+      "data": "05/06",
+      "titulo": "OFUMO",
+      "tituloNovo": "O FUMO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Nome dado ao tabaco; substância reconhecida cientificamente como prejudicial à saúde, sendo uma droga que causa dependên",
+      "inicioDepois": "Nome dado ao tabaco; substância reconhecida cientificamente como prejudicial à saúde, sendo uma droga que causa dependên"
+    },
+    {
+      "data": "06/06",
+      "titulo": "A LETRA ''G''",
+      "tituloNovo": "A LETRA \"G\"",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A letra G do alfabeto latino apresenta-se como um dos mais singelos símbolos, que expressa, porém, a grandiosidade maçôn",
+      "inicioDepois": "A letra G do alfabeto latino apresenta-se como um dos mais singelos símbolos, que expressa, porém, a grandiosidade maçôn"
+    },
+    {
+      "data": "07/06",
+      "titulo": "O GALO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Trata-se da ave que simboliza a vigilância e o despertar para um novo dia; o aviso canoro de um próximo renascimento; a ",
+      "inicioDepois": "Trata-se da ave que simboliza a vigilância e o despertar para um novo dia; o aviso canoro de um próximo renascimento; a "
+    },
+    {
+      "data": "08/06",
+      "titulo": "A GENUFLEXAO",
+      "tituloNovo": "A GENUFLEXÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É o ato de dobrar os joelhos, em sinal de veneração e humil dade, diante de uma divindade ou de poderosos. A Maçonaria p",
+      "inicioDepois": "É o ato de dobrar os joelhos, em sinal de veneração e humildade, diante de uma divindade ou de poderosos. A Maçonaria pr"
+    },
+    {
+      "data": "09/06",
+      "titulo": "O GRAAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Constituía-se em um prato muito côncavo, quase um vaso, destinado às refeições. O vocábulo derivaria do latim gratus, qu",
+      "inicioDepois": "Constituía-se em um prato muito côncavo, quase um vaso, destinado às refeições. O vocábulo derivaria do latim gratus, qu"
+    },
+    {
+      "data": "10/06",
+      "titulo": "GRAO-MESTRE",
+      "tituloNovo": "GRÃO-MESTRE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Esse título originou-se da eleição da primeira autoridade maçônica, o maçom Anthony Sayer, em 24 de junho de 1717, na In",
+      "inicioDepois": "Esse título originou-se da eleição da primeira autoridade maçônica, o maçom Anthony Sayer, em 24 de junho de 1717, na In"
+    },
+    {
+      "data": "11/06",
+      "titulo": "OS GRAUS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Inicialmente, a Maçonaria era considerada operativa, isto é, dedicada ao trabalho manual; posteriormente, entendeu como ",
+      "inicioDepois": "Inicialmente, a Maçonaria era considerada operativa, isto é, dedicada ao trabalho manual; posteriormente, entendeu como "
+    },
+    {
+      "data": "12/06",
+      "titulo": "A GRUTA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A gruta é uma escavação natural em uma montanha, não tão profunda como são as cavernas. A Câmara das Reflexões é também ",
+      "inicioDepois": "A gruta é uma escavação natural em uma montanha, não tão profunda como são as cavernas. A Câmara das Reflexões é também "
+    },
+    {
+      "data": "13/06",
+      "titulo": "A HARMONIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Harmonia significa, sobretudo, \"equilíbrio\"; no dualismo ma çônico se faz necessário, como prática do bom senso, a obser",
+      "inicioDepois": "Harmonia significa, sobretudo, \"equilíbrio\"; no dualismo maçônico se faz necessário, como prática do bom senso, a observ"
+    },
+    {
+      "data": "14/06",
+      "titulo": "A HIERARQUIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Origina-se do grego hierós, significando admirável, poderoso, e arkhe, princípio. É o complexo dos poderes estabelecidos",
+      "inicioDepois": "Origina-se do grego hierós, significando admirável, poderoso, e arkhe, princípio. É o complexo dos poderes estabelecidos"
+    },
+    {
+      "data": "15/06",
+      "titulo": "A HONRA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Honra é o comportamento dignificante e o resguardo de atitudes que são notadas. Honra é o revestimento que torna o homem",
+      "inicioDepois": "Honra é o comportamento dignificante e o resguardo de atitudes que são notadas. Honra é o revestimento que torna o homem"
+    },
+    {
+      "data": "16/06",
+      "titulo": "O HORARIO MAÇONICO",
+      "tituloNovo": "O HORÁRIO MAÇÔNICO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Por que os trabalhos maçônicos devem ter início ao meio-dia? Porque a posição do Sol, nessa hora, coloca-se no centro do",
+      "inicioDepois": "Por que os trabalhos maçônicos devem ter início ao meio-dia? Porque a posição do Sol, nessa hora, coloca-se no centro do"
+    },
+    {
+      "data": "17/06",
+      "titulo": "HOSPITALEIRO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Nome dado a um dos oficiais de uma Loja maçônica, inspirado pela Ordem dos Hospitalários, no Tempo das Cruzadas, porque ",
+      "inicioDepois": "Nome dado a um dos oficiais de uma Loja maçônica, inspirado pela Ordem dos Hospitalários, no Tempo das Cruzadas, porque "
+    },
+    {
+      "data": "18/06",
+      "titulo": "A HOSPITALIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A hospitalidade é um dever básico de todo maçom; hospedar os Irmãos vindos de todas as partes. Durante a existência das ",
+      "inicioDepois": "A hospitalidade é um dever básico de todo maçom; hospedar os Irmãos vindos de todas as partes. Durante a existência das "
+    },
+    {
+      "data": "19/06",
+      "titulo": "HUMANIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Provém da palavra \"humano': ou seja, significa os habitantes da terra; mística e esotericamente existem duas humanidades",
+      "inicioDepois": "Provém da palavra \"humano\", ou seja, significa os habitantes da terra; mística e esotericamente existem duas humanidades"
+    },
+    {
+      "data": "20/06",
+      "titulo": "AHUMILDADE",
+      "tituloNovo": "A HUMILDADE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de um comportamento social e de uma virtude ma çônica; uma pessoa pode tornar-se humilde quando religiosa, dian",
+      "inicioDepois": "Trata-se de um comportamento social e de uma virtude maçônica; uma pessoa pode tornar-se humilde quando religiosa, diant"
+    },
+    {
+      "data": "21/06",
+      "titulo": "HUZZE''",
+      "tituloNovo": "\"HUZZÉ\"",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "\"Huzzé\" é um exclamação praticada no início e no final dos trabalhos maçônicos; considera-se parte \"sigilosa\" pela sua m",
+      "inicioDepois": "\"Huzzé\" é um exclamação praticada no início e no final dos trabalhos maçônicos; considera-se parte \"sigilosa\" pela sua m"
+    },
+    {
+      "data": "22/06",
+      "titulo": "AIDADE",
+      "tituloNovo": "A IDADE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "O maçom, dentro da ordem, possui uma idade específica que é a de sua permanência no grau; assi1n, terá tantos anos de In",
+      "inicioDepois": "O maçom, dentro da ordem, possui uma idade específica que é a de sua permanência no grau; assim, terá tantos anos de Ini"
+    },
+    {
+      "data": "23/06",
+      "titulo": "OIDEAL",
+      "tituloNovo": "O IDEAL",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Ideal é sinônimo de \"objetivo»; todo homem tem um objetivo a realizar; é o seu sonho, a sua esperança, a sua programação",
+      "inicioDepois": "Ideal é sinônimo de \"objetivo\"; todo homem tem um objetivo a realizar; é o seu sonho, a sua esperança, a sua programação"
+    },
+    {
+      "data": "24/06",
+      "titulo": "A IDOLATRIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Idolatria é a adoração a um ídolo; a ação é de difícil definição, pois a Igreja possui um número infinito de imagens rep",
+      "inicioDepois": "Idolatria é a adoração a um ídolo; a ação é de difícil definição, pois a Igreja possui um número infinito de imagens rep"
+    },
+    {
+      "data": "25/06",
+      "titulo": "IGREJA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Origina-se o vocábulo do grego eklesia, que significa reunião dos escolhidos. O termo surgiu na Era Cristã. Há muita con",
+      "inicioDepois": "Origina-se o vocábulo do grego eklesia, que significa reunião dos escolhidos. O termo surgiu na Era Cristã. Há muita con"
+    },
+    {
+      "data": "26/06",
+      "titulo": "IGUALDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "· As constituições dos países considerados democráticos contêm um artigo específico que considera todos iguais perante a",
+      "inicioDepois": "As constituições dos países considerados democráticos contêm um artigo específico que considera todos iguais perante a l"
+    },
+    {
+      "data": "27/06",
+      "titulo": "IMORALIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Não se deve confundir com \"amoralidade': que é a ausência de moral. A imoralidade constitui o ato ofensivo no relacionam",
+      "inicioDepois": "Não se deve confundir com \"amoralidade\", que é a ausência de moral. A imoralidade constitui o ato ofensivo no relacionam"
+    },
+    {
+      "data": "28/06",
+      "titulo": "IMORTALIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Um aspecto genérico da criação é a sua mortalidade, pois nos três reinos a vida é passageira, até no reino mineral; o pe",
+      "inicioDepois": "Um aspecto genérico da criação é a sua mortalidade, pois nos três reinos a vida é passageira, até no reino mineral; o pe"
+    },
+    {
+      "data": "29/06",
+      "titulo": "INCONSCIENTE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "No sentido da pessoa hu1nana, é a parte desconhecida da função do organismo, seja física ou psíquica; poderá, na visão d",
+      "inicioDepois": "No sentido da pessoa humana, é a parte desconhecida da função do organismo, seja física ou psíquica; poderá, na visão do"
+    },
+    {
+      "data": "30/06",
+      "titulo": "OINEFAVEL",
+      "tituloNovo": "O INEFÁVEL",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É o que não pode ser definido, expresso, comentado ou discu tido; aplica-se no sentido filosófico, como sublimação; por ",
+      "inicioDepois": "É o que não pode ser definido, expresso, comentado ou discutido; aplica-se no sentido filosófico, como sublimação; por e"
+    },
+    {
+      "data": "01/07",
+      "titulo": "O INFINITO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O infinito expressa aquilo que não tem fim, ou seja, o eterno e o permanente, astronomicamente, significa o Universo. Tu",
+      "inicioDepois": "O infinito expressa aquilo que não tem fim, ou seja, o eterno e o permanente, astronomicamente, significa o Universo. Tu"
+    },
+    {
+      "data": "02/07",
+      "titulo": "AINICIAÇAO",
+      "tituloNovo": "A INICIAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Iniciação, posto que possa ser definida como \"princípio': é a ex pressão peculiar para as cerimônias e ritos secretos, m",
+      "inicioDepois": "Iniciação, posto que possa ser definida como \"princípio\", é a expressão peculiar para as cerimônias e ritos secretos, mí"
+    },
+    {
+      "data": "03/07",
+      "titulo": "INICIADO ·",
+      "tituloNovo": "INICIADO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Iniciado é a pessoa que passou por uma Iniciação; o homem pode considerar-se um Iniciado quando seleciona uma profissão,",
+      "inicioDepois": "Iniciado é a pessoa que passou por uma Iniciação; o homem pode considerar-se um Iniciado quando seleciona uma profissão,"
+    },
+    {
+      "data": "04/07",
+      "titulo": "INOVAÇOES",
+      "tituloNovo": "INOVAÇÕES",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Maçonaria Universal obedece a princípios tradicionais sólidos e imutáveis; esses princípios forjam os rituais, a filos",
+      "inicioDepois": "A Maçonaria Universal obedece a princípios tradicionais sólidos e imutáveis; esses princípios forjam os rituais, a filos"
+    },
+    {
+      "data": "05/07",
+      "titulo": "INQUIETUDE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A inquietude faz parte do comportamento psicológico dos seres humanos; o seu lado positivo é notado pelo interesse na pr",
+      "inicioDepois": "A inquietude faz parte do comportamento psicológico dos seres humanos; o seu lado positivo é notado pelo interesse na pr"
+    },
+    {
+      "data": "06/07",
+      "titulo": "INSIGNIAS",
+      "tituloNovo": "INSÍGNIAS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Insígnia é a materialização de um estado de dinâmica; o profissional portará uma insígnia que definirá a sua atividade",
+      "inicioDepois": "A Insígnia é a materialização de um estado de dinâmica; o profissional portará uma insígnia que definirá a sua atividade"
+    },
+    {
+      "data": "07/07",
+      "titulo": "TOLERANCIA",
+      "tituloNovo": "TOLERÂNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim tolerare, que sugere suportar ou aceitar um ato ou uma presença. Intolerar será deixar de suportar. Por sua vez",
+      "inicioDepois": "Do latim tolerare, que sugere suportar ou aceitar um ato ou uma presença. Intolerar será deixar de suportar. Por sua vez"
+    },
+    {
+      "data": "08/07",
+      "titulo": "A INVEJA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Genericamente, diz-se que alguém é invejoso quando deseja para si igual posição ou benesse que a conquistada por outrem.",
+      "inicioDepois": "Genericamente, diz-se que alguém é invejoso quando deseja para si igual posição ou benesse que a conquistada por outrem."
+    },
+    {
+      "data": "09/07",
+      "titulo": "OIRMAO",
+      "tituloNovo": "O IRMÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É sabido que só os Irmãos de sangue possuem características comuns que conduzem ao afeto sólido e desinteressado, cultiv",
+      "inicioDepois": "É sabido que só os Irmãos de sangue possuem características comuns que conduzem ao afeto sólido e desinteressado, cultiv"
+    },
+    {
+      "data": "10/07",
+      "titulo": "ISRAEL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A lenda de Jacó, reproduzida na escada de Jacó que orna a Loja de aprendizes, é sempre referida nos trabalhos maçônicos.",
+      "inicioDepois": "A lenda de Jacó, reproduzida na escada de Jacó que orna a Loja de aprendizes, é sempre referida nos trabalhos maçônicos."
+    },
+    {
+      "data": "11/07",
+      "titulo": "JUSTO E PERFEITO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "\"Justo e perfeito\" é uma expressão muito usada para encerrar os trabalhos de uma Loja Maçônica; o Orador, ou Guarda da L",
+      "inicioDepois": "\"Justo e perfeito\" é uma expressão muito usada para encerrar os trabalhos de uma Loja Maçônica; o Orador, ou Guarda da L"
+    },
+    {
+      "data": "12/07",
+      "titulo": "LABOR MAÇONICO",
+      "tituloNovo": "LABOR MAÇÔNICO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Labor é sinônimo de trabalho; toda tarefa maçônica dentro do templo é denominada Labor; esse trabalho consiste em desper",
+      "inicioDepois": "Labor é sinônimo de trabalho; toda tarefa maçônica dentro do templo é denominada Labor; esse trabalho consiste em desper"
+    },
+    {
+      "data": "13/07",
+      "titulo": "LAGRIMAS",
+      "tituloNovo": "LÁGRIMAS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Para aliviar a tensão nervosa que uma emoção pode causar, o organismo humano, por meio do saco lacrimal, situado na base",
+      "inicioDepois": "Para aliviar a tensão nervosa que uma emoção pode causar, o organismo humano, por meio do saco lacrimal, situado na base"
+    },
+    {
+      "data": "14/07",
+      "titulo": "ALAMPADA",
+      "tituloNovo": "A LÂMPADA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A lâmpada primitiva apresentava-se como um recipiente con tendo óleo e um pavio que, aceso, produzia uma chama amarelada",
+      "inicioDepois": "A lâmpada primitiva apresentava-se como um recipiente contendo óleo e um pavio que, aceso, produzia uma chama amarelada,"
+    },
+    {
+      "data": "15/07",
+      "titulo": "A LEALDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Atributo maçônico virtuoso exigido pelo grupo. Da tolerância decorre a lealdade. A origem da palavra é latina, legalis, ",
+      "inicioDepois": "Atributo maçônico virtuoso exigido pelo grupo. Da tolerância decorre a lealdade. A origem da palavra é latina, legalis, "
+    },
+    {
+      "data": "16/07",
+      "titulo": "AS LEIS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A lei surge por uma necessidade de regulamentação do com portamento social, contendo as tradições, os costumes e a orien",
+      "inicioDepois": "A lei surge por uma necessidade de regulamentação do comportamento social, contendo as tradições, os costumes e a orient"
+    },
+    {
+      "data": "17/07",
+      "titulo": "LEMA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Uma simples frase pode expressar toda uma filosofia. Assim, maçonicamente, cada Grau possui o seu lema peculiar. A Maçon",
+      "inicioDepois": "Uma simples frase pode expressar toda uma filosofia. Assim, maçonicamente, cada Grau possui o seu lema peculiar. A Maçon"
+    },
+    {
+      "data": "18/07",
+      "titulo": "AS LENDAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A lenda é uma figura literária em desuso, hoje substituída pela ficção. O Rito Escocês Antigo e Aceito é composto de 33 ",
+      "inicioDepois": "A lenda é uma figura literária em desuso, hoje substituída pela ficção. O Rito Escocês Antigo e Aceito é composto de 33 "
+    },
+    {
+      "data": "19/07",
+      "titulo": "LEVANTAR COLUNAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Quando uma Loja maçônica cessa suas atividades administra tivas e litúrgicas, diz-se que «abateu colunas': Um maçom é se",
+      "inicioDepois": "Quando uma Loja maçônica cessa suas atividades administrativas e litúrgicas, diz-se que \"abateu colunas\". Um maçom é sem"
+    },
+    {
+      "data": "20/07",
+      "titulo": "LIBERDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Nada há mais perigoso que esse conjunto de nove letras, porque frequentemente, em nome da liberdade, cometem-se os mais ",
+      "inicioDepois": "Nada há mais perigoso que esse conjunto de nove letras, porque frequentemente, em nome da liberdade, cometem-se os mais "
+    },
+    {
+      "data": "21/07",
+      "titulo": "OS LIRIOS",
+      "tituloNovo": "OS LÍRIOS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Lírio tem o mesmo significado que o Lótus para os povos orientais, pois é uma flor «espiritualizante': reveladora de p",
+      "inicioDepois": "O Lírio tem o mesmo significado que o Lótus para os povos orientais, pois é uma flor \"espiritualizante\", reveladora de p"
+    },
+    {
+      "data": "22/07",
+      "titulo": "O LIVRE-ARBITRIO",
+      "tituloNovo": "O LIVRE-ARBÍTRIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": ". O livre-arbítrio, ou \"livre juízo': restringe-se ao pensamento; obviamente o pensamento é totalmente livre, porque bas",
+      "inicioDepois": "O livre-arbítrio, ou \"livre juízo\", restringe-se ao pensamento; obviamente o pensamento é totalmente livre, porque basta"
+    },
+    {
+      "data": "23/07",
+      "titulo": "LIVRE E DE BONS COSTUMES",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a condição exigida para que um profano ingresse na Maçonaria por intermédio da Iniciação. Não basta o candidato ser po",
+      "inicioDepois": "É a condição exigida para que um profano ingresse na Maçonaria por intermédio da Iniciação. Não basta o candidato ser po"
+    },
+    {
+      "data": "24/07",
+      "titulo": "O LIVRO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Um livro é uma composição física de folhas de papel contendo um ou vários assuntos; surgiu como prancheta de barro, depo",
+      "inicioDepois": "Um livro é uma composição física de folhas de papel contendo um ou vários assuntos; surgiu como prancheta de barro, depo"
+    },
+    {
+      "data": "25/07",
+      "titulo": "O LIVRO DOS SETE SELOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "É como se denomina o Livro do Apocalipse; para a Maçonaria é o símbolo do conhecimento, porque cada Selo ou Véu, ao ser ",
+      "inicioDepois": "É como se denomina o Livro do Apocalipse; para a Maçonaria é o símbolo do conhecimento, porque cada Selo ou Véu, ao ser "
+    },
+    {
+      "data": "26/07",
+      "titulo": "O LIVRO SAGRADO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Existem maçons que só conhecem os trechos bíblicos usados nas cen• moA rn• as maçoA n1• cas. O Livro Sagrado, ou Livro d",
+      "inicioDepois": "Existem maçons que só conhecem os trechos bíblicos usados nas cerimônias maçônicas. O Livro Sagrado, ou Livro da Lei, qu"
+    },
+    {
+      "data": "27/07",
+      "titulo": "LOGICA",
+      "tituloNovo": "LÓGICA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo tem origem grega; trata-se de uma ciência milenar, que desenvolve o raciocínio e dá a razão de ser de todas a",
+      "inicioDepois": "O vocábulo tem origem grega; trata-se de uma ciência milenar, que desenvolve o raciocínio e dá a razão de ser de todas a"
+    },
+    {
+      "data": "28/07",
+      "titulo": "ALUA",
+      "tituloNovo": "A LUA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "As Sagradas Escrituras referem que Deus, ao criar o Universo, formou dois Luminares: o Sol e a Lua - um para iluminar o ",
+      "inicioDepois": "As Sagradas Escrituras referem que Deus, ao criar o Universo, formou dois Luminares: o Sol e a Lua - um para iluminar o "
+    },
+    {
+      "data": "29/07",
+      "titulo": "AS LUVAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Como o Avental, as Luvas devem estar sempre calçadas em nossas mãos, tanto para que não se maculem como para proteção. A",
+      "inicioDepois": "Como o Avental, as Luvas devem estar sempre calçadas em nossas mãos, tanto para que não se maculem como para proteção. A"
+    },
+    {
+      "data": "30/07",
+      "titulo": "ALUZ",
+      "tituloNovo": "A LUZ",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A luz é o elemento dissipador das trevas; onde houver luz, os caminhos serão claros, iluminados e sem obstáculos; é sinô",
+      "inicioDepois": "A luz é o elemento dissipador das trevas; onde houver luz, os caminhos serão claros, iluminados e sem obstáculos; é sinô"
+    },
+    {
+      "data": "31/07",
+      "titulo": "OMAÇO",
+      "tituloNovo": "O MAÇO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Maço não passa de um \"martelo\" de maiores proporções, instrumento formado por uma \"testa\" e um cabo; sua utilidade é b",
+      "inicioDepois": "O Maço não passa de um \"martelo\" de maiores proporções, instrumento formado por uma \"testa\" e um cabo; sua utilidade é b"
+    },
+    {
+      "data": "01/08",
+      "titulo": "MAÇONARIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A definição mais simples que se possa referir é que a Maçonaria é uma Sociedade Secreta.\n\nO ritual iniciático a define: ",
+      "inicioDepois": "A definição mais simples que se possa referir é que a Maçonaria é uma Sociedade Secreta. O ritual iniciático a define: \""
+    },
+    {
+      "data": "02/08",
+      "titulo": "AMAGIA",
+      "tituloNovo": "A MAGIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Maçonaria é impregnada de Magia; ela deve ser, além disso, hebraica, mítica, esotérica e mística. A magia é a ciência ",
+      "inicioDepois": "A Maçonaria é impregnada de Magia; ela deve ser, além disso, hebraica, mítica, esotérica e mística. A magia é a ciência "
+    },
+    {
+      "data": "03/08",
+      "titulo": "MAGNETISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "É a propriedade de atração, como o ferro imantado atrai par tículas de limalha ferrosa; trata-se de um campo de força pr",
+      "inicioDepois": "É a propriedade de atração, como o ferro imantado atrai partículas de limalha ferrosa; trata-se de um campo de força pro"
+    },
+    {
+      "data": "04/08",
+      "titulo": "OMANA",
+      "tituloNovo": "O MANÁ",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Maná do deserto provinha do alto para alimentar o povo hebreu na fuga do Egito. Esse alimento, porém, não podia ser gu",
+      "inicioDepois": "O Maná do deserto provinha do alto para alimentar o povo hebreu na fuga do Egito. Esse alimento, porém, não podia ser gu"
+    },
+    {
+      "data": "05/08",
+      "titulo": "MANTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Manto é uma vestimenta usada nas cerimônias filosóficas e religiosas; a Maçonaria, especialmente em certos graus filos",
+      "inicioDepois": "O Manto é uma vestimenta usada nas cerimônias filosóficas e religiosas; a Maçonaria, especialmente em certos graus filos"
+    },
+    {
+      "data": "06/08",
+      "titulo": "OMANTRA",
+      "tituloNovo": "O MANTRA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Vocábulo que vem do sânscrito, significando \"discursos em que são empregadas palavras mágicas. O mantra pode constituir-",
+      "inicioDepois": "Vocábulo que vem do sânscrito, significando \"discurso\", em que são empregadas palavras mágicas. O mantra pode constituir"
+    },
+    {
+      "data": "07/08",
+      "titulo": "ASMAOS",
+      "tituloNovo": "AS MÃOS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "As mãos fazem a diferença entre os homens e os animais, pois são os memb . ros capazes de construir com perícia tudo o q",
+      "inicioDepois": "As mãos fazem a diferença entre os homens e os animais, pois são os membros capazes de construir com perícia tudo o que "
+    },
+    {
+      "data": "08/08",
+      "titulo": "AMARCHA",
+      "tituloNovo": "A MARCHA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Marcha é um termo maçônico que significa \"caminhar,: Exis tem várias marchas na liturgia maçônica, desde o átrio, quando",
+      "inicioDepois": "Marcha é um termo maçônico que significa \"caminhar\". Existem várias marchas na liturgia maçônica, desde o átrio, quando "
+    },
+    {
+      "data": "09/08",
+      "titulo": "O MATERIALISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Corrente filosófica que considera que tudo provém da maté ria; que não há vida futura e que uma vez que a morte atinge o",
+      "inicioDepois": "Corrente filosófica que considera que tudo provém da matéria; que não há vida futura e que uma vez que a morte atinge o "
+    },
+    {
+      "data": "10/08",
+      "titulo": "MEDALHAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Medalha é uma peça de metal (o uro, prata ou bronze) cunhada, apresentando figuras e palavras, símbolos ou sinais, distr",
+      "inicioDepois": "Medalha é uma peça de metal (ouro, prata ou bronze) cunhada, apresentando figuras e palavras, símbolos ou sinais, distri"
+    },
+    {
+      "data": "11/08",
+      "titulo": "MEIO-DIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Os maçons \"trabalham,, do 1neio-dia à meia-noite, obviamente de modo simbólico, uma vez que na realidade os trabalhos sã",
+      "inicioDepois": "Os maçons \"trabalham\" do meio-dia à meia-noite, obviamente de modo simbólico, uma vez que na realidade os trabalhos são "
+    },
+    {
+      "data": "12/08",
+      "titulo": "MEMBRO DE UMA LOJA MAÇONICA",
+      "tituloNovo": "MEMBRO DE UMA LOJA MAÇÔNICA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Ser membro de uma Loja significa associar-se a ela e participar das suas atividades, usufruindo direitos e cumprindo dev",
+      "inicioDepois": "Ser membro de uma Loja significa associar-se a ela e participar das suas atividades, usufruindo direitos e cumprindo dev"
+    },
+    {
+      "data": "13/08",
+      "titulo": "OMESTRE",
+      "tituloNovo": "O MESTRE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Título dado inicialmente ao Companheiro destinado a dirigir um canteiro de obras, entre os talhadores de pedra, do iníci",
+      "inicioDepois": "Título dado inicialmente ao Companheiro destinado a dirigir um canteiro de obras, entre os talhadores de pedra, do iníci"
+    },
+    {
+      "data": "14/08",
+      "titulo": "MESTRE DA GRANDE OBRA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Por Grande Obra é conhecida a Maçonaria Universal, sem distinção de obediências ou ritos. Houve no século passado mais d",
+      "inicioDepois": "Por Grande Obra é conhecida a Maçonaria Universal, sem distinção de obediências ou ritos. Houve no século passado mais d"
+    },
+    {
+      "data": "15/08",
+      "titulo": "O MESTRE DE CERIMÔNIAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": ". . O Mestre de Cerimônias é o oficial que \"compõe,, a Loja, dis tnbu1ndo os cargos, conduzindo os maçons ao átrio, admo",
+      "inicioDepois": "O Mestre de Cerimônias é o oficial que \"compõe\" a Loja, distribuindo os cargos, conduzindo os maçons ao átrio, admoestan"
+    },
+    {
+      "data": "16/08",
+      "titulo": "MESTRE INSTALADO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Depois de ter sido eleito um Venerável Mestre, deverá ser \"instalado,,, ou seja, passar por um cerimonial para que, em u",
+      "inicioDepois": "Depois de ter sido eleito um Venerável Mestre, deverá ser \"instalado\", ou seja, passar por um cerimonial para que, em um"
+    },
+    {
+      "data": "17/08",
+      "titulo": "A METEMPSICOSE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Teoria da reencarnação; transmigração da alma de um corpo morto para outro que nasce; o vocábulo, de origem grega, suger",
+      "inicioDepois": "Teoria da reencarnação; transmigração da alma de um corpo morto para outro que nasce; o vocábulo, de origem grega, suger"
+    },
+    {
+      "data": "18/08",
+      "titulo": "O MILAGRE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim miraculum, que dá origem à palavra \"miraculoso,: É o resultado inexplicável de uma ação. Em religião, é obtido ",
+      "inicioDepois": "Do latim miraculum, que dá origem à palavra \"miraculoso\". É o resultado inexplicável de uma ação. Em religião, é obtido "
+    },
+    {
+      "data": "19/08",
+      "titulo": "MINERVA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Minerva era a deusa da sabedoria, também denominada Atena ou Palas, sendo filha de Júpiter. A capital da Grécia recebeu ",
+      "inicioDepois": "Minerva era a deusa da sabedoria, também denominada Atena ou Palas, sendo filha de Júpiter. A capital da Grécia recebeu "
+    },
+    {
+      "data": "20/08",
+      "titulo": "O MISTICISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A mística é a arte de penetrar no mistério. O ato de penetrar no universo de dentro, no microcosmo espiritual. A Maçonar",
+      "inicioDepois": "A mística é a arte de penetrar no mistério. O ato de penetrar no universo de dentro, no microcosmo espiritual. A Maçonar"
+    },
+    {
+      "data": "21/08",
+      "titulo": "MOISES",
+      "tituloNovo": "MOISÉS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Moisés é a personagem bíblica que conquistou poderes cós micos junto aos sacerdotes egípcios. O nome significa \"salvo da",
+      "inicioDepois": "Moisés é a personagem bíblica que conquistou poderes cósmicos junto aos sacerdotes egípcios. O nome significa \"salvo das"
+    },
+    {
+      "data": "22/08",
+      "titulo": "AMORAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Do latim mores, significando \"costumes': \"conduta': \"com portamento,,, com as características de que os atos não devem f",
+      "inicioDepois": "Do latim mores, significando \"costumes\", \"conduta\", \"comportamento\", com as características de que os atos não devem fer"
+    },
+    {
+      "data": "23/08",
+      "titulo": "AMORTE",
+      "tituloNovo": "A MORTE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A Morte é a preparação para a \"putrefação\" que significa a des truição, pela fermentação, da matéria que compõe os seres",
+      "inicioDepois": "A Morte é a preparação para a \"putrefação\" que significa a destruição, pela fermentação, da matéria que compõe os seres "
+    },
+    {
+      "data": "24/08",
+      "titulo": "MULHER NA MAÇONARIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Maçonaria reserva um lugar de destaque à Mulher, especial mente nas obras caritativas, com a ornamentação das Lojas em",
+      "inicioDepois": "A Maçonaria reserva um lugar de destaque à Mulher, especialmente nas obras caritativas, com a ornamentação das Lojas em "
+    },
+    {
+      "data": "25/08",
+      "titulo": "AMUSICA",
+      "tituloNovo": "A MÚSICA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A música é uma das sete artes liberais. Procede o vocábulo do grego «musa': que significa inspiração, poesia, harmonia e",
+      "inicioDepois": "A música é uma das sete artes liberais. Procede o vocábulo do grego \"musa\", que significa inspiração, poesia, harmonia e"
+    },
+    {
+      "data": "26/08",
+      "titulo": "A NATUREZA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Significa \"o que nasce': o princípio, a formação, a mutação, restringindo-se ao planeta Terra. Em Maçonaria, a Natureza ",
+      "inicioDepois": "Significa \"o que nasce\", o princípio, a formação, a mutação, restringindo-se ao planeta Terra. Em Maçonaria, a Natureza "
+    },
+    {
+      "data": "27/08",
+      "titulo": "NEOFITO",
+      "tituloNovo": "NEÓFITO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Palavra de origem grega, que significa \"recém-plantado\". Em Maçonaria, designa o candidato recém-Iniciado. Neo significa",
+      "inicioDepois": "Palavra de origem grega, que significa \"recém-plantado\". Em Maçonaria, designa o candidato recém-Iniciado. Neo significa"
+    },
+    {
+      "data": "28/08",
+      "titulo": "NE VA RIETU!e'",
+      "tituloNovo": "\"NE VARIETUR\"",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Expressão latina que significa \"que não varia,,, ou seja, o inalterável e o permanente. Denomina-se de Ne Varietur, em M",
+      "inicioDepois": "Expressão latina que significa \"que não varia\", ou seja, o inalterável e o permanente. Denomina-se de Ne Varietur, em Ma"
+    },
+    {
+      "data": "29/08",
+      "titulo": "ONIVEL",
+      "tituloNovo": "O NÍVEL",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Nivelar significa reduzir a um só plano a construção; a bolha de ar inserida no estojo mede o equilíbrio. Instrumento es",
+      "inicioDepois": "Nivelar significa reduzir a um só plano a construção; a bolha de ar inserida no estojo mede o equilíbrio. Instrumento es"
+    },
+    {
+      "data": "30/08",
+      "titulo": "A NOBREZA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em todos os povos, um determinado grupo se destaca, seja por tradição ou herança ou capacidade de liderança, e passa a g",
+      "inicioDepois": "Em todos os povos, um determinado grupo se destaca, seja por tradição ou herança ou capacidade de liderança, e passa a g"
+    },
+    {
+      "data": "31/08",
+      "titulo": "O NOVEL IRMAO",
+      "tituloNovo": "O NOVEL IRMÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Após os trâmites da Iniciação, quando o maçom acompanha passo a passo todas as provas e assiste ao debate final vitorios",
+      "inicioDepois": "Após os trâmites da Iniciação, quando o maçom acompanha passo a passo todas as provas e assiste ao debate final vitorios"
+    },
+    {
+      "data": "01/09",
+      "titulo": "A NUDEZ",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A nudez representa a realidade e a verdade; \"desnudar\" significa \"desvendar\". Con1umente, nudez significa a pessoa despi",
+      "inicioDepois": "A nudez representa a realidade e a verdade; \"desnudar\" significa \"desvendar\". Comumente, nudez significa a pessoa despid"
+    },
+    {
+      "data": "02/09",
+      "titulo": "NUMEROS",
+      "tituloNovo": "NÚMEROS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo número procede do latim numerus, sendo a relação existente entre duas quantidades. Em grego é denon1inado de ",
+      "inicioDepois": "O vocábulo número procede do latim numerus, sendo a relação existente entre duas quantidades. Em grego é denominado de r"
+    },
+    {
+      "data": "03/09",
+      "titulo": "OBEDIENCIA",
+      "tituloNovo": "OBEDIÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a submissão à vontade de outrem; trata-se de um vocábulo de origem latina; obediência e vontade são irmãs xipófagas, i",
+      "inicioDepois": "É a submissão à vontade de outrem; trata-se de um vocábulo de origem latina; obediência e vontade são irmãs xipófagas, i"
+    },
+    {
+      "data": "04/09",
+      "titulo": "O OCULTISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Durante o século XVIII, o ocultismo teve acentuados progres sos, pois iniciava-se, ocultamente, uma reação à doutrina da",
+      "inicioDepois": "Durante o século XVIII, o ocultismo teve acentuados progressos, pois iniciava-se, ocultamente, uma reação à doutrina da "
+    },
+    {
+      "data": "05/09",
+      "titulo": "OFICINAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Esse nome deriva das antigas associações e corporações . dos artesãos. Quando a Maçonaria era operativa, a oficina era o",
+      "inicioDepois": "Esse nome deriva das antigas associações e corporações dos artesãos. Quando a Maçonaria era operativa, a oficina era o r"
+    },
+    {
+      "data": "06/09",
+      "titulo": "OLD CHARGES''",
+      "tituloNovo": "\"OLD CHARGES\"",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Traduz-se por \"velhos preceitos,: Atribui-se ao pesquisa dor James O. Haliwell, que não era maçom, no ano de 1839, ter e",
+      "inicioDepois": "Traduz-se por \"velhos preceitos\". Atribui-se ao pesquisador James O. Haliwell, que não era maçom, no ano de 1839, ter en"
+    },
+    {
+      "data": "07/09",
+      "titulo": "OOLHO",
+      "tituloNovo": "O OLHO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Olho faz parte dos símbolos maçônicos e o vemos dentro da Loja, inserido no triângulo ou Delta Luminoso colocado sobre",
+      "inicioDepois": "O Olho faz parte dos símbolos maçônicos e o vemos dentro da Loja, inserido no triângulo ou Delta Luminoso colocado sobre"
+    },
+    {
+      "data": "08/09",
+      "titulo": "AORAÇA ~ O",
+      "tituloNovo": "A ORAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Pode significar, derivando do latiln oratio, discurso, ou a in vocação dirigida à divindade, na forma de «prece': maçoni",
+      "inicioDepois": "Pode significar, derivando do latim oratio, discurso, ou a invocação dirigida à divindade, na forma de \"prece\", maçonica"
+    },
+    {
+      "data": "09/09",
+      "titulo": "ORDEM MAÇONICA",
+      "tituloNovo": "ORDEM MAÇÔNICA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Termo usado na França quando do surgimento da Maçonaria como instituição e seguindo o exemplo das demais ordens de caval",
+      "inicioDepois": "Termo usado na França quando do surgimento da Maçonaria como instituição e seguindo o exemplo das demais ordens de caval"
+    },
+    {
+      "data": "10/09",
+      "titulo": "ORDENS DE ARQUITETURA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Oiz respeito às colunas e seus componentes; dentro de uma Loja de aprendizes são colocadas colunas das ordens dórica, Jô",
+      "inicioDepois": "Diz respeito às colunas e seus componentes; dentro de uma Loja de aprendizes são colocadas colunas das ordens dórica, Jô"
+    },
+    {
+      "data": "11/09",
+      "titulo": "ORIENTE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "É do Oriente que nasce toda luz, nos vários aspectos astronômicos, esotéricos ou espirituais. O Sol surge do Oriente par",
+      "inicioDepois": "E do Oriente que nasce toda luz, nos vários aspectos astronômicos, esotéricos ou espirituais. O Sol surge do Oriente par"
+    },
+    {
+      "data": "12/09",
+      "titulo": "ORLA DENTADA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Fisicamente, dentro do templo, existem duas orlas dentadas; trata-se de uma grega ou complemento no formato semelhante a",
+      "inicioDepois": "Fisicamente, dentro do templo, existem duas orlas dentadas; trata-se de uma grega ou complemento no formato semelhante a"
+    },
+    {
+      "data": "13/09",
+      "titulo": "ORVALHO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "No Salmo 133 vem referido o orvalho que desce do Monte Herman; Jerusalén1 possui um território extremamente seco, onde a",
+      "inicioDepois": "No Salmo 133 vem referido o orvalho que desce do Monte Hermon; Jerusalém possui um território extremamente seco, onde as"
+    },
+    {
+      "data": "14/09",
+      "titulo": "O OSCULO",
+      "tituloNovo": "O ÓSCULO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Deriva do latim, significando o Os, boca; traduz-se por \"beijos do latim basiare ou \"tocar com os lábios': Sendo os lábi",
+      "inicioDepois": "Deriva do latim, significando o Os, boca; traduz-se por \"beijo\", do latim basiare ou \"tocar com os lábios\". Sendo os láb"
+    },
+    {
+      "data": "15/09",
+      "titulo": "O OURO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Metal puro, incorruptível, permanente, simbolizando a rique za, a fidelidade e a eternidade. Usado na atualidade como eq",
+      "inicioDepois": "Metal puro, incorruptível, permanente, simbolizando a riqueza, a fidelidade e a eternidade. Usado na atualidade como equ"
+    },
+    {
+      "data": "16/09",
+      "titulo": "APACIENCIA",
+      "tituloNovo": "A PACIÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Paciência é uma das virtudes que a Maçonaria cultiva, porque é irmã gêmea da tolerância. A paciência significa o equil",
+      "inicioDepois": "A Paciência é uma das virtudes que a Maçonaria cultiva, porque é irmã gêmea da tolerância. A paciência significa o equil"
+    },
+    {
+      "data": "17/09",
+      "titulo": "PADRINHO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O maçom que propõe um candidato à Iniciação transforma se em Padrinho desse candidato, que logo após Iniciado assume a c",
+      "inicioDepois": "O maçom que propõe um candidato à Iniciação transformase em Padrinho desse candidato, que logo após Iniciado assume a co"
+    },
+    {
+      "data": "18/09",
+      "titulo": "O PAINEL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A origem da palavra provém do espanhol, significando \"pano': no sentido de \"quadro': ou seja: «quadro de pano\". Nas Loja",
+      "inicioDepois": "A origem da palavra provém do espanhol, significando \"pano\", no sentido de \"quadro\", ou seja: \"quadro de pano\". Nas Loja"
+    },
+    {
+      "data": "20/09",
+      "titulo": "APALAVRA",
+      "tituloNovo": "A PALAVRA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Provém do latim parabola ou parola, expressão vocal formada de sons. Há a Palavra oral e a escrita; porém, no sentido la",
+      "inicioDepois": "Provém do latim parabola ou parola, expressão vocal formada de sons. Há a Palavra oral e a escrita; porém, no sentido la"
+    },
+    {
+      "data": "21/09",
+      "titulo": "PARAMENTOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "No ano de 1782 foram estabelecidos, na Maçonaria Inglesa, os símbolos máximos que deveriam ser colocados sobre o Altar e",
+      "inicioDepois": "No ano de 1782 foram estabelecidos, na Maçonaria Inglesa, os símbolos máximos que deveriam ser colocados sobre o Altar e"
+    },
+    {
+      "data": "22/09",
+      "titulo": "PAVIMENTO DE MOSAICOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Dentro do Templo, sob o Altar, vem colocado um «tapete\" ou pavimento formado de ladrilhos quadriláteros, alternados em b",
+      "inicioDepois": "Dentro do Templo, sob o Altar, vem colocado um \"tapete\" ou pavimento formado de ladrilhos quadriláteros, alternados em b"
+    },
+    {
+      "data": "23/09",
+      "titulo": "PEDRA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A pedra é a expressão do Reino Mineral que se apresenta sob múltiplas formas; extremamente dura e rígida, extremamente b",
+      "inicioDepois": "A pedra é a expressão do Reino Mineral que se apresenta sob múltiplas formas; extremamente dura e rígida, extremamente b"
+    },
+    {
+      "data": "24/09",
+      "titulo": "A PEDRA BRUTA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Pedra Bruta é o símbolo do Aprendiz maçom, como o é de todo o homem; diz-se quando um homem é rústico, ignorante e mal",
+      "inicioDepois": "A Pedra Bruta é o símbolo do Aprendiz maçom, como o é de todo o homem; diz-se quando um homem é rústico, ignorante e mal"
+    },
+    {
+      "data": "25/09",
+      "titulo": "PEIXE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Não é símbolo maçônico; sendo um dos símbolos do zodíaco, · nas Lojas Maçônicas vem colocado no topo de uma as 12 coluna",
+      "inicioDepois": "Não é símbolo maçônico; sendo um dos símbolos do zodíaco, nas Lojas Maçônicas vem colocado no topo de uma as 12 colunas "
+    },
+    {
+      "data": "26/09",
+      "titulo": "O PELICANO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "O Pelicano é uma ave aquática, originária do Oriente e que se alimenta de peixes, moluscos, mariscos etc. É símbolo maçô",
+      "inicioDepois": "O Pelicano é uma ave aquática, originária do Oriente e que se alimenta de peixes, moluscos, mariscos etc. É símbolo maçô"
+    },
+    {
+      "data": "27/09",
+      "titulo": "O PENSAMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a parte esotérica do ser humano. O Pensamento não é um órgão visível, palpável, que possa ser dissecado e observado em",
+      "inicioDepois": "É a parte esotérica do ser humano. O Pensamento não é um órgão visível, palpável, que possa ser dissecado e observado em"
+    },
+    {
+      "data": "28/09",
+      "titulo": "O PENTAGRAMA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É um termo grego: pente, significando \"cinco''; grama, significando \"sinal\"; traduz-se por \"sinal de cinco pontas': . É ",
+      "inicioDepois": "É um termo grego: pente, significando \"cinco\"; grama, significando \"sinal\"; traduz-se por \"sinal de cinco pontas\". É um "
+    },
+    {
+      "data": "29/09",
+      "titulo": "APERCEPÇAO",
+      "tituloNovo": "A PERCEPÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a união dos objetos exteriores com a sua identificação espiritual. O órgão visual percebe os objetos e transmite para ",
+      "inicioDepois": "É a união dos objetos exteriores com a sua identificação espiritual. O órgão visual percebe os objetos e transmite para "
+    },
+    {
+      "data": "30/09",
+      "titulo": "O PERDÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": ". Perdoar é esquecer uma agressão; contudo, em Maçonaria, substitui-se essa Virtude pela da Tolerância, que é a compreen",
+      "inicioDepois": "Perdoar é esquecer uma agressão; contudo, em Maçonaria, substitui-se essa Virtude pela da Tolerância, que é a compreensã"
+    },
+    {
+      "data": "01/10",
+      "titulo": "PERFEIÇAO",
+      "tituloNovo": "PERFEIÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O símbolo que representa a Perfeição é o Círculo construído com o Compasso. Diz-se que a Maçonaria é uma escola de perfe",
+      "inicioDepois": "O símbolo que representa a Perfeição é o Círculo construído com o Compasso. Diz-se que a Maçonaria é uma escola de perfe"
+    },
+    {
+      "data": "02/10",
+      "titulo": "O PERFUME",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Desconhece-se a origem do Perfume, que é toda substância aromática; nem sempre o seu aroma agrada a todos; de conformida",
+      "inicioDepois": "Desconhece-se a origem do Perfume, que é toda substância aromática; nem sempre o seu aroma agrada a todos; de conformida"
+    },
+    {
+      "data": "03/10",
+      "titulo": "PERIGO",
+      "tituloNovo": "O PERIGO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em todas as provas determinadas pela liturgia da Iniciação, o candidato é advertido de que enfrentará \"Perigos,,; essa p",
+      "inicioDepois": "Em todas as provas determinadas pela liturgia da Iniciação, o candidato é advertido de que enfrentará \"Perigos\"; essa pr"
+    },
+    {
+      "data": "04/10",
+      "titulo": "OPERJURIO",
+      "tituloNovo": "O PERJÚRIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a quebra de um juramento. A Maçonaria, de modo prosaico, ameaça com os mais cruéis castigos aquele que desonrar o seu ",
+      "inicioDepois": "É a quebra de um juramento. A Maçonaria, de modo prosaico, ameaça com os mais cruéis castigos aquele que desonrar o seu "
+    },
+    {
+      "data": "05/10",
+      "titulo": "A PERPENDICULAR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A posição vertical ou perpendicular representa o ser humano hígido, de pé e ativo; é a reta que ascende para o reino dos",
+      "inicioDepois": "A posição vertical ou perpendicular representa o ser humano hígido, de pé e ativo; é a reta que ascende para o reino dos"
+    },
+    {
+      "data": "06/10",
+      "titulo": "A PERSONALIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A persona, ou seja, a pessoa, possui características individuais que a tornam um ser diferente de outro ser, sem que sej",
+      "inicioDepois": "A persona, ou seja, a pessoa, possui características individuais que a tornam um ser diferente de outro ser, sem que sej"
+    },
+    {
+      "data": "07/10",
+      "titulo": "PESQUISAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A pesquisa envolve o trabalho pertinaz em busca de elementos para esclarecer fatos do passado. A arqueologia não passa d",
+      "inicioDepois": "A pesquisa envolve o trabalho pertinaz em busca de elementos para esclarecer fatos do passado. A arqueologia não passa d"
+    },
+    {
+      "data": "08/10",
+      "titulo": "APOBREZA",
+      "tituloNovo": "A POBREZA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A pobreza não pode ser confundida com a miséria· o vocábulo pobre significa \"fa ltà' e \"ausência': ' . Será pobre de esp",
+      "inicioDepois": "A pobreza não pode ser confundida com a miséria; o vocábulo pobre significa \"falta\" e \"ausência\". Será pobre de espírito"
+    },
+    {
+      "data": "09/10",
+      "titulo": "O PONTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim punctum, significando \"picada': que seria a menor cirurgia praticada no corpo humano. O Ponto simboliza um espa",
+      "inicioDepois": "Do latim punctum, significando \"picada\", que seria a menor cirurgia praticada no corpo humano. O Ponto simboliza um espa"
+    },
+    {
+      "data": "10/10",
+      "titulo": "PORTA",
+      "tituloNovo": null,
+      "antes": "ilegivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "-~-'- .,'.i.·x n.. '·.y~ t e. rnr~·,t o i·r.o,\", ,.i!a aco.,: ru• cn pnsso·~• a n,.:·r;..;.;.,:, <i Pr-,rt.~ J\\\"( :.., e",
+      "inicioDepois": "*Um Templo Maçônico possui apenas a Porta de entrada colo. cada na parteocidental da Loja; essa Porta permanece constant"
+    },
+    {
+      "data": "11/10",
+      "titulo": "PRANA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em sânscrito significa \"sopro divino\"; dentro do Templo Ma çônico, face o surgimento da Egrégora, o ar que circula passa",
+      "inicioDepois": "Em sânscrito significa \"sopro divino\"; dentro do Templo Maçônico, face o surgimento da Egrégora, o ar que circula passa "
+    },
+    {
+      "data": "12/10",
+      "titulo": "APRECE",
+      "tituloNovo": "A PRECE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Prece é o contato entre criatura e Criador. Pela onisciência de Deus, obviamente, o Criador está constan temente em co",
+      "inicioDepois": "A Prece é o contato entre criatura e Criador. Pela onisciência de Deus, obviamente, o Criador está constantemente em con"
+    },
+    {
+      "data": "13/10",
+      "titulo": "APREDIÇÃO",
+      "tituloNovo": "A PREDIÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Antecipar ou prever resultados de um ato e anunciar as suas consequências. Prediz-se o Tempo, o movimento dos astros, o ",
+      "inicioDepois": "Antecipar ou prever resultados de um ato e anunciar as suas consequências. Prediz-se o Tempo, o movimento dos astros, o "
+    },
+    {
+      "data": "14/10",
+      "titulo": "PROFANAR",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim pro, frente, e fanum, templo, significando o que está fora do templo; é a agressão às coisas que consideramos s",
+      "inicioDepois": "Do latim pro, frente, e fanum, templo, significando o que está fora do templo; é a agressão às coisas que consideramos s"
+    },
+    {
+      "data": "15/10",
+      "titulo": "PROFECIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a predição do futuro; os antigos oráculos eram presididos pelas pitonisas que prediziam o futuro, isto é, o que estari",
+      "inicioDepois": "É a predição do futuro; os antigos oráculos eram presididos pelas pitonisas que prediziam o futuro, isto é, o que estari"
+    },
+    {
+      "data": "16/10",
+      "titulo": "PROGRAMAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A vida moderna exige que os atos individuais e públicos, grupais ou econômicos, sejam programados. Hoje, a ciência conta",
+      "inicioDepois": "A vida moderna exige que os atos individuais e públicos, grupais ou econômicos, sejam programados. Hoje, a ciência conta"
+    },
+    {
+      "data": "17/10",
+      "titulo": "O PROGRESSO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo, que é de origem latina, significa \"marcha para a frente': O Progresso pode ser sinônimo de evolução, apesar ",
+      "inicioDepois": "O vocábulo, que é de origem latina, significa \"marcha para a frente\". O Progresso pode ser sinônimo de evolução, apesar "
+    },
+    {
+      "data": "18/10",
+      "titulo": "O PROPONENTE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "\" _~ ,i~-se assim do maçom possuidor do Grau de Mestre que propoe a LoJa o nome de um profano para, depois de sindicado ",
+      "inicioDepois": "Diz-se assim do maçom possuidor do Grau de Mestre que \"propõe\" à Loja o nome de um profano para, depois de sindicado, se"
+    },
+    {
+      "data": "19/10",
+      "titulo": "AS PROPOSTAS DE CANDIDATOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Periodicamente, são apresentadas propostas de candidatos profanos à Iniciação, propostas colhidas da bolsa de propostas ",
+      "inicioDepois": "Periodicamente, são apresentadas propostas de candidatos profanos à Iniciação, propostas colhidas da bolsa de propostas "
+    },
+    {
+      "data": "20/10",
+      "titulo": "O PROSELITISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O prosélito era o pagão que abraçava o Judaísmo; hoje, em linguagem maçônica, prosélito seria o profano que acorre à Maç",
+      "inicioDepois": "O prosélito era o pagão que abraçava o Judaísmo; hoje, em linguagem maçônica, prosélito seria o profano que acorre à Maç"
+    },
+    {
+      "data": "21/10",
+      "titulo": "PROVAS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A ciência somente admite aquilo que teve a sua veracidade comprovada. O empírico é fato esotérico e espiritual. Na Filos",
+      "inicioDepois": "A ciência somente admite aquilo que teve a sua veracidade comprovada. O empírico é fato esotérico e espiritual. Na Filos"
+    },
+    {
+      "data": "22/10",
+      "titulo": "A PROVIDENCIA",
+      "tituloNovo": "A PROVIDÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Considera-se o vocábulo em dois sentidos: o suprimento de bens, quando alguém providencia para a sua aquisição; e o que ",
+      "inicioDepois": "Considera-se o vocábulo em dois sentidos: o suprimento de bens, quando alguém providencia para a sua aquisição; e o que "
+    },
+    {
+      "data": "23/10",
+      "titulo": "APRUDENCIA",
+      "tituloNovo": "A PRUDÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É uma virtude de comportamento. O prudente prevê o que lhe poderá acontecer se não estiver alerta. Essa virtude pode ser",
+      "inicioDepois": "É uma virtude de comportamento. O prudente prevê o que lhe poderá acontecer se não estiver alerta. Essa virtude pode ser"
+    },
+    {
+      "data": "24/10",
+      "titulo": "OPRUMO",
+      "tituloNovo": "O PRUMO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Trata-se de um instrumento indispensável na construção (alvenaria ou artefatos diversos de pedra, madeira, plásticos etc",
+      "inicioDepois": "Trata-se de um instrumento indispensável na construção (alvenaria ou artefatos diversos de pedra, madeira, plásticos etc"
+    },
+    {
+      "data": "25/10",
+      "titulo": "A PSICANALISE",
+      "tituloNovo": "A PSICANÁLISE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É a ciência que estuda o subconsciente, usando métodos apropriados. Apesar de constituir uma ciência moderna, de um sécu",
+      "inicioDepois": "É a ciência que estuda o subconsciente, usando métodos apropriados. Apesar de constituir uma ciência moderna, de um sécu"
+    },
+    {
+      "data": "26/10",
+      "titulo": "A PSICOLOGIA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É palavra de origem grega: psique, alma e logos, discurso; poder-se-ia traduzir por \"colóquio com a alma': . Trata-se de",
+      "inicioDepois": "É palavra de origem grega: psique, alma e logos, discurso; poder-se-ia traduzir por \"colóquio com a alma\". Trata-se de u"
+    },
+    {
+      "data": "27/10",
+      "titulo": "A PUNIÇÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo origina-se da palavra \"punhal': ou seja, castigo com o punho que maneja o instrumento ou arma. O \"punhal\" é u",
+      "inicioDepois": "O vocábulo origina-se da palavra \"punhal\", ou seja, castigo com o punho que maneja o instrumento ou arma. O \"punhal\" é u"
+    },
+    {
+      "data": "28/10",
+      "titulo": "APUREZA",
+      "tituloNovo": "A PUREZA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "Pureza adjetiva aquele que é puro. Todo maçom que participa de uma sessão dentro do templo purifica-se quando é aberto o",
+      "inicioDepois": "Pureza adjetiva aquele que é puro. Todo maçom que participa de uma sessão dentro do templo purifica-se quando é aberto o"
+    },
+    {
+      "data": "29/10",
+      "titulo": "QUALIDADES DE UM CANDIDATO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A condição exigida para que um candidato possa ser recebido maçom restringe-se a algumas palavras: «ser livre e de bons ",
+      "inicioDepois": "A condição exigida para que um candidato possa ser recebido maçom restringe-se a algumas palavras: \"ser livre e de bons "
+    },
+    {
+      "data": "30/10",
+      "titulo": "OS QUERUBINS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Procede do hebraico, K'rub no singular e K'rubim no plural. O Querubim seria um deus de segunda categoria. Narram as esc",
+      "inicioDepois": "Procede do hebraico, K'rub no singular e K'rubim no plural. O Querubim seria um deus de segunda categoria. Narram as esc"
+    },
+    {
+      "data": "31/10",
+      "titulo": "RABI",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Origina-se do hebraico e aramaico rabbi, modernizado hoje como \"rabino': com o significado de \"meu Senhor\"; foi o título",
+      "inicioDepois": "Origina-se do hebraico e aramaico rabbi, modernizado hoje como \"rabino\", com o significado de \"meu Senhor\"; foi o título"
+    },
+    {
+      "data": "01/11",
+      "titulo": "RAMALHETE DE FLORES",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de um buque de flores usados em festividade e em atos fúnebres. A Maçonaria, em seus trabalhos simbólicos, não ",
+      "inicioDepois": "Trata-se de um buque de flores usados em festividade e em atos fúnebres. A Maçonaria, em seus trabalhos simbólicos, não "
+    },
+    {
+      "data": "02/11",
+      "titulo": "RAZAO",
+      "tituloNovo": "RAZÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "A Razão é a \"liberdade do pensamento\" que elabora o conhecimento, após momentos de meditação. Grandes filósofos dedicara",
+      "inicioDepois": "A Razão é a \"liberdade do pensamento\" que elabora o conhecimento, após momentos de meditação. Grandes filósofos dedicara"
+    },
+    {
+      "data": "03/11",
+      "titulo": "RECEBER A LUZ",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Luz, aqui, tem vários significados: o esclarecimento, a divin dade, a evolução e o ingresso no universo interior. O Inic",
+      "inicioDepois": "Luz, aqui, tem vários significados: o esclarecimento, a divindade, a evolução e o ingresso no universo interior. O Inici"
+    },
+    {
+      "data": "04/11",
+      "titulo": "RECEPÇÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O significado da «Recepção\" Maçônica é o recebimento na Loja, por ocasião da cerimônia iniciática, do iniciando, agora d",
+      "inicioDepois": "O significado da \"Recepção\" Maçônica é o recebimento na Loja, por ocasião da cerimônia iniciática, do iniciando, agora d"
+    },
+    {
+      "data": "05/11",
+      "titulo": "O RECIPIENDARIO",
+      "tituloNovo": "O RECIPIENDÁRIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se de uma expressão maçônica. Recipiendário é aquele que é recepcionado cerimoniosamente, isto é, dentro da cerimô",
+      "inicioDepois": "Trata-se de uma expressão maçônica. Recipiendário é aquele que é recepcionado cerimoniosamente, isto é, dentro da cerimô"
+    },
+    {
+      "data": "06/11",
+      "titulo": "RECONHECIMENTO CONJUGAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Maçonaria preocupa-se com a família de seu filiado. Assim, como atividade social, possui o reconhecimento conjugal, qu",
+      "inicioDepois": "A Maçonaria preocupa-se com a família de seu filiado. Assim, como atividade social, possui o reconhecimento conjugal, qu"
+    },
+    {
+      "data": "07/11",
+      "titulo": "RECONHECIMENTO L-fl1U RGICO",
+      "tituloNovo": "RECONHECIMENTO LITÚRGICO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O reconhecimento entre maçons abrange os maçons da Loja visitada e o maçom \"estranho': visitante. Dentro da Loja, o reco",
+      "inicioDepois": "O reconhecimento entre maçons abrange os maçons da Loja visitada e o maçom \"estranho\", visitante. Dentro da Loja, o reco"
+    },
+    {
+      "data": "08/11",
+      "titulo": "RECREAÇAO",
+      "tituloNovo": "RECREAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Quando oportuno, a Loja necessita suspender seus trabalhos ritualisticos. O Venerável Mestre determina que o Livro Sagra",
+      "inicioDepois": "Quando oportuno, a Loja necessita suspender seus trabalhos ritualísticos. O Venerável Mestre determina que o Livro Sagra"
+    },
+    {
+      "data": "09/11",
+      "titulo": "RECRUTAMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Recrutar significa \"angariar\"; somente um Mestre poderá pro por à Loja o nome de um profano que julgue digno de ingressa",
+      "inicioDepois": "Recrutar significa \"angariar\"; somente um Mestre poderá propor à Loja o nome de um profano que julgue digno de ingressar"
+    },
+    {
+      "data": "10/11",
+      "titulo": "A RECUSA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Recusa da Loja em aceitar uma proposta para Iniciação não deveria existir. No entanto, as recusas são frequentes; há L",
+      "inicioDepois": "A Recusa da Loja em aceitar uma proposta para Iniciação não deveria existir. No entanto, as recusas são frequentes; há L"
+    },
+    {
+      "data": "11/11",
+      "titulo": "REENCARNAÇÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O retorno de um morto à vida, passado um período longo, para que não se confunda com ressurreição, é fenômeno aceito ex ",
+      "inicioDepois": "O retorno de um morto à vida, passado um período longo, para que não se confunda com ressurreição, é fenômeno aceito exc"
+    },
+    {
+      "data": "12/11",
+      "titulo": "REFLEXÃO",
+      "tituloNovo": "A REFLEXÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Vem do vocábulo e raiz \"reflexo': lembrando \"espelho': A reflexão pode ser sinônimo de meditação; a meditação é ato ínti",
+      "inicioDepois": "Vem do vocábulo e raiz \"reflexo\", lembrando \"espelho\". A reflexão pode ser sinônimo de meditação; a meditação é ato ínti"
+    },
+    {
+      "data": "13/11",
+      "titulo": "AREGUADAS 24 POLEGADAS",
+      "tituloNovo": "A RÉGUA DAS 24 POLEGADAS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A polegada é uma medida antiga que se afastou do sistema métrico francês; contudo, ainda é usada, posto que esporadicame",
+      "inicioDepois": "A polegada é uma medida antiga que se afastou do sistema métrico francês; contudo, ainda é usada, posto que esporadicame"
+    },
+    {
+      "data": "14/11",
+      "titulo": "REGULARIDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Regular é sinônimo de legitimidade; diz-se regular o maçom que está em dia com os seus compromissos perante a sua Loja; ",
+      "inicioDepois": "Regular é sinônimo de legitimidade; diz-se regular o maçom que está em dia com os seus compromissos perante a sua Loja; "
+    },
+    {
+      "data": "15/11",
+      "titulo": "A RELIGIÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Vem do latim: re-ligare, isto é, tornar a ligar. A religião visa ao retorno a Deus daquele que o \"abandonou': em um regr",
+      "inicioDepois": "Vem do latim: re-ligare, isto é, tornar a ligar. A religião visa ao retorno a Deus daquele que o \"abandonou\", em um regr"
+    },
+    {
+      "data": "16/11",
+      "titulo": "RENASCIMENTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Nascer de novo é o significado do termo, maçonicamente, para um renascimento é necessária uma morte; o candidato à Inici",
+      "inicioDepois": "Nascer de novo é o significado do termo, maçonicamente, para um renascimento é necessária uma morte; o candidato à Inici"
+    },
+    {
+      "data": "17/11",
+      "titulo": "RESERVA MENTAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Os juramentos feitos na Maçonaria, na realidade, são \"com promissos,, e devem ser prestados com a máxima transparência. ",
+      "inicioDepois": "Os juramentos feitos na Maçonaria, na realidade, são \"compromissos\" e devem ser prestados com a máxima transparência. Na"
+    },
+    {
+      "data": "18/11",
+      "titulo": "ARETIDAO",
+      "tituloNovo": "A RETIDÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O maçom tem por obrigação demonstrar que é possuidor da virtude da Retidão. Esse vocábulo significa que as ações dos maç",
+      "inicioDepois": "O maçom tem por obrigação demonstrar que é possuidor da virtude da Retidão. Esse vocábulo significa que as ações dos maç"
+    },
+    {
+      "data": "19/11",
+      "titulo": "ARETORICA",
+      "tituloNovo": "A RETÓRICA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Constitui uma das sete ciências ou artes liberais. É a eloquência do discurso; são as palavras usadas com acerto, sem pr",
+      "inicioDepois": "Constitui uma das sete ciências ou artes liberais. É a eloquência do discurso; são as palavras usadas com acerto, sem pr"
+    },
+    {
+      "data": "20/11",
+      "titulo": "ROCHA",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Símbolo por excelência do reino mineral. Simboliza a estabilidade e a firmeza, a imutabilidade. Os alicerces construídos",
+      "inicioDepois": "Símbolo por excelência do reino mineral. Simboliza a estabilidade e a firmeza, a imutabilidade. Os alicerces construídos"
+    },
+    {
+      "data": "21/11",
+      "titulo": "AS ROMÃS",
+      "tituloNovo": "AS ROMÁS",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Encimando as colunas, veem-se em cada uma delas três Romãs, sendo uma ·entreaberta para que apareçam as sementes. A Romã",
+      "inicioDepois": "Encimando as colunas, veem-se em cada uma delas três Romãs, sendo uma entreaberta para que apareçam as sementes. A Romã,"
+    },
+    {
+      "data": "22/11",
+      "titulo": "AROSA",
+      "tituloNovo": "A ROSA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Sempre foi considerada a \"rainha das flores': decantada pelos poetas em todos os tempos como símbolo da beleza, da graça",
+      "inicioDepois": "Sempre foi considerada a \"rainha das flores\", decantada pelos poetas em todos os tempos como símbolo da beleza, da graça"
+    },
+    {
+      "data": "23/11",
+      "titulo": "ROSA-CRUZ",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Fraternidade Rosa-Cruz tem origem muito remota e> de certo modo, perdida no Tempo; teria sido formada com o intuito de",
+      "inicioDepois": "A Fraternidade Rosa-Cruz tem origem muito remota e, de certo modo, perdida no Tempo; teria sido formada com o intuito de"
+    },
+    {
+      "data": "24/11",
+      "titulo": "SABEDORIA",
+      "tituloNovo": "A SABEDORIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Sabedoria, a Força e a Beleza são as três Colunas-Mestras da Maçonaria, no sentido esotérico. É a Trilogia sempre em e",
+      "inicioDepois": "A Sabedoria, a Força e a Beleza são as três Colunas-Mestras da Maçonaria, no sentido esotérico. É a Trilogia sempre em e"
+    },
+    {
+      "data": "25/11",
+      "titulo": "SACERDOTE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim sacerdos, vocábulo composto de sacer e dare, significando \"o que pode dar': no sentido de \"sacrifício\"; portant",
+      "inicioDepois": "Do latim sacerdos, vocábulo composto de sacer e dare, significando \"o que pode dar\", no sentido de \"sacrifício\"; portant"
+    },
+    {
+      "data": "26/11",
+      "titulo": "SACO DE BENEFICENCIA",
+      "tituloNovo": "SACO DE BENEFICÊNCIA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Em tempos passados, as bolsas ou recipientes destinados a recolher a coleta eram confeccionados em aniagem, ou seja, com",
+      "inicioDepois": "Em tempos passados, as bolsas ou recipientes destinados a recolher a coleta eram confeccionados em aniagem, ou seja, com"
+    },
+    {
+      "data": "27/11",
+      "titulo": "SACRIFICIO",
+      "tituloNovo": "SACRIFÍCIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O vocábulo origina-se do latim: sacrum ef acere, que significa \"tornar sagrado\". O vulgo usa o vocábulo como ato doloros",
+      "inicioDepois": "O vocábulo origina-se do latim: sacrum e facere, que significa \"tornar sagrado\". O vulgo usa o vocábulo como ato doloros"
+    },
+    {
+      "data": "28/11",
+      "titulo": "SACRILEGIO",
+      "tituloNovo": "SACRILÉGIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Trata-se da profanação do que é sagrado. Não se restringe o Sacrilégio às coisas materiais, como a pro fanação de um rec",
+      "inicioDepois": "Trata-se da profanação do que é sagrado. Não se restringe o Sacrilégio às coisas materiais, como a profanação de um reci"
+    },
+    {
+      "data": "29/11",
+      "titulo": "SAGRAÇAO",
+      "tituloNovo": "SAGRAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Quando um Templo Maçônico se encontra concluído, por meio de um cerimonial litúrgico ele é consagrado e nele podem funci",
+      "inicioDepois": "Quando um Templo Maçônico se encontra concluído, por meio de um cerimonial litúrgico ele é consagrado e nele podem funci"
+    },
+    {
+      "data": "30/11",
+      "titulo": "SAGRADO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "' O Sagrado constitui um paralelo com o oculto; o Sagrado envolve o mistério, o santificado, a presença Divina. Dizia o ",
+      "inicioDepois": "O Sagrado constitui um paralelo com o oculto; o Sagrado envolve o mistério, o santificado, a presença Divina. Dizia o Se"
+    },
+    {
+      "data": "01/12",
+      "titulo": "OSAL",
+      "tituloNovo": "O SAL",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Sal (c loreto de sódio) faz parte dos três princípios hennl:.. ticos, com o Enxofre e o Mercúrio. O Sal é o elemento q",
+      "inicioDepois": "O Sal (cloreto de sódio) faz parte dos três princípios herméticos, com o Enxofre e o Mercúrio. O Sal é o elemento que dá"
+    },
+    {
+      "data": "02/12",
+      "titulo": "A SALA DOS PASSOS PERDIDOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Muitos maçons ignoram que a sala dos Passos Perdidos é uma das antecâmaras do templo e o seu comportamento reflete os há",
+      "inicioDepois": "Muitos maçons ignoram que a sala dos Passos Perdidos é uma das antecâmaras do templo e o seu comportamento reflete os há"
+    },
+    {
+      "data": "03/12",
+      "titulo": "OSALARIO",
+      "tituloNovo": "O SALÁRIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "\"Todo operário é digno de seu Salário,, é a palavra de ordem cristã e, maçonicamente, é a recompensa do esforço e da boa",
+      "inicioDepois": "\"Todo operário é digno de seu Salário\" é a palavra de ordem cristã e, maçonicamente, é a recompensa do esforço e da boa "
+    },
+    {
+      "data": "04/12",
+      "titulo": "OS SALMOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "As Sagradas Escrituras contêm 150 Salmos coletados em um livro; o vocábulo Salmo vem do grego, Salmos, significando um p",
+      "inicioDepois": "As Sagradas Escrituras contêm 150 Salmos coletados em um livro; o vocábulo Salmo vem do grego, Salmos, significando um p"
+    },
+    {
+      "data": "05/12",
+      "titulo": "SANCTUM SANCTORUM''",
+      "tituloNovo": "\"SANCTUM SANCTORUM\"",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Quando Moisés, no deserto, após a fuga do Egito, construiu o tabernáculo, colocou nele três compartimentos: o mais inter",
+      "inicioDepois": "Quando Moisés, no deserto, após a fuga do Egito, construiu o tabernáculo, colocou nele três compartimentos: o mais inter"
+    },
+    {
+      "data": "06/12",
+      "titulo": "SÃO JOÃO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "João significa \"porta\", \"entrada': \"início\"; diz-se o primeiro mês do ano, Janeiro, em homenagem a Janus, que em latim é",
+      "inicioDepois": "João significa \"porta\", \"entrada\", \"início\"; diz-se o primeiro mês do ano, Janeiro, em homenagem a Janus, que em latim é"
+    },
+    {
+      "data": "07/12",
+      "titulo": "O SELO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "O Chanceler, um dos oficiais da Loja, é detentor de um \"Selo\" tradicional, composto de uma plaqueta de metal tendo inver",
+      "inicioDepois": "O Chanceler, um dos oficiais da Loja, é detentor de um \"Selo\" tradicional, composto de uma plaqueta de metal tendo inver"
+    },
+    {
+      "data": "08/12",
+      "titulo": "SETENTRIÃO",
+      "tituloNovo": "O SETENTRIÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Ao norte da Abóboda Celeste, no ocaso do firmamento, vemos nos tetos das Lojas, nuvens espessas e ·negras: é o Setentriã",
+      "inicioDepois": "Ao norte da Abóboda Celeste, no ocaso do firmamento, vemos nos tetos das Lojas, nuvens espessas e negras: é o Setentrião"
+    },
+    {
+      "data": "09/12",
+      "titulo": "OSOL",
+      "tituloNovo": "O SOL",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Nas Lojas, o Sol ora é colocado na parede frontal onde se situa o Triângulo Luminoso (Delta), à direita do Venerável Mes",
+      "inicioDepois": "Nas Lojas, o Sol ora é colocado na parede frontal onde se situa o Triângulo Luminoso (Delta), à direita do Venerável Mes"
+    },
+    {
+      "data": "10/12",
+      "titulo": "OSOM",
+      "tituloNovo": "O SOM",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Na vida tudo vem expresso em sons; na Loja, afora o fundo mu sical, apresentam-se os sons da palavra, dos timbres e da r",
+      "inicioDepois": "Na vida tudo vem expresso em sons; na Loja, afora o fundo musical, apresentam-se os sons da palavra, dos timbres e da re"
+    },
+    {
+      "data": "11/12",
+      "titulo": "ATERRA",
+      "tituloNovo": "A TERRA",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O primeiro dos elementos da Natureza é a Terra; trata-se de um mineral de múltiplos aspectos e constitui a parte princip",
+      "inicioDepois": "O primeiro dos elementos da Natureza é a Terra; trata-se de um mineral de múltiplos aspectos e constitui a parte princip"
+    },
+    {
+      "data": "12/12",
+      "titulo": "A TORRE DE BABEL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A confusão que se originara pelas diversas línguas com que falavam os Operários, arregimentados de todas as partes; essa",
+      "inicioDepois": "A confusão que se originara pelas diversas línguas com que falavam os Operários, arregimentados de todas as partes; essa"
+    },
+    {
+      "data": "13/12",
+      "titulo": "O TRONO DO VENERAV EL MESTRE",
+      "tituloNovo": "O TRONO DO VENERÁVEL MESTRE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O trono do Venerável Mestre é visualizado o Tempo todo da duração de uma sessão da Loja, pois o dirigente da Loja encont",
+      "inicioDepois": "O trono do Venerável Mestre é visualizado o Tempo todo da duração de uma sessão da Loja, pois o dirigente da Loja encont"
+    },
+    {
+      "data": "14/12",
+      "titulo": "O 1° E 2° VIGILANTES",
+      "tituloNovo": "01 E 2° VIGILANTES",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Como o próprio nome define, os Vigilantes, em seus tronos, vigiam a Loja, e nessa vigilância são diligentes e cautelosos",
+      "inicioDepois": "Como o próprio nome define, os Vigilantes, em seus tronos, vigiam a Loja, e nessa vigilância são diligentes e cautelosos"
+    },
+    {
+      "data": "15/12",
+      "titulo": "OZODIACO",
+      "tituloNovo": "O ZODÍACO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "' Era o 117º rito maçônico, ora em desuso, também conhecido sob a denominação do rito astrológico e era composto de 12 G",
+      "inicioDepois": "Era o 117° rito maçônico, ora em desuso, também conhecido sob a denominação do rito astrológico e era composto de 12 Gra"
+    },
+    {
+      "data": "16/12",
+      "titulo": "SANTO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A palavra \"Santo» significa \"ser puro e escolhido': Vulgarmente, denomina-se Santo a tudo o que for sagrado. Em hebraico",
+      "inicioDepois": "A palavra \"Santo\" significa \"ser puro e escolhido\". Vulgarmente, denomina-se Santo a tudo o que for sagrado. Em hebraico"
+    },
+    {
+      "data": "17/12",
+      "titulo": "AS AUDAÇÃO",
+      "tituloNovo": "A SAUDAÇÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Saudação é um gesto feito às pessoas conhecidas, às íntimas, aos parentes e às autoridades. Tirar o chapéu, o sinal co",
+      "inicioDepois": "A Saudação é um gesto feito às pessoas conhecidas, às íntimas, aos parentes e às autoridades. Tirar o chapéu, o sinal co"
+    },
+    {
+      "data": "18/12",
+      "titulo": "SAUDE",
+      "tituloNovo": "SAÚDE",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A Saúde é o estado normal e hígido do ser humano. Todos temos a obrigação de manter um comportame I nto para com o nosso",
+      "inicioDepois": "A Saúde é o estado normal e hígido do ser humano. Todos temos a obrigação de manter um comportamento para com o nosso pr"
+    },
+    {
+      "data": "19/12",
+      "titulo": "SEFIROT",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Sefirot é plural de sefira, palavra hebraica significando \"número,: de onde deriva saphar, significando \"numerar': Na ca",
+      "inicioDepois": "Sefirot é plural de sefira, palavra hebraica significando \"número\", de onde deriva saphar, significando \"numerar\". Na ca"
+    },
+    {
+      "data": "20/12",
+      "titulo": "O SEGREDO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "A fonte de todo o conhecimento derivou da construção do Grande Templo de Salomão, porque Jeová ditou ao rei Davi todas a",
+      "inicioDepois": "A fonte de todo o conhecimento derivou da construção do Grande Templo de Salomão, porque Jeová ditou ao rei Davi todas a"
+    },
+    {
+      "data": "21/12",
+      "titulo": "O SELO DE SALOMAO",
+      "tituloNovo": "O SELO DE SALOMÃO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Selo de Salomão é constituído de uma estrela de seis pontas, o \"senário': que simboliza o homem com seus braços aberto",
+      "inicioDepois": "O Selo de Salomão é constituído de uma estrela de seis pontas, o \"senário\", que simboliza o homem com seus braços aberto"
+    },
+    {
+      "data": "22/12",
+      "titulo": "OS SENTIDOS",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O ser humano possui dois grupos de sentidos; os cinco de to dos conhecidos, como a Audição, o Olfato, o Paladar, o Tato ",
+      "inicioDepois": "O ser humano possui dois grupos de sentidos; os cinco de todos conhecidos, como a Audição, o Olfato, o Paladar, o Tato e"
+    },
+    {
+      "data": "23/12",
+      "titulo": "A SERPENTE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É um réptil que sempre simbolizou a Inteligência;-é-lhe atri buída uma função mística porque anualmente muda a sua pele,",
+      "inicioDepois": "É um réptil que sempre simbolizou a Inteligência; é-lhe atribuída uma função mística porque anualmente muda a sua pele, "
+    },
+    {
+      "data": "24/12",
+      "titulo": "SERENISSIMO",
+      "tituloNovo": "SERENÍSSIMO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim serenus, significando a postura e o comportamento das dignidades reais. A República de Veneza recebeu o título ",
+      "inicioDepois": "Do latim serenus, significando a postura e o comportamento das dignidades reais. A República de Veneza recebeu o título "
+    },
+    {
+      "data": "25/12",
+      "titulo": "O SILENCIO",
+      "tituloNovo": "O SILÊNCIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Aprendiz maçom cultiva a virtude do Silêncio, porque não tem ainda a capacidade do comentário; deve apenas ouvir, medi",
+      "inicioDepois": "O Aprendiz maçom cultiva a virtude do Silêncio, porque não tem ainda a capacidade do comentário; deve apenas ouvir, medi"
+    },
+    {
+      "data": "26/12",
+      "titulo": "O SIMBOLISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Simbolismo é a ciência interpretativa dos símbolos. O Símbolo é apresentado para expressar um objeto, um instru mento,",
+      "inicioDepois": "O Simbolismo é a ciência interpretativa dos símbolos. O Símbolo é apresentado para expressar um objeto, um instrumento, "
+    },
+    {
+      "data": "27/12",
+      "titulo": "SINAL",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Maçonicamente, o Sinal é representado por um gesto ou uma postura; em cada grau de um rito, são feitos sinais diferentes",
+      "inicioDepois": "Maçonicamente, o Sinal é representado por um gesto ou uma postura; em cada grau de um rito, são feitos sinais diferentes"
+    },
+    {
+      "data": "28/12",
+      "titulo": "OSOCORRO",
+      "tituloNovo": "O SOCORRO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "O Socorro é prestado a alguém que se encontra em perigo; no entanto, abrange também aqueles que estão necessitados. Em u",
+      "inicioDepois": "O Socorro é prestado a alguém que se encontra em perigo; no entanto, abrange também aqueles que estão necessitados. Em u"
+    },
+    {
+      "data": "29/12",
+      "titulo": "O SOFISMO",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "É o falso raciocínio, que conduz a uma solução, por sua vez, também falsa. Como exemplo, vem a história daquele jesuíta ",
+      "inicioDepois": "É o falso raciocínio, que conduz a uma solução, por sua vez, também falsa. Como exemplo, vem a história daquele jesuíta "
+    },
+    {
+      "data": "30/12",
+      "titulo": "A SOLIDARIEDADE",
+      "tituloNovo": null,
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": false,
+      "inicioAntes": "Do latim solidum, ou seja, \"uniãd'. A Solidariedade é a correspondência daqueles que estão unidos por um ideal. A Solida",
+      "inicioDepois": "Do latim solidum, ou seja, \"união\". A Solidariedade é a correspondência daqueles que estão unidos por um ideal. A Solida"
+    },
+    {
+      "data": "31/12",
+      "titulo": "SOLSTICIO",
+      "tituloNovo": "SOLSTÍCIO",
+      "antes": "legivel",
+      "depois": "legivel",
+      "tinhaTil": true,
+      "inicioAntes": "!\n\nO vocábulo \"solstício,, vem do latim solstitium, palavra com- J posta de sol estara, significando encontrar-se o Sol ",
+      "inicioDepois": "O vocábulo \"solstício\" vem do latim solstitium, palavra composta de sol e stara, significando encontrar-se o Sol parado."
+    }
+  ]
+}
