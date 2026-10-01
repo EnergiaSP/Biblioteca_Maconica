@@ -1068,6 +1068,11 @@ class DataIntegrityTest {
             assertEquals("ocr", geometry.getString("textSource"))
             assertTrue(geometry.getJSONArray("blocks").length() > 0)
             assertTrue(repo.buscarConteudo("study", obraId = imported.id).isNotEmpty())
+            // The same PDF again, under another title, is refused: no second copy of the work.
+            val before = LocalPdfOcrImporter.loadImported(context).map { it.id }
+            val again = runCatching { importer.import(Uri.fromFile(pdf), "Audit OCR again", null, BibliotecaArea.Biblioteca) {} }
+            assertEquals("Este PDF já foi importado como “Audit OCR”.", (again.exceptionOrNull() as? DuplicatePdfException)?.message)
+            assertEquals(before, LocalPdfOcrImporter.loadImported(context).map { it.id })
         } finally {
             importedId?.let { importer.remove(it) }
             pdf.delete()

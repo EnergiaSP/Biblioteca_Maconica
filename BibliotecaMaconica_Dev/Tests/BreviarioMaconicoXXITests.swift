@@ -1534,6 +1534,23 @@ final class BreviarioMaconicoXXITests: XCTestCase {
                        "Em 01/06/2026, texto ⁵⁷⁸ e outro⁵⁷⁹. Total 1234; 12/578 não é chamada.")
     }
 
+    func testSamePDFIsRecognizedAsAlreadyImported() throws {
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".pdf")
+        defer { try? FileManager.default.removeItem(at: url) }
+        try Data("%PDF-1.4 same file \(UUID())".utf8).write(to: url)
+        let hash = try XCTUnwrap(BreviarioStore.sha256PDF(url))
+        let obra = BibliotecaObra(id: "pdf-duplicado-\(UUID().uuidString)", titulo: "Obra importada", autor: nil, area: .bibliotecaMaconica,
+                                  tipo: .livro, recursoJSON: nil, descricao: "", assuntos: [], ativa: true)
+        let conteudo = try BreviarioStore.criarURLImportado(obraID: obra.id)
+        defer { try? FileManager.default.removeItem(at: conteudo) }
+        try BreviarioStore.registrarPDFImportado(hash, obraID: obra.id)
+        // Without the imported content (the import failed or was removed) the PDF can be imported again.
+        XCTAssertNil(BreviarioStore.obraComPDF(hash, obras: [obra]))
+        try Data("{}".utf8).write(to: conteudo)
+        XCTAssertEqual(BreviarioStore.obraComPDF(hash, obras: [obra])?.id, obra.id)
+        XCTAssertEqual(BreviarioStore.mensagemPDFDuplicado(obra.titulo), "Este PDF já foi importado como “Obra importada”.")
+    }
+
     func testCorruptPDFIsRejectedInsteadOfEmptySuccess() throws {
         let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".pdf")
         defer { try? FileManager.default.removeItem(at: url) }

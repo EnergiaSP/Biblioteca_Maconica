@@ -20,6 +20,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 import java.io.FileOutputStream
+import java.security.MessageDigest
 import java.text.Normalizer
 import java.util.UUID
 
@@ -32,8 +33,13 @@ data class ImportedPdfWork(
     val area: BibliotecaArea,
     val pages: Int,
     val databaseFile: String,
-    val assuntos: List<String> = emptyList()
+    val assuntos: List<String> = emptyList(),
+    /** SHA-256 of the imported PDF: the same file is not imported twice as another work. */
+    val sha256: String = ""
 )
+
+/** The same PDF was already imported; nothing is created. */
+class DuplicatePdfException(val existingTitle: String) : IllegalStateException("Este PDF já foi importado como “$existingTitle”.")
 
 class LocalPdfOcrImporter(private val context: Context) {
     private data class PageTextBlock(val text: String, val boundingBox: RectF?)
@@ -66,6 +72,8 @@ class LocalPdfOcrImporter(private val context: Context) {
             requireNotNull(context.contentResolver.openInputStream(uri)).use { input ->
                 original.outputStream().use { output -> input.copyTo(output); output.fd.sync() }
             }
+            val sha256 = sha256(original)
+            loadImported(context).firstOrNull { it.sha256 == sha256 }?.let { throw DuplicatePdfException(it.title) }
             android.os.ParcelFileDescriptor.open(original, android.os.ParcelFileDescriptor.MODE_READ_ONLY).use { pdfDescriptor ->
                 requireNotNull(pdfDescriptor)
                 PdfRenderer(pdfDescriptor).use { renderer ->
@@ -132,10 +140,11 @@ class LocalPdfOcrImporter(private val context: Context) {
                         }
                         db.execSQL("INSERT INTO rag_fts(bloco_id, texto) SELECT id, texto FROM rag_paragrafos")
                         db.execSQL("COMMIT")
-                        saveManifest(ImportedPdfWork(id, title.trim(), author?.trim(), area, renderer.pageCount, dbFile.name, topics))
+                        val work = ImportedPdfWork(id, title.trim(), author?.trim(), area, renderer.pageCount, dbFile.name, topics, sha256)
+                        saveManifest(work)
                         committed = true
                         report(PdfOcrProgress(renderer.pageCount, renderer.pageCount, "Importação concluída"))
-                        ImportedPdfWork(id, title.trim(), author?.trim(), area, renderer.pageCount, dbFile.name, topics)
+                        work
                     } catch (error: Throwable) {
                         runCatching { db.execSQL("ROLLBACK") }
                         throw error
@@ -189,14 +198,8 @@ class LocalPdfOcrImporter(private val context: Context) {
         val works = loadImported(context)
         val selected = works.firstOrNull { it.id == workId } ?: return
         val remaining = works.filterNot { it.id == workId }
-        val array = JSONArray()
-        remaining.forEach { work ->
-            array.put(JSONObject().apply {
-                put("id", work.id); put("title", work.title); put("author", work.author)
-                put("area", work.area.raw); put("pages", work.pages); put("databaseFile", work.databaseFile)
-            })
-        }
-        writeManifest(array)
+        // Every field is kept: the topics and the file hash of the other works stay.
+        writeManifest(JSONArray().apply { remaining.forEach { put(toJson(it)) } })
         File(root, selected.databaseFile).delete()
         File(root, "imported_${workId}_images").deleteRecursively()
         Unit
@@ -280,11 +283,7 @@ class LocalPdfOcrImporter(private val context: Context) {
     private fun saveManifest(work: ImportedPdfWork) = synchronized(manifestLock) {
         val atomic = AtomicFile(manifestFile)
         val array = if (manifestFile.exists() || File(manifestFile.path + ".bak").exists()) JSONArray(String(atomic.readFully(), Charsets.UTF_8)) else JSONArray()
-        array.put(JSONObject().apply {
-            put("id", work.id); put("title", work.title); put("author", work.author)
-            put("area", work.area.raw); put("pages", work.pages); put("databaseFile", work.databaseFile)
-            put("assuntos", JSONArray(work.assuntos))
-        })
+        array.put(toJson(work))
         writeManifest(array)
     }
 
@@ -303,6 +302,21 @@ class LocalPdfOcrImporter(private val context: Context) {
     companion object {
         private val manifestLock = Any()
 
+        private fun toJson(work: ImportedPdfWork) = JSONObject().apply {
+            put("id", work.id); put("title", work.title); put("author", work.author)
+            put("area", work.area.raw); put("pages", work.pages); put("databaseFile", work.databaseFile)
+            put("assuntos", JSONArray(work.assuntos)); put("sha256", work.sha256)
+        }
+
+        internal fun sha256(file: File): String {
+            val digest = MessageDigest.getInstance("SHA-256")
+            file.inputStream().use { input ->
+                val buffer = ByteArray(1 shl 16)
+                while (true) { val read = input.read(buffer); if (read < 0) break; digest.update(buffer, 0, read) }
+            }
+            return digest.digest().joinToString("") { "%02x".format(it) }
+        }
+
         fun loadImported(context: Context): List<ImportedPdfWork> = synchronized(manifestLock) {
             val file = File(context.filesDir, "RAGPackages/imported_works.json")
             if (!file.exists() && !File(file.path + ".bak").exists()) return emptyList()
@@ -313,7 +327,8 @@ class LocalPdfOcrImporter(private val context: Context) {
                     ImportedPdfWork(
                         item.getString("id"), item.getString("title"), item.optString("author").ifBlank { null },
                         BibliotecaArea.from(item.getString("area")), item.getInt("pages"), item.getString("databaseFile"),
-                        item.optJSONArray("assuntos")?.let { topics -> List(topics.length()) { topics.getString(it) } }.orEmpty()
+                        item.optJSONArray("assuntos")?.let { topics -> List(topics.length()) { topics.getString(it) } }.orEmpty(),
+                        item.optString("sha256")
                     )
                 }
             }.getOrDefault(emptyList())

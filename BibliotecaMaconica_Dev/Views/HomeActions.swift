@@ -11,7 +11,20 @@ func importarPDF(resultado: Result<[URL], Error>) {
             }
 
             if urls.count > 1 {
-                let entradas = try urls.map { url in
+                // A PDF already imported, or chosen twice, does not become a second copy of the work.
+                var vistos = Set<String>()
+                var repetidos = 0
+                let novos = urls.filter { url in
+                    guard let hash = BreviarioStore.sha256PDF(url) else { return true }
+                    let novo = BreviarioStore.obraComPDF(hash, obras: store.obras) == nil && vistos.insert(hash).inserted
+                    if !novo { repetidos += 1 }
+                    return novo
+                }
+                guard novos.isEmpty == false else {
+                    mensagemErro = "Todos os PDFs escolhidos já foram importados."
+                    return
+                }
+                let entradas = try novos.map { url in
                     let obra = try store.criarObraPersonalizada(
                         titulo: tituloObraParaImportacao(url),
                         autor: nil,
@@ -25,7 +38,8 @@ func importarPDF(resultado: Result<[URL], Error>) {
                 store.importarPDFsEmLote(entradas)
                 itemSelecionadoID = nil
                 abrirBreviario()
-                mensagemErro = "Importação em lote iniciada: \(urls.count) arquivo(s)."
+                mensagemErro = "Importação em lote iniciada: \(novos.count) arquivo(s)."
+                    + (repetidos > 0 ? " \(repetidos) já importado(s) ignorado(s)." : "")
                 criarNovaObraImportacao = false
                 limparCamposNovaObra()
                 return
@@ -38,6 +52,10 @@ func importarPDF(resultado: Result<[URL], Error>) {
             let obraDestino: BibliotecaObra
 
             if criarNovaObraImportacao {
+                if let hash = BreviarioStore.sha256PDF(url), let existente = BreviarioStore.obraComPDF(hash, obras: store.obras) {
+                    mensagemErro = BreviarioStore.mensagemPDFDuplicado(existente.titulo)
+                    return
+                }
                 obraDestino = try store.criarObraPersonalizada(
                     titulo: novaObraTitulo,
                     autor: novaObraAutor,
