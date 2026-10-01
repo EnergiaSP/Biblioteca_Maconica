@@ -473,6 +473,10 @@ if "--release" in sys.argv:
     audit = contract.get("functionalAudit", {})
     if audit.get("status") != "verified" or audit.get("openGaps"):
         fail("Liberacao bloqueada: auditoria funcional pendente. Consultar o relatorio e resolver as diferencas abertas.")
+    # Checks only possible on the owner's devices or accounts: they do not block the build, and each is
+    # listed so it is done before sending the build to the stores.
+    for check in audit.get("deviceChecks", []):
+        warnings.append(f"Verificar nos aparelhos antes de enviar ({check['id']}): {check['verificar']}")
 
 print("AUDITORIA ESTRUTURAL DE PARIDADE")
 print(f"Falhas: {len(failures)}")

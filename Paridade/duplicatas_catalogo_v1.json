@@ -1,7 +1,21 @@
 {
   "obras": 321,
-  "duplicadas": 13,
+  "duplicadas": 17,
   "grupos": [
+    {
+      "mantida": {
+        "id": "100_instrucoes_de_aprendiz",
+        "titulo": "100 Instruções de Aprendiz",
+        "paginas": 363
+      },
+      "duplicadas": [
+        {
+          "id": "maconaria_100_instrucoes_de_aprendiz",
+          "titulo": "Maçonaria - 100 instruções de Aprendiz",
+          "paginas": 363
+        }
+      ]
+    },
     {
       "mantida": {
         "id": "a_chave_de_salomao_greg_taylor",
@@ -19,7 +33,7 @@
     {
       "mantida": {
         "id": "a_ciencia_secreta_ii",
-        "titulo": "A Ciência Secreta II",
+        "titulo": "A Ciência Secreta II",
         "paginas": 369
       },
       "duplicadas": [
@@ -32,39 +46,30 @@
     },
     {
       "mantida": {
-        "id": "a_linhagem_do_santo_graal_laurence_gardner",
-        "titulo": "A linhagem do Santo Graal - Laurence Gardner",
-        "paginas": 178
+        "id": "a_geometria_sagrada",
+        "titulo": "A Geometria Sagrada",
+        "paginas": 59
       },
       "duplicadas": [
         {
-          "id": "maconaria_laurence_gardner_a_linhagem_do_santo_graal",
-          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
-          "paginas": 178
+          "id": "geometria_sagrada",
+          "titulo": "Geometria Sagrada",
+          "paginas": 59
         }
       ]
     },
     {
       "mantida": {
-        "id": "a_sociedade_dos_templarios_lourivaldo_p_bacan",
-        "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan",
-        "paginas": 96
+        "id": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
+        "titulo": "A historia da Vida e da Epoca de Jacques De Molay - H L Haywood",
+        "paginas": 75
       },
       "duplicadas": [
         {
-          "id": "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan",
-          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
-          "paginas": 96
-        }
-      ]
-    },
-    {
-      "mantida": {
-        "id": "a_vida_de_jacques_demolay",
-        "titulo": "A vida de Jacques Demolay",
-        "paginas": 72
-      },
-      "duplicadas": [
+          "id": "a_vida_de_jacques_demolay",
+          "titulo": "A vida de Jacques Demolay",
+          "paginas": 72
+        },
         {
           "id": "jacques_demolay_a_vida_de_jacques_demolay",
           "titulo": "Jacques Demolay - A vida de Jacques Demolay",
@@ -74,14 +79,42 @@
     },
     {
       "mantida": {
+        "id": "a_linhagem_do_santo_graal_laurence_gardner",
+        "titulo": "A linhagem do Santo Graal - Laurence Gardner",
+        "paginas": 178
+      },
+      "duplicadas": [
+        {
+          "id": "maconaria_laurence_gardner_a_linhagem_do_santo_graal",
+          "titulo": "MAÇONARIA - LAURENCE GARDNER - A LINHAGEM DO SANTO GRAAL",
+          "paginas": 178
+        }
+      ]
+    },
+    {
+      "mantida": {
+        "id": "a_sociedade_dos_templarios_lourivaldo_p_bacan",
+        "titulo": "A Sociedade dos Templários - Lourivaldo P Baçan",
+        "paginas": 96
+      },
+      "duplicadas": [
+        {
+          "id": "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan",
+          "titulo": "A Sociedade Secreta dos Templários - Lourivaldo Perez Baçan",
+          "paginas": 96
+        }
+      ]
+    },
+    {
+      "mantida": {
         "id": "abobada_celeste",
-        "titulo": "Abóbada Celeste",
+        "titulo": "Abóbada Celeste",
         "paginas": 46
       },
       "duplicadas": [
         {
           "id": "abobada_celeste_no_templo_maconico",
-          "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
+          "titulo": "Abóbada_Celeste_no_Templo_Maçonico",
           "paginas": 46
         }
       ]
@@ -89,13 +122,13 @@
     {
       "mantida": {
         "id": "arquetipos_do_zodiaco_kathleen_burt",
-        "titulo": "Arquétipos do Zodíaco – Kathleen Burt",
+        "titulo": "Arquétipos do Zodíaco – Kathleen Burt",
         "paginas": 479
       },
       "duplicadas": [
         {
           "id": "zodiaco_arquetipos_dos_zodiacos",
-          "titulo": "Zodiaco - Arquetipos dos Zodíacos",
+          "titulo": "Zodiaco - Arquetipos dos Zodíacos",
           "paginas": 479
         }
       ]
@@ -103,7 +136,7 @@
     {
       "mantida": {
         "id": "as_chaves_de_salomao",
-        "titulo": "AS CHAVES DE SALOMÃO",
+        "titulo": "AS CHAVES DE SALOMÃO",
         "paginas": 454
       },
       "duplicadas": [
@@ -117,13 +150,13 @@
     {
       "mantida": {
         "id": "de_profecia_e_inquisicao_padre_antonio_vieira",
-        "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
+        "titulo": "De Profecia e Inquisição-Padre Antônio Vieira",
         "paginas": 310
       },
       "duplicadas": [
         {
           "id": "de_profecia_e_inquisicao_padre_antonio_vieira_2",
-          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
+          "titulo": "DE-PROFECIA-E-INQUISIÇÃO-Padre-Antônio-Vieira",
           "paginas": 310
         }
       ]
@@ -158,14 +191,28 @@
     },
     {
       "mantida": {
+        "id": "o_livro_ilustrado_dos_simbolos_completo",
+        "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)",
+        "paginas": 129
+      },
+      "duplicadas": [
+        {
+          "id": "o_livro_ilustrado_dos_simbolos_ii_trecho",
+          "titulo": "O Livro Ilustrado dos Símbolos II - Trecho",
+          "paginas": 35
+        }
+      ]
+    },
+    {
+      "mantida": {
         "id": "os_principios_das_leis_maconicas",
-        "titulo": "Os Principios das Leis Maçónicas ",
+        "titulo": "Os Principios das Leis Maçónicas ",
         "paginas": 95
       },
       "duplicadas": [
         {
           "id": "os_principios_das_leis_maconicas_vol1_albert_g_mackey",
-          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
+          "titulo": "Os Principios das Leis Maçónicas Vol1 - Albert G Mackey",
           "paginas": 95
         }
       ]

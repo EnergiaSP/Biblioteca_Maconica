@@ -15,7 +15,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -30,8 +29,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.renatocamargo.breviariomaconico.data.DegreeTracks
 import com.renatocamargo.breviariomaconico.data.SavedDossierStore
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 /** Study tracks by degree with progress, milestones, the next step and the suggested works. Same as iOS `TrilhasGrauView`. */
 @Composable
@@ -46,7 +43,8 @@ internal fun DegreeTracksScreen(
     var marked by remember { mutableStateOf(DegreeTracks.marked(context)) }
     var open by remember { mutableStateOf(emptySet<String>()) }
     val saved = remember { SavedDossierStore(context).all().map { it.tema } }
-    val names by produceState(emptyMap<String, String>()) { value = withContext(Dispatchers.IO) { titles() } }
+    // The catalog is already in memory: the titles are read at once, as on iOS, so the works never show by id.
+    val names = remember { titles() }
     val progress = DegreeTracks.progress(config, saved, marked)
 
     LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("tracks.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {

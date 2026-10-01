@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 """Marks works whose content repeats another work (the same book imported twice) in the RAG catalog.
 
-Reads the downloaded packages (read-only), computes each work's fingerprint with the shared rule of
-Tools/dossie_referencia.py and writes `duplicataDe` into the catalog bundled with both apps. The
+Reads the downloaded packages (read-only) and writes `duplicataDe` into the catalog bundled with both apps.
+Two works are the same book when their fingerprints match (shared rule of Tools/dossie_referencia.py),
+or when at least 90% of the pages of one are found, identical, in the other: the same file read by
+different OCR runs, another scan of the same edition, or an excerpt of a complete work. The
 packages themselves are not changed, so nothing needs to be republished.
 
     python3 Tools/marcar_duplicatas_catalogo.py <pasta RAGPackages> [--check]
 """
 import argparse
+import hashlib
 import json
+import re
 import sqlite3
 import sys
 from pathlib import Path
@@ -21,6 +25,10 @@ CATALOGS = [ROOT / "BibliotecaMaconica_Dev/Resources/rag_catalogo.json",
             ROOT / "projetos/BreviarioMaconicoAndroid/app/src/main/assets/rag_catalogo.json"]
 CONFIG = ROOT / "Paridade/estudo_dossie_v1.json"
 REPORT = ROOT / "Paridade/duplicatas_catalogo_v1.json"
+# Share of the pages of a work found identical in another for it to be a copy, and the pages that count:
+# with at least this many letters and digits (title pages and blank pages repeat in different books).
+PAGES_SHARED = 0.9
+PAGE_MIN_CHARS = 300
 
 
 def fingerprints(packages: Path, catalog: dict, limit: int) -> dict:
@@ -33,7 +41,10 @@ def fingerprints(packages: Path, catalog: dict, limit: int) -> dict:
             for work in package["obras"]:
                 pages = [row[0] for row in connection.execute(
                     "SELECT texto_integral FROM rag_paginas WHERE obra_id = ? ORDER BY numero_original", (work["id"],))]
-                result[work["id"]] = {"digital": fingerprint(pages, limit), "paginas": len(pages), "titulo": work["titulo"]}
+                hashes = {hashlib.sha1(text.encode()).hexdigest() for text in
+                          (re.sub(r"\W+", "", (page or "").lower()) for page in pages) if len(text) >= PAGE_MIN_CHARS}
+                result[work["id"]] = {"digital": fingerprint(pages, limit), "paginas": len(pages), "titulo": work["titulo"],
+                                      "hashes": hashes}
     return result
 
 
@@ -45,9 +56,38 @@ def main() -> None:
     limit = json.loads(CONFIG.read_text())["limites"]["tokensImpressaoDigital"]
     catalog = json.loads(CATALOGS[0].read_text())
     works = fingerprints(args.packages, catalog, limit)
-    groups = {}
+    # Union of the works that are the same book, by fingerprint or by shared pages.
+    parent = {work_id: work_id for work_id in works}
+
+    def root(work_id):
+        while parent[work_id] != work_id:
+            parent[work_id] = parent[parent[work_id]]
+            work_id = parent[work_id]
+        return work_id
+
+    by_print = {}
     for work_id, info in works.items():
-        groups.setdefault(info["digital"], []).append(work_id)
+        by_print.setdefault(info["digital"], []).append(work_id)
+    for members in by_print.values():
+        for member in members[1:]:
+            parent[root(member)] = root(members[0])
+    owners = {}
+    for work_id, info in works.items():
+        for page in info["hashes"]:
+            owners.setdefault(page, set()).add(work_id)
+    for work_id, info in works.items():
+        if len(info["hashes"]) < 5:
+            continue
+        shared = {}
+        for page in info["hashes"]:
+            for other in owners[page] - {work_id}:
+                shared[other] = shared.get(other, 0) + 1
+        for other, count in shared.items():
+            if count >= PAGES_SHARED * len(info["hashes"]):
+                parent[root(work_id)] = root(other)
+    groups = {}
+    for work_id in works:
+        groups.setdefault(root(work_id), []).append(work_id)
     duplicate_of = {}
     for members in groups.values():
         if len(members) < 2:

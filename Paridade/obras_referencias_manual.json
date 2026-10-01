@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "descricao": "Correcoes feitas a mao dos dados bibliograficos (titulo, autor, ano, editora, local). Vazio: nao informado.",
+  "descricao": "Correcoes feitas a mao dos dados bibliograficos (titulo, autor, ano, editora, local). Vazio: nao informado. Local, editora e ano vieram das fichas catalograficas das primeiras paginas de cada obra (revisadas uma a uma; citacoes de outros livros foram descartadas).",
   "obras": {
     "a_doutrina_secreta_sintese": {
       "titulo": "A Doutrina Secreta: síntese",
@@ -31,13 +31,20 @@
       "autor": ""
     },
     "guia_aprendiz_macom_ir_bruno_carraveta": {
-      "autor": "Bruno Carraveta"
+      "autor": "Bruno Carraveta",
+      "titulo": "Guia Aprendiz Maçom"
     },
     "os_principios_das_leis_maconicas_vol_2_albert_g_mackey": {
-      "autor": "Albert G. Mackey"
+      "autor": "Albert G. Mackey",
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2009"
     },
     "os_principios_das_leis_maconicas_vol1_albert_g_mackey": {
-      "autor": "Albert G. Mackey"
+      "autor": "Albert G. Mackey",
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2009"
     },
     "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus": {
       "titulo": "Corpus Hermeticum: a Tábua da Esmeralda"
@@ -80,6 +87,319 @@
     "breviario_seculo_xxi": {
       "titulo": "Breviário Maçônico",
       "autor": "Kennyo Ismail"
+    },
+    "a_chave_de_salomao_greg_taylor": {
+      "local": "Rio de Janeiro",
+      "editora": "Record",
+      "ano": "2006"
+    },
+    "a_chave_de_salomao_greg_taylor_2": {
+      "local": "Rio de Janeiro",
+      "editora": "Record",
+      "ano": "2006"
+    },
+    "a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "local": "Rio de Janeiro",
+      "editora": "Valentina",
+      "ano": "2015"
+    },
+    "historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "local": "Rio de Janeiro",
+      "editora": "Valentina",
+      "ano": "2015"
+    },
+    "a_maconaria_brasileira_na_decada_da_abolicao_e_da_republica": {
+      "local": "",
+      "editora": "CopyMarket.com",
+      "ano": "2000",
+      "autor": "José Castellani"
+    },
+    "a_retorica_em_aristoteles_marcos_aurelio_de_lima": {
+      "local": "Natal",
+      "editora": "IFRN",
+      "ano": "2011"
+    },
+    "a_sabedoria_dos_mitos_gregos_ferry_luc": {
+      "local": "Rio de Janeiro",
+      "editora": "Objetiva",
+      "ano": "2012"
+    },
+    "a_santissima_trinosofia": {
+      "local": "São Paulo",
+      "editora": "Mercuryo",
+      "ano": "2003",
+      "autor": "Conde de Saint-Germain"
+    },
+    "a_vida_mistica_e_oculta_de_jesus": {
+      "local": "São Paulo",
+      "editora": "Madras",
+      "ano": "2004",
+      "autor": "A. Leterre"
+    },
+    "as_dez_sociedades_mais_influentes_da_historia": {
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2009",
+      "autor": "Sérgio Pereira Couto"
+    },
+    "as_linguagens_da_experiencia_religiosa": {
+      "local": "São Paulo",
+      "editora": "Paulinas",
+      "ano": "2010",
+      "autor": "José Severino Croatto"
+    },
+    "biblia_e_misterios": {
+      "local": "São Paulo",
+      "editora": "AG Book",
+      "ano": "2013",
+      "autor": "Mariano Tys"
+    },
+    "desmistificando_a_maconaria": {
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2012",
+      "autor": "Kennyo Ismail"
+    },
+    "enciclopedia_de_fatos_da_biblia": {
+      "local": "São Paulo",
+      "editora": "Hagnos",
+      "ano": "2014",
+      "autor": "Mark Water"
+    },
+    "historia_da_magia_eliphas_levi": {
+      "local": "São Paulo",
+      "editora": "Pensamento",
+      "ano": "2019"
+    },
+    "maconaria_brasileira_a_historia_ocultada": {
+      "local": "Brasília",
+      "editora": "No Esquadro",
+      "ano": "2021",
+      "autor": "Kennyo Ismail"
+    },
+    "maconaria_e_simbologia": {
+      "local": "Rio de Janeiro",
+      "editora": "Multifoco",
+      "ano": "2020",
+      "autor": "Marcel Henrique Rodrigues"
+    },
+    "maconaria_pos_pandemia": {
+      "local": "Brasília",
+      "editora": "CMSB",
+      "ano": "2021",
+      "titulo": "Maçonaria Pós-Pandemia"
+    },
+    "o_grande_livro_da_lei": {
+      "local": "Salvador",
+      "editora": "Sathyarte",
+      "ano": "2016"
+    },
+    "o_livro_ilustrado_dos_simbolos_completo": {
+      "local": "São Paulo",
+      "editora": "Publifolha",
+      "ano": "2001",
+      "autor": "Miranda Bruce-Mitford"
+    },
+    "o_mestre_dos_mestres_augusto_cury": {
+      "local": "São Paulo",
+      "editora": "Academia de Inteligência",
+      "ano": "1999"
+    },
+    "ordem_sobre_o_caos_kennyo_ismail": {
+      "local": "Brasília",
+      "editora": "No Esquadro",
+      "ano": "2020"
+    },
+    "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": {
+      "local": "São Paulo",
+      "editora": "Madras",
+      "ano": "2008"
+    },
+    "os_principios_das_leis_maconicas": {
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2009",
+      "autor": "Albert G. Mackey"
+    },
+    "os_templarios_e_a_arca_da_alianca_graham_phillips": {
+      "local": "São Paulo",
+      "editora": "Madras",
+      "ano": "2005"
+    },
+    "os_templarios_e_o_pergaminho_de_chinon_encontrado_nos_arquivos_secretos_do_vaticano_barbara_frale": {
+      "local": "São Paulo",
+      "editora": "Madras",
+      "ano": "2005"
+    },
+    "por_dentro_do_priorado_de_siao_robert_howells": {
+      "local": "São Paulo",
+      "editora": "Planeta",
+      "ano": "2012"
+    },
+    "sociedades_secretas_sergio_pereira_couto": {
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2009"
+    },
+    "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira": {
+      "local": "Recife",
+      "editora": "Editora UFPE",
+      "ano": "2014",
+      "autor": "David Pessoa de Lira"
+    },
+    "zohar": {
+      "local": "Rio de Janeiro",
+      "editora": "Imago",
+      "ano": "1991"
+    },
+    "100_instrucoes_de_aprendiz": {
+      "editora": "Madras",
+      "ano": "2008"
+    },
+    "maconaria_100_instrucoes_de_aprendiz": {
+      "editora": "Madras",
+      "ano": "2008"
+    },
+    "a_historia_dos_ritos_maconicos_praticados_no_brasil": {
+      "autor": "Paulo Maurício de Moraes Magalhães",
+      "ano": "2019"
+    },
+    "historias_e_misteios_dos_templarios": {
+      "autor": "Pedro Silva",
+      "ano": "2001"
+    },
+    "maconaria_perspectivas_para_o_futuro_cmsb_2020": {
+      "local": "Brasília",
+      "editora": "CMSB",
+      "ano": "2020"
+    },
+    "o_grande_livro_da_maconaria_claudio_blanc": {
+      "editora": "Camelot",
+      "ano": "2020"
+    },
+    "o_livro_de_ouro_da_mitologia": {
+      "autor": "Thomas Bulfinch"
+    },
+    "os_segredos_da_mente_milionaria": {
+      "autor": "T. Harv Eker"
+    },
+    "os_templarios_juan_de_garten": {
+      "editora": "Traço",
+      "ano": "1987"
+    },
+    "poesias_maconicas_vol_i": {
+      "ano": "2021"
+    },
+    "rito_frances_ou_moderno_historia_reflexoes_e_desenvolvimento_jose_filardo": {
+      "ano": "2018"
+    },
+    "ritual_de_emulacao_o_grau_de_mestre_macom": {
+      "autor": "Fábio Mendes",
+      "ano": "2013"
+    },
+    "sao_joao_padroeiro_da_maconaria": {
+      "autor": "Gael Stirler",
+      "ano": "2003",
+      "titulo": "São João, Padroeiro da Maçonaria"
+    },
+    "sociedades_secretas_os_illuminati": {
+      "autor": "Sérgio Pereira Couto",
+      "local": "São Paulo",
+      "editora": "Universo dos Livros",
+      "ano": "2009"
+    },
+    "seitas_heresias_raimundo_de_oliveira": {
+      "ano": "2002"
+    },
+    "a_chave_dos_grandes_mistrios_eliphas_levi": {
+      "editora": "eBooksBrasil",
+      "ano": "2000"
+    },
+    "o_livro_dos_sabios_eliphas_levi": {
+      "editora": "eBooksBrasil",
+      "ano": "2000"
+    },
+    "liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno": {
+      "autor": "José Baeta",
+      "ano": "2020"
+    },
+    "os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao": {
+      "autor": "Lázaro Curvêlo Chaves",
+      "ano": "2006"
+    },
+    "origens_lendarias_da_maconaria_inglesa": {
+      "titulo": "Origens Lendárias da Maçonaria Inglesa"
+    },
+    "o_simbolismo_hermetico_e_sua_relacao_com_a_alquimia_e_franco_maconaria_oswald_wirth": {
+      "titulo": "O Simbolismo Hermético e sua Relação com a Alquimia e a Franco-Maçonaria"
+    },
+    "manual_pratica_ritual_2013": {
+      "titulo": "Manual Prática Ritual 2013"
+    },
+    "ritual_de_emulacao_um_sistema_ritualistico_ingles": {
+      "titulo": "Ritual de Emulação: um sistema ritualístico inglês"
+    },
+    "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto": {
+      "titulo": "O Que Você Precisa Saber Sobre Maçonaria",
+      "autor": "Elias Mansur Neto"
+    },
+    "dos_faraos_a_fisica_quantica_ricardo_di_bernardi": {
+      "titulo": "Dos Faraós à Física Quântica"
+    },
+    "giordano_bruno_e_a_tradicao_hermetica_frances_a_yates": {
+      "titulo": "Giordano Bruno e a Tradição Hermética",
+      "autor": "Frances A. Yates"
+    },
+    "biblioteca_de_alexandria_derek_adie_flower": {
+      "titulo": "Biblioteca de Alexandria",
+      "autor": "Derek Adie Flower"
+    },
+    "conspiracoes_sobre_templarios_e_macons_michel_haag": {
+      "titulo": "Conspirações sobre Templários e Maçons",
+      "autor": "Michel Haag"
+    },
+    "de_profecia_e_inquisicao_padre_antonio_vieira": {
+      "titulo": "De Profecia e Inquisição",
+      "autor": "Padre Antônio Vieira"
+    },
+    "dogma_ritual_alta_magia_eliphas_levi_zahed": {
+      "titulo": "Dogma e Ritual da Alta Magia",
+      "autor": "Eliphas Levi Zahed"
+    },
+    "grau_de_aprendiz_e_seus_misterios_jorge_adoum": {
+      "titulo": "Grau de Aprendiz e seus Mistérios",
+      "autor": "Jorge Adoum"
+    },
+    "hermetismo_e_maconaria_doutrina_historia_atualidade": {
+      "titulo": "Hermetismo e Maçonaria: doutrina, história, atualidade"
+    },
+    "o_conhecimento_de_deus_j_i_packer": {
+      "titulo": "O Conhecimento de Deus",
+      "autor": "J. I. Packer"
+    },
+    "os_arcanos_maiores_do_taro_g_o_mebes": {
+      "titulo": "Os Arcanos Maiores do Tarô",
+      "autor": "G. O. Mebes"
+    },
+    "salomao_o_homem_mais_rico_que_ja_existiu_steven_k_scott": {
+      "titulo": "Salomão, o homem mais rico que já existiu",
+      "autor": "Steven K. Scott"
+    },
+    "numeros_a_decada_pitagorica": {
+      "titulo": "Números: a Década Pitagórica"
+    },
+    "introducao_a_simbologia_rosacruz_amorc": {
+      "titulo": "Introdução à Simbologia Rosacruz",
+      "autor": "AMORC"
+    },
+    "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro": {
+      "titulo": "Fibonacci: série de Fibonacci e o número de ouro"
+    },
+    "pitagoras_ciencia_e_magia_na_antiga_grecia": {
+      "titulo": "Pitágoras: ciência e magia na Antiga Grécia"
+    },
+    "o_trivium_biblioteca_freemasonry": {
+      "titulo": "O Trivium"
     }
   }
 }

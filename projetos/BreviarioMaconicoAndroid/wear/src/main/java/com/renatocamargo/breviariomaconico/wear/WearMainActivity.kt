@@ -66,7 +66,7 @@ class WearMainActivity : ComponentActivity() {
         setContent {
             val selected = reading
             if (selected != null) WearReadingApp(selected, openFull)
-            else Text(if (loading) "Carregando leitura…" else "Leitura indisponível neste relógio.", color = Color.White, modifier = Modifier.fillMaxSize().background(Color.Black).padding(20.dp))
+            else Text(if (loading) "Carregando leitura…" else "Leitura indisponível neste relógio.", color = Color.White, modifier = Modifier.fillMaxSize().background(Color.Black).padding(wearContentPadding()))
         }
     }
 
@@ -155,7 +155,7 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
 
     MaterialTheme {
         Column(
-            Modifier.fillMaxSize().background(Color(0xFF111111)).verticalScroll(rememberScrollState()).padding(16.dp),
+            Modifier.fillMaxSize().background(Color(0xFF111111)).verticalScroll(rememberScrollState()).padding(wearContentPadding()),
             verticalArrangement = Arrangement.spacedBy(9.dp)
         ) {
             Text(reading.data, color = Color.LightGray, fontSize = 12.sp)
@@ -216,4 +216,16 @@ private object WearProgressSync {
     fun send(context: android.content.Context, obraId: String, data: String, read: Boolean) {
         com.renatocamargo.breviariomaconico.progress.ProgressTransport.send(context, obraId, data, read)
     }
+}
+
+/**
+ * Round watches cut the corners of the screen: the content keeps about 15% of the width from the edge
+ * (the inset of a square inscribed in the circle), as Wear OS recommends; square watches keep 16 dp.
+ */
+@androidx.compose.runtime.Composable
+internal fun wearContentPadding(): androidx.compose.foundation.layout.PaddingValues {
+    val configuration = androidx.compose.ui.platform.LocalConfiguration.current
+    if (!configuration.isScreenRound) return androidx.compose.foundation.layout.PaddingValues(16.dp)
+    val inset = (configuration.screenWidthDp * 0.146f).dp
+    return androidx.compose.foundation.layout.PaddingValues(start = inset, end = inset, top = inset, bottom = inset * 2)
 }

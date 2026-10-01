@@ -2,134 +2,43 @@
   "schemaVersion": 1,
   "descricao": "Qualidade do texto do acervo RAG pela regra Paridade/qualidade_texto_v1.json.",
   "paginas": {
-    "avaliadas": 66422,
-    "ruidosas": 522,
-    "ilegiveis": 596
+    "avaliadas": 66431,
+    "ruidosas": 203,
+    "ilegiveis": 65
   },
   "obrasPorNivel": {
-    "baixa": 9,
-    "boa": 291,
-    "regular": 21
+    "baixa": 1,
+    "boa": 313,
+    "regular": 7
   },
   "motivos": {
-    "simbolo": 113162,
-    "solta": 68596,
-    "misto": 7350,
-    "caixa": 5637,
-    "escrita": 1555,
-    "semVogal": 431
+    "simbolo": 47461,
+    "solta": 45809,
+    "caixa": 5341,
+    "misto": 2648,
+    "escrita": 1357,
+    "semVogal": 352
   },
   "obrasComMaisRuido": [
     {
-      "obra": "voltaire_dicionario_filosofico_ridendo_castigat_mores",
-      "avaliadas": 451,
-      "ruidosas": 0,
-      "ilegiveis": 451,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "regulador_do_reaa_grande_oriente_do_passeio_1858",
-      "avaliadas": 58,
-      "ruidosas": 15,
-      "ilegiveis": 39,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "mestre_cerimonias_jun_09",
-      "avaliadas": 31,
-      "ruidosas": 25,
-      "ilegiveis": 1,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "macons_que_leem",
-      "avaliadas": 28,
-      "ruidosas": 10,
-      "ilegiveis": 13,
-      "nivel": "baixa"
-    },
-    {
       "obra": "a_abobada_celeste_de_um_templo_maconico_do_reaa_v1",
       "avaliadas": 54,
-      "ruidosas": 5,
+      "ruidosas": 1,
       "ilegiveis": 21,
       "nivel": "baixa"
     },
     {
-      "obra": "os_segredos_da_mente_milionaria",
-      "avaliadas": 112,
-      "ruidosas": 42,
-      "ilegiveis": 0,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "a_tradicao_hermetica_julius_evola",
-      "avaliadas": 126,
-      "ruidosas": 39,
-      "ilegiveis": 0,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "maconaria_revelada_os_segredos_do_aprendiz_macom",
-      "avaliadas": 336,
-      "ruidosas": 101,
-      "ilegiveis": 2,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "boletim_gob_1890",
-      "avaliadas": 33,
-      "ruidosas": 4,
-      "ilegiveis": 6,
-      "nivel": "baixa"
-    },
-    {
-      "obra": "a_mais_antiga_ata_maconica",
-      "avaliadas": 5,
-      "ruidosas": 1,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
       "obra": "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro",
-      "avaliadas": 81,
-      "ruidosas": 14,
-      "ilegiveis": 1,
+      "avaliadas": 82,
+      "ruidosas": 13,
+      "ilegiveis": 2,
       "nivel": "regular"
     },
     {
       "obra": "combate_ao_clericalismo",
       "avaliadas": 24,
-      "ruidosas": 2,
+      "ruidosas": 1,
       "ilegiveis": 2,
-      "nivel": "regular"
-    },
-    {
-      "obra": "constituicao_da_confederacao_maconaria_portugueza",
-      "avaliadas": 31,
-      "ruidosas": 3,
-      "ilegiveis": 2,
-      "nivel": "regular"
-    },
-    {
-      "obra": "historia_nat_geo_ramses_ii",
-      "avaliadas": 55,
-      "ruidosas": 8,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "a_maconaria_em_portugal",
-      "avaliadas": 145,
-      "ruidosas": 16,
-      "ilegiveis": 1,
-      "nivel": "regular"
-    },
-    {
-      "obra": "painel_do_grau_de_aprendiz_completo_booz",
-      "avaliadas": 28,
-      "ruidosas": 3,
-      "ilegiveis": 0,
       "nivel": "regular"
     },
     {
@@ -140,30 +49,9 @@
       "nivel": "regular"
     },
     {
-      "obra": "pistis_sophia_traducao_do_texto_original",
-      "avaliadas": 180,
-      "ruidosas": 8,
-      "ilegiveis": 9,
-      "nivel": "regular"
-    },
-    {
       "obra": "o_nome_de_deus_adonai_roberto_aguilar_silva",
       "avaliadas": 11,
       "ruidosas": 1,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "diccionario_breve_de_la_masoneria_biblioteca_freemasonry",
-      "avaliadas": 81,
-      "ruidosas": 4,
-      "ilegiveis": 3,
-      "nivel": "regular"
-    },
-    {
-      "obra": "mecanica_quantica_resumo_de_conceitos",
-      "avaliadas": 107,
-      "ruidosas": 9,
       "ilegiveis": 0,
       "nivel": "regular"
     },
@@ -175,59 +63,17 @@
       "nivel": "regular"
     },
     {
-      "obra": "escolas_do_pensamento_maconico_bondarik",
-      "avaliadas": 42,
-      "ruidosas": 1,
-      "ilegiveis": 2,
+      "obra": "painel_do_grau_de_aprendiz_completo_booz",
+      "avaliadas": 28,
+      "ruidosas": 2,
+      "ilegiveis": 0,
       "nivel": "regular"
     },
     {
       "obra": "geometria_sagrada",
-      "avaliadas": 47,
+      "avaliadas": 48,
       "ruidosas": 3,
       "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "fernando_pessoa_e_a_maconaria_roberto_aguilar_silva",
-      "avaliadas": 16,
-      "ruidosas": 1,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "cores_na_maconaria",
-      "avaliadas": 17,
-      "ruidosas": 1,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "as_chaves_de_salomao",
-      "avaliadas": 393,
-      "ruidosas": 18,
-      "ilegiveis": 5,
-      "nivel": "regular"
-    },
-    {
-      "obra": "as_claviculas_salomao_mathers",
-      "avaliadas": 393,
-      "ruidosas": 18,
-      "ilegiveis": 5,
-      "nivel": "regular"
-    },
-    {
-      "obra": "sistema_golden_dawn_2_0",
-      "avaliadas": 112,
-      "ruidosas": 5,
-      "ilegiveis": 1,
-      "nivel": "regular"
-    },
-    {
-      "obra": "maconaria_e_simbologia",
-      "avaliadas": 170,
-      "ruidosas": 7,
-      "ilegiveis": 2,
       "nivel": "regular"
     },
     {
@@ -242,6 +88,13 @@
       "avaliadas": 86,
       "ruidosas": 4,
       "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "escolas_do_pensamento_maconico_bondarik",
+      "avaliadas": 43,
+      "ruidosas": 0,
+      "ilegiveis": 2,
       "nivel": "boa"
     },
     {
@@ -266,6 +119,13 @@
       "nivel": "boa"
     },
     {
+      "obra": "sistema_golden_dawn_2_0",
+      "avaliadas": 112,
+      "ruidosas": 4,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
       "obra": "dicionario_de_simbolos_esotericos",
       "avaliadas": 58,
       "ruidosas": 0,
@@ -280,9 +140,23 @@
       "nivel": "boa"
     },
     {
+      "obra": "a_maconaria_em_portugal",
+      "avaliadas": 145,
+      "ruidosas": 4,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
       "obra": "maconaria_simbolos_e_arquetipos",
       "avaliadas": 112,
       "ruidosas": 3,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "diccionario_breve_de_la_masoneria_biblioteca_freemasonry",
+      "avaliadas": 81,
+      "ruidosas": 2,
       "ilegiveis": 0,
       "nivel": "boa"
     },
@@ -298,6 +172,132 @@
       "avaliadas": 142,
       "ruidosas": 3,
       "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "proverbios_e_pensamentos",
+      "avaliadas": 340,
+      "ruidosas": 7,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino",
+      "avaliadas": 204,
+      "ruidosas": 4,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira",
+      "avaliadas": 357,
+      "ruidosas": 6,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "maconaria_e_expressoes_latinas",
+      "avaliadas": 53,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "o_homem_e_seus_simbolos_carl_gustav_jung",
+      "avaliadas": 337,
+      "ruidosas": 1,
+      "ilegiveis": 5,
+      "nivel": "boa"
+    },
+    {
+      "obra": "rito_escoces_antigo_e_aceito_graus_simbolicos_liturgia_ritualistica_genuinidade_enxertos_supressoes_crendices",
+      "avaliadas": 57,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "livro_de_ouro_dos_mantras_otavio_leal",
+      "avaliadas": 115,
+      "ruidosas": 1,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "os_misterios_rosacruzes_max_heindel",
+      "avaliadas": 60,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "pistis_sophia_traducao_do_texto_original",
+      "avaliadas": 180,
+      "ruidosas": 2,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson",
+      "avaliadas": 245,
+      "ruidosas": 1,
+      "ilegiveis": 3,
+      "nivel": "boa"
+    },
+    {
+      "obra": "o_trivium_biblioteca_freemasonry",
+      "avaliadas": 311,
+      "ruidosas": 5,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "atos_de_salomao",
+      "avaliadas": 127,
+      "ruidosas": 2,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "de_gutenberg_a_diderot_peter_burke",
+      "avaliadas": 260,
+      "ruidosas": 4,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "o_taro_cabalistico_robert_wang",
+      "avaliadas": 326,
+      "ruidosas": 5,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "as_chaves_de_salomao",
+      "avaliadas": 393,
+      "ruidosas": 5,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "as_claviculas_salomao_mathers",
+      "avaliadas": 393,
+      "ruidosas": 5,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "a_chave_dos_grandes_mistrios_eliphas_levi",
+      "avaliadas": 268,
+      "ruidosas": 3,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "a_santissima_trinosofia",
+      "avaliadas": 70,
+      "ruidosas": 0,
+      "ilegiveis": 1,
       "nivel": "boa"
     }
   ]

@@ -727,7 +727,8 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     @MainActor
     func testLibrarySearchMatchesReadingTextNotWorkMetadata() async throws {
         let store = BreviarioStore()
-        for (termo, esperado) in [("filosofia", 20), ("ética", 4)] {
+        // 21 since the reading of 02/04 ("Stolkin") came from the printed page: its notes cite "sua filosofia".
+        for (termo, esperado) in [("filosofia", 21), ("ética", 4)] {
             let resultados = try await store.buscarBiblioteca(termo: termo, escopo: .obraAtual, area: nil,
                                                                 limite: 500, obraID: ObraID.breviarioSeculoXXI)
             XCTAssertEqual(resultados.count, esperado, termo)
@@ -1532,6 +1533,23 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         let text = "Em 01/06/2026, texto 578 e outro579. Total 1234; 12/578 não é chamada."
         XCTAssertEqual(HomeView.converterChamadasRodapeParaSobrescrito(text, chamadasRodape: ["578", "579"]),
                        "Em 01/06/2026, texto ⁵⁷⁸ e outro⁵⁷⁹. Total 1234; 12/578 não é chamada.")
+    }
+
+    func testSamePDFIsRecognizedAsAlreadyImported() throws {
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".pdf")
+        defer { try? FileManager.default.removeItem(at: url) }
+        try Data("%PDF-1.4 same file \(UUID())".utf8).write(to: url)
+        let hash = try XCTUnwrap(BreviarioStore.sha256PDF(url))
+        let obra = BibliotecaObra(id: "pdf-duplicado-\(UUID().uuidString)", titulo: "Obra importada", autor: nil, area: .bibliotecaMaconica,
+                                  tipo: .livro, recursoJSON: nil, descricao: "", assuntos: [], ativa: true)
+        let conteudo = try BreviarioStore.criarURLImportado(obraID: obra.id)
+        defer { try? FileManager.default.removeItem(at: conteudo) }
+        try BreviarioStore.registrarPDFImportado(hash, obraID: obra.id)
+        // Without the imported content (the import failed or was removed) the PDF can be imported again.
+        XCTAssertNil(BreviarioStore.obraComPDF(hash, obras: [obra]))
+        try Data("{}".utf8).write(to: conteudo)
+        XCTAssertEqual(BreviarioStore.obraComPDF(hash, obras: [obra])?.id, obra.id)
+        XCTAssertEqual(BreviarioStore.mensagemPDFDuplicado(obra.titulo), "Este PDF já foi importado como “Obra importada”.")
     }
 
     func testCorruptPDFIsRejectedInsteadOfEmptySuccess() throws {

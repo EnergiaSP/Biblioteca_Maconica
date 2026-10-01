@@ -34,6 +34,10 @@ internal object Prancha {
         context.assets.open("obras_referencias_v1.json").bufferedReader().use { JSONObject(it.readText()) }.getJSONObject("obras")
     ).also { cachedWorks = it }
 
+    /** Cleaned reference title and author ("Aprendizado Maçônico — Rizzardo da Camino"), or [fallback] without a reference. */
+    fun displayTitle(works: Map<String, Work>, workId: String, fallback: String): String =
+        works[workId]?.takeIf { it.titulo.isNotBlank() }?.let { listOf(it.titulo, it.autor).filter(String::isNotBlank).joinToString(" — ") } ?: fallback
+
     fun parse(json: JSONObject): Config {
         require(json.getInt("schemaVersion") == 1)
         fun list(key: String) = json.getJSONArray(key).let { a -> List(a.length()) { a.getString(it) } }

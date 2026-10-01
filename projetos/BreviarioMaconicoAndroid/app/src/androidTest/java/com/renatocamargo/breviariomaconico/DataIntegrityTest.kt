@@ -29,7 +29,8 @@ class DataIntegrityTest {
     @Test
     fun librarySearchMatchesReadingTextNotWorkMetadata() {
         val catalog = BibliotecaCatalogRepository.get(ApplicationProvider.getApplicationContext())
-        for ((term, expected) in listOf("filosofia" to 20, "ética" to 4)) {
+        // 21 since the reading of 02/04 ("Stolkin") came from the printed page: its notes cite "sua filosofia".
+        for ((term, expected) in listOf("filosofia" to 21, "ética" to 4)) {
             val results = catalog.buscarConteudo(term, obraId = ObraId.BREVIARIO_SECULO_XXI, limite = 500)
             assertEquals(term, expected, results.size)
             assertTrue(term, results.all { it.ranking < 0 })
@@ -1068,6 +1069,11 @@ class DataIntegrityTest {
             assertEquals("ocr", geometry.getString("textSource"))
             assertTrue(geometry.getJSONArray("blocks").length() > 0)
             assertTrue(repo.buscarConteudo("study", obraId = imported.id).isNotEmpty())
+            // The same PDF again, under another title, is refused: no second copy of the work.
+            val before = LocalPdfOcrImporter.loadImported(context).map { it.id }
+            val again = runCatching { importer.import(Uri.fromFile(pdf), "Audit OCR again", null, BibliotecaArea.Biblioteca) {} }
+            assertEquals("Este PDF já foi importado como “Audit OCR”.", (again.exceptionOrNull() as? DuplicatePdfException)?.message)
+            assertEquals(before, LocalPdfOcrImporter.loadImported(context).map { it.id })
         } finally {
             importedId?.let { importer.remove(it) }
             pdf.delete()

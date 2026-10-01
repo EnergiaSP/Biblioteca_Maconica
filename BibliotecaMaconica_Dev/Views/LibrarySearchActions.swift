@@ -154,7 +154,8 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
         var titulos = Dictionary(((try? BibliotecaRAGCatalogService())?.obras() ?? []).map { ($0.id, $0.titulo) },
                                  uniquingKeysWith: { primeiro, _ in primeiro })
         store.obras.forEach { titulos[$0.id] = $0.titulo }
-        return titulos
+        // Cleaned reference title (accents restored) and author, when known.
+        return titulos.reduce(into: [:]) { $0[$1.key] = PranchaDossie.tituloExibicao($1.key, padrao: $1.value) }
     }
 
     func abrirDossieSalvo(id: String) {

@@ -71,6 +71,11 @@ internal fun NotebookThemesCard(
                 }
             }
         }
+        if (loaded == null) {
+            // While the notebook is read, nothing is said about how many notes there are.
+            Text("Carregando…", color = colors.secondary, modifier = Modifier.testTag("notebook.theme.loading"))
+            return@PremiumCard
+        }
         Text(rule.label("quantidade", mapOf("n" to "${found.size}")), color = colors.secondary, fontSize = 13.sp,
             modifier = Modifier.testTag("notebook.theme.count"))
         if (found.isEmpty()) {

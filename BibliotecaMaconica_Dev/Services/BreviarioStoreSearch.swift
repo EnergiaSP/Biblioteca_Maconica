@@ -119,12 +119,13 @@ func buscarBiblioteca(
     }
 
     /// Sources of the dossier analysis and of the AI prompt ([F1] is the first result shown).
+    /// The work is cited by its cleaned reference title and author, not the file name kept in the package.
     nonisolated static func fontesDossie(_ resultados: [BibliotecaResultadoBusca]) -> [DossieEstudoAnalise.Fonte] {
         resultados.map { resultado in
             DossieEstudoAnalise.Fonte(
                 id: "\(resultado.obra.id):\(resultado.item.pagina ?? 0):\(resultado.blocoID ?? resultado.item.data)",
                 obraId: resultado.obra.id,
-                tituloObra: resultado.obra.titulo,
+                tituloObra: PranchaDossie.tituloExibicao(resultado.obra.id, padrao: resultado.obra.titulo),
                 area: resultado.obra.area.rawValue,
                 pagina: resultado.item.pagina ?? 0,
                 data: resultado.item.data,

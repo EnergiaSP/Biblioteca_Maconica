@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import unicodedata
 from pathlib import Path
 
 
@@ -20,6 +21,18 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def nfc(value):
+    """Composed Unicode in every text: titles from macOS file names come decomposed ("c" + accent),
+    which look the same but fail text comparisons and title searches."""
+    if isinstance(value, str):
+        return unicodedata.normalize("NFC", value)
+    if isinstance(value, list):
+        return [nfc(item) for item in value]
+    if isinstance(value, dict):
+        return {key: nfc(item) for key, item in value.items()}
+    return value
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Prepara o catalogo RAG para Cloudflare R2.")
     parser.add_argument(
@@ -30,7 +43,7 @@ def main() -> None:
     args = parser.parse_args()
     base_url = args.base_url.rstrip("/")
 
-    data = json.loads(CATALOG.read_text(encoding="utf-8"))
+    data = nfc(json.loads(CATALOG.read_text(encoding="utf-8")))
     data["baseURL"] = base_url
     data.pop("origem", None)
 

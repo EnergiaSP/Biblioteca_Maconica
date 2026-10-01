@@ -1,3 +1,4 @@
+import CryptoKit
 import Foundation
 
 @MainActor
@@ -44,8 +45,50 @@ func restaurarDadosEmbutidos() {
         let dados = try JSONEncoder().encode(dadosDaObra)
         let destino = try criarURLImportado(obraID: obraID)
         try dados.write(to: destino, options: .atomic)
+        if let hash = sha256PDF(url) {
+            try? registrarPDFImportado(hash, obraID: obraID)
+        }
 
         return dadosDaObra
+    }
+
+    // MARK: - PDFs already imported (the same file is not imported twice as another work)
+
+    nonisolated static func mensagemPDFDuplicado(_ titulo: String) -> String {
+        "Este PDF já foi importado como “\(titulo)”."
+    }
+
+    /// SHA-256 of the PDF, read in blocks (the file picker URL needs its security scope).
+    nonisolated static func sha256PDF(_ url: URL) -> String? {
+        let acesso = url.startAccessingSecurityScopedResource()
+        defer { if acesso { url.stopAccessingSecurityScopedResource() } }
+        guard let arquivo = try? FileHandle(forReadingFrom: url) else { return nil }
+        defer { try? arquivo.close() }
+        var hash = SHA256()
+        while let bloco = try? arquivo.read(upToCount: 1 << 16), !bloco.isEmpty { hash.update(data: bloco) }
+        return hash.finalize().map { String(format: "%02x", $0) }.joined()
+    }
+
+    private nonisolated static func urlPDFsImportados() throws -> URL {
+        try criarURLImportado(obraID: "registro").deletingLastPathComponent().appendingPathComponent("pdfs-importados.json")
+    }
+
+    private nonisolated static func pdfsImportados() -> [String: String] {
+        guard let url = try? urlPDFsImportados(), let dados = try? Data(contentsOf: url) else { return [:] }
+        return (try? JSONDecoder().decode([String: String].self, from: dados)) ?? [:]
+    }
+
+    nonisolated static func registrarPDFImportado(_ hash: String, obraID: String) throws {
+        var registro = pdfsImportados()
+        registro[hash] = obraID
+        try JSONEncoder().encode(registro).write(to: try urlPDFsImportados(), options: .atomic)
+    }
+
+    /// The work that already holds this PDF, while its imported content still exists.
+    nonisolated static func obraComPDF(_ hash: String, obras: [BibliotecaObra]) -> BibliotecaObra? {
+        guard let obraID = pdfsImportados()[hash], let obra = obras.first(where: { $0.id == obraID }),
+              let arquivo = try? criarURLImportado(obraID: obraID), FileManager.default.fileExists(atPath: arquivo.path) else { return nil }
+        return obra
     }
 
     nonisolated static func importar(textoOCR: String, obra: BibliotecaObra) -> BreviarioData {

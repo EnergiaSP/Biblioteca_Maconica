@@ -56,7 +56,7 @@ class FullCatalogBenchmarkTest {
         val results = catalog.buscarConteudo("\"$term\"", area = BibliotecaArea.Biblioteca, limite = config.limits.analyzedSources,
             variants = config.variants)
         assertTrue(results.isNotEmpty())
-        val sources = dossierSources(results)
+        val sources = dossierSources(results, com.renatocamargo.breviariomaconico.data.Prancha.loadWorks(context))
         val start = SystemClock.elapsedRealtime()
         val analysis = DossierAnalysis.analyze(term, sources, config, java.time.LocalDate.parse("2026-09-27"))
         val elapsed = SystemClock.elapsedRealtime() - start

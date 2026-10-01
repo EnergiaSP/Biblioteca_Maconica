@@ -335,7 +335,7 @@ internal fun promptAnaliseDossie(
     resultados: List<BibliotecaBuscaResultado>,
     officialSources: List<OfficialSource> = emptyList()
 ): String = AssistedInterpretation.prompt(
-    tema, dossierSources(resultados),
+    tema, dossierSources(resultados, com.renatocamargo.breviariomaconico.data.Prancha.loadWorks(context)),
     officialSources.map { AssistedInterpretation.OfficialSource(it.title, it.origin, it.url, it.notes) },
     AssistedInterpretation.loadConfig(context), DossierAnalysis.loadConfig(context)
 )
