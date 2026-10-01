@@ -35,13 +35,18 @@
       "titulo": "O Tarô Cabalístico"
     },
     "sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari": {
-      "titulo": "Sapiens: uma breve história da humanidade"
+      "titulo": "Sapiens: uma breve história da humanidade",
+      "editora": "L&PM",
+      "local": "Porto Alegre"
     },
     "timeu_a_cosmologia_de_platao_oscar_t_matsuura": {
       "titulo": "Timeu: a cosmologia de Platão"
     },
     "a_sintese_da_doutrina_secreta_blavatsky": {
-      "autor": "Helena P. Blavatsky"
+      "autor": "Helena P. Blavatsky",
+      "editora": "Pensamento",
+      "local": "São Paulo",
+      "ano": "1975"
     },
     "voltaire_dicionario_filosofico_ridendo_castigat_mores": {
       "titulo": "Dicionário Filosófico",
@@ -228,7 +233,9 @@
     },
     "100_instrucoes_de_aprendiz": {
       "editora": "Madras",
-      "ano": "2008"
+      "ano": "2008",
+      "autor": "Raymundo D'Elia Junior",
+      "local": "São Paulo"
     },
     "a_historia_dos_ritos_maconicos_praticados_no_brasil": {
       "autor": "Paulo Maurício de Moraes Magalhães",
@@ -248,24 +255,34 @@
       "ano": "2020"
     },
     "o_livro_de_ouro_da_mitologia": {
-      "autor": "Thomas Bulfinch"
+      "autor": "Thomas Bulfinch",
+      "editora": "Ediouro",
+      "local": "Rio de Janeiro",
+      "ano": "2002"
     },
     "os_segredos_da_mente_milionaria": {
-      "autor": "T. Harv Eker"
+      "autor": "T. Harv Eker",
+      "editora": "Sextante",
+      "local": "Rio de Janeiro",
+      "ano": "2006"
     },
     "os_templarios_juan_de_garten": {
       "editora": "Traço",
       "ano": "1987"
     },
     "poesias_maconicas_vol_i": {
-      "ano": "2021"
+      "ano": "2021",
+      "autor": "Celso Ricardo de Almeida (org.)",
+      "local": "Fervedouro"
     },
     "rito_frances_ou_moderno_historia_reflexoes_e_desenvolvimento_jose_filardo": {
       "ano": "2018"
     },
     "ritual_de_emulacao_o_grau_de_mestre_macom": {
       "autor": "Fábio Mendes",
-      "ano": "2013"
+      "ano": "2013",
+      "editora": "Edição do autor",
+      "local": "Sorocaba"
     },
     "sao_joao_padroeiro_da_maconaria": {
       "autor": "Gael Stirler",
@@ -279,7 +296,9 @@
       "ano": "2009"
     },
     "seitas_heresias_raimundo_de_oliveira": {
-      "ano": "2002"
+      "ano": "2002",
+      "editora": "CPAD",
+      "local": "Rio de Janeiro"
     },
     "a_chave_dos_grandes_mistrios_eliphas_levi": {
       "editora": "eBooksBrasil",
@@ -295,7 +314,8 @@
     },
     "os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao": {
       "autor": "Lázaro Curvêlo Chaves",
-      "ano": "2006"
+      "ano": "2006",
+      "editora": "eBooksBrasil"
     },
     "origens_lendarias_da_maconaria_inglesa": {
       "titulo": "Origens Lendárias da Maçonaria Inglesa"
@@ -311,14 +331,19 @@
     },
     "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto": {
       "titulo": "O Que Você Precisa Saber Sobre Maçonaria",
-      "autor": "Elias Mansur Neto"
+      "autor": "Elias Mansur Neto",
+      "editora": "iEditora",
+      "local": "São Paulo",
+      "ano": "2002"
     },
     "dos_faraos_a_fisica_quantica_ricardo_di_bernardi": {
       "titulo": "Dos Faraós à Física Quântica"
     },
     "giordano_bruno_e_a_tradicao_hermetica_frances_a_yates": {
       "titulo": "Giordano Bruno e a Tradição Hermética",
-      "autor": "Frances A. Yates"
+      "autor": "Frances A. Yates",
+      "editora": "Cultrix",
+      "local": "São Paulo"
     },
     "biblioteca_de_alexandria_derek_adie_flower": {
       "titulo": "Biblioteca de Alexandria",
@@ -345,7 +370,8 @@
     },
     "o_conhecimento_de_deus_j_i_packer": {
       "titulo": "O Conhecimento de Deus",
-      "autor": "J. I. Packer"
+      "autor": "J. I. Packer",
+      "editora": "Mundo Cristão"
     },
     "os_arcanos_maiores_do_taro_g_o_mebes": {
       "titulo": "Os Arcanos Maiores do Tarô",
@@ -360,7 +386,10 @@
     },
     "introducao_a_simbologia_rosacruz_amorc": {
       "titulo": "Introdução à Simbologia Rosacruz",
-      "autor": "AMORC"
+      "autor": "AMORC",
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba",
+      "ano": "1992"
     },
     "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro": {
       "titulo": "Fibonacci: série de Fibonacci e o número de ouro"
@@ -369,7 +398,225 @@
       "titulo": "Pitágoras: ciência e magia na Antiga Grécia"
     },
     "o_trivium_biblioteca_freemasonry": {
-      "titulo": "O Trivium"
+      "titulo": "O Trivium",
+      "autor": "Miriam Joseph",
+      "editora": "É Realizações",
+      "local": "São Paulo",
+      "ano": "2008"
+    },
+    "a_arca_da_alianca": {
+      "autor": "Hugo Bouter",
+      "editora": "Depósito de Literatura Cristã",
+      "local": "São Paulo",
+      "ano": "2014"
+    },
+    "a_ciencia_secreta_vol_2_henri_durville": {
+      "editora": "Pensamento",
+      "local": "São Paulo"
+    },
+    "a_ciencia_secreta_vol_3_henri_durville": {
+      "editora": "Pensamento",
+      "local": "São Paulo"
+    },
+    "a_ciencia_secreta_vol_4_henri_durville": {
+      "editora": "Pensamento",
+      "local": "São Paulo"
+    },
+    "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii": {
+      "editora": "T. A. Queiroz",
+      "local": "São Paulo",
+      "ano": "1988"
+    },
+    "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood": {
+      "editora": "Ordem DeMolay",
+      "local": "Kansas City",
+      "ano": "1925"
+    },
+    "a_iniciacao_de_jesus": {
+      "editora": "O Pensamento",
+      "local": "São Paulo",
+      "ano": "1944"
+    },
+    "a_maconaria_na_historia": {
+      "editora": "Ediouro",
+      "local": "Rio de Janeiro"
+    },
+    "a_sociedade_feudal_marc_bloch_1": {
+      "editora": "Edições 70",
+      "local": "Lisboa"
+    },
+    "a_tradicao_hermetica_julius_evola": {
+      "editora": "Edições 70",
+      "local": "Lisboa"
+    },
+    "a_vida_mistica_de_jesus": {
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba"
+    },
+    "abaixo_as_verdades_sagradas_harold_bloom": {
+      "editora": "Companhia das Letras",
+      "local": "São Paulo"
+    },
+    "aprendizado_maconico_rizzardo_da_camino": {
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo",
+      "ano": "2001"
+    },
+    "aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves": {
+      "editora": "CreateSpace",
+      "local": "São Paulo",
+      "ano": "2015"
+    },
+    "aristoteles_em_90_minutos_paul_strathern": {
+      "editora": "Jorge Zahar",
+      "local": "Rio de Janeiro",
+      "ano": "1997"
+    },
+    "arquetipos_do_zodiaco_kathleen_burt": {
+      "editora": "Pensamento",
+      "local": "São Paulo"
+    },
+    "astrologia_cabalistica_rav_philip_s_berg": {
+      "editora": "Imago",
+      "local": "Rio de Janeiro",
+      "ano": "2001"
+    },
+    "atos_de_salomao": {
+      "autor": "José Ricardo Pereira Tavares",
+      "editora": "Psicologia Holística Condicionativa Há'Ari",
+      "local": "Porto Velho",
+      "ano": "2015"
+    },
+    "cabala_para_o_estudante_michael_laitman": {
+      "editora": "Laitman Kabbalah Publishers",
+      "local": "Toronto",
+      "ano": "2008"
+    },
+    "curso_de_filosofia_oculta_eliphas_levi": {
+      "editora": "Pensamento",
+      "local": "São Paulo"
+    },
+    "de_gutenberg_a_diderot_peter_burke": {
+      "editora": "Jorge Zahar",
+      "local": "Rio de Janeiro",
+      "ano": "2003"
+    },
+    "desaparicoes_misteriosas_o_cosmo_observa_nos": {
+      "editora": "Livraria Bertrand",
+      "local": "Lisboa",
+      "ano": "1974"
+    },
+    "diccionario_breve_de_la_masoneria_biblioteca_freemasonry": {
+      "editora": "Fundación María Deraismes",
+      "local": "Madrid",
+      "ano": "2010"
+    },
+    "hermes_trimegisto_charles_vega_parucker": {
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba",
+      "ano": "2007"
+    },
+    "historia_dos_hebreus_flavio_josefo": {
+      "editora": "CPAD",
+      "local": "Rio de Janeiro",
+      "ano": "2004"
+    },
+    "luz_martinista": {
+      "editora": "Ordem Rosacruz, AMORC"
+    },
+    "lvr_quadrivium_john_martineau": {
+      "autor": "John Martineau",
+      "editora": "É Realizações",
+      "local": "São Paulo",
+      "ano": "2014"
+    },
+    "moral_e_dogma": {
+      "autor": "Albert Pike",
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo"
+    },
+    "o_erro_de_descartes_antonio_r_damasio": {
+      "editora": "Companhia das Letras",
+      "local": "São Paulo"
+    },
+    "o_homem_e_seus_simbolos_carl_gustav_jung": {
+      "editora": "Nova Fronteira"
+    },
+    "o_livro_da_mitologia_thomas_bulfinch": {
+      "editora": "Martin Claret",
+      "ano": "2006"
+    },
+    "o_livro_das_religioes_jostein_gaarder": {
+      "editora": "Companhia das Letras",
+      "local": "São Paulo",
+      "ano": "2000"
+    },
+    "o_portico_e_a_camara_do_meio": {
+      "autor": "Albert Pike",
+      "editora": "Landmark",
+      "local": "São Paulo",
+      "ano": "2008"
+    },
+    "os_povos_da_biblia_joseph_rhymer": {
+      "editora": "Melhoramentos",
+      "local": "São Paulo",
+      "ano": "1990"
+    },
+    "projetos_secretos": {
+      "editora": "ND UFO",
+      "local": "Fortaleza",
+      "ano": "2002"
+    },
+    "rito_escoces_antigo_e_aceito": {
+      "titulo": "Rito Escocês Antigo e Aceito: Loja de Perfeição",
+      "autor": "Rizzardo da Camino",
+      "editora": "Madras",
+      "local": "São Paulo",
+      "ano": "1999"
+    },
+    "ritos_estranhos_no_mundo_jacques_marcireau": {
+      "editora": "Bertrand",
+      "local": "Amadora",
+      "ano": "1975"
+    },
+    "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": {
+      "editora": "Edição do autor",
+      "local": "Sorocaba",
+      "ano": "2010"
+    },
+    "simbolismo_do_primeiro_grau_rizzardo_da_camino": {
+      "titulo": "Simbolismo do Primeiro Grau",
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo",
+      "ano": "2001"
+    },
+    "simbolismo_numeros_boanerges_b_castro": {
+      "titulo": "O Simbolismo dos Números na Maçonaria",
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo",
+      "ano": "2002"
+    },
+    "socrates_em_90_minutos_paul_strathern": {
+      "editora": "Jorge Zahar",
+      "local": "Rio de Janeiro"
+    },
+    "templarios_portugal_primeira_nacao_templaria_freddy_silva": {
+      "editora": "Alma dos Livros",
+      "ano": "2018"
+    },
+    "tratado_da_reintegracao_dos_seres_martines_pasqually": {
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba",
+      "ano": "2008"
+    },
+    "uma_visao_global_dos_33_graus_do_reaa": {
+      "editora": "Madras",
+      "local": "São Paulo"
+    },
+    "dicionario_cultural_da_biblia": {
+      "editora": "Loyola",
+      "local": "São Paulo",
+      "ano": "1998"
     }
   }
 }

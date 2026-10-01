@@ -4,10 +4,10 @@
   "obras": {
     "100_instrucoes_de_aprendiz": {
       "titulo": "100 Instruções de Aprendiz",
-      "autor": "",
+      "autor": "Raymundo D'Elia Junior",
       "ano": "2008",
       "editora": "Madras",
-      "local": ""
+      "local": "São Paulo"
     },
     "10_misterios_que_indicam_a_existencia_de_antigas_civilizacoes_avancadas": {
       "titulo": "10 MISTÉRIOS QUE INDICAM A EXISTÊNCIA DE ANTIGAS CIVILIZAÇÕES AVANÇADAS",
@@ -39,10 +39,10 @@
     },
     "a_arca_da_alianca": {
       "titulo": "A Arca da Aliança",
-      "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "autor": "Hugo Bouter",
+      "ano": "2014",
+      "editora": "Depósito de Literatura Cristã",
+      "local": "São Paulo"
     },
     "a_arvore_da_vida_israel_regardie": {
       "titulo": "A Árvore da Vida",
@@ -83,22 +83,22 @@
       "titulo": "A Ciência Secreta Vol 2",
       "autor": "Henri Durville",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Pensamento",
+      "local": "São Paulo"
     },
     "a_ciencia_secreta_vol_3_henri_durville": {
       "titulo": "A Ciência Secreta Vol 3",
       "autor": "Henri Durville",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Pensamento",
+      "local": "São Paulo"
     },
     "a_ciencia_secreta_vol_4_henri_durville": {
       "titulo": "A Ciência Secreta Vol 4",
       "autor": "Henri Durville",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Pensamento",
+      "local": "São Paulo"
     },
     "a_conspiracao_de_1817": {
       "titulo": "A CONSPIRAÇÃO DE 1817",
@@ -110,9 +110,9 @@
     "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii": {
       "titulo": "A DEMANDA DO SANTO GRAAL - MANUSCRITO DO SÉCULO XIII",
       "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1988",
+      "editora": "T. A. Queiroz",
+      "local": "São Paulo"
     },
     "a_divina_parusia_olimpio_neves_goncalves": {
       "titulo": "A Divina Parusia",
@@ -159,9 +159,9 @@
     "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood": {
       "titulo": "A história da Vida e da Época de Jacques De Molay",
       "autor": "H L Haywood",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1925",
+      "editora": "Ordem DeMolay",
+      "local": "Kansas City"
     },
     "a_historia_dos_judeus_simon_schama": {
       "titulo": "A História dos Judeus",
@@ -187,9 +187,9 @@
     "a_iniciacao_de_jesus": {
       "titulo": "A Iniciação de Jesus",
       "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1944",
+      "editora": "O Pensamento",
+      "local": "São Paulo"
     },
     "a_linhagem_do_santo_graal_laurence_gardner": {
       "titulo": "A linhagem do Santo Graal",
@@ -244,8 +244,8 @@
       "titulo": "A Maçonaria na História",
       "autor": "",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Ediouro",
+      "local": "Rio de Janeiro"
     },
     "a_maconaria_no_centenario_1822_1922": {
       "titulo": "A Maçonaria no Centenário 1822 - 1922",
@@ -327,9 +327,9 @@
     "a_sintese_da_doutrina_secreta_blavatsky": {
       "titulo": "A Sintese da Doutrina Secreta",
       "autor": "Helena P. Blavatsky",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1975",
+      "editora": "Pensamento",
+      "local": "São Paulo"
     },
     "a_sociedade_dos_templarios_lourivaldo_p_bacan": {
       "titulo": "A Sociedade dos Templários",
@@ -342,15 +342,15 @@
       "titulo": "A sociedade feudal",
       "autor": "Marc Bloch",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Edições 70",
+      "local": "Lisboa"
     },
     "a_tradicao_hermetica_julius_evola": {
       "titulo": "A Tradição Hermética",
       "autor": "Julius Evola",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Edições 70",
+      "local": "Lisboa"
     },
     "a_verdade_sufocada_carlos_alberto_brilhante_ustra": {
       "titulo": "A Verdade Sufocada",
@@ -370,8 +370,8 @@
       "titulo": "A Vida Mística de Jesus",
       "autor": "",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba"
     },
     "a_vida_mistica_e_oculta_de_jesus": {
       "titulo": "A Vida Mística e Oculta de Jesus",
@@ -384,8 +384,8 @@
       "titulo": "Abaixo as Verdades Sagradas",
       "autor": "Harold Bloom",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Companhia das Letras",
+      "local": "São Paulo"
     },
     "abobada_celeste": {
       "titulo": "Abóbada Celeste",
@@ -418,30 +418,30 @@
     "aprendizado_maconico_rizzardo_da_camino": {
       "titulo": "Aprendizado Maçônico",
       "autor": "Rizzardo da Camino",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2001",
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo"
     },
     "aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves": {
       "titulo": "Aristóteles e São Tomás de Aquino (Diálogos)",
       "autor": "Joaquim Dias Alves",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2015",
+      "editora": "CreateSpace",
+      "local": "São Paulo"
     },
     "aristoteles_em_90_minutos_paul_strathern": {
       "titulo": "Aristoteles em 90 Minutos",
       "autor": "Paul Strathern",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1997",
+      "editora": "Jorge Zahar",
+      "local": "Rio de Janeiro"
     },
     "arquetipos_do_zodiaco_kathleen_burt": {
       "titulo": "Arquétipos do Zodíaco",
       "autor": "Kathleen Burt",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Pensamento",
+      "local": "São Paulo"
     },
     "as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines": {
       "titulo": "AS 13 FAMÍLIAS ILLUMINATI - SOCIEDADES SECRETAS DE EUGENIA - ILLUMINATI BLOODLINES",
@@ -516,9 +516,9 @@
     "astrologia_cabalistica_rav_philip_s_berg": {
       "titulo": "Astrologia Cabalística",
       "autor": "Rav Philip S Berg",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2001",
+      "editora": "Imago",
+      "local": "Rio de Janeiro"
     },
     "ata_hermetismo_pitagorismo_e_platonismo": {
       "titulo": "Ata Hermetismo, Pitagorismo e Platonismo",
@@ -529,10 +529,10 @@
     },
     "atos_de_salomao": {
       "titulo": "Atos de Salomão",
-      "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "autor": "José Ricardo Pereira Tavares",
+      "ano": "2015",
+      "editora": "Psicologia Holística Condicionativa Há'Ari",
+      "local": "Porto Velho"
     },
     "biblia_de_jerusalem_editora_paulus": {
       "titulo": "Bíblia de Jerusalém - Editora Paulus",
@@ -614,9 +614,9 @@
     "cabala_para_o_estudante_michael_laitman": {
       "titulo": "Cabala para o Estudante",
       "autor": "Michael Laitman",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2008",
+      "editora": "Laitman Kabbalah Publishers",
+      "local": "Toronto"
     },
     "catedrais_goticas": {
       "titulo": "Catedrais Góticas",
@@ -692,15 +692,15 @@
       "titulo": "Curso de filosofia oculta",
       "autor": "Eliphas Levi",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Pensamento",
+      "local": "São Paulo"
     },
     "de_gutenberg_a_diderot_peter_burke": {
       "titulo": "De Gutenberg a Diderot",
       "autor": "Peter Burke",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2003",
+      "editora": "Jorge Zahar",
+      "local": "Rio de Janeiro"
     },
     "de_profecia_e_inquisicao_padre_antonio_vieira": {
       "titulo": "De Profecia e Inquisição",
@@ -719,9 +719,9 @@
     "desaparicoes_misteriosas_o_cosmo_observa_nos": {
       "titulo": "DESAPARIÇÕES MISTERIOSAS - O COSMO OBSERVA-NOS",
       "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1974",
+      "editora": "Livraria Bertrand",
+      "local": "Lisboa"
     },
     "desmistificando_a_maconaria": {
       "titulo": "Desmistificando a Maçonaria",
@@ -733,16 +733,16 @@
     "diccionario_breve_de_la_masoneria_biblioteca_freemasonry": {
       "titulo": "Diccionario breve de la Masonería - Biblioteca Freemasonry",
       "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2010",
+      "editora": "Fundación María Deraismes",
+      "local": "Madrid"
     },
     "dicionario_cultural_da_biblia": {
       "titulo": "Dicionário Cultural da Bíblia",
       "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1998",
+      "editora": "Loyola",
+      "local": "São Paulo"
     },
     "dicionario_de_simbolos_esotericos": {
       "titulo": "Dicionário de Símbolos Esotéricos",
@@ -881,8 +881,8 @@
       "titulo": "Giordano Bruno e a Tradição Hermética",
       "autor": "Frances A. Yates",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Cultrix",
+      "local": "São Paulo"
     },
     "gnose_philip_gardner": {
       "titulo": "Gnose",
@@ -915,9 +915,9 @@
     "hermes_trimegisto_charles_vega_parucker": {
       "titulo": "Hermes Trimegisto",
       "autor": "Charles Vega Parucker",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2007",
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba"
     },
     "hermes_trismegisto": {
       "titulo": "Hermes Trismegisto",
@@ -971,9 +971,9 @@
     "historia_dos_hebreus_flavio_josefo": {
       "titulo": "História dos Hebreus",
       "autor": "Flávio Josefo",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2004",
+      "editora": "CPAD",
+      "local": "Rio de Janeiro"
     },
     "historia_nat_geo_ramses_ii": {
       "titulo": "História Nat Geo: Ramsés II",
@@ -1020,9 +1020,9 @@
     "introducao_a_simbologia_rosacruz_amorc": {
       "titulo": "Introdução à Simbologia Rosacruz",
       "autor": "AMORC",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1992",
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba"
     },
     "jesus_o_divino_mestre_albert_paul_dahoui": {
       "titulo": "Jesus o Divino Mestre",
@@ -1077,15 +1077,15 @@
       "titulo": "Luz Martinista",
       "autor": "",
       "ano": "",
-      "editora": "",
+      "editora": "Ordem Rosacruz, AMORC",
       "local": ""
     },
     "lvr_quadrivium_john_martineau": {
       "titulo": "LVR, Quadrivium, John Martineau",
-      "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "autor": "John Martineau",
+      "ano": "2014",
+      "editora": "É Realizações",
+      "local": "São Paulo"
     },
     "maconaria_brasileira_a_historia_ocultada": {
       "titulo": "Maçonaria Brasileira - A história ocultada",
@@ -1222,10 +1222,10 @@
     },
     "moral_e_dogma": {
       "titulo": "Moral e Dogma",
-      "autor": "",
+      "autor": "Albert Pike",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo"
     },
     "numeros_a_decada_pitagorica": {
       "titulo": "Números: a Década Pitagórica",
@@ -1273,15 +1273,15 @@
       "titulo": "O Conhecimento de Deus",
       "autor": "J. I. Packer",
       "ano": "",
-      "editora": "",
+      "editora": "Mundo Cristão",
       "local": ""
     },
     "o_erro_de_descartes_antonio_r_damasio": {
       "titulo": "O Erro de Descartes",
       "autor": "Antonio R Damasio",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Companhia das Letras",
+      "local": "São Paulo"
     },
     "o_fim_do_templo_esquin_de_floyrac_ze_rodrix": {
       "titulo": "O Fim do Templo - Esquin de Floyrac",
@@ -1308,7 +1308,7 @@
       "titulo": "O Homem e Seus Símbolos",
       "autor": "Carl Gustav Jung",
       "ano": "",
-      "editora": "",
+      "editora": "Nova Fronteira",
       "local": ""
     },
     "o_ideal_iniciatico_oswald_wirth": {
@@ -1328,8 +1328,8 @@
     "o_livro_da_mitologia_thomas_bulfinch": {
       "titulo": "O livro da mitologia",
       "autor": "Thomas Bulfinch",
-      "ano": "",
-      "editora": "",
+      "ano": "2006",
+      "editora": "Martin Claret",
       "local": ""
     },
     "o_livro_da_sabedoria": {
@@ -1342,9 +1342,9 @@
     "o_livro_das_religioes_jostein_gaarder": {
       "titulo": "O Livro das Religiões",
       "autor": "Jostein Gaarder",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2000",
+      "editora": "Companhia das Letras",
+      "local": "São Paulo"
     },
     "o_livro_de_enoque": {
       "titulo": "O Livro de Enoque",
@@ -1363,9 +1363,9 @@
     "o_livro_de_ouro_da_mitologia": {
       "titulo": "O Livro de Ouro da Mitologia",
       "autor": "Thomas Bulfinch",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2002",
+      "editora": "Ediouro",
+      "local": "Rio de Janeiro"
     },
     "o_livro_de_urantia_urantia_foundation": {
       "titulo": "O Livro de Urantia",
@@ -1460,10 +1460,10 @@
     },
     "o_portico_e_a_camara_do_meio": {
       "titulo": "O Pórtico e a Câmara do Meio",
-      "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "autor": "Albert Pike",
+      "ano": "2008",
+      "editora": "Landmark",
+      "local": "São Paulo"
     },
     "o_que_e_a_maconaria": {
       "titulo": "O que é a Maçonaria",
@@ -1475,9 +1475,9 @@
     "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto": {
       "titulo": "O Que Você Precisa Saber Sobre Maçonaria",
       "autor": "Elias Mansur Neto",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2002",
+      "editora": "iEditora",
+      "local": "São Paulo"
     },
     "o_reaa_origens_historicas": {
       "titulo": "O REAA: origens históricas",
@@ -1502,10 +1502,10 @@
     },
     "o_trivium_biblioteca_freemasonry": {
       "titulo": "O Trivium",
-      "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "autor": "Miriam Joseph",
+      "ano": "2008",
+      "editora": "É Realizações",
+      "local": "São Paulo"
     },
     "ordem_sobre_o_caos_kennyo_ismail": {
       "titulo": "Ordem sobre o Caos",
@@ -1602,15 +1602,15 @@
       "titulo": "OS POBRES SOLDADOS DE JESUS CRISTO E DO TEMPLO DE SALOMÃO",
       "autor": "Lázaro Curvêlo Chaves",
       "ano": "2006",
-      "editora": "",
+      "editora": "eBooksBrasil",
       "local": ""
     },
     "os_povos_da_biblia_joseph_rhymer": {
       "titulo": "Os Povos da Bíblia",
       "autor": "Joseph Rhymer",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1990",
+      "editora": "Melhoramentos",
+      "local": "São Paulo"
     },
     "os_principios_das_leis_maconicas": {
       "titulo": "Os Princípios das Leis Maçónicas",
@@ -1629,9 +1629,9 @@
     "os_segredos_da_mente_milionaria": {
       "titulo": "Os Segredos da Mente Milionária",
       "autor": "T. Harv Eker",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2006",
+      "editora": "Sextante",
+      "local": "Rio de Janeiro"
     },
     "os_segredos_do_templo_de_salomao": {
       "titulo": "Os Segredos do Templo de Salomão",
@@ -1747,10 +1747,10 @@
     },
     "poesias_maconicas_vol_i": {
       "titulo": "Poesias Maçônicas Vol I",
-      "autor": "",
+      "autor": "Celso Ricardo de Almeida (org.)",
       "ano": "2021",
       "editora": "",
-      "local": ""
+      "local": "Fervedouro"
     },
     "por_dentro_do_priorado_de_siao_robert_howells": {
       "titulo": "Por Dentro do Priorado de Sião",
@@ -1790,9 +1790,9 @@
     "projetos_secretos": {
       "titulo": "PROJETOS SECRETOS",
       "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2002",
+      "editora": "ND UFO",
+      "local": "Fortaleza"
     },
     "proverbios_e_pensamentos": {
       "titulo": "PROVÉRBIOS E PENSAMENTOS",
@@ -1830,11 +1830,11 @@
       "local": ""
     },
     "rito_escoces_antigo_e_aceito": {
-      "titulo": "Rito+escocês+antigo+e+aceito",
-      "autor": "",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "titulo": "Rito Escocês Antigo e Aceito: Loja de Perfeição",
+      "autor": "Rizzardo da Camino",
+      "ano": "1999",
+      "editora": "Madras",
+      "local": "São Paulo"
     },
     "rito_escoces_antigo_e_aceito_graus_simbolicos_liturgia_ritualistica_genuinidade_enxertos_supressoes_crendices": {
       "titulo": "Rito Escocês Antigo e Aceito Graus Simbólicos Liturgia Ritualística Genuinidade Enxertos Supressoes Crendices",
@@ -1853,9 +1853,9 @@
     "ritos_estranhos_no_mundo_jacques_marcireau": {
       "titulo": "RITOS ESTRANHOS NO MUNDO",
       "autor": "JACQUES MARCIREAU",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "1975",
+      "editora": "Bertrand",
+      "local": "Amadora"
     },
     "ritos_maconicos_praticados_no_brasil_e_suas_diferencas": {
       "titulo": "Ritos Maçônicos Praticados no Brasil e suas Diferenças",
@@ -1867,16 +1867,16 @@
     "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": {
       "titulo": "Ritual de Emulação - A Maçonaria Inglesa no Brasil",
       "autor": "Fábio M Paulino",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2010",
+      "editora": "Edição do autor",
+      "local": "Sorocaba"
     },
     "ritual_de_emulacao_o_grau_de_mestre_macom": {
       "titulo": "Ritual de Emulação O Grau de Mestre Maçom",
       "autor": "Fábio Mendes",
       "ano": "2013",
-      "editora": "",
-      "local": ""
+      "editora": "Edição do autor",
+      "local": "Sorocaba"
     },
     "ritual_de_emulacao_um_sistema_ritualistico_ingles": {
       "titulo": "Ritual de Emulação: um sistema ritualístico inglês",
@@ -1903,29 +1903,29 @@
       "titulo": "Sapiens: uma breve história da humanidade",
       "autor": "Yuval Noah Harari",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "L&PM",
+      "local": "Porto Alegre"
     },
     "seitas_heresias_raimundo_de_oliveira": {
       "titulo": "Seitas & Heresias",
       "autor": "Raimundo de Oliveira",
       "ano": "2002",
-      "editora": "",
-      "local": ""
+      "editora": "CPAD",
+      "local": "Rio de Janeiro"
     },
     "simbolismo_do_primeiro_grau_rizzardo_da_camino": {
-      "titulo": "SIMBOLISMO DO PRIMEIRO GRAU",
+      "titulo": "Simbolismo do Primeiro Grau",
       "autor": "RIZZARDO DA CAMINO",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2001",
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo"
     },
     "simbolismo_numeros_boanerges_b_castro": {
-      "titulo": "Simbolismo Números",
+      "titulo": "O Simbolismo dos Números na Maçonaria",
       "autor": "Boanerges B Castro",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2002",
+      "editora": "Livraria Maçônica Paulo Fuchs",
+      "local": "São Paulo"
     },
     "simbologia_dos_numeros_no_grau_de_aprendiz_macom": {
       "titulo": "Simbologia dos Números no Grau de Aprendiz Maçom",
@@ -1980,8 +1980,8 @@
       "titulo": "Sócrates em 90 Minutos",
       "autor": "Paul Strathern",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Jorge Zahar",
+      "local": "Rio de Janeiro"
     },
     "solticios_x_loja_de_mesa": {
       "titulo": "Solticios x Loja de mesa",
@@ -2000,8 +2000,8 @@
     "templarios_portugal_primeira_nacao_templaria_freddy_silva": {
       "titulo": "Templários - Portugal, primeira Nação Templária",
       "autor": "Freddy Silva",
-      "ano": "",
-      "editora": "",
+      "ano": "2018",
+      "editora": "Alma dos Livros",
       "local": ""
     },
     "timeu_a_cosmologia_de_platao_oscar_t_matsuura": {
@@ -2021,9 +2021,9 @@
     "tratado_da_reintegracao_dos_seres_martines_pasqually": {
       "titulo": "Tratado da reintegração dos Seres",
       "autor": "Martines Pasqually",
-      "ano": "",
-      "editora": "",
-      "local": ""
+      "ano": "2008",
+      "editora": "Ordem Rosacruz, AMORC",
+      "local": "Curitiba"
     },
     "trilogia_do_templo_i_joabem_construtor_do_templo": {
       "titulo": "Trilogia do Templo I: Joabem, construtor do Templo",
@@ -2050,8 +2050,8 @@
       "titulo": "Uma Visão Global dos 33 Graus do REAA",
       "autor": "",
       "ano": "",
-      "editora": "",
-      "local": ""
+      "editora": "Madras",
+      "local": "São Paulo"
     },
     "vade_mecum_honoris_labor_versao_10_mar_2018": {
       "titulo": "VADE MECUM - HONORIS LABOR - (VERSÃO 10 MAR 2018)",
