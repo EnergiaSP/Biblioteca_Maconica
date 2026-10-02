@@ -110,6 +110,8 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -193,7 +195,8 @@ internal fun HomeScreen(
                     Text(daily.titulo, color = colors.text, fontSize = 21.sp, fontFamily = FontFamily.Serif, fontWeight = FontWeight.Bold)
                     Text(daily.texto.take(260), color = colors.secondary)
                 }
-                Button(onClick = { onRead(daily) }) {
+                // Two daily readings would otherwise read the same "Leitura" to TalkBack.
+                Button(onClick = { onRead(daily) }, modifier = Modifier.semantics { contentDescription = "Leitura: ${dailyWorkTitle(daily)}" }) {
                     Icon(Icons.Default.Book, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
                     Text("Leitura")

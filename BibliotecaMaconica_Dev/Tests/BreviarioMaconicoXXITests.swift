@@ -535,7 +535,7 @@ final class BreviarioMaconicoXXITests: XCTestCase {
             throw XCTSkip("Install the validated audit corpus in the test simulator to run this benchmark.")
         }
         let service = try BibliotecaRAGCatalogService(catalogoURL: catalogURL)
-        XCTAssertEqual(service.pacotes.count, 314)
+        XCTAssertEqual(service.pacotes.count, 290)
         XCTAssertFalse(service.obras().contains { $0.id == "breviario_maconico_rizzardo_da_camino" })
         for package in service.pacotes {
             XCTAssertNotNil(service.urlOrigemPacote(package), package.arquivo)

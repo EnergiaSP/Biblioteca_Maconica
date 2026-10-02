@@ -104,3 +104,30 @@ As demais obras não têm ficha no PDF.
 - **Execução:** a suíte rodou 6 vezes seguidas sem falha.
 - **Causa provável:** a falha registrada antes foi "unexpected", isto é, erro lançado e não verificação reprovada. O único teste que lança erro de forma imprevisível é o de download repetido, quando a rede oscila na segunda descida.
 - **Correção:** cada descida agora tenta duas vezes e, sem rede, o teste é pulado em vez de falhar, nas duas plataformas.
+
+## Terceira rodada: O Livro Ilustrado dos Símbolos, conferido página a página
+
+- **Escopo:** as 129 páginas foram comparadas uma a uma com a imagem da página, da capa ao índice remissivo e à contracapa.
+- **Correções:** 1.691 ao todo.
+  - Nas páginas em que o OCR misturava colunas, legendas e quadros "VEJA TAMBÉM", o texto foi reescrito inteiro na ordem de leitura.
+  - Nas demais, foram corrigidos acentos, palavras cortadas e letras trocadas.
+- **Fidelidade:** a grafia é a do original (1997-2001), por exemplo "idéia", "freqüência" e "jóia".
+- **Ícone:** o dedo indicador dos quadros "VEJA TAMBÉM" virou "→".
+- **Ordem das colunas:** a OCR por blocos (`BibliotecaMaconica_Dev/Tools/ocr_por_blocos.swift`) junta as linhas de cada coluna antes de ordenar a página. Foi a base da conferência.
+- **Página 109 (Maçonaria):** revisada com cuidado especial. As palavras cortadas na dobra do livro foram completadas pelo contexto da própria página: "Ferramentas", "cidadãos", "Escada de Jacó", "Ashlar" e "Piso xadrez".
+- **Ilegível na digitalização:** no índice, "paraíso 36, 42, 4" está cortado no próprio impresso e ficou como está.
+- **Rodapé:** o livro não tem notas. A única "nota" antiga era um pedaço da orelha e saiu.
+- **Aplicação:** `Tools/aplicar_ocr_refeito.py` ganhou o critério `manual`.
+  - O texto conferido à mão substitui o antigo em toda página que mudou.
+  - Linhas como "5 Resultante de dois..." não são mais separadas como rodapé quando a página não tinha notas.
+- **Pacote:** `rag/v7/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite`, sha256 `5f033724…ee4`, com 128 páginas trocadas.
+- **ABNT:** a referência já constava em `obras_referencias_manual.json` (Miranda Bruce-Mitford, São Paulo: Publifolha, 2001).
+
+### Testes
+- **iOS:** 98 testes, 0 falhas.
+- **Android:** 35 testes unitários, 0 falhas.
+- **Android no emulador:** suíte instrumentada completa. Três falhas antigas, anteriores a esta rodada, foram corrigidas:
+  - **Contagem de pacotes:** `FullCatalogBenchmarkTest` (Android) e o teste equivalente do iOS esperavam 314 pacotes. Depois da remoção das obras repetidas, o catálogo tem 291, e a política de produto tira o Breviário de Rizzardo: o esperado agora é 290.
+  - **Botões repetidos:** a auditoria de acessibilidade achou dois botões "Leitura" com o mesmo texto falado quando há duas leituras diárias. Cada botão agora é lido como "Leitura: <obra>".
+  - **Contraste em item cortado:** a mesma auditoria media o contraste de um texto cortado na borda da rolagem (13 px visíveis), que mistura texto e fundo. Itens visíveis em menos de uma linha (24 dp) ficam fora da conta de contraste; o mesmo texto é medido quando aparece inteiro.
+- **Dados do app:** feito backup no emulador antes da instalação, com `adb install -r`. Nada foi desinstalado.
