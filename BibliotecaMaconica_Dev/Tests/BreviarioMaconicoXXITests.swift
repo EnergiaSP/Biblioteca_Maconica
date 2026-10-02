@@ -1548,12 +1548,20 @@ final class BreviarioMaconicoXXITests: XCTestCase {
             if let salvoMarcador { try? salvoMarcador.write(to: marcador) } else { try? FileManager.default.removeItem(at: marcador) }
         }
         let servico = try BibliotecaOfflinePackageService(catalogo: catalogo)
-        do { try await servico.instalarPacote(pacote) } catch { throw XCTSkip("Sem rede para baixar o pacote: \(error)") }
+        // Each download is tried twice; without the network the test is skipped, not failed.
+        func baixar() async throws {
+            for tentativa in 1...2 {
+                do { try await servico.instalarPacote(pacote); return } catch {
+                    if tentativa == 2 { throw XCTSkip("Sem rede para baixar o pacote: \(error)") }
+                }
+            }
+        }
+        try await baixar()
         let paginas = try catalogo.carregarIndicePaginas(obraID: "bula_clemente_xii").count
         let resultados = try catalogo.buscar(termo: "bula", escopo: .obraAtual, area: nil, obraID: "bula_clemente_xii").count
         XCTAssertGreaterThan(paginas, 0)
         XCTAssertGreaterThan(resultados, 0)
-        try await servico.instalarPacote(pacote)
+        try await baixar()
         let copias = try FileManager.default.contentsOfDirectory(atPath: pasta.path).filter { $0.hasPrefix("rag_bula_clemente_xii") }
         XCTAssertEqual(copias.sorted(), ["rag_bula_clemente_xii.sqlite", "rag_bula_clemente_xii.sqlite.sha256"])
         XCTAssertEqual(try String(contentsOf: marcador, encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines), pacote.sha256)

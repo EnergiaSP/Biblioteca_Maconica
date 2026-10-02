@@ -7658,10 +7658,10 @@
           "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)"
         }
       ],
-      "sha256": "416592cfbf5e4058b4ca1c70b61b974bab641589874effcc5ca16c57a4372311",
-      "tamanhoBytes": 2285568,
+      "sha256": "298ad85cf0adeb25a840a1e6c2f43940c8ec6f7fbd7e4673b7dc1b6d6a2e477d",
+      "tamanhoBytes": 2764800,
       "titulo": "O Livro Ilustrado dos Simbolos (COMPLETO)",
-      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v6/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite"
+      "url": "https://pub-c018917167a140c9a13ad5d0801efd12.r2.dev/rag/v7/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite"
     },
     {
       "area": "bibliotecaMaconica",
@@ -11454,7 +11454,7 @@
     "pacotes": 291,
     "paginas": 62989,
     "paragrafos": 62599,
-    "tamanhoBytes": 783089664
+    "tamanhoBytes": 783568896
   },
   "versaoFormato": 1
 }

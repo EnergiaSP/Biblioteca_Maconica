@@ -10,13 +10,14 @@ import Vision
 // Tools/aplicar_ocr_refeito.py (which keeps the old text of a page whenever it is not worse).
 //
 //   swiftc -O refazer_ocr_obra.swift -o refazer_ocr_obra
-//   ./refazer_ocr_obra --pdf original.pdf --saida paginas.json [--lado 3000] [--idiomas pt-BR,en-US]
+//   ./refazer_ocr_obra --pdf original.pdf --saida paginas.json [--lado 3000] [--idiomas pt-BR,en-US] [--paginas 5,9]
 
 struct Opcoes {
     var pdf = ""
     var saida = ""
     var lado: CGFloat = 3000
     var idiomas = ["pt-BR", "en-US", "es-ES", "fr-FR"]
+    var paginas: Set<Int>? = nil
 }
 
 func lerOpcoes() -> Opcoes {
@@ -31,6 +32,7 @@ func lerOpcoes() -> Opcoes {
         case "--saida": opcoes.saida = valor
         case "--lado": opcoes.lado = CGFloat(Double(valor) ?? 3000)
         case "--idiomas": opcoes.idiomas = valor.split(separator: ",").map(String.init)
+        case "--paginas": opcoes.paginas = Set(valor.split(separator: ",").compactMap { Int($0) })
         default: break
         }
     }
@@ -128,7 +130,7 @@ guard let documento = PDFDocument(url: URL(fileURLWithPath: opcoes.pdf)) else {
 }
 var paginas: [[String: Any]] = []
 let inicio = Date()
-for indice in 0..<documento.pageCount {
+for indice in 0..<documento.pageCount where opcoes.paginas?.contains(indice + 1) ?? true {
     autoreleasepool {
         guard let pagina = documento.page(at: indice) else { return }
         var texto = ""

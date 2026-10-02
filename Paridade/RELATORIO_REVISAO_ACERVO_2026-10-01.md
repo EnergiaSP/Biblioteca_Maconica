@@ -77,3 +77,30 @@ As demais obras não têm ficha no PDF.
 ## Publicação
 - **R2:** 67 pacotes refeitos estão em `rag/v6/` e precisam ser enviados ao R2 antes de lançar o app com este catálogo (`publicar_rag_r2_wrangler.sh`).
 - **Pacotes removidos:** os pacotes das 25 obras removidas continuam no R2 (`rag/v4` e `rag/v5`). Apagá-los libera espaço, mas versões antigas do app ainda podem pedi-los. Aguarda decisão.
+
+## Segunda rodada (pendências)
+
+### Rodapés do Breviário de Kennyo
+- **Leitura do bloco de notas:** a sequência agora vem da própria página do OCR novo, ancorada no primeiro número do rodapé antigo. Aceita "*" e números truncados ("14" em 174) quando a sequência confirma.
+- **OCR em 6000 px:** feito só nas páginas em que as notas não tinham sido encontradas.
+- **Resultado:** 76 rodapés corrigidos ou completados, entre eles **44 notas inteiras que o rodapé antigo tinha perdido**. Exemplos: a 228 (Docetismo), a 962 (Grotto e Shriner) e a 98 de 24/01.
+- **Notas recuperadas:** corrijo só confusões típicas de letra do OCR ("Tbe" → "The", "bttps://" → "https://"). Sem palpites por semelhança, que trocariam o título medieval "Confissom".
+- **Continuam como estavam:** 67 rodapés, porque nem o OCR em 6000 px leu todas as notas da página. A nota 370 é ilegível na própria digitalização.
+- **02/04:** fica sempre de fora, porque foi transcrita da foto da página impressa.
+- Relatório: `ocr_rodape_kennyo_v2.json`.
+
+### O Livro Ilustrado dos Símbolos
+- **Correção manual:** 64 linhas lidas na imagem da página e corrigidas, como "contato", "Mercúrio", "floresceram" e "elmo" (o OCR tinha lido "elino").
+- **Deixadas como estão**, por não haver leitura segura: 4 linhas (estação/oração, "…lhões", "vermelh…" e apresentados/representados).
+- **Limite:** o começo de algumas linhas está desbotado na digitalização. Testei resolução maior, contraste e remoção da sombra da dobra, e nenhum ajudou. O livro inteiro ainda tem outras linhas assim, que só uma conferência página a página resolve.
+- O pacote vai para `rag/v7/`.
+
+### Referências ABNT
+- Das 216 obras sem ano, 16 têm ISBN no texto. Só 2 ISBNs são da própria obra e estão nas bases públicas (Open Library): "Sócrates em 90 Minutos" (1998) e "O Conhecimento de Deus" (2005). Os outros são de livros citados na bibliografia.
+- Agora são 83 obras com ano.
+- As demais exigiriam identificar a edição exata de cada PDF. Atribuir o ano de outra edição seria uma referência errada.
+
+### Teste do iOS
+- **Execução:** a suíte rodou 6 vezes seguidas sem falha.
+- **Causa provável:** a falha registrada antes foi "unexpected", isto é, erro lançado e não verificação reprovada. O único teste que lança erro de forma imprevisível é o de download repetido, quando a rede oscila na segunda descida.
+- **Correção:** cada descida agora tenta duas vezes e, sem rede, o teste é pulado em vez de falhar, nas duas plataformas.

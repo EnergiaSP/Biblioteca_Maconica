@@ -25,6 +25,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TARGETS = [ROOT / "BibliotecaMaconica_Dev/Resources/breviario.json",
            ROOT / "projetos/BreviarioMaconicoAndroid/app/src/main/assets/breviario.json"]
 RANK = {"curta": 0, "ilegivel": 1, "ruidosa": 2, "legivel": 3}
+# 02/04 was transcribed from a photo of the printed page: page 94 of the PDF repeats page 93.
+EXCLUDED = {"02/04"}
 
 
 def fold(text: str) -> str:
@@ -41,42 +43,80 @@ def note_numbers(footer: str) -> list:
     return list(range(first, last + 1)) if 0 < last - first < 30 else [first]
 
 
-def new_footer(page: str, expected: list) -> str:
+NOTE_START = re.compile(r"^(\d{1,4}|\*)\s+[A-ZÀ-Ý\"“]")
+
+
+def subsequence(short: str, full: str) -> bool:
+    """The digits the OCR kept appear in order in the full number ("14" in 174, "68" in 368)."""
+    it = iter(full)
+    return bool(short) and all(c in it for c in short)
+
+
+def new_footer(page: str, anchor):
+    """Notes at the bottom of the page and their numbers. The note block is the last run of lines starting
+    with a number (or "*") in the lower two thirds; numbers are consecutive, so each is assigned from the
+    sequence when the digits the OCR read fit it (a missing or "*" number is the gap of the sequence)."""
     lines = [l.strip() for l in page.split("\n")]
-    first = str(expected[0])
-    start = next((i for i, l in enumerate(lines)
-                  if re.match(r"^\d{1,4}\s+\S", l) and first.endswith(l.split()[0]) and i > len(lines) // 3), None)
-    if start is None:
-        return ""
-    notes, page_number, index = [], "", 0
-    for line in lines[start:]:
-        if not line:
-            continue
-        if re.fullmatch(r"\d{1,4}", line):
-            page_number = line
-            continue
-        match = re.match(r"^(\d{1,4})\s+(\S.*)$", line)
-        following = next((k for k in range(index, len(expected)) if match and str(expected[k]).endswith(match.group(1))), None)
-        if following is not None:
-            notes.append(f"{expected[following]} {match.group(2)}")  # the number completed from the sequence
-            index = following + 1
-        elif notes:
-            if notes[-1].endswith("-") and notes[-1][-2:-1].isalpha():
-                notes[-1] = notes[-1][:-1] + line  # word split at the end of the line
-            elif notes[-1].endswith("-"):
-                notes[-1] += line  # a range of pages ("162-164") keeps its hyphen
+    starts = [i for i, l in enumerate(lines) if i > len(lines) // 3 and NOTE_START.match(l)]
+    if not starts:
+        return "", []
+    page_number = next((l for l in reversed(lines) if re.fullmatch(r"\d{1,4}", l)), "")
+    read = [lines[i].split()[0] for i in starts]
+    # The first number of the run: from the old footer when it has one, else the first number read.
+    candidates = ([anchor - k for k in range(len(starts))] if anchor else []) + \
+                 [int(r) - k for k, r in enumerate(read) if r.isdigit()]
+    base = next((b for b in candidates if b > 0 and all(r == "*" or subsequence(r, str(b + k)) for k, r in enumerate(read))), None)
+    if base is None:
+        return "", []
+    notes = []
+    for k, (i, end) in enumerate(zip(starts, starts[1:] + [len(lines)])):
+        text = re.sub(r"^(\d{1,4}|\*)\s+", "", lines[i])
+        for line in lines[i + 1:end]:
+            if not line or line == page_number:
+                continue
+            if text.endswith("-") and text[-2:-1].isalpha():
+                text = text[:-1] + line  # word split at the end of the line
+            elif text.endswith("-"):
+                text += line  # a range of pages ("162-164") keeps its hyphen
             else:
-                notes[-1] = f"{notes[-1]} {line}"
-    if not notes or index != len(expected):
-        return ""  # the last note not reached: keep the old footer
-    return " ".join(notes + ([page_number] if page_number else []))
+                text = f"{text} {line}"
+        notes.append(f"{base + k} {text}")
+    return " ".join(notes + ([page_number] if page_number else [])), list(range(base, base + len(starts)))
+
+
+# Letters the OCR confuses in the italic notes of this book: "h" read as "b" ("Tbe", "bttps"), "cl" as "d"
+# ("Encydopedia"), "rn" as "m", "ç" as "g" ("Magonaria").
+CONFUSIONS = [("b", "h"), ("d", "cl"), ("m", "rn"), ("g", "ç"), ("o", "c")]
+
+
+def fix_ocr(word: str, counts: dict) -> str:
+    """An unknown word becomes a common one when a single known confusion explains it, and only one does;
+    a web address only gets its scheme fixed ("bttps://")."""
+    if re.match(r"^bttps?://", word):
+        return "h" + word[1:]
+    if any(m in word for m in ("://", "www.", "/")):
+        return word
+    core = re.sub(r"^[^\wÀ-ÿ]+|[^\wÀ-ÿ]+$", "", word)
+    prefix, suffix = word[:word.find(core)] if core else "", word[word.find(core) + len(core):] if core else ""
+    key = lambda w: re.sub(r"[^a-z0-9]", "", fold(w))
+    if not core or counts.get(key(core), 0) >= 3:
+        return word
+    options = set()
+    for wrong, right in CONFUSIONS:
+        for i in range(len(core)):
+            if core[i:i + len(wrong)] == wrong:
+                option = core[:i] + right + core[i + len(wrong):]
+                if counts.get(key(option), 0) >= 5:
+                    options.add(option)
+    # No guessing by resemblance: it turned the medieval title "Confissom" into "Confissao".
+    return prefix + options.pop() + suffix if len(options) == 1 else word
 
 
 def merge(old: str, new: str, counts: dict, notes: list = ()) -> str:
     """Word-by-word merge of two readings of the same footer."""
     a, b = old.split(), new.split()
     notes_set = {str(n) for n in notes}
-    key = lambda w: re.sub(r"[^a-z0-9]", "", fold(w))
+    key = lambda w: re.sub(r"[^a-z0-9]", "", fold(w)) or w  # a sign alone ("&", "*") is compared as itself
 
     def score(w):
         k = key(w)
@@ -111,14 +151,18 @@ def merge(old: str, new: str, counts: dict, notes: list = ()) -> str:
                 out += b[j1:j2]
         elif op == "delete":
             out += a[i1:i2]  # only in the old footer: kept
-        elif op == "insert" and all(counts.get(key(w), 0) >= 3 or key(w).isdigit() for w in b[j1:j2]):
-            out += b[j1:j2]  # only in the new footer: words the collection knows
+        elif op == "insert":
+            known = sum(counts.get(key(w), 0) >= 3 or key(w).isdigit() for w in b[j1:j2])
+            if known == j2 - j1 or (j2 - j1 >= 4 and known >= 0.6 * (j2 - j1)):
+                # Only in the new footer (a note the old one lost): mostly known words, OCR confusions fixed.
+                out += [fix_ocr(w, counts) for w in b[j1:j2]]
     return " ".join(out)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ocr", type=Path, required=True)
+    parser.add_argument("--ocr", type=Path, action="append", required=True,
+                        help="one or more OCR files, tried in order (a sharper one first)")
     parser.add_argument("--relatorio", type=Path, required=True)
     parser.add_argument("--gravar", action="store_true")
     args = parser.parse_args()
@@ -130,24 +174,31 @@ def main() -> None:
             for w in (item.get("rodape") or "").split() + item["texto"].split():
                 k = re.sub(r"[^a-z0-9]", "", fold(w))
                 counts[k] = counts.get(k, 0) + 1
-    pages = {p["pagina"]: p["texto"] for p in json.loads(args.ocr.read_text(encoding="utf-8"))["paginas"]}
+    readings = [{p["pagina"]: p["texto"] for p in json.loads(path.read_text(encoding="utf-8"))["paginas"]} for path in args.ocr]
+    pages = {n for r in readings for n in r}
     original = TARGETS[0].read_text(encoding="utf-8")
     data = json.loads(original)
     changed, kept = [], []
     for item in data["itens"]:
         old = item.get("rodape") or ""
-        expected = note_numbers(old)
-        if not expected or item.get("pagina") not in pages:
+        if item["data"] in EXCLUDED or not old.strip() or item.get("pagina") not in pages:
             continue
-        new = new_footer(pages[item["pagina"]], expected)
-        if new and len(re.findall(r"(?:^|\s)\d{1,4}\s+[A-ZÀ-Ý]", new)) < len(re.findall(r"(?:^|\s)\d{1,4}\s+[A-ZÀ-Ý]", old)):
-            new = ""  # fewer notes than before: keep the old footer
-        if not new:
+        found = note_numbers(old)
+        old_starts = len(re.findall(r"(?:^|\s)(?:\d{1,4}|\*)\s+[A-ZÀ-Ý\"“]", old))
+        new, expected = "", []
+        for reading in readings:
+            if item["pagina"] in reading:
+                new, expected = new_footer(reading[item["pagina"]], found[0] if found else None)
+                if new and len(expected) >= old_starts:
+                    break
+        if not new or len(expected) < old_starts:
             kept.append({"data": item["data"], "motivo": "notas não encontradas por inteiro no OCR"})
             continue
-        alike = difflib.SequenceMatcher(None, fold(old), fold(new), autojunk=False).ratio()
-        if alike < 0.8:
-            kept.append({"data": item["data"], "motivo": f"semelhança {alike:.2f}"})
+        # The old footer must be inside the new one (it may have lost notes, never the other way round).
+        old_words, new_words = fold(old).split(), fold(new).split()
+        matched = sum(b.size for b in difflib.SequenceMatcher(None, old_words, new_words, autojunk=False).get_matching_blocks())
+        if matched < 0.75 * len(old_words):
+            kept.append({"data": item["data"], "motivo": f"rodapé antigo pouco contido no novo ({matched}/{len(old_words)})"})
             continue
         new = merge(old, new, counts, expected)
         if RANK[quality.rate_page(new, config)["nivel"]] < RANK[quality.rate_page(old, config)["nivel"]]:
