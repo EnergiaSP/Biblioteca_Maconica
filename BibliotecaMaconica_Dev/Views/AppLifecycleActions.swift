@@ -35,6 +35,11 @@ func prepararCachesIniciais() {
             reagendarNotificacaoSeNecessario()
             comentariosTask = nil
         }
+        // Packages left out of the catalog (works removed as copies of others) do not keep taking space.
+        Task.detached(priority: .background) {
+            try? await Task.sleep(nanoseconds: 8_000_000_000)
+            _ = try? BibliotecaOfflinePackageService().removerPacotesForaDoCatalogo()
+        }
     }
 
     func prepararEstadoAposCarregamento() {

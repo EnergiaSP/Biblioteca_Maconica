@@ -1,0 +1,5688 @@
+{
+  "descricao": "Deep audit of the text of every work: defects the page quality rule (qualidade_referencia.py) does not see.",
+  "limites": {
+    "colunasIntercaladas": 0.12,
+    "palavrasPartidas": 6,
+    "digitosEmPalavras": 3,
+    "termosEmBloco": 6,
+    "linhasRepetidas": 3
+  },
+  "obras": {
+    "a_abobada_celeste_de_um_templo_maconico_do_reaa_v1": {
+      "paginas": 65,
+      "sinalizadas": 23,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.354,
+      "defeitos": {
+        "colunasIntercaladas": 21,
+        "termosEmBloco": 23
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "GLOMARON INHO FUN A ABÓBADA CELESTE DE UM TEMPLO MAÇÔNICO DO REAA. DE O P L A N O I N F E R I O R E O S U P E R I O R O P L A N O I N F E R I O R E O S U P E R "
+        },
+        {
+          "pagina": 4,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "OESTE CÉU LESTE NORTE N NO NNO ONO SUL Oso sO SSO S CENTRO DA TERRA UNIVERSALIDADE DO TEMPLO MAÇÔNICO U N I V E R S A L I D A D E D O T E M P L O M A Ç Ô N I C "
+        },
+        {
+          "pagina": 18,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Oriente LIBRA VIRGEM V:M: Vénus Mercúrio FOGO ÁGUA JUPITER: Um pouco mais à frente do Mercurio: A direita e um pouco a trente Sol no Sudeste, o maior dos planet"
+        }
+      ]
+    },
+    "o_livro_ilustrado_dos_simbolos_completo": {
+      "paginas": 129,
+      "sinalizadas": 36,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.279,
+      "defeitos": {
+        "termosEmBloco": 36
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "BROCHE COM CADUCEU DE DIAMANTES ROSA VERMELHA, SIMBOLO DE AMOR E BELEZA MEDUSA, COM O CABELO DE SERPENTES VISHNU, ENCARNAÇÃO DO AMOR, DA VERDADE E DA MISERICÓRD"
+        },
+        {
+          "pagina": 18,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "MITOLOGIAS E RELIGIÕES CRISTIANISMO cristãos se unem na crença essencial em que Cristo morreu para redimir os pecados e sua ressurreição trouxe a salvação. VIRG"
+        },
+        {
+          "pagina": 23,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "BUDISMO ALTAR BUDISTA As imagens de Buda deste sacrário estão cercadas de velas e incenso, que formam parte do ato de devocão do budismo, como em outras religiõ"
+        }
+      ]
+    },
+    "fibonacci_serie_de_fibonacci_e_o_numero_de_ouro": {
+      "paginas": 87,
+      "sinalizadas": 24,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.276,
+      "defeitos": {
+        "colunasIntercaladas": 10,
+        "termosEmBloco": 2,
+        "linhasRepetidas": 14
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "1-15 2 = 0,618 e a Phi u (n+1) a+b и(n+)) = u(n-1) + u(x) f(n)= 1 4(n) Earth = T + 7 5=1.61803398 2 SÉRIE DE FIBONACCI SÉRIE DE FIBONACCI E O E O NÚMERO DE OURO"
+        },
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "1 1+// (1-1) • 1/09 2 Ф \"Qualquer fórmula que expressa “Qualquer fórmula que expressa uma lei da natureza uma lei da natureza é um hino de louvor a Deus.\" é um "
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "2 f(n)= 0339 SÉRIE DE FIBONACCI SÉRIE DE FIBONACCI E O E O NÚMERO DE OURO NÚMERO DE OURO Índice Índice I I A Marca... •5 A Marca................................"
+        }
+      ]
+    },
+    "a_geometria_sagrada": {
+      "paginas": 59,
+      "sinalizadas": 10,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.169,
+      "defeitos": {
+        "colunasIntercaladas": 2,
+        "termosEmBloco": 8,
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "ф- 1 GEOMETRIA GEOMETRIA B b/2 = Tado maior do retângulo AC = lado menor do retângulo AC = segm. áureo de AB D SAGRADA SAGRADA E A DANIEL PETRY JUNIOR M'M* DANI"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "MARMEDITERRANEO ALEJANDRIA CO MIRAMIDE DE MICERINO LA ESFINCE MASTARA ESCALONADA DE ZOSER EL FAYUMO WIDE DANSHUR • BENI SUEF OASIS DE BAHARIYA BENI HASSAN• MALL"
+        },
+        {
+          "pagina": 20,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "@HAFFEN +/ BOCHOLT APPELLORY DIREÇÃO DA * CATEDRAL DYMEN IERSFORDTE CLEVE VALI UEDEM Wine DREVENACK DORSTEN * STERKRADE KEVELAER/ *FURSTEN $ SONSBECK * HAAGSCHE"
+        }
+      ]
+    },
+    "potencias_e_ritos_no_brasil": {
+      "paginas": 28,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.143,
+      "defeitos": {
+        "termosEmBloco": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ORDO Ritos Maçônicos Regulares ORDOABCHA® ABCESO LIBERDADE PRATINAN IGUALDADE SUPREMO CONSELHO DORIO MODERNO RITO BRASILEIRO URBIETORET H APPROVED BY E.G.L.E."
+        },
+        {
+          "pagina": 7,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ESTRUTURA DO R.E.A.A. ESTRUTURA DO R.E.A.A. MAÇONARIA DEGRAUS-DO CONHECIMENTO No Brasil, o rito mais praticado é o escocês, mas o de York prevalece no resto do "
+        },
+        {
+          "pagina": 10,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Luz Plena CAVALEIROS TEMPLÁRIOS COMENDA ORDEM TEMPLO > CRUZ DE MALTA CRUZ VERMELHA ORDENS CAVALEIRESCAS MAÇOM CRÍPTICO 400 SUPER EXC. MESTRE CONSELHO -Nectre el"
+        }
+      ]
+    },
+    "simbologia_dos_numeros_no_grau_de_aprendiz_macom": {
+      "paginas": 40,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 6,
+      "proporcao": 0.125,
+      "defeitos": {
+        "termosEmBloco": 4,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "| SIMPÓSIO MAÇÔNICO VIRTUAL I SIMPÓSIO MAÇÔNICO VIRTUAL DO GRAU DE APRENDIZ MAÇOM DO GRAU DE APRENDIZ MAÇOM M33 TO DE ARTE DE VOLS"
+        },
+        {
+          "pagina": 2,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "DO ESTADO DE ROT À GDGADU M33 SIMBOLOGIA DOS NÚMEROS NO GRAU DE APRENDIZ MAÇOM VANDERLEI COELHO, 33 Mestre Instalado Delegado da 1ª Região da Grande Inspe"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Alfabeto divino GGA MATEMÁTICA A MATEMÁTICA É O ALFABETO NO QUAL DEUS ESCREVEU O UNIVERSO. 55 O UNIVERSO. Galileu Galilei"
+        }
+      ]
+    },
+    "potencias_e_ritos_no_brasil_irmao_samer": {
+      "paginas": 33,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.121,
+      "defeitos": {
+        "termosEmBloco": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 7,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ORDO Ritos Maçônicos Regulares ORDOAB CHAO ABCE&O BERDADEPRATERNIDN IGUALDADE SUPREMO CONSELHO DORIO MODERNO RITO BRASILEIRO URBI ET ORBI H APPROVED BY U.G.L.E."
+        },
+        {
+          "pagina": 9,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ESTRUTURA DO R.E.A.A. ESTRUTURA DO RE.A.A. MACONARIA DEGRAUS DO CONHECIMENTO No Brasil, o rito mais praticado é o escocês, mas o de York prevalece no resto do m"
+        },
+        {
+          "pagina": 25,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Luz Plena CAVALEIROS TEMPLÁRIOS COMENDA ORDEM TEMPLO • CRUZ DE MALTA CRUZ VERMELHA ORDENS CAVALEIRESCAS MAÇOM CRÍPTICO CONSELHO SUPER EXC. MESTRE MESTRES ESCOLH"
+        }
+      ]
+    },
+    "de_gutenberg_a_diderot_peter_burke": {
+      "paginas": 265,
+      "sinalizadas": 31,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.117,
+      "defeitos": {
+        "colunasIntercaladas": 30,
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 203,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "18. 18. Curtis (1962); cf. Chartier (1982), p.Roche (1982). Curtis (1962); cf. Chartier (1982), p.Roche (1982). 19. Nigro (1991). 20. Stehr (1992). 21. Viala (1"
+        },
+        {
+          "pagina": 204,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "16. Grossmann (1975). 17. Codina Mir (1968), p.18-49. 18. Bentley (1983), p.70-111. 19. 19. Lunsingh Scheurleer e Posthumus Meyes (1975); Wansink (1975). Lunsin"
+        },
+        {
+          "pagina": 205,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "3. Duyvendak (1936). 4. 4. Thrift(1985); Thrift, Driver e Livingstone (1995); cf. Livingstone (1995), Harris (1998, 1999) e Jacob Thrift(1985); Thrift, Driver e"
+        }
+      ]
+    },
+    "historia_nat_geo_ramses_ii": {
+      "paginas": 60,
+      "sinalizadas": 7,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.117,
+      "defeitos": {
+        "termosEmBloco": 7
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "HISTORIA 1,50€ NÚMERO 1 NATIONAL jnitorrelles GEOGRAPHIC LAS SIETE MARAVILLAS DE LA LEYENDA A LA HISTORIA GENGIS KAN FORJADOR DEL IMPERIO MONGOL LA ARMADA INVEN"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "HISTORIA HISTORIĄ NATIONAL ATIONA HOCKAPH GEOGRAPHIC TATRA CONZATR7 Director: JOSEP MARIA CASALS Jefe de redacción DANCARLES MAGRIÀ Director de arte Maquetista "
+        },
+        {
+          "pagina": 33,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "¿Cuestión de técnica o estética? Tolfo TUNI _ exclusivamente estéticos, a pesar del aspecto impresionante de de Gabes todos los monumentos. A sus cualidades est"
+        }
+      ]
+    },
+    "a_ordem_dos_pobres_cavaleiros_de_cristo_e_do_templo_de_salomao_amauri_antonio_da_costa": {
+      "paginas": 10,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.1,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "A∴ ∴ ∴R∴ ∴ ∴L∴ ∴ ∴S∴ ∴ ∴CAVALEIROS DAS MANTANHAS 231 G∴ ∴ ∴ L∴ ∴ ∴ M∴ ∴ ∴ M∴ ∴ ∴ G∴ ∴ ∴ TRABALHO: A ORDEM DOS POBRES CAVALEIROS DE CRISTO E DO TEMPLO DE SALOMÃO"
+        }
+      ]
+    },
+    "gauderio": {
+      "paginas": 10,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.1,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "REP 20 DE SETEN IBRO LIBERDADE IGUALDADE HUMANIDADE HERANÇA DE GUERRA As referências maçônicas na bandeira do Rio Grande do Sul EI DUAS COLUNAS de Saiosão Uma r"
+        }
+      ]
+    },
+    "origens_lendarias_da_maconaria_inglesa": {
+      "paginas": 10,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.1,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 10,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "VIEGAS. ORIGENS LENDÁRIAS DA MAÇONARIA INGLESA COMO FORMA DE RESISTÊNCIA À LEGISLAÇÃO... crescente desde o fim da Peste Negra. A ideia de relacionar a chegada d"
+        }
+      ]
+    },
+    "os_povos_da_biblia_joseph_rhymer": {
+      "paginas": 114,
+      "sinalizadas": 11,
+      "vaziasNoMeio": 6,
+      "proporcao": 0.096,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "colunasIntercaladas": 8
+      },
+      "exemplos": [
+        {
+          "pagina": 7,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "GELICI CASSITAS • Hara Minive MITANI ASSÍRIA MONTES ZAGROS RODES Assur Ugarit AMORALTAS MESOPOTÂMIA CHIPRE PÉRSIA FENÍCIA • Palmina GRANDE MAR (MAR MEDITERRÁNEO"
+        },
+        {
+          "pagina": 54,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "BACERA Bizâncio ÁRIA GAPA DÓGI MESOPOTÂMIA HIRCÂNIA SATAGIDLA EDIA SAGARÇA em 546. C DRANGIANA Ecbátana Sardes tomada em 546 aC Hara Rio Tigre ARACÓSIA Tarso B "
+        },
+        {
+          "pagina": 60,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Heraclela HO Odessos MAR ECE Tarento Atenópolis Borporta Bizância MACEDÓNIA CORSEGA TRÁCIA Alália Cumes Nápoles Sampsaco .SIRDENII.1 Possidonia CESBOS • Crotona"
+        }
+      ]
+    },
+    "ritos_maconicos_praticados_no_brasil_e_suas_diferencas": {
+      "paginas": 32,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.094,
+      "defeitos": {
+        "termosEmBloco": 2,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "RITOS MAÇÔNICOS PRATICADOS NO BRASIL E SUAS DIFERENÇAS RITOS MAÇÔNICOS PRATICADOS NO BRASIL E SUAS DIFERENÇAS MATER ORDO AB CE&O SUUKANO CONSELTO DO RITO MODERI"
+        },
+        {
+          "pagina": 30,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ESTRUTURAS DOS RITOS ESTRUTURAS DOS RITOS ORDO AB CHAO > < MODERNO 1° ORDEM - GRAU 4 2ª ORDEM - GRAU S 3\" ORDEM - GRAU 6 4° ORDEM - GRAU 7 5ª ORDEM - GRAU 8 5° "
+        },
+        {
+          "pagina": 32,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "RITOS MAÇÔNICOS PRATICADOS NO BRASIL E SUAS DIFERENÇAS Ir Gilvan Sá, M I (33º) CAVALIBIROS DE Ir Gilvan Sá, M I (33°) 2 Vig. de Ofício da ARLS Cavaleiros de Aço"
+        }
+      ]
+    },
+    "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino": {
+      "paginas": 218,
+      "sinalizadas": 20,
+      "vaziasNoMeio": 8,
+      "proporcao": 0.092,
+      "defeitos": {
+        "colunasIntercaladas": 10,
+        "linhasRepetidas": 10,
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 4,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "FABIO MENDES PAULINO R I T U A L D E RITUAL DE EMULAÇÃO E M U L A Ç Ã O História e Generalidades do Sistema de Trabalho Maçônico baseado no Ritual de Emulação. "
+        },
+        {
+          "pagina": 32,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "A M A Ç O N A R I A A MAÇONARIA INGLESA I N G L E S A Ihor, eles tomaram emprestados as formas e símbolos da Ordem lhor, eles tomaram emprestados as formas e sí"
+        },
+        {
+          "pagina": 55,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "R I T U A L D E E M U L A Ç Ã O - A Maçonaria Inglesa no Brasil RITUAL DE EMULAÇÃO - A Maçonaria Inglesa no Brasil 2.3.1. A Loja de Emulação para Aperfeiçoament"
+        }
+      ]
+    },
+    "curso_de_filosofia_oculta_eliphas_levi": {
+      "paginas": 242,
+      "sinalizadas": 19,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.079,
+      "defeitos": {
+        "termosEmBloco": 19
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "De Eliphas Levi: DOGMA E RITUAL DA ALTA MAGIA O GRANDE ARCANO HISTÓRIA DA MAGIA AS ORIGENS DA CABALA OS PARADOXOS DA SABEDORIA OCULTA A CHAVE DOS GRANDES MISTER"
+        },
+        {
+          "pagina": 111,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "6.° e 7.0 BINAH GEBURAH NETZAH OCIDENTE 1 KETHER CHOCMAH 1 GEDULAH TIPHERET JESOD HOD NORTE ORIENTE SUL 111"
+        },
+        {
+          "pagina": 147,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "enfim, a ciência de Kether, de Tiphereth e de Jesod. Eis os sete Santo, transfiguração a visão de Ezequiel: trata-se de mem, pensas que estes restos podem reviv"
+        }
+      ]
+    },
+    "dicionario_maconico_1": {
+      "paginas": 53,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.075,
+      "defeitos": {
+        "colunasIntercaladas": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "AS PALAVRAS, AS FRASES E OS TERMOS MAÇÔNICOS MAIS USADOS NA MAÇONARIA ABREVIATURAS À G... D... G... A... D... U... - À Gloria do Grande Arquiteto do Universo. A"
+        },
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "C... - Compasso C... M... - Câmara do Meio C... M... - Companheiro Maçom C... G... - Capitão da Guarda Cav... - Cavaleiro D... - Diácono D... G... M... P... - D"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "G... O... E... M... S... – Grande Oriente do Mato Grosso do Sul G... P... - Grande Percussor G... S... - Grande Secretário G... T... - Grande Tesoureiro G... T "
+        }
+      ]
+    },
+    "o_reaa_origens_historicas": {
+      "paginas": 28,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.071,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ORGANIZAÇÃO E DIVULGAÇÃO 10 GEMINHOS 1 OBJETIVO LIM EVENTO QUE TRATARA DA HISTÓRIA DOS RITOS MAÇÔNICOS PRATICADOS NO BRASIL 02 A 13 DE AGOSTO | 2021 G UniCMSB C"
+        },
+        {
+          "pagina": 25,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Os graus que surgiram nos EUA e foram Os graus que surgiram nos EUA e foram acrescentados entre os graus do Rito de acrescentados entre os graus do Rito de Perf"
+        }
+      ]
+    },
+    "regulador_do_reaa_grande_oriente_do_passeio_1858": {
+      "paginas": 60,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.067,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "REGULADOR GERAL PARA AS LL:. DO CIR.:: M.: P.. S. C. • DO RIT.. ESC.. ANT.:, E ACC.. PARA O IMP.*. DO BRAS.* GRANDE ORIENTE BRASILEIAO Vaneiro Hla de RIO DE TYP"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "REGULADOR GERAL PARA AS LL:. DO CIR.. DO M.: P.. S.. C.•. DO RIT. ESC. ANT. F ACC.. P.RA O IMP. . DO BRAN.' ПіВСОТИ 12 528€ 5%, GE RIO DE JANEINO. TYP. DE BERNA"
+        },
+        {
+          "pagina": 6,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "- 6- - 6 — O M.•. III.•. e Resp. . Ir.:. Gr.. Secr.. G.. do S\".-. O M.-. 111.', e Resp.-. Ir.-. Gr.-. Secr.-. G.-. do S ' V . I m p . \" André José dc Campos Tup"
+        }
+      ]
+    },
+    "o_taro_cabalistico_robert_wang": {
+      "paginas": 330,
+      "sinalizadas": 21,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.064,
+      "defeitos": {
+        "linhasRepetidas": 13,
+        "termosEmBloco": 12
+      },
+      "exemplos": [
+        {
+          "pagina": 47,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "8. HOD, Esplendor 8. HOD, Esplendor 9. YESOD, Alicerce 9. YESOD, Alicerce 10. MALKUTH, Reino 10. MALKUTH, Reino AIN AIN SOPH AIN SOPH AUR 1 (KETHER) A Coroa 3 B"
+        },
+        {
+          "pagina": 58,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "O Tarô Cabalístico – Robert Wang O Tarô Cabalístico - Robert Wang Quatro séries, uma para cada mundo, são aceitas pela Cabala Hermética: o Rei, a Quatro séries,"
+        },
+        {
+          "pagina": 62,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "O Tarô Cabalístico – Robert Wang O Tarô Cabalístico - Robert Wang ELEMENTOS FUNDAMENTAIS ELEMENTOS PRIMORDIAIS ATZILUTH ELEMENTOS BÁSICOS BRIAH (7) ELEMENTOS ES"
+        }
+      ]
+    },
+    "as_linguagens_da_experiencia_religiosa": {
+      "paginas": 526,
+      "sinalizadas": 33,
+      "vaziasNoMeio": 20,
+      "proporcao": 0.063,
+      "defeitos": {
+        "linhasRepetidas": 33
+      },
+      "exemplos": [
+        {
+          "pagina": 44,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "continua humana, seu resultado será limitado à realidade (não continua humana, seu resultado será limitado à realidade (não na aspiração) e, por isso, será semp"
+        },
+        {
+          "pagina": 46,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "caos e a confusão, nos quais o ser humano não pode existir. caos e a confusão, nos quais o ser humano não pode existir. Na experiência religiosa, é um dado esse"
+        },
+        {
+          "pagina": 50,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "sos falar em homo religiosus, em vez de interpretar o aconte- sos falar em homo religiosas, em vez de interpretar o acontecimento religioso sob o prisma de sist"
+        }
+      ]
+    },
+    "as_chaves_de_salomao": {
+      "paginas": 454,
+      "sinalizadas": 28,
+      "vaziasNoMeio": 48,
+      "proporcao": 0.062,
+      "defeitos": {
+        "linhasRepetidas": 8,
+        "termosEmBloco": 24,
+        "colunasIntercaladas": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 6,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "18. Experimentos e operações extraordinários 18. Experimentos e operações extraordinários 19. Experimento de amor e como ele é ser realizado 19. Experimento de "
+        },
+        {
+          "pagina": 27,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Horas do Dia Horas da Noite TABELA DOS NOMES MÁGICOS DAS HORAS E DOS ANJOS QUE TABELA DOS NOMES MÁGICOS DAS HORAS E DOS ANJOS QUE A REGEM, COMEÇANDO À PRIMEIRA "
+        },
+        {
+          "pagina": 28,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "TABELA DOS ARCANJOS, ANJOS, METAIS, DIAS DA SEMANA E CORES ATRIBUÍDAS A CADA PLANETA 2-FEIRA DOMINGO 3ª-FEIRA DIAS GABRIEL KHANIAEL RAPHAEL ARCANJO ZAMAEL GABRI"
+        }
+      ]
+    },
+    "manual_pratica_ritual_2013": {
+      "paginas": 16,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.062,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 16,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "COMISSÃO PERMANENTE DE LITURGIA Administração 2010/2013 Presidente: Wilson Fernando Gimenez Martins Secretário: Paulo César Augusto Silveira Alberto Gabriel Bia"
+        }
+      ]
+    },
+    "a_historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "paginas": 84,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.06,
+      "defeitos": {
+        "linhasRepetidas": 4,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 16,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "CAPÍTULO DOIS CAPÍTULO DOIS MITOLOGIA SUMÉRIA QUEM FORAM OS SUMÉRIOS? MITOLOGIA SUMERIA QUEM FORAM OS SUMÉRIOS? EUROPA. RÚSSIA Mar Negro ÁSIA Mar Cáspio TURQUIA"
+        },
+        {
+          "pagina": 55,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "tentasse usar de esperteza com ele. Zeus costuma ser representado segurando o raio que é sua marca tentasse usar de esperteza com ele. Zeus costuma ser represen"
+        },
+        {
+          "pagina": 66,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CAPÍTULO OITO MITOLOGIA ROMANA QUEM FORAM OS ROMANOS? Mais do que qualquer outra civilização, os romanos podem reivindicar, sem dúvida, o título de povo que mai"
+        }
+      ]
+    },
+    "cores_na_maconaria": {
+      "paginas": 17,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.059,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "A.:R.:L.:S:: BARRETO LEME - 4010 A.:. R.:. L.: S.: Barreto Leme - D2° 4010 Federada ao Gr.: Or:: do Brasil Jurisdicionada ao Gr.: Or:: de São Paulo Reuniões: 2°"
+        }
+      ]
+    },
+    "landmarks": {
+      "paginas": 17,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.059,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "TANDMAR LEMBR INÇA DO GRÃO-MESTRADO DE OE VIANE VIEIRA DE RESENDE EM HOMENAGEM AO SESQUICENTENÁRIO DO IRMÃO DEODORO DA FONSECA. Scanned by CamScanner Scanned by"
+        }
+      ]
+    },
+    "combate_ao_clericalismo": {
+      "paginas": 38,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 9,
+      "proporcao": 0.053,
+      "defeitos": {
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "ODi a^*^ © Cambaie C/ L^atnéait )( cia Clericalisma ao '^^ceztcausma X éh ? k «? ^ ^'onfcrencia realifad. t onferenele rotata ein 21 el /a-u de 1900 C, V.. niz "
+        },
+        {
+          "pagina": 9,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "yj- Grande Oriente Lusitano Unido Sup:: 0'aunh' C^liuifc f!uiifairj fínich Sujj.'. Cons: da Maçonaria Podugueza, e 6o/tÁ.'. í/u Jifaçoffcfíia S^oHuôuno,e Ser.. "
+        }
+      ]
+    },
+    "rer_a_joia_preciosa_da_maconaria": {
+      "paginas": 38,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.053,
+      "defeitos": {
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "O RITO ESCOCÊS RETIFICADO NÃO É A CORREÇÃO/ RETIFICAÇÃO DO REAA • O termo “retificado” no nome do Rito Escocês Retificado NÃO tem qualquer referência a uma corr"
+        },
+        {
+          "pagina": 9,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "GRAUS DO RER GRAUS MAÇÔNICOS DO RER “LOJA AZUL”: • Iº APRENDIZ FRANCO-MAÇOM • IIº COMPANHEIRO FRANCO-MAÇOM • IIIº MESTRE FRANCO-MAÇOM “LOJA VERDE”: • IVº MESTRE"
+        }
+      ]
+    },
+    "dicionario_de_simbolos_esotericos": {
+      "paginas": 59,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.051,
+      "defeitos": {
+        "colunasIntercaladas": 2,
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "D D Di i ic c ci i io o on n ná á ár r ri i io o o d d de e e S S Sí í ím m mb b bo o ol l lo o os s s E E Es s so o ot t té é ér r ri i ic c co o os s s"
+        },
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "A Linguagem do Espírito________ 4 A A A ___________________________ 5 B B B __________________________ 11 C C C __________________________ 12 D D D ____________"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "R R R __________________________ 47 S S S __________________________ 50 T T T __________________________ 54 U U U __________________________ 56 V V V __________"
+        }
+      ]
+    },
+    "maconaria_perspectivas_para_o_futuro_cmsb_2020": {
+      "paginas": 218,
+      "sinalizadas": 11,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.05,
+      "defeitos": {
+        "termosEmBloco": 5,
+        "linhasRepetidas": 3,
+        "colunasIntercaladas": 1,
+        "digitosEmPalavras": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 7,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Na sua opinião, qual será o maior desafio a ser enfrentado pela Maçonaria quando passarem as restrições impostas pela quarentena? 15.323 respostas Pesquisa de A"
+        },
+        {
+          "pagina": 27,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "A melhoria na formação maçônica dos obreiros ocorreu através da sensibilização e o envolvimento das lojas, que incentivaram e estimularam os Aprendizes, Companh"
+        },
+        {
+          "pagina": 29,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "I Ciclo De Estudos Maçônicos da Maçonaria e seus I Ciclo De Estudos Maçônicos da Maçonaria e seus Setembro/2015 Setembro/2015 4 4 4 4 GLERN – Caraúbas/RN GLERN "
+        }
+      ]
+    },
+    "a_historia_dos_ritos_maconicos_praticados_no_brasil": {
+      "paginas": 204,
+      "sinalizadas": 10,
+      "vaziasNoMeio": 4,
+      "proporcao": 0.049,
+      "defeitos": {
+        "linhasRepetidas": 4,
+        "digitosEmPalavras": 6
+      },
+      "exemplos": [
+        {
+          "pagina": 26,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Escócia James IV Margareth Tudor James V Mary Stuart \"of the scots\" James VI Iniciado em 1601 Loja Perth and Scone Inglaterra Henrique VIII Mary Tudor \"Bbody\" +"
+        },
+        {
+          "pagina": 50,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Surgimento do Grau de Mestre Nascimento de Tschoudy 1730 Catecismo dos Franco Maçons 1744 Supremo Conselho dos Imperadores do Oriente e do Ocidente 1758 Soberan"
+        },
+        {
+          "pagina": 71,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Origem dos Graus Azuis Rituais da Irlanda e Escócia COM grau de Mestre 1720 Rituais da Grande Loja dos Antigos 7 graus com o Real Arco 1751 Grande Loja de Londr"
+        }
+      ]
+    },
+    "landmarques_vanildo_de_senna": {
+      "paginas": 41,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.049,
+      "defeitos": {
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 6,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Representa para eles h istória, tradição, lei, regulamento, rito costume, sistema, Representa para eles listória, tradição, lei, regulamento, rito costume, sist"
+        },
+        {
+          "pagina": 39,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "número de seus representantes. O Presidente terá voto em casos de empate, uni- número de seus representantes. O Presidente terá voto em casos de empate, unicame"
+        }
+      ]
+    },
+    "o_portico_e_a_camara_do_meio": {
+      "paginas": 247,
+      "sinalizadas": 12,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.049,
+      "defeitos": {
+        "termosEmBloco": 6,
+        "linhasRepetidas": 2,
+        "colunasIntercaladas": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ALBERT PIKE O PÓRTICO E A CÂMARA DO MEIO 2° EDIÇÃO REVISADA DRES METOUE US LANDMARK"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "EDITORA LANDMARK LTDA, CONFORME LEI N° 9610, DE 19 DE FEVEREIRO DE 1998 EDITORA LANDMARK RUA ALFREDO PUJOL, 285 - 12° ANDAR - SANTANA 02017-010 - SÃO PAULO - SP"
+        },
+        {
+          "pagina": 21,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "INDEX ASSUNTOS GERAIS E GRAU DE A. M. QUESTÕES INTRODUTORIAS AO RITUAL FRANCO-MAÇONARIA, DEFINIÇÃO E OBJETIVOS. A LOJA; SEUS OFICIAIS, DECORAÇÃO. TITULOS, JOIAS"
+        }
+      ]
+    },
+    "historia_da_maconaria_das_origens_corporativas_a_maconaria_moderna": {
+      "paginas": 124,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.048,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "digitosEmPalavras": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 9,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "DAS ORIGENS CORPORATIVAS À MAÇONARIA MODERNA UNIDADE ÚNICA CAPÍTULO 1 Pressupostos conceituais Os pressupostos conceituais são conceitos-lembretes que servem de"
+        },
+        {
+          "pagina": 55,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "DAS ORIGENS CORPORATIVAS À MAÇONARIA MODERNA │ UNIDADE ÚNICA Figura 19. Manuscrito Regius. Fonte: Disponível em: <https://www.google.com.br/search?q=regius+manu"
+        },
+        {
+          "pagina": 58,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "UNIDADE ÚNICA │ DAS ORIGENS CORPORATIVAS À MAÇONARIA MODERNA Depois do Regius, o manuscrito inglês mais antigo é aquele conhecido como Cooke. Manuscrito Cooke F"
+        }
+      ]
+    },
+    "o_erro_de_descartes_antonio_r_damasio": {
+      "paginas": 303,
+      "sinalizadas": 14,
+      "vaziasNoMeio": 5,
+      "proporcao": 0.046,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "colunasIntercaladas": 13
+      },
+      "exemplos": [
+        {
+          "pagina": 181,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "A RI estímulo RI sinais para os músculos do rosto | e dos membros sinais de e para os núcleos neurotransmissores sinais vindos dos músculos e articulações sinai"
+        },
+        {
+          "pagina": 276,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "assessment, Nova York , Oxford University Press. 3. B. Milner (1964), “Some effects of frontal lobectomy in man”, in J. M. Warren e K. Ak ert (orgs.), The front"
+        },
+        {
+          "pagina": 277,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "removals from the frontal lobes”, Archives of Neurobiology and Psychiatry, 44:421-38. 5. S. S. Ack erly e A. L. Benton (1948), “Report of a case of bilateral fr"
+        }
+      ]
+    },
+    "os_templos_de_adoracao_do_gadu_05_06_2020": {
+      "paginas": 65,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 14,
+      "proporcao": 0.046,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 39,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "O IMPÉRIO MACEDÔNICO: O IMPÉRIO MACEDÔNICO: Rio Onic. Em 332 a.C. Alexandre, o Em 332 a.C. Alexandre, o Grande, imperador da Grande, imperador da Macedônia que "
+        },
+        {
+          "pagina": 53,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "NÃO. O TEMPLO DE JERUSALÉM NUNCA MAIS RECONSTRUÍDO. O QUE EXISTE, AINDA, SÃO ALGUMAS RUÍNAS E O LOCAL OCUPADO POR DUAS MESQUITAS."
+        },
+        {
+          "pagina": 65,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "WALTER DE OLIVEIRA BARIANI A PERFEIÇÃO POSSÍVEL: O MESTRE RITO ESCOCES ANTIGO E ACEITO ACHEGAS AO RITUAL DE 1928 GRAU: MESTRE MACOM 3ª EDIÇÃO - ATUALIZADA E REV"
+        }
+      ]
+    },
+    "diccionario_breve_de_la_masoneria_biblioteca_freemasonry": {
+      "paginas": 88,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.045,
+      "defeitos": {
+        "colunasIntercaladas": 3,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 8,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "8 DICCIONARIO BREVE DE LA MASONERÍA B.•: Boaz. Cab..: Caballero. Cám..: Cámara. Cám. del Med..: Cámara del Medio. Cap..: Capítulo. Cab.:. K..: Caballero Kadosh."
+        },
+        {
+          "pagina": 9,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "FUNDACIÓN MARÍA DERAISMES 9 Hno.'• o Hna..: Hermano o Hermana. Hosp.:: Hospitalario/a Il.: Hno.: o Hna.': Ilustre Hermano/a, para miembros que ostenten el Grado"
+        },
+        {
+          "pagina": 10,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "10 DICCIONARIO BREVE DE LA MASONERÍA Pod..: Poderoso/ a. Qdo.:. Hno.• Qda.. Hna..: Querido Hermano. R.: C.: o R.. t..: Caballero Rosa Cruz, grado 18° del Rito E"
+        }
+      ]
+    },
+    "constituicao_da_confederacao_maconaria_portugueza": {
+      "paginas": 44,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 5,
+      "proporcao": 0.045,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 7,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "•Frenason. Perugae . CONSTITUIÇÃO DA CONFED. . MAÇ.* PORTUGLEZA. LISBOA TYPOGRAPHIA DO GR.'. OR.': A.. da V.. L.'. 5839."
+        },
+        {
+          "pagina": 33,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "— 29- Artigo 55.° Da presente Constit. . se enviarão copias autenticas a todas as LL.. que actualmente fazem parte da Confed.'•, acompanhadas dos decretos e ord"
+        }
+      ]
+    },
+    "a_musica_maconica_de_mozart_sca": {
+      "paginas": 23,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.043,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 12,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Artigo – A Música Maçônica de Mozart Sociedade das Ciências Antigas 12 daß jeder sich der Kette freue, die ihn an beß're Menschen schließt und ihm des Lebens Ke"
+        }
+      ]
+    },
+    "abobada_celeste": {
+      "paginas": 46,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 16,
+      "proporcao": 0.043,
+      "defeitos": {
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 39,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "J B As Dimensões do Templo 160' 140* 120* 100• 80\" 60\"40\" 80° OCEANO GLACIAL ÁRȚICO 80° |100° 120' 140160 1180' EUROPA ÁSIA AMÉRICA DO NORTE 40° TRÓPICO DE CÂNC"
+        },
+        {
+          "pagina": 46,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A abóbada Celeste é correta? LESTE CORRETO ERRADO SOL 2-MERCURIO 3-VÊNUS 4-TERRA REAKS 5-MARTE Ceres 6-JUPITER ARCTURUS 7-SATURNO 8-URANO 9-NETUNO 10-PLUTÃO • ?"
+        }
+      ]
+    },
+    "liberdade_igualdade_e_fraternidade_estudos_a_luz_do_rito_moderno": {
+      "paginas": 96,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.042,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "digitosEmPalavras": 1,
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "SUMÁRIO 1 INTRODUÇÃO 12 2 LIBERDADE, IGUALDADE & FRATERNIDADE À 16 LUZ DO HUMANISMO 3 UM OLHAR NECESSÁRIO PARA A EDUCAÇÃO 62 MAÇÔNICA 4 EDUCAÇÃO MAÇÔNICA NA PRÁ"
+        },
+        {
+          "pagina": 87,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "PEÑALOZA, Rodrigo. LIBERDADE, IGUALDADE E FRATERNIDADE: Um substrato filosófico. Revista Ciência e Maçonaria. Brasília, Vol. 3, n.1, p. 39-57, jan/jun, 2015. PI"
+        },
+        {
+          "pagina": 91,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "[1] De acordo com Patuto (2020, p. 21) trata-se de escola de pensamento e pesquisa maçônica • De acordo com Patuto (2020, p. 21) trata-se de escola de pensament"
+        }
+      ]
+    },
+    "profanos_e_iniciados_huberto_rohden": {
+      "paginas": 119,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.042,
+      "defeitos": {
+        "termosEmBloco": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 112,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ÍNDICE SINTONIZANDO... VERDADES FUNDAMENTAIS MATURIDADE DEUS EM NÓS COMO ACHAR A DEUS? PERCEBER O INVISÍVEL NO VISÍVEL SÓ O CONDUZIDO PODE CONDUZIR PATERNIDADE "
+        },
+        {
+          "pagina": 113,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CREDO QUIA ABSURDUM! O NOVO INICIO O NOVO INÍCIO DE GRAÇA SAUDE CONTAGIOSA SAÚDE CONTAGIOSA UNIDADE - MULTIPLICIDADE NÃO BUSQUES O MUNDO - E O MUNDO TE BUSCARÁ!"
+        },
+        {
+          "pagina": 116,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "RELAÇÃO DE OBRAS DO PROF. HUBERTO ROHDEN COLEÇÃO FILOSOFIA UNIVERSAL: O PENSAMENTO FILOSÓFICO DA ANTIGUIDADE A FILOSOFIA CONTEMPORÂNEA O ESPÍRITO DA FILOSOFIA O"
+        }
+      ]
+    },
+    "ritual_de_emulacao_o_grau_de_mestre_macom": {
+      "paginas": 145,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.041,
+      "defeitos": {
+        "termosEmBloco": 2,
+        "colunasIntercaladas": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 8,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ÍNDICE: PREFÁCIO DO AUTOR CAPÍTULO 1: INTRODUÇÃO AO GRAU DE MESTRE MAÇOM CAPÍTULO 2: O CANDIDATO À ELEVAÇÃO 2.1. INTERVALO ENTRE OS GRAUS 2.2. O CANDIDATO CAPÍT"
+        },
+        {
+          "pagina": 9,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "4.9. RAMO DE ACÁCIA 4.10. FERRAMENTAS DE TRABALHO DO M. M. 4.10.1. O Skirret 4.10.2. O Lápis 4.10.3. O Compasso 4.11. A TÁBUA DE DELINEAR (OU TRAÇAR) 4.11.1. Ex"
+        },
+        {
+          "pagina": 91,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "eles são feitos na abertura. Nada que bons treinos não ajudem. 5.2. O VOLUME DA LEI SAGRADA (V.L.S.) Na abertura do Terceiro Grau, em momento apropriado, o V.M."
+        }
+      ]
+    },
+    "aristoteles_e_sao_tomas_de_aquino_dialogos_joaquim_dias_alves": {
+      "paginas": 25,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.04,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 9,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "sanguíneo, o fleumático, o colérico e o melancólico[1]. sanguíneo, o fleumático, o colérico e o melancólico[1]. Ora, em cada tipo de temperamento predomina dese"
+        }
+      ]
+    },
+    "maconaria_completa": {
+      "paginas": 99,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.04,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 4,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A C D E F G H J L ..6 16 18 .......40 49 52 .....55 .57 z 3 W 63 69 70 73 78 80 86 92 96 98 ÍNDIGE Shutterstock.c"
+        },
+        {
+          "pagina": 6,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Textos de Claudio Blanc ABREVIATURAS MAÇÔNICAS: A G!. D.: G.. A.. D.. U.'. - À Gloria do Grande Arquiteto do Universo. A.'. D.'. - Anno Domini A.. Dep.'. - Anno"
+        },
+        {
+          "pagina": 35,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Mikicom MS EASON WILLIAM E BRIGHAM ARR. 141820- MAY B 1806. CHIS WIFE ELIZAA SHAT TUCK DEE 121830- 061 260908 Lápide em túmulo maçônico, no Forest Hills Cemeter"
+        }
+      ]
+    },
+    "projetos_secretos": {
+      "paginas": 26,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.038,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "NOTA: O texto “ Viagem Subterrânea “ é de autoria de Ana Lucia Marins, e é parte integrande do livro Estrelas que Anunciam, uma publicação da editora Cosmorama "
+        }
+      ]
+    },
+    "os_misterios_dos_antigos_maias_samael_aun_weor": {
+      "paginas": 80,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.037,
+      "defeitos": {
+        "termosEmBloco": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 31,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "31 DESCRIÇÃO DA ESTELA “F” MITRA: Muito destruída pelas intempéries ou pela selvageria humana. Apreciamos um peitoral subindo até as faces, é correto, indica-no"
+        },
+        {
+          "pagina": 45,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "45 DESCRIÇÃO DO ZODÍACO Vemos aqui um altar para oficiar no templo do Zodíaco. Antigamente na carapaça das tartarugas metálicas pintavam-se a representação dos "
+        },
+        {
+          "pagina": 80,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "80 Todos no fundo temos o Ancião dos Dias, tal como foi mencionado por BEM HOD CHAIN, o grande cabalista, mas poucos sabem obedecer ao Ancião dos Dias se não fa"
+        }
+      ]
+    },
+    "geometria_sagrada_2": {
+      "paginas": 111,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 5,
+      "proporcao": 0.036,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 18,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "consciência de quarta dimensão. São explicadas a cura e a sobrevivência consciente além deste mundo. Essa é a respiração que tínhamos antes de nascermos, ainda "
+        },
+        {
+          "pagina": 89,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "vida, pode ser mostrado que toda a raça humana se junta nestas mesmas proporções vida, pode ser mostrado que toda a raça humana se junta nestas mesmas proporçõe"
+        },
+        {
+          "pagina": 91,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Geometria Sagrada e os cantos do nosso mundo Geometria Sagradae os cantos do nosso mundo Platão, o descobridor do \"platónico\" sólidos, acreditava que a música e"
+        }
+      ]
+    },
+    "os_pilares_de_tubalcaim_michael_howard_e_nigel_jackson": {
+      "paginas": 304,
+      "sinalizadas": 11,
+      "vaziasNoMeio": 40,
+      "proporcao": 0.036,
+      "defeitos": {
+        "colunasIntercaladas": 3,
+        "linhasRepetidas": 8
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "12i<}el J22ic£ael ípoward Digel Jackson & Michael Howard filares Pilares de 3 TuB dcaim « A ^ T v a à i ç a c $ l t , c i í e r i a ‘h a ) A Tradição Luciferian"
+        },
+        {
+          "pagina": 15,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "As Origens ÁS OrigeKS da Magia d a J V l a g i a « A x q e l i c a l Angelical \"Xbees* deverão criar Éops*, jEupdos* e Geus*, a fím de gue osi \"Vocês deverão cr"
+        },
+        {
+          "pagina": 27,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "«As OrigeXS ia JVtagia «Angelical As Origens da Magia Angelical 27 anjos caídos tomaram esposas humanas para si, eles passaram os segredos anjos caídos tomaram "
+        }
+      ]
+    },
+    "realidade_oculta": {
+      "paginas": 83,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.036,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1,
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 17,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Roswell (1 pege) • CAN\" TELETYFE 2467C FBI DALLAS 7-5-47 6-17 PH URGENT CHECTOR ROSAC, CINCTUMTE FLYING DISG, INFORMATION CONCERNING. HEADQUARTESS EIGHTH AIR FO"
+        },
+        {
+          "pagina": 27,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "No documento anterior, eles combinaram dar uma falsa explicação aos repórteres, foi No documento anterior, eles combinaram dar uma falsa explicação aos repórter"
+        },
+        {
+          "pagina": 81,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "Guarda-chuva desmontado www.Realidadeoculta.com Alguns links interessantes que poderá visitar: Fotos de estranhos objectos em torno do Sol, captados pelo satéli"
+        }
+      ]
+    },
+    "tratado_da_reintegracao_dos_seres_martines_pasqually": {
+      "paginas": 413,
+      "sinalizadas": 15,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.036,
+      "defeitos": {
+        "colunasIntercaladas": 15
+      },
+      "exemplos": [
+        {
+          "pagina": 71,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "SUMÁRIO DO TRATADO SUMÁRIO DO TRATADO I ADÃO: n°s 1 a 50 I ADÃO: n°s 1 a 50 ........................................................ 71 71 II CAIM: n°s 51 a 53 "
+        },
+        {
+          "pagina": 378,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Enos:84, 105, 106, 107. Esaú: 173, 174, 175, 176, 180, 183. Eva: 51, 52, 53, 54, 55, 57, 58, 62, 67, 82, 127, 128, 163. -F- Faraó: 188, 189, 190, 191, 193, 195,"
+        },
+        {
+          "pagina": 380,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "ÍNDICE DE LUGARES -A- -A-Aquilão: 153. Aquilão: 153. Ararat: 127, 133, 137. Armênia: 127. -M- -M-Magdala (sicRigdal):201. Magdala (sicRigdal):201. Mahanaim (sic"
+        }
+      ]
+    },
+    "sistema_golden_dawn_2_0": {
+      "paginas": 113,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.035,
+      "defeitos": {
+        "colunasIntercaladas": 2,
+        "termosEmBloco": 2,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Sumário Orientação Geral e Purificação da Alma p.3 Os 4 Elementos p.5 A Cabala p.13 As Qlipphoth p.47 O Homem p.52 Entidades, Hierarquias e Sigilização p.58 O P"
+        },
+        {
+          "pagina": 41,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "Caminho Valor Significado da Árvore Numérico das Letras da Vida 11 12 14 15 16 17 19 20 21 22 23 24 25 26 80,800 27 90,900 28 29 100 Cabeça Sol 30 200 31 Fogo 3"
+        },
+        {
+          "pagina": 74,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Traçando um Sigilo: Traçando um Sigilo: Ao traçar um sigilo em um Qamea, o primeiro número do nome é marcado com um pequeno Ao traçar um sigilo em um Qamea, o p"
+        }
+      ]
+    },
+    "a_biblia_maconica_versao_portugues": {
+      "paginas": 29,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.034,
+      "defeitos": {
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 23,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "23 disciplinarão o método indutivo: a tábua da presença (responsável pelo registro de presenças das formas que se investigam), a tábua de ausência (responsável "
+        }
+      ]
+    },
+    "sobre_a_luz_da_cabala": {
+      "paginas": 29,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.034,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 22,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "homem a alcançar os desejos dos mundos espirituais. homem a alcançar os desejos dos mundos espirituais. A fim de criar o homem distanciado Dele, de modo A fim d"
+        }
+      ]
+    },
+    "cabala_a_tradicao_esoterica_do_ocidente_f_v_lorenz": {
+      "paginas": 92,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.033,
+      "defeitos": {
+        "colunasIntercaladas": 1,
+        "linhasRepetidas": 2,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 12,
+          "defeitos": [
+            "colunasIntercaladas",
+            "linhasRepetidas"
+          ],
+          "inicio": "O ALFABETO HEBRAICO O ALFABETO HEBRAICO O alfabeto hebraico consta de 22 letras, que se escrevem da direita para O alfabeto hebraico consta de 22 letras, que se"
+        },
+        {
+          "pagina": 15,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Para indicar as vogais, juntam-se às letras alfabéticas certos sinais, Para indicar as vogais, juntam-se às letras alfabéticas certos sinais, chamados pontos vo"
+        },
+        {
+          "pagina": 44,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "1 - O reflexo do Espírito (nervos); 2 — A localização da Vida (sentimento, sistema simpático e sangüíneo); 3 — O reflexo do Corpo. No plano inferior (ventre, vi"
+        }
+      ]
+    },
+    "decisoes_sabias_para_viver_os_sonhos_de_deus": {
+      "paginas": 60,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 7,
+      "proporcao": 0.033,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "DECISÕES SABIAS PARA VIVER O SONHO DE DEUS MÁRCIO VALADÃO"
+        },
+        {
+          "pagina": 32,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "é comparável a ela. O alongar-se da vida está na é comparável a ela. O alongar-se da vida está na sua mão direita, na sua esquerda, riquezas e hon- sua mão dire"
+        }
+      ]
+    },
+    "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira": {
+      "paginas": 363,
+      "sinalizadas": 12,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.033,
+      "defeitos": {
+        "colunasIntercaladas": 6,
+        "digitosEmPalavras": 2,
+        "linhasRepetidas": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 10,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Transliteração do Hieróglifo Egípcio A transliteração no presente livro segue os modernos padrões de transcrição fonética do hieróglifo estabelecidos por James "
+        },
+        {
+          "pagina": 44,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "nome de Hermes Trismegistos surge pela primeira vez e não necessariamente em tratados de cunho fi losófi co-teológico.62 1.3.2 Os escritos herméticos fi losófi "
+        },
+        {
+          "pagina": 75,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Os Manuscritos do Corpus Hermeticum173 Os Manuscritos do Corpus Hermeticum!?3 Sigla Nome Sigla Nome Datação Conteúdo Datação Conteúdo A Laurentianus 71, 33 séc."
+        }
+      ]
+    },
+    "pitagoras_ciencia_e_magia_na_antiga_grecia": {
+      "paginas": 157,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.032,
+      "defeitos": {
+        "termosEmBloco": 4,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "\"APROXIMAI-VOS, FILÓSOFOS VERDADEIROS, INICIADOS E AMANTES DA VERDADE, QUE O LEGADO DE PITÁGORAS VOS PERTENCE; MAS GUARDAI DISTANCIA, Ó TURBA PROFANA E VULGAR, "
+        },
+        {
+          "pagina": 45,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "52 Pitágoras MELISSO DE SAMOS EMPÉDOCLES DE AGRIGENTO FILOLAU DE KROTONA ARQUITAS DE TARENTO ANAXÁGORAS DE GLAZOMENAS LEUCIPO DE MILETO DEMOCRITO DE ABDERA ARIS"
+        },
+        {
+          "pagina": 100,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Numerologia Pitagórica 115 Para a análise numerológica do nome de uma pessoa, ou de uma instituição, marca, empresa, cidade, país, etc., aplica-se primeiramente"
+        }
+      ]
+    },
+    "as_13_familias_illuminati_sociedades_secretas_de_eugenia_illuminati_bloodlines": {
+      "paginas": 134,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.03,
+      "defeitos": {
+        "termosEmBloco": 2,
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 31,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "THE UNITED STATES OF AMERICA ONE IS COD WE TRIST CONE ONE DED DIA LAT Por cima da pirâmide consta a frase em latim “Annuit coeptis” (ele tem favorecido os nosso"
+        },
+        {
+          "pagina": 46,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "as Saturnia or City of Saturn. The Roman Catholic church retains much of the Saturn worship in its ritual. Saturn also relates to Lucifer. '3 In various occult "
+        },
+        {
+          "pagina": 47,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Pingback by Ted Gunderson Ex. Head of FBI (LA): CIA And Satanism. The Illuminati, Child Kidnapping, Drug Smuggling, Depopulation, Satanic Plan for World Conques"
+        }
+      ]
+    },
+    "boletim_gob_1890": {
+      "paginas": 33,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.03,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "DO GRANDE ORIENTE DO BRAZIL SPRNAL PFFIGIAL DA Maçonaria Brazileira PUBLICAÇÃO MENSAL Redactor em Chefe : O GR.: SECR.. GER.: DA ORDEM N. 1 - 15° ANNO. MARÇO 4 "
+        }
+      ]
+    },
+    "mestre_cerimonias_jun_09": {
+      "paginas": 33,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.03,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 32,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "32 Orientações ao M.::CC :: - REAA - GLESP - Ed. Juho/09 rad::; Secr:; Chanc.:;G.:T::, 1oExp:: e loDiác. (09 tiras). 24. Jóias dos OOf: 10 20 V:: M.:: Vig.: Vig"
+        }
+      ]
+    },
+    "painel_do_grau_de_aprendiz_completo_booz": {
+      "paginas": 34,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.029,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 33,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Ado hira nita Adonhiramita Colunas B e J Colunas B e J Colunas B e J Colunas B e J Caracteres diferenciais Lua, Lua, Nuvens e Núvens e Núvens e Estrelas Estrela"
+        }
+      ]
+    },
+    "aristoteles_em_90_minutos_paul_strathern": {
+      "paginas": 36,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.028,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 28,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "d.C. d.C. muda a capital do muda a capital do Império Romano para Bizâncio. 400 d.C. 410 d.C. 529 d.C. Santo Agostinho escreve as Confissões. A filosofia é abso"
+        }
+      ]
+    },
+    "proverbios_e_pensamentos": {
+      "paginas": 359,
+      "sinalizadas": 10,
+      "vaziasNoMeio": 12,
+      "proporcao": 0.028,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 9
+      },
+      "exemplos": [
+        {
+          "pagina": 9,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "COLLECCÀO DE PENSAMENTOS E MÁXIMAS. LISBOA \\ A IMPRENSA NACIONAL I S I S ."
+        },
+        {
+          "pagina": 23,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "DE PENSAMENTOS. 9 A C T I V I D A D E . A actividade duplica a força. A actividade costuma fazer mais fortunas, que a prudência. A actividade é tão necessária á"
+        },
+        {
+          "pagina": 86,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "72 COLLECÇÃO C O N S T Â N C I A . A constância não consiste em fazer sempre as mesmas cousas; mas em fazer cousas, que tendam ao mesmo fim. A constância vem da"
+        }
+      ]
+    },
+    "escolas_do_pensamento_maconico_bondarik": {
+      "paginas": 110,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 42,
+      "proporcao": 0.027,
+      "defeitos": {
+        "termosEmBloco": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 12,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "BEST-SELLER INTERNACIONAL Uma breve história da humanidade Sapiens Yuval Noah Harari \"Harari é brilhante [...]. Sapiens é realmente impressionante, de se ler nu"
+        },
+        {
+          "pagina": 26,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "EXPLORAÇÕES E RA COMPETE BRE R.R. BUILDING ENGLISH • TERRITORY EXPANSÃO DO SÉCULO XIX EG Y P Assuan Wady Halfa • Dongola Khartum ABYSSINIA BRITISHIEAS CONGO STA"
+        },
+        {
+          "pagina": 103,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "LETHER BINAN CHESED ПІРНАКЕ ТН HeD- NETZACH YESOD JACHIN SEVERITY MERCY MALKUCH ANATOMYI LOCCULTUST PENTACLE"
+        }
+      ]
+    },
+    "geometria_sagrada_nigel_pennick": {
+      "paginas": 185,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.027,
+      "defeitos": {
+        "linhasRepetidas": 2,
+        "termosEmBloco": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 14,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "6 32 3 34 35 7 11 27 28 18 19 14 24 18 28 22 17 13 25 9 26 12 36 5 33 4 2 31 4. O sigilo de \"Israel\" projetado sobre o quadrado mágico do Sol. Onde quer que a g"
+        },
+        {
+          "pagina": 37,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "• LAPIDE LANGSIDE ESTRELAS- SÍMBOLOS LAPIDE CLEUCE LAPIDE LANGSIDE 11. A relação entre os padrões de estrelas e os sinais-de-câlices-e-anéis. LÁPIDE CLEUCH O \"T"
+        },
+        {
+          "pagina": 45,
+          "defeitos": [
+            "termosEmBloco",
+            "linhasRepetidas"
+          ],
+          "inicio": "CHAFFEN& BOCHOLT APPEYDORVI DYMEN CLEVE DIREÇÃO DA 7 CATEDRAL DIERSFORDTER WALD UEDEM site KEVELAER SONSBECK + GELDERN DREVENACK DORSTEN STERKRADE *FURSTEN T MA"
+        }
+      ]
+    },
+    "vade_mecum_honoris_labor_versao_10_mar_2018": {
+      "paginas": 306,
+      "sinalizadas": 8,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.026,
+      "defeitos": {
+        "termosEmBloco": 5,
+        "linhasRepetidas": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "VADE´MÉCUMllll VADE MÉCUM DA LEGISLAÇÃO MAÇÔNICA DO GOB  ARLS UPJSH Nº 3404/DDL 5 TÍTULO I CAPÍTULO I CAPÍTULO II CAPÍTULO III TÍTULO II CAPÍTULO I CAPÍTULO II"
+        },
+        {
+          "pagina": 6,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "VADE´MÉCUMllll VADE MÉCUM DA LEGISLAÇÃO MAÇÔNICA DO GOB  ARLS UPJSH Nº 3404/DDL 6 CAPÍTULO IV TÍTULO V CAPÍTULO I CAPÍTULO II CAPÍTULO III CAPÍTULO IV CAPÍTULO"
+        },
+        {
+          "pagina": 63,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "VADE´MÉCUMllll VADE MÉCUM DA LEGISLAÇÃO MAÇÔNICA DO GOB  ARLS UPJSH Nº 3404/DDL 63 § 2º É vedada a nomeação para qualquer cargo ou função, de atual detentor ou"
+        }
+      ]
+    },
+    "como_as_democracias_morrem_steven_levitsky": {
+      "paginas": 364,
+      "sinalizadas": 9,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.025,
+      "defeitos": {
+        "colunasIntercaladas": 6,
+        "linhasRepetidas": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 258,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "17. Juan J. Linz, The Breakdown of Democratic Regimes: Crisis, Breakdown, and Reequilibra-tion (Baltimore: Johns Hopkins University Press, 1978), p.29-30. ↩ 18."
+        },
+        {
+          "pagina": 260,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "2. Guardiões da América 1. Seymour Martin Lipset e Earl Raab, The Politics of Unreason: Right-Wing Extremism in America, 1790-1970 (Nova York: Harper & Row, 197"
+        },
+        {
+          "pagina": 262,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "36. Lipset e Raab, The Politics of Unreason, p.111. ↩ 37. Para mais informações sobre a relação entre Henry Ford e o regime nazista, ver Neil Baldwin, Henry For"
+        }
+      ]
+    },
+    "liberdade_de_pensar_estudos_a_luz_do_rito_moderno": {
+      "paginas": 159,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.025,
+      "defeitos": {
+        "linhasRepetidas": 4,
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 151,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "devidas homenagens, carinho, amor e agradece pela paciência por todo tempo dispendido em prol da Maçonaria e da Ordem DeMolay. [1] MATA, Joaquim Villalta. Em ou"
+        },
+        {
+          "pagina": 152,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "https://www.godf.org/index.php/pages/details/slug/histoire-de-la-franc-maconnerie [11] https://www.godf.org/index.php/pages/details/slug/histoire-de-la-franc-ma"
+        },
+        {
+          "pagina": 153,
+          "defeitos": [
+            "digitosEmPalavras",
+            "linhasRepetidas"
+          ],
+          "inicio": "consideramos um equívoco de tradução. 29 CAMARGO, Alexandre Magno. O aprendiz no Rito Moderno. 1. ed. Brusque: A Gazeta Maçônica, 2005, p. 36. 30 Muitos autores"
+        }
+      ]
+    },
+    "o_trivium_biblioteca_freemasonry": {
+      "paginas": 314,
+      "sinalizadas": 8,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.025,
+      "defeitos": {
+        "termosEmBloco": 5,
+        "colunasIntercaladas": 3,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Sumario Nota do Tradutor 7 Para Entender () Trivium (José Monir Nasser) Introdução à Edição Americana de 2002 | 17 1 AS ARTES LIBERAIS 21 2 NATUREZA E FUNÇÃO DA"
+        },
+        {
+          "pagina": 159,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Combinações Válidas de Premissas As Oito Combinações Padrão AAA AEE All AOO EAE IAl IEO OAO 7-1 Combinações válidas de premissas Adaptação para Evitar uma Falác"
+        },
+        {
+          "pagina": 162,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Um morcego é um mamífero. Nenhum pássaro é um mamífero. Um morcego não é um pássaro. d nd SaM d d PeM Nenhum erro na distribuição d d SeP 6. Teste a fórmula um "
+        }
+      ]
+    },
+    "catedrais_goticas": {
+      "paginas": 82,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 10,
+      "proporcao": 0.024,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 4,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "St. Trophime, lim do século XII. Arles, Franca ÊNFASE ELEVAÇÃO PLANTA TRAÇO PRINCIPAL SISTEMA DE SUPORTE ENGENHARIA AMBIENTE EXTERIOR COMO DIFERENCIAR As igreja"
+        },
+        {
+          "pagina": 5,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "E B F A Corte de uma igreja românica A - Nave central B - Naves laterais C - Arco total D - Pilar E - Capitel F - Contraforte B G A B Corte de uma igreja gótica"
+        }
+      ]
+    },
+    "o_codigo_da_biblia_michael_drosnin": {
+      "paginas": 245,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.024,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "palavrasPartidas": 1,
+        "colunasIntercaladas": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 145,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "156 O CÓDIGO DA BÍBLIA O futuro estava codificado na Bíblia, O assassinato de Rabin e a Guerra do Golfo o provavam. Mas o futuro não era predeterminado. Era uma"
+        },
+        {
+          "pagina": 221,
+          "defeitos": [
+            "palavrasPartidas"
+          ],
+          "inicio": "2. RESUMO DO PROCEDIMENTO Nesta seção descrevemos o teste re sumidamente. No Anexo, oferecemos detalhes suficientes para permitir que o leitor repita as computa"
+        },
+        {
+          "pagina": 223,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "SEQÜÊNCIAS ALFABÉTICAS EQÜIDISTANTES NO LIVRO DO GÊNESIS 1. Th. R of Po.qoa.r.. 2. Rabbi A,rsl.aa 2. Rabbi A,rsI.aa • a ot II.. Rombo., 3. Rnbbi Avr.hnm Ib 4. R"
+        }
+      ]
+    },
+    "o_livro_dos_sabios_eliphas_levi": {
+      "paginas": 41,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.024,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "S.C.A. Sociedade das Ciências Antigas O Livro dos Sábios (1870) Eliphas Levi (Alphonse Louis Constant) (1810–1875) fonte digital S.C.A. - SOCIEDADE DAS CIÊNCIAS"
+        }
+      ]
+    },
+    "os_templarios_na_formacao_de_portugal_2018": {
+      "paginas": 41,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.024,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 16,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "MAR CANTABRICO REINO DE NAVARRA OCEANO ATLÁNTICO CORONA DE ARAGÓN CORONA DE CASTILLA REINO DE PORTUGAL MAR MEDITERRANEO REINO DE GRANADA Século XIVSéculo XIV"
+        }
+      ]
+    },
+    "breviario_maconico_rizzardo_da_camino": {
+      "paginas": 173,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.023,
+      "defeitos": {
+        "linhasRepetidas": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 6,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "A origem do vocábulo é grega: philos e anthropos, que pode ser traduzida por “amor ao homem”, no sentido de amparo. A religião possui um sinônimo de filantropia"
+        },
+        {
+          "pagina": 46,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "A BATERIA Em linguagem maçônica, Bateria significa \"aplauso\" e \"ordenamento\"; os aplausos são feitos pelo bater das mãos; os que empunham malhetes aplaudem bate"
+        },
+        {
+          "pagina": 47,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Ao abrirem-se os trabalhos da Loja. é feita a bateria e a exclamação; o som \"abafado\" de percussão destina-se a neutralizar os fluidos negativos existentes. Usa"
+        }
+      ]
+    },
+    "a_sociedade_dos_templarios_lourivaldo_p_bacan": {
+      "paginas": 96,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.021,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 24,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "era punido com a expulsão. Eram atos proibidos a feitura de cópias das era punido com a expulsão. Eram atos proibidos a feitura de cópias das estátuas dos Templ"
+        },
+        {
+          "pagina": 80,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Desuendando a mistério da efigie Para montar sua efígie do Baphomet, Eliphas Levi não foi nem um pouco original e apenas medianamente criativo. Na realidade, ut"
+        }
+      ]
+    },
+    "cabala_para_o_estudante_michael_laitman": {
+      "paginas": 867,
+      "sinalizadas": 18,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.021,
+      "defeitos": {
+        "linhasRepetidas": 4,
+        "termosEmBloco": 9,
+        "colunasIntercaladas": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 155,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "INTRODUÇÃO AO LIVRO DO ZOHAR 155 todas as almas, enquanto nos referimos aos Kelim e o trabalho pode ser completado apenas por elas. Porque agora que os Kelim de"
+        },
+        {
+          "pagina": 180,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "180 CABALÁ PARA O ESTUDANTE abundância de santidade e pureza, que trazem um muito mais perto de alcançar a perfeição. –Rabi Yehuda Ashlag (Baal HaSulam), “Intro"
+        },
+        {
+          "pagina": 193,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "CABALISTAS ESCREVEM SOBRE A SABEDORIA DA CABALÁ 193 3. Possuidores da sabedoria da verdade. Estes são chamados “filhos”. –Rabi Chaim Vital, Os Escritos do Ari, "
+        }
+      ]
+    },
+    "ordem_sobre_o_caos_kennyo_ismail": {
+      "paginas": 291,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 11,
+      "proporcao": 0.021,
+      "defeitos": {
+        "digitosEmPalavras": 4,
+        "termosEmBloco": 1,
+        "linhasRepetidas": 3,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 260,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "PIRES, Joaquim da Silva. A Cisão Maçônica Brasileira de 1927. Londrina: Editora Maçônica “A Trolha”, 2015. PRESTON, William. Illustrations of Masonry. New York:"
+        },
+        {
+          "pagina": 272,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "RITO ESCOCÊS ANTIGO E ACEITO - LEITURAS BÍBLICAS11431 LEITURAS BÍBLICAS[143] # GRAU # GRAU PASSAGEM TEXTO PASSAGEM TEXTO 1° Aprendiz 1º Aprendiz Salmos, 133:1-3"
+        },
+        {
+          "pagina": 287,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "[14] MORRIS, Brent. The Complete Idiot's Guide to Freemasonry. New York: Alpha Books/Penguin, IL MORRIS, Brent. The Complete Idiot's Guide to Freemasonry. New Y"
+        }
+      ]
+    },
+    "os_principios_das_leis_maconicas": {
+      "paginas": 95,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 7,
+      "proporcao": 0.021,
+      "defeitos": {
+        "termosEmBloco": 2,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "VOLUME I Albert G. Mackey OS PRINCÍPIOS DAS LEIS MAÇÔNICAS TODOS OS DETALHES SOBRE A CONSTITUIÇÃO DE UMA LOJA MAÇONICA, ESCOLHA DE MEMBROS E SUA INICIAÇÃO FINAL"
+        },
+        {
+          "pagina": 93,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "\"Uma comunicação regular da Loja foi realizada às horas, em .\"' _ п° , no dia _ L.:. Presentes. Irmão.: A. B. B. С. C. D. D. E.. E. F. F. G. G. H. H. I. I. K. K"
+        }
+      ]
+    },
+    "as_chaves_de_enoch_2": {
+      "paginas": 656,
+      "sinalizadas": 13,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.02,
+      "defeitos": {
+        "termosEmBloco": 5,
+        "linhasRepetidas": 8,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 43,
+          "defeitos": [
+            "termosEmBloco",
+            "linhasRepetidas"
+          ],
+          "inicio": "2n0 MECANTYS 100 200 300 400 500 600 - 700 DATA INPUT B2 CUTPUT MARINER 9 PLYBK P173 ORBIT -SET TIME FROM PERTAPSIS 0.19 149 SLANT RANGE 2310 KM VIEWING ANGLE 6"
+        },
+        {
+          "pagina": 59,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "O Retorno da Pomba z 1405 JANASS Pesas chor ÁREAS DOS NEFITAS A SEREM ATIVADAS K AMERICA DEL NORTE SUR BRASS L ° 55. Neste ponto de nossa zona temporal conscien"
+        },
+        {
+          "pagina": 193,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A HIERARQUIA DE NOSSO UNIVERSO-PAI ANTIGO DE DIAS Gles de Th DEUSES CHIADORES DELISES CRIADORES FILHOS-PARAÍSO ILIOS-PARA SO Concellos es Conselhos co LuTT Mich"
+        }
+      ]
+    },
+    "as_dez_sociedades_mais_influentes_da_historia": {
+      "paginas": 102,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.02,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Sérgio Pereira Couto G AS DEZ SOCIEDADES MAIS INFLUENTES DA HISTORIA DO S Tudo sobre as organizações mais poderosas e discretas do mundo e sua influência sobre "
+        },
+        {
+          "pagina": 66,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "1993 1994 Vouliagmeni, Grécia Helsink, Finlândia 1995 1996 Zurique, Suíça Toronto, Canadá 1997 1998 Geórgia, Estados Unidos Turnberry, Escócia 1999 Sintra, Port"
+        }
+      ]
+    },
+    "reaa_material_didatico_2021": {
+      "paginas": 49,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.02,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 48,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "O Grau 33° é o Grau último do REAA, sendo a prática do mesmo do âmbito do Supremo Conselho, que é a Câmara máxima do Rito. Os Supremos Conselhos concentram os p"
+        }
+      ]
+    },
+    "a_arvore_da_vida_israel_regardie": {
+      "paginas": 214,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.019,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "VIDA DA ARVORE UM ESTUDO SOBRE MAGIA ISRAEL REGARDIE"
+        },
+        {
+          "pagina": 121,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A Arvore da Vida - Israel Regardie conjuração dos quatro.\" Percebe-se por certo que esse método é apenas uma parte do ritual que reproduzi anteriormente. É indu"
+        },
+        {
+          "pagina": 156,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A Arvore da Vida - Israel Regardie CHA ANAPHAXETON TETRAGRAMMATON MLI PRIMEUMATON LESTE 22: DAN • SINEDE S. 0тp 177 PHA IN2D S.P.M. B22 NORTE INS •- Master • G'"
+        }
+      ]
+    },
+    "a_maconaria_na_historia": {
+      "paginas": 155,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.019,
+      "defeitos": {
+        "termosEmBloco": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 38,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "REPRODUÇÃO REPRODUÇÃO ACTIVE 33° HONORARY 33° LADIES ORIENTAL SHRINC 2* NORTH AMERICA KNIGHT COURT COMMANDER HONOR NOEL OR SUBLIME PRINCE THE ROYAL SECRET ORDER"
+        },
+        {
+          "pagina": 108,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "OMACONS SN NA OMACO & CAPITULO VII 3 QUASE IRMÃOS' EX-PRESIDENTES, ATORES E ASTRONAUTAS FAZEM PARTE DA LISTA DE PERSONALIDADES QUE TIVERAM SEUS NOMES LIGADOS À "
+        },
+        {
+          "pagina": 154,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "9788577489 A MAÇONARIA NA HISTÓRIA Em meio a um véu de lendas e mistificações, alimentadas pelo caráter secreto da atividade maçônica, a história da fraternidad"
+        }
+      ]
+    },
+    "a_sintese_da_doutrina_secreta_blavatsky": {
+      "paginas": 465,
+      "sinalizadas": 9,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.019,
+      "defeitos": {
+        "linhasRepetidas": 8,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 51,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "55 55 DIAGRAMA I PRINCÍPIOS HUMANOS DIVISÃO PLANETÁRIA (1) Espírito (2) Alma Upâdhi do Espírito. (4) Alma animal Upâdhi da mente. 3 6 (3) Mente Y 2 5 (6) Corpo "
+        },
+        {
+          "pagina": 245,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "249 249 5 — Kama Rupa 5 - Kama Rupa (Alma animal) (Alma animal) 6 - Buddhi (Alma espiritual) 6 — Buddhi (Alma espiritual) 7 — Âtma (Espírito Puro) 7 — Âtma (Esp"
+        },
+        {
+          "pagina": 253,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "257 257 calculando-se em cem mil anos a idade do gênero humano (Ciência). Huxley, no calculando-se em cem mil anos a idade do gênero humano (Ciência). Huxley, n"
+        }
+      ]
+    },
+    "a_sociedade_feudal_marc_bloch_1": {
+      "paginas": 2432,
+      "sinalizadas": 46,
+      "vaziasNoMeio": 10,
+      "proporcao": 0.019,
+      "defeitos": {
+        "termosEmBloco": 14,
+        "colunasIntercaladas": 32
+      },
+      "exemplos": [
+        {
+          "pagina": 8,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "SUMÁRIO INTRODUÇÃO ORIENTAÇÃO GERAL DA INVESTIGAÇÃO PRIMEIRO TOMO PRIMEIRA PARTE O MEIO CAPÍTULO I L. A Europa invadida e cercada II. Os Muçulmanos III. A ofens"
+        },
+        {
+          "pagina": 10,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Estrutura Social IV . O contributo humano: Problemas de proveniência V . Os ensinamentos SEGUNDO LIVRO AS CONDIÇÕES DE VIDA E A A TMOSFERA MENT AL CAPÍTULO I CO"
+        },
+        {
+          "pagina": 13,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "SEGUNDA PARTE OS LAÇOS DE HOMEM PARA HOMEM OS LAÇOS DE SANGUE CAPÍTULO I A SOLIDARIEDADE DA LINHAGEM I. Os «Amigos Carnais» II. A «vendetta» III. A solidariedad"
+        }
+      ]
+    },
+    "mecanica_quantica_resumo_de_conceitos": {
+      "paginas": 108,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.019,
+      "defeitos": {
+        "digitosEmPalavras": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 105,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "Fontes e Editores da Página 102 Fontes e Editores da Página Introdução à mecânica quântica Fonte: http://pt.wikipedia.org/w/index.php?oldid=19753702 Contribuido"
+        },
+        {
+          "pagina": 106,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "Fontes e Editores da Página 103 Lógica quântica Fonte: http://pt.wikipedia.org/w/index.php?oldid=14376591 Contribuidores: Alessandro70, CSTAR Mecânica matricial"
+        }
+      ]
+    },
+    "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus": {
+      "paginas": 111,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.018,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Índice Índice CORPUS HERMETICUM .................................................................................................... 1 CORPUS HERMETICUM I - POI"
+        },
+        {
+          "pagina": 18,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "NEAE AS MO APOLLO /THALIA * VRAA INTERA MATHO, •MESE * DIVS PERMIXOLY Tonut SON NCHANOSMEE MIXOLIDIS TUBUS. MESO PARHYP •LYDIVS Y* Semitonium. SONI •PHRYGIVS + "
+        }
+      ]
+    },
+    "o_grande_livro_da_lei": {
+      "paginas": 457,
+      "sinalizadas": 8,
+      "vaziasNoMeio": 14,
+      "proporcao": 0.018,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "linhasRepetidas": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 60,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Loja Maçônica Cavaleiro da Luz - No 147 O Grande Livro da Lei 59 .............................................. .............................................."
+        },
+        {
+          "pagina": 208,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Loja Maçônica Cavaleiro da Luz - No 147 O Grande Livro da Lei 207 .............................................. ............................................."
+        },
+        {
+          "pagina": 249,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "248 O Grande Livro da Lei . 248 o Grande Livro da Loi .............................................. ............................................... .80 Gy (3"
+        }
+      ]
+    },
+    "o_que_voce_precisa_saber_sobre_maconaria_elias_mansur_neto": {
+      "paginas": 170,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 17,
+      "proporcao": 0.018,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 14,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CAPÍTULO I HISTÓRIA E CONSOLIDAÇÃO. A ORGANIZAÇÃO. AS POTÊNCIAS MAÇÔNICAS. A MAÇONARIA NA INGLATERRA. A MAÇONARIA NA FRANÇA."
+        },
+        {
+          "pagina": 102,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "O QU E VO C Ê PR E C I S A SA B E R SO B R E MA Ç O N A R I A BIBLIOGRAFIA (01) ASLAN, Nicola. Grande Dicionário Enciclopédico de Maçonaria e Simbologia. Rio de"
+        },
+        {
+          "pagina": 107,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "EL I A S MA N S U R NE T O Os acontecimentos políticos, todavia, iriam se precipitar, o que acabou impedindo essa reinstalação, sendo, o Grande Oriente, fechado"
+        }
+      ]
+    },
+    "os_arcanos_maiores_do_taro_g_o_mebes": {
+      "paginas": 278,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 22,
+      "proporcao": 0.018,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "G. O. MEBES OS ARCANOS MAIORES DO TARÔ R I 1 - n R T Seu simbolismo, suas iniciações e seus passos para a realização espiritual. PENSAMENTO !"
+        },
+        {
+          "pagina": 85,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "PLANETAS SACRAMENTOS PERÍODOS .S SACRAMENTOS PERÍODOS DIAS DA lado direito DE VIDA lado direito lado reverso DE VIDA lado reverso ,DIAS DA ATRIBUTOS SEMANA SEMA"
+        },
+        {
+          "pagina": 121,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "imersão progressiva na mentira conduz obrigatoriamente a uma volta à Verdade. No entanto, o caráter ilusório do \"diabo\" não lhe impede de possuir seus servidore"
+        }
+      ]
+    },
+    "os_segredos_perdidos_da_arca_sagrada_biblioteca_freemasonry": {
+      "paginas": 325,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.018,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "colunasIntercaladas": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 159,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "CHIPRE Mar Mediterrâneo Tiro Sidon, Tiro EGITO JUDÁ SINAI Tarso MITANNI • Ras Shamra • Antioquia HITITAS SÍRIA • Damasco • Jerusalem *D Mar Morto • Petra MIDIA "
+        },
+        {
+          "pagina": 285,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "REIS DE ISRAEL Sucessão paralela à Casa Real de Judá Jeroboãol 928-906 a.C. Nadabe 906-904 a.C. Baasa 904-892 a.C. Elá 892-890 a.C. Zinri 890-886 a.C. Onri 886-"
+        },
+        {
+          "pagina": 286,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Ninurt-akud-urusu 955-953 a.C. Mar-biti-ahhê-iddin 953-942 a.C. Shamash-mudammiq 942-901 a.C. Shamash-mudammig 942-901 a.C. Nabü-shumi-shkun 1901-885 a.C. Nabü-"
+        }
+      ]
+    },
+    "enciclopedia_de_fatos_da_biblia": {
+      "paginas": 950,
+      "sinalizadas": 16,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.017,
+      "defeitos": {
+        "linhasRepetidas": 13,
+        "termosEmBloco": 2,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 149,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Ilustrativo • De Deus. SI 36.9; Jr 2.13; 17.13 • De Cristo. Zc 13.1 • Do Espírito Santo. Jo 7.38,39 Como diz a Escritura, rios de água viva correrão do interior"
+        },
+        {
+          "pagina": 176,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "178 ENCICLOPÉDIA DE EATOS DA BÍBLIA 3. chumbo (Zc 5.7) 4. bronze (Êx 38.9); ou 5. ferro (ICr 29.7) E deram para o serviço do templo de Deus cinco mil talentos e"
+        },
+        {
+          "pagina": 200,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "202 ENCICLOPÉDIA DE FATOS DA BÍBLIA ® Jesus lhes respondeu: Hipócritas, hem profetizou Isaías acerca de vós, como está escrito: ESTE POVO HONRA-ME COM OS LÁBIOS"
+        }
+      ]
+    },
+    "rito_escoces_antigo_e_aceito_graus_simbolicos_liturgia_ritualistica_genuinidade_enxertos_supressoes_crendices": {
+      "paginas": 58,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.017,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Rito Escocês Antigo e Aceito - Graus Simbólicos Rito Escocês Antigo e Aceito - Graus Simbólicos Paulo Roberto Marinho de Almeida Paulo Roberto Marinho de Almeid"
+        }
+      ]
+    },
+    "o_legado_dos_templarios_steve_berry": {
+      "paginas": 383,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 8,
+      "proporcao": 0.016,
+      "defeitos": {
+        "termosEmBloco": 6,
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 8,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "RENNES - LE- CHA TEAU CHATEAU CHUECH OF STE-MARIE MADELEINE OLD PRESE ATELIER IMPETIN TI (вобвнок) \"RETAURANT Ix PoMMI BLEUE JA BE NELLE'S •House VILLA БІтнАнІЕ"
+        },
+        {
+          "pagina": 81,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "E CT GIT NOBLe M ARTE DE NEGRE DARLES DAME DHAUPOUL DI BLANCHEFORT AGEE DE BOIX ANTE SET ANS DECEDEE LE XVII JANVIER MOCOLXXXI REQUIES CATIN PACE T 1 REDDIS RÉG"
+        },
+        {
+          "pagina": 141,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "YENSZNTMGLNIYY RAGFVHE O • MOT+PECTUPER+A+BLZ VOUPHREI +DUSTLEGRIDF LPORXFONSRTVHVG+ORKR RDEUMAETR+ROAU • SMBAR RIO+AO1LUJNRZKMAOXEM INAFOGRNEOY+MPFQLE 1+ KIXVO"
+        }
+      ]
+    },
+    "a_maconaria": {
+      "paginas": 65,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.015,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "3 3 DISCIPLINA - SEITAS E RELIGIÕES DISCIPLINA – SEITAS E RELIGIÕES Sem. Edson Poujeaux Gonçalves Sem. Edson Poujeaux Gonçalves Professor Pr. Lucena Professor P"
+        }
+      ]
+    },
+    "o_grande_livro_da_maconaria_claudio_blanc": {
+      "paginas": 201,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.015,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 7,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "SUMÁRIO SUMÁRIO 9 Introdução Introdução Parte I. A Maçonaria e a Democracia Parte I. A Maçonaria e a Democracia 23 Alguns Regimentos Maçônicos 23 Alguns Regimen"
+        },
+        {
+          "pagina": 23,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "PARTE I A MAÇONARIA E A DEMOCRACIA ALGUNS REGIMENTOS MAÇÔNICOS Segundo o escritor Charles W. Leadbeater, “os escritores maçônicos do século XVIII especularam a "
+        },
+        {
+          "pagina": 69,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "PARTE II O SIMBOLISMO MAÇÔNICO AS ORIGENS NOS ANTIGOS MISTÉRIOS Filosofia Maçônica Muitos entendem a Maçonaria apenas como uma ordem fraternal mundial que forma"
+        }
+      ]
+    },
+    "por_dentro_do_priorado_de_siao_robert_howells": {
+      "paginas": 338,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.015,
+      "defeitos": {
+        "termosEmBloco": 4,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ROBERT HOWELLS POR DENTRO DO PRIORADO DESIÃO REVELAÇÕES DA SOCIEDADE MAIS SECRETA DO MUNDO - OS GUARDIÃES DA LINHAGEM DE JESUS Planeta"
+        },
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "POR DENTRO DO PRIORADO DE SIÃO REVELAÇÕES DA SOCIEDADE MAIS SECRETA DO MUNDO - OS GUARDIÃES DA LINHAGEM DE JESUS"
+        },
+        {
+          "pagina": 4,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "POR DENTRO DO PRIORADO DESIÃO REVELAÇÕES DA SOCIEDADE MAIS SECRETA DO MUNDO - OS GUARDIÃES DA LINHAGEM DE JESUS ROBERT HOWELLS Tradução Henrique Monteiro •Plane"
+        }
+      ]
+    },
+    "100_instrucoes_de_aprendiz": {
+      "paginas": 363,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.014,
+      "defeitos": {
+        "termosEmBloco": 4,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "MAÇONARIA 100 DE APRENDIZ INSTRUÇÕES INSTRUÇÕES DE APRENDIZ • MALTA KHIGHT A * BRAZER PRINCE 2* TABE SEL KEI COYAL MASTER VITAM YORK COL EXCELLENT G •MARTER RAY"
+        },
+        {
+          "pagina": 37,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "39 Tª INSTRUÇÃO 7ª INSTRUÇÃO CORDA DE NOS OU CORDA DE NÓS OU BORDA DENTADA - I VM Vale salientar que a Corda de Nós ou Borda Dentada, como também é conhecida, e"
+        },
+        {
+          "pagina": 134,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "136 VM_-- A Maçonaria orienta-se principalmente pelas Três Primeiras das Artes, a saber: • A Gramática, a Lógica e a Retórica, e o Aprendiz deve voltar sua dedi"
+        }
+      ]
+    },
+    "a_santissima_trinosofia": {
+      "paginas": 73,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.014,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 72,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "HAD SHE 9Л6.2...111 ЛЕТ В.80А AYCZ*®. ЛОВЕЛ HAD* Xô713P ПИШИ 00121 HIXXO ЗАЛЯ X37132"
+        }
+      ]
+    },
+    "timeu_a_cosmologia_de_platao_oscar_t_matsuura": {
+      "paginas": 147,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.014,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 43,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "entendermos a entropia como uma grandeza física que expressa a tendência espontânea de sistemas com um grande número de partículas, supostamente isoladas do mei"
+        },
+        {
+          "pagina": 144,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "CRÉDITO DAS FIGURAS Figura 1 Mapa branco extraído de https://commons.wikimedia.org/wiki/File:Blank_Map_- _Mediterranean_1.svg Figura 2 https://pt.wikipedia.org/"
+        }
+      ]
+    },
+    "uma_visao_global_dos_33_graus_do_reaa": {
+      "paginas": 74,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.014,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Grau 20 — Soberano Príncipe da Maçonaria............................. 49 1 —Ornamentação da Loja................................................... 49 2 — Misté"
+        }
+      ]
+    },
+    "ata_hermetismo_pitagorismo_e_platonismo": {
+      "paginas": 79,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.013,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "978-989-757-048-3 ACTAS/ANAIS I CONGRESSO LUSOFONO ESOTERISMO OCIDENTAL HERMETISMO, PITAGORISMO E PLATONISMO COMO FORÇAS MOTRIZES DO RENASCIMENTO E DA CIÊNCIA M"
+        }
+      ]
+    },
+    "guia_aprendiz_macom_ir_bruno_carraveta": {
+      "paginas": 159,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.013,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 38,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "OS CARGOS E SUA COMPETÊNCIA VENERÁVEL MESTRE 1º VIGILANTE 2º VIGILANTE SECRETÁRIO ORADOR TESOUREIRO CHANCELER-GUARDA-SELOS HOSPITALEIRO-ESMOLER 1º E 2º DIÁCONOS"
+        },
+        {
+          "pagina": 80,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Saco de Propostas e Informações Será conduzido pelo Mestre de Cerimônias sem observância de sinal. O Venerável Mestre anunciará diretamente que o S circulará, d"
+        }
+      ]
+    },
+    "historia_da_mitologia_para_quem_tem_pressa_mark_daniels": {
+      "paginas": 159,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.013,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 136,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Inicialmente, Gerdr recusou a oferta, mesmo sendo esta Inicialmente, Gerdr recusou a oferta, mesmo sendo esta acompanhada por vários presentes, e respondeu que "
+        },
+        {
+          "pagina": 157,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "NICOLA CHALTON & MEREDITH MacARDLE A HISTÓRIA DA CIÊNCIA PARA QUEM TEM PRESSA DE GALILEU A STEPHEN HAWKING EM 200 PÁGINAS! valentina"
+        }
+      ]
+    },
+    "socrates_em_90_minutos_paul_strathern": {
+      "paginas": 80,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 6,
+      "proporcao": 0.013,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 66,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "CRONOLOGIA DE DAT SIGNIFICATIVAS DA FILO: séc. VI a.C. Início da filosofia ocident de Mileto. fim do séc. VI a.C. Morte de Pitágoras. 399 a.C. Sócrates condenad"
+        }
+      ]
+    },
+    "a_verdade_sufocada_carlos_alberto_brilhante_ustra": {
+      "paginas": 595,
+      "sinalizadas": 7,
+      "vaziasNoMeio": 6,
+      "proporcao": 0.012,
+      "defeitos": {
+        "termosEmBloco": 7
+      },
+      "exemplos": [
+        {
+          "pagina": 286,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "294- Carlos Alberto Brilhante Ustra Organograma do DOI/CODI/II Exército сомлнольте SEÇÃO DE CONTHA INFORMAÇÕES шАнс SETOR DE OPERAÇÕES DE INFORMAÇOES BE TON CE "
+        },
+        {
+          "pagina": 480,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "488-Carlos Alberto Brilhante Listra NOMES Francisco Manoel Chaves Gilberto Olímpio Maria Guilherme Gomes Lund Helenira Rezende de Souza Nazareth Hélio Luiz Nava"
+        },
+        {
+          "pagina": 484,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "492 - Carlos Alberto Brilhante Ustra Ano Carlos Roberto Zanirato Chac! Charles Schreier Eremias Delizoikov Fernando Borges de Paula Ferreira Hamilton Fernando C"
+        }
+      ]
+    },
+    "dogma_e_ritual_de_alta_magia_eliphas_levi": {
+      "paginas": 330,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.012,
+      "defeitos": {
+        "linhasRepetidas": 2,
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 14,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "W RESH. . Amor de Conquistar e ódio. W RESH.. Amor de Conquistar e ódio. SHIN DE C. . Ter o segredo de riqueza, sempre ser seu mestre e SHIN DE C. . Ter o segre"
+        },
+        {
+          "pagina": 80,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "figura da tríade, ou o sefirótica balança do décado. Eles organizam a balança do divino nomes e números dentro um triângulo que pode ser apresentado em caráter "
+        },
+        {
+          "pagina": 82,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "The Doctrine of Transcendental Magic 3 4 5 8 9 12 13 A Conscious, Active Cause in all we see, And number proves the living unity. No bound hath He who doth the "
+        }
+      ]
+    },
+    "os_100_maiores_misterios_do_mundo": {
+      "paginas": 329,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.012,
+      "defeitos": {
+        "termosEmBloco": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Sumário Sumário Dedicatória Dedicatória Epígrafe Epigrate INTRODUÇÃO INTRODUÇÃO AGRADECIMENTOS AGRADECIMENTOS UMA NOTA SOBRE AS AFIRMAÇÕES OUSADAS UMA NOTA SOBR"
+        },
+        {
+          "pagina": 124,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CRUZES DE LUZ 44 27 45 DEMÔNIOS, POSSESSÃO E EXORCISMO 45 DEMÔNIOS 45 2846 28 46 ADIVINHAÇÃO E PROFECIA 46 ADIVINHAÇÃO 46 49 2949 29 49 HIDROSCOPIA 49 HIDROSCOP"
+        },
+        {
+          "pagina": 196,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "números 1 a 9: 1. Força de vontade e individualismo 2. Ponderação e docilidade 3. Felicidade e energia 4. Estabilidade e organização 5. Autoconfiança e impaciên"
+        }
+      ]
+    },
+    "o_livro_da_mitologia_thomas_bulfinch": {
+      "paginas": 849,
+      "sinalizadas": 9,
+      "vaziasNoMeio": 230,
+      "proporcao": 0.011,
+      "defeitos": {
+        "termosEmBloco": 8,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 246,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CAPÍTULO XV AS GREIAS E AS GORGONAS - PERSEU E MEDUSA - ATLAS - ANDROMEDA"
+        },
+        {
+          "pagina": 264,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CAPÍTULO XVI OS MONSTROS: GIGANTES - ESFINGE - PÉGASO E QUIMERA - CENTAUROS - PIGMEUS - GRIFOS"
+        },
+        {
+          "pagina": 353,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "CAPÍTULO XXII AS DIVINDADES RURAIS - ERISICTON - RECO - AS DIVINDADES AQUATICAS - AS CAMENAS - OS VENTOS"
+        }
+      ]
+    },
+    "os_segredos_do_templo_de_salomao": {
+      "paginas": 528,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.011,
+      "defeitos": {
+        "linhasRepetidas": 6
+      },
+      "exemplos": [
+        {
+          "pagina": 57,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Peixes Áries Peixes Áries Aquário Peixes Aquário O céu da alvorada em Jerusalém na manhã do Equinócio de Primavera de 1000 AEC, época em que o Templo de Salomão"
+        },
+        {
+          "pagina": 99,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Esse processo começa com o desenho de um quadrado. Depois, a partir de cada canto A, B, C e D, é desenhado um arco, que passa pelo centro do quadrado e divide e"
+        },
+        {
+          "pagina": 135,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Figura 3.1: A figura ao lado é do hexagrama na parede norte da catedral de Chichester. Essa catedral foi construída entre 1075 e 1108 Figura 3.2: A imagem ao la"
+        }
+      ]
+    },
+    "os_templarios_juan_de_garten": {
+      "paginas": 92,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.011,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Impresso no Brasil Impresso no Brasil Printed in Brazil Printed in Brazil Índice Índice INTRODUÇÃO ............................................................."
+        }
+      ]
+    },
+    "pistis_sophia_traducao_do_texto_original": {
+      "paginas": 182,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.011,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 10,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "10 No esoterismo cristão, a fé (pistis), em seu sentido mais amplo, é a mola propulsora que leva à transformação dos estados de consciência do homem (metanoia),"
+        },
+        {
+          "pagina": 172,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "24 x 37 = 888 = Jesus (In00v0) ; Eu Sou a Vida (H Son Elul) ; É o Logos (Aoyoo EoTI) ; Vitória do Mundo (Nikn Koou ov) ; O Construtor da Verdade (001K080400Aln0"
+        }
+      ]
+    },
+    "salomao_o_homem_mais_rico_que_ja_existiu_steven_k_scott": {
+      "paginas": 176,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.011,
+      "defeitos": {
+        "colunasIntercaladas": 1,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 174,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Preço do Livro Impresso no site do Bondfaro em dezembro de 2010 R$ 17,41 6x de R$ 2,91 IR À LOJA R$ 18,63 IR À LOJA R$ 17,51 3x de R$ 5,84 IR À LOJA R$ 15,82 fr"
+        },
+        {
+          "pagina": 175,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "R$ 14,15 IR À LOJA R$ 12,46 IR À LOJA R$ 12,38 IR À LOJA R$ 19,90 IR À LOJA [175]"
+        }
+      ]
+    },
+    "seitas_heresias_raimundo_de_oliveira": {
+      "paginas": 176,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.011,
+      "defeitos": {
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 174,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "BIBLIOGRAFIA ALBUQUERQUE, A.T. O que É a Maçonaria. Rio de Janeiro: Editora Aurora, s/d. ALMEIDA, A. O Sábado, a Lei a Graça. Rio de Janeiro: CPAD, 1980. CABRAL"
+        },
+        {
+          "pagina": 175,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "NOVAIS, M. A. Trad.: Testemunhos sobre a Maçonaria. São Paulo: Livraria Independente Editora, s/d. OLIVEIRA, R. F. A Verdade sobre a Trindade. Teresina, PI: Edi"
+        }
+      ]
+    },
+    "templarios_portugal_primeira_nacao_templaria_freddy_silva": {
+      "paginas": 446,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 32,
+      "proporcao": 0.011,
+      "defeitos": {
+        "termosEmBloco": 4,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 11,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "SACRO OCEANO ATLANTICO COLMASCOS IMPÉRIO EUROPA co PRÓXIMO ORIENTE 1080 d. C. ROMANO DOMÍNIOS DOS TURCOS SELJÚCIDAS SİRIA DOMINIOSE O LEVANTE ÁRABES MAR MEBITFR"
+        },
+        {
+          "pagina": 211,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "THE PLATFORM 20 H Rei M A S H NO 81 H SANCTUA RY THE PLAN OF THE NOBLE SANCTUARY SHEWING THE RESULTS OF THE RESEARCHES OF Capt OWNaSon R.B.& Cape CWarren RE Sea"
+        },
+        {
+          "pagina": 251,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Soleau cul Th GREJA SANTO SEPULCRO ESTABULOS DE SALOMÃO ABADIA DU MONTE SIÃO PARA D/OSIREION Igreja do Santo Sepulcro. Os principais locais templários em Jerusa"
+        }
+      ]
+    },
+    "hermes_trimegisto_charles_vega_parucker": {
+      "paginas": 97,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.01,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 96,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Missão Rosacruz A Ordem Rosacruz, AMORC é uma Organização Internacional de caráter místico-filosófico, que tem por MISSÃO despertar o potencial interior do ser "
+        }
+      ]
+    },
+    "historias_e_misteios_dos_templarios": {
+      "paginas": 96,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.01,
+      "defeitos": {
+        "colunasIntercaladas": 1,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 92,
+          "defeitos": [
+            "colunasIntercaladas",
+            "linhasRepetidas"
+          ],
+          "inicio": "Snøw666 10 10 AGRADECIMENTOS A G R A D E C I M E N T O S Agradecemos à Biblioteca Nacional e ao Real Agradecemos à Biblioteca Nacional e ao Real Gabinete Portug"
+        }
+      ]
+    },
+    "o_livro_de_ouro_da_mitologia": {
+      "paginas": 419,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.01,
+      "defeitos": {
+        "colunasIntercaladas": 3,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Thomas Bulfinch Página | 1 O Livro de Ouro da MITOLOGIA (A Idade da Fábula) H I S T Ó R I A S D E D E U S E S E H E R Ó I S Tradução David Jardim Júnior 26a Edi"
+        },
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "SUMÁRIO Página | 4 I INTRODUÇÃO 6 Il PROMETEU E PANDORA 19 II PROMETEU E PANDORA 19 III APOLO E DAFNE — PÍRAMO E TISBE — CÉFALO E PRÓCRIS 27 IV JUNO E SUAS RIVA"
+        },
+        {
+          "pagina": 86,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "A Morte de Jacinto A A M Mo or rt te e d de e J Ja ac ci in nt to o J Je ea an n B Br ro oc c Jean Broc M MU US SE EU U S ST T. . C CR RO OI IX X, , P PO OI IT "
+        }
+      ]
+    },
+    "sapiens_uma_breve_historia_da_humanidade_yuval_noah_harari": {
+      "paginas": 516,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.01,
+      "defeitos": {
+        "linhasRepetidas": 4,
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 47,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "novos estratagemas que lhes possibilitariam vencer o segundo. novos estratagemas que lhes possibilitariam vencer o segundo. O que aconteceu na Revolução Cogniti"
+        },
+        {
+          "pagina": 178,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "clássica e da Atenas moderna.6 clássica e da Atenas moderna.6 Indivíduo do sexo feminino = categoria biológica Atenas clássica Cromossomos XX Útero Atenas moder"
+        },
+        {
+          "pagina": 238,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Durante o século XX, grupos locais que haviam adotado valores Durante o século XX, grupos locais que haviam adotado valores ocidentais reivindicaram igualdade e"
+        }
+      ]
+    },
+    "zohar": {
+      "paginas": 618,
+      "sinalizadas": 6,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.01,
+      "defeitos": {
+        "linhasRepetidas": 4,
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 50,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "A ROSA 49 Nosso Mundo: Os cinco desejos egoístas sentidos no coração. (*) — Consiste das cinco Sefi rot — Keter, Chochmá, Biná, ZA e Malchut. No total, há 125 d"
+        },
+        {
+          "pagina": 55,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "54 O ZOHAR 54 O ZOHAR PARTZUF PARTZUF Após Malchut refletir a Luz (prazer), ela decide recebê-la a fi m de agra- Após Malchut refletir a Luz (prazer), ela decid"
+        },
+        {
+          "pagina": 63,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "62 O ZOHAR (M — ZA — | B — H — K) — K (M - ZA - | B-H-K)-H (M - ZA - | B-H-K)-B (M - ZA - | B-H-K) -ZA (M - ZA - | B-H-K) -M O sinal “|” significa uma Parsa par"
+        }
+      ]
+    },
+    "a_maconaria_e_os_jesuitas": {
+      "paginas": 215,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 7,
+      "proporcao": 0.009,
+      "defeitos": {
+        "linhasRepetidas": 1,
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 167,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "- 162 - ecclesia tico não póde exercer a sua autoridade sem licença e consentimento do governo civil. Do outro está a Santa Igreja, ensinando que isto é erro gr"
+        },
+        {
+          "pagina": 214,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "THE BORROWER WILL BE CHARGED THE COST OF OVERDUE NOTIFICATION IF THIS BOOK IS NOT RETURNED TO THE LIBRARY ON OR BEFORE THE LAST DATE STAMPED BELOW. BOOK DUTY GR"
+        }
+      ]
+    },
+    "a_magia_da_maconaria_arthur_powell": {
+      "paginas": 112,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.009,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 22,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "onipresente e Beleza que resplandece pelo Universo inteiro. Para poder fazer uma apresentação mais completa de nossa tese, vemo-nos obrigados a recorrer à Ciênc"
+        }
+      ]
+    },
+    "introducao_a_simbologia_rosacruz_amorc": {
+      "paginas": 229,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "TITULO ORIGINAL: SYMBOLS: THEIR NATURE AND FUNCTION 1ª EDIÇÃO EM LÍNGUA PORTUGUESA JULHO DE 1992 TODOS OS DIREITOS RESERVADOS PELA ORDEM RASACRUZ - AMORC GRANDE"
+        },
+        {
+          "pagina": 4,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Sumário Sumário INTRODUÇÃO INTRODUÇÃO ............................................................................................................4 CAPÍTULO I: "
+        }
+      ]
+    },
+    "livro_de_ouro_dos_mantras_otavio_leal": {
+      "paginas": 116,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 61,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Kulakul-Chakra VÃ HA SA MA SHA SA YA RA LA VA PA HA V DHA DA HÁ PHA DHA RNA TA THA HAI ANG AU BHA JHA THA DA KA AH JIA TA V NGA GHA GA KHA RI LRI Al JÁ A Ä E CH"
+        }
+      ]
+    },
+    "livro_melquisedec": {
+      "paginas": 115,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 8,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "8 Com esta preocupação, envolveu-os em seus braços, evitando que escapassem. Mas ao olhar para eles, ficou consolado com a certeza de que suas promessas finalme"
+        }
+      ]
+    },
+    "o_codigo_de_salomao_richard_d_weber": {
+      "paginas": 553,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "termosEmBloco": 3,
+        "colunasIntercaladas": 2,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 4,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Mapa do Templo de Salomão CÚPULA DE PEDRA O SAGRADO DOS SAGRADOS PRÓXIMO À FONTE EL KAS MESQUITA EL AKSA PROVÁVEL LOCALIZAÇÃO DO TEMPLO DE SALOMÃO |El Aksa *Mos"
+        },
+        {
+          "pagina": 8,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "Você vai precisar da ajudinha da internet... http://cryptoclub.math.uic.edu/vigenere/vigenerecipher.php ...e da palavra-chave: S I Y E X O S Y I D T T O N E P H"
+        },
+        {
+          "pagina": 142,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Outra imagem apareceu na tela com algumas letras em destaque: Begun to tell me what I am but stopt, And left me to a bootleese Inquistion, Concluding, stay: not"
+        }
+      ]
+    },
+    "o_livro_secreto_da_maconaria_lourivaldo_pere": {
+      "paginas": 117,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 87,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "• pedir, com uma pancada de malhete, a palavra para os membros de sua Coluna, reclamando por qualquer preterição; • não consentir que os Obreiros passem de uma "
+        }
+      ]
+    },
+    "os_segredos_da_mente_milionaria": {
+      "paginas": 112,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 32,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "150 mil, o ano seguinte será péssimo para compensar e levá-lo de volta ao nível do seu modelo financeiro. Por outro lado, caso você esteja programado para ganha"
+        }
+      ]
+    },
+    "os_templarios_michael_lamy": {
+      "paginas": 225,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.009,
+      "defeitos": {
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "MICHEL LAMY O OS S T TE EM MP PL LÁ ÁR RI IO OS S ESSES GRANDES SENHORES DE MANTOS BRANCOS Os seus costumes, os seus ritos, os seus segredos h ht tt tp p: :/ //"
+        },
+        {
+          "pagina": 225,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "uma cisão no Templo. A partir de 1188, a parte iniciática teria abandonado a Ordem, o que explicaria muitas coisas. A separação teria sido feita no campo de l'O"
+        }
+      ]
+    },
+    "a_conspiracao_de_1817": {
+      "paginas": 380,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 11,
+      "proporcao": 0.008,
+      "defeitos": {
+        "digitosEmPalavras": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 39,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "A CONSPIRAÇÃO DE 1817 25 restabelecido, em Ikoenigsberg, na Prússia, a 26 de Dezembro.^ Em 18 13, por maio, é nomeado go- Freire, guiado pelo braço de um tenent"
+        },
+        {
+          "pagina": 108,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "94 A- CONSPIRAÇÃO DE 1S17 um café, no cães de Sodré, o dos hespanhoes, onde se reúnem« sectários constantes do systema introduzido pelas cortes»—diz a policia. "
+        },
+        {
+          "pagina": 144,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "130 A CONSPIRAÇÃO DE 1817 com dois amigos e dahi a bocado entra pela porta dentro, todo espalhafato e exageros, António Cabral Calheiros.^ Abancam a uma meza, á"
+        }
+      ]
+    },
+    "a_historia_dos_judeus_simon_schama": {
+      "paginas": 623,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.008,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 3,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 10,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "E ESOPOTANI (ABILONE SERIA NEFUD DESERTO DE ARREA MAR VERMELHO Cidades judaicas na Arábia às vésperas da proparicio do ins | ИЛОКАМАОТЕ * R1874 NAR"
+        },
+        {
+          "pagina": 61,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Os alvos das proclamações públicas da Torá por parte de Esdras e Os alvos das proclamações públicas da Torá por parte de Esdras e Neemias eram exatamente os sob"
+        },
+        {
+          "pagina": 135,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "ocorre muitas vezes quando ele se afasta da verdade documental, seu ocorre muitas vezes quando ele se afasta da verdade documental, seu relato é vívido e brilha"
+        }
+      ]
+    },
+    "a_maconaria_durante_as_ditaduras": {
+      "paginas": 133,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.008,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "A A M MA AÇ ÇO ON NA AR RI IA A D DU UR RA AN NT TE E A AS S D DI IT TA AD DU UR RA AS S D DE E V VA AR RG GA AS S, , F FR RA AN NC CO O, , H HI IT TL LE ER R, "
+        }
+      ]
+    },
+    "a_maconaria_no_centenario_1822_1922": {
+      "paginas": 263,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 17,
+      "proporcao": 0.008,
+      "defeitos": {
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "1822-1922 Maçonaria no Centenária Caçanaria na A Maçonaria no Centenário EDITOR =D OF ANTONIO GIUSTI,33.. GR INSP GER DA ORD S. PAULO BRASILBRASIL"
+        },
+        {
+          "pagina": 4,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "1882 A MACONARIA EDITOR ANTONLO GIUSTLES. GR:: INSP.: GER:: DA ORDEM TIASITELLI 1922 o entenario AMOR E JUSTIÇA S. PAULO BRASIL"
+        }
+      ]
+    },
+    "cristianismo_e_mitraismo": {
+      "paginas": 130,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.008,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 54,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "grau que tê m, à es querda o Corvo e o Pers a trazem comes e grau que têm, à esquerda o Corvo e o Persa trazem comes e bebes; à direita estão os Leões e Soldado"
+        }
+      ]
+    },
+    "introducao_a_ciencia_sagrada_modulo_iii": {
+      "paginas": 133,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.008,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "32 O HERMETISMO MEDIEVAL II 83 O ATRAVESSAR AS ÁGUAS 33 METATRON 84 A INICIAÇÃO 34 HISTÓRIA SAGRADA 35 O NOME I 36 ASTROLOGIA 37 HISTÓRIA SAGRADA: O RENASCIMENT"
+        }
+      ]
+    },
+    "maconaria_brasileira_a_historia_ocultada": {
+      "paginas": 251,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.008,
+      "defeitos": {
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 244,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Brasil. Ano 53, Números 5 e 6, maio e junho de 1928, p.280. Brasil. Ano 53, Números 5 e 6, maio e junho de 1928, p.280. [26] PIRES, Joaquim da Silva. A Cisão Ma"
+        },
+        {
+          "pagina": 251,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "2. [155] GOB. Discurso pronunciado pelo Sob. GMG. Boletim do Grande Oriente do Brasil. Ano 102, Números 7 a 9, julho a setembro de 1973, p. 4-5. [156] GOB. Atos"
+        }
+      ]
+    },
+    "manual_do_aprendiz_macom": {
+      "paginas": 130,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.008,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ALDO LAVAGNINI MANUAL DO APRENDIZ MAÇOM A MAÇONARIA REVELADA ESTUDO INTERPRETATIVO SOBRE O VALOR INICIÁTICO DOS SÍMBOLOS E ALEGORIAS DO PRIMEIRO GRAU MAÇÔNICO E"
+        }
+      ]
+    },
+    "a_chave_dos_grandes_mistrios_eliphas_levi": {
+      "paginas": 281,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.007,
+      "defeitos": {
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 109,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Solução dos problemas filosóficos PRIMEIRA SÉRIE Pergunta — O que é a verdade? Resposta — É a idéia idêntica ao ser. P — O que é a realidade? R — É a ciência id"
+        },
+        {
+          "pagina": 110,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "P — Existe algo acima da razão? R — Acima da razão finita existe a razão infinita. P — O que é a razão infinita? R — É esta razão suprema do ser a que a fé cham"
+        }
+      ]
+    },
+    "a_revelacao_dos_templarios_lynn_picknett": {
+      "paginas": 279,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.007,
+      "defeitos": {
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ÍNDICE AGRADECIMENTOS PRIMEIRA PARTE AS TRAMAS DA HERESIA CAPÍTULO I O CÓDIGO SECRETO DE LEONARDO DA VINCI CAPÍTULO II NO MUNDO SECRETO CAPÍTULO III NO RASTRO D"
+        },
+        {
+          "pagina": 6,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A MULHER QUE JESUS BEIJAVA CAPITULO XIII CAPÍTULO XIII FILHO DA DEUSA CAPÍTULO XIV JOÃO CRISTO CAPÍTULO XV OS DISCÍPULOS DO REI DA LUZ CAPÍTULO XVI A GRANDE HER"
+        }
+      ]
+    },
+    "as_doutrinas_secretas_de_jesus_h_spencer_lewis": {
+      "paginas": 152,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.007,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "A A As s s doutrina doutrina doutrina doutrinas s s secreta secreta secreta secretas s s de Jesus de Jesus de Jesus de Jesus As doutrinas secretas de Jesus H. S"
+        }
+      ]
+    },
+    "as_escolas_de_misterios_clara_codd": {
+      "paginas": 135,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.007,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 4,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Prólogo É possível que algum crítico venha a censurar a grande quantidade de citações que usei neste livro. Mas não me desculpo. Fui inspirada por palavras de p"
+        }
+      ]
+    },
+    "biblia_e_misterios": {
+      "paginas": 148,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.007,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 52,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "Bíblia e Mistérios também sons. E Deus grava seu Nome no que é número, o que numera e o numerado. As 7 duplas são (b B Beth, - g G Ghimel - d D Daleth - k CH Ca"
+        }
+      ]
+    },
+    "biblioteca_de_alexandria_derek_adie_flower": {
+      "paginas": 140,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.007,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 7,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "I O Pai Fundador O Pai Fundador Naquela época — e estamos falando de cerca de 332 a.C. —, o Egito deixara Naquela época — e estamos falando de cerca de 332 a.C."
+        }
+      ]
+    },
+    "desmistificando_a_maconaria": {
+      "paginas": 134,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.007,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 22,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "O Ângulo do Compasso O Ângulo do Compasso Qual o ângulo em que deve ser aberto o Compasso e por quê? Qual o ângulo em que deve ser aberto o Compasso e por quê? "
+        }
+      ]
+    },
+    "historia_da_magia_eliphas_levi": {
+      "paginas": 434,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 7,
+      "proporcao": 0.007,
+      "defeitos": {
+        "termosEmBloco": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 103,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "LIVRO II FORMAÇÃO E REALIZAÇÃO DO DOGMA 2, BETH CAPÍTULO 1 SIMBOLISMO PRIMITIVO DA HISTÓRIA Não nos compete explicar as Escrituras Sagradas no ponto de vista re"
+        },
+        {
+          "pagina": 149,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "LIVRO III SÍNTESE E REALIZAÇÃO DIVINA DO MAGISMO PELA REVELAÇÃO CRISTÃ 3, GHIMEL CAPÍTULO 1 CRISTO ACUSADO DE MAGIA PELOS JUDEUS Nas primeiras linhas do Evangel"
+        },
+        {
+          "pagina": 361,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "LIVRO VII A MAGIA NO SÉCULO XIX 1, ZAIN CAPÍTULO 1 OS MAGNETIZADORES MÍSTICOS E OS MATERIALISTAS A negação do dogma fundamental da religião católica, tão poetic"
+        }
+      ]
+    },
+    "a_chave_de_salomao_greg_taylor": {
+      "paginas": 168,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 86,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "AB CD EF GH UV WX MN OP QR YZ FREEMASONRY Exemplo de utilização do método \"inglês\" no código maçônico Marcha da Ku Klux Klan, Avenida Pensilvânia, 1928"
+        }
+      ]
+    },
+    "a_linhagem_do_santo_graal_laurence_gardner": {
+      "paginas": 178,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.006,
+      "defeitos": {
+        "digitosEmPalavras": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 136,
+          "defeitos": [
+            "digitosEmPalavras"
+          ],
+          "inicio": "BANQUO E MACBETH Desde a época dos merovíngios depostos, a mais importante dinastia reinante na sucessão dos desposyni foi a Casa Real de Stewart, da Escócia, c"
+        }
+      ]
+    },
+    "a_raca_divina_o_livro_da_saga_humana_vol_i_mikael_lenyer": {
+      "paginas": 322,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "contribuições que a vida sempre colocou à minha frente, através de pessoas, idéias ou artigos que apareciam simplesmente pendurados no ar ou nos rostos de luz d"
+        },
+        {
+          "pagina": 304,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "- E isso mesmo! Nós somos filhos da luz — completou. — Nosso corpo é formado de elementos que se originaram no interior de um sol. Somos filhos do sol, somos en"
+        }
+      ]
+    },
+    "abaixo_as_verdades_sagradas_harold_bloom": {
+      "paginas": 171,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.006,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 162,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Felizmente Frieda logo retornou, ela não mencionou K., apenas se Felizmente Frieda logo retornou, ela não mencionou K., apenas se queixou dos camponeses, e, ao "
+        }
+      ]
+    },
+    "as_lagrimas_do_papa": {
+      "paginas": 309,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 5,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "DIDIER CONVARD O TRIANGULO SECRETO AS LÁGRIMAS DO PAPA BB BERTRAND BRASIL"
+        },
+        {
+          "pagina": 308,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "{1} Maçom de segundo grau. (N. T.) {2} Loja em que o maçom recebeu a iniciação. (N. T.) {3} Nome dado à reunião maçônica. {4} Vinho tinto de uma localidade do R"
+        }
+      ]
+    },
+    "gnose_philip_gardner": {
+      "paginas": 180,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 27,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "aconteceria se ele pusesse um material sensível à luz no trajeto da centelha. Depois de muitas experiências, ele conseguiu fotografar uma aura em volta da sua m"
+        }
+      ]
+    },
+    "jesus_o_divino_mestre_albert_paul_dahoui": {
+      "paginas": 497,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 3
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A SAGA DOS CAPELINOS VOLUME VIL JESUS, O DIVINO MESTRE OS ANOS DE PREGAÇÃO E MARTIRIO ALBERT PAUL DAHOUL JHL MERESIS A SAGA DOS CAPELINOS 07 JESUS, O DIVINO MES"
+        },
+        {
+          "pagina": 4,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A SAGA DOS CAPELINOS VOLUME VII JESUS, O DIVINO MESTRE OS ANOS DE PREGAÇÃO E MARTIRIO ALBERT PAUL DAHOUI HERESIS A S AS"
+        },
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "AGA G D O DSC AP A ELI L NOS 0 L NOS O 7 JESUS U , , O DI D VINO ME M STR TE OS AN A OS D E D PR P EGAÇ AÃO Ã E MM"
+        }
+      ]
+    },
+    "maconaria_e_astrologia_jose_castellani": {
+      "paginas": 157,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "JOSÉ CASTELLANI MAÇONARIA E ASTROLOGIA 3ª EDIÇÃO REVISADA Д +Ю 4 5 Yo LANDMARK"
+        }
+      ]
+    },
+    "maconaria_e_simbologia": {
+      "paginas": 174,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.006,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "M A R C E L H E N R I Q U E R O D R I G U E S Maçonaria e Simbologia Uma análise do preconceito através da História e da Psicologia 2° e d i ç ão G RU P O M U L"
+        }
+      ]
+    },
+    "os_templarios_e_a_arca_da_alianca_graham_phillips": {
+      "paginas": 319,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.006,
+      "defeitos": {
+        "linhasRepetidas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 20,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Mapa 1: O antigo Oriente Próximo (Bálcãs) Mapa 1: O antigo Oriente Próximo (Bálcãs) Hattusas Mar Cáspio IMPÉRIO HITITA ¿ASSÍRIA MEDIA FENÍCIA Mediterrâneo CANAÃ"
+        },
+        {
+          "pagina": 74,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "egípcia que significa \"filho\". É um sufixo comum em muitos nomes egípcios. É egípcia que significa \"filho\". É um sufixo comum em muitos nomes egípcios. É encont"
+        }
+      ]
+    },
+    "sociedades_secretas_philip_gardiner": {
+      "paginas": 167,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.006,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 18,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ANTONIES MAREA/TRAVERSE BONO -VENETTIS PATRIARCIA-CONSTANTINORI CANONICTS ERASIL-HELYS STE ARTIOYAE-ASTRARIEATIS-INGENIO• CLARVS ONNE-ERNDINIOSE -ARP INT: EXCUL"
+        }
+      ]
+    },
+    "dogma_ritual_alta_magia_eliphas_levi_zahed": {
+      "paginas": 397,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.005,
+      "defeitos": {
+        "colunasIntercaladas": 1,
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 111,
+          "defeitos": [
+            "colunasIntercaladas",
+            "termosEmBloco"
+          ],
+          "inicio": "HADNU.ORG 111 סדי יהוה אלהים חבאות אראריתא אלשהדטת אלהימניבר אלהימחבאות [*Nota de Frater S.R.: perceba o erro, interncional ou não, na maioria destes nomes m he"
+        },
+        {
+          "pagina": 210,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "210 DOGMA E RITUAL DE ALTA MAGIA pagãos é o célebre ABRACADABRA, ao qual atribuíam virtudes extraordinárias, e que figuravam assim: ABRACADABRA ABRACADABR ABRAC"
+        }
+      ]
+    },
+    "maconaria_pos_pandemia": {
+      "paginas": 186,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 6,
+      "proporcao": 0.005,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 166,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Sua faixa etária: 195 respostas 23,1% 18,5% 10,3% 14,4% 23,6% • 18 a 25 Anos • 26 a 30 Anos • 31 a 36 Anos • 37 a 45 Anos • 46 a 52 Anos • 53 a 60 Anos • 61 a 7"
+        }
+      ]
+    },
+    "misterios_desvelados_saint_germain": {
+      "paginas": 201,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.005,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 2,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "M Mi is st té ér ri io os s D De es sv ve ella ad do os s E En ns si in na am me en nt to os s S Sa ai in nt t d do o G Ge er rm ma ai in n M Me es st tr re e P"
+        }
+      ]
+    },
+    "o_fim_do_templo_esquin_de_floyrac_ze_rodrix": {
+      "paginas": 888,
+      "sinalizadas": 4,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.005,
+      "defeitos": {
+        "termosEmBloco": 4
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "*Z. RODRIX TRILOGIA DO TEMPLO VOLUME ESQUIN DE FLOYRAC nO fim do Tamplo ROMANCE Trilogia do Templo 03 Trilogia do Templo 03 Esquin De Floyrac Esquin De Floyrac "
+        },
+        {
+          "pagina": 2,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "L. RODRIX ESQUIN DE FLOYRAC O fim do Templo ROMANCE 2° EDIÇÃO EDITORA RIO DE JANEIRO R E CORD SÃO PAULO 2008"
+        },
+        {
+          "pagina": 5,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Paris - Século XIV SENA 1. TEMPLO 2. COUSTURE DO TEMPLO 3. PÁTIO DOS MILAGRES - MARAIS 4. NOTRE-DAME 5. PÁTIO DOS MILAGRES - ÎLE-DE-FRANCE 6. PALAIS ROYAL 7. IL"
+        }
+      ]
+    },
+    "ritos_estranhos_no_mundo_jacques_marcireau": {
+      "paginas": 203,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.005,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 36,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "FANTASTIQUE île de Pâques Des yeux regardent les étoiles... FRANCIS MAZIERE ROBERT LAFFONT ENIGMAS FRANCIS MAZIERE DE TODOS OS TEMPOS FANTÁSTICA ILHA DE PASCOA "
+        }
+      ]
+    },
+    "a_sabedoria_dos_mitos_gregos_ferry_luc": {
+      "paginas": 250,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.004,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 12,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "realçar as lições de sabedoria escondidas nos mitos, eu, de fato, me esforcei para realçar as lições de sabedoria escondidas nos mitos, eu, de fato, me esforcei"
+        }
+      ]
+    },
+    "o_conhecimento_de_deus_j_i_packer": {
+      "paginas": 264,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.004,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 126,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Grande Deus de maravilhas! Todos os teus caminho; Mostram os atributos divinos; Mas os atos incontáveis da graça perdoadora Brilham mais que todas as outras mar"
+        }
+      ]
+    },
+    "o_livro_das_religioes_jostein_gaarder": {
+      "paginas": 249,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.004,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 248,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "E que, ao lado da caridade para todos, vivos e mortos, a umbanda jamais perdeu seu caráter E que, ao lado da caridade para todos, vivos e mortos, a umbanda jama"
+        }
+      ]
+    },
+    "dicionario_cultural_da_biblia": {
+      "paginas": 250,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.004,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 9,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "ASSIRIA ARMÊNIA Lago Lago Urmi > NINIVE MESOPOTAMIA BABILONIA ORIENTE ANTIGO ° 100 200 300 400 50 DESERTO DA ARABIA MITANI HARX Eufrates DA SITOCAL DÉLI CAPADÓC"
+        }
+      ]
+    },
+    "a_ciencia_secreta_vol_1_henri_durville": {
+      "paginas": 295,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.003,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "INDICE ÍNDICE ADVERTÊNCIA.. ADVERTÊNCIA...........................................................................................................6 ..6 PRIMEIRA"
+        }
+      ]
+    },
+    "a_ciencia_secreta_vol_2_henri_durville": {
+      "paginas": 369,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.003,
+      "defeitos": {
+        "linhasRepetidas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 5,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Índice Índice A GRÉCIA... A GRÉCIA ...................................................................................................................6 6 Ensina"
+        }
+      ]
+    },
+    "a_vida_mistica_e_oculta_de_jesus": {
+      "paginas": 858,
+      "sinalizadas": 3,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.003,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "linhasRepetidas": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 392,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "Assim: I ................................. 1 V ............................... 5 X................................ 10 L................................ 50 C...."
+        },
+        {
+          "pagina": 456,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "Daremos também, em seguida, uma demonstração clara e precisa, da Daremos também, em seguida, uma demonstração clara e precisa, da maneira como foi formada a pal"
+        },
+        {
+          "pagina": 482,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "números, qualitativamente, pronunciam o Criterium divino da Constituição de IEVE números, qualitativamente, pronunciam o Criterium divino da Constituição de lEV"
+        }
+      ]
+    },
+    "experiencias_psiquicas_alem_da_cortina_de_ferro_sheila_ostrander": {
+      "paginas": 674,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.003,
+      "defeitos": {
+        "colunasIntercaladas": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 668,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "348.\"Preliminary Experiments with a Borrowed Outstanding ESP Subject\", Journal S.P.R., Vol. 42, setembro de 1964. 349.\"Further Significant ESP Results from Pave"
+        },
+        {
+          "pagina": 671,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "385. RYZL, M., BARENDREGT; J. T.. BARKEMA, P. e KAPPERS, J., \"An ESP Experiment in Prague\", Journal of Parapsyehology, Vol. 29, N° 3, 1965. 386.RYZL, M., FREEMA"
+        }
+      ]
+    },
+    "maconaria_revelada_os_segredos_do_aprendiz_macom": {
+      "paginas": 341,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.003,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 3,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "fiflflflABflCflDDECDCflFfiF MAÇONARIA REVELADA OS SEGREDOS DO A.:M:: Maçonaria Revelada fi"
+        }
+      ]
+    },
+    "rito_frances_ou_moderno_historia_reflexoes_e_desenvolvimento_jose_filardo": {
+      "paginas": 330,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.003,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 80,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "P. P. - Quantos são os tipos de M. ? R. R. - Existem dois tipos. - Existem dois tipos. P. P. - Quem são eles? - Quem são eles? R. R. - O M. de teoria e o M. de "
+        }
+      ]
+    },
+    "arquetipos_do_zodiaco_kathleen_burt": {
+      "paginas": 479,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 35,
+      "proporcao": 0.002,
+      "defeitos": {
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 179,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "E.A. Wallis Budge, Gods of the Egyptians, vol. 1, \"Hymn to Ra\", Dover Publications Inc., Nova York, 1969 T.H. White, org., The Book of Beasts, Dover Publication"
+        }
+      ]
+    },
+    "biblia_de_jerusalem_editora_paulus": {
+      "paginas": 2276,
+      "sinalizadas": 5,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.002,
+      "defeitos": {
+        "linhasRepetidas": 5
+      },
+      "exemplos": [
+        {
+          "pagina": 222,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "nomes de todos os homens de vinte anos para cima, aptos para a guerra. 31Foram recenseados cinqüenta e sete mil e quatrocentos na tribo de Zabulon. 32Filhos de "
+        },
+        {
+          "pagina": 238,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "dedicação do altar, no dia da sua unção. Trouxeram a sua oferenda limite do altar, 11e Iahweh disse a Moisés: \"Cada dia um dos príncipes trará a sua oferenda pa"
+        },
+        {
+          "pagina": 240,
+          "defeitos": [
+            "linhasRepetidas"
+          ],
+          "inicio": "cento e trinta siclos, uma bacia de aspersão, de prata, de setenta siclos (conforme os siclos do santuário), ambas cheias de flor de farinha amassada com azeite"
+        }
+      ]
+    },
+    "giordano_bruno_e_a_tradicao_hermetica_frances_a_yates": {
+      "paginas": 509,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.002,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 55,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "A mão esquerda de Hermes repousa numa placa apoiada em esfinges, onde pode ser lida a seguinte inscrição: \"DEUS OMNIUM CREATOR SECUM DEUM FECIT VISIBILEM ET HUN"
+        }
+      ]
+    },
+    "o_mundo_de_sofia_jostein_gaarder": {
+      "paginas": 1069,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 7,
+      "proporcao": 0.002,
+      "defeitos": {
+        "termosEmBloco": 2
+      },
+      "exemplos": [
+        {
+          "pagina": 1066,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "\"Jesus\" “Jesus” 303 303 \"Paulo\" “Paulo” 307 307 312 “A profissão de fé” 312 \"A profissão de fé\" \"Postscriptum\" 314 “Postscriptum” 314 CAPÍTULO XV: CAPÍTULO XV: "
+        },
+        {
+          "pagina": 1068,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "KANT KANT 633 633 CAPÍTULO XXVI: O CAPÍTULO XXVI: O 681 ROMANTISMO ROMANTISMO 681 CAPÍTULO XXVII: CAPÍTULO XXVII: 724 HEGEL HEGEL 724 CAPÍTULO XXVIII: CAPÍTULO "
+        }
+      ]
+    },
+    "os_grandes_iniciados_edouard_schure": {
+      "paginas": 442,
+      "sinalizadas": 1,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.002,
+      "defeitos": {
+        "termosEmBloco": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "OS GRANDES INICIADOS GNOSE ª EDIÇÃO ÉDOUARD SCHURÉ EDIÇÕESLIVROS QUE CONSTROEM"
+        }
+      ]
+    },
+    "o_livro_de_urantia_urantia_foundation": {
+      "paginas": 2678,
+      "sinalizadas": 2,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.001,
+      "defeitos": {
+        "termosEmBloco": 1,
+        "colunasIntercaladas": 1
+      },
+      "exemplos": [
+        {
+          "pagina": 1,
+          "defeitos": [
+            "termosEmBloco"
+          ],
+          "inicio": "PaBESTSELLER INTERNACIONAÄI Jesus ) energia De existência ongem undog Ideus erusalém O LIVRO mer •evoluça Emili Michael + vida DE reagião present palicade URANT"
+        },
+        {
+          "pagina": 65,
+          "defeitos": [
+            "colunasIntercaladas"
+          ],
+          "inicio": "1. O Seu Décimo Quarto Ano (8 d.C.) 2. A Morte de José 3. O Décimo Quinto Ano (9 d.C.) A Origem da \"Oração do Pai\" O “Filho do Homem” Quem é o Messias? 4. O Pri"
+        }
+      ]
+    },
+    "10_misterios_que_indicam_a_existencia_de_antigas_civilizacoes_avancadas": {
+      "paginas": 10,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "200_pilulas_maconicas": {
+      "paginas": 263,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 15,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_acao_secreta_da_maconaria_na_politica_mundial_jose_castellani": {
+      "paginas": 214,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_arca_da_alianca": {
+      "paginas": 80,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 7,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_ciencia_secreta_vol_3_henri_durville": {
+      "paginas": 278,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_ciencia_secreta_vol_4_henri_durville": {
+      "paginas": 286,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_demanda_do_santo_graal_manuscrito_do_seculo_xiii": {
+      "paginas": 399,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_divina_parusia_olimpio_neves_goncalves": {
+      "paginas": 38,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_doutrina_secreta_18_03_2013": {
+      "paginas": 88,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_escada_de_jaco": {
+      "paginas": 3,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_heranca_do_simbolismo_hermetico_na_maconaria_lua_wanzeller": {
+      "paginas": 14,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood": {
+      "paginas": 75,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 5,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_influencia_da_biblia_na_maconaria_marcio_gomes": {
+      "paginas": 7,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_iniciacao_de_jesus": {
+      "paginas": 65,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_maconaria_brasileira_na_decada_da_abolicao_e_da_republica": {
+      "paginas": 63,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_maconaria_em_portugal": {
+      "paginas": 152,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_maconaria_invisivel_ricardo_de_la_cierva": {
+      "paginas": 281,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_mais_antiga_ata_maconica": {
+      "paginas": 5,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_noite_de_sao_bartolomeu_j_w_rochester": {
+      "paginas": 293,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_retorica_em_aristoteles_marcos_aurelio_de_lima": {
+      "paginas": 140,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_tradicao_hermetica_julius_evola": {
+      "paginas": 129,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_vida_e_os_ensinamentos_de_thoth_hermes_trismegisto": {
+      "paginas": 15,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "a_vida_mistica_de_jesus": {
+      "paginas": 220,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "ainda_sobre_o_rito_ingles": {
+      "paginas": 5,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "alcorao": {
+      "paginas": 1015,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "antiguos_ritos_misticos": {
+      "paginas": 308,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "aprendizado_maconico_rizzardo_da_camino": {
+      "paginas": 175,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "as_7_palavras": {
+      "paginas": 29,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "as_origens_do_reaa_rito_escoces_antigo_e_aceito_jose_castellani": {
+      "paginas": 3,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "astrologia_cabalistica_rav_philip_s_berg": {
+      "paginas": 182,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 24,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "atos_de_salomao": {
+      "paginas": 133,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "bula_clemente_xii": {
+      "paginas": 3,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "cabala_e_a_maconaria_curso_mm_diplomados": {
+      "paginas": 31,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "cabala_mistica": {
+      "paginas": 158,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "cavaleiros_templarios": {
+      "paginas": 40,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "charles_evaldo_boller_g01_do_templo_e_seu_teto_no_reaa": {
+      "paginas": 7,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "conspiracoes_sobre_templarios_e_macons_michel_haag": {
+      "paginas": 26,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "de_profecia_e_inquisicao_padre_antonio_vieira": {
+      "paginas": 310,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "desaparicoes_misteriosas_o_cosmo_observa_nos": {
+      "paginas": 324,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 8,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "do_templo_aos_jesuitas_macons_e_piratas": {
+      "paginas": 48,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "dos_faraos_a_fisica_quantica_ricardo_di_bernardi": {
+      "paginas": 78,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "energia_ao_quadrado_pam_grout": {
+      "paginas": 173,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "estudos_a_simbologia_do_galo_roberto_lico": {
+      "paginas": 23,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "extraterrestres": {
+      "paginas": 19,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "fernando_pessoa_e_a_maconaria_roberto_aguilar_silva": {
+      "paginas": 17,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "filosofia_quantica_marcos_aurelio_de_oliveira_ramos": {
+      "paginas": 107,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "grau_de_aprendiz_e_seus_misterios_jorge_adoum": {
+      "paginas": 182,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "guia_dos_altos_graus_jsm_ward": {
+      "paginas": 58,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 4,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "hermes_trismegisto": {
+      "paginas": 30,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "hermetismo_e_maconaria_doutrina_historia_atualidade": {
+      "paginas": 73,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "hierarquia_dos_conspiradores_o_comite_dos": {
+      "paginas": 24,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "historia_da_maconaria_aulas_1_a_12": {
+      "paginas": 173,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "historia_dos_hebreus_flavio_josefo": {
+      "paginas": 1685,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "huze": {
+      "paginas": 17,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "influencias_do_antigo_egito_na_maconaria_2021": {
+      "paginas": 12,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "interpretacao_esoterica_de_mateus_capitulos_1_a_7": {
+      "paginas": 31,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "luz_martinista": {
+      "paginas": 25,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "lvr_quadrivium_john_martineau": {
+      "paginas": 34,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 12,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "maconaria_e_abolicao_em_s_paulo_renata_ribeiro_francisco": {
+      "paginas": 286,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 3,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "maconaria_e_expressoes_latinas": {
+      "paginas": 64,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "maconaria_simbolos_e_arquetipos": {
+      "paginas": 135,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "macons_do_passado_ejvandro_buriti": {
+      "paginas": 171,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "macons_que_leem": {
+      "paginas": 29,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "manual_do_mestre_franco_macom_aldo_lavagnini": {
+      "paginas": 107,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "medico_de_homens_e_almas_taylor_caldwell": {
+      "paginas": 526,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 6,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "moral_e_dogma": {
+      "paginas": 77,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "numeros_a_decada_pitagorica": {
+      "paginas": 13,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "numeros_a_mistica_filosofica_dos_numeros_louis_claude_de_saint_martin": {
+      "paginas": 15,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_caibalion_tres_iniciados": {
+      "paginas": 88,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_caminho_dos_essenios_a_vida_oculta_de_jesus": {
+      "paginas": 457,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_homem_e_seus_simbolos_carl_gustav_jung": {
+      "paginas": 341,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_ideal_iniciatico_oswald_wirth": {
+      "paginas": 58,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_livro_da_sabedoria": {
+      "paginas": 27,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_livro_de_enoque": {
+      "paginas": 93,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_livro_de_enoque_1": {
+      "paginas": 171,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_livro_dos_mortos_e_a_justica_divina_lucio_j_patrocinio_filho": {
+      "paginas": 11,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_malho_e_o_cinzel": {
+      "paginas": 79,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_manuscrito_halliwell_ou_poema_regius": {
+      "paginas": 29,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_mestre_dos_mestres_augusto_cury": {
+      "paginas": 113,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_monge_e_o_veneravel_christian_jacq": {
+      "paginas": 181,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_nome_de_deus_adonai_roberto_aguilar_silva": {
+      "paginas": 12,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_poder_da_cabala": {
+      "paginas": 153,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_ponto_dentro_do_circulo_blog_sobre_maconaria_filosofia_historia_sociedade_e_cultura": {
+      "paginas": 27,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_que_e_a_maconaria": {
+      "paginas": 12,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "o_simbolismo_hermetico_e_sua_relacao_com_a_alquimia_e_franco_maconaria_oswald_wirth": {
+      "paginas": 76,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "origens_da_maconaria_basilio_thome_de_freitas_junior": {
+      "paginas": 12,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_chakras_ayrton_rodrigues": {
+      "paginas": 26,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_filhos_do_graal": {
+      "paginas": 541,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_instrumentos_de_trabalho_do_aprediz": {
+      "paginas": 2,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_misterios_maiores": {
+      "paginas": 85,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_misterios_rosacruzes_max_heindel_2": {
+      "paginas": 75,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao": {
+      "paginas": 21,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_principios_das_leis_maconicas_vol_2_albert_g_mackey": {
+      "paginas": 133,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 15,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_templarios_e_a_sinarquia_olimpio_goncalves": {
+      "paginas": 28,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 2,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_templarios_e_o_pergaminho_de_chinon_encontrado_nos_arquivos_secretos_do_vaticano_barbara_frale": {
+      "paginas": 212,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "os_templarios_na_formacao_de_portugal": {
+      "paginas": 28,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "particulas_de_deus": {
+      "paginas": 107,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "pequeno_tratado_das_grandes_virtudes": {
+      "paginas": 225,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "platao_em_90_minutos_paul_strathern": {
+      "paginas": 22,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "poesias_maconicas_vol_i": {
+      "paginas": 60,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "pre_historia_da_maconaria": {
+      "paginas": 5,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "rito_escoces_antigo_e_aceito": {
+      "paginas": 213,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "ritual_de_emulacao_um_sistema_ritualistico_ingles": {
+      "paginas": 19,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "sao_joao_padroeiro_da_maconaria": {
+      "paginas": 24,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "simbolismo_do_primeiro_grau_rizzardo_da_camino": {
+      "paginas": 173,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "simbolismo_numeros_boanerges_b_castro": {
+      "paginas": 86,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "sinopse_do_grau_de_aprendiz_macom_carvalho": {
+      "paginas": 139,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "sociedades_secretas_os_illuminati": {
+      "paginas": 83,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 4,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "sociedades_secretas_sergio_pereira_couto": {
+      "paginas": 179,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 1,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "solticios_x_loja_de_mesa": {
+      "paginas": 45,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "statuta_et_ordinamenta_societatis_magistrorum_tapia_et_lignamiis": {
+      "paginas": 15,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "tiradentes_macom": {
+      "paginas": 7,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "trilogia_do_templo_i_joabem_construtor_do_templo": {
+      "paginas": 257,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "trilogia_do_templo_ii_zorobabel_reconstruindo_o_templo": {
+      "paginas": 365,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "washington_secreta_dos_illuminati_e_macons": {
+      "paginas": 31,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "breviario_seculo_xxi": {
+      "paginas": 365,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "dicionario_maconico_completo": {
+      "paginas": 563,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "voltaire_dicionario_filosofico_ridendo_castigat_mores": {
+      "paginas": 459,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "breviario_kennyo_ismail": {
+      "paginas": 365,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    },
+    "breviario_rizzardo_da_camino": {
+      "paginas": 365,
+      "sinalizadas": 0,
+      "vaziasNoMeio": 0,
+      "proporcao": 0.0,
+      "defeitos": {},
+      "exemplos": []
+    }
+  }
+}

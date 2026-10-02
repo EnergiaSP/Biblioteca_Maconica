@@ -17,6 +17,7 @@ import shutil
 import sqlite3
 from pathlib import Path
 
+import auditar_texto_acervo as audit
 import qualidade_referencia as quality
 
 RANK = {"curta": 0, "ilegivel": 1, "ruidosa": 2, "legivel": 3}
@@ -89,15 +90,62 @@ def letters(text: str) -> int:
     return sum(ch.isalpha() for ch in text)
 
 
-def better(old: str, new: str, config: dict) -> bool:
+_WORD_COUNTS = None
+
+
+def word_counts() -> dict:
+    """How often each word appears in the whole local collection (computed once)."""
+    global _WORD_COUNTS
+    if _WORD_COUNTS is None:
+        import collections, glob
+        counts = collections.Counter()
+        packages = Path(__file__).resolve().parents[1] / "BibliotecaMaconica_Dev/ImportacaoLivrosPDF_OCR/_relatorios/RAGPackages"
+        for path in glob.glob(str(packages / "**/*.sqlite"), recursive=True):
+            con = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+            for (text,) in con.execute("SELECT texto_integral FROM rag_paginas"):
+                counts.update(re.findall(r"[a-z0-9]{3,}", quality_fold(text or "")))
+            con.close()
+        _WORD_COUNTS = counts
+    return _WORD_COUNTS
+
+
+def keeps_words(old: str, new: str) -> bool:
+    """Every real word of the old page is still somewhere in the new one (a hyphen-split piece counts
+    inside the joined word); only OCR noise may go: words seen fewer than 3 times in the collection."""
+    running = re.sub(r"[^a-z0-9]", "", quality_fold(new))
+    counts = word_counts()
+    def doubled_number(w):  # a page number read twice ("1010", "131131")
+        return w.isdigit() and len(w) % 2 == 0 and w[:len(w) // 2] == w[len(w) // 2:]
+    return all(w in running or counts.get(w, 0) < 3 or doubled_number(w)
+               for w in set(re.findall(r"[a-z0-9]{3,}", quality_fold(old))))
+
+
+def quality_fold(text: str) -> str:
+    import unicodedata
+    return "".join(c for c in unicodedata.normalize("NFD", text.lower()) if unicodedata.category(c) != "Mn")
+
+
+def defects(text: str) -> float:
+    """Copies the page quality rule does not see (Tools/auditar_texto_acervo.py): repeated lines, interleaved columns."""
+    found = audit.audit_page(text, {})
+    return found.get("linhasRepetidas", 0) + 100 * found.get("colunasIntercaladas", 0)
+
+
+def better(old: str, new: str, config: dict, criterion: str = "qualidade") -> bool:
+    if criterion == "copias" and not keeps_words(old, new):
+        return False  # a re-read text layer may never drop a real word of the page
     old_level = quality.rate_page(old, config)["nivel"]
     new_level = quality.rate_page(new, config)["nivel"]
     if RANK[new_level] != RANK[old_level]:
         return RANK[new_level] > RANK[old_level]
+    if criterion == "copias":
+        # Only pages that lose the second copy of their text (or interleaved columns) change, and only when
+        # no word of the old text is missing from the new one (a layer may hold labels the other lacks).
+        return bool(new.strip()) and defects(new) < defects(old) and keeps_words(old, new)
     return letters(new) >= 0.8 * letters(old) and new.strip() != ""
 
 
-def apply(package: Path, ocr: Path, output: Path, work: str = "") -> dict:
+def apply(package: Path, ocr: Path, output: Path, work: str = "", criterion: str = "qualidade") -> dict:
     config = quality.load_config()
     pages = {p["pagina"]: normalize(p["texto"]) for p in json.loads(ocr.read_text(encoding="utf-8"))["paginas"]}
     if output != package:
@@ -115,7 +163,7 @@ def apply(package: Path, ocr: Path, output: Path, work: str = "") -> dict:
         summary["paginas"] += 1
         old_level = quality.rate_page(old, config)["nivel"]
         summary["antes"][old_level] = summary["antes"].get(old_level, 0) + 1
-        if not better(old, new, config):
+        if not better(old, new, config, criterion):
             summary["mantidas"] += 1
             summary["depois"][old_level] = summary["depois"].get(old_level, 0) + 1
             continue
@@ -150,8 +198,10 @@ def main() -> None:
     parser.add_argument("--ocr", type=Path, required=True)
     parser.add_argument("--saida", type=Path, required=True)
     parser.add_argument("--obra", default="", help="id of the work, needed in an area package")
+    parser.add_argument("--criterio", choices=["qualidade", "copias"], default="qualidade",
+                        help="copias: only a page that loses the repeated copy of its text changes (fewer letters expected)")
     args = parser.parse_args()
-    print(json.dumps(apply(args.pacote, args.ocr, args.saida, args.obra), ensure_ascii=False))
+    print(json.dumps(apply(args.pacote, args.ocr, args.saida, args.obra, args.criterio), ensure_ascii=False))
 
 
 if __name__ == "__main__":

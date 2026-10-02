@@ -2,22 +2,22 @@
   "schemaVersion": 1,
   "descricao": "Qualidade do texto do acervo RAG pela regra Paridade/qualidade_texto_v1.json.",
   "paginas": {
-    "avaliadas": 66431,
-    "ruidosas": 203,
+    "avaliadas": 59978,
+    "ruidosas": 179,
     "ilegiveis": 65
   },
   "obrasPorNivel": {
     "baixa": 1,
-    "boa": 313,
-    "regular": 7
+    "boa": 289,
+    "regular": 6
   },
   "motivos": {
-    "simbolo": 47461,
-    "solta": 45809,
-    "caixa": 5341,
-    "misto": 2648,
-    "escrita": 1357,
-    "semVogal": 352
+    "simbolo": 43299,
+    "solta": 42251,
+    "caixa": 4893,
+    "misto": 2491,
+    "escrita": 1225,
+    "semVogal": 329
   },
   "obrasComMaisRuido": [
     {
@@ -66,13 +66,6 @@
       "obra": "painel_do_grau_de_aprendiz_completo_booz",
       "avaliadas": 28,
       "ruidosas": 2,
-      "ilegiveis": 0,
-      "nivel": "regular"
-    },
-    {
-      "obra": "geometria_sagrada",
-      "avaliadas": 48,
-      "ruidosas": 3,
       "ilegiveis": 0,
       "nivel": "regular"
     },
@@ -161,6 +154,13 @@
       "nivel": "boa"
     },
     {
+      "obra": "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino",
+      "avaliadas": 205,
+      "ruidosas": 4,
+      "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
       "obra": "a_maconaria_durante_as_ditaduras",
       "avaliadas": 131,
       "ruidosas": 2,
@@ -179,20 +179,6 @@
       "avaliadas": 340,
       "ruidosas": 7,
       "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "ritual_de_emulacao_a_maconaria_inglesa_no_brasil_fabio_m_paulino",
-      "avaliadas": 204,
-      "ruidosas": 4,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira",
-      "avaliadas": 357,
-      "ruidosas": 6,
-      "ilegiveis": 1,
       "nivel": "boa"
     },
     {
@@ -224,10 +210,10 @@
       "nivel": "boa"
     },
     {
-      "obra": "os_misterios_rosacruzes_max_heindel",
-      "avaliadas": 60,
-      "ruidosas": 1,
-      "ilegiveis": 0,
+      "obra": "uma_introducao_ao_hermetismo_e_ao_corpus_hermeticum_david_p_de_lira",
+      "avaliadas": 357,
+      "ruidosas": 5,
+      "ilegiveis": 1,
       "nivel": "boa"
     },
     {
@@ -259,28 +245,7 @@
       "nivel": "boa"
     },
     {
-      "obra": "de_gutenberg_a_diderot_peter_burke",
-      "avaliadas": 260,
-      "ruidosas": 4,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
-      "obra": "o_taro_cabalistico_robert_wang",
-      "avaliadas": 326,
-      "ruidosas": 5,
-      "ilegiveis": 0,
-      "nivel": "boa"
-    },
-    {
       "obra": "as_chaves_de_salomao",
-      "avaliadas": 393,
-      "ruidosas": 5,
-      "ilegiveis": 1,
-      "nivel": "boa"
-    },
-    {
-      "obra": "as_claviculas_salomao_mathers",
       "avaliadas": 393,
       "ruidosas": 5,
       "ilegiveis": 1,
@@ -298,6 +263,41 @@
       "avaliadas": 70,
       "ruidosas": 0,
       "ilegiveis": 1,
+      "nivel": "boa"
+    },
+    {
+      "obra": "socrates_em_90_minutos_paul_strathern",
+      "avaliadas": 71,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "timeu_a_cosmologia_de_platao_oscar_t_matsuura",
+      "avaliadas": 143,
+      "ruidosas": 2,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "moral_e_dogma",
+      "avaliadas": 76,
+      "ruidosas": 1,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "guia_aprendiz_macom_ir_bruno_carraveta",
+      "avaliadas": 154,
+      "ruidosas": 2,
+      "ilegiveis": 0,
+      "nivel": "boa"
+    },
+    {
+      "obra": "realidade_oculta",
+      "avaliadas": 78,
+      "ruidosas": 1,
+      "ilegiveis": 0,
       "nivel": "boa"
     }
   ]

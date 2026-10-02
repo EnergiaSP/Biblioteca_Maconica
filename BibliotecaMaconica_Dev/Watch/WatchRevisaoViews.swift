@@ -67,7 +67,7 @@ struct WatchRevisaoEntrada: View {
                     Label(baralho.rotulo("abrir"), systemImage: "rectangle.on.rectangle.angled")
                     Text(store.pendentes.isEmpty ? baralho.rotulo("vazio") : baralho.rotulo("pendentes", ["n": "\(store.pendentes.count)"]))
                         .font(.caption2)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.black.opacity(0.75))  // on the gold button (BotaoDourado)
                 }
             }
             .accessibilityIdentifier("watch.review")
@@ -88,7 +88,7 @@ struct WatchRevisaoView: View {
                     if mostrando {
                         Text(cartao.verso)
                             .font(.headline)
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(Color.douradoRelogio)
                         Text(baralho.rotulo("fonte", ["fonte": cartao.fonte]))
                             .font(.caption2)
                             .foregroundStyle(.secondary)

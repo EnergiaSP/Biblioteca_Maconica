@@ -1535,6 +1535,43 @@ final class BreviarioMaconicoXXITests: XCTestCase {
                        "Em 01/06/2026, texto ⁵⁷⁸ e outro⁵⁷⁹. Total 1234; 12/578 não é chamada.")
     }
 
+    /// Same check as Android (`PackageDownloadTest`); needs the network.
+    func testDownloadingTheSamePackageTwiceKeepsOneCopy() async throws {
+        let catalogo = try BibliotecaRAGCatalogService()
+        let pacote = try XCTUnwrap(catalogo.pacotes.first { $0.arquivo == "bibliotecaMaconica/rag_bula_clemente_xii.sqlite" })
+        let raiz = BibliotecaRAGCatalogService.raizPacotesLocal()
+        let arquivo = raiz.appendingPathComponent(pacote.arquivo), marcador = raiz.appendingPathComponent(pacote.arquivo + ".sha256")
+        let pasta = arquivo.deletingLastPathComponent()
+        let salvoArquivo = try? Data(contentsOf: arquivo), salvoMarcador = try? Data(contentsOf: marcador)
+        defer {
+            if let salvoArquivo { try? salvoArquivo.write(to: arquivo) } else { try? FileManager.default.removeItem(at: arquivo) }
+            if let salvoMarcador { try? salvoMarcador.write(to: marcador) } else { try? FileManager.default.removeItem(at: marcador) }
+        }
+        let servico = try BibliotecaOfflinePackageService(catalogo: catalogo)
+        do { try await servico.instalarPacote(pacote) } catch { throw XCTSkip("Sem rede para baixar o pacote: \(error)") }
+        let paginas = try catalogo.carregarIndicePaginas(obraID: "bula_clemente_xii").count
+        let resultados = try catalogo.buscar(termo: "bula", escopo: .obraAtual, area: nil, obraID: "bula_clemente_xii").count
+        XCTAssertGreaterThan(paginas, 0)
+        XCTAssertGreaterThan(resultados, 0)
+        try await servico.instalarPacote(pacote)
+        let copias = try FileManager.default.contentsOfDirectory(atPath: pasta.path).filter { $0.hasPrefix("rag_bula_clemente_xii") }
+        XCTAssertEqual(copias.sorted(), ["rag_bula_clemente_xii.sqlite", "rag_bula_clemente_xii.sqlite.sha256"])
+        XCTAssertEqual(try String(contentsOf: marcador, encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines), pacote.sha256)
+        XCTAssertEqual(try catalogo.carregarIndicePaginas(obraID: "bula_clemente_xii").count, paginas)
+        XCTAssertEqual(try catalogo.buscar(termo: "bula", escopo: .obraAtual, area: nil, obraID: "bula_clemente_xii").count, resultados)
+    }
+
+    /// Same cases as Android (`PackageCleanupTest`).
+    func testPackagesLeftOutOfTheCatalogAreRemovedButNotImports() {
+        let catalogo: Set<String> = ["rag_breviarios.sqlite", "bibliotecaMaconica/rag_a.sqlite"]
+        let arquivos = ["rag_breviarios.sqlite", "rag_breviarios.sqlite.sha256",
+                        "bibliotecaMaconica/rag_a.sqlite", "bibliotecaMaconica/rag_a.sqlite.sha256",
+                        "bibliotecaMaconica/rag_copia.sqlite", "bibliotecaMaconica/rag_copia.sqlite.sha256",
+                        "imported_minha_obra_1.sqlite", "imported_minha_obra_1_images/page_1.jpg", "imported_works.json"]
+        XCTAssertEqual(BibliotecaOfflinePackageService.arquivosForaDoCatalogo(arquivos, catalogo: catalogo),
+                       ["bibliotecaMaconica/rag_copia.sqlite", "bibliotecaMaconica/rag_copia.sqlite.sha256"])
+    }
+
     func testSamePDFIsRecognizedAsAlreadyImported() throws {
         let url = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".pdf")
         defer { try? FileManager.default.removeItem(at: url) }

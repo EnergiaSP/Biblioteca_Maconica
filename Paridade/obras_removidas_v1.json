@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "descricao": "Obras removidas do acervo por terem o conteúdo em outra mais completa (Tools/remover_obras_repetidas.py: 90% ou mais das passagens de 8 palavras na outra).",
+  "grupos": [
+    {
+      "mantida": "100_instrucoes_de_aprendiz",
+      "passagensMantida": 28845,
+      "removidas": [
+        {
+          "id": "maconaria_100_instrucoes_de_aprendiz",
+          "passagens": 28846,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "a_chave_de_salomao_greg_taylor",
+      "passagensMantida": 10545,
+      "removidas": [
+        {
+          "id": "a_chave_de_salomao_greg_taylor_2",
+          "passagens": 10545,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "a_ciencia_secreta_vol_2_henri_durville",
+      "passagensMantida": 22017,
+      "removidas": [
+        {
+          "id": "a_ciencia_secreta_ii",
+          "passagens": 22017,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "a_geometria_sagrada",
+      "passagensMantida": 1225,
+      "removidas": [
+        {
+          "id": "geometria_sagrada",
+          "passagens": 1249,
+          "paginasRuins": 3
+        }
+      ]
+    },
+    {
+      "mantida": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
+      "passagensMantida": 3373,
+      "removidas": [
+        {
+          "id": "a_vida_de_jacques_demolay",
+          "passagens": 3375,
+          "paginasRuins": 0
+        },
+        {
+          "id": "jacques_demolay_a_vida_de_jacques_demolay",
+          "passagens": 3375,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "a_linhagem_do_santo_graal_laurence_gardner",
+      "passagensMantida": 28450,
+      "removidas": [
+        {
+          "id": "maconaria_laurence_gardner_a_linhagem_do_santo_graal",
+          "passagens": 28450,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "a_sintese_da_doutrina_secreta_blavatsky",
+      "passagensMantida": 52765,
+      "removidas": [
+        {
+          "id": "a_doutrina_secreta_sintese",
+          "passagens": 52576,
+          "paginasRuins": 1
+        }
+      ]
+    },
+    {
+      "mantida": "a_sociedade_dos_templarios_lourivaldo_p_bacan",
+      "passagensMantida": 6309,
+      "removidas": [
+        {
+          "id": "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan",
+          "passagens": 6309,
+          "paginasRuins": 1
+        }
+      ]
+    },
+    {
+      "mantida": "abobada_celeste",
+      "passagensMantida": 329,
+      "removidas": [
+        {
+          "id": "abobada_celeste_no_templo_maconico",
+          "passagens": 329,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "arquetipos_do_zodiaco_kathleen_burt",
+      "passagensMantida": 55137,
+      "removidas": [
+        {
+          "id": "zodiaco_arquetipos_dos_zodiacos",
+          "passagens": 55137,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "as_chaves_de_salomao",
+      "passagensMantida": 24804,
+      "removidas": [
+        {
+          "id": "as_claviculas_salomao_mathers",
+          "passagens": 24804,
+          "paginasRuins": 6
+        }
+      ]
+    },
+    {
+      "mantida": "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus",
+      "passagensMantida": 10832,
+      "removidas": [
+        {
+          "id": "corpus_hermeticum_versao_1",
+          "passagens": 11123,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "de_profecia_e_inquisicao_padre_antonio_vieira",
+      "passagensMantida": 25203,
+      "removidas": [
+        {
+          "id": "de_profecia_e_inquisicao_padre_antonio_vieira_2",
+          "passagens": 25203,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "dicionario_maconico_1",
+      "passagensMantida": 3251,
+      "removidas": [
+        {
+          "id": "dicionario_maconico",
+          "passagens": 3246,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "dogma_ritual_alta_magia_eliphas_levi_zahed",
+      "passagensMantida": 35237,
+      "removidas": [
+        {
+          "id": "eliphas_levi_dogma_e_ritual_da_alta_magia",
+          "passagens": 29689,
+          "paginasRuins": 1
+        }
+      ]
+    },
+    {
+      "mantida": "lvr_quadrivium_john_martineau",
+      "passagensMantida": 1270,
+      "removidas": [
+        {
+          "id": "quadrivium",
+          "passagens": 1270,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "o_caibalion_tres_iniciados",
+      "passagensMantida": 8206,
+      "removidas": [
+        {
+          "id": "o_caibalion",
+          "passagens": 8114,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix",
+      "passagensMantida": 60847,
+      "removidas": [
+        {
+          "id": "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo",
+          "passagens": 60847,
+          "paginasRuins": 1
+        }
+      ]
+    },
+    {
+      "mantida": "o_livro_de_urantia_urantia_foundation",
+      "passagensMantida": 328248,
+      "removidas": [
+        {
+          "id": "o_livro_de_urantia",
+          "passagens": 310975,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "o_livro_ilustrado_dos_simbolos_completo",
+      "passagensMantida": 16013,
+      "removidas": [
+        {
+          "id": "o_livro_ilustrado_dos_simbolos_ii_trecho",
+          "passagens": 4695,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "os_misterios_rosacruzes_max_heindel_2",
+      "passagensMantida": 10142,
+      "removidas": [
+        {
+          "id": "os_misterios_rosacruzes_max_heindel",
+          "passagens": 10287,
+          "paginasRuins": 1
+        }
+      ]
+    },
+    {
+      "mantida": "os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao",
+      "passagensMantida": 1866,
+      "removidas": [
+        {
+          "id": "g1_141_as_cruzadas_os_templarios_e_a_maconaria",
+          "passagens": 1854,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "os_principios_das_leis_maconicas",
+      "passagensMantida": 6083,
+      "removidas": [
+        {
+          "id": "os_principios_das_leis_maconicas_vol1_albert_g_mackey",
+          "passagens": 6083,
+          "paginasRuins": 0
+        }
+      ]
+    },
+    {
+      "mantida": "os_templarios_michael_lamy",
+      "passagensMantida": 27859,
+      "removidas": [
+        {
+          "id": "os_templarios_michael_lamy_2",
+          "passagens": 27859,
+          "paginasRuins": 2
+        }
+      ]
+    }
+  ],
+  "pares": [
+    {
+      "a": "100_instrucoes_de_aprendiz",
+      "b": "maconaria_100_instrucoes_de_aprendiz",
+      "a_em_b": 0.997,
+      "b_em_a": 0.997
+    },
+    {
+      "a": "a_chave_de_salomao_greg_taylor",
+      "b": "a_chave_de_salomao_greg_taylor_2",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "a_ciencia_secreta_ii",
+      "b": "a_ciencia_secreta_vol_2_henri_durville",
+      "a_em_b": 0.998,
+      "b_em_a": 0.998
+    },
+    {
+      "a": "a_doutrina_secreta_sintese",
+      "b": "a_sintese_da_doutrina_secreta_blavatsky",
+      "a_em_b": 0.984,
+      "b_em_a": 0.98
+    },
+    {
+      "a": "a_geometria_sagrada",
+      "b": "geometria_sagrada",
+      "a_em_b": 0.967,
+      "b_em_a": 0.949
+    },
+    {
+      "a": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
+      "b": "a_vida_de_jacques_demolay",
+      "a_em_b": 0.997,
+      "b_em_a": 0.996
+    },
+    {
+      "a": "a_historia_da_vida_e_da_epoca_de_jacques_de_molay_h_l_haywood",
+      "b": "jacques_demolay_a_vida_de_jacques_demolay",
+      "a_em_b": 0.997,
+      "b_em_a": 0.996
+    },
+    {
+      "a": "a_linhagem_do_santo_graal_laurence_gardner",
+      "b": "maconaria_laurence_gardner_a_linhagem_do_santo_graal",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "a_sociedade_dos_templarios_lourivaldo_p_bacan",
+      "b": "a_sociedade_secreta_dos_templarios_lourivaldo_perez_bacan",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "a_vida_de_jacques_demolay",
+      "b": "jacques_demolay_a_vida_de_jacques_demolay",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "abobada_celeste",
+      "b": "abobada_celeste_no_templo_maconico",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "arquetipos_do_zodiaco_kathleen_burt",
+      "b": "zodiaco_arquetipos_dos_zodiacos",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "as_chaves_de_salomao",
+      "b": "as_claviculas_salomao_mathers",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "corpus_hermeticum_a_tabua_da_esmeralda_hermes_trismegistus",
+      "b": "corpus_hermeticum_versao_1",
+      "a_em_b": 0.964,
+      "b_em_a": 0.939
+    },
+    {
+      "a": "de_profecia_e_inquisicao_padre_antonio_vieira",
+      "b": "de_profecia_e_inquisicao_padre_antonio_vieira_2",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "dicionario_maconico",
+      "b": "dicionario_maconico_1",
+      "a_em_b": 0.93,
+      "b_em_a": 0.929
+    },
+    {
+      "a": "dogma_ritual_alta_magia_eliphas_levi_zahed",
+      "b": "eliphas_levi_dogma_e_ritual_da_alta_magia",
+      "a_em_b": 0.802,
+      "b_em_a": 0.952
+    },
+    {
+      "a": "g1_141_as_cruzadas_os_templarios_e_a_maconaria",
+      "b": "os_pobres_soldados_de_jesus_cristo_e_do_templo_de_salomao",
+      "a_em_b": 0.991,
+      "b_em_a": 0.984
+    },
+    {
+      "a": "lvr_quadrivium_john_martineau",
+      "b": "quadrivium",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "o_caibalion",
+      "b": "o_caibalion_tres_iniciados",
+      "a_em_b": 0.984,
+      "b_em_a": 0.973
+    },
+    {
+      "a": "o_fim_do_templo_esquin_de_floyrac_ze_rodrix",
+      "b": "trilogia_do_templo_iii_esquin_de_floyrac_o_fim_do_templo",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "o_livro_de_urantia",
+      "b": "o_livro_de_urantia_urantia_foundation",
+      "a_em_b": 0.968,
+      "b_em_a": 0.917
+    },
+    {
+      "a": "o_livro_ilustrado_dos_simbolos_completo",
+      "b": "o_livro_ilustrado_dos_simbolos_ii_trecho",
+      "a_em_b": 0.293,
+      "b_em_a": 1.0
+    },
+    {
+      "a": "os_misterios_rosacruzes_max_heindel",
+      "b": "os_misterios_rosacruzes_max_heindel_2",
+      "a_em_b": 0.979,
+      "b_em_a": 0.993
+    },
+    {
+      "a": "os_principios_das_leis_maconicas",
+      "b": "os_principios_das_leis_maconicas_vol1_albert_g_mackey",
+      "a_em_b": 0.998,
+      "b_em_a": 0.998
+    },
+    {
+      "a": "os_templarios_michael_lamy",
+      "b": "os_templarios_michael_lamy_2",
+      "a_em_b": 1.0,
+      "b_em_a": 1.0
+    }
+  ],
+  "pacotesRefeitos": [
+    "rag_dicionariosMaconicos.sqlite"
+  ]
+}

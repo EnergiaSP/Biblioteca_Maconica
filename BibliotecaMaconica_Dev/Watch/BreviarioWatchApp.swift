@@ -9,7 +9,24 @@ struct BreviarioWatchApp: App {
     var body: some Scene {
         WindowGroup {
             BreviarioWatchHomeView()
+                .buttonStyle(BotaoDourado())
         }
+    }
+}
+
+/// The app's accent on the watch, as on Wear OS: gold (#C8A34B) with black text.
+extension Color {
+    static let douradoRelogio = Color(red: 0xC8 / 255, green: 0xA3 / 255, blue: 0x4B / 255)
+}
+
+struct BotaoDourado: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.footnote.weight(.semibold))
+            .foregroundStyle(.black)
+            .frame(maxWidth: .infinity, minHeight: 40)
+            .padding(.horizontal, 8)
+            .background(Color.douradoRelogio.opacity(configuration.isPressed ? 0.7 : 1), in: Capsule())
     }
 }
 
@@ -104,7 +121,7 @@ struct BreviarioWatchHomeView: View {
 
             Text(leitura.titulo)
                 .font(.headline)
-                .foregroundStyle(.yellow)
+                .foregroundStyle(Color.douradoRelogio)
                 .lineLimit(3)
         }
     }
@@ -165,7 +182,7 @@ private struct WatchReadingView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text(leitura.dataPorExtenso).font(.caption2).foregroundStyle(.secondary)
-                Text(leitura.titulo).font(.headline).foregroundStyle(.yellow)
+                Text(leitura.titulo).font(.headline).foregroundStyle(Color.douradoRelogio)
                 Text(leitura.texto).font(.footnote)
                 if let notes = leitura.rodape, !notes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     Divider()

@@ -176,7 +176,7 @@ class NavigationFlowTest {
         compose.onNodeWithText("Trilhas por grau").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.aprendiz.progresso").assertTextEquals("0 de 10 etapas (0%)")
         // Suggested works by title, not by id.
-        compose.onNodeWithTag("tracks.list").performScrollToNode(hasText("100 Instruções de Aprendiz"))
+        compose.onNodeWithTag("tracks.list").performScrollToNode(hasText("100 Instruções de Aprendiz", substring = true))
         compose.onNodeWithTag("tracks.list").performScrollToIndex(0)
         compose.onNodeWithTag("trilha.aprendiz.etapas").performScrollTo().performClick()
         compose.onNodeWithTag("trilha.etapa.aprendiz_iniciacao.marcar").performScrollTo().performClick()

@@ -153,7 +153,12 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
         onDispose { prefs.unregisterOnSharedPreferenceChangeListener(listener) }
     }
 
-    MaterialTheme {
+    // Same accent as the phone in its dark theme: gold buttons with black text, not the default purple.
+    MaterialTheme(colorScheme = androidx.compose.material3.darkColorScheme(
+        primary = Color(0xFFC8A34B), onPrimary = Color.Black,
+        secondary = Color(0xFFC8A34B), onSecondary = Color.Black,
+        background = Color(0xFF111111), surface = Color(0xFF111111), onSurface = Color.White
+    )) {
         Column(
             Modifier.fillMaxSize().background(Color(0xFF111111)).verticalScroll(rememberScrollState()).padding(wearContentPadding()),
             verticalArrangement = Arrangement.spacedBy(9.dp)
@@ -167,16 +172,18 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
                 Text("Notas de rodapé", color = Color.LightGray, fontSize = 12.sp)
                 Text(reading.rodape, color = Color.White, fontSize = 13.sp, lineHeight = 18.sp)
             }
+            // Two buttons side by side on a round screen: the default 24 dp side padding broke "Marcar" in two.
+            val sideBySide = androidx.compose.foundation.layout.PaddingValues(horizontal = 6.dp, vertical = 8.dp)
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                Button(onClick = { full = !full }, modifier = Modifier.weight(1f)) {
-                    Text(if (full) "Resumo" else "Ler", fontSize = 11.sp)
+                Button(onClick = { full = !full }, modifier = Modifier.weight(1f), contentPadding = sideBySide) {
+                    Text(if (full) "Resumo" else "Ler", fontSize = 11.sp, maxLines = 1, softWrap = false)
                 }
                 Button(onClick = {
                     read = !read
                     prefs.edit().putBoolean(key, read).apply()
                     WearProgressSync.send(context, reading.obraId, reading.data, read)
-                }, modifier = Modifier.weight(1f)) {
-                    Text(if (read) "Lido ✓" else "Marcar", fontSize = 11.sp, textAlign = TextAlign.Center)
+                }, modifier = Modifier.weight(1f), contentPadding = sideBySide) {
+                    Text(if (read) "Lido ✓" else "Marcar", fontSize = 11.sp, textAlign = TextAlign.Center, maxLines = 1, softWrap = false)
                 }
             }
             WearReviewSection()
@@ -191,16 +198,16 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
                     } else {
                         scheduleNotification(false)
                     }
-                }, modifier = Modifier.weight(1f)) {
-                    Text("Ativar 08h", fontSize = 10.sp)
+                }, modifier = Modifier.weight(1f), contentPadding = sideBySide) {
+                    Text("Ativar 08h", fontSize = 10.sp, maxLines = 1, softWrap = false)
                 }
                 Button(onClick = {
                     testNotificationPending = true
                     if (android.os.Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                         notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
                     } else scheduleNotification(true)
-                }, modifier = Modifier.weight(1f)) {
-                    Text("Teste 5s", fontSize = 10.sp)
+                }, modifier = Modifier.weight(1f), contentPadding = sideBySide) {
+                    Text("Teste 5s", fontSize = 10.sp, maxLines = 1, softWrap = false)
                 }
             }
             Button(onClick = { WearNotificationScheduler.cancel(context); message = "Notificação cancelada." }, modifier = Modifier.fillMaxWidth()) {

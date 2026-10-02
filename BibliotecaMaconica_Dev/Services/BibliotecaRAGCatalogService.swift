@@ -25,6 +25,9 @@ final class BibliotecaRAGCatalogService {
         "breviario_maconico_rizzardo_da_camino"
     ])
 
+    /// Every package file of the catalog, blocked works included (their files are kept).
+    var arquivosDoCatalogo: Set<String> { Set(catalogo.pacotes.map(\.arquivo)) }
+
     var pacotes: [BibliotecaRAGPacote] {
         pacotesPermitidos(catalogo.pacotes)
     }
