@@ -123,8 +123,6 @@ func carregarIndicesBiblioteca() {
 
     func registrarLeituraAberta(_ item: BreviarioItem) {
         ReadingProgressService.registrarRecente(item.data, obraID: item.obraID)
-        leiturasRecentes = ReadingProgressService.recentes(obraID: item.obraID)
-        itensRecentesCache = leiturasRecentes.compactMap { store.item(data: $0) }
         atualizarRecentesBreviariosCache()
     }
 

@@ -74,8 +74,4 @@ enum VariantesBusca {
 
     static let chaveSingularPlural = "buscaSingularPlural"
 
-    /// On unless the reader turned it off.
-    static var singularPluralLigado: Bool {
-        UserDefaults.standard.object(forKey: chaveSingularPlural) as? Bool ?? true
-    }
 }

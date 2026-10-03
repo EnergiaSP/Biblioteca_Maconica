@@ -338,17 +338,4 @@ func prepararCachesIniciais() {
         }
     }
 
-    func voltarParaHome() {
-        mostrandoLeituraTelaCheia = false
-        navigation.showHome()
-    }
-
-    func mudarMesCalendario(_ valor: Int) {
-        calendarioMesExibido = Calendar.current.date(
-            byAdding: .month,
-            value: valor,
-            to: calendarioMesExibido
-        ) ?? calendarioMesExibido
-        atualizarResumoNavegacaoCache()
-    }
 }

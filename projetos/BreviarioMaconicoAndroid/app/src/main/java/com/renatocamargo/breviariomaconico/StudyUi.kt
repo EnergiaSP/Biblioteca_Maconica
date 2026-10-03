@@ -160,39 +160,6 @@ import java.util.Calendar
 import java.util.Locale
 
 @Composable
-internal fun IndexScreen(colors: Palette, repo: BreviarioRepository, onRead: (BreviarioItem) -> Unit) {
-    var search by remember { mutableStateOf("") }
-    LazyColumn(Modifier.fillMaxSize().padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        item {
-            OutlinedTextField(
-                search,
-                { search = it },
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text("Pesquisar no índice") },
-                leadingIcon = { Icon(Icons.Default.Search, null) }
-            )
-        }
-        items(repo.buscarIndice(search)) { entry ->
-            IndexCard(colors, entry, repo, onRead)
-        }
-    }
-}
-
-@OptIn(ExperimentalLayoutApi::class)
-@Composable
-internal fun IndexCard(colors: Palette, entry: IndiceRemissivoEntry, repo: BreviarioRepository, onRead: (BreviarioItem) -> Unit) {
-    PremiumCard(colors) {
-        Text(entry.termo, color = colors.text, fontWeight = FontWeight.Bold)
-        Text("Páginas: ${entry.paginas.joinToString()}", color = colors.secondary, fontSize = 13.sp)
-        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            entry.datas.forEach { data ->
-                AssistChip(onClick = { repo.porData(data)?.let(onRead) }, label = { Text(data) })
-            }
-        }
-    }
-}
-
-@Composable
 internal fun ItemListScreen(title: String, colors: Palette, items: List<BreviarioItem>, onRead: (BreviarioItem) -> Unit) {
     ItemSearchList(title, colors, items, null, "Selecionar data", {}, onRead)
 }

@@ -368,20 +368,6 @@ final class BibliotecaSQLiteService {
         }
     }
 
-    func percorrerItensBiblioteca(obraID: String, tamanhoLote: Int = 100, receber: ([BreviarioItem]) -> Bool) throws {
-        var ultimaPagina = 0
-        while !Task.isCancelled {
-            let paginas = try consultar("SELECT numero_original FROM rag_paginas WHERE obra_id = ? AND numero_original > ? ORDER BY numero_original LIMIT ?",
-                [.text(obraID), .int(ultimaPagina), .int(min(200, max(1, tamanhoLote)))]) {
-                Int(sqlite3_column_int($0, 0))
-            }
-            guard let ultima = paginas.last else { return }
-            let itens = try carregarItensBiblioteca(obraID: obraID, paginas: paginas)
-            guard receber(itens) else { return }
-            ultimaPagina = ultima
-        }
-    }
-
     func carregarNotasPorPagina(obraID: String, paginas: [Int]?) throws -> [Int: [String]] {
         var sql = """
             SELECT pagina, numero, texto

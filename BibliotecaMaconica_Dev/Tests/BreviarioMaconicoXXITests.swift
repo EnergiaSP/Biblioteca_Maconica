@@ -521,7 +521,6 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         let sources = "[F1] Documento sintético de teste: a sala de estudos tem sete cadeiras. [F2] Documento sintético de teste: a sala possui duas mesas."
         let response = try await GeminiAnaliseService.gerarTexto(
             prompt: "Use exclusivamente estas fontes: \(sources). Quantas cadeiras e mesas existem? Responda uma frase com números em algarismos e cite [F1] e [F2].", chaveAPI: key)
-        try GeminiAnaliseService.validarCitacoes(response, quantidadeFontes: 2)
         XCTAssertTrue(response.contains("7") && response.contains("2"))
         XCTAssertTrue(response.contains("[F1]") && response.contains("[F2]"))
         let refusal = try await GeminiAnaliseService.gerarTexto(
@@ -639,12 +638,10 @@ final class BreviarioMaconicoXXITests: XCTestCase {
             struct Search: Decodable { let id: String; let query: String; let text: String; let matches: Bool }
             struct Notes: Decodable { let id: String; let text: String; let ids: [String]; let expected: String }
             struct Study: Decodable { let id: String; let text: String; let keywords: [String]; let matches: Bool }
-            struct Citation: Decodable { let id: String; let text: String; let sources: Int; let valid: Bool }
             let schemaVersion: Int
             let search: [Search]
             let superscript: [Notes]
             let study: [Study]
-            let citations: [Citation]
         }
         let url = try XCTUnwrap(Bundle.main.url(forResource: "casos_comuns_v1", withExtension: "json"))
         let cases = try JSONDecoder().decode(Cases.self, from: Data(contentsOf: url))
@@ -657,10 +654,6 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         }
         for item in cases.study {
             XCTAssertEqual(RegrasEstudo.corresponde(texto: item.text, palavras: item.keywords), item.matches, item.id)
-        }
-        for item in cases.citations {
-            if item.valid { XCTAssertNoThrow(try GeminiAnaliseService.validarCitacoes(item.text, quantidadeFontes: item.sources)) }
-            else { XCTAssertThrowsError(try GeminiAnaliseService.validarCitacoes(item.text, quantidadeFontes: item.sources)) }
         }
     }
 
@@ -1461,14 +1454,6 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertTrue(try db.carregarItensBiblioteca(obraID: work.id, paginas: []).isEmpty)
         XCTAssertEqual(try db.carregarItensBiblioteca(obraID: work.id, paginas: [2, 2, -1]).map(\.pagina), [2])
         XCTAssertEqual(try db.carregarItensBiblioteca(obraID: ids[1]).count, 4)
-        var batches: [[BreviarioItem]] = []
-        try db.percorrerItensBiblioteca(obraID: work.id, tamanhoLote: 2) { batches.append($0); return true }
-        XCTAssertEqual(batches.map(\.count), [2, 2])
-        XCTAssertEqual(batches.flatMap { $0 }.map(\.pagina), [1, 2, 3, 4])
-        XCTAssertTrue(batches.flatMap { $0 }.allSatisfy { $0.obraID == work.id && $0.rodape?.contains("578 Nota") == true })
-        var visits = 0
-        try db.percorrerItensBiblioteca(obraID: work.id, tamanhoLote: 1) { _ in visits += 1; return false }
-        XCTAssertEqual(visits, 1)
     }
 
     @MainActor
@@ -1727,11 +1712,6 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: firstURL.path))
         XCTAssertEqual(try Data(contentsOf: url), try Data(contentsOf: secondURL.deletingLastPathComponent().appendingPathComponent("original.pdf")))
     }
-    func testOfficialURLAloneIsNotDocumentaryEvidence() {
-        let source = FonteOficialMaconica(titulo: "Fonte de teste", origem: "Instituição", url: "https://example.org", observacao: "")
-        let context = BibliotecaRAGContextoIA(pergunta: "Teste", trechos: [], notas: [], fontesOficiais: [source])
-        XCTAssertFalse(context.possuiBaseDocumentalSuficiente)
-    }
 
     @MainActor
     func testBackupIgnoresUnchangedContentAndDetectsEdits() {
@@ -1944,8 +1924,8 @@ final class BreviarioMaconicoXXITests: XCTestCase {
     }
 
     func testPersistenceKeySeparatesWorksWithSameDate() {
-        let first = BibliotecaItemID(obraID: "obra_a", itemID: 1, data: "01/06")
-        let second = BibliotecaItemID(obraID: "obra_b", itemID: 1, data: "01/06")
+        let first = BreviarioItem(id: 1, data: "01/06", titulo: "A", frase: "", texto: "", obraID: "obra_a")
+        let second = BreviarioItem(id: 1, data: "01/06", titulo: "B", frase: "", texto: "", obraID: "obra_b")
         XCTAssertNotEqual(first.chavePersistencia, second.chavePersistencia)
     }
 

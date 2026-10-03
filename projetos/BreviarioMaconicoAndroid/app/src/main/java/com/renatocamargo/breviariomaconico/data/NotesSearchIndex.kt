@@ -10,13 +10,20 @@ internal object NotesSearchIndex {
         if (it.exists()) "${it.length()}:${it.lastModified()}:${android.system.Os.stat(it.path).st_ino}" else "absent"
     }
 
-    @Synchronized
+    /** One lock per cache file, so packages are searched in parallel; same as iOS `BibliotecaNotasSearch`. */
+    private val locks = java.util.concurrent.ConcurrentHashMap<String, Any>()
+
     fun search(source: File, cacheDir: File, query: String, area: BibliotecaArea?, workId: String?,
                limit: Int, excluded: Set<String> = emptySet(), cancelled: () -> Boolean = { false }): List<BibliotecaBuscaResultado> {
+        val key = MessageDigest.getInstance("SHA-256").digest(source.absolutePath.toByteArray()).joinToString("") { "%02x".format(it) }
+        return synchronized(locks.getOrPut(key) { Any() }) { searchLocked(source, cacheDir, key, query, area, workId, limit, excluded, cancelled) }
+    }
+
+    private fun searchLocked(source: File, cacheDir: File, key: String, query: String, area: BibliotecaArea?, workId: String?,
+               limit: Int, excluded: Set<String>, cancelled: () -> Boolean): List<BibliotecaBuscaResultado> {
         fun checkCancellation() { if (cancelled()) throw CancellationException() }
         checkCancellation()
         val directory = File(cacheDir, "RAGNotesSearchV1").apply { mkdirs() }
-        val key = MessageDigest.getInstance("SHA-256").digest(source.absolutePath.toByteArray()).joinToString("") { "%02x".format(it) }
         val stamp = stamp(source)
         return RagSQLite.open(File(directory, "$key.sqlite").path).use { db ->
             db.execSQL("PRAGMA busy_timeout = 5000")

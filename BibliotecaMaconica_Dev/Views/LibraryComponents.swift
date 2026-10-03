@@ -591,6 +591,9 @@ struct ColecaoTematicaCard: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 .buttonStyle(.plain)
+                // Lets tests open the top reading whatever the installed collection ranks first.
+                .accessibilityIdentifier(item.chavePersistencia == colecao.itens.first?.chavePersistencia
+                    ? "study.first.\(colecao.id)" : "study.reading")
             }
             if colecao.itens.count > 3 {
                 Button { expandida.toggle() } label: {

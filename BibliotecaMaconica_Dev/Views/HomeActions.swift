@@ -126,7 +126,6 @@ func importarPDF(resultado: Result<[URL], Error>) {
                 )
 
                 await MainActor.run {
-                    pdfURL = url
                     compartilhamento = Compartilhamento(items: [url])
                     mensagemErro = nil
                     exportandoArquivo = false

@@ -70,24 +70,6 @@ func abrirData(_ data: Date) {
         abrirURLBreviario(url, permiteAdiar: false)
     }
 
-    func abrirEntradaIndice(_ entrada: IndiceRemissivoEntry, pagina: Int?) {
-        if let pagina,
-           let item = store.item(paginaDaObra: pagina) {
-            abrirLeitura(item)
-            mensagemErro = nil
-        } else if let data = entrada.datas.first, let item = store.item(data: data) {
-            abrirLeitura(item)
-            mensagemErro = nil
-        } else if let pagina = entrada.paginas.first,
-                  let item = store.item(paginaDaObra: pagina) {
-            abrirLeitura(item)
-            mensagemErro = nil
-        } else {
-            mensagemErro = "Entrada sem texto vinculado ainda."
-            abrirMais(.indicesBiblioteca)
-        }
-    }
-
     func abrirProximaLeituraDoMes() {
         guard let item = itensMesAtual.first(where: { leiturasConcluidas.contains($0.data) == false }) else {
             mensagemErro = "Todas as leituras do mês foram concluídas."

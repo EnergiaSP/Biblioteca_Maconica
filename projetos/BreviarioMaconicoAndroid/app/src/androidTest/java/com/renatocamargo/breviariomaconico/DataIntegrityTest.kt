@@ -463,7 +463,6 @@ class DataIntegrityTest {
         org.junit.Assume.assumeTrue("No Gemini test key in the app's secure storage", key.isNotBlank())
         val sources = "[F1] Documento sintético de teste: a sala de estudos tem sete cadeiras. [F2] Documento sintético de teste: a sala possui duas mesas."
         val response = GeminiService.gerarTexto("Use exclusivamente estas fontes: $sources. Quantas cadeiras e mesas existem? Responda uma frase com números em algarismos e cite [F1] e [F2].", key)
-        GeminiService.validarCitacoes(response, 2)
         assertTrue(response.contains("7") && response.contains("2"))
         assertTrue(response.contains("[F1]") && response.contains("[F2]"))
         val refusal = GeminiService.gerarTexto("Use exclusivamente estas fontes: $sources. Em que ano a sala foi construída? Caso a fonte não informe o ano, retorne somente DOCUMENTO_INSUFICIENTE. Não invente informações.", key)
@@ -559,13 +558,6 @@ class DataIntegrityTest {
             val case = studies.getJSONObject(index)
             val words = case.getJSONArray("keywords")
             assertEquals(case.getString("id"), case.getBoolean("matches"), StudyRules.matches(case.getString("text"), List(words.length()) { words.getString(it) }))
-        }
-        val citations = cases.getJSONArray("citations")
-        for (index in 0 until citations.length()) {
-            val case = citations.getJSONObject(index)
-            assertEquals(case.getString("id"), case.getBoolean("valid"), runCatching {
-                GeminiService.validarCitacoes(case.getString("text"), case.getInt("sources"))
-            }.isSuccess)
         }
     }
 

@@ -51,7 +51,7 @@ internal object PdfPremiumStyle {
         acacia(canvas, 297.5f, 612f, 0.72f)
         if (name.isNotBlank()) label(canvas, name.trim(), 648f, 12f, color = Color.DKGRAY)
         items.firstOrNull()?.autor?.takeIf { it.isNotBlank() }?.let { label(canvas, "Autor: $it", 684f, 12f, color = Color.DKGRAY) }
-        label(canvas, "Gerado em ${LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd 'de' MMM 'de' yyyy, HH:mm", Locale("pt", "BR")))}", 724f, 11f, color = Color.DKGRAY)
+        label(canvas, "Gerado em ${LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd 'de' MMM 'de' yyyy, HH:mm", Locale.forLanguageTag("pt-BR")))}", 724f, 11f, color = Color.DKGRAY)
     }
 
     fun content(canvas: Canvas, reference: String, page: Int, heading: String = "Breviário Maçônico") {
@@ -84,7 +84,7 @@ internal object PdfPremiumStyle {
         canvas.save(); canvas.translate(margin, 232f); heading.draw(canvas); canvas.restore()
         label(canvas, "$scope • $sourceCount referência(s) encontrada(s)", 340f, 13f, color = Color.DKGRAY)
         if (name.isNotBlank()) label(canvas, name.trim(), 682f, 13f, color = Color.DKGRAY)
-        label(canvas, LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy, HH:mm", Locale("pt", "BR"))),
+        label(canvas, LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy, HH:mm", Locale.forLanguageTag("pt-BR"))),
             724f, 11f, color = Color.DKGRAY)
     }
 

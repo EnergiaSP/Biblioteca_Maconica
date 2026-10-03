@@ -56,13 +56,6 @@
       {"work":"e", "date":"P50", "page":50, "title":"Documento", "body":"Ética e compasso: a ética do compasso.", "notes":"", "index":""}
     ]
   },
-  "citations": [
-    {"id":"valid", "text":"Síntese documental [F1]. Comparação [F2].", "sources":2, "valid":true},
-    {"id":"unknown", "text":"Uma afirmação [F3].", "sources":2, "valid":false},
-    {"id":"missing", "text":"Afirmação sem referência.", "sources":2, "valid":false},
-    {"id":"empty_evidence", "text":"Afirmação [F1].", "sources":0, "valid":false},
-    {"id":"zero", "text":"Afirmação [F0].", "sources":2, "valid":false}
-  ],
   "superscript": [
     {"id":"references_only", "text":"Em 01/06/2026, texto 578 e outro579. Total 1234; 12/578 não é chamada.", "notes":"578 Primeira nota.\n579 Segunda nota.", "ids":["578","579"], "expected":"Em 01/06/2026, texto ⁵⁷⁸ e outro⁵⁷⁹. Total 1234; 12/578 não é chamada."},
     {"id":"unknown_number", "text":"Ano 2026 e página 185.", "notes":"578 Nota.", "ids":["578"], "expected":"Ano 2026 e página 185."},

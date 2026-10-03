@@ -3,51 +3,6 @@ import UniformTypeIdentifiers
 import UIKit
 
 extension HomeView {
-@ViewBuilder
-    var leituraDoDiaContainer: some View {
-        Group {
-            if let item = itemSelecionado ?? store.itemDoDia {
-                detalhe
-                    .onAppear {
-                        if itemSelecionadoID != item.id {
-                            itemSelecionadoID = item.id
-                        }
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .topBarLeading) {
-                            Button {
-                                voltarParaListaLeitura()
-                            } label: {
-                                Image(systemName: "chevron.left")
-                                    .frame(width: 34, height: 34)
-                            }
-                            .disabled(processandoVoltarLeitura)
-                            .accessibilityLabel("Voltar")
-                        }
-
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button {
-                                abrirMais(.configuracoes)
-                            } label: {
-                                Image(systemName: "gearshape")
-                                    .frame(width: 34, height: 34)
-                            }
-                            .accessibilityLabel("Configurações")
-                        }
-                    }
-                    .navigationBarBackButtonHidden(true)
-            } else {
-                ContentUnavailableView(
-                    "Nenhuma leitura disponível",
-                    systemImage: "book",
-                    description: Text("Importe ou restaure os dados do breviário em Configurações.")
-                )
-                .foregroundStyle(temaLeitura.textoPrincipal)
-                .background(temaLeitura.background.ignoresSafeArea())
-            }
-        }
-    }
-
     @ViewBuilder
     var breviarioContainer: some View {
         lista

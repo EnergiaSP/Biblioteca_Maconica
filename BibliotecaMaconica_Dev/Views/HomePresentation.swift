@@ -174,10 +174,8 @@ func avisoGlobal(_ mensagem: String) -> some View {
         itemSelecionadoID = nil
         caminhoLeitura.removeAll()
         busca = ""
-        buscaIndice = ""
         filtroLeitura = .todos
         mensagemIA = nil
-        pdfURL = nil
         mensagemErro = nil
         obraImportacaoID = obra.id
         store.selecionarObra(id: obra.id)

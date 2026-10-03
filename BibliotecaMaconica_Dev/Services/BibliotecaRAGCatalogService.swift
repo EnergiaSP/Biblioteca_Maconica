@@ -183,13 +183,6 @@ final class BibliotecaRAGCatalogService {
         return itens
     }
 
-    func percorrerItens(obraID: String, receber: ([BreviarioItem]) -> Bool) throws {
-        guard let pacote = pacotes.first(where: { $0.obraIDs.contains(obraID) }),
-              let url = urlPacote(pacote) else { return }
-        let banco = try BibliotecaSQLiteService(url: url, somenteLeitura: true)
-        try banco.percorrerItensBiblioteca(obraID: obraID, receber: receber)
-    }
-
     private func pacotesParaBusca(
         escopo: BibliotecaBuscaEscopo,
         area: BibliotecaArea?,

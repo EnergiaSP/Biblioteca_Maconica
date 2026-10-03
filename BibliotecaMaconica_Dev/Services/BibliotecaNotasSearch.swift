@@ -3,10 +3,24 @@ import Foundation
 import SQLite3
 
 enum BibliotecaNotasSearch {
-    private static let lock = NSLock()
+    // One lock per cache file: a single global lock serialized the parallel search of every package
+    // and left a user-interactive caller waiting on lower-priority work (priority inversion).
+    private static let locksLock = NSLock()
+    nonisolated(unsafe) private static var locks: [String: NSLock] = [:]  // only read and written under locksLock
+
+    private static func lock(for key: String) -> NSLock {
+        locksLock.lock()
+        defer { locksLock.unlock() }
+        if let lock = locks[key] { return lock }
+        let lock = NSLock()
+        locks[key] = lock
+        return lock
+    }
 
     static func buscar(source: URL, consulta: String, area: BibliotecaArea?, obraID: String?,
                        limite: Int, excluidas: Set<String>) throws -> [BibliotecaRAGResultadoBusca] {
+        let key = SHA256.hash(data: Data(source.path.utf8)).map { String(format: "%02x", $0) }.joined()
+        let lock = lock(for: key)
         lock.lock()
         defer { lock.unlock() }
         try Task.checkCancellation()
@@ -14,7 +28,6 @@ enum BibliotecaNotasSearch {
         let directory = (files.urls(for: .cachesDirectory, in: .userDomainMask).first ?? files.temporaryDirectory)
             .appendingPathComponent("RAGNotesSearchV1", isDirectory: true)
         try files.createDirectory(at: directory, withIntermediateDirectories: true)
-        let key = SHA256.hash(data: Data(source.path.utf8)).map { String(format: "%02x", $0) }.joined()
         let stamp = try [source.path, source.path + "-wal"].map { path -> String in
             guard files.fileExists(atPath: path) else { return "absent" }
             let attrs = try files.attributesOfItem(atPath: path)

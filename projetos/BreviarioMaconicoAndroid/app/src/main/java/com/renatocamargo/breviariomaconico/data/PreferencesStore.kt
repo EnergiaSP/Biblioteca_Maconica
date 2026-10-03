@@ -202,11 +202,6 @@ class PreferencesStore(context: Context) {
         saveHighlights(item, highlights(item).filterNot { it.id == id })
     }
 
-    fun datesWithComments(): Set<String> =
-        prefs.all.keys.filter { it.startsWith("comment_") && prefs.getString(it, "").orEmpty().isNotBlank() }
-            .map { it.removePrefix("comment_") }
-            .toSet()
-
     fun officialSources(): List<OfficialSource> {
         val array = runCatching {
             JSONArray(prefs.getString("officialSources", "[]") ?: "[]")

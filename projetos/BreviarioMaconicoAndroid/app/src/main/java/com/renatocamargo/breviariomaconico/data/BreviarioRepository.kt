@@ -109,12 +109,6 @@ class BreviarioRepository private constructor(context: Context) {
         return itens.filter { TextoFormatter.corresponde(query, pesquisaNormalizada[it.chavePersistencia].orEmpty()) }
     }
 
-    fun buscarIndice(query: String): List<IndiceRemissivoEntry> {
-        val q = normalized(query)
-        if (q.isBlank()) return indice
-        return indice.filter { normalized(it.termo).contains(q) || it.datas.any { data -> data.contains(q) } }
-    }
-
     companion object {
         @Volatile private var instance: BreviarioRepository? = null
 
@@ -245,11 +239,12 @@ object TextoFormatter {
         texto.split(Regex("\\s+")).filter { it.isNotBlank() }.joinToString(" ").trim()
 }
 
-fun normalized(value: String): String {
-    val portugueseBrazil = Locale.Builder().setLanguage("pt").setRegion("BR").build()
-    val clean = Normalizer.normalize(value.lowercase(portugueseBrazil), Normalizer.Form.NFD)
-    return clean.replace(Regex("\\p{Mn}+"), "")
-}
+// Built once: normalized() runs for every page title, reading and search term.
+private val portugueseBrazil: Locale = Locale.Builder().setLanguage("pt").setRegion("BR").build()
+private val combiningMarks = Regex("\\p{Mn}+")
+
+fun normalized(value: String): String =
+    Normalizer.normalize(value.lowercase(portugueseBrazil), Normalizer.Form.NFD).replace(combiningMarks, "")
 
 private fun JSONArray?.strings(): List<String> {
     if (this == null) return emptyList()

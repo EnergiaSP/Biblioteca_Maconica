@@ -21,6 +21,8 @@ import com.renatocamargo.breviariomaconico.data.ReaderSettings
 import com.renatocamargo.breviariomaconico.data.TextHighlight
 import com.renatocamargo.breviariomaconico.data.TextoFormatter
 
+// LineBreaker.JUSTIFICATION_MODE_INTER_WORD is an int constant inlined at build time; TextView.justificationMode exists since API 26.
+@android.annotation.SuppressLint("InlinedApi")
 @Composable
 internal fun ReadingSelectionText(text: String, footnotes: String, highlights: List<TextHighlight>, settings: ReaderSettings,
     colors: Palette, onHighlight: (String) -> Unit) {
@@ -67,7 +69,7 @@ internal fun ReadingSelectionText(text: String, footnotes: String, highlights: L
     }, update = { view ->
         view.setTextColor(colors.text.toArgb())
         view.textSize = settings.fontSize
-        view.setLineSpacing(settings.lineSpacing * view.resources.displayMetrics.scaledDensity, 1f)
+        view.setLineSpacing(android.util.TypedValue.applyDimension(android.util.TypedValue.COMPLEX_UNIT_SP, settings.lineSpacing, view.resources.displayMetrics), 1f)
         if (view.tag !== styled) {
             view.text = styled
             view.tag = styled

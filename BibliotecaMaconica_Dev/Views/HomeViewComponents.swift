@@ -40,9 +40,6 @@ struct LeituraDiariaBreviario: Identifiable {
         return item == nil ? "exclamationmark.circle" : "arrow.right"
     }
 
-    func corStatus(destaque: Color) -> Color {
-        concluida ? .green : destaque
-    }
 }
 
 struct TelaAberturaCarregamentoView: View {
@@ -369,13 +366,6 @@ struct HistoricoReflexao: Identifiable {
 
     let item: BreviarioItem
     let texto: String
-}
-
-struct DiaCalendarioLeitura: Identifiable {
-    let id: String
-    let dia: Int?
-    let data: String?
-    let item: BreviarioItem?
 }
 
 enum FiltroLeitura: String, CaseIterable, Identifiable {

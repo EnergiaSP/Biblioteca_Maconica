@@ -214,25 +214,6 @@ internal fun createLibraryPdf(file: File, paginas: List<BibliotecaPaginaLeitura>
     }
 }
 
-internal fun createTextPdf(file: File, title: String, text: String) {
-    val document = PdfDocument()
-    val titlePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 20f; isFakeBoldText = true }
-    val bodyPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 12f }
-    val pageWidth = 595
-    val pageHeight = 842
-    val writer = PdfTextWriter(document, pageWidth, pageHeight)
-    try {
-    writer.beginPage()
-    writer.drawTextLine(title, 46f, titlePaint)
-    writer.addSpace(8f)
-    writer.drawStructuredText(text, 46f, pageWidth - 92f, 18f, bodyPaint)
-    writer.finishCurrentPage()
-    file.outputStream().use { document.writeTo(it) }
-    } finally {
-        try { writer.finishCurrentPage() } finally { document.close() }
-    }
-}
-
 internal fun createHighlightsPdf(file: File, item: BreviarioItem, highlights: List<TextHighlight>) {
     val document = PdfDocument()
     val titlePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 20f; isFakeBoldText = true }
@@ -336,27 +317,6 @@ internal class PdfTextWriter(
             alignment = android.text.Layout.Alignment.ALIGN_CENTER)
     }
 
-    fun drawAcaciaOrnament(paint: Paint) {
-        ensureSpace(150f)
-        val center = pageWidth / 2f
-        val stemPaint = Paint(paint).apply { style = Paint.Style.STROKE; strokeWidth = 3f }
-        canvas.drawLine(center - 90f, y + 105f, center, y, stemPaint)
-        canvas.drawLine(center + 90f, y + 105f, center, y, stemPaint)
-        repeat(6) { index ->
-            val offset = index * 17f
-            canvas.save()
-            canvas.rotate(-38f, center - 18f - offset, y + 24f + offset)
-            canvas.drawOval(center - 34f - offset, y + 13f + offset, center - 4f - offset, y + 31f + offset, paint)
-            canvas.restore()
-            canvas.save()
-            canvas.rotate(38f, center + 18f + offset, y + 24f + offset)
-            canvas.drawOval(center + 4f + offset, y + 13f + offset, center + 34f + offset, y + 31f + offset, paint)
-            canvas.restore()
-        }
-        y += 140f
-    }
-
-
     fun drawWrapped(text: String, x: Float, width: Float, lineHeight: Float, paint: Paint) =
         drawParagraphs(text, x, width, lineHeight, paint, false)
 
@@ -384,6 +344,8 @@ internal class PdfTextWriter(
         }
     }
 
+    // LineBreaker.JUSTIFICATION_MODE_* are int constants inlined at build time; setJustificationMode exists since API 26.
+    @android.annotation.SuppressLint("InlinedApi")
     private fun drawLayout(text: String, x: Float, width: Float, lineHeight: Float, paint: Paint,
         justified: Boolean = false, alignment: android.text.Layout.Alignment = android.text.Layout.Alignment.ALIGN_NORMAL) {
         if (text.isBlank()) return

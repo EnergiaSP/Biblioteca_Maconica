@@ -98,7 +98,6 @@ func salvarConfiguracaoNotificacao() {
     func atualizarProgressoLeitura() {
         favoritos = ReadingProgressService.favoritos(obraID: store.obraSelecionada.id)
         leiturasConcluidas = ReadingProgressService.concluidos(obraID: store.obraSelecionada.id)
-        leiturasRecentes = ReadingProgressService.recentes(obraID: store.obraSelecionada.id)
         sequenciaAtualCache = calcularSequenciaAtual(leiturasConcluidas: leiturasConcluidas)
         atualizarResumoNavegacaoCache()
         atualizarRecentesBreviariosCache()
@@ -163,7 +162,6 @@ func salvarConfiguracaoNotificacao() {
     }
 
     func atualizarResumoNavegacaoCache() {
-        itensRecentesCache = leiturasRecentes.compactMap { store.item(data: $0) }
         itensFavoritosCache = store.itens.filter { favoritos.contains($0.data) }
         itensComComentarioCache = store.itens.filter { datasComComentarioCache.contains($0.data) }
         itensSemanaAtualCache = montarItensSemanaAtual()
@@ -174,9 +172,7 @@ func salvarConfiguracaoNotificacao() {
         totalLidasMesAtualCache = itensMesAtualCache.reduce(0) { parcial, item in
             parcial + (leiturasConcluidas.contains(item.data) ? 1 : 0)
         }
-        diasCalendarioMesAtualCache = montarDiasCalendarioMesAtual()
         nomeMesAtualCache = montarNomeMesAtual()
-        dataHojeBreviarioCache = Self.formatadorDiaMesCompartilhado.string(from: Date())
     }
 
     func atualizarRecentesBreviariosCache() {

@@ -200,7 +200,6 @@ internal enum class Screen(val title: String) {
     Acervo("Acervo"),
     StructuredSearch("Busca estruturada"),
     GlobalIndex("Índice geral"),
-    Index("Índice Remissivo"),
     Favorites("Favorito"),
     Unread("Não Lido"),
     Comments("Comentário"),
@@ -529,7 +528,6 @@ internal fun BreviarioAndroidApp(
                         Screen.Acervo -> AcervoScreen(colors, abrirObra = ::abrirObraBiblioteca)
                         Screen.StructuredSearch -> StructuredSearchScreen(colors, session = buscaSession, abrirResultado = ::abrirResultado)
                         Screen.GlobalIndex -> GlobalIndexScreen(colors, abrirResultado = ::abrirResultado)
-                        Screen.Index -> IndexScreen(colors, repo, ::goReader)
                         Screen.Favorites -> ItemListScreen("Favorito", colors, prefs.favoriteItems(repo.itens), ::goReader)
                         Screen.Unread -> ItemListScreen("Não Lido", colors, prefs.unreadItems(repo.itens), ::goReader)
                         Screen.Comments -> ItemListScreen("Comentário", colors, prefs.commentedItems(repo.itens), ::goReader)
