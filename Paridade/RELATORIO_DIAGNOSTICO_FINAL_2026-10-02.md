@@ -151,11 +151,15 @@ Cobriu o que a primeira tocou pouco: os apps de relógio (Wear OS e Apple Watch)
 11. **Lembrete de revisão no relógio.**
     - Apple Watch: o lembrete das 19 h contava o total de cartões e continuava agendado depois de todos respondidos. Agora conta só os pendentes e é cancelado quando não sobra nenhum, como no Wear OS.
     - Wear OS: o lembrete se perdia ao reiniciar o relógio. Agora é reagendado se a sessão salva for a do dia.
-12. **Resumo da leitura no Wear OS com "…" indevido.** As reticências eram decididas pelo tamanho do texto original, não do texto já sem espaços repetidos, e apareciam em resumos completos.
-13. **Textos sem acento.**
+12. **Controles do áudio das coleções fora da tela (iOS e Android).**
+    - Problema: a barra "Ouvindo… leitura 1 de N", com Pausar, Próxima e Parar, ficava no topo da lista. Ao tocar em "ouvir" numa trilha mais abaixo, os controles apareciam fora da vista. Os testes só passavam porque rolavam a tela até ela (o do iOS falhava de vez em quando).
+    - Correção: enquanto a sequência toca, a barra fica fixa no rodapé da tela, nas duas plataformas, com fundo opaco no iOS.
+    - Os testes agora conferem que os controles estão visíveis sem rolar.
+13. **Resumo da leitura no Wear OS com "…" indevido.** As reticências eram decididas pelo tamanho do texto original, não do texto já sem espaços repetidos, e apareciam em resumos completos.
+14. **Textos sem acento.**
     - 23 mensagens do app iOS ("Nao foi possivel…", "indisponivel", "invalido", "Validacao", "Teste de notificacao", "Observacao de importacao") e 3 do Apple Watch ("Permissao negada", "Notificacao diaria ativa", "Notificacao cancelada") foram corrigidas.
     - A cor do aviso não muda, porque `AvisoApp` reconhece as duas grafias.
-14. **Script de medição com data fixa.** `medir_acervo_local.py` gravava sempre em `evidencias/2026-09-18`; agora grava na pasta do dia.
+15. **Script de medição com data fixa.** `medir_acervo_local.py` gravava sempre em `evidencias/2026-09-18`; agora grava na pasta do dia.
 
 ### Código obsoleto removido
 

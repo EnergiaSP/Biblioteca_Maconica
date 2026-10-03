@@ -282,8 +282,6 @@ extension HomeView {
                             .foregroundStyle(textoSecundarioApp)
                     }
 
-                    BarraSequenciaAudio(leitorVoz: leitorVoz, tema: temaApp)
-
                     Text("Temas")
                         .font(.title3)
                         .fontWeight(.semibold)
@@ -362,6 +360,16 @@ extension HomeView {
                 }
                 .padding()
                 .frame(maxWidth: 980, alignment: .leading)
+            }
+            // The controls stay at the bottom of the screen while a sequence plays: inside the list they were
+            // out of view when it started from a card further down. Same as Android.
+            .safeAreaInset(edge: .bottom) {
+                BarraSequenciaAudio(leitorVoz: leitorVoz, tema: temaApp)
+                    // The panel color is translucent (made for cards on the screen background): opaque here.
+                    .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 8))
+                    .frame(maxWidth: 980)
+                    .padding(.horizontal)
+                    .padding(.bottom, 8)
             }
         }
         .navigationTitle("Coleções")

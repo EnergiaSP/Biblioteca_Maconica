@@ -300,7 +300,14 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         let estado = app.staticTexts["audio.sequence.status"]
         XCTAssertTrue(estado.waitForExistence(timeout: 5))
         XCTAssertTrue(estado.label.contains("leitura 1 de"), estado.label)
-        app.buttons["audio.sequence.next"].tap()
+        // The controls stay on screen (pinned to the bottom) wherever the sequence was started.
+        let proxima = app.buttons["audio.sequence.next"]
+        XCTAssertTrue(proxima.isHittable)
+        let barra = XCTAttachment(screenshot: app.screenshot())
+        barra.name = "Colecoes-audio-bar"
+        barra.lifetime = .keepAlways
+        add(barra)
+        proxima.tap()
         XCTAssertTrue(estado.wait(for: \.label, toEqual: estado.label.replacingOccurrences(of: "leitura 1 de", with: "leitura 2 de"),
                                   timeout: 5), estado.label)
         app.buttons["audio.sequence.stop"].tap()
