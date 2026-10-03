@@ -114,6 +114,8 @@ maçonaria,breviário,maçom,loja,estudo,prancha,acervo,ritual,filosofia,simboli
   - Google Drive (pasta privada do app na conta do usuário).
 - A opção "Conta própria" (caderno cifrado no aparelho, guardado num servidor que não consegue lê-lo) só aparece depois que o servidor for publicado. Quando aparecer, o formulário de segurança de dados deve declarar o armazenamento de um arquivo cifrado, sem identificação pessoal.
 - Interpretação assistida: a chave de IA fica no aparelho, e o texto do dossiê vai ao provedor de IA somente quando o usuário pede a interpretação.
+- Android: o reconhecimento de texto de PDFs importados usa o ML Kit do Google, no aparelho. O Google declara que a biblioteca pode enviar métricas de uso e diagnóstico, o que deve constar no formulário de segurança de dados (diagnóstico do app, coletado por terceiro, não vinculado ao usuário).
+- Download das obras: Cloudflare R2, sem nenhum dado do usuário além do endereço de rede usado na conexão.
 - Classificação etária: livre (sem conteúdo gerado por outros usuários, sem compras, sem anúncios).
 
 ## Capturas de tela
@@ -135,6 +137,6 @@ Situação em 03/10/2026, depois do diagnóstico final: testes das duas platafor
 - [ ] Integrar os PRs #16 e #17 em `main`.
 
 - [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
-- [ ] Arquivo iOS pelo Xcode (Product > Archive) com a conta de desenvolvedor.
-- [ ] URL da política de privacidade.
-- [ ] Revisão final dos textos pelo responsável.
+- [x] Arquivo iOS gerado em 03/10/2026: `Publicacao/BibliotecaMaconica-1.0.16-2.xcarchive` (fora do Git), versão 1.0.16 build 2, com widget e Apple Watch. Para enviar: abrir o arquivo (abre o Organizer do Xcode) > Distribute App > App Store Connect, que faz a assinatura de distribuição. Se a build 2 já tiver sido enviada antes, aumentar `CURRENT_PROJECT_VERSION` e gerar de novo.
+- [ ] URL da política de privacidade: o texto está em `docs/privacidade.html`. Com o GitHub Pages ligado no repositório (Settings > Pages > ramo `main`, pasta `/docs`), o endereço fica https://energiasp.github.io/Biblioteca_Maconica/privacidade.html. Contato de privacidade e de suporte: renato@energiasp.com.br.
+- [x] Textos conferidos contra o app atual em 03/10/2026 (funções presentes nas duas plataformas, limites ok); falta só a leitura final do responsável.
