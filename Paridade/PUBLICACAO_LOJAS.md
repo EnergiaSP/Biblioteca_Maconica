@@ -134,9 +134,9 @@ Telas: Início, leitura diária, Coleções, Dossiê, Prancha, Trilhas por grau,
 
 Situação em 03/10/2026, depois do diagnóstico final: testes das duas plataformas e o gate de paridade passam, e as configurações de Release compilam (iOS, Apple Watch, AAB do app e do Wear OS sem assinatura). Faltam só os itens abaixo, que dependem do responsável.
 
-- [ ] Integrar os PRs #16 e #17 em `main`.
+- [x] PRs #16 a #19 integrados em `main`.
 
 - [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
 - [x] Arquivo iOS gerado em 03/10/2026: `Publicacao/BibliotecaMaconica-1.0.16-2.xcarchive` (fora do Git), versão 1.0.16 build 2, com widget e Apple Watch. Para enviar: abrir o arquivo (abre o Organizer do Xcode) > Distribute App > App Store Connect, que faz a assinatura de distribuição. Se a build 2 já tiver sido enviada antes, aumentar `CURRENT_PROJECT_VERSION` e gerar de novo.
-- [ ] URL da política de privacidade: o texto está em `docs/privacidade.html`. Com o GitHub Pages ligado no repositório (Settings > Pages > ramo `main`, pasta `/docs`), o endereço fica https://energiasp.github.io/Biblioteca_Maconica/privacidade.html. Contato de privacidade e de suporte: renato@energiasp.com.br.
+- [x] Política de privacidade no ar: https://energiasp.github.io/Biblioteca_Maconica/privacidade.html (GitHub Pages, `main` `/docs`). Contato: renato@energiasp.com.br.
 - [x] Textos conferidos contra o app atual em 03/10/2026 (funções presentes nas duas plataformas, limites ok); falta só a leitura final do responsável.
