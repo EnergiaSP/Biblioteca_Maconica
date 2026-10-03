@@ -137,6 +137,6 @@ Situação em 03/10/2026, depois do diagnóstico final: testes das duas platafor
 - [ ] Integrar os PRs #16 e #17 em `main`.
 
 - [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
-- [ ] Arquivo iOS pelo Xcode (Product > Archive) com a conta de desenvolvedor.
+- [x] Arquivo iOS gerado em 03/10/2026: `Publicacao/BibliotecaMaconica-1.0.16-2.xcarchive` (fora do Git), versão 1.0.16 build 2, com widget e Apple Watch. Para enviar: abrir o arquivo (abre o Organizer do Xcode) > Distribute App > App Store Connect, que faz a assinatura de distribuição. Se a build 2 já tiver sido enviada antes, aumentar `CURRENT_PROJECT_VERSION` e gerar de novo.
 - [ ] URL da política de privacidade: o texto está em `docs/privacidade.html`. Com o GitHub Pages ligado no repositório (Settings > Pages > ramo `main`, pasta `/docs`), o endereço fica https://energiasp.github.io/Biblioteca_Maconica/privacidade.html. Contato de privacidade e de suporte: renato@energiasp.com.br.
-- [ ] Revisão final dos textos pelo responsável.
+- [x] Textos conferidos contra o app atual em 03/10/2026 (funções presentes nas duas plataformas, limites ok); falta só a leitura final do responsável.
