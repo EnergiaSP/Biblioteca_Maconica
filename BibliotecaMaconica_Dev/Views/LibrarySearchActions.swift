@@ -88,7 +88,7 @@ func gerarDossieEstudo(salvo: DossieSalvo? = nil) {
                 }
             } catch {
                 await MainActor.run {
-                    mensagemErro = "Nao foi possivel gerar o PDF do dossiê."
+                    mensagemErro = "Não foi possível gerar o PDF do dossiê."
                     exportandoArquivo = false
                 }
             }

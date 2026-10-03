@@ -97,6 +97,7 @@ struct BreviarioWatchHomeView: View {
             }
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active {
+                    WatchNotificationService.renovarSeAtiva()
                     leitura = BreviarioSnapshotProvider.leituraDoDia()
                     lido = WatchProgressService.estaLido(leitura.data, obraID: leitura.obraID)
                 }
@@ -155,7 +156,7 @@ struct BreviarioWatchHomeView: View {
             Button("Teste 5s") {
                 WatchNotificationService.agendarTeste { sucesso in
                     Task { @MainActor in
-                        mensagem = sucesso ? "Teste agendado." : "Permissao negada."
+                        mensagem = sucesso ? "Teste agendado." : "Permissão negada."
                     }
                 }
             }
@@ -163,14 +164,14 @@ struct BreviarioWatchHomeView: View {
             Button("Ativar 08:00") {
                 WatchNotificationService.agendarNotificacaoDiaria { sucesso in
                     Task { @MainActor in
-                        mensagem = sucesso ? "Notificacao diaria ativa." : "Permissao negada."
+                        mensagem = sucesso ? "Notificação diária ativada." : "Permissão negada."
                     }
                 }
             }
 
             Button("Cancelar") {
                 WatchNotificationService.cancelarNotificacaoDiaria()
-                mensagem = "Notificacao cancelada."
+                mensagem = "Notificação cancelada."
             }
         }
     }

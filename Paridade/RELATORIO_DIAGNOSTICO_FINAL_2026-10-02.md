@@ -7,11 +7,13 @@ Análise completa do sistema (funcionalidades, rapidez, confiabilidade, OCR, nav
 | Item | Situação |
 |---|---|
 | Compilação iOS | Sem avisos (app, widget e relógio) |
+| Relógios, widgets e servidor do caderno | Revisados na segunda rodada (ver abaixo) |
+| Cache de notas (iOS) | 1,2 GB de caches órfãos encontrados e corrigidos |
 | Compilação Android | Sem avisos depois das correções; lint sem erros |
 | Paridade | `verificar_paridade.sh`: 0 falhas, 0 alertas |
-| Testes iOS (unidade) | 97, 0 falhas |
-| Testes Android (unidade) | 35, 0 falhas |
-| Testes Android (emulador) | 94; a única falha (dossiê em 20 s) acontece só com o Mac rodando outra suíte em paralelo e passa sozinha, também com o cache vazio |
+| Testes iOS (unidade) | 98, 0 falhas |
+| Testes Android (unidade) | 36, 0 falhas |
+| Testes Android (emulador) | 94; as falhas de dossiê (espera de 20 s) só acontecem com o Mac rodando o simulador em paralelo; sozinha, `NavigationFlowTest` passa nos 26 testes |
 | Testes de interface iOS | 42 (2 pulados de propósito); os 4 que falhavam foram corrigidos e todos passam |
 | Resultados iguais iOS × Android | Sim, com o mesmo acervo: buscas e seleção de estudos idênticas |
 | OCR | 99,6% das 59.978 páginas legíveis |
@@ -106,7 +108,7 @@ Simulador e emulador rodam no Mac; não são medidas de aparelho físico.
   - removidos `upload_rag_r2.sh`, `upload_rag_r2_wrangler.sh` (mandava tudo para `rag/v1`), `preparar_manifesto_r2.py` e `r2.env.example`;
   - o envio atual é `publicar_rag_r2_wrangler.sh`.
 
-Ao todo, cerca de 2.780 linhas removidas.
+Ao todo, cerca de 2.780 linhas removidas na primeira rodada.
 
 ## Navegação
 
@@ -115,15 +117,64 @@ Ao todo, cerca de 2.780 linhas removidas.
 - **Tela inalcançável:** o Android tinha uma tela (`Index`) que nenhuma navegação abria. Foi removida.
 - **Toque em Voltar ignorado (falso alarme):** uma falha intermitente parecia ignorar o Voltar depois de uma leitura aberta pela busca. A investigação (botões na tela, amostragem da thread principal) mostrou que só havia um botão Voltar, visível, e que nenhum travamento longo ocorria. As falhas vinham de o teste depender de um título fixo e de rodar com o simulador sob carga; com o teste corrigido, passa.
 
+## Segunda rodada (03/10/2026)
+
+Cobriu o que a primeira tocou pouco: os apps de relógio (Wear OS e Apple Watch), os widgets, o servidor do caderno, as ferramentas em Python, o estado escrito e nunca lido no Android e as duas recomendações pendentes.
+
+### Verificações
+
+| Item | Resultado |
+|---|---|
+| Servidor do caderno (`worker.js`) | As 12 verificações de `teste_servidor.mjs` passam (R2 simulado em memória, sem publicar nada) |
+| Wear OS | Compila; lint sem erros |
+| Apple Watch e widgets | Compilam sem avisos |
+| Pacotes locais (`medir_acervo_local.py`) | 291 pacotes, todos com sha256 certo e `quick_check` ok; 62.989 páginas |
+| Ferramentas em Python | 42 scripts, nenhum import ou função sem uso; os 2 testes passam |
+| Estado escrito e nunca lido (Android) | Nenhum; as propriedades da sessão de estudo são lidas pelas telas por delegação |
+
+### Defeitos encontrados e corrigidos
+
+7. **Caches de notas órfãos ocupando 1,2 GB (iOS).**
+   - Problema: o nome de cada cache era o hash do caminho absoluto do pacote, e o caminho do contêiner do app muda quando ele é reinstalado (no simulador, a cada instalação). A Apple também não garante que esse caminho se mantenha nas atualizações. Cada mudança deixava todos os caches para trás e reconstruía todos. O simulador de teste acumulou 26.441 arquivos (1,2 GB) para 291 pacotes.
+   - Correção:
+     - o nome passa a usar o caminho relativo ao contêiner, que não muda;
+     - ao abrir o app, os caches de nenhum pacote atual, sem alteração há mais de um dia, são apagados.
+   - O Android já usa um caminho estável (290 caches, 16 MB) e ganhou a mesma limpeza, para os pacotes que saem do catálogo.
+8. **Cache de notas preparado antes da primeira busca.**
+   - O iOS não preparava esse cache: a primeira busca depois de instalar ou atualizar o construía. O Android preparava só 8 s depois de abrir o app.
+   - Agora as duas plataformas o preparam ao abrir o app e logo depois de cada download (era a recomendação pendente).
+9. **Widget do iOS mostrando a leitura de ontem.** O widget se atualizava a cada 6 horas e podia manter a leitura do dia anterior até as 6 h. Agora também se atualiza à meia-noite. O do Android se atualiza a cada 30 min.
+10. **Notificação diária do Apple Watch parava depois de 60 dias.**
+    - O relógio agenda uma notificação por dia (o watchOS guarda no máximo 64), e nada renovava a lista.
+    - Agora, ao abrir o app, ela é reagendada quando faltam menos de 30 dias.
+11. **Lembrete de revisão no relógio.**
+    - Apple Watch: o lembrete das 19 h contava o total de cartões e continuava agendado depois de todos respondidos. Agora conta só os pendentes e é cancelado quando não sobra nenhum, como no Wear OS.
+    - Wear OS: o lembrete se perdia ao reiniciar o relógio. Agora é reagendado se a sessão salva for a do dia.
+12. **Resumo da leitura no Wear OS com "…" indevido.** As reticências eram decididas pelo tamanho do texto original, não do texto já sem espaços repetidos, e apareciam em resumos completos.
+13. **Textos sem acento.**
+    - 23 mensagens do app iOS ("Nao foi possivel…", "indisponivel", "invalido", "Validacao", "Teste de notificacao", "Observacao de importacao") e 3 do Apple Watch ("Permissao negada", "Notificacao diaria ativa", "Notificacao cancelada") foram corrigidas.
+    - A cor do aviso não muda, porque `AvisoApp` reconhece as duas grafias.
+14. **Script de medição com data fixa.** `medir_acervo_local.py` gravava sempre em `evidencias/2026-09-18`; agora grava na pasta do dia.
+
+### Código obsoleto removido
+
+- `Tools/modularizar_servicos_ios.py`: era de uso único. A divisão dos serviços do iOS que ele fazia já está aplicada, e rodá-lo de novo não faz nada.
+- `WearProgressSync` (Wear OS): um objeto que só repassava a chamada para `ProgressTransport.send`.
+
+### Novos testes
+
+- `testOrphanNoteCachesAreRemovedAfterADay` (iOS) e `orphanNoteCachesAreRemovedAfterADay` (Android), com os mesmos casos.
+- Totais: iOS com 98 testes de unidade e Android com 36, nenhuma falha.
+
 ## Recomendações (não alterado)
 
-- **Backup na thread principal (iOS):** `UserDataPersistenceService.salvarBackup()` compara o backup inteiro na thread principal, 0,7 s depois de cada mudança nos dados (cerca de 126 ms). Tirá-lo de lá exige reorganizar o isolamento de concorrência do serviço inteiro.
-- **Cache de notas depois de atualizar (Android e iOS):** depois de atualizar pacotes, a primeira busca reconstrói o cache de notas dos pacotes novos. Isso poderia ser feito logo após o download.
+- **Backup na thread principal (iOS):** `UserDataPersistenceService.salvarBackup()` compara o backup inteiro na thread principal, 0,7 s depois de cada mudança nos dados (cerca de 126 ms). O custo está em copiar e comparar todo o domínio de preferências, que também é a fonte do estado que o serviço grava. Tirá-lo de lá exige reorganizar o isolamento de concorrência do serviço inteiro.
+- **Flags de abertura no Wear OS:** o lint recomenda não usar `FLAG_ACTIVITY_NEW_TASK` e `FLAG_ACTIVITY_CLEAR_TOP` nas telas abertas por notificação, por causa da lista de recentes do relógio. Mudar isso pede teste num relógio de verdade.
 
 ## Para decidir (não alterado)
 
 - **Mídias antigas das lojas:**
   - `AppStoreConnect_Midia/{iPhone,iPad,AppleWatch}/`, versões anteriores às pastas `*_Final_*`;
   - `GooglePlay_Midia/backup_nome_antigo/`.
-- **Dependências do Android:** o lint aponta 15 bibliotecas com versão nova (Compose, Core, Lifecycle, Play Services). Atualizar exige testar o app inteiro de novo.
+- **Dependências do Android:** o lint aponta 16 bibliotecas com versão nova no app e 7 no Wear OS (Compose, Core, Lifecycle, Play Services). Atualizar exige testar o app inteiro de novo.
 - **Scripts de uso único do Rizzardo:** `corrigir_til_rizzardo.py`, `refazer_breviario_rizzardo.py` e `importar_breviario_rizzardo.py` documentam como o texto foi corrigido e ficam por rastreabilidade.

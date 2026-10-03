@@ -17,16 +17,57 @@ enum BibliotecaNotasSearch {
         return lock
     }
 
+    /// Brings the footnote search caches of every installed package up to date ahead of the first search
+    /// (after opening the app and after a download), as Android's `prepararBuscaNotas`.
+    static func prepararPacotesInstalados() {
+        guard let catalogo = try? BibliotecaRAGCatalogService() else { return }
+        var vistos = Set<String>()
+        for url in catalogo.pacotes.compactMap({ catalogo.urlPacote($0) }) where vistos.insert(url.path).inserted {
+            if Task.isCancelled { return }
+            _ = try? buscar(source: url, consulta: "", area: nil, obraID: nil, limite: 0, excluidas: [])
+        }
+        removerCachesOrfaos(manter: Set(vistos.map(chave)))
+    }
+
+    /// Caches of packages no longer installed (removed from the catalog, test copies, or named after an old
+    /// container path, before `chave` used relative paths: 1.2 GB on the test simulator), unchanged for a
+    /// day, are removed; Android does the same.
+    static func removerCachesOrfaos(manter: Set<String>, em pasta: URL = diretorio, agora: Date = Date()) {
+        let files = FileManager.default
+        guard let nomes = try? files.contentsOfDirectory(atPath: pasta.path) else { return }
+        for nome in nomes where !manter.contains(String(nome.prefix { $0 != "." })) {
+            let url = pasta.appendingPathComponent(nome)
+            let alterado = (try? files.attributesOfItem(atPath: url.path)[.modificationDate] as? Date) ?? agora
+            if agora.timeIntervalSince(alterado) > 86_400 { try? files.removeItem(at: url) }
+        }
+    }
+
+    /// Named after the package path relative to the app's containers: their absolute paths change when the
+    /// app is updated or reinstalled, which used to leave every cache behind and rebuild them all.
+    private static func chave(_ path: String) -> String {
+        var relativo = path
+        for (raiz, marca) in [(NSHomeDirectory(), "home:"), (Bundle.main.bundlePath, "bundle:")] where path.hasPrefix(raiz + "/") {
+            relativo = marca + path.dropFirst(raiz.count)
+            break
+        }
+        return SHA256.hash(data: Data(relativo.utf8)).map { String(format: "%02x", $0) }.joined()
+    }
+
+    private static var diretorio: URL {
+        let files = FileManager.default
+        return (files.urls(for: .cachesDirectory, in: .userDomainMask).first ?? files.temporaryDirectory)
+            .appendingPathComponent("RAGNotesSearchV1", isDirectory: true)
+    }
+
     static func buscar(source: URL, consulta: String, area: BibliotecaArea?, obraID: String?,
                        limite: Int, excluidas: Set<String>) throws -> [BibliotecaRAGResultadoBusca] {
-        let key = SHA256.hash(data: Data(source.path.utf8)).map { String(format: "%02x", $0) }.joined()
+        let key = chave(source.path)
         let lock = lock(for: key)
         lock.lock()
         defer { lock.unlock() }
         try Task.checkCancellation()
         let files = FileManager.default
-        let directory = (files.urls(for: .cachesDirectory, in: .userDomainMask).first ?? files.temporaryDirectory)
-            .appendingPathComponent("RAGNotesSearchV1", isDirectory: true)
+        let directory = diretorio
         try files.createDirectory(at: directory, withIntermediateDirectories: true)
         let stamp = try [source.path, source.path + "-wal"].map { path -> String in
             guard files.fileExists(atPath: path) else { return "absent" }
@@ -65,6 +106,8 @@ enum BibliotecaNotasSearch {
                 throw error
             }
         }
+        // An empty query only brings the cache up to date (see prepararPacotesInstalados).
+        if consulta.isEmpty { return [] }
         var filters = ["notes_fts MATCH ?"]
         var args = [consulta]
         if let area { filters.append("area = ?"); args.append(area.rawValue) }

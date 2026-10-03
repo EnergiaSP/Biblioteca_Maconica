@@ -44,7 +44,7 @@ func carregarIndicesBiblioteca() {
             carregarSolicitacoesObras()
             mensagemErro = "Solicitação de obra salva."
         } catch {
-            mensagemErro = "Nao foi possivel salvar a solicitação."
+            mensagemErro = "Não foi possível salvar a solicitação."
         }
     }
 

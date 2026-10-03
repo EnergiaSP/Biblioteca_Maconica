@@ -51,7 +51,7 @@ data class WearReading(
     val rodape: String = ""
 ) {
     val resumo: String
-        get() = texto.replace(Regex("\\s+"), " ").take(360).trimEnd() + if (texto.length > 360) "…" else ""
+        get() = texto.replace(Regex("\\s+"), " ").trim().let { if (it.length > 360) it.take(360).trimEnd() + "…" else it }
 }
 
 class WearMainActivity : ComponentActivity() {
@@ -181,7 +181,7 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
                 Button(onClick = {
                     read = !read
                     prefs.edit().putBoolean(key, read).apply()
-                    WearProgressSync.send(context, reading.obraId, reading.data, read)
+                    com.renatocamargo.breviariomaconico.progress.ProgressTransport.send(context, reading.obraId, reading.data, read)
                 }, modifier = Modifier.weight(1f), contentPadding = sideBySide) {
                     Text(if (read) "Lido ✓" else "Marcar", fontSize = 11.sp, textAlign = TextAlign.Center, maxLines = 1, softWrap = false)
                 }
@@ -216,12 +216,6 @@ private fun WearReadingApp(reading: WearReading, initiallyFull: Boolean = false)
             message?.let { Text(it, color = Color.White, fontSize = 12.sp) }
             Spacer(Modifier.height(8.dp))
         }
-    }
-}
-
-private object WearProgressSync {
-    fun send(context: android.content.Context, obraId: String, data: String, read: Boolean) {
-        com.renatocamargo.breviariomaconico.progress.ProgressTransport.send(context, obraId, data, read)
     }
 }
 

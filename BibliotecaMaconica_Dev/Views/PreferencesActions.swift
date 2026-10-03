@@ -58,7 +58,7 @@ func salvarConfiguracaoNotificacao() {
             fonteObservacao = ""
             mensagemErro = "Fonte oficial salva."
         } catch {
-            mensagemErro = "Nao foi possivel salvar a fonte oficial."
+            mensagemErro = "Não foi possível salvar a fonte oficial."
         }
     }
 
@@ -67,7 +67,7 @@ func salvarConfiguracaoNotificacao() {
             try store.removerFonteOficial(fonte)
             mensagemErro = "Fonte oficial removida."
         } catch {
-            mensagemErro = "Nao foi possivel remover a fonte oficial."
+            mensagemErro = "Não foi possível remover a fonte oficial."
         }
     }
 

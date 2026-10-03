@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -75,6 +76,12 @@ internal object WearReviewReminder {
         }.timeInMillis
         if (at > System.currentTimeMillis()) manager.set(AlarmManager.RTC_WAKEUP, at, pending)
     }
+
+    /** Alarms do not survive a restart: schedules today's reminder again if the saved session is today's. */
+    fun restore(context: Context) {
+        val deck = WearReviewStore.deck(context) ?: return
+        if (deck.today == java.time.LocalDate.now().toString()) schedule(context, deck)
+    }
 }
 
 class WearReviewReminderReceiver : BroadcastReceiver() {
@@ -105,7 +112,7 @@ class WearReviewReminderReceiver : BroadcastReceiver() {
 internal fun WearReviewSection() {
     val context = LocalContext.current
     val prefs = remember { context.getSharedPreferences("wear_revisao", Context.MODE_PRIVATE) }
-    var version by remember { mutableStateOf(0) }
+    var version by remember { mutableIntStateOf(0) }
     DisposableEffect(prefs) {
         val listener = android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, _ -> version++ }
         prefs.registerOnSharedPreferenceChangeListener(listener)

@@ -11,7 +11,7 @@ final class BibliotecaSQLiteService {
         var errorDescription: String? {
             switch self {
             case .naoAbriuBanco(let detalhe):
-                "Nao foi possivel abrir o banco da biblioteca. \(detalhe)"
+                "Não foi possível abrir o banco da biblioteca. \(detalhe)"
             case .falhaSQL(let detalhe):
                 "Falha ao executar SQL. \(detalhe)"
             case .falhaPreparar(let detalhe):

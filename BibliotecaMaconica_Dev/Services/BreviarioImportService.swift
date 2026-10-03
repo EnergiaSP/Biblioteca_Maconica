@@ -435,7 +435,7 @@ static let cabecalho = "Breviário Maçônico"
                     titulo: "\(item.titulo) - texto duplicado no PDF OCR",
                     frase: texto,
                     texto: texto,
-                    rodape: "Observacao de importacao: texto duplicado detectado no PDF OCR original.",
+                    rodape: "Observação de importação: texto duplicado detectado no PDF OCR original.",
                     autor: item.autor,
                     pagina: item.pagina,
                     obraID: item.obraID,

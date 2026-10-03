@@ -41,7 +41,7 @@ func abrirData(_ data: Date) {
         }
 
         guard let dataQuery else {
-            mensagemErro = "Nao foi possivel abrir a leitura do widget."
+            mensagemErro = "Não foi possível abrir a leitura do widget."
             return
         }
 
@@ -51,7 +51,7 @@ func abrirData(_ data: Date) {
                 return
             }
 
-            mensagemErro = "Nao foi possivel abrir a leitura do widget."
+            mensagemErro = "Não foi possível abrir a leitura do widget."
             return
         }
 

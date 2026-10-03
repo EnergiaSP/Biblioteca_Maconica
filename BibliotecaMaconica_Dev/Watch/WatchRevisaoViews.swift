@@ -22,11 +22,13 @@ final class WatchRevisaoStore: ObservableObject {
         baralho = novo
         respondidos = []
         UserDefaults.standard.set(try? JSONEncoder().encode(novo), forKey: chave)
-        WatchRevisaoLembrete.agendar(novo)
+        WatchRevisaoLembrete.agendar(novo, pendentes: novo.cartoes.count)
     }
 
     func responder(_ cartao: CartaoRelogio, nota: String) {
         respondidos.insert(cartao.id)
+        // As on Wear OS, the 19:00 reminder counts only the cards still due, and is dropped when none are left.
+        if let baralho { WatchRevisaoLembrete.agendar(baralho, pendentes: pendentes.count) }
         WatchPhoneProgressSync.shared.responder(id: cartao.id, nota: nota)
     }
 }
@@ -35,10 +37,10 @@ final class WatchRevisaoStore: ObservableObject {
 enum WatchRevisaoLembrete {
     static let identificador = "revisao-cartoes"
 
-    static func agendar(_ baralho: BaralhoRelogio) {
+    static func agendar(_ baralho: BaralhoRelogio, pendentes: Int) {
         let central = UNUserNotificationCenter.current()
         central.removePendingNotificationRequests(withIdentifiers: [identificador])
-        guard baralho.total > 0 else { return }
+        guard pendentes > 0 else { return }
         var hora = DateComponents()
         hora.hour = 19
         hora.minute = 0
@@ -46,7 +48,7 @@ enum WatchRevisaoLembrete {
               Calendar.current.isDateInToday(quando) else { return }
         let conteudo = UNMutableNotificationContent()
         conteudo.title = baralho.rotulo("titulo")
-        conteudo.body = baralho.rotulo("pendentes", ["n": "\(baralho.total)"])
+        conteudo.body = baralho.rotulo("pendentes", ["n": "\(pendentes)"])
         conteudo.sound = .default
         let gatilho = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: quando),
                                                     repeats: false)

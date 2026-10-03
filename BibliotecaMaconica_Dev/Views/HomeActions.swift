@@ -82,7 +82,7 @@ func importarPDF(resultado: Result<[URL], Error>) {
             abrirBreviario()
             mensagemErro = "Importação iniciada em \(obraDestino.titulo)."
         } catch {
-            mensagemErro = "Nao foi possivel criar a obra ou abrir o PDF selecionado."
+            mensagemErro = "Não foi possível criar a obra ou abrir o PDF selecionado."
         }
     }
 
@@ -132,7 +132,7 @@ func importarPDF(resultado: Result<[URL], Error>) {
                 }
             } catch {
                 await MainActor.run {
-                    mensagemErro = "Nao foi possivel gerar o PDF."
+                    mensagemErro = "Não foi possível gerar o PDF."
                     exportandoArquivo = false
                 }
             }
@@ -178,7 +178,7 @@ func importarPDF(resultado: Result<[URL], Error>) {
                 }
             } catch {
                 await MainActor.run {
-                    mensagemErro = "Nao foi possivel exportar os dias selecionados."
+                    mensagemErro = "Não foi possível exportar os dias selecionados."
                     exportandoArquivo = false
                 }
             }
@@ -211,7 +211,7 @@ func importarPDF(resultado: Result<[URL], Error>) {
                 }
             } catch {
                 await MainActor.run {
-                    mensagemErro = "Nao foi possivel exportar os marcadores."
+                    mensagemErro = "Não foi possível exportar os marcadores."
                     exportandoArquivo = false
                 }
             }

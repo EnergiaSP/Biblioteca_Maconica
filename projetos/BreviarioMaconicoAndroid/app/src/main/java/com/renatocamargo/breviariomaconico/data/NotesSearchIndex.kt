@@ -15,8 +15,21 @@ internal object NotesSearchIndex {
 
     fun search(source: File, cacheDir: File, query: String, area: BibliotecaArea?, workId: String?,
                limit: Int, excluded: Set<String> = emptySet(), cancelled: () -> Boolean = { false }): List<BibliotecaBuscaResultado> {
-        val key = MessageDigest.getInstance("SHA-256").digest(source.absolutePath.toByteArray()).joinToString("") { "%02x".format(it) }
+        val key = key(source)
         return synchronized(locks.getOrPut(key) { Any() }) { searchLocked(source, cacheDir, key, query, area, workId, limit, excluded, cancelled) }
+    }
+
+    fun key(source: File): String =
+        MessageDigest.getInstance("SHA-256").digest(source.absolutePath.toByteArray()).joinToString("") { "%02x".format(it) }
+
+    /**
+     * Removes the caches of packages no longer installed (removed from the catalog, or test copies),
+     * unchanged for a day; same as iOS `BibliotecaNotasSearch.removerCachesOrfaos`.
+     */
+    fun removeOrphans(cacheDir: File, keep: Set<String>, now: Long = System.currentTimeMillis()) {
+        File(cacheDir, "RAGNotesSearchV1").listFiles().orEmpty()
+            .filter { it.name.substringBefore('.') !in keep && now - it.lastModified() > 86_400_000L }
+            .forEach { it.delete() }
     }
 
     private fun searchLocked(source: File, cacheDir: File, key: String, query: String, area: BibliotecaArea?, workId: String?,
@@ -86,13 +99,15 @@ internal fun BibliotecaCatalogRepository.prepararBuscaNotas(cancelled: () -> Boo
     // Packages already prepared are skipped by their file identity alone, without opening any database.
     val prepared = appContext.getSharedPreferences("notas_preparadas", android.content.Context.MODE_PRIVATE)
     val cache = File(appContext.cacheDir, "RAGNotesSearchV1")
-    for (file in pacotes.map { localFile(it) }.filter { it.exists() }.distinctBy { it.absolutePath }) {
+    val files = pacotes.map { localFile(it) }.filter { it.exists() }.distinctBy { it.absolutePath }
+    for (file in files) {
         if (cancelled()) return
         val stamp = NotesSearchIndex.stamp(file)
         if (cache.isDirectory && prepared.getString(file.absolutePath, null) == stamp) continue
         runCatching { NotesSearchIndex.search(file, appContext.cacheDir, "", null, null, 0, cancelled = cancelled) }
             .onSuccess { prepared.edit().putString(file.absolutePath, stamp).apply() }
     }
+    NotesSearchIndex.removeOrphans(appContext.cacheDir, files.map { NotesSearchIndex.key(it) }.toSet())
 }
 
 /**

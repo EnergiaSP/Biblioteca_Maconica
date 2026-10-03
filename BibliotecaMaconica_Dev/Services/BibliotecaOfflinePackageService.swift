@@ -53,11 +53,11 @@ final class BibliotecaOfflinePackageService {
         var errorDescription: String? {
             switch self {
             case .origemIndisponivel(let titulo):
-                "Pacote indisponivel para download: \(titulo)"
+                "Pacote indisponível para download: \(titulo)"
             case .downloadInvalido(let titulo):
-                "Download invalido para: \(titulo)"
+                "Download inválido para: \(titulo)"
             case .hashInvalido(let titulo):
-                "Validacao de integridade falhou para: \(titulo)"
+                "Validação de integridade falhou para: \(titulo)"
             }
         }
     }

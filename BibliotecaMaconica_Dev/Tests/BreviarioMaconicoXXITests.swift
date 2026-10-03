@@ -1938,6 +1938,22 @@ final class BreviarioMaconicoXXITests: XCTestCase {
         ReadingProgressService.definirConcluido(date, obraID: work, lido: false, sincronizar: false)
         XCTAssertFalse(ReadingProgressService.concluidos(obraID: work).contains(date))
     }
+
+    /// Same cases as Android (`orphanNoteCachesAreRemovedAfterADay`).
+    func testOrphanNoteCachesAreRemovedAfterADay() throws {
+        let files = FileManager.default
+        let pasta = files.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+        try files.createDirectory(at: pasta, withIntermediateDirectories: true)
+        defer { try? files.removeItem(at: pasta) }
+        let agora = Date()
+        for (nome, idade) in [("atual.sqlite", 3.0), ("velho.sqlite", 3.0), ("velho.sqlite-journal", 3.0), ("recente.sqlite", 0.5)] {
+            let url = pasta.appendingPathComponent(nome)
+            try Data().write(to: url)
+            try files.setAttributes([.modificationDate: agora.addingTimeInterval(-idade * 86_400)], ofItemAtPath: url.path)
+        }
+        BibliotecaNotasSearch.removerCachesOrfaos(manter: ["atual"], em: pasta, agora: agora)
+        XCTAssertEqual(try files.contentsOfDirectory(atPath: pasta.path).sorted(), ["atual.sqlite", "recente.sqlite"])
+    }
 }
 
 private extension NSObject {
