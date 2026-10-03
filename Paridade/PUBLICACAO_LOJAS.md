@@ -114,6 +114,8 @@ maçonaria,breviário,maçom,loja,estudo,prancha,acervo,ritual,filosofia,simboli
   - Google Drive (pasta privada do app na conta do usuário).
 - A opção "Conta própria" (caderno cifrado no aparelho, guardado num servidor que não consegue lê-lo) só aparece depois que o servidor for publicado. Quando aparecer, o formulário de segurança de dados deve declarar o armazenamento de um arquivo cifrado, sem identificação pessoal.
 - Interpretação assistida: a chave de IA fica no aparelho, e o texto do dossiê vai ao provedor de IA somente quando o usuário pede a interpretação.
+- Android: o reconhecimento de texto de PDFs importados usa o ML Kit do Google, no aparelho. O Google declara que a biblioteca pode enviar métricas de uso e diagnóstico, o que deve constar no formulário de segurança de dados (diagnóstico do app, coletado por terceiro, não vinculado ao usuário).
+- Download das obras: Cloudflare R2, sem nenhum dado do usuário além do endereço de rede usado na conexão.
 - Classificação etária: livre (sem conteúdo gerado por outros usuários, sem compras, sem anúncios).
 
 ## Capturas de tela
@@ -136,5 +138,5 @@ Situação em 03/10/2026, depois do diagnóstico final: testes das duas platafor
 
 - [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
 - [ ] Arquivo iOS pelo Xcode (Product > Archive) com a conta de desenvolvedor.
-- [ ] URL da política de privacidade.
+- [ ] URL da política de privacidade: o texto está em `docs/privacidade.html`. Com o GitHub Pages ligado no repositório (Settings > Pages > ramo `main`, pasta `/docs`), o endereço fica https://energiasp.github.io/Biblioteca_Maconica/privacidade.html. Antes, troque "[e-mail de contato]" pelo e-mail de atendimento.
 - [ ] Revisão final dos textos pelo responsável.
