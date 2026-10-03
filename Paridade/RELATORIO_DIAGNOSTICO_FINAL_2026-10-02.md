@@ -143,6 +143,7 @@ Cobriu o que a primeira tocou pouco: os apps de relógio (Wear OS e Apple Watch)
 8. **Cache de notas preparado antes da primeira busca.**
    - O iOS não preparava esse cache: a primeira busca depois de instalar ou atualizar o construía. O Android preparava só 8 s depois de abrir o app.
    - Agora as duas plataformas o preparam ao abrir o app e logo depois de cada download (era a recomendação pendente).
+   - Como no Android, os pacotes já preparados são pulados pela identidade do arquivo (marcador `.preparado` ao lado do cache), sem abrir nenhum banco. Na primeira versão, abrir os 291 bancos a cada abertura ocupava o disco por cerca de 20 s e atrasou a abertura da leitura num teste de interface.
 9. **Widget do iOS mostrando a leitura de ontem.** O widget se atualizava a cada 6 horas e podia manter a leitura do dia anterior até as 6 h. Agora também se atualiza à meia-noite. O do Android se atualiza a cada 30 min.
 10. **Notificação diária do Apple Watch parava depois de 60 dias.**
     - O relógio agenda uma notificação por dia (o watchOS guarda no máximo 64), e nada renovava a lista.

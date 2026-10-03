@@ -24,7 +24,16 @@ enum BibliotecaNotasSearch {
         var vistos = Set<String>()
         for url in catalogo.pacotes.compactMap({ catalogo.urlPacote($0) }) where vistos.insert(url.path).inserted {
             if Task.isCancelled { return }
-            _ = try? buscar(source: url, consulta: "", area: nil, obraID: nil, limite: 0, excluidas: [])
+            // Packages already prepared are skipped by their file identity alone, without opening any
+            // database (as Android does): opening all of them at every launch kept the disk busy for ~20 s.
+            let preparado = diretorio.appendingPathComponent(chave(url.path) + ".preparado")
+            let cache = diretorio.appendingPathComponent(chave(url.path) + ".sqlite")
+            guard let atual = try? carimbo(url.path),
+                  (try? String(contentsOf: preparado, encoding: .utf8)) != atual
+                    || !FileManager.default.fileExists(atPath: cache.path) else { continue }
+            if (try? buscar(source: url, consulta: "", area: nil, obraID: nil, limite: 0, excluidas: [])) != nil {
+                try? Data(atual.utf8).write(to: preparado, options: .atomic)
+            }
         }
         removerCachesOrfaos(manter: Set(vistos.map(chave)))
     }
@@ -53,6 +62,16 @@ enum BibliotecaNotasSearch {
         return SHA256.hash(data: Data(relativo.utf8)).map { String(format: "%02x", $0) }.joined()
     }
 
+    /// Identity of a package file: the cache is rebuilt when it changes.
+    private static func carimbo(_ path: String) throws -> String {
+        let files = FileManager.default
+        return try [path, path + "-wal"].map { path -> String in
+            guard files.fileExists(atPath: path) else { return "absent" }
+            let attrs = try files.attributesOfItem(atPath: path)
+            return "\(attrs[.size] ?? 0):\((attrs[.modificationDate] as? Date)?.timeIntervalSince1970 ?? 0):\(attrs[.systemFileNumber] ?? 0)"
+        }.joined(separator: "|")
+    }
+
     private static var diretorio: URL {
         let files = FileManager.default
         return (files.urls(for: .cachesDirectory, in: .userDomainMask).first ?? files.temporaryDirectory)
@@ -69,11 +88,7 @@ enum BibliotecaNotasSearch {
         let files = FileManager.default
         let directory = diretorio
         try files.createDirectory(at: directory, withIntermediateDirectories: true)
-        let stamp = try [source.path, source.path + "-wal"].map { path -> String in
-            guard files.fileExists(atPath: path) else { return "absent" }
-            let attrs = try files.attributesOfItem(atPath: path)
-            return "\(attrs[.size] ?? 0):\((attrs[.modificationDate] as? Date)?.timeIntervalSince1970 ?? 0):\(attrs[.systemFileNumber] ?? 0)"
-        }.joined(separator: "|")
+        let stamp = try carimbo(source.path)
         let database = try Database(directory.appendingPathComponent(key + ".sqlite"))
         try database.run("CREATE TABLE IF NOT EXISTS cache_meta (stamp TEXT NOT NULL)")
         try database.run("""
