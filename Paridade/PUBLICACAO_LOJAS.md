@@ -2,7 +2,7 @@
 
 Textos para App Store Connect e Google Play Console, versão 1.0.16 (Fases 7 a 14). A publicação acontece pelas contas do responsável nas lojas.
 
-Identificadores: iOS `com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado` (app, widget e Apple Watch), versão 1.0.16 (build 2); Android e Wear OS `com.renatocamargo.breviariomaconico`, versão 1.0.16 (versionCode 16).
+Identificadores: iOS `com.renatocamargo.BreviarioMaconicoSeculoXXIPrivado` (app, widget e Apple Watch), versão 1.0.16 (build 2); Android e Wear OS `com.renatocamargo.breviariomaconico`, versão 1.0.16 (versionCode 16 no celular e 1000016 no relógio: o Google Play exige um código diferente para cada pacote com o mesmo identificador).
 
 Os limites de caracteres de cada campo são conferidos por `Tools/verificar_textos_lojas.py`.
 

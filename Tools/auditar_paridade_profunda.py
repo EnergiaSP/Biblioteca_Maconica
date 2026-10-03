@@ -151,8 +151,10 @@ if len(set(build.strip() for build in ios_builds)) != 1:
     fail(f"Targets iOS possuem builds divergentes: {sorted(set(ios_builds))}")
 if not wear_match or wear_match.group(1) != android_match.group(1):
     fail("Wear OS e aplicativo Android possuem versões divergentes")
-if not android_code or not wear_code or android_code.group(1) != wear_code.group(1):
-    fail("Wear OS e aplicativo Android possuem códigos de build divergentes")
+# Phone and watch share the package, and Google Play needs a different versionCode for each bundle:
+# the watch uses 1,000,000 + the phone's.
+if not android_code or not wear_code or int(wear_code.group(1)) != 1_000_000 + int(android_code.group(1)):
+    fail("O versionCode do Wear OS deve ser 1.000.000 + o do aplicativo Android")
 
 # Both integrated breviaries must reach the watches: Apple Watch bundles both files and Wear OS
 # opens the Rizzardo file for its readings (a Rizzardo reading used to show as unavailable).

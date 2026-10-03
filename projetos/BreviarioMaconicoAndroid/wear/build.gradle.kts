@@ -19,7 +19,9 @@ android {
         applicationId = "com.renatocamargo.breviariomaconico"
         minSdk = 30
         targetSdk = 36
-        versionCode = 16
+        // Same package as the phone app: Google Play needs a different versionCode for each bundle,
+        // so the watch uses 1,000,000 + the phone's (checked by Tools/auditar_paridade_profunda.py).
+        versionCode = 1000016
         versionName = "1.0.16"
     }
 
