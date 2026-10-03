@@ -130,6 +130,10 @@ Telas: Início, leitura diária, Coleções, Dossiê, Prancha, Trilhas por grau,
 
 ## Pendências antes de enviar
 
+Situação em 03/10/2026, depois do diagnóstico final: testes das duas plataformas e o gate de paridade passam, e as configurações de Release compilam (iOS, Apple Watch, AAB do app e do Wear OS sem assinatura). Faltam só os itens abaixo, que dependem do responsável.
+
+- [ ] Integrar os PRs #16 e #17 em `main`.
+
 - [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
 - [ ] Arquivo iOS pelo Xcode (Product > Archive) com a conta de desenvolvedor.
 - [ ] URL da política de privacidade.

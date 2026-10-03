@@ -14,7 +14,8 @@ Análise completa do sistema (funcionalidades, rapidez, confiabilidade, OCR, nav
 | Testes iOS (unidade) | 98, 0 falhas |
 | Testes Android (unidade) | 36, 0 falhas |
 | Testes Android (emulador) | 94; as falhas de dossiê (espera de 20 s) só acontecem com o Mac rodando o simulador em paralelo; sozinha, `NavigationFlowTest` passa nos 26 testes |
-| Testes de interface iOS | 42 (2 pulados de propósito); os 4 que falhavam foram corrigidos e todos passam |
+| Testes de interface iOS | 42 (2 pulados de propósito); todos passam, também depois da segunda rodada |
+| Builds de Release | Compilam: app iOS e Apple Watch, AAB do app (26 MB) e do Wear OS (2,7 MB), ainda sem assinatura |
 | Resultados iguais iOS × Android | Sim, com o mesmo acervo: buscas e seleção de estudos idênticas |
 | OCR | 99,6% das 59.978 páginas legíveis |
 
@@ -169,7 +170,7 @@ Cobriu o que a primeira tocou pouco: os apps de relógio (Wear OS e Apple Watch)
 ### Novos testes
 
 - `testOrphanNoteCachesAreRemovedAfterADay` (iOS) e `orphanNoteCachesAreRemovedAfterADay` (Android), com os mesmos casos.
-- Totais: iOS com 98 testes de unidade e Android com 36, nenhuma falha.
+- Totais: iOS com 98 testes de unidade e Android com 36, nenhuma falha; os 42 testes de interface do iOS passam.
 
 ## Recomendações (não alterado)
 
