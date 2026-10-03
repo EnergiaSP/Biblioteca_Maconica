@@ -348,15 +348,6 @@ enum TemaLeitura: String, CaseIterable, Identifiable {
         }
     }
 
-    var corSelecaoTema: Color {
-        switch self {
-        case .escuro:
-            .white
-        case .claro, .sepia:
-            .black
-        }
-    }
-
     var textoSobreDestaque: Color {
         .black
     }

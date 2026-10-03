@@ -13,7 +13,7 @@ func restaurarDadosEmbutidos() {
 
             carregar()
         } catch {
-            self.erro = "Nao foi possivel restaurar os dados embutidos."
+            self.erro = "Não foi possível restaurar os dados embutidos."
         }
     }
 

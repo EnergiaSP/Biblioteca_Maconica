@@ -326,7 +326,6 @@ enum GeminiAnaliseService {
         case limiteGratuitoAtingido
         case modelosIndisponiveis
         case respostaIncompleta
-        case fontesInvalidas
         case erroAPI(String)
 
         var errorDescription: String? {
@@ -347,8 +346,6 @@ enum GeminiAnaliseService {
                 "Os modelos gratuitos configurados não estão disponíveis para esta chave no momento."
             case .respostaIncompleta:
                 "A IA interrompeu a resposta. Nenhuma análise parcial foi salva. Tente novamente."
-            case .fontesInvalidas:
-                "A resposta não possui referências documentais válidas. Nenhuma análise foi salva."
             case .erroAPI(let mensagem):
                 mensagem
             }
@@ -390,7 +387,7 @@ enum GeminiAnaliseService {
                 )
             } catch let erro as GeminiError {
                 switch erro {
-                case .chaveInvalida, .limiteGratuitoAtingido, .respostaIncompleta, .fontesInvalidas:
+                case .chaveInvalida, .limiteGratuitoAtingido, .respostaIncompleta:
                     throw erro
                 default:
                     ultimoErro = erro
@@ -469,16 +466,6 @@ enum GeminiAnaliseService {
         let texto = candidate.content?.parts.filter { $0.thought != true }.compactMap(\.text).joined(separator: "\n") ?? ""
         guard !texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { throw GeminiError.respostaVazia }
         return texto
-    }
-
-    static func validarCitacoes(_ texto: String, quantidadeFontes: Int) throws {
-        guard quantidadeFontes > 0 else { throw GeminiError.fontesInvalidas }
-        let pattern = try NSRegularExpression(pattern: #"\[F([0-9]+)\]"#)
-        let matches = pattern.matches(in: texto, range: NSRange(texto.startIndex..., in: texto))
-        guard !matches.isEmpty, matches.allSatisfy({ match in
-            guard let range = Range(match.range(at: 1), in: texto), let id = Int(texto[range]) else { return false }
-            return (1...quantidadeFontes).contains(id)
-        }) else { throw GeminiError.fontesInvalidas }
     }
 
     private static func erroGemini(statusCode: Int, erro: GeminiErrorResponse) -> GeminiError {

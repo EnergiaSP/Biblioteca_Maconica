@@ -152,7 +152,8 @@ class NavigationFlowTest {
         compose.onNodeWithTag("tab.collections").performClick()
         compose.waitUntil(30_000) { compose.onAllNodesWithTag("audio.sequence.play").fetchSemanticsNodes().isNotEmpty() }
         compose.onAllNodesWithTag("audio.sequence.play")[0].performClick()
-        compose.onNodeWithTag("study.list").performScrollToKey("audio.sequence")
+        // The controls stay on screen (pinned to the bottom) wherever the sequence was started.
+        compose.onNodeWithTag("audio.sequence.next").assertIsDisplayed()
         compose.onNodeWithTag("audio.sequence.status").assertTextContains("leitura 1 de", substring = true)
         compose.onNodeWithTag("audio.sequence.next").performClick()
         compose.onNodeWithTag("audio.sequence.status").assertTextContains("leitura 2 de", substring = true)

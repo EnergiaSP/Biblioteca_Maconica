@@ -27,7 +27,6 @@ struct HomeView: View {
     @AppStorage("analiseIAAtiva") var analiseIAAtiva = false
     @AppStorage("obrasNotificacaoIDs") var obrasNotificacaoIDsRaw = ""
     @State var busca = ""
-    @State var buscaIndice = ""
     @State var buscaBiblioteca = ""
     @State var escopoBuscaBiblioteca = BibliotecaBuscaEscopo.appTodo
     @State var areaBuscaBiblioteca = BibliotecaArea.breviarios
@@ -87,7 +86,6 @@ struct HomeView: View {
     @State var fonteURL = ""
     @State var fonteObservacao = ""
     @State var dataEscolhida = Date()
-    @State var calendarioMesExibido = Date()
     @State var itemSelecionadoID: Int?
     /// Reading whose comment, reflection and highlights are currently loaded in the editors.
     @State var itemEstadoLeitura: BreviarioItem?
@@ -109,7 +107,6 @@ struct HomeView: View {
     @State var novoDestaque = ""
     @State var trechoSelecionadoTexto = ""
     @State var destaques: [DestaqueLeitura] = []
-    @State var pdfURL: URL?
     @State var compartilhamento: Compartilhamento?
     @State var mensagemErro: String?
     @State var mensagemErroTask: Task<Void, Never>?
@@ -120,7 +117,6 @@ struct HomeView: View {
     @State var mostrandoLeituraTelaCheia = false
     @State var favoritos: Set<String> = []
     @State var leiturasConcluidas: Set<String> = []
-    @State var leiturasRecentes: [String] = []
     @State var filtroLeitura = FiltroLeitura.todos
     @State var colecoesTematicasCache: [ColecaoTematica] = []
     @State var trilhasDeEstudoCache: [TrilhaEstudo] = []
@@ -128,7 +124,6 @@ struct HomeView: View {
     @State var datasComComentarioCache: Set<String> = []
     @State var resumosComentarioCache: [String: String] = [:]
     @State var itensVisiveisCache: [BreviarioItem] = []
-    @State var itensRecentesCache: [BreviarioItem] = []
     @State var leiturasDiariasBreviariosCache: [LeituraDiariaBreviario] = []
     @State var leiturasRecentesBreviariosCache: [LeituraRecenteBreviario] = []
     @State var itensFavoritosCache: [BreviarioItem] = []
@@ -137,9 +132,7 @@ struct HomeView: View {
     @State var itensMesAtualCache: [BreviarioItem] = []
     @State var totalLidasSemanaAtualCache = 0
     @State var totalLidasMesAtualCache = 0
-    @State var diasCalendarioMesAtualCache: [DiaCalendarioLeitura] = []
     @State var nomeMesAtualCache = ""
-    @State var dataHojeBreviarioCache = ""
     @State var sequenciaAtualCache = 0
     @State var exportandoArquivo = false
     @State var buscaTask: Task<Void, Never>?
@@ -256,15 +249,6 @@ struct HomeView: View {
         VozLeituraGenero(rawValue: vozLeituraGenero) ?? .feminina
     }
 
-    var temaUnificadoBinding: Binding<String> {
-        Binding(
-            get: { temaAppRaw },
-            set: { novoTema in
-                aplicarTemaUnificado(novoTema)
-            }
-        )
-    }
-
     func temaNormalizado(_ rawValue: String) -> String {
         rawValue == "noturno" ? TemaLeitura.escuro.rawValue : rawValue
     }
@@ -303,10 +287,6 @@ struct HomeView: View {
         } else {
             280
         }
-    }
-
-    var itensRecentes: [BreviarioItem] {
-        itensRecentesCache
     }
 
     var itensFavoritos: [BreviarioItem] {
@@ -381,14 +361,6 @@ struct HomeView: View {
         nomeMesAtualCache
     }
 
-    var diasSemanaCalendario: [String] {
-        ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
-    }
-
-    var dataHojeBreviario: String {
-        dataHojeBreviarioCache
-    }
-
     var tituloListaLeitura: String {
         switch filtroLeitura {
         case .favoritos:
@@ -431,38 +403,6 @@ struct HomeView: View {
         return "\(itensVisiveis.count) \(unidade)"
     }
 
-    var diasCalendarioMesAtual: [DiaCalendarioLeitura] {
-        diasCalendarioMesAtualCache
-    }
-
-    func montarDiasCalendarioMesAtual() -> [DiaCalendarioLeitura] {
-        let calendario = Calendar.current
-        let componentes = calendario.dateComponents([.year, .month], from: calendarioMesExibido)
-
-        guard let primeiroDia = calendario.date(from: componentes),
-              let intervaloDias = calendario.range(of: .day, in: .month, for: primeiroDia) else {
-            return []
-        }
-
-        let mesAtual = calendario.component(.month, from: primeiroDia)
-        let deslocamentoInicial = calendario.component(.weekday, from: primeiroDia) - 1
-        var dias: [DiaCalendarioLeitura] = (0..<deslocamentoInicial).map { indice in
-            DiaCalendarioLeitura(id: "vazio-\(indice)", dia: nil, data: nil, item: nil)
-        }
-
-        dias.append(contentsOf: intervaloDias.map { dia in
-            let data = String(format: "%02d/%02d", dia, mesAtual)
-            return DiaCalendarioLeitura(
-                id: data,
-                dia: dia,
-                data: data,
-                item: store.item(data: data)
-            )
-        })
-
-        return dias
-    }
-
     func montarItensSemanaAtual() -> [BreviarioItem] {
         let calendario = Calendar.current
         let hoje = Date()
@@ -481,7 +421,7 @@ struct HomeView: View {
     }
 
     func montarNomeMesAtual() -> String {
-        Self.formatadorMesAnoCompartilhado.string(from: calendarioMesExibido).capitalized
+        Self.formatadorMesAnoCompartilhado.string(from: Date()).capitalized
     }
 
     var sequenciaAtual: Int {
@@ -592,7 +532,6 @@ struct HomeView: View {
         .onChange(of: itemSelecionadoID) { _, _ in
             leitorVoz.parar()
             mensagemIA = nil
-            pdfURL = nil
             mensagemErro = nil
             mostrandoEditor = false
             if itemSelecionado == nil {

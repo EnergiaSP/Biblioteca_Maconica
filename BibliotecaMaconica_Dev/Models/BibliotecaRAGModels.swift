@@ -186,21 +186,3 @@ struct QualidadeTextoObra: Codable, Hashable {
     let ilegiveis: Int
 }
 
-struct BibliotecaRAGContextoIA: Codable {
-    let pergunta: String
-    let trechos: [BibliotecaRAGParagrafo]
-    let notas: [BibliotecaRAGNotaRodape]
-    let fontesOficiais: [FonteOficialMaconica]
-
-    var possuiBaseDocumentalSuficiente: Bool {
-        // A registered URL alone is not retrieved documentary evidence.
-        trechos.contains { !$0.texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-            || notas.contains { !$0.texto.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-    }
-}
-
-enum BibliotecaRAGPoliticaIA {
-    static let instrucaoRestritiva = """
-    Responda somente com base nos trechos documentais recuperados da biblioteca e nas fontes oficiais previamente aprovadas. Nao invente fatos, referencias, citacoes, paginas, autores ou conclusoes. Quando a base recuperada nao for suficiente, informe claramente que nao encontrou fundamento documental seguro para responder.
-    """
-}

@@ -39,6 +39,7 @@ func prepararCachesIniciais() {
         Task.detached(priority: .background) {
             try? await Task.sleep(nanoseconds: 8_000_000_000)
             _ = try? BibliotecaOfflinePackageService().removerPacotesForaDoCatalogo()
+            BibliotecaNotasSearch.prepararPacotesInstalados()
         }
     }
 
@@ -246,6 +247,8 @@ func prepararCachesIniciais() {
                     atualizarPacotesOffline()
                     mensagemErro = "Obra baixada para uso offline."
                 }
+                // The new package's footnote search cache is built now, not by the first search.
+                BibliotecaNotasSearch.prepararPacotesInstalados()
             } catch {
                 await MainActor.run {
                     instalandoPacotesOffline = false
@@ -306,6 +309,7 @@ func prepararCachesIniciais() {
                     mensagemErro = "Não foi possível baixar todas as obras."
                 }
             }
+            BibliotecaNotasSearch.prepararPacotesInstalados()
         }
     }
 
@@ -335,20 +339,8 @@ func prepararCachesIniciais() {
                     mensagemErro = "Não foi possível baixar todo o acervo."
                 }
             }
+            BibliotecaNotasSearch.prepararPacotesInstalados()
         }
     }
 
-    func voltarParaHome() {
-        mostrandoLeituraTelaCheia = false
-        navigation.showHome()
-    }
-
-    func mudarMesCalendario(_ valor: Int) {
-        calendarioMesExibido = Calendar.current.date(
-            byAdding: .month,
-            value: valor,
-            to: calendarioMesExibido
-        ) ?? calendarioMesExibido
-        atualizarResumoNavegacaoCache()
-    }
 }

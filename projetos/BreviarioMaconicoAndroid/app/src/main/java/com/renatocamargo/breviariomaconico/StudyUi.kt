@@ -160,39 +160,6 @@ import java.util.Calendar
 import java.util.Locale
 
 @Composable
-internal fun IndexScreen(colors: Palette, repo: BreviarioRepository, onRead: (BreviarioItem) -> Unit) {
-    var search by remember { mutableStateOf("") }
-    LazyColumn(Modifier.fillMaxSize().padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        item {
-            OutlinedTextField(
-                search,
-                { search = it },
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text("Pesquisar no índice") },
-                leadingIcon = { Icon(Icons.Default.Search, null) }
-            )
-        }
-        items(repo.buscarIndice(search)) { entry ->
-            IndexCard(colors, entry, repo, onRead)
-        }
-    }
-}
-
-@OptIn(ExperimentalLayoutApi::class)
-@Composable
-internal fun IndexCard(colors: Palette, entry: IndiceRemissivoEntry, repo: BreviarioRepository, onRead: (BreviarioItem) -> Unit) {
-    PremiumCard(colors) {
-        Text(entry.termo, color = colors.text, fontWeight = FontWeight.Bold)
-        Text("Páginas: ${entry.paginas.joinToString()}", color = colors.secondary, fontSize = 13.sp)
-        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            entry.datas.forEach { data ->
-                AssistChip(onClick = { repo.porData(data)?.let(onRead) }, label = { Text(data) })
-            }
-        }
-    }
-}
-
-@Composable
 internal fun ItemListScreen(title: String, colors: Palette, items: List<BreviarioItem>, onRead: (BreviarioItem) -> Unit) {
     ItemSearchList(title, colors, items, null, "Selecionar data", {}, onRead)
 }
@@ -332,74 +299,78 @@ internal fun CollectionsScreen(
     fun openReading(item: BreviarioItem) {
         if (item.data.startsWith("P")) abrirObra(item.obraId, item.pagina) else onRead(item)
     }
-    LazyColumn(Modifier.fillMaxSize().padding(18.dp).testTag("study.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        item {
-            Text("Coleções temáticas", color = colors.text, fontSize = 26.sp, fontWeight = FontWeight.Bold)
-            if (content.completedWorks < content.totalWorks) {
-                Text("Atualizando referências: ${content.completedWorks} de ${content.totalWorks} obras", color = colors.secondary,
-                    modifier = Modifier.testTag("study.progress"))
-                androidx.compose.material3.LinearProgressIndicator(
-                    progress = { content.completedWorks.toFloat() / content.totalWorks }, modifier = Modifier.fillMaxWidth())
-            }
-            if (content.failedWorks.isNotEmpty()) Text("Não foi possível consultar algumas obras: ${content.failedWorks.joinToString(", ")}", color = colors.text)
-        }
-        if (audio.title != null) item(key = "audio.sequence") { AudioSequenceBar(colors, audio) }
-        rules.collections.forEach { collection ->
-            item(key = "collection:${collection.id}") {
-                val matches = content.collections[collection.id].orEmpty()
-                StudyCollectionCard(collection, matches, colors, content::readingLabel, ::openReading) {
-                    AudioSequenceButton(colors, audio, collection.title) { audio.play(collection.title, matches) }
-                }
-            }
-        }
-        item {
-            Text("Trilhas de estudo", color = colors.text, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-        }
-        studyPaths.forEach { path ->
-            item(key = "path:${path.id}") {
-                val relatedReadings = content.paths[path.id].orEmpty()
-                PremiumCard(colors) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(path.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
-                        AudioSequenceButton(colors, audio, path.title) { audio.play(path.title, relatedReadings) }
-                    }
-                    Text(path.subtitle, color = colors.secondary)
-                    Text(path.objective, color = colors.secondary)
-                    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(path.instruction, color = colors.accent, fontWeight = FontWeight.SemiBold)
-                        Text(path.suggestedDuration, color = colors.accent, fontWeight = FontWeight.SemiBold)
-                    }
-                    path.stages.forEachIndexed { index, stage ->
-                        Text("${index + 1}. $stage", color = colors.text)
-                    }
-                    relatedReadings.forEach { reading ->
-                        Text(
-                            content.readingLabel(reading),
-                            color = colors.accent,
-                            modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)
-                                .clickable(role = androidx.compose.ui.semantics.Role.Button) { openReading(reading) }.padding(vertical = 4.dp)
-                        )
-                    }
-                }
-            }
-        }
-        item {
-            Text("Histórico de reflexões", color = colors.text, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-        }
-        if (reflectionHistory.isEmpty()) {
+    // The controls stay at the bottom of the screen while a sequence plays: as an item of the list they were
+    // out of view when it started from a card further down. Same as iOS.
+    Column(Modifier.fillMaxSize()) {
+        LazyColumn(Modifier.weight(1f).fillMaxWidth().padding(18.dp).testTag("study.list"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             item {
-                PremiumCard(colors) {
-                    Text("As reflexões salvas nas leituras aparecerão aqui.", color = colors.secondary)
+                Text("Coleções temáticas", color = colors.text, fontSize = 26.sp, fontWeight = FontWeight.Bold)
+                if (content.completedWorks < content.totalWorks) {
+                    Text("Atualizando referências: ${content.completedWorks} de ${content.totalWorks} obras", color = colors.secondary,
+                        modifier = Modifier.testTag("study.progress"))
+                    androidx.compose.material3.LinearProgressIndicator(
+                        progress = { content.completedWorks.toFloat() / content.totalWorks }, modifier = Modifier.fillMaxWidth())
+                }
+                if (content.failedWorks.isNotEmpty()) Text("Não foi possível consultar algumas obras: ${content.failedWorks.joinToString(", ")}", color = colors.text)
+            }
+            rules.collections.forEach { collection ->
+                item(key = "collection:${collection.id}") {
+                    val matches = content.collections[collection.id].orEmpty()
+                    StudyCollectionCard(collection, matches, colors, content::readingLabel, ::openReading) {
+                        AudioSequenceButton(colors, audio, collection.title) { audio.play(collection.title, matches) }
+                    }
                 }
             }
-        } else {
-            items(reflectionHistory.take(30)) { reflection ->
-                PremiumCard(colors) {
-                    Text("${reflection.workTitle} • ${TextoFormatter.dataPorExtenso(reflection.date)}", color = colors.accent, fontWeight = FontWeight.Bold)
-                    Text(reflection.text, color = colors.text, maxLines = 8, overflow = TextOverflow.Ellipsis)
+            item {
+                Text("Trilhas de estudo", color = colors.text, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+            }
+            studyPaths.forEach { path ->
+                item(key = "path:${path.id}") {
+                    val relatedReadings = content.paths[path.id].orEmpty()
+                    PremiumCard(colors) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(path.title, color = colors.text, fontSize = 21.sp, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
+                            AudioSequenceButton(colors, audio, path.title) { audio.play(path.title, relatedReadings) }
+                        }
+                        Text(path.subtitle, color = colors.secondary)
+                        Text(path.objective, color = colors.secondary)
+                        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Text(path.instruction, color = colors.accent, fontWeight = FontWeight.SemiBold)
+                            Text(path.suggestedDuration, color = colors.accent, fontWeight = FontWeight.SemiBold)
+                        }
+                        path.stages.forEachIndexed { index, stage ->
+                            Text("${index + 1}. $stage", color = colors.text)
+                        }
+                        relatedReadings.forEach { reading ->
+                            Text(
+                                content.readingLabel(reading),
+                                color = colors.accent,
+                                modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)
+                                    .clickable(role = androidx.compose.ui.semantics.Role.Button) { openReading(reading) }.padding(vertical = 4.dp)
+                            )
+                        }
+                    }
+                }
+            }
+            item {
+                Text("Histórico de reflexões", color = colors.text, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+            }
+            if (reflectionHistory.isEmpty()) {
+                item {
+                    PremiumCard(colors) {
+                        Text("As reflexões salvas nas leituras aparecerão aqui.", color = colors.secondary)
+                    }
+                }
+            } else {
+                items(reflectionHistory.take(30)) { reflection ->
+                    PremiumCard(colors) {
+                        Text("${reflection.workTitle} • ${TextoFormatter.dataPorExtenso(reflection.date)}", color = colors.accent, fontWeight = FontWeight.Bold)
+                        Text(reflection.text, color = colors.text, maxLines = 8, overflow = TextOverflow.Ellipsis)
+                    }
                 }
             }
         }
+        if (audio.title != null) Box(Modifier.padding(start = 18.dp, end = 18.dp, bottom = 12.dp)) { AudioSequenceBar(colors, audio) }
     }
 }
 

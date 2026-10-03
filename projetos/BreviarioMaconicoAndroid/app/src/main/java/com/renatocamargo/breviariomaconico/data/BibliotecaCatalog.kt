@@ -306,9 +306,6 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
         abrirSomenteLeitura(banco).use { db -> percorrerItensEstudo(db, obraId, cancelled = cancelled, receber = receber) }
     }
 
-    fun primeiraPaginaDaObra(obraId: String): BibliotecaPaginaLeitura? =
-        paginasDaObra(obraId, limite = 1).firstOrNull()
-
     fun buscarConteudo(termo: String, area: BibliotecaArea? = null, obraId: String? = null, limite: Int = 80, offset: Int = 0,
         cancelled: () -> Boolean = { false }, filtro: LibraryMetadataFilter = LibraryMetadataFilter(),
         variants: Map<String, List<String>> = emptyMap()): List<BibliotecaBuscaResultado> {
@@ -460,11 +457,12 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
     }
 
     fun indicePaginas(obraId: String, limite: Int = 50, filtro: String = ""): List<BibliotecaBuscaResultado> {
+        // Normalized once; without a filter no page title is normalized (2,678 pages of the largest work).
+        val consulta = normalized(filtro)
         if (obraId in obrasBreviariosIntegrados.map { it.id }) {
-            val consulta = normalized(filtro)
             val tituloObra = obrasBreviariosIntegrados.first { it.id == obraId }.titulo
             return BreviarioRepository.get(appContext).itens.asSequence()
-                .filter { it.obraId == obraId && normalized("${it.data} ${TextoFormatter.dataPorExtenso(it.data)} ${it.titulo}").contains(consulta) }
+                .filter { it.obraId == obraId && (consulta.isEmpty() || normalized("${it.data} ${TextoFormatter.dataPorExtenso(it.data)} ${it.titulo}").contains(consulta)) }
                 .sortedBy { it.pagina }.take(limite.coerceAtLeast(1)).map {
                     BibliotecaBuscaResultado(it.obraId, tituloObra, BibliotecaArea.Breviarios,
                         it.pagina, it.titulo, data = it.data, rodape = it.rodape)
@@ -478,7 +476,7 @@ class BibliotecaCatalogRepository internal constructor(context: Context) {
                 arrayOf(obraId)).use { row ->
                 buildList {
                     while (size < limite.coerceAtLeast(1) && row.moveToNext()) {
-                        if (normalized("${row.getInt(2)} ${row.getString(3)}").contains(normalized(filtro)))
+                        if (consulta.isEmpty() || normalized("${row.getInt(2)} ${row.getString(3)}").contains(consulta))
                             add(BibliotecaBuscaResultado(obraId, row.getString(0), BibliotecaArea.from(row.getString(1)), row.getInt(2), row.getString(3)))
                     }
                 }

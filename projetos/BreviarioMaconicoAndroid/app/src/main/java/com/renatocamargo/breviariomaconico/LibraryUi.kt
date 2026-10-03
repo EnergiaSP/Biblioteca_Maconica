@@ -129,6 +129,7 @@ import com.renatocamargo.breviariomaconico.data.BibliotecaCatalogRepository
 import com.renatocamargo.breviariomaconico.data.BibliotecaIndiceTermo
 import com.renatocamargo.breviariomaconico.data.BibliotecaPaginaLeitura
 import com.renatocamargo.breviariomaconico.data.BibliotecaPacoteEstado
+import com.renatocamargo.breviariomaconico.data.prepararBuscaNotas
 import com.renatocamargo.breviariomaconico.data.BreviarioItem
 import com.renatocamargo.breviariomaconico.data.BreviarioRepository
 import com.renatocamargo.breviariomaconico.data.GeminiService
@@ -142,6 +143,7 @@ import com.renatocamargo.breviariomaconico.data.StudyPath
 import com.renatocamargo.breviariomaconico.data.TextHighlight
 import com.renatocamargo.breviariomaconico.data.TextoFormatter
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -180,6 +182,11 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
         estados = catalogo.estados(area)
     }
 
+    // The footnote search caches of the new packages are built right away, not by the first search.
+    fun prepararNotas() {
+        scope.launch(Dispatchers.IO) { catalogo.prepararBuscaNotas { !isActive } }
+    }
+
     fun instalar(pacote: com.renatocamargo.breviariomaconico.data.BibliotecaPacoteCatalogo) {
         scope.launch {
             atualizando = true
@@ -190,6 +197,7 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
                 }
             }.onSuccess {
                 status = "Obra baixada com sucesso."
+                prepararNotas()
             }.onFailure {
                 status = it.message ?: "Não foi possível baixar a obra."
             }
@@ -217,6 +225,7 @@ internal fun AcervoScreen(colors: Palette, abrirObra: (String) -> Unit) {
                 }.onFailure {
                     status = it.message ?: "Download interrompido."
                 }
+                prepararNotas()
             }
             atualizando = false
             recarregar()

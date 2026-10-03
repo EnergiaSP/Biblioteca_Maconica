@@ -101,11 +101,4 @@ object GeminiService {
 
         return texto
     }
-
-    internal fun validarCitacoes(text: String, sourceCount: Int) {
-        val ids = Regex("\\[F([0-9]+)\\]").findAll(text).map { it.groupValues[1].toIntOrNull() ?: 0 }.toList()
-        require(sourceCount > 0 && ids.isNotEmpty() && ids.all { it in 1..sourceCount }) {
-            "A resposta não possui referências documentais válidas. Nenhuma análise foi salva."
-        }
-    }
 }

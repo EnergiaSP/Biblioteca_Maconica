@@ -64,7 +64,7 @@ class AccessibilityAuditTest {
         android.util.Log.i("AuditoriaA11y", "$screen: $elements elementos, captura=${screenshot != null}, " +
             results.groupingBy { it.type }.eachCount())
         results.filter { it.type == AccessibilityCheckResultType.WARNING }.forEach {
-            android.util.Log.i("AuditoriaA11y", "$screen AVISO ${it.sourceCheckClass.simpleName}: ${it.getMessage(Locale("pt", "BR"))} " +
+            android.util.Log.i("AuditoriaA11y", "$screen AVISO ${it.sourceCheckClass.simpleName}: ${it.getMessage(Locale.forLanguageTag("pt-BR"))} " +
                 "[${it.element?.className} \"${it.element?.text ?: it.element?.contentDescription ?: ""}\"]")
         }
         // The audit must have looked at the screen: its elements and a screenshot for the contrast check.
@@ -81,7 +81,7 @@ class AccessibilityAuditTest {
             }
             .map { result ->
                 val element = result.element
-                "$screen: ${result.getMessage(Locale("pt", "BR"))} [${element?.className} " +
+                "$screen: ${result.getMessage(Locale.forLanguageTag("pt-BR"))} [${element?.className} " +
                     "\"${element?.text ?: element?.contentDescription ?: ""}\" ${element?.boundsInScreen}]"
             }
     }

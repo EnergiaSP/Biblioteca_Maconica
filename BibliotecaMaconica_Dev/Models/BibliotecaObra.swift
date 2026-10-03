@@ -338,25 +338,6 @@ struct BibliotecaDossieEstudo: Identifiable {
     }
 }
 
-struct ExportacaoEstudoAvancado {
-    let titulo: String
-    let secoes: [(titulo: String, itens: [String])]
-
-    var textoCompartilhavel: String {
-        var partes = [titulo]
-
-        for secao in secoes where secao.itens.isEmpty == false {
-            partes.append(
-                "\(secao.titulo):\n" + secao.itens
-                    .map { "- \($0)" }
-                    .joined(separator: "\n")
-            )
-        }
-
-        return partes.joined(separator: "\n\n")
-    }
-}
-
 struct SolicitacaoInclusaoObra: Codable {
     let area: BibliotecaArea
     let titulo: String
@@ -426,17 +407,3 @@ struct FonteOficialMaconica: Codable, Identifiable, Equatable {
     }
 }
 
-struct BibliotecaItemID: Hashable, Codable {
-    let obraID: String
-    let itemID: Int
-    let data: String
-
-    var chavePersistencia: String {
-        "\(obraID)_\(data)"
-    }
-}
-
-struct BibliotecaData: Codable {
-    let obras: [BibliotecaObra]
-    let breviarios: [String: BreviarioData]
-}

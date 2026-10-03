@@ -300,7 +300,14 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         let estado = app.staticTexts["audio.sequence.status"]
         XCTAssertTrue(estado.waitForExistence(timeout: 5))
         XCTAssertTrue(estado.label.contains("leitura 1 de"), estado.label)
-        app.buttons["audio.sequence.next"].tap()
+        // The controls stay on screen (pinned to the bottom) wherever the sequence was started.
+        let proxima = app.buttons["audio.sequence.next"]
+        XCTAssertTrue(proxima.isHittable)
+        let barra = XCTAttachment(screenshot: app.screenshot())
+        barra.name = "Colecoes-audio-bar"
+        barra.lifetime = .keepAlways
+        add(barra)
+        proxima.tap()
         XCTAssertTrue(estado.wait(for: \.label, toEqual: estado.label.replacingOccurrences(of: "leitura 1 de", with: "leitura 2 de"),
                                   timeout: 5), estado.label)
         app.buttons["audio.sequence.stop"].tap()
@@ -435,7 +442,8 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         // The text and the side-by-side authors are checked by the reference cases; the long prancha makes
         // text queries slow for XCUITest, so only its actions are driven here.
         let copiar = app.buttons["prancha.copiar"]
-        XCTAssertTrue(copiar.waitForExistence(timeout: 20))
+        // With the whole collection downloaded the prancha is long and XCUITest takes longer to snapshot it.
+        XCTAssertTrue(copiar.waitForExistence(timeout: 40))
         copiar.tap()
         XCTAssertTrue(copiar.wait(for: \.label, toEqual: "Prancha copiada.", timeout: 10), copiar.label)
         app.buttons["Fechar"].tap()
@@ -669,8 +677,13 @@ final class BibliotecaMaconicaUITests: XCTestCase {
                 app.buttons["Buscar na biblioteca"].tap()
                 let query = app.textFields["Buscar"].firstMatch
                 XCTAssertTrue(query.waitForExistence(timeout: 5))
+                // Breviaries only (the area chosen by default): with the whole collection downloaded,
+                // books would rank above the breviary reading this flow opens.
+                app.buttons["Área"].firstMatch.tap()
                 query.tap()
-                query.typeText("virtude")
+                // A phrase of the reading this flow opens, so its rank does not depend on how many
+                // other readings mention a common word.
+                query.typeText("\"número dois\"")
                 app.buttons["Buscar"].firstMatch.tap()
             }
             XCTAssertTrue(app.staticTexts["Breviários"].firstMatch.waitForExistence(timeout: 20))
@@ -842,11 +855,12 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Biblioteca Maçônica"].waitForExistence(timeout: 12))
         navigationTab("Coleções").tap()
         XCTAssertTrue(app.navigationBars["Coleções"].waitForExistence(timeout: 20))
-        // Top reading of the Virtudes collection under the shared rule (most distinct keywords, then occurrences).
-        let title = app.staticTexts["DEGRAU"].firstMatch
+        // Top reading of the Virtudes collection under the shared rule; which one depends on the works installed
+        // (the breviaries alone, or the whole downloaded collection), so it is found by its position.
+        let title = app.buttons["study.first.virtudes"].firstMatch
         for _ in 0..<10 where !title.isHittable { app.swipeUp(velocity: .slow) }
         XCTAssertTrue(title.isHittable)
-        XCTAssertGreaterThan(title.frame.height, 30, "The largest font must actually grow, not just set a launch argument")
+        XCTAssertGreaterThan(title.frame.height, 80, "The largest font must actually grow, not just set a launch argument")
         XCTAssertGreaterThanOrEqual(title.frame.minX, app.frame.minX)
         XCTAssertLessThanOrEqual(title.frame.maxX, app.frame.maxX)
         let screenshot = XCTAttachment(screenshot: app.screenshot())
@@ -854,8 +868,8 @@ final class BibliotecaMaconicaUITests: XCTestCase {
         screenshot.lifetime = .keepAlways
         add(screenshot)
         title.tap()
-        XCTAssertTrue(app.staticTexts["Leitura: 11 de abril"].waitForExistence(timeout: 8))
-        XCTAssertTrue(app.buttons["Voltar"].firstMatch.exists)
+        XCTAssertTrue(app.buttons["Voltar"].firstMatch.waitForExistence(timeout: 8))
+        XCTAssertFalse(app.navigationBars["Coleções"].exists, "The reading must open over the collection")
         app.buttons["Voltar"].firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Coleções"].waitForExistence(timeout: 5),
                       "Back must return to the collection that opened the reading")
@@ -1029,7 +1043,7 @@ final class BibliotecaMaconicaUITests: XCTestCase {
             let alvos = [
                 ("título do cartão", app.staticTexts["Ética"].firstMatch),
                 ("tópicos", app.descendants(matching: .any).matching(identifier: "study.topics.etica").firstMatch),
-                ("título da leitura", app.staticTexts["A Justiça"].firstMatch)
+                ("primeira leitura", app.buttons["study.first.etica"].firstMatch)
             ]
             for (nome, alvo) in alvos {
                 for _ in 0..<25 where !(alvo.exists && alvo.isHittable) { app.swipeUp(velocity: .slow) }

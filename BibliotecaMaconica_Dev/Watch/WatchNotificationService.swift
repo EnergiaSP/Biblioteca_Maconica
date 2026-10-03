@@ -87,6 +87,16 @@ enum WatchNotificationService {
         }
     }
 
+    /// The daily notification is scheduled one request per day (the watch keeps at most 64 pending):
+    /// when the app opens and fewer than 30 days remain, it is scheduled again so it does not stop.
+    static func renovarSeAtiva() {
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+            let diarias = requests.filter { $0.identifier.hasPrefix(prefixoIdentificador) && !$0.identifier.hasSuffix(".teste") }
+            guard !diarias.isEmpty, diarias.count < 30 else { return }
+            agendarNotificacaoDiaria { _ in }
+        }
+    }
+
     static func agendarTeste(completion: @escaping @Sendable (Bool) -> Void) {
         registrarCategorias()
 

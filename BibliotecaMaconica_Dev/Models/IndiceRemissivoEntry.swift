@@ -11,9 +11,6 @@ struct IndiceRemissivoEntry: Codable, Identifiable, Equatable {
         paginas.map(String.init).joined(separator: ", ")
     }
 
-    var datasBusca: String {
-        datas.joined(separator: ", ")
-    }
 }
 
 struct BreviarioData: Codable {

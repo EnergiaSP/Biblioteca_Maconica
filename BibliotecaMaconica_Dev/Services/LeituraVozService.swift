@@ -123,7 +123,9 @@ final class LeituraVozService: NSObject, ObservableObject, AVSpeechSynthesizerDe
     func parar() {
         sequencia = nil
         vozSequencia = nil
-        guard sintetizador.isSpeaking || estaLendo else {
+        // Only this service speaks through the synthesizer, so its own state says whether there is anything to
+        // stop; asking the synthesizer (isSpeaking) costs about 170 ms on the main thread on every Back.
+        guard estaLendo || estaPausado else {
             return
         }
 

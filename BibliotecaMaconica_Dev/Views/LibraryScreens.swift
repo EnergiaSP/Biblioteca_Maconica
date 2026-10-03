@@ -3,51 +3,6 @@ import UniformTypeIdentifiers
 import UIKit
 
 extension HomeView {
-@ViewBuilder
-    var leituraDoDiaContainer: some View {
-        Group {
-            if let item = itemSelecionado ?? store.itemDoDia {
-                detalhe
-                    .onAppear {
-                        if itemSelecionadoID != item.id {
-                            itemSelecionadoID = item.id
-                        }
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .topBarLeading) {
-                            Button {
-                                voltarParaListaLeitura()
-                            } label: {
-                                Image(systemName: "chevron.left")
-                                    .frame(width: 34, height: 34)
-                            }
-                            .disabled(processandoVoltarLeitura)
-                            .accessibilityLabel("Voltar")
-                        }
-
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button {
-                                abrirMais(.configuracoes)
-                            } label: {
-                                Image(systemName: "gearshape")
-                                    .frame(width: 34, height: 34)
-                            }
-                            .accessibilityLabel("Configurações")
-                        }
-                    }
-                    .navigationBarBackButtonHidden(true)
-            } else {
-                ContentUnavailableView(
-                    "Nenhuma leitura disponível",
-                    systemImage: "book",
-                    description: Text("Importe ou restaure os dados do breviário em Configurações.")
-                )
-                .foregroundStyle(temaLeitura.textoPrincipal)
-                .background(temaLeitura.background.ignoresSafeArea())
-            }
-        }
-    }
-
     @ViewBuilder
     var breviarioContainer: some View {
         lista
@@ -327,8 +282,6 @@ extension HomeView {
                             .foregroundStyle(textoSecundarioApp)
                     }
 
-                    BarraSequenciaAudio(leitorVoz: leitorVoz, tema: temaApp)
-
                     Text("Temas")
                         .font(.title3)
                         .fontWeight(.semibold)
@@ -407,6 +360,16 @@ extension HomeView {
                 }
                 .padding()
                 .frame(maxWidth: 980, alignment: .leading)
+            }
+            // The controls stay at the bottom of the screen while a sequence plays: inside the list they were
+            // out of view when it started from a card further down. Same as Android.
+            .safeAreaInset(edge: .bottom) {
+                BarraSequenciaAudio(leitorVoz: leitorVoz, tema: temaApp)
+                    // The panel color is translucent (made for cards on the screen background): opaque here.
+                    .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 8))
+                    .frame(maxWidth: 980)
+                    .padding(.horizontal)
+                    .padding(.bottom, 8)
             }
         }
         .navigationTitle("Coleções")

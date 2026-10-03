@@ -70,7 +70,6 @@
 		A10000000000000000000305 /* casos_revisao_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000306 /* casos_revisao_v1.json */; };
 		A10000000000000000000203 /* qualidade_texto_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000204 /* qualidade_texto_v1.json */; };
 		A10000000000000000000205 /* casos_qualidade_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000206 /* casos_qualidade_v1.json */; };
-		010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */; };
 		010000000000000000000119 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001A /* libsqlite3.tbd */; };
 		01000000000000000000011A /* rag_catalogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 01000000000000000000001B /* rag_catalogo.json */; };
 		EE0000000000000000000001 /* regras_estudo_v1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE0000000000000000000002 /* regras_estudo_v1.json */; };
@@ -269,7 +268,6 @@
 		A10000000000000000000306 /* casos_revisao_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_revisao_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000204 /* qualidade_texto_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = qualidade_texto_v1.json; sourceTree = "<group>"; };
 		A10000000000000000000206 /* casos_qualidade_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = casos_qualidade_v1.json; sourceTree = "<group>"; };
-		010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaPDFStructuredImporter.swift; sourceTree = "<group>"; };
 		01000000000000000000001A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		01000000000000000000001B /* rag_catalogo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rag_catalogo.json; sourceTree = "<group>"; };
 		EE0000000000000000000002 /* regras_estudo_v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regras_estudo_v1.json; sourceTree = "<group>"; };
@@ -500,7 +498,6 @@
 				A10000000000000000000412 /* ContaPropriaCaderno.swift */,
 				01000000000000000000001C /* BibliotecaRAGCatalogService.swift */,
 				01000000000000000000001D /* BibliotecaOfflinePackageService.swift */,
-				010000000000000000000019 /* BibliotecaPDFStructuredImporter.swift */,
 				CCE0A378220841A825A855CA /* BreviarioIndexImportService.swift */,
 				B7759608BE7368856B976F23 /* BreviarioOCRTextNormalizer.swift */,
 				36F6CC7629A2F335AA3D1919 /* BreviarioStoreCatalog.swift */,
@@ -923,7 +920,6 @@
 				A10000000000000000000411 /* ContaPropriaCaderno.swift in Sources */,
 				01000000000000000000011B /* BibliotecaRAGCatalogService.swift in Sources */,
 				01000000000000000000011C /* BibliotecaOfflinePackageService.swift in Sources */,
-				010000000000000000000118 /* BibliotecaPDFStructuredImporter.swift in Sources */,
 				0421D557D40C056AFE702606 /* HomeViewComponents.swift in Sources */,
 				B53700BFD067759F39B6A9C0 /* LibraryComponents.swift in Sources */,
 				D92100000000000000000301 /* DossieAnaliseSecoes.swift in Sources */,

@@ -3,23 +3,92 @@ import Foundation
 import SQLite3
 
 enum BibliotecaNotasSearch {
-    private static let lock = NSLock()
+    // One lock per cache file: a single global lock serialized the parallel search of every package
+    // and left a user-interactive caller waiting on lower-priority work (priority inversion).
+    private static let locksLock = NSLock()
+    nonisolated(unsafe) private static var locks: [String: NSLock] = [:]  // only read and written under locksLock
 
-    static func buscar(source: URL, consulta: String, area: BibliotecaArea?, obraID: String?,
-                       limite: Int, excluidas: Set<String>) throws -> [BibliotecaRAGResultadoBusca] {
-        lock.lock()
-        defer { lock.unlock() }
-        try Task.checkCancellation()
+    private static func lock(for key: String) -> NSLock {
+        locksLock.lock()
+        defer { locksLock.unlock() }
+        if let lock = locks[key] { return lock }
+        let lock = NSLock()
+        locks[key] = lock
+        return lock
+    }
+
+    /// Brings the footnote search caches of every installed package up to date ahead of the first search
+    /// (after opening the app and after a download), as Android's `prepararBuscaNotas`.
+    static func prepararPacotesInstalados() {
+        guard let catalogo = try? BibliotecaRAGCatalogService() else { return }
+        var vistos = Set<String>()
+        for url in catalogo.pacotes.compactMap({ catalogo.urlPacote($0) }) where vistos.insert(url.path).inserted {
+            if Task.isCancelled { return }
+            // Packages already prepared are skipped by their file identity alone, without opening any
+            // database (as Android does): opening all of them at every launch kept the disk busy for ~20 s.
+            let preparado = diretorio.appendingPathComponent(chave(url.path) + ".preparado")
+            let cache = diretorio.appendingPathComponent(chave(url.path) + ".sqlite")
+            guard let atual = try? carimbo(url.path),
+                  (try? String(contentsOf: preparado, encoding: .utf8)) != atual
+                    || !FileManager.default.fileExists(atPath: cache.path) else { continue }
+            if (try? buscar(source: url, consulta: "", area: nil, obraID: nil, limite: 0, excluidas: [])) != nil {
+                try? Data(atual.utf8).write(to: preparado, options: .atomic)
+            }
+        }
+        removerCachesOrfaos(manter: Set(vistos.map(chave)))
+    }
+
+    /// Caches of packages no longer installed (removed from the catalog, test copies, or named after an old
+    /// container path, before `chave` used relative paths: 1.2 GB on the test simulator), unchanged for a
+    /// day, are removed; Android does the same.
+    static func removerCachesOrfaos(manter: Set<String>, em pasta: URL = diretorio, agora: Date = Date()) {
         let files = FileManager.default
-        let directory = (files.urls(for: .cachesDirectory, in: .userDomainMask).first ?? files.temporaryDirectory)
-            .appendingPathComponent("RAGNotesSearchV1", isDirectory: true)
-        try files.createDirectory(at: directory, withIntermediateDirectories: true)
-        let key = SHA256.hash(data: Data(source.path.utf8)).map { String(format: "%02x", $0) }.joined()
-        let stamp = try [source.path, source.path + "-wal"].map { path -> String in
+        guard let nomes = try? files.contentsOfDirectory(atPath: pasta.path) else { return }
+        for nome in nomes where !manter.contains(String(nome.prefix { $0 != "." })) {
+            let url = pasta.appendingPathComponent(nome)
+            let alterado = (try? files.attributesOfItem(atPath: url.path)[.modificationDate] as? Date) ?? agora
+            if agora.timeIntervalSince(alterado) > 86_400 { try? files.removeItem(at: url) }
+        }
+    }
+
+    /// Named after the package path relative to the app's containers: their absolute paths change when the
+    /// app is updated or reinstalled, which used to leave every cache behind and rebuild them all.
+    private static func chave(_ path: String) -> String {
+        var relativo = path
+        for (raiz, marca) in [(NSHomeDirectory(), "home:"), (Bundle.main.bundlePath, "bundle:")] where path.hasPrefix(raiz + "/") {
+            relativo = marca + path.dropFirst(raiz.count)
+            break
+        }
+        return SHA256.hash(data: Data(relativo.utf8)).map { String(format: "%02x", $0) }.joined()
+    }
+
+    /// Identity of a package file: the cache is rebuilt when it changes.
+    private static func carimbo(_ path: String) throws -> String {
+        let files = FileManager.default
+        return try [path, path + "-wal"].map { path -> String in
             guard files.fileExists(atPath: path) else { return "absent" }
             let attrs = try files.attributesOfItem(atPath: path)
             return "\(attrs[.size] ?? 0):\((attrs[.modificationDate] as? Date)?.timeIntervalSince1970 ?? 0):\(attrs[.systemFileNumber] ?? 0)"
         }.joined(separator: "|")
+    }
+
+    private static var diretorio: URL {
+        let files = FileManager.default
+        return (files.urls(for: .cachesDirectory, in: .userDomainMask).first ?? files.temporaryDirectory)
+            .appendingPathComponent("RAGNotesSearchV1", isDirectory: true)
+    }
+
+    static func buscar(source: URL, consulta: String, area: BibliotecaArea?, obraID: String?,
+                       limite: Int, excluidas: Set<String>) throws -> [BibliotecaRAGResultadoBusca] {
+        let key = chave(source.path)
+        let lock = lock(for: key)
+        lock.lock()
+        defer { lock.unlock() }
+        try Task.checkCancellation()
+        let files = FileManager.default
+        let directory = diretorio
+        try files.createDirectory(at: directory, withIntermediateDirectories: true)
+        let stamp = try carimbo(source.path)
         let database = try Database(directory.appendingPathComponent(key + ".sqlite"))
         try database.run("CREATE TABLE IF NOT EXISTS cache_meta (stamp TEXT NOT NULL)")
         try database.run("""
@@ -52,6 +121,8 @@ enum BibliotecaNotasSearch {
                 throw error
             }
         }
+        // An empty query only brings the cache up to date (see prepararPacotesInstalados).
+        if consulta.isEmpty { return [] }
         var filters = ["notes_fts MATCH ?"]
         var args = [consulta]
         if let area { filters.append("area = ?"); args.append(area.rawValue) }

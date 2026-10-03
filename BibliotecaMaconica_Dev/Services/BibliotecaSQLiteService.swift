@@ -11,7 +11,7 @@ final class BibliotecaSQLiteService {
         var errorDescription: String? {
             switch self {
             case .naoAbriuBanco(let detalhe):
-                "Nao foi possivel abrir o banco da biblioteca. \(detalhe)"
+                "Não foi possível abrir o banco da biblioteca. \(detalhe)"
             case .falhaSQL(let detalhe):
                 "Falha ao executar SQL. \(detalhe)"
             case .falhaPreparar(let detalhe):
@@ -365,20 +365,6 @@ final class BibliotecaSQLiteService {
                 pagina: pagina,
                 obraID: obraID
             )
-        }
-    }
-
-    func percorrerItensBiblioteca(obraID: String, tamanhoLote: Int = 100, receber: ([BreviarioItem]) -> Bool) throws {
-        var ultimaPagina = 0
-        while !Task.isCancelled {
-            let paginas = try consultar("SELECT numero_original FROM rag_paginas WHERE obra_id = ? AND numero_original > ? ORDER BY numero_original LIMIT ?",
-                [.text(obraID), .int(ultimaPagina), .int(min(200, max(1, tamanhoLote)))]) {
-                Int(sqlite3_column_int($0, 0))
-            }
-            guard let ultima = paginas.last else { return }
-            let itens = try carregarItensBiblioteca(obraID: obraID, paginas: paginas)
-            guard receber(itens) else { return }
-            ultimaPagina = ultima
         }
     }
 

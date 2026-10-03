@@ -41,7 +41,7 @@ func abrirData(_ data: Date) {
         }
 
         guard let dataQuery else {
-            mensagemErro = "Nao foi possivel abrir a leitura do widget."
+            mensagemErro = "Não foi possível abrir a leitura do widget."
             return
         }
 
@@ -51,7 +51,7 @@ func abrirData(_ data: Date) {
                 return
             }
 
-            mensagemErro = "Nao foi possivel abrir a leitura do widget."
+            mensagemErro = "Não foi possível abrir a leitura do widget."
             return
         }
 
@@ -68,24 +68,6 @@ func abrirData(_ data: Date) {
         }
 
         abrirURLBreviario(url, permiteAdiar: false)
-    }
-
-    func abrirEntradaIndice(_ entrada: IndiceRemissivoEntry, pagina: Int?) {
-        if let pagina,
-           let item = store.item(paginaDaObra: pagina) {
-            abrirLeitura(item)
-            mensagemErro = nil
-        } else if let data = entrada.datas.first, let item = store.item(data: data) {
-            abrirLeitura(item)
-            mensagemErro = nil
-        } else if let pagina = entrada.paginas.first,
-                  let item = store.item(paginaDaObra: pagina) {
-            abrirLeitura(item)
-            mensagemErro = nil
-        } else {
-            mensagemErro = "Entrada sem texto vinculado ainda."
-            abrirMais(.indicesBiblioteca)
-        }
     }
 
     func abrirProximaLeituraDoMes() {

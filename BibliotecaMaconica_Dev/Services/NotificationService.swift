@@ -199,7 +199,7 @@ enum NotificationService {
 
             let conteudo = UNMutableNotificationContent()
             conteudo.title = "\(item.data) - \(item.titulo)"
-            conteudo.subtitle = "Teste de notificacao"
+            conteudo.subtitle = "Teste de notificação"
             conteudo.body = resumoNotificacao(item)
             conteudo.categoryIdentifier = categoriaLeitura
             conteudo.userInfo = [

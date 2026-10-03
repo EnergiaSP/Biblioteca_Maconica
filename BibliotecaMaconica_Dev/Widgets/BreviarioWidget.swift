@@ -24,7 +24,10 @@ struct BreviarioWidgetProvider: TimelineProvider {
             date: agora,
             leituras: BreviarioSnapshotProvider.leiturasDoDia(data: agora)
         )
-        let proximaAtualizacao = Calendar.current.date(byAdding: .hour, value: 6, to: agora) ?? agora
+        // Every 6 hours, and right at midnight so the widget never keeps yesterday's reading.
+        let seisHoras = Calendar.current.date(byAdding: .hour, value: 6, to: agora) ?? agora
+        let amanha = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: agora)) ?? seisHoras
+        let proximaAtualizacao = min(seisHoras, amanha)
 
         completion(Timeline(entries: [entrada], policy: .after(proximaAtualizacao)))
     }

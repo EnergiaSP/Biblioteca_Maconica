@@ -105,7 +105,7 @@ final class BreviarioStore: ObservableObject {
 
     func selecionarObra(id obraID: String) {
         guard let obra = obras.first(where: { $0.id == obraID }) else {
-            erro = "Obra nao encontrada na biblioteca."
+            erro = "Obra não encontrada na biblioteca."
             return
         }
 
@@ -154,7 +154,7 @@ final class BreviarioStore: ObservableObject {
                     return
                 }
 
-                self.erro = "Nao foi possivel carregar o breviario."
+                self.erro = "Não foi possível carregar o breviário."
                 carregando = false
                 tarefaCarregamento = nil
             }
@@ -192,7 +192,7 @@ final class BreviarioStore: ObservableObject {
                     return
                 }
 
-                self.erro = "Nao foi possivel importar o PDF."
+                self.erro = "Não foi possível importar o PDF."
                 self.importando = false
                 self.progressoImportacao = nil
                 self.tarefaCarregamento = nil

@@ -4,12 +4,13 @@ import hashlib
 import json
 import sqlite3
 import time
+from datetime import date
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 catalog = json.loads((root / "BibliotecaMaconica_Dev/Resources/rag_catalogo.json").read_text())
 packages = root / "BibliotecaMaconica_Dev/ImportacaoLivrosPDF_OCR/_relatorios/RAGPackages"
-output = root / "Paridade/evidencias/2026-09-18/medicao-acervo-local.json"
+output = root / f"Paridade/evidencias/{date.today().isoformat()}/medicao-acervo-local.json"
 results = []
 queries = ['"maçonaria"', '"grande loja"', '"ética" AND "virtude"']
 start = time.perf_counter()

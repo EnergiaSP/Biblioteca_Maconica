@@ -44,6 +44,8 @@ internal fun NotebookThemesCard(
 ) {
     val context = LocalContext.current
     val rule = remember { StudyNotebookThemes.loadRule(context) }
+    // Lint misreads the assignment below (made through withContext); the producer does assign value.
+    @android.annotation.SuppressLint("ProduceStateDoesNotAssignValue")
     val loaded by produceState<Pair<List<StudyNotebookThemes.Note>, List<StudyNotebookThemes.Theme>>?>(null, refresh) {
         value = withContext(Dispatchers.IO) {
             val notebook = StudyNotebook.collect(context)

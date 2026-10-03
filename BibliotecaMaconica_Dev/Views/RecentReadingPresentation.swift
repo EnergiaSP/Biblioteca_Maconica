@@ -3,59 +3,6 @@ import UniformTypeIdentifiers
 import UIKit
 
 extension HomeView {
-var leiturasRecentesCard: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Label("Recentes", systemImage: "clock.arrow.circlepath")
-                    .font(.headline)
-                    .foregroundStyle(textoApp)
-
-                Spacer()
-            }
-
-            ForEach(itensRecentes.prefix(3)) { item in
-                Button {
-                    abrirLeitura(item)
-                } label: {
-                    HStack(spacing: 10) {
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text(item.titulo)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(textoApp)
-                                .lineLimit(1)
-
-                            Text(item.data)
-                                .font(.caption)
-                                .foregroundStyle(textoSecundarioApp)
-
-                            Label(item.tempoLeituraEstimado, systemImage: "clock")
-                                .font(.caption2)
-                                .foregroundStyle(textoSecundarioApp)
-                        }
-
-                        Spacer()
-
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundStyle(destaqueApp)
-                    }
-                    .padding(10)
-                    .background(temaApp.painel)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                }
-                .buttonStyle(.plain)
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel(item.titulo)
-                .accessibilityValue("\(item.data). \(item.tempoLeituraEstimado)")
-                .accessibilityHint("Abrir leitura recente")
-            }
-        }
-        .padding()
-        .background(temaApp.painel)
-        .clipShape(RoundedRectangle(cornerRadius: 8))
-    }
-
     var leiturasRecentesBreviariosCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {

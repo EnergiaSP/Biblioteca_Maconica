@@ -9,11 +9,11 @@ final class BibliotecaRAGCatalogService {
         var errorDescription: String? {
             switch self {
             case .catalogoNaoEncontrado:
-                "Catalogo RAG nao encontrado."
+                "Catálogo RAG não encontrado."
             case .pacoteNaoEncontrado(let arquivo):
-                "Pacote RAG nao encontrado: \(arquivo)"
+                "Pacote RAG não encontrado: \(arquivo)"
             case .urlRemotaInvalida(let arquivo):
-                "URL remota invalida para o pacote: \(arquivo)"
+                "URL remota inválida para o pacote: \(arquivo)"
             }
         }
     }
@@ -181,13 +181,6 @@ final class BibliotecaRAGCatalogService {
         }
 
         return itens
-    }
-
-    func percorrerItens(obraID: String, receber: ([BreviarioItem]) -> Bool) throws {
-        guard let pacote = pacotes.first(where: { $0.obraIDs.contains(obraID) }),
-              let url = urlPacote(pacote) else { return }
-        let banco = try BibliotecaSQLiteService(url: url, somenteLeitura: true)
-        try banco.percorrerItensBiblioteca(obraID: obraID, receber: receber)
     }
 
     private func pacotesParaBusca(
