@@ -138,5 +138,5 @@ Situação em 03/10/2026, depois do diagnóstico final: testes das duas platafor
 
 - [ ] AAB assinado do Android (precisa de `keystore.properties` e da chave de upload do responsável).
 - [ ] Arquivo iOS pelo Xcode (Product > Archive) com a conta de desenvolvedor.
-- [ ] URL da política de privacidade: o texto está em `docs/privacidade.html`. Com o GitHub Pages ligado no repositório (Settings > Pages > ramo `main`, pasta `/docs`), o endereço fica https://energiasp.github.io/Biblioteca_Maconica/privacidade.html. Antes, troque "[e-mail de contato]" pelo e-mail de atendimento.
+- [ ] URL da política de privacidade: o texto está em `docs/privacidade.html`. Com o GitHub Pages ligado no repositório (Settings > Pages > ramo `main`, pasta `/docs`), o endereço fica https://energiasp.github.io/Biblioteca_Maconica/privacidade.html. Contato de privacidade e de suporte: renato@energiasp.com.br.
 - [ ] Revisão final dos textos pelo responsável.
