@@ -132,6 +132,8 @@ def defects(text: str) -> float:
 
 
 def better(old: str, new: str, config: dict, criterion: str = "qualidade") -> bool:
+    if criterion == "manual":
+        return bool(new.strip()) and new != old  # a text checked by hand against the page image always wins
     if criterion == "copias" and not keeps_words(old, new):
         return False  # a re-read text layer may never drop a real word of the page
     old_level = quality.rate_page(old, config)["nivel"]
@@ -171,6 +173,9 @@ def apply(package: Path, ocr: Path, output: Path, work: str = "", criterion: str
         new_level = quality.rate_page(new, config)["nivel"]
         summary["depois"][new_level] = summary["depois"].get(new_level, 0) + 1
         main, footer = split_footnotes(new)
+        if criterion == "manual" and not con.execute("SELECT 1 FROM rag_notas WHERE obra_id = ? AND pagina = ? LIMIT 1",
+                                                     (work_id, number)).fetchone():
+            main, footer = new, ""  # a page checked by hand without notes keeps lines like "5 Resultante..." in its text
         con.execute("UPDATE rag_paginas SET texto_integral = ? WHERE id = ?", (new, page_id))
         con.execute("DELETE FROM rag_fts WHERE obra_id = ? AND pagina = ?", (work_id, number))
         con.execute("DELETE FROM rag_paragrafos WHERE obra_id = ? AND pagina = ?", (work_id, number))
@@ -198,8 +203,9 @@ def main() -> None:
     parser.add_argument("--ocr", type=Path, required=True)
     parser.add_argument("--saida", type=Path, required=True)
     parser.add_argument("--obra", default="", help="id of the work, needed in an area package")
-    parser.add_argument("--criterio", choices=["qualidade", "copias"], default="qualidade",
-                        help="copias: only a page that loses the repeated copy of its text changes (fewer letters expected)")
+    parser.add_argument("--criterio", choices=["qualidade", "copias", "manual"], default="qualidade",
+                        help="copias: only a page that loses the repeated copy of its text changes (fewer letters expected); "
+                             "manual: every page of a text checked by hand against the page images replaces the old one")
     args = parser.parse_args()
     print(json.dumps(apply(args.pacote, args.ocr, args.saida, args.obra, args.criterio), ensure_ascii=False))
 

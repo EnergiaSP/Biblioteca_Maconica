@@ -19,7 +19,7 @@ class FullCatalogBenchmarkTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val catalog = BibliotecaCatalogRepository.get(context)
         val packages = catalog.pacotes.filter { it.url.isNotBlank() }
-        assertEquals(314, packages.size)
+        assertEquals(290, packages.size)
         assertTrue(packages.all { catalog.localFile(it).isFile })
         val rules = StudyRules.load(context)
         val words = (rules.collections.map { it.keywords } + rules.paths.map { it.keywords })
@@ -76,7 +76,7 @@ class FullCatalogBenchmarkTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val catalog = BibliotecaCatalogRepository.get(context)
         val packages = catalog.pacotes.filter { it.url.isNotBlank() }
-        assertEquals("Catalog excludes the Rizzardo work by product policy", 314, packages.size)
+        assertEquals("Catalog excludes the Rizzardo work by product policy", 290, packages.size)
         assertTrue(packages.none { p -> p.obras.any { it.id == "breviario_maconico_rizzardo_da_camino" } })
         assertTrue("Copy the audited corpus to the test emulator before running this suite", packages.all { catalog.localFile(it).isFile })
         val timings = JSONArray()

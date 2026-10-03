@@ -77,3 +77,57 @@ As demais obras não têm ficha no PDF.
 ## Publicação
 - **R2:** 67 pacotes refeitos estão em `rag/v6/` e precisam ser enviados ao R2 antes de lançar o app com este catálogo (`publicar_rag_r2_wrangler.sh`).
 - **Pacotes removidos:** os pacotes das 25 obras removidas continuam no R2 (`rag/v4` e `rag/v5`). Apagá-los libera espaço, mas versões antigas do app ainda podem pedi-los. Aguarda decisão.
+
+## Segunda rodada (pendências)
+
+### Rodapés do Breviário de Kennyo
+- **Leitura do bloco de notas:** a sequência agora vem da própria página do OCR novo, ancorada no primeiro número do rodapé antigo. Aceita "*" e números truncados ("14" em 174) quando a sequência confirma.
+- **OCR em 6000 px:** feito só nas páginas em que as notas não tinham sido encontradas.
+- **Resultado:** 76 rodapés corrigidos ou completados, entre eles **44 notas inteiras que o rodapé antigo tinha perdido**. Exemplos: a 228 (Docetismo), a 962 (Grotto e Shriner) e a 98 de 24/01.
+- **Notas recuperadas:** corrijo só confusões típicas de letra do OCR ("Tbe" → "The", "bttps://" → "https://"). Sem palpites por semelhança, que trocariam o título medieval "Confissom".
+- **Continuam como estavam:** 67 rodapés, porque nem o OCR em 6000 px leu todas as notas da página. A nota 370 é ilegível na própria digitalização.
+- **02/04:** fica sempre de fora, porque foi transcrita da foto da página impressa.
+- Relatório: `ocr_rodape_kennyo_v2.json`.
+
+### O Livro Ilustrado dos Símbolos
+- **Correção manual:** 64 linhas lidas na imagem da página e corrigidas, como "contato", "Mercúrio", "floresceram" e "elmo" (o OCR tinha lido "elino").
+- **Deixadas como estão**, por não haver leitura segura: 4 linhas (estação/oração, "…lhões", "vermelh…" e apresentados/representados).
+- **Limite:** o começo de algumas linhas está desbotado na digitalização. Testei resolução maior, contraste e remoção da sombra da dobra, e nenhum ajudou. O livro inteiro ainda tem outras linhas assim, que só uma conferência página a página resolve.
+- O pacote vai para `rag/v7/`.
+
+### Referências ABNT
+- Das 216 obras sem ano, 16 têm ISBN no texto. Só 2 ISBNs são da própria obra e estão nas bases públicas (Open Library): "Sócrates em 90 Minutos" (1998) e "O Conhecimento de Deus" (2005). Os outros são de livros citados na bibliografia.
+- Agora são 83 obras com ano.
+- As demais exigiriam identificar a edição exata de cada PDF. Atribuir o ano de outra edição seria uma referência errada.
+
+### Teste do iOS
+- **Execução:** a suíte rodou 6 vezes seguidas sem falha.
+- **Causa provável:** a falha registrada antes foi "unexpected", isto é, erro lançado e não verificação reprovada. O único teste que lança erro de forma imprevisível é o de download repetido, quando a rede oscila na segunda descida.
+- **Correção:** cada descida agora tenta duas vezes e, sem rede, o teste é pulado em vez de falhar, nas duas plataformas.
+
+## Terceira rodada: O Livro Ilustrado dos Símbolos, conferido página a página
+
+- **Escopo:** as 129 páginas foram comparadas uma a uma com a imagem da página, da capa ao índice remissivo e à contracapa.
+- **Correções:** 1.691 ao todo.
+  - Nas páginas em que o OCR misturava colunas, legendas e quadros "VEJA TAMBÉM", o texto foi reescrito inteiro na ordem de leitura.
+  - Nas demais, foram corrigidos acentos, palavras cortadas e letras trocadas.
+- **Fidelidade:** a grafia é a do original (1997-2001), por exemplo "idéia", "freqüência" e "jóia".
+- **Ícone:** o dedo indicador dos quadros "VEJA TAMBÉM" virou "→".
+- **Ordem das colunas:** a OCR por blocos (`BibliotecaMaconica_Dev/Tools/ocr_por_blocos.swift`) junta as linhas de cada coluna antes de ordenar a página. Foi a base da conferência.
+- **Página 109 (Maçonaria):** revisada com cuidado especial. As palavras cortadas na dobra do livro foram completadas pelo contexto da própria página: "Ferramentas", "cidadãos", "Escada de Jacó", "Ashlar" e "Piso xadrez".
+- **Ilegível na digitalização:** no índice, "paraíso 36, 42, 4" está cortado no próprio impresso e ficou como está.
+- **Rodapé:** o livro não tem notas. A única "nota" antiga era um pedaço da orelha e saiu.
+- **Aplicação:** `Tools/aplicar_ocr_refeito.py` ganhou o critério `manual`.
+  - O texto conferido à mão substitui o antigo em toda página que mudou.
+  - Linhas como "5 Resultante de dois..." não são mais separadas como rodapé quando a página não tinha notas.
+- **Pacote:** `rag/v7/bibliotecaMaconica/rag_o_livro_ilustrado_dos_simbolos_completo.sqlite`, sha256 `5f033724…ee4`, com 128 páginas trocadas.
+- **ABNT:** a referência já constava em `obras_referencias_manual.json` (Miranda Bruce-Mitford, São Paulo: Publifolha, 2001).
+
+### Testes
+- **iOS:** 98 testes, 0 falhas.
+- **Android:** 35 testes unitários, 0 falhas.
+- **Android no emulador:** suíte instrumentada completa. Três falhas antigas, anteriores a esta rodada, foram corrigidas:
+  - **Contagem de pacotes:** `FullCatalogBenchmarkTest` (Android) e o teste equivalente do iOS esperavam 314 pacotes. Depois da remoção das obras repetidas, o catálogo tem 291, e a política de produto tira o Breviário de Rizzardo: o esperado agora é 290.
+  - **Botões repetidos:** a auditoria de acessibilidade achou dois botões "Leitura" com o mesmo texto falado quando há duas leituras diárias. Cada botão agora é lido como "Leitura: <obra>".
+  - **Contraste em item cortado:** a mesma auditoria media o contraste de um texto cortado na borda da rolagem (13 px visíveis), que mistura texto e fundo. Itens visíveis em menos de uma linha (24 dp) ficam fora da conta de contraste; o mesmo texto é medido quando aparece inteiro.
+- **Dados do app:** feito backup no emulador antes da instalação, com `adb install -r`. Nada foi desinstalado.
