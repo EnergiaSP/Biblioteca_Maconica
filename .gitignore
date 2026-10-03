@@ -10,6 +10,8 @@
 !/Paridade/
 !/Tools/
 !/Servidor/
+# Pages site (privacy policy for the stores).
+!/docs/
 !/PARIDADE_IOS_ANDROID.md
 
 # Local tooling, caches and generated builds
